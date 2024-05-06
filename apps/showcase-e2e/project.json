@@ -1,0 +1,10 @@
+{
+  "name": "showcase-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/showcase-e2e/src",
+  "projectType": "application",
+  "tags": [],
+  "implicitDependencies": ["showcase"],
+  "// targets": "to see all targets run: nx show project showcase-e2e --web",
+  "targets": {}
+}
