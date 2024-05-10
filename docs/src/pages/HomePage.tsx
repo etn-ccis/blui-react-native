@@ -95,7 +95,11 @@ export const HomePage = (): JSX.Element => {
             />
           </Typography>
         </Box>
-        <Stack direction={'row'} gap={lgUp ? 5 : 4} flexWrap={'wrap'}>
+        <Stack
+          direction={'row'}
+          gap={lgUp ? 5 : 4}
+          flexWrap={'wrap'}
+          sx={{marginTop: 5}}>
           <Stack sx={styles.packageStats}>
             <Typography variant={'body1'}>
               Total React Native Packages

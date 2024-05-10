@@ -97,7 +97,7 @@ export const ComponentPreviewTabs = (): JSX.Element => {
         sx={{
           width: '100%',
           display: 'flex',
-          justifyContent: 'space-evenly',
+          justifyContent: 'space-around',
           bgcolor: theme.palette.background.paper,
           borderBottom: 1,
           borderColor: 'divider',
@@ -124,7 +124,7 @@ export const ComponentPreviewTabs = (): JSX.Element => {
           replace={true}
           {...a11yProps(1)}
         />
-        {!hidePlaygroundTab && (
+        {/* {!hidePlaygroundTab && (
           <Tab
             to="playground"
             component={Link}
@@ -133,7 +133,7 @@ export const ComponentPreviewTabs = (): JSX.Element => {
             replace={true}
             {...a11yProps(2)}
           />
-        )}
+        )} */}
       </Tabs>
       <TabPanel value={value} index={0}>
         <Box
@@ -163,11 +163,11 @@ export const ComponentPreviewTabs = (): JSX.Element => {
           </Box>
         </Box>
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      {/* <TabPanel value={value} index={2}>
         <Box sx={[playgroundContentStyles]}>
           <Outlet />
         </Box>
-      </TabPanel>
+      </TabPanel> */}
     </>
   );
 };
