@@ -162,7 +162,7 @@ export const NavigationDrawer: React.FC = () => {
                   <Typography
                     variant={'overline'}
                     sx={{fontWeight: 700, letterSpacing: 1}}>
-                    REACT
+                    REACT NATIVE
                   </Typography>
                 }
                 variant={'filled'}
