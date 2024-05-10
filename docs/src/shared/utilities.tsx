@@ -18,9 +18,8 @@ import TrendingDown from '@mui/icons-material/TrendingDown';
 import {SvgIconProps} from '@mui/material/SvgIcon';
 import Box from '@mui/material/Box';
 import ArrowBack from '@mui/icons-material/ArrowBack';
-
-// const topologyBgImage = require('../shared/images/topology_40.png');
-// const farmBgImage = require('../shared/images/farm.jpg');
+import topologyBgImage from '../shared/images/topology_40.png';
+import farmBgImage from '../shared/images/farm.jpg';
 
 export const getSnakeCase = (str: string): string =>
   str.replace(/[A-Z]/g, '_$&').toLowerCase().slice(1);
@@ -28,8 +27,8 @@ export const getSnakeCase = (str: string): string =>
 export const getKebabCase = (str: string): string =>
   str.replace(/[A-Z]/g, '-$&').toLowerCase().slice(1);
 
-// export const snakeToKebabCase = (str: string): string =>
-//   str.replaceAll('_', '-').toLowerCase();
+export const snakeToKebabCase = (str: string): string =>
+  str.replaceAll('_', '-').toLowerCase();
 
 export const unCamelCase = (val: string): string =>
   val
@@ -46,13 +45,13 @@ export const titleCase = (val: string): string =>
       txt => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase(),
     );
 
-// export const snakeToTitleCase = (str: string): string =>
-//   str
-//     .replaceAll('_', ' ')
-//     .replace(
-//       /\w\S*/g,
-//       (txt: string) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase(),
-//     );
+export const snakeToTitleCase = (str: string): string =>
+  str
+    .replaceAll('_', ' ')
+    .replace(
+      /\w\S*/g,
+      (txt: string) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase(),
+    );
 
 export const capitalize = (val: string): string =>
   val.charAt(0).toUpperCase() + val.slice(1);
@@ -119,18 +118,18 @@ export const getIcon = (
   }
 };
 
-// export const getImage = (image: string): string | undefined => {
-//   switch (image.toLowerCase()) {
-//     case 'pattern':
-//       return topologyBgImage;
-//     case 'farm':
-//       return farmBgImage;
-//     case 'undefined':
-//       return undefined;
-//     default:
-//       return undefined;
-//   }
-// };
+export const getImage = (image: string): string | undefined => {
+  switch (image.toLowerCase()) {
+    case 'pattern':
+      return topologyBgImage;
+    case 'farm':
+      return farmBgImage;
+    case 'undefined':
+      return undefined;
+    default:
+      return undefined;
+  }
+};
 
 const iterateIconProps = (iconProps?: SvgIconProps): string => {
   if (!iconProps) return '';

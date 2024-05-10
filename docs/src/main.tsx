@@ -25,7 +25,7 @@ import {App} from './app/app';
 import './index.css';
 import {store, RootState} from './redux/store';
 import {useAppSelector} from './redux/hooks';
-import {MDXProvider} from '@mdx-js/react';
+// import {MDXProvider} from '@mdx-js/react';
 import {componentsMap} from './__configuration__/markdownMapping';
 import {GoogleAnalyticsWrapper} from './router/GoogleAnalyticsWrapper';
 
@@ -70,9 +70,9 @@ const ThemedApp = (): JSX.Element => {
     () => (
       <ThemeProvider theme={createTheme(theme)}>
         <CssBaseline />
-        <MDXProvider components={componentsMap as any}>
-          <App />
-        </MDXProvider>
+        {/* <MDXProvider components={componentsMap as any}> */}
+        <App />
+        {/* </MDXProvider> */}
       </ThemeProvider>
     ),
     [siteTheme, siteDirection, prefersDarkMode],

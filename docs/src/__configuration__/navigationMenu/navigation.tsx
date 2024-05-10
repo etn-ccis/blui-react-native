@@ -1,6 +1,9 @@
 import React from 'react';
 import {RouteProps, Outlet} from 'react-router';
-import {ComponentPreviewPage, HomePage} from '../../pages';
+import {ComponentPreviewPage, HomePage, MarkdownPage} from '../../pages';
+
+// Site markdown docs
+import * as markdownDocs from '../../markdownDocs/';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
   title: string;
@@ -26,11 +29,10 @@ export const pageDefinitions: RouteConfig[] = [
         title: 'All Components',
         path: 'component-catalog',
         element: (
-          // <MarkdownPage
-          //   title={'Components'}
-          //   markdown={markdownDocs.AllComponents}
-          // />
-          <h1>Test</h1>
+          <MarkdownPage
+            title={'Components'}
+            markdown={markdownDocs.AllComponents}
+          />
         ),
       },
       {

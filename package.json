@@ -2,6 +2,7 @@
   "name": "@blui-react-native/source",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "docs-start": "npx nx serve docs",
     "docs-prettier": "npx nx format:write docs",
@@ -18,7 +19,7 @@
     "@emotion/styled": "^11.11.5",
     "@fontsource/roboto": "^5.0.13",
     "@fontsource/roboto-mono": "^5.0.18",
-    "@mdx-js/react": "^3.0.1",
+    "@mdx-js/rollup": "^3.0.1",
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.17",
     "@reduxjs/toolkit": "^2.2.4",

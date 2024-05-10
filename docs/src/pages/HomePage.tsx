@@ -85,7 +85,7 @@ export const HomePage = (): JSX.Element => {
               options={{
                 strings: [
                   'Brightlayer UI',
-                  'React Developer Documentation',
+                  'React Native Developer Documentation',
                   'Components, Themes, Workflows',
                 ],
                 autoStart: true,
@@ -97,7 +97,9 @@ export const HomePage = (): JSX.Element => {
         </Box>
         <Stack direction={'row'} gap={lgUp ? 5 : 4} flexWrap={'wrap'}>
           <Stack sx={styles.packageStats}>
-            <Typography variant={'body1'}>Total React Packages</Typography>
+            <Typography variant={'body1'}>
+              Total React Native Packages
+            </Typography>
             <Typography variant={'h4'}>
               <CountUp end={listOfAllBluiReactPackages.length} />
             </Typography>
