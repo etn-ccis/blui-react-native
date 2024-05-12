@@ -8,10 +8,40 @@ import * as markdownDocs from '../../markdownDocs/';
 // Examples markdown
 import ChannelValueExamples from '../../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
 import ChipExamples from '../../componentDocs/Chip/markdown/ChipExamples.mdx';
+import CollapsibleHeaderLayoutExamples from '../../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutExamples.mdx';
+import DrawerExamples from '../../componentDocs/Drawer/markdown/DrawerExamples.mdx';
+import EmptyStateExamples from '../../componentDocs/EmptyState/markdown/EmptyStateExamples.mdx';
+import GradeExamples from '../../componentDocs/Grade/markdown/GradeExamples.mdx';
+import HeaderExamples from '../../componentDocs/Header/markdown/HeaderExamples.mdx';
+// import HeroExamples from '../../componentDocs/Hero/markdown/HeroExamples.mdx';
+import IconsExamples from '../../componentDocs/Icons/markdown/IconsExamples.mdx';
+import IconSwitchExamples from '../../componentDocs/IconSwitch/markdown/IconSwitchExamples.mdx';
+import InfoListItemExamples from '../../componentDocs/InfoListItem/markdown/InfoListItemExamples.mdx';
+import ListItemTagExamples from '../../componentDocs/ListItemTag/markdown/ListItemTagExamples.mdx';
+import MobileStepperExamples from '../../componentDocs/MobileStepper/markdown/MobileStepperExamples.mdx';
+import OverlineExamples from '../../componentDocs/Overline/markdown/OverlineExamples.mdx';
+import ScoreCardExamples from '../../componentDocs/ScoreCard/markdown/ScoreCardExamples.mdx';
+import SpacerExamples from '../../componentDocs/Spacer/markdown/SpacerExamples.mdx';
+import UserMenuExamples from '../../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
 
 // API Docs markdown
 import ChannelValueAPIDocs from '../../componentDocs/ChannelValue/markdown/ChannelValueAPIDocs.mdx';
 import ChipAPIDocs from '../../componentDocs/Chip/markdown/ChipAPIDocs.mdx';
+import CollapsibleHeaderAPIDocs from '../../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutAPIDocs.mdx';
+import DrawerAPIDocs from '../../componentDocs/Drawer/markdown/DrawerAPIDocs.mdx';
+import EmptyStateAPIDocs from '../../componentDocs/EmptyState/markdown/EmptyStateAPIDocs.mdx';
+import GradeAPIDocs from '../../componentDocs/Grade/markdown/GradeAPIDocs.mdx';
+import HeaderAPIDocs from '../../componentDocs/Header/markdown/HeaderAPIDocs.mdx';
+// import HeroAPIDocs from '../../componentDocs/Hero/markdown/HeroAPIDocs.mdx';
+import IconsAPIDocs from '../../componentDocs/Icons/markdown/IconsAPIDocs.mdx';
+import IconSwitchAPIDocs from '../../componentDocs/IconSwitch/markdown/IconSwitchAPIDocs.mdx';
+import InfoListItemAPIDocs from '../../componentDocs/InfoListItem/markdown/InfoListItemAPIDocs.mdx';
+import ListItemTagAPIDocs from '../../componentDocs/ListItemTag/markdown/ListItemTagAPIDocs.mdx';
+import MobileStepperAPIDocs from '../../componentDocs/MobileStepper/markdown/MobileStepperAPIDocs.mdx';
+import OverlineAPIDocs from '../../componentDocs/Overline/markdown/OverlineAPIDocs.mdx';
+import ScoreCardAPIDocs from '../../componentDocs/ScoreCard/markdown/ScoreCardAPIDocs.mdx';
+import SpacerAPIDocs from '../../componentDocs/Spacer/markdown/SpacerAPIDocs.mdx';
+import UserMenuAPIDocs from '../../componentDocs/UserMenu/markdown/UserMenuAPIDocs.mdx';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
   title: string;
@@ -85,12 +115,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <ChannelValueExamples />,
+            element: <CollapsibleHeaderLayoutExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <ChannelValueAPIDocs />,
+            element: <CollapsibleHeaderAPIDocs />,
           },
         ],
       },
@@ -102,17 +132,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <ChannelValueExamples />,
+            element: <DrawerExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <ChannelValueAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <ChannelValuePlaygroundComponent />,
+            element: <DrawerAPIDocs />,
           },
         ],
       },
@@ -124,17 +149,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <EmptyStateExamples />,
+            element: <EmptyStateExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <EmptyStateAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <EmptyStatePlaygroundComponent />,
+            element: <EmptyStateAPIDocs />,
           },
         ],
       },
@@ -146,17 +166,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <EmptyStateExamples />,
+            element: <GradeExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <EmptyStateAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <EmptyStatePlaygroundComponent />,
+            element: <GradeAPIDocs />,
           },
         ],
       },
@@ -168,17 +183,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <EmptyStateExamples />,
+            element: <HeaderExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <EmptyStateAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <EmptyStatePlaygroundComponent />,
+            element: <HeaderAPIDocs />,
           },
         ],
       },
@@ -197,11 +207,6 @@ export const pageDefinitions: RouteConfig[] = [
             path: 'api-docs',
             // element: <HeroAPIDocs />,
           },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <HeroPlaygroundComponent />,
-          },
         ],
       },
       {
@@ -212,17 +217,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <HeroExamples />,
+            element: <IconsExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <HeroAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <HeroPlaygroundComponent />,
+            element: <IconsAPIDocs />,
           },
         ],
       },
@@ -234,17 +234,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <HeroExamples />,
+            element: <IconSwitchExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <HeroAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <HeroPlaygroundComponent />,
+            element: <IconSwitchAPIDocs />,
           },
         ],
       },
@@ -256,17 +251,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <InfoListItemExamples />,
+            element: <InfoListItemExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <InfoListItemAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <InfoListItemPlaygroundComponent />,
+            element: <InfoListItemAPIDocs />,
           },
         ],
       },
@@ -278,17 +268,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <ListItemTagExamples />,
+            element: <ListItemTagExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <ListItemTagAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <ListItemTagPlaygroundComponent />,
+            element: <ListItemTagAPIDocs />,
           },
         ],
       },
@@ -300,17 +285,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <ThreeLinerExamples />,
+            element: <MobileStepperExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <ThreeLinerAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <ThreeLinerPlaygroundComponent />,
+            element: <MobileStepperAPIDocs />,
           },
         ],
       },
@@ -322,17 +302,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <ThreeLinerExamples />,
+            element: <OverlineExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <ThreeLinerAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <ThreeLinerPlaygroundComponent />,
+            element: <OverlineAPIDocs />,
           },
         ],
       },
@@ -344,17 +319,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <ScoreCardExamples />,
+            element: <ScoreCardExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <ScoreCardAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <ScoreCardPlaygroundComponent />,
+            element: <ScoreCardAPIDocs />,
           },
         ],
       },
@@ -366,12 +336,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <SpacerExamples />,
+            element: <SpacerExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <SpacerAPIDocs />,
+            element: <SpacerAPIDocs />,
           },
         ],
       },
@@ -383,17 +353,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <UserMenuExamples />,
+            element: <UserMenuExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <UserMenuAPIDocs />,
-          },
-          {
-            title: 'playground',
-            path: 'playground',
-            // element: <UserMenuPlaygroundComponent />,
+            element: <UserMenuAPIDocs />,
           },
         ],
       },
