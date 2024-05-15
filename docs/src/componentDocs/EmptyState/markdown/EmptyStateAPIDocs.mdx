@@ -1,1 +1,57 @@
+import Box from '@mui/material/Box';
+import EmptyStateImage from '../images/emptyState.png';
+
 ### Empty State API Docs
+
+The `<EmptyState>` component is an element that can be used as a placeholder when no data is present (such as an empty list, or a placeholder page for future content). This is only used when no data is available, rather than during loading (see [empty states pattern](https://brightlayer-ui.github.io/patterns/empty-states)).
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '200px',
+    }}
+    component="img"
+    alt="Empty State Image"
+    src={EmptyStateImage}
+  />
+</Box>
+
+## API
+
+<div>
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+
+| Prop Name   | Description                           | Type                | Required | Default |
+| ----------- | ------------------------------------- | ------------------- | -------- | ------- |
+| actions     | Additional components to render below | `ReactNode`         | no       |         |
+| classes     | Style overrides                       | `EmptyStateClasses` | no       |         |
+| icon        | The primary icon                      | `ReactNode`         | yes      |         |
+| description | The secondary text to display         | `ReactNode`         | no       |         |
+| title       | The main text to display              | `ReactNode`         | yes      |         |
+
+</div>
+
+Any other props supplied will be provided to the root element ([`<Box>`](https://mui.com/material-ui/api/box/)).
+
+### Styles
+
+You can override the internal styles used by Brightlayer UI by passing a `styles` prop. It supports the following keys:
+
+<Box>
+
+| Name        | Description                               |
+| ----------- | ----------------------------------------- |
+| root        | Styles applied to the root element        |
+| title       | Styles applied to the title element       |
+| description | Styles applied to the description element |
+| actions     | Styles applied to the actions element     |
+
+</Box>
