@@ -20,32 +20,19 @@ The `<EmptyState>` component is an element that can be used as a placeholder whe
     src={EmptyStateImage}
   />
 </Box>
-
-## Usage
-
-```tsx
-import {EmptyState} from '@brightlayer-ui/react-native-components';
-
-<EmptyState
-  title={'Nothing Found'}
-  description={'Not a single thing'}
-  icon={{family: 'brightlayer-ui', name: 'battery'}}
-/>;
-```
-
 ## API
 
 <Box>
 
-| Prop Name   | Description                                    | Type                          | Required | Default                 |
-| ----------- | ---------------------------------------------- | ----------------------------- | -------- | ----------------------- |
-| title       | The primary text to display (first line)       | `ReactNode`                   | yes      |                         |
-| description | The secondary text to display (second line)    | `ReactNode`                   | no       |                         |
-| icon        | A component to render for the primary icon     | [`IconSource`](./Icons.md)    | no       |                         |
-| iconSize    | The size of the primary icon (100-200)         | `number`                      | no       | 100                     |
-| iconColor   | The color of the primary icon                  | `string`                      | no       | `theme.colors.disabled` |
-| actions     | Additional components to render below the text | `JSX.Element`                 | no       |                         |
-| theme       | Theme value overrides                          | `$DeepPartial<ExtendedTheme>` | no       |                         |
+| Prop Name   | Description                                    | Type                                           | Required | Default                 |
+| ----------- | ---------------------------------------------- | ---------------------------------------------- | -------- | ----------------------- |
+| title       | The primary text to display (first line)       | `ReactNode`                                    | yes      |                         |
+| description | The secondary text to display (second line)    | `ReactNode`                                    | no       |                         |
+| icon        | A component to render for the primary icon     | [`IconSource`](/components/Icons/api-docs.mdx) | no       |                         |
+| iconSize    | The size of the primary icon (100-200)         | `number`                                       | no       | 100                     |
+| iconColor   | The color of the primary icon                  | `string`                                       | no       | `theme.colors.disabled` |
+| actions     | Additional components to render below the text | `JSX.Element`                                  | no       |                         |
+| theme       | Theme value overrides                          | `$DeepPartial<ExtendedTheme>`                  | no       |                         |
 
 </Box>
 
