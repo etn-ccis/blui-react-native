@@ -1,1 +1,44 @@
-### Spacer API Docs
+import Box from '@mui/material/Box';
+import Spacer from '../images/spacer.png';
+
+# Spacer
+
+An invisible utility component that acts as a spacer element in various layouts. It works with flexbox sizing or fixed sizing.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '300px',
+    }}
+    component="img"
+    alt="Spacer used in Drawer Body"
+    src={Spacer}
+  />
+</Box>
+
+## API
+
+<Box>
+
+| Prop Name | Description                                    | Type     | Required | Default |
+| --------- | ---------------------------------------------- | -------- | -------- | ------- |
+| flex      | Flex grow/shrink value for use in flex layouts | `number` | no       | 1       |
+| height    | Height (in dp) for static layouts              | `number` | no       |         |
+| width     | Width (in dp) for static layouts               | `number` | no       |         |
+
+</Box>
+
+Any other props will be provided to the root element ([**View**](https://reactnative.dev/docs/view))
+
+### Styles
+
+You can override the classes used by Brightlayer UI by passing a `styles` prop. It supports the following key:
+
+| Name | Description                        |
+| ---- | ---------------------------------- |
+| root | Styles applied to the root element |
