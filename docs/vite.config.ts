@@ -3,6 +3,7 @@ import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
 import {nxViteTsPaths} from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import mdx from '@mdx-js/rollup';
+import remarkGfm from 'remark-gfm';
 
 export default defineConfig({
   root: __dirname,
@@ -23,6 +24,8 @@ export default defineConfig({
     nxViteTsPaths(),
     mdx({
       /* jsxImportSource: …, otherOptions… */
+      remarkPlugins: [remarkGfm],
+      providerImportSource: '@mdx-js/react',
     }),
   ],
 
