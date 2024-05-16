@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import EmptyStateImage from '../images/emptyState.png';
 
-### Empty State API Docs
+# Empty State
 
 The `<EmptyState>` component is an element that can be used as a placeholder when no data is present (such as an empty list, or a placeholder page for future content). This is only used when no data is available, rather than during loading (see [empty states pattern](https://brightlayer-ui.github.io/patterns/empty-states)).
 
@@ -13,31 +13,41 @@ The `<EmptyState>` component is an element that can be used as a placeholder whe
   <Box
     sx={{
       width: '100%',
-      maxWidth: '200px',
+      maxWidth: '500px',
     }}
     component="img"
-    alt="Empty State Image"
+    alt="Empty state with all props"
     src={EmptyStateImage}
   />
 </Box>
 
+## Usage
+
+```tsx
+import {EmptyState} from '@brightlayer-ui/react-native-components';
+
+<EmptyState
+  title={'Nothing Found'}
+  description={'Not a single thing'}
+  icon={{family: 'brightlayer-ui', name: 'battery'}}
+/>;
+```
+
 ## API
 
-<div>
-| Column 1 | Column 2 | Column 3 |
-| -------- | -------- | -------- |
-| Cell 1   | Cell 2   | Cell 3   |
-| Cell 4   | Cell 5   | Cell 6   |
+<Box>
 
-| Prop Name   | Description                           | Type                | Required | Default |
-| ----------- | ------------------------------------- | ------------------- | -------- | ------- |
-| actions     | Additional components to render below | `ReactNode`         | no       |         |
-| classes     | Style overrides                       | `EmptyStateClasses` | no       |         |
-| icon        | The primary icon                      | `ReactNode`         | yes      |         |
-| description | The secondary text to display         | `ReactNode`         | no       |         |
-| title       | The main text to display              | `ReactNode`         | yes      |         |
+| Prop Name   | Description                                    | Type                          | Required | Default                 |
+| ----------- | ---------------------------------------------- | ----------------------------- | -------- | ----------------------- |
+| title       | The primary text to display (first line)       | `ReactNode`                   | yes      |                         |
+| description | The secondary text to display (second line)    | `ReactNode`                   | no       |                         |
+| icon        | A component to render for the primary icon     | [`IconSource`](./Icons.md)    | no       |                         |
+| iconSize    | The size of the primary icon (100-200)         | `number`                      | no       | 100                     |
+| iconColor   | The color of the primary icon                  | `string`                      | no       | `theme.colors.disabled` |
+| actions     | Additional components to render below the text | `JSX.Element`                 | no       |                         |
+| theme       | Theme value overrides                          | `$DeepPartial<ExtendedTheme>` | no       |                         |
 
-</div>
+</Box>
 
 Any other props supplied will be provided to the root element ([`<Box>`](https://mui.com/material-ui/api/box/)).
 
