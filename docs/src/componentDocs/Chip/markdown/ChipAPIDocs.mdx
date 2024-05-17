@@ -1,1 +1,41 @@
-### Chip API Docs
+import Box from '@mui/material/Box';
+import ChipComponentImage from '../images/chip.png';
+
+# Chip
+
+The Chip component is a customizable [chip](https://callstack.github.io/react-native-paper/docs/components/Chip/)-based component that makes the chip component in alignment to BrightlayerUI. Chips are compact elements that can represent inputs, attributes, or actions. They can have an icon or avatar on the left, and a close button icon on the right.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '400px',
+    }}
+    component="img"
+    alt="Chipcomponent"
+    src={ChipComponentImage}
+  />
+</Box>
+
+### Chip API
+
+| Prop Name   | Description                        | Type                                       | Required | Default |
+| ----------- | ---------------------------------- | ------------------------------------------ | -------- | ------- |
+| chipColor   | The color of the chip              | `string`                                   | no       |         |
+| textColor   | The color of the text label        | `string`                                   | no       |         |
+| iconColor   | The color of the icon              | `string`                                   | no       |         |
+| borderColor | The color of border color          | `string`                                   | no       |         |
+| icon        | A component to render for the icon | [`IconSource`](/components/Icons/api-docs) | no       |         |
+| mode        | The size of the circle in px       | `string`                                   | no       |         |
+| avatar      | Avatar to display in chip          | `React.ReactNode`                          | no       |         |
+| theme       | Theme value overrides              | `$DeepPartial<ExtendedTheme>`              | no       |         |
+
+Other Props of chip can be found at [Chip Props](https://callstack.github.io/react-native-paper/docs/components/Chip/)
+
+### Styles
+
+You can override the internal style used by Brightlayer UI by passing a `style` prop.
