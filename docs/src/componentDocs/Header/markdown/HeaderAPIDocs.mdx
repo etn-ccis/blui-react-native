@@ -1,24 +1,37 @@
 import Box from '@mui/material/Box';
 import headerSmallImage from '../images/header_small.png';
+import headerLargeImage from '../images/header_large.png';
 
 # Header
 
 The `<Header>` component is used at the top of the page to display page information. It shows a title and has optional parameters to show a subtitle, background image, navigation button, and multiple action buttons. The header can also be configured to expand/collapse as desired. For expand/collapse behavior tied to the screen scroll position, you should use the [`<CollapsibleHeaderLayout>`](./CollapsibleHeaderLayout.md) component.
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '500px',
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        mb: 2,
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Header with props"
-    src={headerSmallImage}
-  />
+>
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="Header component"
+        src={headerSmallImage}
+    />
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="Header component"
+        src={headerLargeImage}
+    />
 </Box>
 
 ## API
@@ -36,7 +49,7 @@ The `<Header>` component is used at the top of the page to display page informat
 | expandedHeight      | The height of the header when expanded                                                                                     | `number`                                                                         | no       | 200                               |
 | fontColor           | Color of the title, subtitle, info, and icons in the header                                                                | `string`                                                                         | no       | `theme.colors.onPrimaryContainer` |
 | info                | Third line of text (hidden on collapse)                                                                                    | `ReactNode`                                                                      | no       |                                   |
-| icon                | Icon to show to the left of the title                                                                                      | [`IconSource`](./Icons.md)                                                       | no       |                                   |
+| icon                | Icon to show to the left of the title                                                                                      | [`IconSource`](/components/Icons/api-docs)                                                       | no       |                                   |
 | navigationIconColor | The color used for the Navigation icon                                                                                     | `string`                                                                         | no       | `theme.colors.onSurface`          |
 | onIconPress         | A callback to execute when the icon is pressed                                                                             | `() => void`                                                                     | no       |                                   |
 | scrollPosition      | Y-value of the linked ScrollView (dynamic variant only)                                                                    | `Animated.Value`                                                                 | no       |                                   |
@@ -85,7 +98,7 @@ Header icons specified as a JSON object with the following properties:
 
 | Key     | Description                        | Type                       | Required | Default |
 | ------- | ---------------------------------- | -------------------------- | -------- | ------- |
-| icon    | A component to render for the icon | [`IconSource`](./Icons.md) | yes      |         |
+| icon    | A component to render for the icon | [`IconSource`](/components/Icons/api-docs) | yes      |         |
 | onPress | A function to execute when pressed | `function`                 | no       |         |
 
 </Box>
@@ -114,7 +127,7 @@ SearchableConfig is an optional object used to configure the search functionalit
 | autoCapitalize | Determines how the search input will be capitalized            | [`TextInput.autoCapitalize`](https://reactnative.dev/docs/textinput) | no       | 'none'   |
 | autoCorrect    | Determines whether auto-correct is enabled in the search input | `boolean`                                                            | no       | `false`  |
 | autoFocus      | Gives focus to search input when opened                        | `boolean`                                                            | no       | `false`  |
-| icon           | Icon to override default search icon                           | [`IconSource`](./Icons.md)                                           | no       |          |
+| icon           | Icon to override default search icon                           | [`IconSource`](/components/Icons/api-docs)                                           | no       |          |
 | onChangeText   | Callback when search text changes                              | `(text: string) => void`                                             | no       |          |
 | placeholder    | Placeholder text for the search input                          | `string`                                                             | no       | 'Search' |
 
