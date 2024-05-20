@@ -1,1 +1,75 @@
-### Grade API Docs
+import Box from '@mui/material/Box';
+import GradeComponentImage from '../images/grade.png';
+import GradeCSubComponentImage from '../images/gradesSubcomponent.png';
+
+# Grade
+
+The Grade component is a customizable [avatar](https://callstack.github.io/react-native-paper/4.0/avatar-text.html)-based component that represents different grades. It allows you to display a label with a specified background color and font color.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '150px',
+    }}
+    component="img"
+    alt="Gradecomponent"
+    src={GradeComponentImage}
+  />
+</Box>
+
+## Grade API
+
+<Box>
+
+| Prop Name       | Description                        | Type                          | Required | Default                  |
+| --------------- | ---------------------------------- | ----------------------------- | -------- | ------------------------ |
+| label           | The text shown in the circle       | `string`                      | yes      |                          |
+| fontColor       | The color of the text label        | `string`                      | no       | `theme.colors.onPrimary` |
+| backgroundColor | The background color of the circle | `string`                      | no       | `theme.colors.primary`   |
+| size            | The size of the circle in px       | `number`                      | no       | 40                       |
+| theme           | Theme value overrides              | `$DeepPartial<ExtendedTheme>` | no       |                          |
+
+</Box>
+
+Any other props will be provided to the root element ([**View**](https://reactnative.dev/docs/view)).
+
+## Grade Subcomponent
+
+The subcomponents are a set of preconfigured components that can be used directly for specific grades with in-built styling.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '200px',
+    }}
+    component="img"
+    alt="Grade Subcomponent"
+    src={GradeCSubComponentImage}
+  />
+</Box>
+
+### Grade Subcomponents API
+
+All Grade Subcomponents have the following Props
+
+<Box>
+
+| Prop Name | Description         | Type     | Required | Default |
+| --------- | ------------------- | -------- | -------- | ------- |
+| size      | The radius of Grade | `number` | No       | 40      |
+
+</Box>
+
+### Styles
+
+You can override the internal style used by Brightlayer UI by passing a `style` prop.
