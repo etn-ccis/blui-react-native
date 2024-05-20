@@ -1,47 +1,47 @@
 import React from 'react';
 import {RouteProps, Outlet} from 'react-router';
-import {ComponentPreviewPage, HomePage, MarkdownPage} from '../../pages';
+import {ComponentPreviewPage, HomePage, MarkdownPage} from '../pages';
 
 // Site markdown docs
-import * as markdownDocs from '../../markdownDocs/';
+import AllComponents from '../componentDocs/allComponents.mdx';
 
 // Examples markdown
-import ChannelValueExamples from '../../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
-import ChipExamples from '../../componentDocs/Chip/markdown/ChipExamples.mdx';
-import CollapsibleHeaderLayoutExamples from '../../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutExamples.mdx';
-import DrawerExamples from '../../componentDocs/Drawer/markdown/DrawerExamples.mdx';
-import EmptyStateExamples from '../../componentDocs/EmptyState/markdown/EmptyStateExamples.mdx';
-import GradeExamples from '../../componentDocs/Grade/markdown/GradeExamples.mdx';
-import HeaderExamples from '../../componentDocs/Header/markdown/HeaderExamples.mdx';
+import ChannelValueExamples from '../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
+import ChipExamples from '../componentDocs/Chip/markdown/ChipExamples.mdx';
+import CollapsibleHeaderLayoutExamples from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutExamples.mdx';
+import DrawerExamples from '../componentDocs/Drawer/markdown/DrawerExamples.mdx';
+import EmptyStateExamples from '../componentDocs/EmptyState/markdown/EmptyStateExamples.mdx';
+import GradeExamples from '../componentDocs/Grade/markdown/GradeExamples.mdx';
+import HeaderExamples from '../componentDocs/Header/markdown/HeaderExamples.mdx';
 // import HeroExamples from '../../componentDocs/Hero/markdown/HeroExamples.mdx';
-import IconsExamples from '../../componentDocs/Icons/markdown/IconsExamples.mdx';
-import IconSwitchExamples from '../../componentDocs/IconSwitch/markdown/IconSwitchExamples.mdx';
-import InfoListItemExamples from '../../componentDocs/InfoListItem/markdown/InfoListItemExamples.mdx';
-import ListItemTagExamples from '../../componentDocs/ListItemTag/markdown/ListItemTagExamples.mdx';
-import MobileStepperExamples from '../../componentDocs/MobileStepper/markdown/MobileStepperExamples.mdx';
-import OverlineExamples from '../../componentDocs/Overline/markdown/OverlineExamples.mdx';
-import ScoreCardExamples from '../../componentDocs/ScoreCard/markdown/ScoreCardExamples.mdx';
-import SpacerExamples from '../../componentDocs/Spacer/markdown/SpacerExamples.mdx';
-import UserMenuExamples from '../../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
+import IconsExamples from '../componentDocs/Icons/markdown/IconsExamples.mdx';
+import IconSwitchExamples from '../componentDocs/IconSwitch/markdown/IconSwitchExamples.mdx';
+import InfoListItemExamples from '../componentDocs/InfoListItem/markdown/InfoListItemExamples.mdx';
+import ListItemTagExamples from '../componentDocs/ListItemTag/markdown/ListItemTagExamples.mdx';
+import MobileStepperExamples from '../componentDocs/MobileStepper/markdown/MobileStepperExamples.mdx';
+import OverlineExamples from '../componentDocs/Overline/markdown/OverlineExamples.mdx';
+import ScoreCardExamples from '../componentDocs/ScoreCard/markdown/ScoreCardExamples.mdx';
+import SpacerExamples from '../componentDocs/Spacer/markdown/SpacerExamples.mdx';
+import UserMenuExamples from '../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
 
 // API Docs markdown
-import ChannelValueAPIDocs from '../../componentDocs/ChannelValue/markdown/ChannelValueAPIDocs.mdx';
-import ChipAPIDocs from '../../componentDocs/Chip/markdown/ChipAPIDocs.mdx';
-import CollapsibleHeaderAPIDocs from '../../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutAPIDocs.mdx';
-import DrawerAPIDocs from '../../componentDocs/Drawer/markdown/DrawerAPIDocs.mdx';
-import EmptyStateAPIDocs from '../../componentDocs/EmptyState/markdown/EmptyStateAPIDocs.mdx';
-import GradeAPIDocs from '../../componentDocs/Grade/markdown/GradeAPIDocs.mdx';
-import HeaderAPIDocs from '../../componentDocs/Header/markdown/HeaderAPIDocs.mdx';
+import ChannelValueAPIDocs from '../componentDocs/ChannelValue/markdown/ChannelValueAPIDocs.mdx';
+import ChipAPIDocs from '../componentDocs/Chip/markdown/ChipAPIDocs.mdx';
+import CollapsibleHeaderAPIDocs from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutAPIDocs.mdx';
+import DrawerAPIDocs from '../componentDocs/Drawer/markdown/DrawerAPIDocs.mdx';
+import EmptyStateAPIDocs from '../componentDocs/EmptyState/markdown/EmptyStateAPIDocs.mdx';
+import GradeAPIDocs from '../componentDocs/Grade/markdown/GradeAPIDocs.mdx';
+import HeaderAPIDocs from '../componentDocs/Header/markdown/HeaderAPIDocs.mdx';
 // import HeroAPIDocs from '../../componentDocs/Hero/markdown/HeroAPIDocs.mdx';
-import IconsAPIDocs from '../../componentDocs/Icons/markdown/IconsAPIDocs.mdx';
-import IconSwitchAPIDocs from '../../componentDocs/IconSwitch/markdown/IconSwitchAPIDocs.mdx';
-import InfoListItemAPIDocs from '../../componentDocs/InfoListItem/markdown/InfoListItemAPIDocs.mdx';
-import ListItemTagAPIDocs from '../../componentDocs/ListItemTag/markdown/ListItemTagAPIDocs.mdx';
-import MobileStepperAPIDocs from '../../componentDocs/MobileStepper/markdown/MobileStepperAPIDocs.mdx';
-import OverlineAPIDocs from '../../componentDocs/Overline/markdown/OverlineAPIDocs.mdx';
-import ScoreCardAPIDocs from '../../componentDocs/ScoreCard/markdown/ScoreCardAPIDocs.mdx';
-import SpacerAPIDocs from '../../componentDocs/Spacer/markdown/SpacerAPIDocs.mdx';
-import UserMenuAPIDocs from '../../componentDocs/UserMenu/markdown/UserMenuAPIDocs.mdx';
+import IconsAPIDocs from '../componentDocs/Icons/markdown/IconsAPIDocs.mdx';
+import IconSwitchAPIDocs from '../componentDocs/IconSwitch/markdown/IconSwitchAPIDocs.mdx';
+import InfoListItemAPIDocs from '../componentDocs/InfoListItem/markdown/InfoListItemAPIDocs.mdx';
+import ListItemTagAPIDocs from '../componentDocs/ListItemTag/markdown/ListItemTagAPIDocs.mdx';
+import MobileStepperAPIDocs from '../componentDocs/MobileStepper/markdown/MobileStepperAPIDocs.mdx';
+import OverlineAPIDocs from '../componentDocs/Overline/markdown/OverlineAPIDocs.mdx';
+import ScoreCardAPIDocs from '../componentDocs/ScoreCard/markdown/ScoreCardAPIDocs.mdx';
+import SpacerAPIDocs from '../componentDocs/Spacer/markdown/SpacerAPIDocs.mdx';
+import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.mdx';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
   title: string;
@@ -66,12 +66,7 @@ export const pageDefinitions: RouteConfig[] = [
       {
         title: 'All Components',
         path: 'component-catalog',
-        element: (
-          <MarkdownPage
-            title={'Components'}
-            markdown={markdownDocs.AllComponents}
-          />
-        ),
+        element: <MarkdownPage title={'Components'} markdown={AllComponents} />,
       },
       {
         title: 'Channel Value',

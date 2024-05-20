@@ -13,7 +13,7 @@ import {
   //   externalLinkDefinitions,
   pageDefinitions,
   RouteConfig,
-} from '../__configuration__/navigationMenu/navigation';
+} from '../__configuration__/navigationMenu';
 import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
