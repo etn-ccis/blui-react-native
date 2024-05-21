@@ -61,19 +61,19 @@ The `<DrawerHeader>` is a subsection that appears at the top of `<Drawer>`. Its 
 
 <Box>
 
-| Prop Name         | Description                                      | Type                          | Required | Default                |
-| ----------------- | ------------------------------------------------ | ----------------------------- | -------- | ---------------------- |
-| backgroundColor   | The color used for the background                | `string`                      | no       | `theme.colors.surface` |
-| backgroundImage   | An image to display in the header                | `ImageSourcePropType`         | no       |                        |
-| backgroundOpacity | The opacity of the background image              | `number`                      | no       | `0.3`                  |
-| fontColor         | Color of the icon and header texts               | `string`                      | no       | Multiple               |
-| icon              | A component to render for the icon               | [`IconSource`](./Icons.md)    | no       |                        |
-| onPress           | A callback to execute when the header is pressed | `() => void`                  | no       |                        |
-| onIconPress       | A callback to execute when the icon is pressed   | `() => void`                  | no       |                        |
-| subtitle          | The second line of text                          | `string`                      | no       |                        |
-| title             | The first line of text                           | `string`                      | no       |                        |
-| titleContent      | Custom content for header title area             | `ReactNode`                   | no       |                        |
-| theme             | Theme value overrides                            | `$DeepPartial<ExtendedTheme>` | no       |                        |
+| Prop Name         | Description                                      | Type                                       | Required | Default                |
+| ----------------- | ------------------------------------------------ | ------------------------------------------ | -------- | ---------------------- |
+| backgroundColor   | The color used for the background                | `string`                                   | no       | `theme.colors.surface` |
+| backgroundImage   | An image to display in the header                | `ImageSourcePropType`                      | no       |                        |
+| backgroundOpacity | The opacity of the background image              | `number`                                   | no       | `0.3`                  |
+| fontColor         | Color of the icon and header texts               | `string`                                   | no       | Multiple               |
+| icon              | A component to render for the icon               | [`IconSource`](/components/Icons/api-docs) | no       |                        |
+| onPress           | A callback to execute when the header is pressed | `() => void`                               | no       |                        |
+| onIconPress       | A callback to execute when the icon is pressed   | `() => void`                               | no       |                        |
+| subtitle          | The second line of text                          | `string`                                   | no       |                        |
+| title             | The first line of text                           | `string`                                   | no       |                        |
+| titleContent      | Custom content for header title area             | `ReactNode`                                | no       |                        |
+| theme             | Theme value overrides                            | `$DeepPartial<ExtendedTheme>`              | no       |                        |
 
 </Box>
 
@@ -201,21 +201,21 @@ The `<DrawerNavItem>` is an individual line item in the `<Drawer>`. These can be
 
 <Box>
 
-| Prop Name                       | Description                                                                                     | Type                       | Required | Default |
-| ------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------- | -------- | ------- |
-| depth\*                         | The nested depth of the item                                                                    | `number`                   | no       | 0       |
-| hidden                          | Hide / do not render the nav item                                                               | `boolean`                  | no       | `false` |
-| icon                            | A component to render for the left icon                                                         | [`IconSource`](./Icons.md) | no       |         |
-| isInActiveTree\*                | Sets whether the item is a parent of the currently active item                                  | `boolean`                  | no       | `false` |
-| itemID                          | An unique identifier of the NavItem. Item will have 'active' style when this matches activeItem | `string`                   | yes      |         |
-| items                           | The items nested under this item                                                                | `NestedNavItem[]`          | no       |         |
-| notifyActiveParent\*            | Callback function to the parent element to update active hierarchy styles                       | `(ids: string[]) => void`  | no       |         |
-| onPress                         | A function to execute when the item is pressed                                                  | `() => void`               | no       |         |
-| rightComponent                  | Custom content/component to display to the right                                                | `ReactNode`                | no       |         |
-| statusColor                     | Color used for the status stripe and icon                                                       | `string`                   | no       |         |
-| subtitle                        | The text to show on the second line                                                             | `string`                   | no       |         |
-| title                           | The text to show on the first line                                                              | `string`                   | yes      |         |
-| [...sharedProps](#shared-props) | Props that can be set at any level in the drawer hierarchy                                      | -                          | -        |         |
+| Prop Name                       | Description                                                                                     | Type                                       | Required | Default |
+| ------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------ | -------- | ------- |
+| depth\*                         | The nested depth of the item                                                                    | `number`                                   | no       | 0       |
+| hidden                          | Hide / do not render the nav item                                                               | `boolean`                                  | no       | `false` |
+| icon                            | A component to render for the left icon                                                         | [`IconSource`](/components/Icons/api-docs) | no       |         |
+| isInActiveTree\*                | Sets whether the item is a parent of the currently active item                                  | `boolean`                                  | no       | `false` |
+| itemID                          | An unique identifier of the NavItem. Item will have 'active' style when this matches activeItem | `string`                                   | yes      |         |
+| items                           | The items nested under this item                                                                | `NestedNavItem[]`                          | no       |         |
+| notifyActiveParent\*            | Callback function to the parent element to update active hierarchy styles                       | `(ids: string[]) => void`                  | no       |         |
+| onPress                         | A function to execute when the item is pressed                                                  | `() => void`                               | no       |         |
+| rightComponent                  | Custom content/component to display to the right                                                | `ReactNode`                                | no       |         |
+| statusColor                     | Color used for the status stripe and icon                                                       | `string`                                   | no       |         |
+| subtitle                        | The text to show on the second line                                                             | `string`                                   | no       |         |
+| title                           | The text to show on the first line                                                              | `string`                                   | yes      |         |
+| [...sharedProps](#shared-props) | Props that can be set at any level in the drawer hierarchy                                      | -                                          | -        |         |
 
 </Box>
 
