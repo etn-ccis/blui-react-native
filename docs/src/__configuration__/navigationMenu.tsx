@@ -1,6 +1,10 @@
 import React from 'react';
 import {RouteProps, Outlet} from 'react-router';
-import {ComponentPreviewPage, HomePage, MarkdownPage} from '../pages';
+import {
+  ComponentPreviewPage,
+  HomePage,
+  MarkdownPage,
+} from '../components/pages';
 
 // Site markdown docs
 import AllComponents from '../componentDocs/allComponents.mdx';

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {DrawerContext} from '../contexts/drawerContextProvider';
-import {NavigationDrawer} from '../layout/NavigationDrawer';
-import {MainRouter} from '../router/main';
+import {DrawerContext} from './contexts/drawerContextProvider';
+import {NavigationDrawer} from './components/layout/NavigationDrawer';
+import {MainRouter} from './router/main';
 import {DrawerLayout} from '@brightlayer-ui/react-components';
 import {Routes} from 'react-router-dom';
 

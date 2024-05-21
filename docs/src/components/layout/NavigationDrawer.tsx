@@ -13,17 +13,17 @@ import {
   //   externalLinkDefinitions,
   pageDefinitions,
   RouteConfig,
-} from '../__configuration__/navigationMenu';
+} from '../../__configuration__/navigationMenu';
 import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
-import {DRAWER_WIDTH} from '../shared';
+import {DRAWER_WIDTH} from '../../utils';
 import {React as ReactIcon} from '@brightlayer-ui/icons-mui';
 import {Theme} from '@mui/material';
-import {useAppDispatch, useAppSelector} from '../redux/hooks';
-import {RootState} from '../redux/store';
-import {closeDrawer, toggleDrawer} from '../redux/appState';
-import backgroundImage from '../assets/cubes_tile.png';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
+import {RootState} from '../../redux/store';
+import {closeDrawer, toggleDrawer} from '../../redux/appState';
+import backgroundImage from '../../assets/cubes_tile.png';
 
 // const backgroundImage = '../assets/cubes_tile.png';
 const linearGradientOverlayImage = `linear-gradient(to right, rgba(0, 123, 193, 1) 22.4%, rgba(0, 123, 193, 0.2) 100%), url(${backgroundImage})`;

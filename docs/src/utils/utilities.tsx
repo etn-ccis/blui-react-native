@@ -18,8 +18,8 @@ import TrendingDown from '@mui/icons-material/TrendingDown';
 import {SvgIconProps} from '@mui/material/SvgIcon';
 import Box from '@mui/material/Box';
 import ArrowBack from '@mui/icons-material/ArrowBack';
-import topologyBgImage from '../shared/images/topology_40.png';
-import farmBgImage from '../shared/images/farm.jpg';
+import topologyBgImage from '../assets/topology_40.png';
+import farmBgImage from '../assets/farm.jpg';
 
 export const getSnakeCase = (str: string): string =>
   str.replace(/[A-Z]/g, '_$&').toLowerCase().slice(1);

@@ -9,10 +9,10 @@ import {Github} from '@brightlayer-ui/icons-mui';
 import Mail from '@mui/icons-material/Mail';
 import {SharedAppBar} from '../layout';
 import {Theme} from '@mui/material';
-import {PADDING} from '../shared';
+import {PADDING} from '../../utils';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import {listOfAllBluiReactPackages} from '../__configuration__/listOfAllBluiReactPackages';
-import CirclesImage from '../assets/circles.svg';
+import {listOfAllBluiReactPackages} from '../../__configuration__/listOfAllBluiReactPackages';
+import CirclesImage from '../../assets/circles.svg';
 
 const CONTENT_WIDTH = 800;
 

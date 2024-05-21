@@ -2,7 +2,7 @@ import React, {HTMLAttributes, useMemo} from 'react';
 // import * as Colors from '@brightlayer-ui/colors';
 // import { useBackgroundColor } from '../hooks/useBackgroundColor';
 import Box from '@mui/material/Box';
-import {PAGE_WIDTH, PADDING} from '../shared';
+import {PAGE_WIDTH, PADDING} from '../utils';
 import {useTheme} from '@mui/material/styles';
 
 export type PageContentProps = HTMLAttributes<HTMLDivElement> & {

@@ -1,5 +1,5 @@
 import React, {HTMLAttributes} from 'react';
-import {PageContent} from '../components/PageContent';
+import {PageContent} from '../PageContent';
 import {SharedAppBar} from '../layout';
 
 export type MarkdownPageProps = HTMLAttributes<HTMLDivElement> & {

@@ -19,12 +19,12 @@ import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 
 // hooks
-import {toggleDrawer, changeSiteTheme} from '../redux/appState';
+import {toggleDrawer, changeSiteTheme} from '../../redux/appState';
 // import { changeDirection } from '../redux/appState';
-import {useAppDispatch, useAppSelector} from '../redux/hooks';
+import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {useTheme} from '@mui/material/styles';
-import {RootState} from '../redux/store';
-import {SiteThemeType} from '../__types__';
+import {RootState} from '../../redux/store';
+import {SiteThemeType} from '../../__types__';
 // import { UIDirection } from '../__types__';
 
 export type SharedAppBarProps = {

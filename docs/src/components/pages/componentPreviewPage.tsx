@@ -1,7 +1,7 @@
 import React, {HTMLAttributes} from 'react';
 import Box from '@mui/material/Box';
 import {SharedAppBar} from '../layout';
-import {ComponentPreviewTabs} from '../components/ComponentPreviewTabs';
+import {ComponentPreviewTabs} from '../ComponentPreviewTabs';
 
 export type ComponentPreviewPageProps = HTMLAttributes<HTMLDivElement> & {
   title: string;
