@@ -1,11 +1,12 @@
 import React from 'react';
 import {Grid} from '@mui/material';
-import {componentCatalogLinks} from './ComponentCatalogLinks';
-import {InfoCard} from '../shared/components/InfoCard';
+import {componentCatalogLinks} from '../__configuration__/ComponentCatalogLinks';
 import {useNavigate} from 'react-router-dom';
+import {InfoCard} from './InfoCard';
 
 export const ComponentCatalogGrids: React.FC = () => {
   const navigate = useNavigate();
+
   return (
     <Grid container spacing={6} sx={{mt: 4}}>
       {componentCatalogLinks.map(link => (

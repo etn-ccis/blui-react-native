@@ -1,7 +1,7 @@
 import React, {HTMLAttributes} from 'react';
 import Box from '@mui/material/Box';
 import {SharedAppBar} from '../layout';
-import {ComponentPreviewTabs} from '../shared';
+import {ComponentPreviewTabs} from '../components/ComponentPreviewTabs';
 
 export type ComponentPreviewPageProps = HTMLAttributes<HTMLDivElement> & {
   title: string;
@@ -13,7 +13,7 @@ export const ComponentPreviewPage: React.FC<ComponentPreviewPageProps> = (
 
   return (
     <Box style={{display: 'flex', flexDirection: 'column'}}>
-      <SharedAppBar title={title} />
+      <SharedAppBar title={''} />
       <ComponentPreviewTabs />
     </Box>
   );
