@@ -14,6 +14,12 @@ import ChannelValueExamples from '../componentDocs/ChannelValue/markdown/Channel
 import ChipExamples from '../componentDocs/Chip/markdown/ChipExamples.mdx';
 import CollapsibleHeaderLayoutExamples from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutExamples.mdx';
 import DrawerExamples from '../componentDocs/Drawer/markdown/DrawerExamples.mdx';
+import DrawerHeaderExamples from '../componentDocs/DrawerHeader/markdown/DrawerHeaderExamples.mdx';
+import DrawerSubheaderExamples from '../componentDocs/DrawerSubheader/markdown/DrawerSubheaderExamples.mdx';
+import DrawerBodyExamples from '../componentDocs/DrawerBody/markdown/DrawerBodyExamples.mdx';
+import DrawerNavGroupExamples from '../componentDocs/DrawerNavGroup/markdown/DrawerNavGroupExamples.mdx';
+import DrawerFooterExamples from '../componentDocs/DrawerFooter/markdown/DrawerFooterExamples.mdx';
+import DrawerNavItemExamples from '../componentDocs/DrawerNavItem/markdown/DrawerNavItemExamples.mdx';
 import EmptyStateExamples from '../componentDocs/EmptyState/markdown/EmptyStateExamples.mdx';
 import GradeExamples from '../componentDocs/Grade/markdown/GradeExamples.mdx';
 import HeaderExamples from '../componentDocs/Header/markdown/HeaderExamples.mdx';
@@ -33,6 +39,12 @@ import ChannelValueAPIDocs from '../componentDocs/ChannelValue/markdown/ChannelV
 import ChipAPIDocs from '../componentDocs/Chip/markdown/ChipAPIDocs.mdx';
 import CollapsibleHeaderAPIDocs from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutAPIDocs.mdx';
 import DrawerAPIDocs from '../componentDocs/Drawer/markdown/DrawerAPIDocs.mdx';
+import DrawerHeaderAPIDocs from '../componentDocs/DrawerHeader/markdown/DrawerHeaderAPIDocs.mdx';
+import DrawerSubheaderAPIDocs from '../componentDocs/DrawerSubheader/markdown/DrawerSubheaderAPIDocs.mdx';
+import DrawerBodyAPIDocs from '../componentDocs/DrawerBody/markdown/DrawerBodyAPIDocs.mdx';
+import DrawerNavGroupAPIDocs from '../componentDocs/DrawerNavGroup/markdown/DrawerNavGroupAPIDocs.mdx';
+import DrawerFooterAPIDocs from '../componentDocs/DrawerFooter/markdown/DrawerFooterAPIDocs.mdx';
+import DrawerNavItemAPIDocs from '../componentDocs/DrawerNavItem/markdown/DrawerNavItemAPIDocs.mdx';
 import EmptyStateAPIDocs from '../componentDocs/EmptyState/markdown/EmptyStateAPIDocs.mdx';
 import GradeAPIDocs from '../componentDocs/Grade/markdown/GradeAPIDocs.mdx';
 import HeaderAPIDocs from '../componentDocs/Header/markdown/HeaderAPIDocs.mdx';
@@ -125,18 +137,126 @@ export const pageDefinitions: RouteConfig[] = [
       },
       {
         title: 'Drawer',
-        path: 'drawer/',
-        element: <ComponentPreviewPage title={'Drawer'} />,
-        children: [
+        path: '',
+        pages: [
           {
-            title: 'examples',
-            path: 'examples',
-            element: <DrawerExamples />,
+            title: 'Drawer',
+            path: 'drawer/',
+            element: <ComponentPreviewPage title={'Drawer'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerAPIDocs />,
+              },
+            ],
           },
           {
-            title: 'API Docs',
-            path: 'api-docs',
-            element: <DrawerAPIDocs />,
+            title: 'Drawer Header',
+            path: 'drawer-header/',
+            element: <ComponentPreviewPage title={'Drawer Header'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerHeaderExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerHeaderAPIDocs />,
+              },
+            ],
+          },
+          {
+            title: 'Drawer Subheader',
+            path: 'drawer-subheader/',
+            element: <ComponentPreviewPage title={'Drawer Subheader'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerSubheaderExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerSubheaderAPIDocs />,
+              },
+            ],
+          },
+          {
+            title: 'Drawer Body',
+            path: 'drawer-body/',
+            element: <ComponentPreviewPage title={'Drawer Body'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerBodyExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerBodyAPIDocs />,
+              },
+            ],
+          },
+          {
+            title: 'Drawer Nav Group',
+            path: 'drawer-nav-group/',
+            element: <ComponentPreviewPage title={'Drawer Nav Group'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerNavGroupExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerNavGroupAPIDocs />,
+              },
+            ],
+          },
+          {
+            title: 'Drawer Footer',
+            path: 'drawer-footer/',
+            element: <ComponentPreviewPage title={'Drawer Footer'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerFooterExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerFooterAPIDocs />,
+              },
+            ],
+          },
+          {
+            title: 'Drawer Nav Item',
+            path: 'drawer-nav-item/',
+            element: <ComponentPreviewPage title={'Drawer Nav Item'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerNavItemExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerNavItemAPIDocs />,
+              },
+            ],
           },
         ],
       },

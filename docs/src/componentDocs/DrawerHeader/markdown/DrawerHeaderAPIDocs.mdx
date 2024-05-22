@@ -1,0 +1,46 @@
+import Box from '@mui/material/Box';
+
+# Drawer Header
+
+The `<DrawerHeader>` is a subsection that appears at the top of `<Drawer>`. Its content can be provided by the `title`, `subtitle`, and `icon` props, or you can pass in your own custom content via `titleContent`.
+
+### DrawerHeader API
+
+<Box>
+
+| Prop Name         | Description                                      | Type                                       | Required | Default                |
+| ----------------- | ------------------------------------------------ | ------------------------------------------ | -------- | ---------------------- |
+| backgroundColor   | The color used for the background                | `string`                                   | no       | `theme.colors.surface` |
+| backgroundImage   | An image to display in the header                | `ImageSourcePropType`                      | no       |                        |
+| backgroundOpacity | The opacity of the background image              | `number`                                   | no       | `0.3`                  |
+| fontColor         | Color of the icon and header texts               | `string`                                   | no       | Multiple               |
+| icon              | A component to render for the icon               | [`IconSource`](/components/Icons/api-docs) | no       |                        |
+| onPress           | A callback to execute when the header is pressed | `() => void`                               | no       |                        |
+| onIconPress       | A callback to execute when the icon is pressed   | `() => void`                               | no       |                        |
+| subtitle          | The second line of text                          | `string`                                   | no       |                        |
+| title             | The first line of text                           | `string`                                   | no       |                        |
+| titleContent      | Custom content for header title area             | `ReactNode`                                | no       |                        |
+| theme             | Theme value overrides                            | `$DeepPartial<ExtendedTheme>`              | no       |                        |
+
+</Box>
+
+Any other props will be provided to the root element ([**View**](https://reactnative.dev/docs/view)).
+
+### Styles
+
+You can override the internal styles used by Brightlayer UI by passing a `styles` prop. The DrawerHeader supports the following keys:
+
+<Box>
+
+| Name                   | Description                                    |
+| ---------------------- | ---------------------------------------------- |
+| root                   | Styles applied to the root element             |
+| backgroundImageWrapper | Styles applied to the background image wrapper |
+| backgroundImage        | Styles applied to the background image         |
+| content                | Styles applied to the content wrapper          |
+| textContent            | Styles applied to the text wrapper             |
+| title                  | Styles applied to the title element            |
+| subtitle               | Styles applied to the subtitle element         |
+| icon                   | Styles applied to the left icon element        |
+
+</Box>

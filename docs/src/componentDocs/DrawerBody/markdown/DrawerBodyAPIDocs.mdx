@@ -1,45 +1,21 @@
 import Box from '@mui/material/Box';
-import Drawer from '../images/drawer.png';
 
-# Drawer
+# Drawer Body
 
-The `<Drawer>` component is side-menu that houses navigation items. The Brightlayer UI Drawer includes helper components for `<DrawerHeader>`, `<DrawerSubheader>`, `<DrawerBody>`, `<DrawerNavGroup>`, `<DrawerNavItem>`, and `<DrawerFooter>`to help organize the content. To integrate in-app navigation, the `<Drawer>` component needs to be paired with a navigation provider — we recommend using [React Navigation](https://reactnavigation.org/docs/getting-started).
+The `<DrawerBody>` is a wrapper for the main content of the Drawer. The typical use case is to display `<DrawerNavGroup>` elements, but custom elements (e.g., for spacing) are accepted as well.
 
-To learn more about the Navigation design pattern, check out our [documentation](https://brightlayer-ui.github.io/patterns/navigation).
-
-## Drawer
-
-The `<Drawer>` component is the parent container, which manages the overall state of the drawer and renders the child components.
-
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '200px',
-    }}
-    component="img"
-    alt="Nested Drawer"
-    src={Drawer}
-  />
-</Box>
-
-### Drawer API
+### DrawerBody API
 
 <Box>
 
-| Prop Name                       | Description                                                          | Type                   | Required | Default |
-| ------------------------------- | -------------------------------------------------------------------- | ---------------------- | -------- | ------- |
-| activeItem                      | The itemID of the currently active / selected item                   | `string`               | no       |         |
-| onItemSelect                    | A callback function to execute whenever a navigation item is clicked | `(id: string) => void` | no       |         |
-| [...sharedProps](#shared-props) | Props that can be set at any level in the drawer hierarchy           | -                      | -        |         |
+| Prop Name                       | Description                                                | Type               | Required | Default |
+| ------------------------------- | ---------------------------------------------------------- | ------------------ | -------- | ------- |
+| styles                          | Style overrides                                            | `DrawerBodyStyles` | no       |         |
+| [...sharedProps](#shared-props) | Props that can be set at any level in the drawer hierarchy | -                  | -        |         |
 
 </Box>
 
-Any other props will be provided to the root element ([**View**](https://reactnative.dev/docs/view)).
+Any other props will be provided to the root element ([**ScrollView**](https://reactnative.dev/docs/scrollview)).
 
 #### Styles
 
@@ -47,9 +23,9 @@ You can override the internal styles used by Brightlayer UI by passing a `styles
 
 <Box>
 
-| Name | Description                                 |
-| ---- | ------------------------------------------- |
-| root | Style override for the root Surface element |
+| Name | Description                                    |
+| ---- | ---------------------------------------------- |
+| root | Style override for the root ScrollView element |
 
 </Box>
 
