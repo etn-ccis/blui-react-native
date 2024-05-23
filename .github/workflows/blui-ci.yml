@@ -1,175 +1,116 @@
-# name: Build
+name: Build
 
-# on:
-#   push:
-#     branches: ['dev', 'master']
-#   pull_request:
-#     branches: ['dev', 'master']
-#   pull_request_target:
-#     types:
-#       - opened
-#     branches:
-#       - '*/*'
+on:
+  push:
+    branches: ['dev', 'master']
+  pull_request:
+    branches: ['dev', 'master']
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - '*/*'
 
-# permissions:
-#   pull-requests: write
-#   contents: read
+permissions:
+  pull-requests: write
+  contents: read
 
-# jobs:
-#   prettier_lint:
-#     runs-on: ubuntu-latest
+jobs:
+  prettier_lint:
+    runs-on: ubuntu-latest
 
-#     strategy:
-#       matrix:
-#         node-version: [18.x]
+    strategy:
+      matrix:
+        node-version: [20.x]
 
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#           cache: 'yarn'
-#       - run: yarn
-#       - run: yarn docs-prettier
-#         working-directory: docs
-#       - run: yarn docs-lint
-#         working-directory: docs
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+      - run: yarn
+      - run: yarn docs-prettier
+        working-directory: docs
+    #   - run: yarn docs-lint
+    #     working-directory: docs
 
-#   build_docs:
-#     runs-on: ubuntu-latest
+  build_rn_docs:
+    runs-on: ubuntu-latest
 
-#     strategy:
-#       matrix:
-#         node-version: [18.x]
+    strategy:
+      matrix:
+        node-version: [20.x]
 
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#           cache: 'yarn'
-#       - run: yarn --immutable
-#       - run: yarn docs-build
-#       - name: Save dist
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: dist
-#           if-no-files-found: error
-#           path: dist
+    env:
+        base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
+        # app_branch: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
 
-#   build_reactdev:
-#     runs-on: ubuntu-latest
-#     needs: npm_pack
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+      - run: yarn --immutable
+      - run: yarn docs-build --base-href ${{env.base-href}}
+      - name: Save dist
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          if-no-files-found: error
+          path: dist
 
-#     strategy:
-#       matrix:
-#         node-version: [18.x]
-#     env:
-#       base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
-#       app_branch: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+  deploy_react_native_docs_dev:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
+    needs: build_rn_docs
+    env:
+      DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          token: ${{env.DEV_DEPLOY_TOKEN}}
+          repository-name: brightlayer-ui-components/react-native-dev
+          branch: master
+          git-config-name: Brightlayer UI Agent
+          git-config-email: brightlayer-ui@eaton.com
+          commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
 
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
-#       - name: Download tarball
-#         uses: actions/download-artifact@v3
-#         with:
-#           name: tarball
-#           path: tarball
-#       - run: |
-#           PACKAGED_VERSION=`node -p "require('./tarball/package.json').version"`
-#           yarn add ./tarball/brightlayer-ui-react-components-$PACKAGED_VERSION.tgz
-#       - uses: actions/checkout@v4
-#       - name: Use Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#           cache: 'yarn'
-#       - run: yarn --immutable
-#         working-directory: docs
-#       - run: yarn build
-#         working-directory: docs
-#       - name: Save build
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: build
-#           if-no-files-found: error
-#           path: docs/build
-
-#   deploy_react_doc_dev:
-#     runs-on: ubuntu-latest
-#     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
-#     needs: build_reactdev
-#     env:
-#       DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
-#       - name: Download build
-#         uses: actions/download-artifact@v3
-#         with:
-#           name: build
-#           path: docs/build
-#       - name: deploy
-#         uses: JamesIves/github-pages-deploy-action@v4
-#         with:
-#           folder: docs/build
-#           token: ${{env.DEV_DEPLOY_TOKEN}}
-#           repository-name: brightlayer-ui-components/react-dev
-#           branch: master
-#           git-config-name: Brightlayer UI Agent
-#           git-config-email: brightlayer-ui@eaton.com
-#           commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
-
-#   deploy_react_doc_prod:
-#     runs-on: ubuntu-latest
-#     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-#     needs: build_reactdev
-#     env:
-#       DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v4
-#       - name: Download build
-#         uses: actions/download-artifact@v3
-#         with:
-#           name: build
-#           path: docs/build
-#       - name: deploy
-#         uses: JamesIves/github-pages-deploy-action@v4
-#         with:
-#           folder: docs/build
-#           token: ${{env.DEV_DEPLOY_TOKEN}}
-#           repository-name: brightlayer-ui-components/react
-#           branch: master
-#           git-config-name: Brightlayer UI Agent
-#           git-config-email: brightlayer-ui@eaton.com
-#           commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
-
-#   publish:
-#     runs-on: ubuntu-latest
-#     if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-#     needs: build_library
-#     strategy:
-#       matrix:
-#         node-version: [18.x]
-#     env:
-#       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#       BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
-#     steps:
-#       - uses: actions/checkout@v4
-#       - name: Download dist
-#         uses: actions/download-artifact@v3
-#         with:
-#           name: dist
-#           path: dist
-#       - uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#           registry-url: 'https://registry.npmjs.org'
-#       - run: yarn --immutable
-#       - run: npm run publish:package -- -b ${{env.BRANCH}}
+  deploy_react_native_docs_prod:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    needs: build_rn_docs
+    env:
+      DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          token: ${{env.DEV_DEPLOY_TOKEN}}
+          repository-name: brightlayer-ui-components/react-native
+          branch: master
+          git-config-name: Brightlayer UI Agent
+          git-config-email: brightlayer-ui@eaton.com
+          commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
