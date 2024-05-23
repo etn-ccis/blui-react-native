@@ -1,3 +1,6 @@
+import Box from '@mui/material/Box';
+import IconComponent from '../images/icon.png';
+
 # Using Icons in Brightlayer UI React Native Components
 
 There are two ways you can include icons in your application. The first is passing an [icon as a prop](#icon-as-a-prop) to the component and the other way is using[ `Icon` component](#icon-as-a-component) from `@brightlayer-ui/react-native-components` package as a child to the component.
@@ -24,3 +27,50 @@ Many Brightlayer UI components support the use of icons. These components will s
 When specifying 'brightlayer-ui' as the `family`, icons will be drawn from the [@brightlayer-ui/react-native-vector-icons](https://www.npmjs.com/package/@brightlayer-ui/react-native-vector-icons) package. When specifying 'material' or 'material-community, icons will be drawn from the [react-native-vector-icons](https://www.npmjs.com/package/react-native-vector-icons) package.
 
 When specifying the `direction`, 'auto' means that the icon will appear flipped for RTL and unflipped for LTR languages. 'ltr' will always appear unflipped, and 'rtl' will always appear flipped, regardless of language direction. Refer to our [internationalization](<https://brightlayer-ui.github.io/patterns/internationalization#bidirectionality--right-to-left-(rtl)-support>) guidelines for more information on which icons should flip.
+
+## API
+
+<Box>
+
+| Prop Name        | Description                                                                     | Type                          | Required | Default |
+| ---------------- | ------------------------------------------------------------------------------- | ----------------------------- | -------- | ------- |
+| size             | What size the icon / component should be                                        | `number`                      | no       |         |
+| color            | What color the icon / component should be                                       | `string`                      | no       |         |
+| allowFontScaling | Should the icon / component size scale with the system font size                | `boolean`                     | no       |         |
+| direction        | The current device language direction (for flipping components where necessary) | `'ltr'` \| `'rtl'`            | no       |         |
+| theme            | Theme value overrides                                                           | `$DeepPartial<ExtendedTheme>` | no       |         |
+
+</Box>
+
+Brightlayer UI components will pass these values to you for use in your component to achieve the correct appearance. It is your responsibility to apply them.
+
+## Icon as a component
+
+The `<Icon>` component is used to render a standalone icon by passing an object to specify the source of the icon.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '100px',
+    }}
+    component="img"
+    alt="Icon"
+    src={IconComponent}
+  />
+</Box>
+
+### API
+
+<Box>
+
+| Prop Name | Description                                 | Type                                   | Required | Default                   |
+| --------- | ------------------------------------------- | -------------------------------------- | -------- | ------------------------- |
+| source    | An object to specify the source of the icon | [`IconSource`](#icon-object)           | yes      |                           |
+| theme     | Theme value overrides                       | `$DeepPartial<ReactNativePaper.Theme>` | no       | Varies based on the theme |
+
+</Box>
