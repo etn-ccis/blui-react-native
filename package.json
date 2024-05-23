@@ -7,7 +7,7 @@
     "docs-start": "npx nx serve docs",
     "docs-prettier": "npx nx format:write docs",
     "docs-lint": "npx nx lint docs",
-    "docs-build": "npx nx build docs"
+    "docs-build": "npx nx build docs --no-cloud"
   },
   "private": true,
   "dependencies": {
