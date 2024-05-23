@@ -44,8 +44,8 @@ jobs:
       matrix:
         node-version: [20.x]
 
-    env:
-        base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
+    # env:
+        # base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
         # app_branch: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
 
     steps:
@@ -57,7 +57,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn --immutable
-      - run: yarn docs-build --base-href ${{env.base-href}}
+      - run: yarn docs-build
       - name: Save dist
         uses: actions/upload-artifact@v3
         with:
@@ -65,10 +65,10 @@ jobs:
           if-no-files-found: error
           path: dist
 
-  deploy_react_native_docs_dev:
+  deploy_rn_docs_dev:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
-    needs: build_rn_docs
+    needs: [build_rn_docs, prettier_lint]
     env:
       DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
     steps:
@@ -90,10 +90,10 @@ jobs:
           git-config-email: brightlayer-ui@eaton.com
           commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
 
-  deploy_react_native_docs_prod:
+  deploy_rn_docs_prod:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-    needs: build_rn_docs
+    needs: [build_rn_docs, prettier_lint]
     env:
       DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
     steps:
