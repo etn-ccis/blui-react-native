@@ -169,6 +169,9 @@ export const componentsMap = {
           theme.palette.mode === 'light'
             ? theme.palette.background.default
             : Colors.darkBlack[300],
+            '& code': {
+              width: '100%',
+            },
       }}
       {...props}
     />
@@ -181,7 +184,6 @@ export const componentsMap = {
         fontSize: '0.875rem',
         m: '0px 2px',
         p: '0px 5px',
-        whiteSpace: 'nowrap',
         border: (theme: Theme) => `1px solid ${theme.palette.divider}`,
         backgroundColor: (theme: Theme) =>
           theme.palette.mode === 'light'
