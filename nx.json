@@ -60,6 +60,7 @@
     }
   ],
   "nxCloudAccessToken": "MTEyNzZmNDAtYjk3Ni00ZGE2LTlmMjAtZTA2ZmI4M2JhNTFlfHJlYWQtd3JpdGU=",
+  "neverConnectToCloud": true,
   "generators": {
     "@nx/react": {
       "application": {
