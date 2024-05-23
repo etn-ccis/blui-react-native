@@ -15,7 +15,7 @@ git clone https://github.com/etn-ccis/blui-react-native.git
 Install Dependencies:
 
 ```shell
-cd blui
+cd blui-react-native
 yarn install
 ```
 This will install all dependencies for the monorepo and its libraries.
