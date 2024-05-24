@@ -3,7 +3,7 @@ import {Navigate, Route} from 'react-router-dom';
 import {
   pageDefinitions,
   RouteConfig,
-} from '../__configuration__/navigationMenu/navigation';
+} from '../__configuration__/navigationMenu';
 
 const buildRoutes = (routes: RouteConfig[]): JSX.Element[] =>
   routes.map(route => {
