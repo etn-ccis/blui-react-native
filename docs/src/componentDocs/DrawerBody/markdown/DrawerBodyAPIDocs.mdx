@@ -1,0 +1,33 @@
+import Box from '@mui/material/Box';
+import SharedProps from '../../Drawer/markdown/SharedProps.mdx';
+
+# Drawer Body
+
+The `<DrawerBody>` is a wrapper for the main content of the Drawer. The typical use case is to display `<DrawerNavGroup>` elements, but custom elements (e.g., for spacing) are accepted as well.
+
+### DrawerBody API
+
+<Box>
+
+| Prop Name                       | Description                                                | Type               | Required | Default |
+| ------------------------------- | ---------------------------------------------------------- | ------------------ | -------- | ------- |
+| styles                          | Style overrides                                            | `DrawerBodyStyles` | no       |         |
+| [...sharedProps](#shared-props) | Props that can be set at any level in the drawer hierarchy | -                  | -        |         |
+
+</Box>
+
+Any other props will be provided to the root element ([**ScrollView**](https://reactnative.dev/docs/scrollview)).
+
+#### Styles
+
+You can override the internal styles used by Brightlayer UI by passing a `styles` prop. The Drawer supports the following keys:
+
+<Box>
+
+| Name | Description                                    |
+| ---- | ---------------------------------------------- |
+| root | Style override for the root ScrollView element |
+
+</Box>
+
+<SharedProps />

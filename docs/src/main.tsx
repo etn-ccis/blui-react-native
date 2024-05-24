@@ -21,13 +21,13 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import '@brightlayer-ui/react-themes/open-sans';
 import '@fontsource/roboto';
 import '@fontsource/roboto-mono';
-import {App} from './app/app';
+import {App} from './app';
 import './index.css';
 import {store, RootState} from './redux/store';
 import {useAppSelector} from './redux/hooks';
 import {MDXProvider} from '@mdx-js/react';
 import {componentsMap} from './__configuration__/markdownMapping';
-import {GoogleAnalyticsWrapper} from './router/GoogleAnalyticsWrapper';
+import {GoogleAnalyticsWrapper} from './components/navigation/GoogleAnalyticsWrapper';
 
 // prismJs
 // import 'prismjs/components/prism-jsx.js';
@@ -36,7 +36,7 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 
 // google analytics
 import ReactGA from 'react-ga4';
-import {ScrollToTop} from './router/ScrollToTop';
+import {ScrollToTop} from './components/navigation/ScrollToTop';
 if (import.meta.env.REACT_APP_GAID) {
   ReactGA.initialize(import.meta.env.REACT_APP_GAID);
 }

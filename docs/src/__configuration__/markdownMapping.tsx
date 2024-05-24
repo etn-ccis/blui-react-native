@@ -2,7 +2,7 @@ import React, {HTMLAttributes} from 'react';
 import {Link, LinkProps} from 'react-router-dom';
 import * as Colors from '@brightlayer-ui/colors';
 import {useTheme, Theme} from '@mui/material/styles';
-import {getHash} from '../shared';
+import {getHash} from '../utils';
 import {cx} from '@emotion/css';
 
 import './markdown.css';
