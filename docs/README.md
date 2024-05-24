@@ -3,7 +3,7 @@ This repository serves as the comprehensive documentation hub for the Brightlaye
 
 
 ## Exploring the Documentation
-The documentation is organized into individual pages for each Blui component. You can navigate to specific components using the file structure.
+The documentation is organized into individual pages for each Brightlayer UI component. You can navigate to specific components using the file structure.
 
 Component Documentation Structure
 Each component page provides the following key information:
