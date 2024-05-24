@@ -13,7 +13,7 @@ import DrawerExamples from '../../componentDocs/Drawer/markdown/DrawerExamples.m
 import EmptyStateExamples from '../../componentDocs/EmptyState/markdown/EmptyStateExamples.mdx';
 import GradeExamples from '../../componentDocs/Grade/markdown/GradeExamples.mdx';
 import HeaderExamples from '../../componentDocs/Header/markdown/HeaderExamples.mdx';
-// import HeroExamples from '../../componentDocs/Hero/markdown/HeroExamples.mdx';
+import HeroExamples from '../../componentDocs/Hero/markdown/HeroExamples.mdx';
 import IconsExamples from '../../componentDocs/Icons/markdown/IconsExamples.mdx';
 import IconSwitchExamples from '../../componentDocs/IconSwitch/markdown/IconSwitchExamples.mdx';
 import InfoListItemExamples from '../../componentDocs/InfoListItem/markdown/InfoListItemExamples.mdx';
@@ -32,7 +32,7 @@ import DrawerAPIDocs from '../../componentDocs/Drawer/markdown/DrawerAPIDocs.mdx
 import EmptyStateAPIDocs from '../../componentDocs/EmptyState/markdown/EmptyStateAPIDocs.mdx';
 import GradeAPIDocs from '../../componentDocs/Grade/markdown/GradeAPIDocs.mdx';
 import HeaderAPIDocs from '../../componentDocs/Header/markdown/HeaderAPIDocs.mdx';
-// import HeroAPIDocs from '../../componentDocs/Hero/markdown/HeroAPIDocs.mdx';
+import HeroAPIDocs from '../../componentDocs/Hero/markdown/HeroAPIDocs.mdx';
 import IconsAPIDocs from '../../componentDocs/Icons/markdown/IconsAPIDocs.mdx';
 import IconSwitchAPIDocs from '../../componentDocs/IconSwitch/markdown/IconSwitchAPIDocs.mdx';
 import InfoListItemAPIDocs from '../../componentDocs/InfoListItem/markdown/InfoListItemAPIDocs.mdx';
@@ -200,12 +200,12 @@ export const pageDefinitions: RouteConfig[] = [
           {
             title: 'examples',
             path: 'examples',
-            // element: <HeroExamples />,
+            element: <HeroExamples />,
           },
           {
             title: 'API Docs',
             path: 'api-docs',
-            // element: <HeroAPIDocs />,
+            element: <HeroAPIDocs />,
           },
         ],
       },

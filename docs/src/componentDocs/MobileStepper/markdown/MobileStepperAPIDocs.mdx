@@ -1,1 +1,94 @@
-### Mobile Stepper API Docs
+import Box from '@mui/material/Box';
+import MobileStepperDotVariant from '../images/mobileStepper_dot.png';
+import MobileStepperTextVariant from '../images/mobileStepper_text.png';
+import MobileStepperProgressVariant from '../images/mobileStepper_progress.png';
+
+# Mobile Stepper
+
+The `<MobileStepper>` is used to minimally display progress when completing a workflow that requires multiple steps. There are three types of progress indicators supported, `dots` (default), `text`, and `progress`.
+
+In Dot Variant:
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '600px',
+    }}
+    component="img"
+    alt="Mobile Stepper Dot Variant"
+    src={MobileStepperDotVariant}
+  />
+</Box>
+
+In Text Variant:
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '600px',
+    }}
+    component="img"
+    alt="Mobile Stepper Text Variant"
+    src={MobileStepperTextVariant}
+  />
+</Box>
+
+In Progress Variant:
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '600px',
+    }}
+    component="img"
+    alt="Mobile Stepper Progress Variant"
+    src={MobileStepperProgressVariant}
+  />
+</Box>
+
+## API
+
+<Box>
+
+| Prop Name     | Description                                    | Type                                 | Required | Default                 |
+| ------------- | ---------------------------------------------- | ------------------------------------ | -------- | ----------------------- |
+| activeColor   | Color of the active page indicator             | `string`                             | no       | `theme.colors.primary`  |
+| activeStep    | The index of the active step (>= 0)            | `number`                             | yes      |                         |
+| inactiveColor | Color of inactive dot when using 'dot' variant | `string`                             | no       | `theme.colors.disabled` |
+| leftButton    | Left button content                            | `JSX.Element`                        | no       |                         |
+| rightButton   | Right button content                           | `JSX.Element`                        | no       |                         |
+| steps         | Total number of steps to display (>0)          | `number`                             | yes      |                         |
+| variant       | Which type of indicator to use                 | `'dots'` \| `'text'` \| `'progress'` | no       | `dots`                  |
+| theme         | Theme value overrides                          | `$DeepPartial<ExtendedTheme>`        | no       |                         |
+
+</Box>
+
+Any other props will be provided to the root element ([**View**](https://reactnative.dev/docs/view)).
+
+### Styles
+
+You can override the internal styles used by Brightlayer UI by passing a `styles` prop. It supports the following key:
+
+| Name             | Description                                                      |
+| ---------------- | ---------------------------------------------------------------- |
+| root             | Styles applied to the root element                               |
+| circle           | Styles applied to dots when using 'dot' variant                  |
+| filled           | Styles applied to active dot when using 'dot' variant            |
+| stepperContainer | Styles applied to stepper container                              |
+| progressBar      | Styles applied to the progress bar when using 'progress' variant |
+| text             | Styles applied to the text when using 'text' variant             |
