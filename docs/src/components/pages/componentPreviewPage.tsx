@@ -13,7 +13,7 @@ export const ComponentPreviewPage: React.FC<ComponentPreviewPageProps> = (
 
   return (
     <Box style={{display: 'flex', flexDirection: 'column'}}>
-      <SharedAppBar title={''} />
+      <SharedAppBar title={title} />
       <ComponentPreviewTabs />
     </Box>
   );
