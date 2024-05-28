@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import {nxViteTsPaths} from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import mdx from '@mdx-js/rollup';
 import remarkGfm from 'remark-gfm';
+import reactNativeWeb from 'vite-plugin-react-native-web';
 
 export default defineConfig({
   root: __dirname,
@@ -28,6 +29,7 @@ export default defineConfig({
       remarkPlugins: [remarkGfm],
       providerImportSource: '@mdx-js/react',
     }),
+    reactNativeWeb(),
   ],
 
   // Uncomment this if you are using workers.

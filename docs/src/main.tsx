@@ -9,6 +9,7 @@ import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import {Provider} from 'react-redux';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {BrowserRouter} from 'react-router-dom';
 import {
   createTheme,
@@ -37,12 +38,13 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 // google analytics
 import ReactGA from 'react-ga4';
 import {ScrollToTop} from './components/navigation/ScrollToTop';
+// Brightlayer UI Icon font
+import '@brightlayer-ui/icons/BrightlayerUIIcons.css';
+
 if (import.meta.env.REACT_APP_GAID) {
   ReactGA.initialize(import.meta.env.REACT_APP_GAID);
 }
 
-// Brightlayer UI Icon font
-import '@brightlayer-ui/icons/BrightlayerUIIcons.css';
 const container = document.getElementById('root');
 
 if (!container) throw new Error('Root Element was not found in the DOM');
@@ -81,13 +83,15 @@ const ThemedApp = (): JSX.Element => {
 };
 
 root.render(
+  <SafeAreaProvider>
   <StyledEngineProvider injectFirst>
-    <BrowserRouter basename={basename}>
-      <ScrollToTop />
-      <GoogleAnalyticsWrapper />
-      <Provider store={store}>
-        <ThemedApp />
-      </Provider>
-    </BrowserRouter>
-  </StyledEngineProvider>,
+      <BrowserRouter basename={basename}>
+        <ScrollToTop />
+        <GoogleAnalyticsWrapper />
+        <Provider store={store}>
+          <ThemedApp />
+        </Provider>
+      </BrowserRouter>
+  </StyledEngineProvider>
+  </SafeAreaProvider> ,
 );

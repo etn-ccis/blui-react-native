@@ -119,7 +119,7 @@ export const componentsMap = {
       return <ExternalLink {...tProps} />;
     }
     tProps = props as LinkProps;
-    //@ts-ignore
+    //@ts-expect-error overwritten error
     return <InternalLink to={props.href} {...tProps} />;
   },
   p: (props: TypographyProps): JSX.Element => (
@@ -169,9 +169,9 @@ export const componentsMap = {
           theme.palette.mode === 'light'
             ? theme.palette.background.default
             : Colors.darkBlack[300],
-            '& code': {
-              width: '100%',
-            },
+        '& code': {
+          width: '100%',
+        },
       }}
       {...props}
     />

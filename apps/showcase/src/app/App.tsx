@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React, { useRef, useState } from 'react';
+import React, {useRef, useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   Linking,
 } from 'react-native';
-import Svg, { G, Path } from 'react-native-svg';
+import Svg, {G, Path} from 'react-native-svg';
 
 export const App = () => {
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
@@ -22,22 +22,19 @@ export const App = () => {
       <SafeAreaView
         style={{
           flex: 1,
-        }}
-      >
+        }}>
         <ScrollView
-          ref={(ref) => {
+          ref={ref => {
             scrollViewRef.current = ref;
           }}
           contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        >
+          style={styles.scrollView}>
           <View style={styles.section}>
             <Text style={styles.textLg}>Hello there,</Text>
             <Text
               style={[styles.textXL, styles.appTitleText]}
               testID="heading"
-              role="heading"
-            >
+              role="heading">
               Welcome Showcase 👋
             </Text>
           </View>
@@ -49,8 +46,7 @@ export const App = () => {
                   height={32}
                   stroke="hsla(162, 47%, 50%, 1)"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -69,8 +65,7 @@ export const App = () => {
                     x: 0,
                     y: whatsNextYCoord,
                   });
-                }}
-              >
+                }}>
                 <Text style={[styles.textMd, styles.textCenter]}>
                   What's next?
                 </Text>
@@ -86,17 +81,15 @@ export const App = () => {
                 style={[styles.listItem, styles.learning]}
                 onPress={() =>
                   Linking.openURL(
-                    'https://nx.dev/getting-started/intro?utm_source=nx-project'
+                    'https://nx.dev/getting-started/intro?utm_source=nx-project',
                   )
-                }
-              >
+                }>
                 <Svg
                   width={24}
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -115,8 +108,7 @@ export const App = () => {
                   height={18}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -129,15 +121,13 @@ export const App = () => {
                 style={[styles.listItem, styles.learning]}
                 onPress={() =>
                   Linking.openURL('https://blog.nrwl.io/?utm_source=nx-project')
-                }
-              >
+                }>
                 <Svg
                   width={24}
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -156,8 +146,7 @@ export const App = () => {
                   height={18}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -170,10 +159,9 @@ export const App = () => {
                 style={[styles.listItem, styles.learning]}
                 onPress={() =>
                   Linking.openURL(
-                    'https://www.youtube.com/@NxDevtools/videos?utm_source=nx-project'
+                    'https://www.youtube.com/@NxDevtools/videos?utm_source=nx-project',
                   )
-                }
-              >
+                }>
                 <Svg width={24} height={24} fill="#000000" viewBox="0 0 24 24">
                   <Path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </Svg>
@@ -188,8 +176,7 @@ export const App = () => {
                   height={18}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -202,17 +189,15 @@ export const App = () => {
                 style={[styles.listItem, styles.learning]}
                 onPress={() =>
                   Linking.openURL(
-                    'https://nx.dev/react-tutorial/1-code-generation?utm_source=nx-project'
+                    'https://nx.dev/react-tutorial/1-code-generation?utm_source=nx-project',
                   )
-                }
-              >
+                }>
                 <Svg
                   width={24}
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -231,39 +216,34 @@ export const App = () => {
                   height={18}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  ></Path>
+                    d="M9 5l7 7-7 7"></Path>
                 </Svg>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.listItem, styles.learning]}
                 onPress={() =>
                   Linking.openURL(
-                    'https://nxplaybook.com/?utm_source=nx-project'
+                    'https://nxplaybook.com/?utm_source=nx-project',
                   )
-                }
-              >
+                }>
                 <Svg
                   width={24}
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path d="M12 14l9-5-9-5-9 5 9 5z"></Path>
                   <Path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></Path>
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                  ></Path>
+                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></Path>
                 </Svg>
                 <View style={styles.listItemTextContainer}>
                   <Text style={[styles.textMd]}>Video courses</Text>
@@ -276,14 +256,12 @@ export const App = () => {
                   height={18}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  ></Path>
+                    d="M9 5l7 7-7 7"></Path>
                 </Svg>
               </TouchableOpacity>
             </View>
@@ -292,17 +270,15 @@ export const App = () => {
             <TouchableOpacity
               onPress={() =>
                 Linking.openURL(
-                  'https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console&utm_source=nx-project'
+                  'https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console&utm_source=nx-project',
                 )
-              }
-            >
+              }>
               <View style={[styles.listItem, styles.learning]}>
                 <Svg
                   width={48}
                   height={48}
                   fill="rgba(0, 122, 204, 1)"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" />
                 </Svg>
                 <View style={styles.listItemTextContainer}>
@@ -311,8 +287,7 @@ export const App = () => {
                       styles.textMd,
                       styles.textBold,
                       styles.marginBottomSm,
-                    ]}
-                  >
+                    ]}>
                     Install Nx Console for VSCode
                   </Text>
                   <Text style={[styles.textXS, styles.textLight]}>
@@ -327,10 +302,9 @@ export const App = () => {
             <TouchableOpacity
               onPress={() =>
                 Linking.openURL(
-                  'https://plugins.jetbrains.com/plugin/21060-nx-console'
+                  'https://plugins.jetbrains.com/plugin/21060-nx-console',
                 )
-              }
-            >
+              }>
               <View style={[styles.listItem, styles.learning]}>
                 <Svg width={48} height={48} viewBox="20 20 60 60">
                   <Path d="m22.5 22.5h60v60h-60z" />
@@ -353,8 +327,7 @@ export const App = () => {
                       styles.textMd,
                       styles.textBold,
                       styles.marginBottomSm,
-                    ]}
-                  >
+                    ]}>
                     Install Nx Console for JetBrains
                   </Text>
                   <Text style={[styles.textXS, styles.textLight]}>
@@ -368,8 +341,7 @@ export const App = () => {
             <TouchableOpacity
               onPress={() =>
                 Linking.openURL('https://nx.app/?utm_source=nx-project')
-              }
-            >
+              }>
               <View style={styles.shadowBox}>
                 <View style={[styles.listItem, styles.marginBottomMd]}>
                   <Svg
@@ -377,8 +349,7 @@ export const App = () => {
                     height={48}
                     viewBox="0 0 120 120"
                     stroke="currentColor"
-                    fill="transparent"
-                  >
+                    fill="transparent">
                     <Path
                       strokeWidth="2"
                       d="M23 3.75V6.5c-3.036 0-5.5 2.464-5.5 5.5s-2.464 5.5-5.5 5.5-5.5 2.464-5.5 5.5H3.75C2.232 23 1 21.768 1 20.25V3.75C1 2.232 2.232 1 3.75 1h16.5C21.768 1 23 2.232 23 3.75Z"
@@ -394,8 +365,7 @@ export const App = () => {
                         styles.textMd,
                         styles.textBold,
                         styles.marginBottomSm,
-                      ]}
-                    >
+                      ]}>
                       Nx Cloud
                     </Text>
                     <Text style={[styles.textXS, styles.textLight]}>
@@ -413,8 +383,7 @@ export const App = () => {
             <TouchableOpacity
               onPress={() =>
                 Linking.openURL('https://nx.app/?utm_source=nx-project')
-              }
-            >
+              }>
               <View style={[styles.listItem, styles.shadowBox]}>
                 <Svg width={48} height={48} fill="#000000" viewBox="0 0 24 24">
                   <Path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
@@ -425,8 +394,7 @@ export const App = () => {
                       styles.textMd,
                       styles.textBold,
                       styles.marginBottomSm,
-                    ]}
-                  >
+                    ]}>
                     Nx is open source
                   </Text>
                   <Text style={[styles.textXS, styles.textLight]}>
@@ -438,18 +406,20 @@ export const App = () => {
           </View>
           <View
             style={styles.section}
-            onLayout={(event) => {
+            onLayout={event => {
               const layout = event.nativeEvent.layout;
               setWhatsNextYCoord(layout.y);
-            }}
-          >
+            }}>
             <View style={styles.shadowBox}>
               <Text style={[styles.textLg, styles.marginBottomMd]}>
                 Next steps
               </Text>
               <Text
-                style={[styles.textSm, styles.textLight, styles.marginBottomMd]}
-              >
+                style={[
+                  styles.textSm,
+                  styles.textLight,
+                  styles.marginBottomMd,
+                ]}>
                 Here are some things you can do with Nx:
               </Text>
               <View style={styles.listItem}>
@@ -458,8 +428,7 @@ export const App = () => {
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -480,8 +449,7 @@ export const App = () => {
                     styles.textXS,
                     styles.monospace,
                     styles.marginBottomMd,
-                  ]}
-                >
+                  ]}>
                   nx g @nx/react-native:lib ui
                 </Text>
                 <Text style={[styles.textXS, styles.monospace, styles.comment]}>
@@ -501,8 +469,7 @@ export const App = () => {
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -525,8 +492,7 @@ export const App = () => {
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -549,8 +515,7 @@ export const App = () => {
                   height={24}
                   stroke="#000000"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <Path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -571,8 +536,7 @@ export const App = () => {
                     styles.textXS,
                     styles.monospace,
                     styles.marginBottomMd,
-                  ]}
-                >
+                  ]}>
                   nx affected:graph
                 </Text>
                 <Text style={[styles.textXS, styles.monospace, styles.comment]}>
@@ -583,8 +547,7 @@ export const App = () => {
                     styles.textXS,
                     styles.monospace,
                     styles.marginBottomMd,
-                  ]}
-                >
+                  ]}>
                   nx affected:text
                 </Text>
                 <Text style={[styles.textXS, styles.monospace, styles.comment]}>
@@ -605,8 +568,7 @@ export const App = () => {
                 height={24}
                 fill="rgba(252, 165, 165, 1)"
                 stroke="none"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <Path
                   strokeLinecap="round"
                   strokeLinejoin="round"
