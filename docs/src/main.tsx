@@ -29,7 +29,8 @@ import {useAppSelector} from './redux/hooks';
 import {MDXProvider} from '@mdx-js/react';
 import {componentsMap} from './__configuration__/markdownMapping';
 import {GoogleAnalyticsWrapper} from './components/navigation/GoogleAnalyticsWrapper';
-
+import {Provider as RNThemeProvider} from 'react-native-paper';
+import * as RNBLUIThemes from '@brightlayer-ui/react-native-themes';
 // prismJs
 // import 'prismjs/components/prism-jsx.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
@@ -71,10 +72,17 @@ const ThemedApp = (): JSX.Element => {
   const MemoThemedApp = React.useCallback(
     () => (
       <ThemeProvider theme={createTheme(theme)}>
-        <CssBaseline />
-        <MDXProvider components={componentsMap as any}>
-          <App />
-        </MDXProvider>
+        <RNThemeProvider
+          theme={
+            siteTheme === 'dark' || (siteTheme === 'system' && prefersDarkMode)
+              ? RNBLUIThemes.blueDark
+              : RNBLUIThemes.blue
+          }>
+          <CssBaseline />
+          <MDXProvider components={componentsMap as any}>
+            <App />
+          </MDXProvider>
+        </RNThemeProvider>
       </ThemeProvider>
     ),
     [siteTheme, siteDirection, prefersDarkMode],
@@ -84,7 +92,7 @@ const ThemedApp = (): JSX.Element => {
 
 root.render(
   <SafeAreaProvider>
-  <StyledEngineProvider injectFirst>
+    <StyledEngineProvider injectFirst>
       <BrowserRouter basename={basename}>
         <ScrollToTop />
         <GoogleAnalyticsWrapper />
@@ -92,6 +100,6 @@ root.render(
           <ThemedApp />
         </Provider>
       </BrowserRouter>
-  </StyledEngineProvider>
-  </SafeAreaProvider> ,
+    </StyledEngineProvider>
+  </SafeAreaProvider>,
 );
