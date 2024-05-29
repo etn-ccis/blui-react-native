@@ -1,1 +1,69 @@
-### Spacer Examples
+import Box from '@mui/material/Box';
+import SpacerWithFlex from '../images/spacerWithFlex.png';
+import SpacerWithPixel from '../images/spacerWithPixel.png';
+
+# Spacer
+
+A `<Spacer>` is a utility component that adds space between elements (such as [Drawer Nav Groups](/components/drawer-nav-group/examples)). The Spacer is typically used in a flex layout.
+
+## Spacer with Flex
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+    marginBottom: 5,
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '300px',
+    }}
+    component="img"
+    alt="Spacer with Flex"
+    src={SpacerWithFlex}
+  />
+</Box>
+
+```
+<View style={{ display: 'flex', flexDirection: 'row' }}>
+    <View style={{ height: 50, width: 70, backgroundColor: '#4682B4' }} />
+    <Spacer flex={1} height={10} width={10} />
+    <View style={{ height: 50, width: 155, backgroundColor: '#FFD700' }} />
+    <Spacer flex={4} height={10} width={10} />
+    <View style={{ height: 50, width: 70, backgroundColor: '#FF6347' }} />
+</View>
+
+```
+
+## Spacer with Pixels
+
+A Spacer can also be given fixed dimensions instead of flex for static layouts. In order to use fixed dimensions the flex prop must be set to zero.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+    margin: 5,
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '300px',
+    }}
+    component="img"
+    alt="Spacer with Pixels"
+    src={SpacerWithPixel}
+  />
+</Box>
+
+```
+<View style={{display: 'flex'}}>
+  <View style={{height: 50, width: 315, backgroundColor: '#4682B4'}} />
+  <Spacer flex={0} height={10} width={10} />
+  <View style={{height: 50, width: 315, backgroundColor: '#FFD700'}} />
+  <Spacer flex={0} height={10} width={10} />
+  <View style={{height: 50, width: 315, backgroundColor: '#FF6347'}} />
+</View>
+
+```
