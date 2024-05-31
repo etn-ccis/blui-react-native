@@ -1,1 +1,110 @@
-### Info List Item Examples
+# Info List Item
+
+An `<InfoListItem>` is a wrapper around the [MUI List Item](https://mui.com/material-ui/api/list-item/) that provides convenient styling and content arrangement options. A basic use case displays a combination of title, subtitle, and icon.
+
+```
+<InfoListItem
+    title="Info List Item Title"
+    subtitle="Info List Item Subtitle"
+    icon={{ name: 'alarm' }}
+/>
+```
+
+## Showing Lots of List Items
+
+When showing many list items, you can use the `dense` prop to reduce their vertical padding and fit more list items on the page.
+
+```
+    <Card style={styles.card}>
+        <Card.Content style={{ alignItems: 'center' }}>
+            <InfoListItem title="Dense Info List Item 1" dense divider="full" />
+            <InfoListItem title="Dense Info List Item 2" dense divider="full" />
+            <InfoListItem title="Dense Info List Item 3" dense divider="full" />
+        </Card.Content>
+    </Card>
+```
+
+## Indicating Status
+
+You can apply a status to a list item using the statusColor prop. This will apply a colored stripe on the side of the list item and can be paired with the avatar prop to add additional highlighting around the icon.
+
+```
+    <InfoListItem
+        title="Info List Item"
+        subtitle="with a status indicator"
+        icon={{ name: 'settings' }}
+        avatar
+        statusColor="#2ca618"
+    />
+```
+
+## Adding Additional Content
+
+If you want to show additional content in the list item, such as a timestamp or action buttons, these can be provided through the leftComponent and / or rightComponent props.
+
+```
+    <InfoListItem
+        title="Battery Fully Charged"
+        subtitle="Your device is ready to use"
+        iconColor="#2ca618"
+        icon={{ family: 'material', name: 'battery-charging-full' }}
+        leftComponent={
+          <View>
+            <Text style={{ fontWeight: 'bold' }}>8:32 AM</Text>
+            <Text>11/21/21</Text>
+          </View>
+        }
+        rightComponent={<ChannelValue value={'15'} units={'A'} />}
+    />
+```
+
+## Clickable List Items
+
+If you want your list items to be clickable, add an onClick handler (you can also add a ripple effect by setting the ripple prop to true).
+
+```
+   <Card>
+       <InfoListItem
+            title={'Title'}
+            icon={{ family: 'brightlayer-ui', name: 'leaf' }}
+            subtitle={'Subtitle'}
+            info={'info'}
+            statusColor="#FF5733"
+            backgroundColor="#4682B4"
+            avatar
+            divider={'full'}
+            onPress={() => {}}
+            chevron
+            style={{ marginBottom: 20 }}
+            />
+        <InfoListItem
+            title="Info List Item Title"
+            subtitle="Info List Item Subtitle"
+            icon={{ name: 'settings' }}
+            onPress={() => {}}
+            avatar
+            divider={'full'}
+        />
+        <InfoListItem
+            title={'Hillman Field East'}
+            subtitle={['PXM 2000', 'DT 1150', '113.4 GPM']}
+            onPress={() => {}}
+            subtitleSeparator={'/'}
+        />
+        <InfoListItem
+            title="Battery Fully Charged"
+            subtitle="Your device is ready to use"
+            icon={{ family: 'brightlayer-ui', name: 'battery' }}
+            iconAlign="center"
+            onPress={() => {}}
+            leftComponent={
+              <View>
+                <Text variant="titleSmall">{'8:32 AM'}</Text>
+                <Text variant="bodySmall">{'11/21/21'}</Text>
+              </View>
+            }
+            rightComponent={<ChannelValue value={'15'} units={'A'} />}
+            chevron
+        />
+    </Card>
+```
