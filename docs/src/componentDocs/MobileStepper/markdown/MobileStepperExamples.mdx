@@ -1,1 +1,92 @@
-### Mobile Stepper Examples
+import Box from '@mui/material/Box';
+import MobileStepperDotVariant from '../images/mobileStepper_dot.png';
+import MobileStepperTextVariant from '../images/mobileStepper_text.png';
+import MobileStepperProgressVariant from '../images/mobileStepper_progress.png';
+
+# Mobile Stepper
+
+The `<MobileStepper>` is used to display progress when completing a workflow that requires multiple steps. There are three types of progress indicators supported, `dots` (default), `text`, and `progress`.
+
+## Dot Variant Usage
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '400px',
+    }}
+    component="img"
+    alt="Mobile Stepper Dot Variant"
+    src={MobileStepperDotVariant}
+  />
+</Box>
+
+```
+<MobileStepper
+  activeStep={activeStep}
+  steps={steps}
+  leftButton={<BackButton />}
+  rightButton={<NextButton />}
+  variant={'dots'}
+/>;
+```
+
+## Text Variant Usage
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '400px',
+    }}
+    component="img"
+    alt="Mobile Stepper Text Variant"
+    src={MobileStepperTextVariant}
+  />
+</Box>
+
+```
+<MobileStepper
+  activeStep={activeStep}
+  steps={steps}
+  leftButton={<BackButton />}
+  rightButton={<NextButton />}
+  variant={'text'}
+/>;
+```
+
+## Progress Variant Usage
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '400px',
+    }}
+    component="img"
+    alt="Mobile Stepper Progress Variant"
+    src={MobileStepperProgressVariant}
+  />
+</Box>
+
+```
+<MobileStepper
+  activeStep={activeStep}
+  steps={steps}
+  leftButton={<BackButton />}
+  rightButton={<NextButton />}
+  variant={'progress'}
+/>;
+```
