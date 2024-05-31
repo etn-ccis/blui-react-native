@@ -1,1 +1,64 @@
-### Grade Examples
+import Box from '@mui/material/Box';
+import GradecomponentExample from '../images/GradecomponentExample.png';
+import GradeSubComponentExample from '../images/GradeSubComponentExample.png';
+
+## Grade Examples
+
+The Grade component is a customizable Avatar component that represents different grades. The text and background colors are customizable via the `fontColor` and `backgroundColor` props.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Grade Component Example"
+    src={GradecomponentExample}
+  />
+</Box>
+
+```
+<Grade label='AB'/>
+<Grade label='AB' fontColor='#ff0' backgroundColor='#f00'/>
+```
+
+## Using SubComponents
+
+The subcomponents are a set of preconfigured components that can be used directly for specific grades with in-built styling.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Grade SubComponent Example"
+    src={GradeSubComponentExample}
+  />
+</Box>
+
+```
+<Grade.APlus/>
+<Grade.A/>
+<Grade.AMinus/>
+<Grade.BPlus/>
+<Grade.B/>
+<Grade.BMinus/>
+<Grade.CPlus/>
+<Grade.C/>
+<Grade.CMinus/>
+<Grade.DPlus/>
+<Grade.D/>
+<Grade.DMinus/>
+<Grade.F/>
+```
