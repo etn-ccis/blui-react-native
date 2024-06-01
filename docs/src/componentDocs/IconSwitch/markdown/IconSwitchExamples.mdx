@@ -1,1 +1,54 @@
-### Icon Switch Examples
+import Box from '@mui/material/Box';
+import iconSwitchImage from '../images/iconswitch.png';
+
+# Icon Switch
+
+The `<IconSwitch />` is a switch component that can optionally renders an icon in the switch's handle.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '300px',
+    }}
+    component="img"
+    alt="icon switch picture"
+    src={iconSwitchImage}
+  />
+</Box>
+
+```
+<Card>
+    <Card.Title title="Icon Switch" />
+    <Card.Content>
+        <View style={{padding: 10}}>
+            <IconSwitch value />
+        </View>
+        <View style={{padding: 10}}>
+            <IconSwitch value showIcon />
+        </View>
+        <View style={{padding: 10}}>
+            <IconSwitch />
+        </View>
+        <View style={{padding: 10}}>
+            <IconSwitch showIcon />
+        </View>
+        <View style={{padding: 10}}>
+            <IconSwitch value disabled />
+        </View>
+        <View style={{padding: 10}}>
+            <IconSwitch value showIcon disabled />
+        </View>
+        <View style={{padding: 10}}>
+            <IconSwitch disabled />
+        </View>
+        <View style={{padding: 10}}>
+            <IconSwitch showIcon disabled />
+        </View>
+    </Card.Content>
+</Card>
+```
