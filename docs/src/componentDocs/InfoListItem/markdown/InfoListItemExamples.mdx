@@ -1,6 +1,26 @@
+import Box from '@mui/material/Box';
+import infoListItemExample from '../images/infoListItemExample.png';
+import infoListItemDense from '../images/infoListItemDense.png';
+
 # Info List Item
 
 An `<InfoListItem>` is a wrapper around the [MUI List Item](https://mui.com/material-ui/api/list-item/) that provides convenient styling and content arrangement options. A basic use case displays a combination of title, subtitle, and icon.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="InfoListItem with props"
+    src={infoListItemExample}
+  />
+</Box>
 
 ```
 <InfoListItem
@@ -14,19 +34,31 @@ An `<InfoListItem>` is a wrapper around the [MUI List Item](https://mui.com/mate
 
 When showing many list items, you can use the `dense` prop to reduce their vertical padding and fit more list items on the page.
 
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="InfoListItem with dense prop"
+    src={infoListItemDense}
+  />
+</Box>
+
 ```
-    <Card style={styles.card}>
-        <Card.Content style={{ alignItems: 'center' }}>
-            <InfoListItem title="Dense Info List Item 1" dense divider="full" />
-            <InfoListItem title="Dense Info List Item 2" dense divider="full" />
-            <InfoListItem title="Dense Info List Item 3" dense divider="full" />
-        </Card.Content>
-    </Card>
+<InfoListItem title="Dense Info List Item 1" dense divider="full" />
+<InfoListItem title="Dense Info List Item 2" dense divider="full" />
+<InfoListItem title="Dense Info List Item 3" dense divider="full" />
 ```
 
 ## Indicating Status
 
-You can apply a status to a list item using the statusColor prop. This will apply a colored stripe on the side of the list item and can be paired with the avatar prop to add additional highlighting around the icon.
+You can apply a status to a list item using the `statusColor` prop. This will apply a colored stripe on the side of the list item and can be paired with the `avatar` prop to add additional highlighting around the icon.
 
 ```
     <InfoListItem
