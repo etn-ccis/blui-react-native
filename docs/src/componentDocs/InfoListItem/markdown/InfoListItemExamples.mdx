@@ -1,6 +1,8 @@
 import Box from '@mui/material/Box';
 import infoListItemExample from '../images/infoListItemExample.png';
 import infoListItemDense from '../images/infoListItemDense.png';
+import indicatingStatus from '../images/indicatingStatus.png';
+import infolistItemComponent from '../images/infolistItemComponent.png';
 
 # Info List Item
 
@@ -60,34 +62,66 @@ When showing many list items, you can use the `dense` prop to reduce their verti
 
 You can apply a status to a list item using the `statusColor` prop. This will apply a colored stripe on the side of the list item and can be paired with the `avatar` prop to add additional highlighting around the icon.
 
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="InfoListItem Indicating Status"
+    src={indicatingStatus}
+  />
+</Box>
+
 ```
-    <InfoListItem
-        title="Info List Item"
-        subtitle="with a status indicator"
-        icon={{ name: 'settings' }}
-        avatar
-        statusColor="#2ca618"
-    />
+<InfoListItem
+    title="Info List Item"
+    subtitle="with a status indicator"
+    icon={{ name: 'settings' }}
+    avatar
+    statusColor="#2ca618"
+/>
 ```
 
 ## Adding Additional Content
 
-If you want to show additional content in the list item, such as a timestamp or action buttons, these can be provided through the leftComponent and / or rightComponent props.
+If you want to show additional content in the list item, such as a timestamp or action buttons, these can be provided through the `leftComponent` and / or `rightComponent` props.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="InfoListItem with Left and Right Component"
+    src={infolistItemComponent}
+  />
+</Box>
 
 ```
-    <InfoListItem
-        title="Battery Fully Charged"
-        subtitle="Your device is ready to use"
-        iconColor="#2ca618"
-        icon={{ family: 'material', name: 'battery-charging-full' }}
-        leftComponent={
-          <View>
+<InfoListItem
+    title="Battery Fully Charged"
+    subtitle="Your device is ready to use"
+    icon={{ name: 'battery-charging-full' }}
+    iconColor="#2ca618"
+    leftComponent={
+        <View>
             <Text style={{ fontWeight: 'bold' }}>8:32 AM</Text>
             <Text>11/21/21</Text>
-          </View>
-        }
-        rightComponent={<ChannelValue value={'15'} units={'A'} />}
-    />
+        </View>
+    }
+    rightComponent={<ChannelValue value={'15'} units={'A'} />}
+/>
 ```
 
 ## Clickable List Items
