@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import scoreCardExample from '../images/scoreCardExample.png';
 import scorecardWithBadge from '../images/scorecardWithBadge.png';
+import scorecardBadgeOffset from '../images/scorecardBadgeOffset.png';
 
 # Score Card
 
@@ -14,7 +15,7 @@ A `<ScoreCard>` is a card component that calls attention to particular values. I
   <Box
     sx={{
       width: '100%',
-      maxWidth: '500px',
+      maxWidth: '400px',
     }}
     component="img"
     alt="ScoreCard Example"
@@ -46,7 +47,7 @@ A Score Card reserves space for a `badge` element. This space is commonly used t
   <Box
     sx={{
       width: '100%',
-      maxWidth: '500px',
+      maxWidth: '400px',
     }}
     component="img"
     alt="ScoreCard With Badge"
@@ -80,4 +81,47 @@ A Score Card reserves space for a `badge` element. This space is commonly used t
         <Text>Body Content</Text>
     </View>
 </ScoreCard>
+```
+
+## Adjusting the Badge
+
+The badge position can be adjusted via the `badgeOffset` prop.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '400px',
+    }}
+    component="img"
+    alt="ScoreCard with badgeOffset prop"
+    src={scorecardBadgeOffset}
+  />
+</Box>
+
+```
+<ScoreCard
+    headerTitle={'Substation 3'}
+    headerSubtitle={'High Humidity Alarm'}
+    headerInfo={'4 Devices'}
+    badge={
+        <Hero
+            icon={{family: 'brightlayer-ui', name: 'grade_a'}}
+            label={'Grade'}
+            iconSize={72}
+            iconBackgroundColor={theme.colors.surface}
+            ChannelValueProps={{value: '98', units: '/100', unitSpace: 'hide'}}
+        />
+    }
+    badgeOffset={-58}
+>
+    <View>
+        <Text>Body Content</Text>
+    </View>
+</ScoreCard>
+
 ```
