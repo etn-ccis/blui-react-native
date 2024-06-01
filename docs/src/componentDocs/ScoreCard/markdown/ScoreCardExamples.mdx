@@ -1,1 +1,83 @@
-### Score Card Examples
+import Box from '@mui/material/Box';
+import scoreCardExample from '../images/scoreCardExample.png';
+import scorecardWithBadge from '../images/scorecardWithBadge.png';
+
+# Score Card
+
+A `<ScoreCard>` is a card component that calls attention to particular values. It is frequently seen on dashboard interfaces.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="ScoreCard Example"
+    src={scoreCardExample}
+  />
+</Box>
+
+```
+<ScoreCard
+    headerTitle="Station 3"
+    headerSubtitle="High Humidity Alarm"
+    headerInfo="4 Devices"
+>
+    <View>
+        <Text>Body Content</Text>
+    </View>
+</ScoreCard>
+```
+
+## Adding a Badge
+
+A Score Card reserves space for a `badge` element. This space is commonly used to show [Heroes](/components/hero/examples).
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="ScoreCard With Badge"
+    src={scorecardWithBadge}
+  />
+</Box>
+
+```
+<ScoreCard
+    headerTitle="Station 3"
+    headerSubtitle="High Humidity Alarm"
+    headerInfo="4 Devices"
+    badge={
+    <HeroBanner
+      style={{flex: 0, minWidth: 140, justifyContent: 'space-between'}}>
+      <Hero
+           icon={{family: 'brightlayer-ui', name: 'temp'}}
+           label="Temperature"
+           ChannelValueProps={{value: 98, units: '°F'}}
+           style={{overflow: 'visible'}}
+      />
+      <Hero
+           icon={{family: 'brightlayer-ui', name: 'moisture'}}
+           label="Humidity"
+           ChannelValueProps={{value: 54, units: '%'}}
+      />
+    </HeroBanner>
+  }
+  >
+    <View>
+        <Text>Body Content</Text>
+    </View>
+</ScoreCard>
+```
