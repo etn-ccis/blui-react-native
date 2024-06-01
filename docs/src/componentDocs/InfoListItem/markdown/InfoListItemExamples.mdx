@@ -3,6 +3,7 @@ import infoListItemExample from '../images/infoListItemExample.png';
 import infoListItemDense from '../images/infoListItemDense.png';
 import indicatingStatus from '../images/indicatingStatus.png';
 import infolistItemComponent from '../images/infolistItemComponent.png';
+import infolistItemClickable from '../images/infolistItemClickable.png';
 
 # Info List Item
 
@@ -126,51 +127,53 @@ If you want to show additional content in the list item, such as a timestamp or 
 
 ## Clickable List Items
 
-If you want your list items to be clickable, add an onClick handler (you can also add a ripple effect by setting the ripple prop to true).
+If you want your list items to be clickable, add an `onPress` handler.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="InfoListItem Clickable"
+    src={infolistItemClickable}
+  />
+</Box>
 
 ```
-   <Card>
-       <InfoListItem
-            title={'Title'}
-            icon={{ family: 'brightlayer-ui', name: 'leaf' }}
-            subtitle={'Subtitle'}
-            info={'info'}
-            statusColor="#FF5733"
-            backgroundColor="#4682B4"
-            avatar
-            divider={'full'}
-            onPress={() => {}}
-            chevron
-            style={{ marginBottom: 20 }}
-            />
-        <InfoListItem
-            title="Info List Item Title"
-            subtitle="Info List Item Subtitle"
-            icon={{ name: 'settings' }}
-            onPress={() => {}}
-            avatar
-            divider={'full'}
-        />
-        <InfoListItem
-            title={'Hillman Field East'}
-            subtitle={['PXM 2000', 'DT 1150', '113.4 GPM']}
-            onPress={() => {}}
-            subtitleSeparator={'/'}
-        />
-        <InfoListItem
-            title="Battery Fully Charged"
-            subtitle="Your device is ready to use"
-            icon={{ family: 'brightlayer-ui', name: 'battery' }}
-            iconAlign="center"
-            onPress={() => {}}
-            leftComponent={
-              <View>
-                <Text variant="titleSmall">{'8:32 AM'}</Text>
-                <Text variant="bodySmall">{'11/21/21'}</Text>
-              </View>
-            }
-            rightComponent={<ChannelValue value={'15'} units={'A'} />}
-            chevron
-        />
-    </Card>
+<Card>
+    <InfoListItem
+        dense
+        title={'Status'}
+        divider="partial"
+        statusColor="#2ca618"
+        subtitleSeparator={'/'}
+        icon={{ family: 'brightlayer-ui', name: 'device_activating' }}
+        iconAlign={'center'}
+        onPress={() => {}}
+        chevron
+    />
+    <InfoListItem
+        title={'Output Voltage'}
+        divider={'partial'}
+        avatar
+        statusColor="#ca3c3d"
+        subtitle={['Phase A', 'Phase B', 'Phase C']}
+        icon={{ name: 'check-circle' }}
+        chevron
+        onPress={() => {}}
+    />
+    <InfoListItem
+        dense
+        title={'Output Current'}
+        icon={{ name: 'battery-charging-full' }}
+        chevron
+        onPress={() => {}}
+    />
+</Card>
 ```
