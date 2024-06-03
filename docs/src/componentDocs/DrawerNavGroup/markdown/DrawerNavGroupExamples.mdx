@@ -1,1 +1,49 @@
-## Drawer Nav Group Examples
+import Box from '@mui/material/Box';
+import DrawerNavGroup from '../images/drawerNavGroup.png';
+
+## Drawer Nav Group
+
+A `<DrawerNavGroup>` organizes related navigation items together. You can have as many groups as needed.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '250px',
+    }}
+    component="img"
+    alt="DrawerNav Group Example"
+    src={DrawerNavGroup}
+  />
+</Box>
+
+```
+<Drawer style={{width: 250}}>
+  <DrawerBody>
+    <DrawerNavGroup title="Locations" hidePadding>
+      <DrawerNavItem title="Regional" itemID="1" />
+      <DrawerNavItem title="National" itemID="2" />
+    </DrawerNavGroup>
+    <DrawerNavGroup title="Status" hidePadding>
+      <DrawerNavItem title="Network" itemID="3" />
+      <DrawerNavItem title="Node" itemID="4" />
+    </DrawerNavGroup>
+  </DrawerBody>
+</Drawer>
+```
+
+## Spacing the Groups
+
+If you want to add an extra space between your groups, you can use a [Spacer](/components/spacer/examples) component.
+
+## Customizing the Title
+
+By default, each nav group has a simple string as the title. You can customize this and pass in your own content through the `titleContent` prop.
+
+## Composition vs Configuration
+
+You can define the [Drawer Nav Items](/components/drawer-nav-item/examples) that you want to appear in each group via composition (simply add them as children) or configuration (define them in the `items` prop). Composition will offer slightly better re-rendering performance when props change, but using the `items` prop is easier to read/maintain, especially if you have a large number of items.
