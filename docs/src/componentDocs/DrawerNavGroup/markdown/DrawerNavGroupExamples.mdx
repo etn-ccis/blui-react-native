@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import DrawerNavGroup from '../images/drawerNavGroup.png';
+import SpacingDrawerNavGroup from '../images/spacingDrawerNavGroup.png';
 
 ## Drawer Nav Group
 
@@ -24,14 +25,14 @@ A `<DrawerNavGroup>` organizes related navigation items together. You can have a
 ```
 <Drawer style={{width: 250}}>
   <DrawerBody>
-    <DrawerNavGroup title="Locations" hidePadding>
-      <DrawerNavItem title="Regional" itemID="1" />
-      <DrawerNavItem title="National" itemID="2" />
-    </DrawerNavGroup>
-    <DrawerNavGroup title="Status" hidePadding>
-      <DrawerNavItem title="Network" itemID="3" />
-      <DrawerNavItem title="Node" itemID="4" />
-    </DrawerNavGroup>
+        <DrawerNavGroup title="Locations" hidePadding>
+            <DrawerNavItem title="Regional" itemID="1" />
+            <DrawerNavItem title="National" itemID="2" />
+        </DrawerNavGroup>
+        <DrawerNavGroup title="Status" hidePadding>
+            <DrawerNavItem title="Network" itemID="3" />
+            <DrawerNavItem title="Node" itemID="4" />
+        </DrawerNavGroup>
   </DrawerBody>
 </Drawer>
 ```
@@ -39,6 +40,39 @@ A `<DrawerNavGroup>` organizes related navigation items together. You can have a
 ## Spacing the Groups
 
 If you want to add an extra space between your groups, you can use a [Spacer](/components/spacer/examples) component.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '250px',
+    }}
+    component="img"
+    alt="Spacing Drawer nav groups"
+    src={SpacingDrawerNavGroup}
+  />
+</Box>
+
+```
+<Drawer style={{width: 250}}>
+    <DrawerBody>
+        <DrawerNavGroup title="Group 1" hidePadding titleDivider={false}>
+            <DrawerNavItem title="Item 1" itemID="1" />
+            <DrawerNavItem title="Item 2" itemID="2" />
+        </DrawerNavGroup>
+        <Spacer height={30} />
+        <Divider />
+        <DrawerNavGroup title="Group 2" hidePadding titleDivider={false}>
+            <DrawerNavItem title="Item 3" itemID="3" />
+            <DrawerNavItem title="Item 4" itemID="4" />
+        </DrawerNavGroup>
+  </DrawerBody>
+</Drawer>
+```
 
 ## Customizing the Title
 
