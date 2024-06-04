@@ -1,1 +1,114 @@
-### Icons Examples
+import Box from '@mui/material/Box';
+import IconAsProp from '../images/iconProp.png';
+import IconAsComponent from '../images/iconComponent.png';
+import IconAsString from '../images/iconString.png';
+import IconImageSource from '../images/iconImageSource.png';
+
+## Icons
+
+Icons are visual indicators usually used to describe action or intent.
+
+## Icon as a prop
+
+Many Brightlayer UI components support the use of icons. These components will support passing in an icon in a variety of different formats.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Icon as a Prop"
+    src={IconAsProp}
+  />
+</Box>
+
+```
+<Hero label={'Setting'} icon={<MatIcon name="settings" size={38} color={'green'} />} />
+```
+
+## Icon as a Component
+
+The simplest way to use a icon in a component is to specify the icon as a simple object.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Icon as a Component"
+    src={IconAsComponent}
+  />
+</Box>
+
+```
+<Hero label={'Device'} icon={{ family: 'brightlayer-ui', name: 'device' }} />
+```
+
+## Inline Functional Component
+
+## String as a Icon
+
+In some rare cases, you may wish to pass a simple string (e.g., a single letter or number) as the icon for a component. In this case, you may pass a string directly to the icon prop. This can also be used to render emoji icons.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Icon as a String"
+    src={IconAsString}
+  />
+</Box>
+
+```
+<Hero label={'String'} icon={'A'} />
+<Hero label={'Emoji'} icon={'🍇'} />
+```
+
+## Image Source
+
+The icon prop will also support images in various formats, either from local resources or from the web.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Icon Image Source"
+    src={IconImageSource}
+  />
+</Box>
+
+```
+<Hero
+    label={'Image'}
+    icon={{
+    uri: 'https://raw.githubusercontent.com/etn-ccis/blui-icons/dev/packages/png/png48/
+    account_settings_black500_48dp.png',
+  }}
+/>
+```
