@@ -1,1 +1,188 @@
-### Chip Examples
+import Box from '@mui/material/Box';
+import ChipExample from '../images/ChipExample.png';
+import ChipIconExample from '../images/ChipIconExample.png';
+import ChipAvatarExample from '../images/ChipAvatarExample.png';
+import ChipSelectedExample from '../images/ChipSelectedExample.png';
+import ChipDisableExample from '../images/ChipDisableExample.png';
+
+
+## Chip 
+The Chip component is a customizable [chip](https://callstack.github.io/react-native-paper/docs/components/Chip/)-based component that makes the chip component in alignment to BrightlayerUI. Chips are compact elements that can represent inputs, attributes, or actions. They can have an icon or avatar on the left, and a close button icon on the right.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Chip Compoent"
+    src={ChipExample}
+  />
+</Box>
+
+```
+<Chip>Outlined Chip</Chip>
+<Chip mode="elevated">Elevated Chip</Chip>
+```
+
+## Showing chip with icon and icon color
+
+You can add an optional icon to highlight the chip.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Chip Icon Component"
+    src={ChipIconExample}
+  />
+</Box>
+
+```
+<Chip
+    icon={{ name: 'info' }}
+    iconColor={'#f00'}
+>
+    Outlined Chip With Icon Color
+</Chip>
+<Chip
+    mode="elevated"
+    icon={{ name: 'info' }}
+    iconColor={'#f00'}
+>
+    Elevated Chip With Icon Color
+</Chip>
+```
+
+## Showing chip with icon and icon color
+
+You can add an optional Avatar to highlight the chip.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Chip Avatar Component"
+    src={ChipAvatarExample}
+  />
+</Box>
+
+```
+<Chip
+    avatar={<Avatar.Icon size={40} icon="account-circle" />}
+>
+    Outlined Chip With Avatar
+</Chip>
+<Chip
+    mode="elevated"
+    avatar={<Avatar.Icon size={40} icon="account-circle" />}
+>
+    Elevated Chip With Avatar
+</Chip>
+```
+
+## Showing disabled chip 
+
+You can add an optional Avatar to disable the chip.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Chip Disable Component"
+    src={ChipDisableExample}
+  />
+</Box>
+
+```
+<Chip disabled>
+    Disabled Outlined Chip
+</Chip>
+<Chip mode="elevated" disabled>
+    Disabled Elevated Chip
+</Chip>
+```
+
+## Showing selected chips
+
+You can show selected chip by passing an optional prop.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Chip Selected Component"
+    src={ChipSelectedExample}
+  />
+</Box>
+
+```
+<Chip selected>
+    Selected Outlined Chip
+</Chip>
+<Chip
+    selected
+    mode="elevated"
+>
+    Selected Elevated Chip
+</Chip>
+<Chip
+    selected
+    showSelectedOverlay
+>
+    Selected Outlined Chip With Overlay
+</Chip>
+<Chip
+    mode="elevated"
+    selected
+    showSelectedOverlay
+>
+    Selected Elevated Chip With Overlay
+</Chip>
+<Chip
+    selected
+    showSelectedCheck
+>
+    Selected Outlined Chip With Check
+</Chip>
+<Chip
+    mode="elevated"
+    selected
+    showSelectedCheck
+>
+    Selected Elevated Chip With Check
+</Chip>
+```
