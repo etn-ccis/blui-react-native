@@ -1,1 +1,109 @@
-### Hero Examples
+import Box from '@mui/material/Box';
+import HeroExampleComponent from '../images/HeroExampleComponent.png';
+import HeroMultipleExampleComponent from '../images/HeroMultipleExampleComponent.png';
+import HeroIconExampleComponent from '../images/HeroIconExampleComponent.png';
+
+## Hero
+
+A `<Hero>` is used to call attention to a particular value or parameter. It adds some additional visual elements onto a [Channel Value](/components/channel-value/examples). When showing multiple heroes, they are typically placed within a Hero Banner to help with layout.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Hero Component"
+    src={HeroExampleComponent}
+  />
+</Box>
+
+```
+<HeroBanner>
+    <Hero
+        icon={<Grade.A size={50} />}
+        label="Efficiency"
+        ChannelValueProps={{ value: '98', units: '%' }}
+    />
+</HeroBanner>
+```
+
+## Showing Multiple Channel Values
+
+By default, a Hero renders a single Channel Value. If you need to support multiple Channel Values, you can pass them in as children.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Hero Multiple Component"
+    src={HeroMultipleExampleComponent}
+  />
+</Box>
+
+```
+<Hero label={'Duration'} icon={{ name: 'schedule' }}
+    styles={{ label: { fontSize: 36, lineHeight: 40 } }}
+    iconSize={48}>
+    <ChannelValue
+        fontSize={40}
+        value={1}
+        units={'h'}
+        unitSpace={'hide'}
+    />
+    <ChannelValue
+        fontSize={40}
+        value={27}
+        units={'m'}
+        unitSpace={'hide'}
+    />
+</Hero>
+```
+
+## Adding a Channel Value Icon
+
+If you want to include an inline icon, specify it in the Channel Value `icon` prop.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Hero Channel Value Icon Component"
+    src={HeroIconExampleComponent}
+  />
+</Box>
+
+```
+<Hero
+    label={'Velocity'}
+    ChannelValueProps={{
+        value: 470,
+        units: 'RPM',
+        fontSize: 40,
+        icon: { family: 'material', name: 'trending-up' }
+    }}
+    icon={{ family: 'material-community', name: 'fan' }}
+    iconSize={48}
+    styles={{ label: { fontSize: 36, lineHeight: 40 } }}
+/>
+```
+
