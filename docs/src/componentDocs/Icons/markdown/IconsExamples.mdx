@@ -32,7 +32,7 @@ Many Brightlayer UI components support the use of icons. These components will s
 <Hero label={'Setting'} icon={<MatIcon name="settings" size={38} color={'green'} />} />
 ```
 
-## Icon as a Component
+## Icon as a Object
 
 The simplest way to use a icon in a component is to specify the icon as a simple object.
 
@@ -57,6 +57,23 @@ The simplest way to use a icon in a component is to specify the icon as a simple
 ```
 
 ## Inline Functional Component
+
+You can also use an inline functional component to render other components. This can be especially useful if you want to render something other than a Material, Material Community, or Brightlayer UI icon, such as a progress icon.
+
+```
+<Hero
+  label={'Icon'}
+  iconSize={100}
+  icon={({size, ...props}) => (
+    <Avatar.Icon
+      size={size}
+      {...props}
+      icon="account-circle"
+      color={'#E5E4E2'}
+    />
+  )}
+/>
+```
 
 ## String as a Icon
 
