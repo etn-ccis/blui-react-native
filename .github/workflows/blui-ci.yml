@@ -55,7 +55,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn --immutable
-      - run: yarn docs-build --base-href ${{env.base-href}}
+      - run: yarn docs-build --base= ${{env.base-href}}
       - name: Save dist
         uses: actions/upload-artifact@v3
         with:
