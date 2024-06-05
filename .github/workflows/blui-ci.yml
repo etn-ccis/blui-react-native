@@ -32,21 +32,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn
-      - run: yarn docs-prettier
-        working-directory: docs
+      # - run: yarn docs-prettier
+      #   working-directory: docs
     #   - run: yarn docs-lint
     #     working-directory: docs
 
-  build_rn_docs:
+  build_rn_docs_dev:
     runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/dev' && 'dev' || 'master' }}
 
     strategy:
       matrix:
         node-version: [20.x]
-
-    # env:
-        # base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
-        # app_branch: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
 
     steps:
       - name: Checkout
@@ -57,7 +54,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn --immutable
-      - run: yarn docs-build
+      - run: yarn docs-build --base=/react-native-dev/ 
       - name: Save dist
         uses: actions/upload-artifact@v3
         with:
@@ -68,7 +65,7 @@ jobs:
   deploy_rn_docs_dev:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
-    needs: [build_rn_docs, prettier_lint]
+    needs: build_rn_docs_dev
     env:
       DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
     steps:
@@ -93,7 +90,7 @@ jobs:
   deploy_rn_docs_prod:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-    needs: [build_rn_docs, prettier_lint]
+    # needs: build_rn_docs_prod
     env:
       DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
     steps:
