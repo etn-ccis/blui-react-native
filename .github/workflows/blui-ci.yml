@@ -80,7 +80,7 @@ jobs:
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ~dist/docs
+          folder: dist/docs
           token: ${{env.DEV_DEPLOY_TOKEN}}
           repository-name: brightlayer-ui-components/react-native-dev
           branch: master
@@ -105,7 +105,7 @@ jobs:
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: ~dist/docs
+          folder: dist/docs
           token: ${{env.DEV_DEPLOY_TOKEN}}
           repository-name: brightlayer-ui-components/react-native
           branch: master
