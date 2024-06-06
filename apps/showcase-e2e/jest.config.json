@@ -16,7 +16,7 @@
   "transform": {
     "^.+\\.(ts|js|html)$": [
       "ts-jest",
-      { "tsconfig": "<rootDir>/tsconfig.e2e.json" }
+      {"tsconfig": "<rootDir>/tsconfig.e2e.json"}
     ]
   }
 }

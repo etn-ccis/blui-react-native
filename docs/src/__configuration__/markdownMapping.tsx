@@ -169,9 +169,9 @@ export const componentsMap = {
           theme.palette.mode === 'light'
             ? theme.palette.background.default
             : Colors.darkBlack[300],
-            '& code': {
-              width: '100%',
-            },
+        '& code': {
+          width: '100%',
+        },
       }}
       {...props}
     />
