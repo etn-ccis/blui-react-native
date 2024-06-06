@@ -68,7 +68,7 @@ export const SharedAppBar: React.FC<SharedAppBarProps> = (
   // See hidden RTL site comment below
   // const siteDirection = useAppSelector((state: RootState) => state.appState.siteDirection);
   const linkToThemesOverview = `${
-    import.meta.env.PUBLIC_URL ? import.meta.env.PUBLIC_URL : ''
+    import.meta.env.BASE_URL ? import.meta.env.BASE_URL : ''
   }/themes/overview`;
 
   const onClickThemeSelectorItem = React.useCallback(
