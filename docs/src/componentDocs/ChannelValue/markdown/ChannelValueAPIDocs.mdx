@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
-import ChannelValueComponent from '../images/channelValue.png';
+import ChannelValueComponent from '../images/channelValueExample.png';
+import ChannelValueAnatomyImage from '../images/channelValueAnatomy.png';
 
 # Channel Value
 
@@ -13,11 +14,29 @@ The `<ChannelValue>` component is used to display a channel value (and units). T
   <Box
     sx={{
       width: '100%',
-      maxWidth: '500px',
+      maxWidth: 400,
     }}
     component="img"
     alt="Channel Value Component"
     src={ChannelValueComponent}
+  />
+</Box>
+
+## Channel Value Usage
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: 400,
+    }}
+    component="img"
+    alt="Channel Value Anatomy"
+    src={ChannelValueAnatomyImage}
   />
 </Box>
 
