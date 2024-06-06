@@ -48,7 +48,7 @@ const container = document.getElementById('root');
 if (!container) throw new Error('Root Element was not found in the DOM');
 
 const root = ReactDOMClient.createRoot(container);
-const basename = import.meta.env.PUBLIC_URL || '/';
+const basename = import.meta.env.BASE_URL || '/';
 
 const ThemedApp = (): JSX.Element => {
   const siteTheme = useAppSelector(

@@ -118,7 +118,7 @@ export const HomePage = (): JSX.Element => {
         <Stack direction={'row'} gap={2} flexWrap={'wrap'}>
           <Button
             href={`${
-              import.meta.env.PUBLIC_URL ? import.meta.env.PUBLIC_URL : ''
+              import.meta.env.BASE_URL ? import.meta.env.BASE_URL : ''
             }/getting-started/environment`}
             variant={'contained'}
             disableElevation
