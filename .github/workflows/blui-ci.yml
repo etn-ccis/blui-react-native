@@ -55,7 +55,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
       - run: yarn --immutable
-      - run: yarn docs-build --base= ${{env.base-href}} && touch ./dist/docs/.nojekyll
+      - run: yarn docs-build --base=${{env.base-href}} && touch ./dist/docs/.nojekyll
       - name: Save dist
         uses: actions/upload-artifact@v3
         with:
