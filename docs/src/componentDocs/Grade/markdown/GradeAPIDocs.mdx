@@ -4,7 +4,9 @@ import GradeCSubComponentImage from '../images/gradesSubcomponent.png';
 
 # Grade
 
-The Grade component is a customizable [avatar](https://callstack.github.io/react-native-paper/4.0/avatar-text.html)-based component that represents different grades. It allows you to display a label with a specified background color and font color.
+The Grade component is lightweight wrapper around the React Native Paper [Avatar](https://callstack.github.io/react-native-paper/4.0/avatar-text.html) that represents a rating. It shows a specified rating along with a color-coded background color based on that rating.
+
+{/* TODO: This image needs to be updated to show standard Grades, not random colors */}
 
 <Box
   sx={{
@@ -38,9 +40,9 @@ The Grade component is a customizable [avatar](https://callstack.github.io/react
 
 Any other props will be provided to the root element ([**View**](https://reactnative.dev/docs/view)).
 
-## Grade Subcomponent
+## Grade Presets
 
-The subcomponents are a set of preconfigured components that can be used directly for specific grades with in-built styling.
+There are a number of preset values available with standard grades and colors already configured. You should use these if they make sense for your target location (these are based on the US grade system). Presets are available by accessing the nested component by name (e.g., `<Grade.APlus/>`)
 
 <Box
   sx={{
@@ -58,9 +60,9 @@ The subcomponents are a set of preconfigured components that can be used directl
   />
 </Box>
 
-### Grade Subcomponents API
+### Grade Presets API
 
-All Grade Subcomponents have the following Props
+All Grade Presets have the following Props
 
 <Box>
 

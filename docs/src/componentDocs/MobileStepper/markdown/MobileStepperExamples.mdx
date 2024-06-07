@@ -3,11 +3,9 @@ import MobileStepperDotVariant from '../images/mobileStepper_dot.png';
 import MobileStepperTextVariant from '../images/mobileStepper_text.png';
 import MobileStepperProgressVariant from '../images/mobileStepper_progress.png';
 
-# Mobile Stepper
+## Mobile Stepper
 
-The `<MobileStepper>` is used to display progress when completing a workflow that requires multiple steps. There are three types of progress indicators supported, `dots` (default), `text`, and `progress`.
-
-## Dot Variant Usage
+The basic mobile stepper uses dots to indicate progress.
 
 <Box
   sx={{
@@ -35,7 +33,9 @@ The `<MobileStepper>` is used to display progress when completing a workflow tha
 />;
 ```
 
-## Text Variant Usage
+## Using Text / Progress Bar
+
+If you have more than a few steps or limited space in your container, you can use a text label or progress bar to indicate the current step.
 
 <Box
   sx={{
@@ -52,19 +52,6 @@ The `<MobileStepper>` is used to display progress when completing a workflow tha
     src={MobileStepperTextVariant}
   />
 </Box>
-
-```
-<MobileStepper
-  activeStep={activeStep}
-  steps={steps}
-  leftButton={<BackButton />}
-  rightButton={<NextButton />}
-  variant={'text'}
-/>;
-```
-
-## Progress Variant Usage
-
 <Box
   sx={{
     width: '100%',
@@ -82,6 +69,13 @@ The `<MobileStepper>` is used to display progress when completing a workflow tha
 </Box>
 
 ```
+<MobileStepper
+  activeStep={activeStep}
+  steps={steps}
+  leftButton={<BackButton />}
+  rightButton={<NextButton />}
+  variant={'text'}
+/>;
 <MobileStepper
   activeStep={activeStep}
   steps={steps}
