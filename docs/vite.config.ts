@@ -5,7 +5,7 @@ import {nxViteTsPaths} from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import mdx from '@mdx-js/rollup';
 import remarkGfm from 'remark-gfm';
 import reactNativeWeb from 'vite-plugin-react-native-web';
-
+import prism from 'vite-plugin-prismjs';
 export default defineConfig({
   root: __dirname,
   cacheDir: '../node_modules/.vite/docs',
@@ -30,6 +30,12 @@ export default defineConfig({
       providerImportSource: '@mdx-js/react',
     }),
     reactNativeWeb(),
+    prism({
+      languages: ['javascript', 'css', 'html', 'typescript', 'jsx'],
+      plugins: ['line-numbers'],
+      theme: 'tomorrow',
+      css: true,
+    }),
   ],
 
   // Uncomment this if you are using workers.

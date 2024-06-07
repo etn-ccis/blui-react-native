@@ -43,6 +43,7 @@
     "react-router-dom": "6.11.2",
     "remark-gfm": "^4.0.0",
     "typewriter-effect": "^2.21.0",
+    "vite-plugin-prismjs": "^0.0.11",
     "vite-plugin-react-native-web": "^1.0.2",
     "web-vitals": "^3.5.2"
   },
@@ -71,6 +72,7 @@
     "@testing-library/react": "14.0.0",
     "@testing-library/react-native": "~12.4.2",
     "@types/node": "18.16.9",
+    "@types/prismjs": "^1.26.4",
     "@types/react": "~18.2.45",
     "@types/react-dom": "18.2.14",
     "@typescript-eslint/eslint-plugin": "^7.3.0",
