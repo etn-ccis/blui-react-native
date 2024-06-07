@@ -1,1 +1,188 @@
-### Header Examples
+import Box from '@mui/material/Box';
+import headerImageExample from '../images/headerImage.png';
+import headerBackgroundExample from '../images/headerBackgroundImage.png';
+import headerActionsExample from '../images/headerActionsImage.png';
+import headerSearchExample from '../images/headerSearchImage.png';
+import headerCollapsedExample from '../images/headerCollapsedImage.png';
+import headerExpandedExample from '../images/headerExpandedImage.png';
+
+## Header
+
+The `<Header>` component is used at the top of a page to display information. It displays a title and can optionally show a subtitle, a background image, a navigation button, and multiple action buttons. The header can also be configured to expand or collapse as needed. For expand/collapse behavior tied to the screen scroll position, you should use the [`<CollapsibleHeaderLayout>`](/components/collapsible-header-layout/examples) component.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header"
+    src={headerImageExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+/>;
+```
+
+## Header with Background image
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header background image"
+    src={headerBackgroundExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    backgroundImage={farm.jpg}
+/>;
+```
+
+## Header with Actions and Menu
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header actions"
+    src={headerActionsExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    actionItems={[
+        {
+            icon: { name: 'settings'},
+            onPress: () => {},
+        },
+        {
+            icon: { name: 'more-vert' },
+            onPress: () => {},
+        },
+    ]}
+    icon={{ name: 'menu' }}
+/>;
+```
+
+## Header with Search
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header search"
+    src={headerSearchExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    actionItems={[
+        {
+            icon: { name: 'settings'},
+            onPress: () => {},
+        },
+        {
+            icon: { name: 'more-vert' },
+            onPress: () => {},
+        },
+    ]}
+    icon={{ name: 'menu' }}
+    searchableConfig={{ onChangeText: () => {} }}
+/>;
+```
+## Header with Collapsing and Expanding
+
+<Box
+  sx={{
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    mb: 2,
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '40%',
+    }}
+    component="img"
+    alt="Header collapsed"
+    src={headerCollapsedExample}
+  />
+  <Box
+    sx={{
+      width: '40%',
+    }}
+    component="img"
+    alt="Header expanded"
+    src={headerExpandedExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    info={'Information'}
+    backgroundImage={farm.jpg}
+    icon={{ name: 'menu' }}
+    onIconPress={() => {}}
+    actionItems={[
+        {
+            icon: { name: 'settings'},
+            onPress: () => {},
+        },
+        {
+            icon: { name: 'more-vert' },
+            onPress: () => {},
+        },
+    ]}
+    variant="static"
+    icon={{ name: 'menu' }}
+    searchableConfig={{ onChangeText: () => {} }}
+    expandable={true}
+    collapsedHeight={56}
+    expandedHeight={200}
+/>;
+```
