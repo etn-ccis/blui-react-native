@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import DrawerNavGroupAnatomy from '../images/drawerNavGroupAnatomy.png';
 import SharedProps from '../../Drawer/markdown/SharedProps.mdx';
 
 # Drawer Nav Group
@@ -6,6 +7,22 @@ import SharedProps from '../../Drawer/markdown/SharedProps.mdx';
 A `<DrawerNavGroup>` is used inside of the `<DrawerBody>` to organize links/content. Each group consists of an (optional) group title and a series of navigation items. Most visual props are inherited from the `<DrawerBody>` but can be overridden at the NavGroup level if desired.
 
 The `items` property supports nested items to generate collapsible sections in the menu. This can be used to create an arbitrary tree depth, but we do not recommend going more than two levels deep in a navigation Drawer. You can also build the navigation links declaratively by passing `<DrawerNavItem>` children to the `<DrawerNavGroup>`.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '600px',
+    }}
+    component="img"
+    alt="Drawer Nav Group Anatomy"
+    src={DrawerNavGroupAnatomy}
+  />
+</Box>
 
 ### DrawerNavGroup API
 
