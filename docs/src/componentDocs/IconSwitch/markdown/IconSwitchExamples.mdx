@@ -1,1 +1,52 @@
-### Icon Switch Examples
+import Box from '@mui/material/Box';
+import iconSwitchImage from '../images/iconswitch.png';
+
+## Icon Switch
+
+The basic `<IconSwitch />` shows a standard switch without any icons.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '300px',
+    }}
+    component="img"
+    alt="icon switch picture"
+    src={iconSwitchImage}
+  />
+</Box>
+
+```
+<IconSwitch value={false} />
+<IconSwitch value={true} />
+```
+
+## Adding an Icon
+
+To show the additional icons, set the `showIcon` prop.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '300px',
+    }}
+    component="img"
+    alt="icon switch picture"
+    src={iconSwitchImage}
+  />
+</Box>
+
+```
+<IconSwitch value={false} showIcon />
+<IconSwitch value={true} showIcon />
+```

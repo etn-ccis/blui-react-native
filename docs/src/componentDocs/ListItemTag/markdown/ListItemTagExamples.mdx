@@ -1,1 +1,59 @@
-### List Item Tag Examples
+import Box from '@mui/material/Box';
+import ListItemTagComponent from '../images/ListItemTagComponent.png';
+import ListItemTagExampleComponent from '../images/ListItemTagExampleComponent.png';
+
+## List Item Tag
+
+A `<ListItemTag>` is a stylized Typography element used for labeling. The text and background colors are customizable via the `fontColor` and `backgroundColor` props.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="ListItemTag Component"
+    src={ListItemTagComponent}
+  />
+</Box>
+
+```
+<ListItemTag label={'Default Tag'}/>
+<ListItemTag label={'Foo Bar'} backgroundColor={'#f00'} fontColor={'#ff0'}/>
+```
+
+## Using within an Info List Item
+
+The List Item Tag commonly appears within an [Info List Item](/components/info-list-item/examples).
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="ListItemTag Example Component"
+    src={ListItemTagExampleComponent}
+  />
+</Box>
+
+```
+<InfoListItem
+    title="Info List Item"
+    subtitle="with a ListItemTag component to the right"
+    icon={{ name: 'settings' }}
+    iconAlign="center"
+    rightComponent={ <ListItemTag label={'Default Tag'}/>}
+    chevron
+/>
+```

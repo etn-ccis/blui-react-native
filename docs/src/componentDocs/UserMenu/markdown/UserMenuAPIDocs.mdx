@@ -1,1 +1,73 @@
-### User Menu API Docs
+import Box from '@mui/material/Box';
+import userMenuOpenedImage from '../images/userMenuOpened.png';
+import userMenuAvatarImage from '../images/userMenuAvatar.png';
+
+# User Menu
+
+The `<UserMenu>` is a combination of an Avatar and a Menu that is used to hold user account-related information and actions. It is typically used in the top-right corner of an application and indicates who is logged in.
+
+<Box
+  sx={{
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    mb: 2,
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '40%',
+    }}
+    component="img"
+    alt="User Menu"
+    src={userMenuOpenedImage}
+  />
+  <Box
+    sx={{
+      width: '40%',
+    }}
+    component="img"
+    alt="User Menu Avatar"
+    src={userMenuAvatarImage}
+  />
+</Box>
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  ![placeholder image](https://placehold.co/500x300)
+</Box>
+
+## API
+
+<Box>
+
+| Prop Name       | Description                                              | Type                          | Required | Default                         |
+| --------------- | -------------------------------------------------------- | ----------------------------- | -------- | ------------------------------- |
+| avatar          | Avatar to display as the menu trigger                    | `JSX.Element`                 | yes      |                                 |
+| backgroundColor | Background color of the bottom sheet                     | `string`                      | no       | `theme.colors.surface`          |
+| fontColor       | Color of text for the bottom sheet header and menu items | `string`                      | no       |                                 |
+| iconColor       | Color of icons for the bottom sheet menu items           | `string`                      | no       | `theme.colors.onSurfaceVariant` |
+| menuItems       | An array of menu items to show in the bottom sheet       | `InfoListItemProps[]`         | yes      |                                 |
+| menuTitle       | Title to display in the bottom sheet                     | `string`                      | no       |                                 |
+| menuSubtitle    | Subtitle to display in the bottom sheet                  | `string`                      | no       |                                 |
+| theme           | Theme value overrides                                    | `$DeepPartial<ExtendedTheme>` | no       |                                 |
+
+</Box>
+
+### Styles
+
+You can override the internal styles used by Brightlayer UI by passing a `styles` prop. It supports the following keys:
+
+<Box>
+
+| Name        | Description                               |
+| ----------- | ----------------------------------------- |
+| root        | Styles applied to the root element        |
+| avatar      | Styles applied to avatar wrapper          |
+| bottomsheet | Styles applied to the bottomsheet wrapper |
+
+</Box>

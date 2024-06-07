@@ -225,23 +225,6 @@ export const pageDefinitions: RouteConfig[] = [
             ],
           },
           {
-            title: 'Drawer Footer',
-            path: 'drawer-footer/',
-            element: <ComponentPreviewPage title={'Drawer Footer'} />,
-            children: [
-              {
-                title: 'examples',
-                path: 'examples',
-                element: <DrawerFooterExamples />,
-              },
-              {
-                title: 'API Docs',
-                path: 'api-docs',
-                element: <DrawerFooterAPIDocs />,
-              },
-            ],
-          },
-          {
             title: 'Drawer Nav Item',
             path: 'drawer-nav-item/',
             element: <ComponentPreviewPage title={'Drawer Nav Item'} />,
@@ -255,6 +238,23 @@ export const pageDefinitions: RouteConfig[] = [
                 title: 'API Docs',
                 path: 'api-docs',
                 element: <DrawerNavItemAPIDocs />,
+              },
+            ],
+          },
+          {
+            title: 'Drawer Footer',
+            path: 'drawer-footer/',
+            element: <ComponentPreviewPage title={'Drawer Footer'} />,
+            children: [
+              {
+                title: 'examples',
+                path: 'examples',
+                element: <DrawerFooterExamples />,
+              },
+              {
+                title: 'API Docs',
+                path: 'api-docs',
+                element: <DrawerFooterAPIDocs />,
               },
             ],
           },

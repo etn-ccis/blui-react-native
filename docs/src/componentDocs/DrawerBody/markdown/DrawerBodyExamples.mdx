@@ -1,1 +1,57 @@
-## Drawer Body Examples
+import Box from '@mui/material/Box';
+import DrawerBodyExample from '../images/DrawerBodyExample.png';
+
+## Drawer Body
+
+The `<DrawerBody>` is a wrapper for the main content of the Drawer. The typical use case is to display [Nav Group](/components/drawer-nav-group/examples) elements, but custom elements (e.g., for spacing) are accepted as well. The Drawer Body is also useful for setting styling properties that you want to appyly to all of the navigation elements.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Drawer Body Example"
+    src={DrawerBodyExample}
+  />
+</Box>
+
+```
+<Drawer>
+    <DrawerBody>
+        <DrawerNavGroup title={'Navigation Group'}>
+            <DrawerNavItem
+                itemID={'item1'}
+                title={'Account'}
+                icon={{ family: 'material-community', name: 'account', direction: 'auto' }}
+                InfoListItemProps={{
+                    iconAlign: 'center',
+                }}
+            />
+            <DrawerNavItem
+                itemID={'item2'}
+                title={'Notification'}
+                icon={{ family: 'material-community', name: 'bell', direction: 'auto' }}
+                activeItemBackgroundShape={'round'}
+                InfoListItemProps={{
+                    iconAlign: 'center',
+                }}
+            />
+            <DrawerNavItem
+                itemID={'item3'}
+                title={'Localization'}
+                icon={{ family: 'material-community', name: 'circle', direction: 'auto' }}
+                activeItemBackgroundShape={'round'}
+                InfoListItemProps={{
+                    iconAlign: 'center',
+                }}
+            />
+        </DrawerNavGroup>
+    </DrawerBody>
+</Drawer>
+```

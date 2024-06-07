@@ -6,7 +6,8 @@
   "scripts": {
     "docs-start": "npx nx serve docs",
     "docs-prettier": "npx nx format:write docs",
-    "docs-lint": "npx nx lint docs"
+    "docs-lint": "npx nx lint docs",
+    "docs-build": "npx nx build docs --no-cloud"
   },
   "private": true,
   "dependencies": {
@@ -75,7 +76,7 @@
     "@types/prismjs": "^1.26.4",
     "@types/react": "~18.2.45",
     "@types/react-dom": "18.2.14",
-    "@typescript-eslint/eslint-plugin": "^7.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
     "@typescript-eslint/parser": "^7.3.0",
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/coverage-v8": "^1.0.4",
