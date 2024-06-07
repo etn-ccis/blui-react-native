@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {ChannelValueWithIconExample} from './ChannelValueWithIconExample';
 
-const codeSnippet = `<ChannelValue value="123" units="hz" icon={<TrendingUp />} />`;
+const codeSnippet = `<ChannelValue value="123" units="hz" icon={{family:'material', name:'trending-up'}} />`;
 
 export const ChannelValueWithIcon = (): JSX.Element => (
   <Box>
