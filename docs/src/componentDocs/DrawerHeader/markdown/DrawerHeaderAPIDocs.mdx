@@ -1,8 +1,25 @@
 import Box from '@mui/material/Box';
+import DrawerHeaderAnatomy from '../images/drawerHeaderAnatomy.png';
 
 # Drawer Header
 
 The `<DrawerHeader>` is a subsection that appears at the top of `<Drawer>`. Its content can be provided by the `title`, `subtitle`, and `icon` props, or you can pass in your own custom content via `titleContent`.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '600px',
+    }}
+    component="img"
+    alt="Drawer Header Anatomy"
+    src={DrawerHeaderAnatomy}
+  />
+</Box>
 
 ### DrawerHeader API
 

@@ -19,7 +19,7 @@ const CONTENT_WIDTH = 800;
 const styles = {
   pageRoot: {
     background: (theme: Theme): string =>
-      `url('${CirclesImage}') no-repeat center/200%, ${theme.palette.primary.main}`,
+      `url("${CirclesImage}") no-repeat center/200%, ${theme.palette.primary.main}`,
     minHeight: '100%',
     color: 'primary.contrastText',
   },
@@ -118,7 +118,7 @@ export const HomePage = (): JSX.Element => {
         <Stack direction={'row'} gap={2} flexWrap={'wrap'}>
           <Button
             href={`${
-              import.meta.env.PUBLIC_URL ? import.meta.env.PUBLIC_URL : ''
+              import.meta.env.BASE_URL ? import.meta.env.BASE_URL : ''
             }/getting-started/environment`}
             variant={'contained'}
             disableElevation

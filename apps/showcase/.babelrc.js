@@ -19,7 +19,7 @@ module.exports = function (api) {
 
   return {
     presets: [
-      ['module:@react-native/babel-preset', { useTransformReactJSX: true }],
+      ['module:@react-native/babel-preset', {useTransformReactJSX: true}],
     ],
   };
 };

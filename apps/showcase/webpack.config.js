@@ -1,5 +1,5 @@
-const { NxWebpackPlugin } = require('@nx/webpack');
-const { NxReactWebpackPlugin } = require('@nx/react');
+const {NxWebpackPlugin} = require('@nx/webpack');
+const {NxReactWebpackPlugin} = require('@nx/react');
 
 module.exports = {
   resolve: {

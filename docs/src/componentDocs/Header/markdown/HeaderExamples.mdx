@@ -1,1 +1,180 @@
-### Header Examples
+import Box from '@mui/material/Box';
+import headerImageExample from '../images/headerImage.png';
+import headerBackgroundExample from '../images/headerBackgroundImage.png';
+import headerActionsExample from '../images/headerActionsImage.png';
+import headerSearchExample from '../images/headerSearchImage.png';
+import headerCollapsedExample from '../images/headerCollapsedImage.png';
+import headerExpandedExample from '../images/headerExpandedImage.png';
+
+## Header
+
+A basic `Header` component is used at the top of the screen and can show a title and (optional) subtitle. A third line of text can also be configured using the `info` prop, but it will only be visible when the `Header` is expanded (see below). 
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header"
+    src={headerImageExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+/>;
+```
+
+## Changing the Background
+
+You can apply a simple background to the Header using the `backgroundColor` prop. You can also apply an image background using `backgroundImage`. If both are applied, they will be blended together.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header background image"
+    src={headerBackgroundExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    backgroundImage={farm.jpg}
+/>;
+```
+
+## Adding Actions
+
+You can add custom icon buttons to the top right corner of the Header. You can also configure an icon in the top left for typical navigation functions (such as a menu icon or a back icon, depending on the context).
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header actions"
+    src={headerActionsExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    actionItems={[
+        {
+            icon: { name: 'settings'},
+            onPress: () => {},
+        },
+        {
+            icon: { name: 'more-vert' },
+            onPress: () => {},
+        },
+    ]}
+    icon={{ name: 'menu' }}
+/>;
+```
+
+## Adding a Search Bar
+
+The `Header` includes support for a built-in search bar. If configured, the search button will be appended to any provided action items.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '500px',
+    }}
+    component="img"
+    alt="Header search"
+    src={headerSearchExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    actionItems={[
+        {
+            icon: { name: 'settings'},
+            onPress: () => {},
+        },
+        {
+            icon: { name: 'more-vert' },
+            onPress: () => {},
+        },
+    ]}
+    icon={{ name: 'menu' }}
+    searchableConfig={{ onChangeText: () => {} }}
+/>;
+```
+
+## Expanding and Collapsing
+
+The `Header` can be configured to expand and collapse from a large size to a small size. If you want the `Header` to expand and collapse automatically as the page is scrolled, check out the [`CollapsibleHeaderLayout`](/components/collapsible-header-layout/examples) component.
+
+<Box
+  sx={{
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    mb: 2,
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '40%',
+    }}
+    component="img"
+    alt="Header collapsed"
+    src={headerCollapsedExample}
+  />
+  <Box
+    sx={{
+      width: '40%',
+    }}
+    component="img"
+    alt="Header expanded"
+    src={headerExpandedExample}
+  />
+</Box>
+
+```
+<Header
+    title={'Valley Forge'}
+    subtitle={'The Last Stand'}
+    expandable={true}
+    collapsedHeight={56}
+    expandedHeight={200}
+/>;
+```

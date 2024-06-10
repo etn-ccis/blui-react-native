@@ -3,7 +3,7 @@ import iconSwitchImage from '../images/iconswitch.png';
 
 ## Icon Switch
 
-The `<IconSwitch />` is a switch component that can optionally renders an icon in the switch's handle.
+The basic `<IconSwitch />` shows a standard switch without any icons.
 
 <Box
   sx={{
@@ -22,33 +22,31 @@ The `<IconSwitch />` is a switch component that can optionally renders an icon i
 </Box>
 
 ```
-<Card>
-    <Card.Title title="Icon Switch" />
-    <Card.Content>
-        <View style={{padding: 10}}>
-            <IconSwitch value />
-        </View>
-        <View style={{padding: 10}}>
-            <IconSwitch value showIcon />
-        </View>
-        <View style={{padding: 10}}>
-            <IconSwitch />
-        </View>
-        <View style={{padding: 10}}>
-            <IconSwitch showIcon />
-        </View>
-        <View style={{padding: 10}}>
-            <IconSwitch value disabled />
-        </View>
-        <View style={{padding: 10}}>
-            <IconSwitch value showIcon disabled />
-        </View>
-        <View style={{padding: 10}}>
-            <IconSwitch disabled />
-        </View>
-        <View style={{padding: 10}}>
-            <IconSwitch showIcon disabled />
-        </View>
-    </Card.Content>
-</Card>
+<IconSwitch value={false} />
+<IconSwitch value={true} />
+```
+
+## Adding an Icon
+
+To show the additional icons, set the `showIcon` prop.
+
+<Box
+  sx={{
+    width: '100%',
+    textAlign: 'center',
+  }}>
+  <Box
+    sx={{
+      width: '100%',
+      maxWidth: '300px',
+    }}
+    component="img"
+    alt="icon switch picture"
+    src={iconSwitchImage}
+  />
+</Box>
+
+```
+<IconSwitch value={false} showIcon />
+<IconSwitch value={true} showIcon />
 ```
