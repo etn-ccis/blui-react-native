@@ -72,22 +72,22 @@ input[type='number'] {
 }
 
 @font-face {
-  src: url(OpenSans-Bold.ttf);
+  src: url(/OpenSans-Bold.ttf);
   font-family: 'OpenSans-Bold';
 }
 @font-face {
-  src: url(OpenSans-SemiBold.ttf);
+  src: url(/OpenSans-SemiBold.ttf);
   font-family: 'OpenSans-SemiBold';
 }
 @font-face {
-  src: url(OpenSans-Regular.ttf);
+  src: url(/OpenSans-Regular.ttf);
   font-family: 'OpenSans-Regular';
 }
 @font-face {
-  src: url(OpenSans-ExtraBold.ttf);
+  src: url(/OpenSans-ExtraBold.ttf);
   font-family: 'OpenSans-ExtraBold';
 }
 @font-face {
-  src: url(OpenSans-Light.ttf);
+  src: url(/OpenSans-Light.ttf);
   font-family: 'OpenSans-Light';
 }
