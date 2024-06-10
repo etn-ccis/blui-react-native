@@ -46,3 +46,48 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
+@font-face {
+  src: url(Ionicons.ttf);
+  font-family: 'Ionicons';
+}
+
+@font-face {
+  src: url(FontAwesome.ttf);
+  font-family: 'FontAwesome';
+}
+
+@font-face {
+  src: url(MaterialIcons.ttf);
+  font-family: 'MaterialIcons';
+}
+
+@font-face {
+  src: url(Feather.ttf);
+  font-family: 'Feather';
+}
+
+@font-face {
+  src: url(MaterialCommunityIcons.ttf);
+  font-family: 'MaterialCommunityIcons';
+}
+
+@font-face {
+  src: url(OpenSans-Bold.ttf);
+  font-family: 'OpenSans-Bold';
+}
+@font-face {
+  src: url(OpenSans-SemiBold.ttf);
+  font-family: 'OpenSans-SemiBold';
+}
+@font-face {
+  src: url(OpenSans-Regular.ttf);
+  font-family: 'OpenSans-Regular';
+}
+@font-face {
+  src: url(OpenSans-ExtraBold.ttf);
+  font-family: 'OpenSans-ExtraBold';
+}
+@font-face {
+  src: url(OpenSans-Light.ttf);
+  font-family: 'OpenSans-Light';
+}

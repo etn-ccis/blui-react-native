@@ -1,106 +1,27 @@
-import Box from '@mui/material/Box';
-import ChannelValueUnitsComponent from '../images/ChannelValueUnitsComponent.png';
-import ChannelValueExampleComponent from '../images/ChannelValueExampleComponent.png';
-import ChannelValueIconComponent from '../images/ChannelValueIconComponent.png';
-import ChannelValueFlippingUnitsComponent from '../images/ChannelValueFlippingUnitsComponent.png';
+import {ChannelValue, ChannelValueUnitsSpacing} from '../examples';
+import {ChannelValueWithIcon} from '../examples/ChannelValueWithIcon';
+import {ChannelValueWithPrefix} from '../examples/ChannelValueWithPrefix';
 
 ## Channel Value
 
 The `<ChannelValue>` is used to show a particular measurement or parameter.
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '500px',
-    }}
-    component="img"
-    alt="Channel Value Component"
-    src={ChannelValueExampleComponent}
-  />
-</Box>
-
-```
-<ChannelValue value="123" units="hz" />
-```
+<ChannelValue />
 
 ## Adding an Icon
 
 You can add an optional icon to show trends or to highlight the category of the value.
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '500px',
-    }}
-    component="img"
-    alt="Channel Value Icon Component"
-    src={ChannelValueIconComponent}
-  />
-</Box>
-
-```
-<ChannelValue value="123" units="hz" icon={{family:'material', name:'trending-up'}} />
-```
+<ChannelValueWithIcon />
 
 ## Flipping the Units
 
 Some measurements may require the units to appear before the value. This can be achieved by using the `prefix` prop.
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '500px',
-    }}
-    component="img"
-    alt="Channel Value Flipping Units Component"
-    src={ChannelValueFlippingUnitsComponent}
-  />
-</Box>
-
-```
-<ChannelValue value="12" units="$" prefix icon={{family:'material', name:'check-circle'}} />
-```
+<ChannelValueWithPrefix />
 
 ## Units & Spacing
 
 Some measurements require a space between the value and units, and some do not. The Channel Value handles this automatically for common units, but you can override this behavior through the `unitSpace` prop.
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '500px',
-    }}
-    component="img"
-    alt="Channel Value Units & Spacing Component"
-    src={ChannelValueUnitsComponent}
-  />
-</Box>
-
-```
-<ChannelValue value="85" units="kWh" unitSpace="hide" />
-<ChannelValue value="85" units="kWh" unitSpace="show" />
-<ChannelValue value="97" units="°F" />
-<ChannelValue value="32" units="°C" />
-<ChannelValue value="100" units="%" />
-<ChannelValue value="13.62" units="$" prefix />
-```
+<ChannelValueUnitsSpacing />
