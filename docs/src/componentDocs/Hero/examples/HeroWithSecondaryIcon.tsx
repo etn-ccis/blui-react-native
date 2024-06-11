@@ -10,7 +10,7 @@ const codeSnippet = `<Hero
         value: 470,
         units: 'RPM',
     }}
-    icon={<Fan fontSize={'inherit'} />}
+    icon={<Fan fontSize={'large'} />}
 />`;
 
 export const HeroWithSecondaryIcon = (): JSX.Element => (
