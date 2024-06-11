@@ -7,12 +7,7 @@ import {ExampleShowcase} from '../../../shared';
 export const SpacerWithPixelExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <Box>
-      <Box
-        sx={{
-          height: 56,
-          display: 'flex',
-          flexDirection: 'row',
-        }}>
+      <Box sx={{height: 56, flexDirection: 'row'}}>
         <Spacer width={25} flex={0} style={{backgroundColor: colors.blue[300]}}>
           25
         </Spacer>
@@ -27,7 +22,7 @@ export const SpacerWithPixelExample = (): JSX.Element => (
         </Spacer>
       </Box>
 
-      <Box sx={{mt: 4, width: 300, display: 'flex', flexDirection: 'column'}}>
+      <Box sx={{mt: 4, width: 300, flexDirection: 'column'}}>
         <Spacer
           height={25}
           flex={0}
