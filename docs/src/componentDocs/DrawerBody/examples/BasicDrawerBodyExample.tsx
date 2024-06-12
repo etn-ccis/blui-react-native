@@ -10,8 +10,8 @@ import {Person, Notifications, Circle} from '@mui/icons-material';
 
 export const BasicDrawerBodyExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Drawer style={{width: 240, justifyContent: 'center'}}>
-      <DrawerBody>
+    <Drawer style={{width: 250}}>
+      <DrawerBody hidePadding>
         <DrawerNavGroup title={'Navigation Group'}>
           <DrawerNavItem
             itemID={'item1'}
@@ -20,6 +20,7 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
             InfoListItemProps={{
               iconAlign: 'center',
             }}
+            activeItemBackgroundShape={'round'}
           />
           <DrawerNavItem
             itemID={'item2'}
