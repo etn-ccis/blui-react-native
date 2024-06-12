@@ -7,10 +7,12 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import {ExampleShowcase} from '../../../shared';
 import {Person, Notifications, Circle} from '@mui/icons-material';
+import * as colors from '@brightlayer-ui/colors';
 
 export const BasicDrawerBodyExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Drawer style={{width: 250, margin: 'auto', backgroundColor: '#FFFFFF'}}>
+    <Drawer
+      style={{width: 250, margin: 'auto', backgroundColor: colors.white[100]}}>
       <DrawerBody hidePadding>
         <DrawerNavGroup title={'Navigation Group'}>
           <DrawerNavItem
@@ -20,7 +22,6 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
             InfoListItemProps={{
               iconAlign: 'center',
             }}
-            activeItemBackgroundShape={'round'}
           />
           <DrawerNavItem
             itemID={'item2'}
