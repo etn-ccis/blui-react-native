@@ -1,5 +1,6 @@
 import React from 'react';
-import {Hero, HeroBanner} from '@brightlayer-ui/react-native-components';
+import {Hero} from '@brightlayer-ui/react-native-components/core/Hero';
+import {HeroBanner} from '@brightlayer-ui/react-native-components/core/HeroBanner';
 import GradeA from '@brightlayer-ui/icons-mui/GradeA';
 import {ExampleShowcase} from '../../../shared';
 

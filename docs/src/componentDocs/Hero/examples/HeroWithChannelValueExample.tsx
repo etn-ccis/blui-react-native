@@ -1,6 +1,6 @@
 import React from 'react';
 import {ChannelValue} from '@brightlayer-ui/react-native-components/core/ChannelValue';
-import {Hero} from '@brightlayer-ui/react-native-components';
+import {Hero} from '@brightlayer-ui/react-native-components/core/Hero';
 import Schedule from '@mui/icons-material/Schedule';
 import {ExampleShowcase} from '../../../shared';
 
