@@ -6,7 +6,6 @@ import {
   DrawerNavItem,
 } from '@brightlayer-ui/react-native-components';
 import {ExampleShowcase} from '../../../shared';
-import {Person, Notifications, Circle} from '@mui/icons-material';
 import * as colors from '@brightlayer-ui/colors';
 
 export const BasicDrawerBodyExample = (): JSX.Element => (
@@ -18,7 +17,11 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
           <DrawerNavItem
             itemID={'item1'}
             title={'Account'}
-            icon={<Person />}
+            icon={{
+              family: 'material-community',
+              name: 'account',
+              direction: 'auto',
+            }}
             InfoListItemProps={{
               iconAlign: 'center',
             }}
@@ -26,7 +29,11 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
           <DrawerNavItem
             itemID={'item2'}
             title={'Notification'}
-            icon={<Notifications />}
+            icon={{
+              family: 'material-community',
+              name: 'bell',
+              direction: 'auto',
+            }}
             activeItemBackgroundShape={'round'}
             InfoListItemProps={{
               iconAlign: 'center',
@@ -35,7 +42,11 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
           <DrawerNavItem
             itemID={'item3'}
             title={'Localization'}
-            icon={<Circle />}
+            icon={{
+              family: 'material-community',
+              name: 'circle',
+              direction: 'auto',
+            }}
             activeItemBackgroundShape={'round'}
             InfoListItemProps={{
               iconAlign: 'center',
