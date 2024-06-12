@@ -6,11 +6,11 @@ import {HeroWithSecondaryIconExample} from './HeroWithSecondaryIconExample';
 const codeSnippet = `<Hero
     label={'Velocity'}
     ChannelValueProps={{
-        icon: <TrendingUp />,
+        icon: {name: 'trending-up'},
         value: 470,
         units: 'RPM',
     }}
-    icon={<Fan fontSize={'large'} />}
+    icon={<BLUIIcon name="fan" size={40} />}
 />`;
 
 export const HeroWithSecondaryIcon = (): JSX.Element => (

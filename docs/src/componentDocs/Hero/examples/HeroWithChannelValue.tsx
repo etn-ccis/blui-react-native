@@ -5,13 +5,13 @@ import {HeroWithChannelValueExample} from './HeroWithChannelValueExample';
 
 const codeSnippet = `<Hero label={'Duration'} icon={{ name: 'schedule' } />}>
     <ChannelValue
-        fontSize={40}
+        fontSize={20}
         value={1}
         units={'h'}
         unitSpace={'hide'}
     />
     <ChannelValue
-        fontSize={40}
+        fontSize={20}
         value={27}
         units={'m'}
         unitSpace={'hide'}

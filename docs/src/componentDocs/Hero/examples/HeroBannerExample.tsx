@@ -1,13 +1,13 @@
 import React from 'react';
 import {Hero, HeroBanner} from '@brightlayer-ui/react-native-components';
-import GradeA from '@brightlayer-ui/icons-mui/GradeA';
 import {ExampleShowcase} from '../../../shared';
+import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
 
 export const HeroBannerExample = (): JSX.Element => (
   <ExampleShowcase>
     <HeroBanner>
       <Hero
-        icon={<GradeA fontSize="large" />}
+        icon={<BLUIIcon name="grade_a" size={40} />}
         label="Efficiency"
         ChannelValueProps={{value: '98', units: '%'}}
       />

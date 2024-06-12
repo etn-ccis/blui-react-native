@@ -5,7 +5,7 @@ import {HeroBannerExample} from './HeroBannerExample';
 
 const codeSnippet = `<HeroBanner>
     <Hero
-        icon={<GradeA size={50}" />}
+        icon={<BLUIIcon name="grade_a" size={40} />}
         label="Efficiency"
         ChannelValueProps={{ value: '98', units: '%' }}
     />

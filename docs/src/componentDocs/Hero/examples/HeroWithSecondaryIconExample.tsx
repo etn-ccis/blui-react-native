@@ -1,19 +1,18 @@
 import React from 'react';
 import {Hero} from '@brightlayer-ui/react-native-components/core/Hero';
-import TrendingUp from '@mui/icons-material/TrendingUp';
-import Fan from '@brightlayer-ui/icons-mui/Fan';
 import {ExampleShowcase} from '../../../shared';
+import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
 
 export const HeroWithSecondaryIconExample = (): JSX.Element => (
   <ExampleShowcase>
     <Hero
-      label="Velocity"
+      label={'Velocity'}
       ChannelValueProps={{
-        icon: <TrendingUp />,
+        icon: {name: 'trending-up'},
         value: 470,
         units: 'RPM',
       }}
-      icon={<Fan fontSize="large" />}
+      icon={<BLUIIcon name="fan" size={40} />}
     />
   </ExampleShowcase>
 );
