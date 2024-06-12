@@ -47,27 +47,27 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 @font-face {
-  src: url(Ionicons.ttf);
+  src: url(/Ionicons.ttf);
   font-family: 'Ionicons';
 }
 
 @font-face {
-  src: url(FontAwesome.ttf);
+  src: url(/FontAwesome.ttf);
   font-family: 'FontAwesome';
 }
 
 @font-face {
-  src: url(MaterialIcons.ttf);
+  src: url(/MaterialIcons.ttf);
   font-family: 'MaterialIcons';
 }
 
 @font-face {
-  src: url(Feather.ttf);
+  src: url(/Feather.ttf);
   font-family: 'Feather';
 }
 
 @font-face {
-  src: url(MaterialCommunityIcons.ttf);
+  src: url(/MaterialCommunityIcons.ttf);
   font-family: 'MaterialCommunityIcons';
 }
 
