@@ -8,89 +8,58 @@ import {Text} from 'react-native-paper';
 
 export const SpacerWithPixelExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
-    <Box>
-      <Box
-        sx={{
-          height: 56,
-          flexDirection: 'row',
+    <View style={{flex: 1}}>
+      <View
+        style={{
           display: 'flex',
+          flexDirection: 'row',
+          height: 56,
         }}>
-        <Box>
-          <Spacer
-            width={25}
-            flex={0}
-            style={{backgroundColor: colors.blue[300]}}>
-            25
-          </Spacer>
-        </Box>
-        <Box>
-          <Spacer
-            width={75}
-            flex={0}
-            style={{backgroundColor: colors.yellow[300]}}>
-            75
-          </Spacer>
-        </Box>
-        <Box>
-          <Spacer
-            width={200}
-            flex={0}
-            style={{backgroundColor: colors.red[300]}}>
-            200
-          </Spacer>
-        </Box>
-      </Box>
-      <Box sx={{mt: 4, width: 300, flexDirection: 'column'}}>
         <Spacer
-          height={25}
+          width={25}
           flex={0}
-          style={{backgroundColor: colors.blue[300]}}>
-          25
-        </Spacer>
-        <Spacer
-          height={50}
-          flex={0}
-          style={{backgroundColor: colors.yellow[300]}}>
-          50
-        </Spacer>
-        <Spacer height={75} flex={0} style={{backgroundColor: colors.red[300]}}>
-          75
-        </Spacer>
-      </Box>
-    </Box>
-    {/* <Box>
-      <Box sx={{height: 56, flexDirection: 'row'}}>
-        <Spacer width={25} flex={0} style={{backgroundColor: colors.blue[300]}}>
-          25
+          style={{backgroundColor: '#4da3d4', flexBasis: 'auto'}}>
+          <Text>25</Text>
         </Spacer>
         <Spacer
           width={75}
           flex={0}
-          style={{backgroundColor: colors.yellow[300]}}>
-          75
+          style={{backgroundColor: '#f5db6d', flexBasis: 'auto'}}>
+          <Text>75</Text>
         </Spacer>
-        <Spacer width={200} flex={0} style={{backgroundColor: colors.red[300]}}>
-          200
+        <Spacer
+          width={200}
+          flex={0}
+          style={{backgroundColor: '#da7777', flexBasis: 'auto'}}>
+          <Text>200</Text>
         </Spacer>
-      </Box>
-
-      <Box sx={{mt: 4, width: 300, flexDirection: 'column'}}>
+      </View>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: 300,
+          marginTop: 20,
+        }}>
         <Spacer
           height={25}
           flex={0}
-          style={{backgroundColor: colors.blue[300]}}>
-          25
+          style={{backgroundColor: '#4da3d4', flexBasis: 'auto'}}>
+          <Text>25</Text>
         </Spacer>
         <Spacer
           height={50}
           flex={0}
-          style={{backgroundColor: colors.yellow[300]}}>
-          50
+          style={{backgroundColor: '#f5db6d', flexBasis: 'auto'}}>
+          <Text>50</Text>
         </Spacer>
-        <Spacer height={75} flex={0} style={{backgroundColor: colors.red[300]}}>
-          75
+        <Spacer
+          height={75}
+          flex={0}
+          style={{backgroundColor: '#da7777', flexBasis: 'auto'}}>
+          <Text>75</Text>
         </Spacer>
-      </Box>
-    </Box> */}
+      </View>
+    </View>
   </ExampleShowcase>
 );
