@@ -5,33 +5,13 @@ import headerActionsExample from '../images/headerActionsImage.png';
 import headerSearchExample from '../images/headerSearchImage.png';
 import headerCollapsedExample from '../images/headerCollapsedImage.png';
 import headerExpandedExample from '../images/headerExpandedImage.png';
+import {Header} from '../examples/Header';
 
 ## Header
 
 A basic `Header` component is used at the top of the screen and can show a title and (optional) subtitle. A third line of text can also be configured using the `info` prop, but it will only be visible when the `Header` is expanded (see below). 
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '500px',
-    }}
-    component="img"
-    alt="Header"
-    src={headerImageExample}
-  />
-</Box>
-
-```
-<Header
-    title={'Valley Forge'}
-    subtitle={'The Last Stand'}
-/>;
-```
+<Header />
 
 ## Changing the Background
 
