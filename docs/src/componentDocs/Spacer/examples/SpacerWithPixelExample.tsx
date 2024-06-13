@@ -1,14 +1,12 @@
 import React from 'react';
-import Box from '@mui/material/Box';
 import {Spacer} from '@brightlayer-ui/react-native-components';
-import * as colors from '@brightlayer-ui/colors';
 import {ExampleShowcase} from '../../../shared';
 import {View} from 'react-native';
 import {Text} from 'react-native-paper';
 
 export const SpacerWithPixelExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
-    <View style={{flex: 1}}>
+    <View>
       <View
         style={{
           display: 'flex',
