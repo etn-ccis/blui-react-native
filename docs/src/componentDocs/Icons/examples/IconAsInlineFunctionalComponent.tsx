@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
+import { IconAsInlineFunctionalComponentExample } from './IconAsInlineFunctionalComponentExample';
 
 const codeSnippet = `<Hero
   label={'Icon'}
@@ -17,6 +18,7 @@ const codeSnippet = `<Hero
 
 export const IconAsInlineFunctionalComponent = (): JSX.Element => (
   <Box>
+    <IconAsInlineFunctionalComponentExample />
     <CodeBlock code={codeSnippet} language="jsx" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
