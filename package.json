@@ -27,6 +27,7 @@
     "@mdx-js/rollup": "^3.0.1",
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.17",
+    "@react-native-vector-icons/material-icons": "^0.0.1-alpha.14",
     "@reduxjs/toolkit": "^2.2.4",
     "prismjs": "^1.29.0",
     "react": "18.2.0",
