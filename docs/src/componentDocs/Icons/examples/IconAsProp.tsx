@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {IconAsPropExample} from './IconAsPropExample';
 
-const codeSnippet = `<Hero label={'Setting'} icon={{family:'material', name:'settings'}} />`;
+const codeSnippet = `<Hero iconColor="green" label={'Setting'} icon={{family: 'material', name: 'settings'}}/>`;
 
 export const IconAsProp = (): JSX.Element => (
   <Box>
