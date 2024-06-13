@@ -22,7 +22,7 @@ const codeSnippet = `<Header
 export const HeaderWithSearch = (): JSX.Element => (
   <Box>
     <HeaderWithSearchExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="14"/>
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="14" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/Header/examples/HeaderWithSearchExample.tsx"

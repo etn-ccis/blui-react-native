@@ -14,7 +14,7 @@ const codeSnippet = `<Header
 export const HeaderWithExpandCollapse = (): JSX.Element => (
   <Box>
     <HeaderWithExpandCollapseExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="4-6"/>
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="4-6" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/Header/examples/HeaderWithExpandCollapseExample.tsx"
