@@ -1,29 +1,5 @@
-import Box from '@mui/material/Box';
-import MobileStepperDotVariant from '../images/mobileStepper_dot.png';
-import MobileStepperTextVariant from '../images/mobileStepper_text.png';
-import MobileStepperProgressVariant from '../images/mobileStepper_progress.png';
-
 ## Mobile Stepper
 
-The basic mobile stepper uses dots to indicate progress.
-
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '400px',
-    }}
-    component="img"
-    alt="Mobile Stepper Dot Variant"
-    src={MobileStepperDotVariant}
-  />
-</Box>
-
-```
 <MobileStepper
   activeStep={activeStep}
   steps={steps}
@@ -31,44 +7,13 @@ The basic mobile stepper uses dots to indicate progress.
   rightButton={<NextButton />}
   variant={'dots'}
 />;
-```
+
 
 ## Using Text / Progress Bar
 
 If you have more than a few steps or limited space in your container, you can use a text label or progress bar to indicate the current step.
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '400px',
-    }}
-    component="img"
-    alt="Mobile Stepper Text Variant"
-    src={MobileStepperTextVariant}
-  />
-</Box>
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '400px',
-    }}
-    component="img"
-    alt="Mobile Stepper Progress Variant"
-    src={MobileStepperProgressVariant}
-  />
-</Box>
 
-```
 <MobileStepper
   activeStep={activeStep}
   steps={steps}
@@ -76,6 +21,7 @@ If you have more than a few steps or limited space in your container, you can us
   rightButton={<NextButton />}
   variant={'text'}
 />;
+
 <MobileStepper
   activeStep={activeStep}
   steps={steps}
@@ -83,4 +29,4 @@ If you have more than a few steps or limited space in your container, you can us
   rightButton={<NextButton />}
   variant={'progress'}
 />;
-```
+
