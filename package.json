@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@brightlayer-ui/colors": "^4.0.0",
     "@brightlayer-ui/icons": "^2.3.0",
     "@brightlayer-ui/icons-mui": "^3.6.0",
     "@brightlayer-ui/react-components": "^6.3.0",
