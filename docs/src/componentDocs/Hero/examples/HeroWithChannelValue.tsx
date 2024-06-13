@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {HeroWithChannelValueExample} from './HeroWithChannelValueExample';
 
-const codeSnippet = `<Hero label={'Duration'} icon={{ name: 'schedule' } />}>
+const codeSnippet = `<Hero label={'Duration'} icon={{ name: 'schedule' }}>
     <ChannelValue
         fontSize={20}
         value={1}

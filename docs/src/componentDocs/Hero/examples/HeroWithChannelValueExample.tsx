@@ -5,9 +5,9 @@ import {ExampleShowcase} from '../../../shared';
 
 export const HeroWithChannelValueExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Hero label="Duration" icon={{name: 'schedule'}}>
-      <ChannelValue fontSize={20} value={1} units="h" unitSpace="hide" />
-      <ChannelValue fontSize={20} value={27} units="m" unitSpace="hide" />
+    <Hero label={'Duration'} icon={{name: 'schedule'}}>
+      <ChannelValue fontSize={20} value={1} units={'h'} unitSpace={'hide'} />
+      <ChannelValue fontSize={20} value={27} units={'m'} unitSpace={'hide'} />
     </Hero>
   </ExampleShowcase>
 );
