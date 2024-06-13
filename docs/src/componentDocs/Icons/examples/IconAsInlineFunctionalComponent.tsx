@@ -15,12 +15,12 @@ const codeSnippet = `<Hero
   )}
 />`;
 
-export const IconInlineFunctionalComponent = (): JSX.Element => (
+export const IconAsInlineFunctionalComponent = (): JSX.Element => (
   <Box>
     <CodeBlock code={codeSnippet} language="jsx" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
-      url="componentDocs\Icons\examples\IconInlineFunctionalComponentExample.tsx"
+      url="componentDocs\Icons\examples\IconAsInlineFunctionalComponentExample.tsx"
     />
   </Box>
 );

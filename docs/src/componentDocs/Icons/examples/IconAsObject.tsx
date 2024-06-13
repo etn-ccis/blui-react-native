@@ -5,7 +5,7 @@ import {IconAsObjectExample} from './IconAsObjectExample';
 
 const codeSnippet = `<Hero label={'Device'} icon={{ family: 'brightlayer-ui', name: 'device' }} />`;
 
-export const Icon = (): JSX.Element => (
+export const IconAsObject = (): JSX.Element => (
   <Box>
     <IconAsObjectExample />
     <CodeBlock code={codeSnippet} language="jsx" />

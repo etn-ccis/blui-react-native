@@ -3,7 +3,7 @@ import {ExampleShowcase} from '../../../shared';
 import {Hero} from '@brightlayer-ui/react-native-components';
 import {Avatar} from 'react-native-paper';
 
-export const IconInlineFunctionalComponentExample = (): JSX.Element => (
+export const IconAsInlineFunctionalComponentExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <Hero
   label={'Icon'}

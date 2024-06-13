@@ -5,7 +5,7 @@ import {IconAsPropExample} from './IconAsPropExample';
 
 const codeSnippet = `<Hero label={'Setting'} icon={{family:'material', name:'settings'}} />`;
 
-export const Icon = (): JSX.Element => (
+export const IconAsProp = (): JSX.Element => (
   <Box>
     <IconAsPropExample />
     <CodeBlock code={codeSnippet} language="jsx" />
