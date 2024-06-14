@@ -1,6 +1,7 @@
 import React from 'react';
 import {ExampleShowcase} from '../../../shared';
 import {Header} from '@brightlayer-ui/react-native-components';
+import image from '../images/farm.jpg';
 
 export const CollapsibleHeaderLayoutExample = (): JSX.Element => (
   <ExampleShowcase>
@@ -17,6 +18,7 @@ export const CollapsibleHeaderLayoutExample = (): JSX.Element => (
       ]}
       variant="static"
       // backgroundImage={require('../images/farm.jpg')}
+      backgroundImage={image}
       searchableConfig={{onChangeText: () => {}}}
       expandable={true}
       collapsedHeight={56}
