@@ -7,12 +7,7 @@ import {Text} from 'react-native-paper';
 export const SpacerWithPixelExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <View>
-      <View
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          height: 56,
-        }}>
+      <View style={{display: 'flex', flexDirection: 'row', height: 56}}>
         <Spacer
           width={25}
           flex={0}
