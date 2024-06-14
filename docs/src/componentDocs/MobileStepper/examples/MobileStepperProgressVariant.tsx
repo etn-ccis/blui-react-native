@@ -4,10 +4,10 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {MobileStepperProgressVariantExample} from './MobileStepperProgressVariantExample';
 
 const codeSnippet = `<MobileStepper
-    activeStep={activeStep}
-    steps={steps}
-    leftButton={<BackButton />}
-    rightButton={<NextButton />}
+    activeStep={3}
+    steps={5}
+    leftButton={<Button>{'Back'}</Button>}
+    rightButton={<Button>{'Next'}</Button>}
     variant={'progress'}
 />;`;
 

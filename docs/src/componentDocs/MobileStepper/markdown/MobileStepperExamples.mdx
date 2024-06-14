@@ -1,12 +1,10 @@
+import {MobileStepperDotVariant} from '../examples/MobileStepperDotVariant'
+import {MobileStepperTextVariant} from '../examples/MobileStepperTextVariant'
+import {MobileStepperProgressVariant} from '../examples/MobileStepperProgressVariant'
+
 ## Mobile Stepper
 
-<MobileStepper
-  activeStep={activeStep}
-  steps={steps}
-  leftButton={<BackButton />}
-  rightButton={<NextButton />}
-  variant={'dots'}
-/>;
+<MobileStepperDotVariant />
 
 
 ## Using Text / Progress Bar
@@ -14,19 +12,7 @@
 If you have more than a few steps or limited space in your container, you can use a text label or progress bar to indicate the current step.
 
 
-<MobileStepper
-  activeStep={activeStep}
-  steps={steps}
-  leftButton={<BackButton />}
-  rightButton={<NextButton />}
-  variant={'text'}
-/>;
+<MobileStepperTextVariant />
 
-<MobileStepper
-  activeStep={activeStep}
-  steps={steps}
-  leftButton={<BackButton />}
-  rightButton={<NextButton />}
-  variant={'progress'}
-/>;
+<MobileStepperProgressVariant />
 
