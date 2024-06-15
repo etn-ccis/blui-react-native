@@ -1,88 +1,14 @@
-import Box from '@mui/material/Box';
-import SpacerWithFlex from '../images/spacerWithFlex.png';
-import SpacerWithPixel from '../images/spacerWithPixel.png';
-
-## Spacer
-
-A `<Spacer>` is a utility component that adds space between elements (such as [Drawer Nav Groups](/components/drawer-nav-group/examples)).
+import {SpacerWithFlex} from '../examples/SpacerWithFlex';
+import {SpacerWithPixel} from '../examples/SpacerWithPixel';
 
 ## Spacer with Flex
 
-The Spacer is typically used in a flex layout.
+A `<Spacer>` is a utility component that adds space between elements (such as [Drawer Nav Groups](/components/drawer-nav-group/examples)).
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-    marginBottom: 5,
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '300px',
-    }}
-    component="img"
-    alt="Spacer with Flex"
-    src={SpacerWithFlex}
-  />
-</Box>
-
-```
-<View style={{display: 'flex', flexDirection: 'row', height: 56, width: 300}}>
-    <Spacer flex={1} style={{backgroundColor: '#4682B4'}}>
-        <Text>1</Text>
-    </Spacer>
-    <Spacer flex={2} style={{backgroundColor: '#FFD700'}}>
-        <Text>2</Text>
-    </Spacer>
-    <Spacer flex={3} style={{backgroundColor: '#FF6347'}}>
-        <Text>3</Text>
-    </Spacer>
-</View>
-```
+<SpacerWithFlex />
 
 ## Spacer with Pixels
 
 A Spacer can also be given fixed dimensions instead of flex for static layouts. In order to use fixed dimensions the flex prop must be set to zero.
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-    margin: 5,
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '300px',
-    }}
-    component="img"
-    alt="Spacer with Pixels"
-    src={SpacerWithPixel}
-  />
-</Box>
-
-```
-<View style={{display: 'flex', flexDirection: 'row', height: 56}}>
-    <Spacer width={25} flex={0} style={{backgroundColor: '#4682B4'}}>
-        <Text>25</Text>
-    </Spacer>
-    <Spacer width={75} flex={0} style={{backgroundColor: '#FFD700'}}>
-        <Text>75</Text>
-    </Spacer>
-    <Spacer width={200} flex={0} style={{backgroundColor: '#FF6347'}}>
-        <Text>200</Text>
-    </Spacer>
-</View>
-<View style={{display: 'flex', flexDirection: 'column', width: 300}}>
-    <Spacer height={25} flex={0} style={{backgroundColor: '#4682B4'}}>
-        <Text>25</Text>
-    </Spacer>
-    <Spacer height={50} flex={0} style={{backgroundColor: '#FFD700'}}>
-        <Text>50</Text>
-    </Spacer>
-    <Spacer height={75} flex={0} style={{backgroundColor: '#FF6347'}}>
-        <Text>75</Text>
-    </Spacer>
-</View>
-```
+<SpacerWithPixel />
