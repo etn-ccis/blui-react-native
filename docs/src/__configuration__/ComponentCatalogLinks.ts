@@ -1,3 +1,21 @@
+import channelValueImage from '../assets/ChannelValue.png';
+import chipImage from '../componentDocs/Chip/images/chip.png';
+import collapsibleHeaderImage from '../assets/channelValue.png';
+import drawerImage from '../assets/drawer.png';
+import emptyStateImage from '../assets/emptyState.png';
+import gradeImage from '../assets/grade.png';
+import headerImage from '../componentDocs/Header/images/headerImage.png';
+import heroImage from '..docs/src/componentDocs/Hero/images/hero.png';
+import iconImage from '../componentDocs/Icons/images/iconProp.png'
+import switchImage from '../assets/switch.png';
+import infoListImage from '../componentDocs/InfoListItem/images/infoListItem.png';
+import listItemTagImage from '../assets/listItemTag.png';
+import mobileStepperImage from '../componentDocs/MobileStepper/images/mobileStepper_dot.png';
+import scoreCardImage from '../componentDocs/ScoreCard/images/scoreCardExample.png'
+import overlineImage from '../componentDocs/Overline/images/overline.png'
+import spacerImage from '../componentDocs/Spacer/images/spacerAnatomy.png'
+import userMenuImage from '../componentDocs/UserMenu/images/userMenuOpened.png'
+
 type ComponentCatalogType = {
   title: string;
   /**
@@ -6,91 +24,94 @@ type ComponentCatalogType = {
   path: string;
   image: string;
 };
+// docs\src\assets\farm.jpg
+// docs\src\__configuration__\ComponentCatalogLinks.ts
+
 
 export const componentCatalogLinks: ComponentCatalogType[] = [
   {
     title: 'Channel Value',
     path: 'channel-value',
-    image: 'https://picsum.photos/id/237/150/100',
+    image: channelValueImage,
   },
   {
     title: 'Chip',
     path: 'chip',
-    image: 'https://picsum.photos/seed/picsum/150/100',
+    image: chipImage,
   },
   {
     title: 'Collapsible Header Layout',
     path: 'collapsible-header-layout',
-    image: 'https://picsum.photos/150/100?grayscale',
+    image: collapsibleHeaderImage,
   },
   {
     title: 'Drawer',
     path: 'drawer',
-    image: 'https://picsum.photos/150/100/?blur',
+    image: drawerImage,
   },
   {
     title: 'Empty State',
     path: 'empty-state',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: emptyStateImage,
   },
   {
     title: 'Grade',
     path: 'grade',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: gradeImage,
   },
   {
     title: 'Header',
     path: 'header',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: headerImage,
   },
   {
     title: 'Hero',
     path: 'hero',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: heroImage,
   },
   {
     title: 'Icons',
     path: 'icons',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: iconImage,
   },
   {
     title: 'Icon Switch',
     path: 'icon-switch',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: switchImage,
   },
   {
     title: 'Info List Item',
     path: 'info-list-item',
-    image: 'https://picsum.photos/150/100',
+    image: infoListImage,
   },
   {
     title: 'List Item Tag',
     path: 'list-item-tag',
-    image: 'https://picsum.photos/150/100',
+    image: listItemTagImage,
   },
   {
     title: 'Mobile Stepper',
     path: 'mobile-stepper',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: mobileStepperImage,
   },
   {
     title: 'Overline',
     path: 'overline',
-    image: 'https://picsum.photos/id/870/150/100?grayscale&blur=2',
+    image: overlineImage,
   },
   {
     title: 'Scorecard',
     path: 'score-card',
-    image: 'https://picsum.photos/seed/picsum/150/100',
+    image: scoreCardImage,
   },
   {
     title: 'Spacer',
     path: 'spacer',
-    image: 'https://picsum.photos/150/100?grayscale',
+    image: spacerImage,
   },
   {
     title: 'User Menu',
     path: 'user-menu',
-    image: 'https://picsum.photos/id/237/150/100',
+    image: userMenuImage,
   },
 ];
