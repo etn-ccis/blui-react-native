@@ -13,7 +13,8 @@ const codeSnippet = `<MobileStepper
           onPress={() => ({})}
           mode="outlined">
           Back
-        </Button></View>
+        </Button>
+        </View>
       }
       rightButton={
         <View style={{ flex: 1 }}>
