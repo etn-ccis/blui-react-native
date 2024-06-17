@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
-import { ScoreCardAdjustBadgeExample } from './ScoreCardAdjustBadgeExample';
+import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
+import {ScoreCardAdjustBadgeExample} from './ScoreCardAdjustBadgeExample';
 
 const codeSnippet = `<ScoreCard
     headerTitle={'Substation 3'}
@@ -24,12 +24,12 @@ const codeSnippet = `<ScoreCard
 </ScoreCard>`;
 
 export const ScoreCardAdjustBadge = (): JSX.Element => (
-    <Box>
-        <ScoreCardAdjustBadgeExample />
-        <CodeBlock code={codeSnippet} language="jsx" dataLine="14" />
-        <CodeBlockActionButtonRow
-            copyText={codeSnippet}
-            url="componentDocs/Header/examples/ScoreCardAdjustBadgeExample.tsx"
-        />
-    </Box>
+  <Box>
+    <ScoreCardAdjustBadgeExample />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="14" />
+    <CodeBlockActionButtonRow
+      copyText={codeSnippet}
+      url="componentDocs/Header/examples/ScoreCardAdjustBadgeExample.tsx"
+    />
+  </Box>
 );
