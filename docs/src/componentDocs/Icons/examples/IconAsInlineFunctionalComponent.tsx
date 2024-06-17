@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import { IconAsInlineFunctionalComponentExample } from './IconAsInlineFunctionalComponentExample';
+import {IconAsInlineFunctionalComponentExample} from './IconAsInlineFunctionalComponentExample';
 
 const codeSnippet = `<Hero
   label={'Icon'}
