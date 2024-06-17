@@ -6,10 +6,24 @@ import {Button} from 'react-native-paper';
 export const MobileStepperTextVariantExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <MobileStepper
-      activeStep={3}
+      activeStep={2}
       steps={5}
-      leftButton={<Button>{'Back'}</Button>}
-      rightButton={<Button>{'Next'}</Button>}
+      leftButton={
+        <Button
+          onPress={() => ({})}
+          mode="outlined"
+          style={{width: 100, alignSelf: 'flex-start', marginRight: 40}}>
+          Back
+        </Button>
+      }
+      rightButton={
+        <Button
+          onPress={() => ({})}
+          mode="contained"
+          style={{width: 100, alignSelf: 'flex-end', marginLeft: 40}}>
+          Next
+        </Button>
+      }
       variant={'text'}
     />
     ;

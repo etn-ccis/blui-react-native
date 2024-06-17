@@ -4,12 +4,26 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {MobileStepperDotVariantExample} from './MobileStepperDotVariantExample';
 
 const codeSnippet = `<MobileStepper
-    activeStep={3}
-    steps={5}
-    leftButton={<Button>{'Back'}</Button>}
-    rightButton={<Button>{'Next'}</Button>}
-    variant={'dots'}
-/>;`;
+      activeStep={2}
+      steps={5}
+      leftButton={
+        <Button
+          onPress={() => ({})}
+          mode="outlined"
+          style={{width: 100, alignSelf: 'flex-start', marginRight: 40}}>
+          Back
+        </Button>
+      }
+      rightButton={
+        <Button
+          onPress={() => ({})}
+          mode="contained"
+          style={{width: 100, alignSelf: 'flex-end', marginLeft: 40}}>
+          Next
+        </Button>
+      }
+      variant={'dots'}
+    />`;
 
 export const MobileStepperDotVariant = (): JSX.Element => (
   <Box>
