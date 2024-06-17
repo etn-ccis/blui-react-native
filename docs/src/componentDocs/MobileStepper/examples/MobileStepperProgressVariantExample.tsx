@@ -31,6 +31,5 @@ export const MobileStepperProgressVariantExample = (): JSX.Element => (
       }
       variant={'progress'}
     />
-    ;
   </ExampleShowcase>
 );

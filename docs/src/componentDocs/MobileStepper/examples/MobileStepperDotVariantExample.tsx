@@ -26,6 +26,5 @@ export const MobileStepperDotVariantExample = (): JSX.Element => (
       }
       variant={'dots'}
     />
-    ;
   </ExampleShowcase>
 );

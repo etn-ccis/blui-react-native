@@ -26,6 +26,5 @@ export const MobileStepperTextVariantExample = (): JSX.Element => (
       }
       variant={'text'}
     />
-    ;
   </ExampleShowcase>
 );
