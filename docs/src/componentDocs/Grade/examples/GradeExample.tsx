@@ -6,27 +6,53 @@ export const GradeExample = (): JSX.Element => (
   <ExampleShowcase
     sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
     <div style={{display: 'flex', justifyContent: 'space-around'}}>
-      <Grade.APlus />
-      <Grade.A />
-      <Grade.AMinus />
+      <div style={{margin: '10px'}}>
+        <Grade.APlus />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.A />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.AMinus />
+      </div>
     </div>
     <div style={{display: 'flex', justifyContent: 'space-around'}}>
-      <Grade.BPlus />
-      <Grade.B />
-      <Grade.BMinus />
+      <div style={{margin: '10px'}}>
+        <Grade.BPlus />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.B />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.BMinus />
+      </div>
     </div>
     <div style={{display: 'flex', justifyContent: 'space-around'}}>
-      <Grade.CPlus />
-      <Grade.C />
-      <Grade.CMinus />
+      <div style={{margin: '10px'}}>
+        <Grade.CPlus />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.C />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.CMinus />
+      </div>
     </div>
     <div style={{display: 'flex', justifyContent: 'space-around'}}>
-      <Grade.DPlus />
-      <Grade.D />
-      <Grade.DMinus />
+      <div style={{margin: '10px'}}>
+        <Grade.DPlus />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.D />
+      </div>
+      <div style={{margin: '10px'}}>
+        <Grade.DMinus />
+      </div>
     </div>
     <div style={{display: 'flex', justifyContent: 'center'}}>
-      <Grade.F />
+      <div style={{margin: '10px'}}>
+        <Grade.F />
+      </div>
     </div>
   </ExampleShowcase>
 );
