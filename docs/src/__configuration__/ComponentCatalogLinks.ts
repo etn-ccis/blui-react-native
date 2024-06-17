@@ -5,7 +5,7 @@ import drawerImage from '../assets/drawer.png';
 import emptyStateImage from '../assets/emptyState.png';
 import gradeImage from '../assets/grade.png';
 import headerImage from '../componentDocs/Header/images/headerImage.png';
-import heroImage from '..docs/src/componentDocs/Hero/images/hero.png';
+import heroImage from '../componentDocs/Hero/images/hero.png';
 import iconImage from '../componentDocs/Icons/images/iconProp.png'
 import switchImage from '../assets/switch.png';
 import infoListImage from '../componentDocs/InfoListItem/images/infoListItem.png';
@@ -24,9 +24,6 @@ type ComponentCatalogType = {
   path: string;
   image: string;
 };
-// docs\src\assets\farm.jpg
-// docs\src\__configuration__\ComponentCatalogLinks.ts
-
 
 export const componentCatalogLinks: ComponentCatalogType[] = [
   {
