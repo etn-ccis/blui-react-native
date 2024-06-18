@@ -1,7 +1,6 @@
 import React from 'react';
 import {Hero} from '@brightlayer-ui/react-native-components/core/Hero';
 import {ExampleShowcase} from '../../../shared';
-import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
 
 export const HeroWithSecondaryIconExample = (): JSX.Element => (
   <ExampleShowcase>
@@ -12,7 +11,7 @@ export const HeroWithSecondaryIconExample = (): JSX.Element => (
         value: 470,
         units: 'RPM',
       }}
-      icon={<BLUIIcon name="fan" size={40} />}
+      icon={{family: 'brightlayer-ui', name: 'fan'}}
     />
   </ExampleShowcase>
 );

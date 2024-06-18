@@ -10,7 +10,7 @@ const codeSnippet = `<Hero
         value: 470,
         units: 'RPM',
     }}
-    icon={<BLUIIcon name="fan" size={40} />}
+    icon={{family: 'brightlayer-ui', name: 'fan'}}
 />`;
 
 export const HeroWithSecondaryIcon = (): JSX.Element => (
