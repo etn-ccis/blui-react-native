@@ -12,7 +12,7 @@ const codeSnippet = `<Header
 export const HeaderWithBackground = (): JSX.Element => (
   <Box>
     <HeaderWithBackgroundExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="4" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/Header/examples/HeaderWithBackgroundExample.tsx"
