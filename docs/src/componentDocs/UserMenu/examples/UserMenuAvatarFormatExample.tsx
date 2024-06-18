@@ -8,7 +8,7 @@ import Pets from '@mui/icons-material/Pets';
 export const UserMenuAvatarFormatExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <UserMenu
-      avatar={<Avatar src="../images/tRex.png" alt={'User Avatar'} />}
+      avatar={<Avatar src="../images/trex.png" alt={'User Avatar'} />}
       menuItems={[
         {
           title: 'Settings',

@@ -6,14 +6,14 @@ import {UserMenuHeaderExample} from './UserMenuHeaderExample';
 const codeSnippet = `<UserMenu
     avatar={<Avatar>MH</Avatar>}
     menuItems={[
-                {
-                    title: 'Settings',
-                    icon: <Settings />,
-                }
+      {
+        title: 'Settings',
+        icon: <Settings />,
+      },
     ]}
     menuTitle="Sample Title"
     menuSubtitle="Sample Subtitle"
-/>`;
+  />`;
 
 export const UserMenuHeader = (): JSX.Element => (
   <Box>

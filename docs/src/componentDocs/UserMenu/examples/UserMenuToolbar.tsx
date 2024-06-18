@@ -5,19 +5,19 @@ import {UserMenuToolbarExample} from './UserMenuToolbarExample';
 
 const codeSnippet = `<AppBar position="relative" color="primary">
     <Toolbar>
-        <Typography variant="h6">Toolbar Title</Typography>
-        <Spacer />
-        <UserMenu
-            avatar={<Avatar>AV</Avatar>}
-            menuItems={[
-                {
-                    title: 'Log Out',
-                    icon: <ExitToApp />,
-                },
-            ]}
-        />
+      <Typography variant="h6">Toolbar Title</Typography>
+      <Spacer />
+      <UserMenu
+        avatar={<Avatar>AV</Avatar>}
+        menuItems={[
+          {
+            title: 'Log Out',
+            icon: <ExitToApp />,
+          },
+        ]}
+      />
     </Toolbar>
-</AppBar>`;
+  </AppBar>`;
 
 export const UserMenuToolbar = (): JSX.Element => (
   <Box>

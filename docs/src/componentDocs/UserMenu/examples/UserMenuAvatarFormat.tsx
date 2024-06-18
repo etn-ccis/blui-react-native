@@ -4,7 +4,7 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {UserMenuAvatarFormatExample} from './UserMenuAvatarFormatExample';
 
 const codeSnippet = `<UserMenu
-    avatar={<Avatar src='../images/tRex.png' alt={'User Avatar'} />}
+    avatar={<Avatar src='../images/trex.png' alt={'User Avatar'} />}
     menuItems={[
                 {
                     title: 'Settings',
