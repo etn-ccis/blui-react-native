@@ -11,8 +11,7 @@ import * as colors from '@brightlayer-ui/colors';
 
 export const DrawerNavGroupCompositionExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Drawer
-      style={{width: 250, margin: 'auto', backgroundColor: colors.white[100]}}>
+    <Drawer style={{width: 250, margin: 'auto'}}>
       <DrawerBody>
         <DrawerNavGroup title="Group 1" hidePadding titleDivider={false}>
           <DrawerNavItem title="Item 1" itemID="1" />

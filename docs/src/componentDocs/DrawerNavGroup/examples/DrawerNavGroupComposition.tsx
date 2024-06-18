@@ -5,7 +5,7 @@ import {DrawerNavGroupCompositionExample} from './DrawerNavGroupCompositionExamp
 
 const codeSnippet = `
   <Drawer
-    style={{width: 250, margin: 'auto', backgroundColor: colors.white[100]}}>
+    style={{width: 250, margin: 'auto'}}>
     <DrawerBody>
       <DrawerNavGroup title="Group 1" hidePadding titleDivider={false}>
         <DrawerNavItem title="Item 1" itemID="1" />

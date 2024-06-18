@@ -4,7 +4,7 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {CustomNavGroupTitleContentExample} from './CustomNavGroupTitleContentExample';
 
 const codeSnippet = `
-  <Drawer style={{width: 250, margin: 'auto', backgroundColor: colors.white[100]}}>
+  <Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerBody>
       <DrawerNavGroup
         hidePadding

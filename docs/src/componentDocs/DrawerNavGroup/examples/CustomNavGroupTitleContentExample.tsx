@@ -13,8 +13,7 @@ import * as colors from '@brightlayer-ui/colors';
 
 export const CustomNavGroupTitleContentExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Drawer
-      style={{width: 250, margin: 'auto', backgroundColor: colors.white[100]}}>
+    <Drawer style={{width: 250, margin: 'auto'}}>
       <DrawerBody>
         <DrawerNavGroup
           hidePadding

@@ -5,7 +5,7 @@ import {DrawerNavGroupExample} from './DrawerNavGroupExample';
 
 const codeSnippet = `
   <Drawer
-    style={{width: 250, margin: 'auto', backgroundColor: colors.white[100]}}>
+    style={{width: 250, margin: 'auto'}}>
     <DrawerBody>
       <DrawerNavGroup title="Locations" hidePadding>
         <DrawerNavItem title="Regional" itemID="1" />
