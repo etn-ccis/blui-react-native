@@ -26,7 +26,7 @@ const codeSnippet = `<UserMenu
     ]}
 />`;
 
-export const ChannelValue = (): JSX.Element => (
+export const UserMenuAvatarFormat = (): JSX.Element => (
   <Box>
     <UserMenuAvatarFormatExample />
     <CodeBlock code={codeSnippet} language="jsx" />
