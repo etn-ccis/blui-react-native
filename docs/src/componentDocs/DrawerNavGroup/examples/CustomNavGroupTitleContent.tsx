@@ -3,24 +3,21 @@ import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {CustomNavGroupTitleContentExample} from './CustomNavGroupTitleContentExample';
 
-const codeSnippet = `
-  <Drawer style={{width: 250, margin: 'auto'}}>
+const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerBody>
-      <DrawerNavGroup
-        hidePadding
-        titleContent={
-          <View style={{ display: 'flex',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding: 10,
-            }}>
-            <Text>Nav Group Title Content</Text>
-            <ListItemTag label="v1.0.3" />
-          </View>
-        }>
-        <DrawerNavItem title="Item 1" itemID="1" />
-        <DrawerNavItem title="Item 2" itemID="2" />
-      </DrawerNavGroup>
+        <DrawerNavGroup hidePadding
+            titleContent={
+                <View style={{ display: 'flex',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding: 10}}>
+                    <Text>Nav Group Title Content</Text>
+                    <ListItemTag label="v1.0.3" />
+                </View>
+            }
+        >
+            <DrawerNavItem title="Item 1" itemID="1" />
+            <DrawerNavItem title="Item 2" itemID="2" />
+        </DrawerNavGroup>
     </DrawerBody>
-  </Drawer>
-  `;
+</Drawer>`;
 export const CustomNavGroupTitleContent = (): JSX.Element => (
   <Box>
     <CustomNavGroupTitleContentExample />

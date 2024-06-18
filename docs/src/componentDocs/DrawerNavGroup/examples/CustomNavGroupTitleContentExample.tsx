@@ -9,7 +9,6 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import {ExampleShowcase} from '../../../shared';
 import {View} from 'react-native';
-import * as colors from '@brightlayer-ui/colors';
 
 export const CustomNavGroupTitleContentExample = (): JSX.Element => (
   <ExampleShowcase>

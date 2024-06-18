@@ -7,7 +7,6 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import {ExampleShowcase} from '../../../shared';
 import Divider from '@mui/material/Divider';
-import * as colors from '@brightlayer-ui/colors';
 
 export const DrawerNavGroupCompositionExample = (): JSX.Element => (
   <ExampleShowcase>
