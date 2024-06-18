@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {BasicDrawerBodyExample} from './BasicDrawerBodyExample';
 
-const codeSnippet = `<Drawer style={{width: 250, margin: 'auto', backgroundColor: colors.white[100]}}>
+const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerBody hidePadding>
         <DrawerNavGroup title={'Navigation Group'}>
             <DrawerNavItem
