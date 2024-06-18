@@ -3,8 +3,7 @@ import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {ListItemTagExample} from './ListItemTagExample';
 
-const codeSnippet = `
-<ListItemTag label="Default Tag" />
+const codeSnippet = `<ListItemTag label="Default Tag" />
 <ListItemTag style={{marginLeft: 30}} label="Custom Tag" fontColor="#424e54" backgroundColor="#f0cb2f"/>
 `;
 

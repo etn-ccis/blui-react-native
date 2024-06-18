@@ -12,7 +12,6 @@ export const ListItemTagUsingInfoListItemExample = (): JSX.Element => (
     <InfoListItem
       icon={{name: 'battery-charging-full'}}
       iconColor="#528AAE"
-      style={{backgroundColor: Colors.white[100]}}
       title="Info List Item"
       subtitle="with a ListItemTag component to the right"
       rightComponent={
