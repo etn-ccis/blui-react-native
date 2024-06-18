@@ -5,7 +5,7 @@ import BackgroundImage from '../../../assets/farm.jpg';
 
 export const HeaderWithBackgroundExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Header
+    <Header style={{ width: 350, margin: 'auto' }}
       title={'Valley Forge'}
       subtitle={'The Last Stand'}
       backgroundImage={BackgroundImage}
