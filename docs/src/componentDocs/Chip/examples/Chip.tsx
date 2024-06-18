@@ -3,8 +3,10 @@ import {Box} from '@mui/material';
 import {ChipExample} from './ChipExample';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 
-const codeSnippet = `<Chip>Outlined Chip</Chip>
-<Chip mode="elevated">Elevated Chip</Chip>`;
+const codeSnippet = `
+<Chip>Outlined Chip</Chip>
+<Chip mode="elevated">Elevated Chip</Chip>
+`;
 
 export const Chip = (): JSX.Element => (
   <Box>
