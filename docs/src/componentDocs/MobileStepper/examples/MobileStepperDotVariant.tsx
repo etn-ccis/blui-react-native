@@ -28,7 +28,7 @@ const codeSnippet = `<MobileStepper
 export const MobileStepperDotVariant = (): JSX.Element => (
   <Box>
     <MobileStepperDotVariantExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine='20' />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/MobileStepper/examples/MobileStepperDotVariantExample.tsx"

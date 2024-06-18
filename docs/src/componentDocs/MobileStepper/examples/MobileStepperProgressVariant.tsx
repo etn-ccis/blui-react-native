@@ -32,7 +32,7 @@ const codeSnippet = `<MobileStepper
 export const MobileStepperProgressVariant = (): JSX.Element => (
   <Box>
     <MobileStepperProgressVariantExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="24" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/MobileStepper/examples/MobileStepperProgressVariantExample.tsx"
