@@ -6,7 +6,7 @@ import {ScoreCard} from '@brightlayer-ui/react-native-components';
 
 export const ScoreCardExample = (): JSX.Element => (
   <ExampleShowcase>
-    <ScoreCard
+    <ScoreCard style={{width: 350, margin: 'auto'}}
       headerTitle="Station 3"
       headerSubtitle="High Humidity Alarm"
       headerInfo="4 Devices">
