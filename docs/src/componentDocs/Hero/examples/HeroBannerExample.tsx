@@ -5,19 +5,22 @@ import {View} from 'react-native';
 
 export const HeroBannerExample = (): JSX.Element => (
   <ExampleShowcase>
-    <View style={{width: '70%', margin: 'auto'}}>
-      <HeroBanner>
-        <Hero
-          icon={{family: 'brightlayer-ui', name: 'grade_a'}}
-          label="Efficiency"
-          ChannelValueProps={{value: '98', units: '%'}}
-        />
-        <Hero
-          icon={{name: 'schedule'}}
-          label="Schedule"
-          ChannelValueProps={{value: '1', units: 'h'}}
-        />
-      </HeroBanner>
-    </View>
+    <HeroBanner>
+      <Hero
+        icon={{family: 'brightlayer-ui', name: 'grade_a'}}
+        label="Efficiency"
+        ChannelValueProps={{value: '98', units: '%'}}
+      />
+      <Hero
+        icon={{name: 'schedule'}}
+        label="Schedule"
+        ChannelValueProps={{value: '1', units: 'h'}}
+      />
+      <Hero
+        icon={{name: 'schedule'}}
+        label="Schedule"
+        ChannelValueProps={{value: '27', units: 'm'}}
+      />
+    </HeroBanner>
   </ExampleShowcase>
 );
