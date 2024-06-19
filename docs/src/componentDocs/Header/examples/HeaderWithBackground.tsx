@@ -6,7 +6,7 @@ import {HeaderWithBackgroundExample} from './HeaderWithBackgroundExample';
 const codeSnippet = `<Header
     title={'Valley Forge'}
     subtitle={'The Last Stand'}
-    backgroundImage={BackgroundImage}
+    backgroundImage={{uri: BackgroundImage}}
 />`;
 
 export const HeaderWithBackground = (): JSX.Element => (

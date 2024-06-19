@@ -9,7 +9,7 @@ export const HeaderWithBackgroundExample = (): JSX.Element => (
       style={{width: 350, margin: 'auto'}}
       title={'Valley Forge'}
       subtitle={'The Last Stand'}
-      backgroundImage={BackgroundImage}
+      backgroundImage={{uri: BackgroundImage}}
       styles={{backgroundImage: {width: '100%'}}}
     />
   </ExampleShowcase>
