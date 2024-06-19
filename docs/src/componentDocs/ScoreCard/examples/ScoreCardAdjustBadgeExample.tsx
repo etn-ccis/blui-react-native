@@ -9,7 +9,8 @@ export const ScoreCardAdjustBadgeExample = (): JSX.Element => {
   const theme = useExtendedTheme();
   return (
     <ExampleShowcase>
-      <ScoreCard style={{width: 350, margin: 'auto'}}
+      <ScoreCard
+        style={{width: 350, margin: 'auto'}}
         headerTitle={'Substation 3'}
         headerSubtitle={'High Humidity Alarm'}
         headerInfo={'4 Devices'}

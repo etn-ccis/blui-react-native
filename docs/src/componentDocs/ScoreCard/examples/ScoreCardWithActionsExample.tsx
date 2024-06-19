@@ -13,7 +13,8 @@ export const ScoreCardWithActionsExample = (): JSX.Element => {
   const theme = useExtendedTheme();
   return (
     <ExampleShowcase>
-      <ScoreCard style={{width: 350, margin: 'auto'}}
+      <ScoreCard
+        style={{width: 350, margin: 'auto'}}
         headerTitle="Header Actions"
         actionItems={[
           {icon: {name: 'star-outline'}},
