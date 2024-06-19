@@ -21,7 +21,7 @@ const codeSnippet = `
 export const DrawerSubheader = (): JSX.Element => (
   <Box>
     <DrawerSubheaderExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="4-6" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/DrawerSubheader/examples/DrawerSubheaderExample.tsx"

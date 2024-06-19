@@ -63,7 +63,7 @@ const codeSnippet = `
 export const InteractiveDrawerSubheader = (): JSX.Element => (
   <Box>
     <InteractiveDrawerSubheaderExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="8-12" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/DrawerSubheader/examples/InteractiveDrawerSubheaderExample.tsx"
