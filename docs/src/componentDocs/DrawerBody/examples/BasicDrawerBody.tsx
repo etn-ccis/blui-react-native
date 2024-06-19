@@ -40,7 +40,7 @@ const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
 export const BasicDrawerBody = (): JSX.Element => (
   <Box>
     <BasicDrawerBodyExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="2-8" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="2-31" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/DrawerBody/examples/BasicDrawerBodyExample.tsx"
