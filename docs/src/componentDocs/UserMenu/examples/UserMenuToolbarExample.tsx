@@ -11,7 +11,9 @@ export const UserMenuToolbarExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <AppBar position="relative" color="primary">
       <Toolbar>
-        <Typography variant="h6">Toolbar Title</Typography>
+        <Typography variant="h6" sx={{width: '100px'}}>
+          Toolbar Title
+        </Typography>
         <Spacer />
         <UserMenu
           avatar={<Avatar>AV</Avatar>}

@@ -1,7 +1,6 @@
 import {UserMenuToolbar} from '../examples/UserMenuToolbar';
 import {UserMenuAvatarFormat} from '../examples/UserMenuAvatarFormat';
 import {UserMenuHeader} from '../examples/UserMenuHeader';
-import {UserMenuBottomSheet} from '../examples/UserMenuBottomSheet';
 
 ## User Menu
 
@@ -20,10 +19,3 @@ The User Menu supports multiple avatar formats (text, icon, image).
 You can add a header to the top of the menu by passing menuTitle and menuSubtitle props. The avatar will also appear in the menu header.
 
 <UserMenuHeader />
-
-## Using a Bottom Sheet
-
-On larger screens the User Menu opens as a dropdown, but on smaller screens it opens as a bottomsheet. You can customize the point where this transition occurs via the useBottomSheetAt prop.
-You can also add the background color of the bottom sheet, the color of text for the bottom sheet header and menu items, and the color of icons for the bottom sheet menu items.
-
-<UserMenuBottomSheet />

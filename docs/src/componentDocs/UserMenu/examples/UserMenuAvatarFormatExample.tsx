@@ -4,11 +4,17 @@ import {UserMenu} from '@brightlayer-ui/react-native-components';
 import Avatar from '@mui/material/Avatar';
 import Settings from '@mui/icons-material/Settings';
 import Pets from '@mui/icons-material/Pets';
+import {Avatar as PaperAvatar} from 'react-native-paper';
+import {Box} from '@mui/material';
 
 export const UserMenuAvatarFormatExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <UserMenu
-      avatar={<Avatar src="../images/trex.png" alt={'User Avatar'} />}
+      avatar={
+        <Box sx={{padding: '10px'}}>
+          <PaperAvatar.Image size={24} source={require('../images/trex.png')} />
+        </Box>
+      }
       menuItems={[
         {
           title: 'Settings',
@@ -18,7 +24,7 @@ export const UserMenuAvatarFormatExample = (): JSX.Element => (
     />
     <UserMenu
       avatar={
-        <Avatar>
+        <Avatar sx={{padding: '10px'}}>
           <Pets />
         </Avatar>
       }
