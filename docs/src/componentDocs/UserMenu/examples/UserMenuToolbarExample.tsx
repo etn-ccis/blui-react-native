@@ -10,7 +10,7 @@ export const UserMenuToolbarExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <AppBar position="relative" color="primary" sx={{width: 300}}>
       <Toolbar>
-        <Text variant="headlineMedium">Toolbar Title</Text>
+        <Text variant="headlineMedium" theme={{ colors: { primary: 'white' } }}>Toolbar Title</Text>
         <Spacer />
         <UserMenu
           avatar={<Avatar.Text size={30} label="AV" />}
