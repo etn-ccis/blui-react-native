@@ -4,22 +4,24 @@ import {CollapsibleHeaderLayoutExample} from './CollapsibleHeaderLayoutExample';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 
 const codeSnippet = `
-<Header
-  title={'Valley Forge'}
-  subtitle={'The Last Stand'}
-  icon={{ name: 'menu' }}
-  onIconPress={() => {}}
-  actionItems={[
+<CollapsibleHeaderLayout
+  HeaderProps={{
+    title: 'Valley Forge',
+    subtitle: 'The Last Stand',
+    icon: {name: 'menu'},
+    onIconPress: () => {},
+    actionItems: [
       {
-          icon: { name: 'more-vert' },
-          onPress: () => {},
+        icon: {name: 'more-vert'},
+        onPress: () => {},
       },
-  ]}
-  variant="dynamic"
-  backgroundImage={require('../assets/images/farm.jpg')}
-  searchableConfig={{ onChangeText: () => {} }}
-  expandable={true}
-  collapsedHeight={56}
+    ],
+    variant: 'static',
+    backgroundImage: require('./assets/images/farm.jpg'),
+    searchableConfig: {onChangeText: () => {}},
+    expandable: true,
+    collapsedHeight: 56,
+  }}
 />
 `;
 
