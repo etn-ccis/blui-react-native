@@ -3,16 +3,16 @@ import {ExampleShowcase} from '../../../shared';
 import {UserMenu} from '@brightlayer-ui/react-native-components';
 import Settings from '@mui/icons-material/Settings';
 import {Avatar} from 'react-native-paper';
-import {Box} from '@mui/material';
 import trexImage from '../images/trex.png';
+import {View} from 'react-native';
 
 export const UserMenuAvatarFormatExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <UserMenu
       avatar={
-        <Box sx={{padding: '10px'}}>
-          <Avatar.Image size={24} source={{uri: trexImage}} />
-        </Box>
+        <View style={{marginRight: 20}}>
+          <Avatar.Image size={30} source={{uri: trexImage}} />
+        </View>
       }
       menuItems={[
         {
@@ -22,7 +22,7 @@ export const UserMenuAvatarFormatExample = (): JSX.Element => (
       ]}
     />
     <UserMenu
-      avatar={<Avatar.Icon size={24} icon= "home" />}
+      avatar={<Avatar.Icon size={30} icon="home" />}
       menuItems={[
         {
           title: 'Settings',

@@ -7,7 +7,7 @@ import Settings from '@mui/icons-material/Settings';
 export const UserMenuHeaderExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <UserMenu
-      avatar={<Avatar.Text size={24} label="MH" />}
+      avatar={<Avatar.Text size={30} label="MH" />}
       menuItems={[
         {
           title: 'Settings',

@@ -3,12 +3,12 @@ import Box from '@mui/material/Box';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {UserMenuToolbarExample} from './UserMenuToolbarExample';
 
-const codeSnippet = `<AppBar position="relative" color="primary">
+const codeSnippet = `<AppBar position="relative" color="primary" sx={{width: 300}}>
     <Toolbar>
-      <Typography variant="h6">Toolbar Title</Typography>
+      <Text variant="headlineMedium">Toolbar Title</Text>
       <Spacer />
       <UserMenu
-        avatar={<Avatar>AV</Avatar>}
+        avatar={<Avatar.Text size={30} label="AV" />}
         menuItems={[
           {
             title: 'Log Out',

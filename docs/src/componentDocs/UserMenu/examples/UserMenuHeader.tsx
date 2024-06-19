@@ -4,7 +4,7 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {UserMenuHeaderExample} from './UserMenuHeaderExample';
 
 const codeSnippet = `<UserMenu
-    avatar={<Avatar>MH</Avatar>}
+    avatar={<Avatar.Text size={30} label="MH" />}
     menuItems={[
       {
         title: 'Settings',
