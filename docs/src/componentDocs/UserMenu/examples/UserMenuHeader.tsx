@@ -4,16 +4,17 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {UserMenuHeaderExample} from './UserMenuHeaderExample';
 
 const codeSnippet = `<UserMenu
-    avatar={<Avatar.Text size={30} label="MH" />}
-    menuItems={[
-      {
-        title: 'Settings',
-        icon: <Settings />,
-      },
-    ]}
-    menuTitle="Sample Title"
-    menuSubtitle="Sample Subtitle"
-  />`;
+  avatar={<Avatar.Text size={30} label="MH" />}
+  menuItems={[
+    {
+      title: "Settings",
+      icon: <Settings />,
+    },
+  ]}
+  menuTitle="Sample Title"
+  menuSubtitle="Sample Subtitle"
+/>;
+`;
 
 export const UserMenuHeader = (): JSX.Element => (
   <Box>

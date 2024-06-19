@@ -22,7 +22,7 @@ const codeSnippet = `<AppBar position="relative" color="primary" sx={{width: 300
 export const UserMenuToolbar = (): JSX.Element => (
   <Box>
     <UserMenuToolbarExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="5-13" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/UserMenu/examples/UserMenuToolbarExample.tsx"

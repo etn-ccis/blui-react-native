@@ -4,23 +4,27 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {UserMenuAvatarFormatExample} from './UserMenuAvatarFormatExample';
 
 const codeSnippet = `<UserMenu
-      avatar={<Avatar.Image size={30} source={{uri: trexImage}} />}
-      menuItems={[
-        {
-          title: 'Settings',
-          icon: <Settings />,
-        },
-      ]}
-    />
-    <UserMenu
-      avatar={<Avatar.Icon size={30} icon="home" />}
-      menuItems={[
-        {
-          title: 'Settings',
-          icon: <Settings />,
-        },
-      ]}
-    />`;
+  avatar={
+    <View style={{marginRight: 20}}>
+      <Avatar.Image size={30} source={{uri: trexImage}} />
+    </View>
+  }
+  menuItems={[
+    {
+      title: 'Settings',
+      icon: <Settings />,
+    },
+  ]}
+/>
+<UserMenu
+  avatar={<Avatar.Icon size={30} icon="home" />}
+  menuItems={[
+    {
+      title: 'Settings',
+      icon: <Settings />,
+    },
+  ]}
+/>`;
 
 export const UserMenuAvatarFormat = (): JSX.Element => (
   <Box>
