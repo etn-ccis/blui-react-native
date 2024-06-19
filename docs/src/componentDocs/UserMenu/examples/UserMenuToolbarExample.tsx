@@ -9,9 +9,9 @@ import ExitToApp from '@mui/icons-material/ExitToApp';
 
 export const UserMenuToolbarExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
-    <AppBar position="relative" color="primary">
+    <AppBar position="relative" color="primary" sx={{ width: 300 }}>
       <Toolbar>
-        <Typography variant="h6" sx={{width: '100px'}}>
+        <Typography variant="h6">
           Toolbar Title
         </Typography>
         <Spacer />
