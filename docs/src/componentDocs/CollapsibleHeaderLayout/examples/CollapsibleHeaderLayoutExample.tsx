@@ -17,11 +17,11 @@ export const CollapsibleHeaderLayoutExample = (): JSX.Element => (
         },
       ]}
       variant="static"
-      // backgroundImage={require('../images/farm.jpg')}
       backgroundImage={image}
       searchableConfig={{onChangeText: () => {}}}
       expandable={true}
       collapsedHeight={56}
+      styles={{backgroundImage: {width: '100%'}}}
     />
   </ExampleShowcase>
 );
