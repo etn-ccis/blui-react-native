@@ -3,8 +3,7 @@ import {Box} from '@mui/material';
 import {CollapsibleHeaderLayoutExample} from './CollapsibleHeaderLayoutExample';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 
-const codeSnippet = `
-<CollapsibleHeaderLayout
+const codeSnippet = `<CollapsibleHeaderLayout
   HeaderProps={{
     title: 'Valley Forge',
     subtitle: 'The Last Stand',
@@ -21,6 +20,7 @@ const codeSnippet = `
     searchableConfig: {onChangeText: () => {}},
     expandable: true,
     collapsedHeight: 56,
+    expandedHeight: 200,
   }}
 />
 `;

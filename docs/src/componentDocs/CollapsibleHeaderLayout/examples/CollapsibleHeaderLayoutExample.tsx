@@ -22,6 +22,7 @@ export const CollapsibleHeaderLayoutExample = (): JSX.Element => (
         searchableConfig: {onChangeText: () => {}},
         expandable: true,
         collapsedHeight: 56,
+        expandedHeight: 200,
         styles: {backgroundImage: {width: '100%'}},
       }}
     />
