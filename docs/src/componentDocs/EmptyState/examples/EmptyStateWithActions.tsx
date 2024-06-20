@@ -8,7 +8,7 @@ const codeSnippet = `<EmptyState
     title={'No Devices'}
     description={'Check your network connection or add a new device'}
     actions={
-        <Button variant={'outlined'} color={'primary'} startIcon={<Add />}>
+        <Button icon={'plus'} mode="outlined">
             Add Device
         </Button>
     }

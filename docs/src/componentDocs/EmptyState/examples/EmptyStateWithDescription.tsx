@@ -4,9 +4,9 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {EmptyStateWithDescriptionExample} from './EmptyStateWithDescriptionExample';
 
 const codeSnippet = `<EmptyState
-    icon={{name: 'location-off'}}}
-    title={'Location Services Disabled'}
-    description={'Enable Location Services via Settings to receive GPS information'}
+    icon={{name: 'location-off'}}
+    title="Location Services Disabled"
+    description="Enable Location Services via Settings to receive GPS information"
 />`;
 
 export const EmptyStateWithDescription = (): JSX.Element => (
