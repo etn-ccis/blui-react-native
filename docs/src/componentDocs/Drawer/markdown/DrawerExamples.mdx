@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
-import basicDrawer from '../images/basicDrawer.png';
-import customizableDrawer from '../images/customizableDrawer.png';
+import {Drawer} from '../examples/Drawer';
+import {CustomizableDrawer} from '../examples/CustomizableDrawer';
 
 ## Drawer
 
@@ -13,123 +13,10 @@ The `<Drawer>` is a navigational element that holds links to different pages in 
 - [Drawer Nav Item](/components/drawer-nav-item/examples)
 - [Drawer Footer](/components/drawer-footer/examples)
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '500px',
-      maxWidth: '300px',
-    }}
-    component="img"
-    alt="Basic Drawer Example"
-    src={basicDrawer}
-  />
-</Box>
-
-```
-<Drawer>
-    <DrawerHeader
-        title={'Drawer Title'}
-        subtitle={'Drawer Subtitle'}
-        icon={{ name: 'menu', direction: 'auto' }}
-    />
-    <DrawerSubheader>
-        <Text>Subheader content here</Text>
-    </DrawerSubheader>
-    <DrawerBody>
-        <DrawerNavGroup title={'Navigation Group'}>
-            <DrawerNavItem itemID={'item31'} title={'Item 1'}></DrawerNavItem>
-            <DrawerNavItem itemID={'item31'} title={'Item 2'}></DrawerNavItem>
-            <DrawerNavItem itemID={'item31'} title={'Item 3'}></DrawerNavItem>
-        </DrawerNavGroup>
-    </DrawerBody>
-    <DrawerFooter>
-        <Text>Footer content here</Text>
-    </DrawerFooter>
-</Drawer>
-```
+<Drawer />
 
 ## Customizing the Drawer
 
 The Drawer is highly customizable for organizing and styling your items. Navigation items can be declared in a list format to simplify your JSX and make customization easier.
 
-<Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
-    sx={{
-      width: '100%',
-      maxWidth: '500px',
-      maxWidth: '300px',
-    }}
-    component="img"
-    alt="customizableDrawer Example"
-    src={customizableDrawer}
-  />
-</Box>
-
-```
-<Drawer activeItem="item1">
-    <DrawerHeader
-        title={'Drawer Title'}
-        subtitle={'Drawer Subtitle'}
-        icon={{ name: 'menu', direction: 'auto' }}
-    />
-    <DrawerBody>
-        {/* Using children */}
-        <DrawerNavGroup title={'Navigation Group 1'}>
-            <DrawerNavItem
-                itemID={'item1'}
-                title={'Account'}
-                icon={{ family: 'material-community', name: 'account', direction: 'auto' }}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
-            />
-            <DrawerNavItem
-                itemID={'item2'}
-                title={'Notification'}
-                icon={{ family: 'material-community', name: 'bell', direction: 'auto' }}
-                activeItemBackgroundShape={'round'}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
-            >
-                <DrawerNavItem itemID={'item3'} title={'item3'}>
-                    <DrawerNavItem itemID={'item31'} title={'Item31'} />
-                    <DrawerNavItem itemID={'item32'} title={'Item32'} />
-                </DrawerNavItem>
-            </DrawerNavItem>
-            <DrawerNavItem
-                itemID={'item4'}
-                title={'Localization'}
-                icon={{ family: 'material-community', name: 'circle', direction: 'auto' }}
-                activeItemBackgroundShape={'round'}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
-            />
-        </DrawerNavGroup>
-        {/* Using 'items' prop */}
-        <DrawerNavGroup
-            title={'Navigation Group 2'}
-            items={[
-                {
-                    title: 'Sensors',
-                    itemID: 'id1',
-                },
-                {
-                    title: 'Devices',
-                    itemID: 'id2',
-                },
-            ]}
-        />
-    </DrawerBody>
-</Drawer>
-```
+<CustomizableDrawer />
