@@ -3,24 +3,30 @@ import {Box} from '@mui/material';
 import {SelectingANavItemExample} from './SelectingANavItemExample';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 
-const codeSnippet = `<Drawer activeItem="item2">
-    <DrawerBody>
-        <DrawerNavItem
-            itemID={'item1'}
-            title={'Account'}
-            icon={{family: 'material-community', name: 'account', direction: 'auto'}}
-        />
-        <DrawerNavItem
-            itemID={'item2'}
-            title={'Notification'}
-            icon={{family: 'material-community', name: 'bell', direction: 'auto'}}
-        />
-        <DrawerNavItem
-            itemID={'item4'}
-            title={'Localization'}
-            icon={{family: 'material-community', name: 'circle', direction: 'auto'}}
-        />
-    </DrawerBody>
+const codeSnippet = `<Drawer activeItem={selected}>
+  <DrawerBody>
+    <DrawerNavItem
+      itemID={'account'}
+      title={'Account'}
+      icon={{family: 'material-community', name: 'account', direction: 'auto'}}
+      onPress={() => setSelected('account')}
+      activeItemBackgroundShape="round"
+    />
+    <DrawerNavItem
+      itemID={'notification'}
+      title={'Notification'}
+      icon={{family: 'material-community', name: 'bell', direction: 'auto'}}
+      onPress={() => setSelected('notification')}
+      activeItemBackgroundShape="round"
+    />
+    <DrawerNavItem
+      itemID={'localization'}
+      title={'Localization'}
+      icon={{family: 'material-community', name: 'map', direction: 'auto'}}
+      onPress={() => setSelected('localization')}
+      activeItemBackgroundShape="round"
+    />
+  </DrawerBody>
 </Drawer>`;
 
 export const SelectingANavItem = (): JSX.Element => (

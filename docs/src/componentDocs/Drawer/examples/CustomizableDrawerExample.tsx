@@ -10,7 +10,7 @@ import {
 
 export const CustomizableDrawerExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Drawer activeItem="item1" style={{width: 250, margin: 'auto'}}>
+    <Drawer activeItem="item2" style={{width: 250, margin: 'auto'}}>
       <DrawerHeader
         title={'Drawer Title'}
         subtitle={'Drawer Subtitle'}
