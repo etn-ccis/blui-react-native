@@ -4,15 +4,15 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 import {GradeCustomColorExample} from './GradeCustomColorExample';
 
 const codeSnippet = `<Grade 
-      label="AB"
-      fontColor="#ff0"
-      backgroundColor="#f00"
-    />`;
+  label="AB"
+  fontColor="#ffff00"
+  backgroundColor="#ff0000"
+/>`;
 
 export const GradeCustomColor = (): JSX.Element => (
   <Box>
     <GradeCustomColorExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="3-4" />
+    <CodeBlock code={codeSnippet} language="jsx" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/Grade/examples/GradeCustomColourExample.tsx"
