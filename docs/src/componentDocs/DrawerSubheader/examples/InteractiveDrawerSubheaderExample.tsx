@@ -1,24 +1,31 @@
 import React from 'react';
-import {ExampleShowcase} from '../../../shared';
 import {
   Drawer,
   DrawerBody,
   DrawerHeader,
   DrawerNavGroup,
   DrawerNavItem,
+  DrawerSubheader,
 } from '@brightlayer-ui/react-native-components';
+import {ExampleShowcase} from '../../../shared';
+import {TextInput} from 'react-native-paper';
+import {View} from 'react-native';
 
-export const CustomizableDrawerExample = (): JSX.Element => (
+export const InteractiveDrawerSubheaderExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Drawer activeItem="item1" style={{width: 250, margin: 'auto'}}>
+    <Drawer style={{width: 250, margin: 'auto'}}>
       <DrawerHeader
         title={'Drawer Title'}
         subtitle={'Drawer Subtitle'}
         icon={{name: 'menu', direction: 'auto'}}
       />
+      <DrawerSubheader>
+        <View style={{padding: 10}}>
+          <TextInput label={'Add Navigation Group'} mode="outlined" />
+        </View>
+      </DrawerSubheader>
       <DrawerBody>
-        {/* Using children */}
-        <DrawerNavGroup title={'Navigation Group 1'}>
+        <DrawerNavGroup title={'Navigation Group'}>
           <DrawerNavItem
             itemID={'item1'}
             title={'Account'}
@@ -35,12 +42,10 @@ export const CustomizableDrawerExample = (): JSX.Element => (
               family: 'material-community',
               name: 'bell',
               direction: 'auto',
-            }}>
-            <DrawerNavItem itemID={'item3'} title={'Web'} />
-            <DrawerNavItem itemID={'item31'} title={'Mobile'} />
-          </DrawerNavItem>
+            }}
+          />
           <DrawerNavItem
-            itemID={'item4'}
+            itemID={'item3'}
             title={'Localization'}
             icon={{
               family: 'material-community',
@@ -49,20 +54,6 @@ export const CustomizableDrawerExample = (): JSX.Element => (
             }}
           />
         </DrawerNavGroup>
-        {/* Using 'items' prop */}
-        <DrawerNavGroup
-          title={'Navigation Group 2'}
-          items={[
-            {
-              title: 'Sensors',
-              itemID: 'id1',
-            },
-            {
-              title: 'Devices',
-              itemID: 'id2',
-            },
-          ]}
-        />
       </DrawerBody>
     </Drawer>
   </ExampleShowcase>
