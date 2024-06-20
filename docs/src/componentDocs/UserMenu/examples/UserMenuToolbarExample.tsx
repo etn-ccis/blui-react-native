@@ -9,8 +9,10 @@ import {Text, Avatar} from 'react-native-paper';
 export const UserMenuToolbarExample = (): JSX.Element => (
   <ExampleShowcase sx={{display: 'flex', justifyContent: 'center'}}>
     <AppBar position="relative" color="primary" sx={{width: 300}}>
-      <Toolbar>
-        <Text style={{ color: 'white' }} variant="headlineMedium">Toolbar Title</Text>
+      <Toolbar sx={{px: 2, minHeight: 'unset', height: '4rem'}}>
+        <Text style={{color: 'white'}} variant="headlineMedium">
+          Toolbar Title
+        </Text>
         <Spacer />
         <UserMenu
           avatar={<Avatar.Text size={30} label="AV" />}
