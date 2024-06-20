@@ -3,8 +3,7 @@ import {Box} from '@mui/material';
 import {CustomizableDrawerExample} from './CustomizableDrawerExample';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 
-const codeSnippet = `
-<Drawer activeItem="item1">
+const codeSnippet = `<Drawer activeItem="item1" style={{width: 250, margin: 'auto'}}>
     <DrawerHeader
         title={'Drawer Title'}
         subtitle={'Drawer Subtitle'}
@@ -17,18 +16,11 @@ const codeSnippet = `
                 itemID={'item1'}
                 title={'Account'}
                 icon={{ family: 'material-community', name: 'account', direction: 'auto' }}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
             />
             <DrawerNavItem
                 itemID={'item2'}
                 title={'Notification'}
                 icon={{ family: 'material-community', name: 'bell', direction: 'auto' }}
-                activeItemBackgroundShape={'round'}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
             >
                 <DrawerNavItem itemID={'item3'} title={'item3'}>
                     <DrawerNavItem itemID={'item31'} title={'Item31'} />
@@ -38,30 +30,19 @@ const codeSnippet = `
             <DrawerNavItem
                 itemID={'item4'}
                 title={'Localization'}
-                icon={{ family: 'material-community', name: 'circle', direction: 'auto' }}
-                activeItemBackgroundShape={'round'}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
+                icon={{ family: 'material-community', name: 'map', direction: 'auto' }}
             />
         </DrawerNavGroup>
         {/* Using 'items' prop */}
         <DrawerNavGroup
             title={'Navigation Group 2'}
             items={[
-                {
-                    title: 'Sensors',
-                    itemID: 'id1',
-                },
-                {
-                    title: 'Devices',
-                    itemID: 'id2',
-                },
+                { title: 'Sensors', itemID: 'id1' },
+                { title: 'Devices', itemID: 'id2' },
             ]}
         />
     </DrawerBody>
-</Drawer>
-`;
+</Drawer>`;
 
 export const CustomizableDrawer = (): JSX.Element => (
   <Box>

@@ -27,9 +27,6 @@ export const CustomizableDrawerExample = (): JSX.Element => (
               name: 'account',
               direction: 'auto',
             }}
-            InfoListItemProps={{
-              iconAlign: 'center',
-            }}
           />
           <DrawerNavItem
             itemID={'item2'}
@@ -38,10 +35,6 @@ export const CustomizableDrawerExample = (): JSX.Element => (
               family: 'material-community',
               name: 'bell',
               direction: 'auto',
-            }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-              iconAlign: 'center',
             }}>
             <DrawerNavItem itemID={'item3'} title={'Web'} />
             <DrawerNavItem itemID={'item31'} title={'Mobile'} />
@@ -53,10 +46,6 @@ export const CustomizableDrawerExample = (): JSX.Element => (
               family: 'material-community',
               name: 'map',
               direction: 'auto',
-            }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-              iconAlign: 'center',
             }}
           />
         </DrawerNavGroup>

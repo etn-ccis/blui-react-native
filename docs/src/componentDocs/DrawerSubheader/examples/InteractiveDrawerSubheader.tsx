@@ -3,8 +3,7 @@ import {Box} from '@mui/material';
 import {InteractiveDrawerSubheaderExample} from './InteractiveDrawerSubheaderExample';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 
-const codeSnippet = `
-<Drawer style={{width: 250, margin: 'auto'}}>
+const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerHeader
         title={'Drawer Title'}
         subtitle={'Drawer Subtitle'}
@@ -12,7 +11,7 @@ const codeSnippet = `
     />
     <DrawerSubheader>
         <View style={{padding: 10}}>
-            <TextInput label={'Add new navigation group'} mode="outlined" />
+            <TextInput label={'Add Navigation Group'} mode="outlined" />
         </View>
     </DrawerSubheader>
     <DrawerBody>
@@ -20,50 +19,26 @@ const codeSnippet = `
             <DrawerNavItem
                 itemID={'item1'}
                 title={'Account'}
-                icon={{
-                    family: 'material-community',
-                    name: 'account',
-                    direction: 'auto',
-                }}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
+                icon={{family: 'material-community', name: 'account', direction: 'auto'}}
             />
             <DrawerNavItem
                 itemID={'item2'}
                 title={'Notification'}
-                icon={{
-                    family: 'material-community',
-                    name: 'bell',
-                    direction: 'auto',
-                }}
-                activeItemBackgroundShape={'round'}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
+                icon={{family: 'material-community', name: 'bell', direction: 'auto'}}
             />
             <DrawerNavItem
-                itemID={'item4'}
+                itemID={'item3'}
                 title={'Localization'}
-                icon={{
-                    family: 'material-community',
-                    name: 'circle',
-                    direction: 'auto',
-                }}
-                activeItemBackgroundShape={'round'}
-                InfoListItemProps={{
-                    iconAlign: 'center',
-                }}
+                icon={{family: 'material-community', name: 'circle', direction: 'auto'}}
             />
         </DrawerNavGroup>
     </DrawerBody>
-</Drawer>
-`;
+</Drawer>`;
 
 export const InteractiveDrawerSubheader = (): JSX.Element => (
   <Box>
     <InteractiveDrawerSubheaderExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="8-12" />
+    <CodeBlock code={codeSnippet} language="jsx" dataLine="7-11" />
     <CodeBlockActionButtonRow
       copyText={codeSnippet}
       url="componentDocs/DrawerSubheader/examples/InteractiveDrawerSubheaderExample.tsx"

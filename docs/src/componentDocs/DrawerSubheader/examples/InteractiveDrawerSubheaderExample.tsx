@@ -34,9 +34,6 @@ export const InteractiveDrawerSubheaderExample = (): JSX.Element => (
               name: 'account',
               direction: 'auto',
             }}
-            InfoListItemProps={{
-              iconAlign: 'center',
-            }}
           />
           <DrawerNavItem
             itemID={'item2'}
@@ -46,22 +43,14 @@ export const InteractiveDrawerSubheaderExample = (): JSX.Element => (
               name: 'bell',
               direction: 'auto',
             }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-              iconAlign: 'center',
-            }}
           />
           <DrawerNavItem
-            itemID={'item4'}
+            itemID={'item3'}
             title={'Localization'}
             icon={{
               family: 'material-community',
-              name: 'circle',
+              name: 'map',
               direction: 'auto',
-            }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-              iconAlign: 'center',
             }}
           />
         </DrawerNavGroup>

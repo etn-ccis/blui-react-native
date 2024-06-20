@@ -3,15 +3,14 @@ import React from 'react';
 import {DrawerExample} from './DrawerExample';
 import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 
-const codeSnippet = `
-<Drawer style={{width: 250, margin: 'auto'}}>
+const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerHeader
         title={'Drawer Title'}
         subtitle={'Drawer Subtitle'}
         icon={{name: 'menu', direction: 'auto'}}
     />
     <DrawerSubheader>
-        <View style={{padding: 15}}>
+        <View style={{padding: 16}}>
             <Text>Subheader content here</Text>
         </View>
     </DrawerSubheader>
@@ -23,12 +22,11 @@ const codeSnippet = `
         </DrawerNavGroup>
     </DrawerBody>
     <DrawerFooter>
-        <View style={{padding: 15}}>
+        <View style={{padding: 16}}>
             <Text>Footer content here</Text>
         </View>
     </DrawerFooter>
-</Drawer>
-`;
+</Drawer>`;
 
 export const Drawer = (): JSX.Element => (
   <Box>
