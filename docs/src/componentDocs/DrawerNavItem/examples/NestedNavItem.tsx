@@ -19,7 +19,7 @@ const codeSnippet = `<Drawer>
             <DrawerNavItem itemID={'item22'} title={'Mobile'} />
         </DrawerNavItem>
         <DrawerNavItem
-            itemID={'item4'}
+            itemID={'item3'}
             title={'Localization'}
             icon={{family: 'material-community', name: 'map', direction: 'auto'}}
         />
