@@ -6,18 +6,18 @@ import {DrawerHeaderWithTitleContentExample} from './DrawerHeaderWithTitleConten
 const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerHeader
         backgroundImage={{uri: backgroundImage}}
-        backgroundColor={colors.blue[500]}
+        backgroundColor={'#007bc1'}
         icon={{name: 'menu'}}
-        fontColor={colors.white[50]}
+        fontColor={'#FFFFFF'}
         titleContent={
             <View style={{display: 'flex',justifyContent: 'center',flexDirection: 'column',marginLeft: 10}}>
-                <Text style={{marginBottom: 5, color: colors.white[50]}}>
+                <Text style={{marginBottom: 5, color: '#FFFFFF'}}>
                     API Documentation
                 </Text>
                 <ListItemTag
                     label="v1.50.8"
-                    backgroundColor={colors.white[50]}
-                    fontColor={colors.blue[500]}
+                    backgroundColor={'#FFFFFF'}
+                    fontColor={'#007bc1'}
                     style={{width: '50%'}}
                 />
             </View>
