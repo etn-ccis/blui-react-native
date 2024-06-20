@@ -12,14 +12,14 @@ const codeSnippet = `<InfoListItem
       <View style={{flexDirection: 'row'}}>
           <ListItemTag
               label="Build Passing"
-              backgroundColor={Colors.green[300]}
-              fontColor={Colors.black[900]}
+              backgroundColor={'#74cc63'}
+              fontColor={'#1d2529'}
           />
           <View style={{width: 15}} />
           <ListItemTag
               label="5 Bugs"
-              backgroundColor={Colors.red[300]}
-              fontColor={Colors.black[900]}
+              backgroundColor={'#da7777'}
+              fontColor={'#1d2529'}
           />
       </View>
     }
