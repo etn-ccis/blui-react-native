@@ -1,18 +1,24 @@
 import React from 'react';
+import {ExampleShowcase} from '../../../shared';
 import {
   Drawer,
   DrawerBody,
+  DrawerHeader,
   DrawerNavGroup,
   DrawerNavItem,
 } from '@brightlayer-ui/react-native-components';
-import {ExampleShowcase} from '../../../shared';
-import * as colors from '@brightlayer-ui/colors';
 
-export const BasicDrawerBodyExample = (): JSX.Element => (
+export const CustomizableDrawerExample = (): JSX.Element => (
   <ExampleShowcase>
-    <Drawer style={{width: 250, margin: 'auto'}}>
-      <DrawerBody hidePadding>
-        <DrawerNavGroup title={'Navigation Group'}>
+    <Drawer activeItem="item1" style={{width: 250, margin: 'auto'}}>
+      <DrawerHeader
+        title={'Drawer Title'}
+        subtitle={'Drawer Subtitle'}
+        icon={{name: 'menu', direction: 'auto'}}
+      />
+      <DrawerBody>
+        {/* Using children */}
+        <DrawerNavGroup title={'Navigation Group 1'}>
           <DrawerNavItem
             itemID={'item1'}
             title={'Account'}
@@ -36,14 +42,16 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
             activeItemBackgroundShape={'round'}
             InfoListItemProps={{
               iconAlign: 'center',
-            }}
-          />
+            }}>
+            <DrawerNavItem itemID={'item3'} title={'Web'} />
+            <DrawerNavItem itemID={'item31'} title={'Mobile'} />
+          </DrawerNavItem>
           <DrawerNavItem
-            itemID={'item3'}
+            itemID={'item4'}
             title={'Localization'}
             icon={{
               family: 'material-community',
-              name: 'circle',
+              name: 'map',
               direction: 'auto',
             }}
             activeItemBackgroundShape={'round'}
@@ -52,6 +60,20 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
             }}
           />
         </DrawerNavGroup>
+        {/* Using 'items' prop */}
+        <DrawerNavGroup
+          title={'Navigation Group 2'}
+          items={[
+            {
+              title: 'Sensors',
+              itemID: 'id1',
+            },
+            {
+              title: 'Devices',
+              itemID: 'id2',
+            },
+          ]}
+        />
       </DrawerBody>
     </Drawer>
   </ExampleShowcase>
