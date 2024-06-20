@@ -21,7 +21,7 @@ export const DrawerExample = (): JSX.Element => (
         icon={{name: 'menu', direction: 'auto'}}
       />
       <DrawerSubheader>
-        <View style={{padding: 15}}>
+        <View style={{padding: 16}}>
           <Text>Subheader content here</Text>
         </View>
       </DrawerSubheader>
@@ -33,7 +33,7 @@ export const DrawerExample = (): JSX.Element => (
         </DrawerNavGroup>
       </DrawerBody>
       <DrawerFooter>
-        <View style={{padding: 15}}>
+        <View style={{padding: 16}}>
           <Text>Footer content here</Text>
         </View>
       </DrawerFooter>

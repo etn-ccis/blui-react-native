@@ -1565,10 +1565,10 @@
     "@seznam/compose-react-refs" "^1.0.6"
     color "^4.2.3"
 
-"@brightlayer-ui/react-native-components@^8.0.4-beta.1":
-  version "8.0.4-beta.1"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-8.0.4-beta.1.tgz#f801406ad9ba8f84f860be6ec39733476222b44a"
-  integrity sha512-BWAy264/5Vw43fP7HK64xixqDhKO3IsEJQJBTrncTwU9BR9UvnXW0AHxY74/7S/5Du0yxaYxIGy/XoTycMRZKA==
+"@brightlayer-ui/react-native-components@^8.0.4-beta.2":
+  version "8.0.4-beta.2"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-8.0.4-beta.2.tgz#d00325919c3ed3b2faaa47c588b2001705dd7dc3"
+  integrity sha512-pYTvUjhm8iyGsTcvZsSKgxsPnXkE6N4PJZmctH3OWbGKV2HTtaKgxxas7YbjtWuwPjTHBPZkoy1wuZmbAwAqfA==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
     color "^4.2.3"
