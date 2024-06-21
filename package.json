@@ -8,7 +8,7 @@
         "lint:fix": "yarn docs-lint:fix",
         "prettier": "yarn docs-prettier",
         "prettier:check": "yarn docs-prettier:check",
-        "docs-start": "npx nx serve docs --verbose",
+        "docs-start": "npx nx serve docs",
         "docs-prettier": "prettier \"docs/src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
         "docs-prettier:check": "prettier \"docs/src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check",
         "docs-lint": "eslint \"docs/src/**/**.{ts,tsx}\"",

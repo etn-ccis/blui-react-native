@@ -7,7 +7,7 @@ const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerBody>
         <DrawerNavGroup hidePadding
             titleContent={
-                <View style={{ display: 'flex',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding: 10}}>
+                <View style={{ display: 'flex',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding: 16}}>
                     <Text>Nav Group Title Content</Text>
                     <ListItemTag label="v1.0.3" />
                 </View>

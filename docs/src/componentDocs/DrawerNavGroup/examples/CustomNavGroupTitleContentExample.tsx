@@ -23,7 +23,7 @@ export const CustomNavGroupTitleContentExample = (): JSX.Element => (
                                 flexDirection: 'row',
                                 justifyContent: 'space-between',
                                 alignItems: 'center',
-                                padding: 10,
+                                padding: 16,
                             }}
                         >
                             <Text>Nav Group Title Content</Text>
