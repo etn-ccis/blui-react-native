@@ -1,20 +1,18 @@
-import React, {HTMLAttributes} from 'react';
+import React, { HTMLAttributes } from 'react';
 import Box from '@mui/material/Box';
-import {SharedAppBar} from '../layout';
-import {ComponentPreviewTabs} from '../ComponentPreviewTabs';
+import { SharedAppBar } from '../layout';
+import { ComponentPreviewTabs } from '../ComponentPreviewTabs';
 
 export type ComponentPreviewPageProps = HTMLAttributes<HTMLDivElement> & {
-  title: string;
+    title: string;
 };
-export const ComponentPreviewPage: React.FC<ComponentPreviewPageProps> = (
-  props,
-): JSX.Element => {
-  const {title} = props;
+export const ComponentPreviewPage: React.FC<ComponentPreviewPageProps> = (props): JSX.Element => {
+    const { title } = props;
 
-  return (
-    <Box style={{display: 'flex', flexDirection: 'column'}}>
-      <SharedAppBar title={title} />
-      <ComponentPreviewTabs />
-    </Box>
-  );
+    return (
+        <Box style={{ display: 'flex', flexDirection: 'column' }}>
+            <SharedAppBar title={title} />
+            <ComponentPreviewTabs />
+        </Box>
+    );
 };

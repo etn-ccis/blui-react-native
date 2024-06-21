@@ -8,22 +8,23 @@ import headerExpandedExample from '../images/headerExpandedImage.png';
 
 ## Header
 
-A basic `Header` component is used at the top of the screen and can show a title and (optional) subtitle. A third line of text can also be configured using the `info` prop, but it will only be visible when the `Header` is expanded (see below). 
+A basic `Header` component is used at the top of the screen and can show a title and (optional) subtitle. A third line of text can also be configured using the `info` prop, but it will only be visible when the `Header` is expanded (see below).
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '500px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Header"
-    src={headerImageExample}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '500px',
+        }}
+        component="img"
+        alt="Header"
+        src={headerImageExample}
+    />
 </Box>
 
 ```
@@ -38,19 +39,20 @@ A basic `Header` component is used at the top of the screen and can show a title
 You can apply a simple background to the Header using the `backgroundColor` prop. You can also apply an image background using `backgroundImage`. If both are applied, they will be blended together.
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '500px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Header background image"
-    src={headerBackgroundExample}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '500px',
+        }}
+        component="img"
+        alt="Header background image"
+        src={headerBackgroundExample}
+    />
 </Box>
 
 ```
@@ -66,19 +68,20 @@ You can apply a simple background to the Header using the `backgroundColor` prop
 You can add custom icon buttons to the top right corner of the Header. You can also configure an icon in the top left for typical navigation functions (such as a menu icon or a back icon, depending on the context).
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '500px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Header actions"
-    src={headerActionsExample}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '500px',
+        }}
+        component="img"
+        alt="Header actions"
+        src={headerActionsExample}
+    />
 </Box>
 
 ```
@@ -104,19 +107,20 @@ You can add custom icon buttons to the top right corner of the Header. You can a
 The `Header` includes support for a built-in search bar. If configured, the search button will be appended to any provided action items.
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '500px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Header search"
-    src={headerSearchExample}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '500px',
+        }}
+        component="img"
+        alt="Header search"
+        src={headerSearchExample}
+    />
 </Box>
 
 ```
@@ -143,30 +147,31 @@ The `Header` includes support for a built-in search bar. If configured, the sear
 The `Header` can be configured to expand and collapse from a large size to a small size. If you want the `Header` to expand and collapse automatically as the page is scrolled, check out the [`CollapsibleHeaderLayout`](/components/collapsible-header-layout/examples) component.
 
 <Box
-  sx={{
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    mb: 2,
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '40%',
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        mb: 2,
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Header collapsed"
-    src={headerCollapsedExample}
-  />
-  <Box
-    sx={{
-      width: '40%',
-    }}
-    component="img"
-    alt="Header expanded"
-    src={headerExpandedExample}
-  />
+>
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="Header collapsed"
+        src={headerCollapsedExample}
+    />
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="Header expanded"
+        src={headerExpandedExample}
+    />
 </Box>
 
 ```

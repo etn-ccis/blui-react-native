@@ -11,20 +11,21 @@ A `<Spacer>` is a utility component that adds space between elements (such as [D
 The Spacer is typically used in a flex layout.
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-    marginBottom: 5,
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '300px',
+        width: '100%',
+        textAlign: 'center',
+        marginBottom: 5,
     }}
-    component="img"
-    alt="Spacer with Flex"
-    src={SpacerWithFlex}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '300px',
+        }}
+        component="img"
+        alt="Spacer with Flex"
+        src={SpacerWithFlex}
+    />
 </Box>
 
 ```
@@ -46,20 +47,21 @@ The Spacer is typically used in a flex layout.
 A Spacer can also be given fixed dimensions instead of flex for static layouts. In order to use fixed dimensions the flex prop must be set to zero.
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-    margin: 5,
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '300px',
+        width: '100%',
+        textAlign: 'center',
+        margin: 5,
     }}
-    component="img"
-    alt="Spacer with Pixels"
-    src={SpacerWithPixel}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '300px',
+        }}
+        component="img"
+        alt="Spacer with Pixels"
+        src={SpacerWithPixel}
+    />
 </Box>
 
 ```

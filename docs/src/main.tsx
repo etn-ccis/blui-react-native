@@ -8,28 +8,24 @@
 import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
-import {Provider} from 'react-redux';
-import {BrowserRouter} from 'react-router-dom';
-import {
-  createTheme,
-  ThemeProvider,
-  StyledEngineProvider,
-} from '@mui/material/styles';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import '@brightlayer-ui/react-themes/open-sans';
 import '@fontsource/roboto';
 import '@fontsource/roboto-mono';
-import {App} from './app';
+import { App } from './app';
 import './index.css';
-import {store, RootState} from './redux/store';
-import {useAppSelector} from './redux/hooks';
-import {MDXProvider} from '@mdx-js/react';
-import {componentsMap} from './__configuration__/markdownMapping';
-import {GoogleAnalyticsWrapper} from './components/navigation/GoogleAnalyticsWrapper';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {Provider as RNThemeProvider} from 'react-native-paper';
+import { store, RootState } from './redux/store';
+import { useAppSelector } from './redux/hooks';
+import { MDXProvider } from '@mdx-js/react';
+import { componentsMap } from './__configuration__/markdownMapping';
+import { GoogleAnalyticsWrapper } from './components/navigation/GoogleAnalyticsWrapper';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider as RNThemeProvider } from 'react-native-paper';
 import * as RNBLUIThemes from '@brightlayer-ui/react-native-themes';
 // Brightlayer UI Icon font
 import '@brightlayer-ui/icons/BrightlayerUIIcons.css';
@@ -40,13 +36,11 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 
 // google analytics
 import ReactGA from 'react-ga4';
-import {ScrollToTop} from './components/navigation/ScrollToTop';
+import { ScrollToTop } from './components/navigation/ScrollToTop';
 if (import.meta.env.REACT_APP_GAID) {
-  ReactGA.initialize(import.meta.env.REACT_APP_GAID);
+    ReactGA.initialize(import.meta.env.REACT_APP_GAID);
 }
 
-// Brightlayer UI Icon font
-import '@brightlayer-ui/icons/BrightlayerUIIcons.css';
 const container = document.getElementById('root');
 
 if (!container) throw new Error('Root Element was not found in the DOM');
@@ -55,52 +49,49 @@ const root = ReactDOMClient.createRoot(container);
 const basename = import.meta.env.BASE_URL || '/';
 
 const ThemedApp = (): JSX.Element => {
-  const siteTheme = useAppSelector(
-    (state: RootState) => state.appState.siteTheme,
-  );
-  const siteDirection = useAppSelector(
-    (state: RootState) => state.appState.siteDirection,
-  );
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  let theme = BLUIThemes.blue;
-  if (siteTheme === 'dark' || (siteTheme === 'system' && prefersDarkMode)) {
-    theme = BLUIThemes.blueDark;
-  }
-  theme.direction = siteDirection;
-  document.dir = siteDirection;
+    const siteTheme = useAppSelector((state: RootState) => state.appState.siteTheme);
+    const siteDirection = useAppSelector((state: RootState) => state.appState.siteDirection);
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    let theme = BLUIThemes.blue;
+    if (siteTheme === 'dark' || (siteTheme === 'system' && prefersDarkMode)) {
+        theme = BLUIThemes.blueDark;
+    }
+    theme.direction = siteDirection;
+    document.dir = siteDirection;
 
-  // force an update
-  const MemoThemedApp = React.useCallback(
-    () => (
-      <ThemeProvider theme={createTheme(theme)}>
-        <RNThemeProvider
-          theme={
-            siteTheme === 'dark' || (siteTheme === 'system' && prefersDarkMode)
-              ? RNBLUIThemes.blueDark
-              : RNBLUIThemes.blue
-          }>
-        <CssBaseline />
-        <MDXProvider components={componentsMap as any}>
-          <App />
-        </MDXProvider>
-        </RNThemeProvider>
-      </ThemeProvider>
-    ),
-    [siteTheme, siteDirection, prefersDarkMode],
-  );
-  return <MemoThemedApp />;
+    // force an update
+    const MemoThemedApp = React.useCallback(
+        () => (
+            <ThemeProvider theme={createTheme(theme)}>
+                <RNThemeProvider
+                    theme={
+                        siteTheme === 'dark' || (siteTheme === 'system' && prefersDarkMode)
+                            ? RNBLUIThemes.blueDark
+                            : RNBLUIThemes.blue
+                    }
+                >
+                    <CssBaseline />
+                    <MDXProvider components={componentsMap as any}>
+                        <App />
+                    </MDXProvider>
+                </RNThemeProvider>
+            </ThemeProvider>
+        ),
+        [siteTheme, siteDirection, prefersDarkMode]
+    );
+    return <MemoThemedApp />;
 };
 
 root.render(
-  <SafeAreaProvider>
-  <StyledEngineProvider injectFirst>
-    <BrowserRouter basename={basename}>
-      <ScrollToTop />
-      <GoogleAnalyticsWrapper />
-      <Provider store={store}>
-        <ThemedApp />
-      </Provider>
-    </BrowserRouter>
-  </StyledEngineProvider>
-  </SafeAreaProvider>,
+    <SafeAreaProvider>
+        <StyledEngineProvider injectFirst>
+            <BrowserRouter basename={basename}>
+                <ScrollToTop />
+                <GoogleAnalyticsWrapper />
+                <Provider store={store}>
+                    <ThemedApp />
+                </Provider>
+            </BrowserRouter>
+        </StyledEngineProvider>
+    </SafeAreaProvider>
 );

@@ -7,55 +7,59 @@ import headerLargeImage from '../images/header_large.png';
 The `<Header>` component is used at the top of a page to display information. It displays a title and can optionally show a subtitle, a background image, a navigation button, and multiple action buttons. The header can also be configured to expand or collapse as needed. For expand/collapse behavior tied to the screen scroll position, you should use the [`<CollapsibleHeaderLayout>`](/components/collapsible-header-layout/examples) component.
 
 <Box
-  sx={{
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    mb: 2,
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '40%',
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        mb: 2,
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Header component"
-    src={headerSmallImage}
-  />
-  <Box
-    sx={{
-      width: '40%',
-    }}
-    component="img"
-    alt="Header component"
-    src={headerLargeImage}
-  />
+>
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="Header component"
+        src={headerSmallImage}
+    />
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="Header component"
+        src={headerLargeImage}
+    />
 </Box>
 
 <Box
-  sx={{
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    mb: 2,
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      textAlign: 'center',
-    }}>
-    ![placeholder image](https://placehold.co/400x300)
-  </Box>
-  <Box
-    sx={{
-      width: '100%',
-      textAlign: 'center',
-    }}>
-    ![placeholder image](https://placehold.co/450x300)
-  </Box>
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        mb: 2,
+        width: '100%',
+        textAlign: 'center',
+    }}
+>
+    <Box
+        sx={{
+            width: '100%',
+            textAlign: 'center',
+        }}
+    >
+        ![placeholder image](https://placehold.co/400x300)
+    </Box>
+    <Box
+        sx={{
+            width: '100%',
+            textAlign: 'center',
+        }}
+    >
+        ![placeholder image](https://placehold.co/450x300)
+    </Box>
 </Box>
 
 ## API

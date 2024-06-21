@@ -1,7 +1,1 @@
-{
-  "arrowParens": "avoid",
-  "bracketSameLine": true,
-  "bracketSpacing": false,
-  "singleQuote": true,
-  "trailingComma": "all"
-}
+"@brightlayer-ui/prettier-config"
