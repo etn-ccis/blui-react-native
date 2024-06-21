@@ -6,17 +6,21 @@ import {
   DrawerNavItem,
 } from '@brightlayer-ui/react-native-components';
 import {ExampleShowcase} from '../../../shared';
-import {Text} from 'react-native-paper';
+import {Text, useTheme} from 'react-native-paper';
 import {Image, View} from 'react-native';
 import eatonLogo from '../images/eatonLogo.png';
-import eatonCopyrightText from '../images/EatonCopyrightText.png';
+import eatonLogoWhite from '../images/eatonLogoWhite.png';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
-export const DrawerFooterExample = (): JSX.Element => (
+export const DrawerFooterExample = (): JSX.Element => {
+  const theme = useExtendedTheme();
+  const reactNativeTheme = useTheme();
+  return (
   <ExampleShowcase>
     <Drawer style={{width: 320, margin: 'auto'}}>
       <DrawerBody>
         <DrawerNavItem
-          itemID={'item1'}
+          itemID={'account'}
           title={'Account'}
           icon={{
             family: 'material-community',
@@ -25,7 +29,7 @@ export const DrawerFooterExample = (): JSX.Element => (
           }}
         />
         <DrawerNavItem
-          itemID={'item2'}
+          itemID={'notification'}
           title={'Notification'}
           icon={{family: 'material-community', name: 'bell', direction: 'auto'}}
           activeItemBackgroundShape={'round'}
@@ -43,11 +47,11 @@ export const DrawerFooterExample = (): JSX.Element => (
             <Text
               style={{
                 fontSize: 12,
-                color: '#44474E',
+                color:theme.colors.onSurface,
               }}>
               v2.4.2
             </Text>
-            <Text style={{fontSize: 12, color: '#44474E'}}>
+            <Text style={{fontSize: 12, color: theme.colors.onSurface}}>
               10:33:05 05/12/2024
             </Text>
           </View>
@@ -58,18 +62,17 @@ export const DrawerFooterExample = (): JSX.Element => (
               justifyContent: 'space-between',
             }}>
             <Image
-              source={{uri: eatonLogo}}
+              source={{uri: reactNativeTheme.dark ? eatonLogoWhite : eatonLogo}}
               style={{height: 32, width: '36%'}}
               resizeMode="contain"
             />
-            <Image
-              source={{uri: eatonCopyrightText}}
-              style={{height: 32, width: '33%'}}
-              resizeMode="contain"
-            />
+            <Text style={{fontSize: 12, color: theme.colors.onSurface}}>
+            {'Copyright © Eaton\nAll Rights Reserved'}
+            </Text>
           </View>
         </View>
       </DrawerFooter>
     </Drawer>
   </ExampleShowcase>
 );
+}
