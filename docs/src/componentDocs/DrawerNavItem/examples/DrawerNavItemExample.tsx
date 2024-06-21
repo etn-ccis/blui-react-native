@@ -11,7 +11,7 @@ export const DrawerNavItemExample = (): JSX.Element => (
     <Drawer style={{width: 250, margin: 'auto'}}>
       <DrawerBody>
         <DrawerNavItem
-          itemID={'item1'}
+          itemID={'account'}
           title={'Account'}
           icon={{
             family: 'material-community',
@@ -20,13 +20,13 @@ export const DrawerNavItemExample = (): JSX.Element => (
           }}
         />
         <DrawerNavItem
-          itemID={'item2'}
+          itemID={'notification'}
           title={'Notification'}
           icon={{family: 'material-community', name: 'bell', direction: 'auto'}}
           activeItemBackgroundShape={'round'}
         />
         <DrawerNavItem
-          itemID={'item4'}
+          itemID={'localization'}
           title={'Localization'}
           icon={{
             family: 'material-community',

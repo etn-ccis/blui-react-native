@@ -6,20 +6,20 @@ import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
 const codeSnippet = `<Drawer>
     <DrawerBody>
         <DrawerNavItem
-            itemID={'item1'}
+            itemID={'account'}
             title={'Account'}
             icon={{family: 'material-community', name: 'account', direction: 'auto'}}
         />
         <DrawerNavItem
-            itemID={'item2'}
+            itemID={'notification'}
             title={'Notification'}
             icon={{family: 'material-community', name: 'bell', direction: 'auto'}}
         >
-            <DrawerNavItem itemID={'item21'} title={'Web'} />
-            <DrawerNavItem itemID={'item22'} title={'Mobile'} />
+            <DrawerNavItem itemID={'web'} title={'Web'} />
+            <DrawerNavItem itemID={'mobile'} title={'Mobile'} />
         </DrawerNavItem>
         <DrawerNavItem
-            itemID={'item3'}
+            itemID={'localization'}
             title={'Localization'}
             icon={{family: 'material-community', name: 'map', direction: 'auto'}}
         />
