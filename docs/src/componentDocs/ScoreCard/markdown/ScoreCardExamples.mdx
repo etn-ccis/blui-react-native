@@ -1,182 +1,28 @@
-import Box from '@mui/material/Box';
-import scoreCardExample from '../images/scoreCardExample.png';
-import scorecardWithBadge from '../images/scorecardWithBadge.png';
-import scorecardBadgeOffset from '../images/scorecardBadgeOffset.png';
-import scorecardActions from '../images/scorecardActions.png';
+import {ScoreCard} from '../examples/ScoreCard';
+import {ScoreCardWithBadge} from '../examples/ScoreCardWithBadge';
+import {ScoreCardAdjustBadge} from '../examples/ScoreCardAdjustBadge';
+import {ScoreCardWithActions} from '../examples/ScoreCardWithActions';
 
 ## Score Card
 
 A `<ScoreCard>` is a card component that calls attention to particular values. It is frequently seen on dashboard interfaces.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '400px',
-        }}
-        component="img"
-        alt="ScoreCard Example"
-        src={scoreCardExample}
-    />
-</Box>
-
-```
-<ScoreCard
-    headerTitle="Station 3"
-    headerSubtitle="High Humidity Alarm"
-    headerInfo="4 Devices"
->
-    <View>
-        <Text>Body Content</Text>
-    </View>
-</ScoreCard>
-```
+<ScoreCard />
 
 ## Adding a Badge
 
 A Score Card reserves space for a `badge` element. This space is commonly used to show [Heroes](/components/hero/examples).
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '400px',
-        }}
-        component="img"
-        alt="ScoreCard With Badge"
-        src={scorecardWithBadge}
-    />
-</Box>
-
-```
-<ScoreCard
-    headerTitle="Station 3"
-    headerSubtitle="High Humidity Alarm"
-    headerInfo="4 Devices"
-    badge={
-    <HeroBanner
-      style={{flex: 0, minWidth: 140, justifyContent: 'space-between'}}>
-      <Hero
-           icon={{family: 'brightlayer-ui', name: 'temp'}}
-           label="Temperature"
-           ChannelValueProps={{value: 98, units: '°F'}}
-           style={{overflow: 'visible'}}
-      />
-      <Hero
-           icon={{family: 'brightlayer-ui', name: 'moisture'}}
-           label="Humidity"
-           ChannelValueProps={{value: 54, units: '%'}}
-      />
-    </HeroBanner>
-  }
-  >
-    <View>
-        <Text>Body Content</Text>
-    </View>
-</ScoreCard>
-```
+<ScoreCardWithBadge />
 
 ## Adjusting the Badge
 
 The badge position can be adjusted via the `badgeOffset` prop.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '400px',
-        }}
-        component="img"
-        alt="ScoreCard with badgeOffset prop"
-        src={scorecardBadgeOffset}
-    />
-</Box>
-
-```
-<ScoreCard
-    headerTitle={'Substation 3'}
-    headerSubtitle={'High Humidity Alarm'}
-    headerInfo={'4 Devices'}
-    badge={
-        <Hero
-            icon={{family: 'brightlayer-ui', name: 'grade_a'}}
-            label={'Grade'}
-            iconSize={72}
-            iconBackgroundColor={theme.colors.surface}
-            ChannelValueProps={{value: '98', units: '/100', unitSpace: 'hide'}}
-        />
-    }
-    badgeOffset={-58}
->
-    <View>
-        <Text>Body Content</Text>
-    </View>
-</ScoreCard>
-
-```
+<ScoreCardAdjustBadge />
 
 ## Adding Actions
 
 A Score Card can be interactive. Actions can be added in the header through the `actionItems` prop or at the bottom of the card via the `actionRow` prop.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '400px',
-        }}
-        component="img"
-        alt="ScoreCard Actions"
-        src={scorecardActions}
-    />
-</Box>
-
-```
-<ScoreCard
-    headerTitle="Header Actions"
-    actionItems={[
-        {icon: {name: 'star-outline'}},
-        {icon: {name: 'settings'}},
-        {icon: {name: 'more-vert'}},
-    ]}
-    actionRow={
-        <View>
-            <InfoListItem dense chevron title="View Location" hidePadding />
-        </View>
-    }
-    badge={
-         <Hero
-            icon={{family: 'brightlayer-ui', name: 'grade_a'}}
-            label="Grade"
-            iconSize={72}
-            iconBackgroundColor={theme.colors.surface}
-            ChannelValueProps={{value: '98', units: '/100', unitSpace: 'hide'}}
-        />
-    }
-    badgeOffset={-54}
->
-    <View>
-        <Text>Body Content</Text>
-    </View>
-</ScoreCard>
-```
+<ScoreCardWithActions />

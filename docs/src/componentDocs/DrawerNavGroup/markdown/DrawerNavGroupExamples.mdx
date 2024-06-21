@@ -1,175 +1,30 @@
-import Box from '@mui/material/Box';
-import DrawerNavGroup from '../images/drawerNavGroup.png';
-import SpacingDrawerNavGroup from '../images/spacingDrawerNavGroup.png';
-import DrawerNavGroupTitleContent from '../images/drawerTitleContent.png';
-import DrawerNavgroupConfiguration from '../images/drawerNavgroupConfiguration.png';
+import {
+  DrawerNavGroup,
+  SpacingNavGroups,
+  CustomNavGroupTitleContent,
+  DrawerNavGroupComposition,
+} from '../examples';
 
 ## Drawer Nav Group
 
 A `<DrawerNavGroup>` organizes related navigation items together. You can have as many groups as needed.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '250px',
-        }}
-        component="img"
-        alt="DrawerNav Group Example"
-        src={DrawerNavGroup}
-    />
-</Box>
-
-```
-<Drawer style={{width: 250}}>
-  <DrawerBody>
-        <DrawerNavGroup title="Locations" hidePadding>
-            <DrawerNavItem title="Regional" itemID="1" />
-            <DrawerNavItem title="National" itemID="2" />
-        </DrawerNavGroup>
-        <DrawerNavGroup title="Status" hidePadding>
-            <DrawerNavItem title="Network" itemID="3" />
-            <DrawerNavItem title="Node" itemID="4" />
-        </DrawerNavGroup>
-  </DrawerBody>
-</Drawer>
-```
+<DrawerNavGroup />
 
 ## Spacing the Groups
 
 If you want to add an extra space between your groups, you can use a [Spacer](/components/spacer/examples) component.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '250px',
-        }}
-        component="img"
-        alt="Spacing Drawer nav groups"
-        src={SpacingDrawerNavGroup}
-    />
-</Box>
-
-```
-<Drawer style={{width: 250}}>
-    <DrawerBody>
-        <DrawerNavGroup title="Group 1" hidePadding titleDivider={false}>
-            <DrawerNavItem title="Item 1" itemID="1" />
-            <DrawerNavItem title="Item 2" itemID="2" />
-        </DrawerNavGroup>
-        <Spacer height={30} />
-        <Divider />
-        <DrawerNavGroup title="Group 2" hidePadding titleDivider={false}>
-            <DrawerNavItem title="Item 3" itemID="3" />
-            <DrawerNavItem title="Item 4" itemID="4" />
-        </DrawerNavGroup>
-  </DrawerBody>
-</Drawer>
-```
+<SpacingNavGroups />
 
 ## Customizing the Title
 
 By default, each nav group has a simple string as the title. You can customize this and pass in your own content through the `titleContent` prop.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '250px',
-        }}
-        component="img"
-        alt="DrawerNav Group title Content"
-        src={DrawerNavGroupTitleContent}
-    />
-</Box>
-
-```
-<Drawer style={{width: 250}}>
-    <DrawerBody>
-        <DrawerNavGroup
-            hidePadding
-            titleContent={
-                <View
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                        padding: 10,
-                    }}
-                >
-                    <Text>Nav Group Title Content</Text>
-                    <ListItemTag label="v1.0.3" />
-                </View>
-            }
-        >
-            <DrawerNavItem title="Item 1" itemID="1" />
-            <DrawerNavItem title="Item 2" itemID="2" />
-        </DrawerNavGroup>
-    </DrawerBody>
-</Drawer>
-```
+<CustomNavGroupTitleContent />
 
 ## Composition vs Configuration
 
 You can define the [Drawer Nav Items](/components/drawer-nav-item/examples) that you want to appear in each group via composition (simply add them as children) or configuration (define them in the `items` prop). Composition will offer slightly better re-rendering performance when props change, but using the `items` prop is easier to read/maintain, especially if you have a large number of items.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '250px',
-        }}
-        component="img"
-        alt="DrawerNav Group Configuration"
-        src={DrawerNavgroupConfiguration}
-    />
-</Box>
-
-```
-<Drawer style={{width: 250}}>
-    <DrawerBody>
-        <DrawerNavGroup title="Group 1" hidePadding titleDivider={false}>
-            <DrawerNavItem title="Item 1" itemID="1" />
-            <DrawerNavItem title="Item 2" itemID="2" />
-        </DrawerNavGroup>
-        <Divider />
-        <DrawerNavGroup
-            title="Group 2"
-            hidePadding
-            titleDivider={false}
-            items={[
-                {
-                    title: 'Item 3',
-                    itemID: '3',
-                },
-                {
-                    title: 'Item 4',
-                    itemID: '4',
-                },
-            ]}
-        />
-    </DrawerBody>
-</Drawer>
-```
+<DrawerNavGroupComposition />

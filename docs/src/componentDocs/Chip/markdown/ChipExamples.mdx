@@ -1,96 +1,22 @@
 import Box from '@mui/material/Box';
-import ChipExample from '../images/ChipExample.png';
-import ChipIconExample from '../images/ChipIconExample.png';
-import ChipAvatarExample from '../images/ChipAvatarExample.png';
-import ChipSelectedExample from '../images/ChipSelectedExample.png';
-import ChipDisableExample from '../images/ChipDisableExample.png';
+import {Chip} from '../examples/Chip';
+import {ChipWithIcon} from '../examples/ChipWithIcon';
+import {ChipSelect} from '../examples/ChipSelect';
 
 ## Chip
 
-The basic chip is a clickable element displaying a text label.
+The Chip component is a customizable [chip](https://callstack.github.io/react-native-paper/docs/components/Chip/)-based component that makes the chip component in alignment to BrightlayerUI. Chips are compact elements that can represent inputs, attributes, or actions. They can have an icon or avatar on the left, and a close button icon on the right.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '500px',
-        }}
-        component="img"
-        alt="Chip Compoent"
-        src={ChipExample}
-    />
-</Box>
-
-```
-<Chip>Label</Chip>
-```
+<Chip />
 
 ## Adding an Icon / Avatar
 
 You can add an optional icon or avatar to the chip to provide more information / context.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '500px',
-        }}
-        component="img"
-        alt="Chip Icon Component"
-        src={ChipIconExample}
-    />
-</Box>
-
-```
-<Chip
-    icon={{ name: 'info' }}
-    iconColor={'#f00'}
->
-    Chip With Icon
-</Chip>
-<Chip
-    avatar={<Avatar.Icon size={40} icon="account-circle" />}
->
-    Chip With Avatar
-</Chip>
-```
+<ChipWithIcon />
 
 ## Selecting a Chip
 
 Chips can be selected, which changes their styling to indicate that they are active.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '500px',
-        }}
-        component="img"
-        alt="Chip Selected Component"
-        src={ChipSelectedExample}
-    />
-</Box>
-
-```
-<Chip>
-    Unselected Chip
-</Chip>
-<Chip selected>
-    Selected Chip
-</Chip>
-```
+<ChipSelect />

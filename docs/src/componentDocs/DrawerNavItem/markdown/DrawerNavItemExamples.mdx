@@ -1,169 +1,22 @@
 import Box from '@mui/material/Box';
-import drawerNavItem from '../images/drawerNavItem.png';
-import selectingANavItem from '../images/selectingANavItem.png';
-import nestedNavItems from '../images/nestedNavItems.png';
+import {DrawerNavItem} from '../examples/DrawerNavItem';
+import {SelectingANavItem} from '../examples/SelectingANavItem';
+import {NestedNavItem} from '../examples/NestedNavItem';
 
 ## Drawer Nav Item
 
 A `<DrawerNavItem>` represents a single list item in the navigation drawer. Nav items can contain any combination of title, subtitle and icon.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '300px',
-        }}
-        component="img"
-        alt="Drawer Nav Item Example"
-        src={drawerNavItem}
-    />
-</Box>
-
-```
-<Drawer>
-    <DrawerBody>
-        <DrawerNavItem
-            itemID={'item1'}
-            title={'Account'}
-            icon={{ family: 'material-community', name: 'account', direction: 'auto' }}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-        <DrawerNavItem
-            itemID={'item2'}
-            title={'Notification'}
-            icon={{ family: 'material-community', name: 'bell', direction: 'auto' }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-        <DrawerNavItem
-            itemID={'item4'}
-            title={'Localization'}
-            icon={{ family: 'material-community', name: 'circle', direction: 'auto' }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-    </DrawerBody>
-</Drawer>
-```
+<DrawerNavItem />
 
 ## Selecting a Nav Item
 
 Navigation items can be highlighted with an active state by setting the `activeItem` prop. The shape of the highlight can be either "square" (default) or "round".
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '300px',
-        }}
-        component="img"
-        alt="Selecting a Nav Item Example"
-        src={selectingANavItem}
-    />
-</Box>
-
-```
-<Drawer activeItem="item2">
-    <DrawerBody>
-        <DrawerNavItem
-            itemID={'item1'}
-            title={'Account'}
-            icon={{ family: 'material-community', name: 'account', direction: 'auto' }}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-        <DrawerNavItem
-            itemID={'item2'}
-            title={'Notification'}
-            icon={{ family: 'material-community', name: 'bell', direction: 'auto' }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-        <DrawerNavItem
-            itemID={'item4'}
-            title={'Localization'}
-            icon={{ family: 'material-community', name: 'circle', direction: 'auto' }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-    </DrawerBody>
-</Drawer>
-```
+<SelectingANavItem />
 
 ## Nesting the Nav Items
 
 Navigation items can be nested to allow for a multi-level navigation hierarchy. Similar to the [Drawer Nav Group](/components/drawer-nav-group/examples), you can do this by adding additional Nav Items as children or by specifying the nested structure via the `items` prop. Deep nesting can cause performance issues — we recommend limiting yourself to 2-3 levels when possible.
 
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    <Box
-        sx={{
-            width: '100%',
-            maxWidth: '300px',
-        }}
-        component="img"
-        alt="Nested Nav Items Example"
-        src={nestedNavItems}
-    />
-</Box>
-
-```
-<Drawer>
-    <DrawerBody>
-        <DrawerNavItem
-            itemID={'item1'}
-            title={'Account'}
-            icon={{ family: 'material-community', name: 'account', direction: 'auto' }}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-        <DrawerNavItem
-            itemID={'item2'}
-            title={'Notification'}
-            icon={{ family: 'material-community', name: 'bell', direction: 'auto' }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        >
-            <DrawerNavItem itemID={'item21'} title={'Notification 1'} />
-            <DrawerNavItem itemID={'item22'} title={'Notification 2'} />
-        </DrawerNavItem>
-        <DrawerNavItem
-            itemID={'item4'}
-            title={'Localization'}
-            icon={{ family: 'material-community', name: 'circle', direction: 'auto' }}
-            activeItemBackgroundShape={'round'}
-            InfoListItemProps={{
-                iconAlign: 'center',
-            }}
-        />
-    </DrawerBody>
-</Drawer>
-```
+<NestedNavItem />
