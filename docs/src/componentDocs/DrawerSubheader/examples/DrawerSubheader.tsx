@@ -6,7 +6,7 @@ import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
   <DrawerHeader title="Title" />
   <DrawerSubheader>
-      <Text>Custom Content Goes here</Text>
+      <Text style={{padding: 16}}>Custom Content Goes here</Text>
   </DrawerSubheader>
   <DrawerBody>
       <DrawerNavGroup>

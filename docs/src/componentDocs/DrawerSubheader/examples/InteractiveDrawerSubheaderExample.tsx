@@ -9,7 +9,6 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
 import { TextInput } from 'react-native-paper';
-import { View } from 'react-native';
 
 export const InteractiveDrawerSubheaderExample = (): JSX.Element => (
     <ExampleShowcase>
@@ -20,9 +19,7 @@ export const InteractiveDrawerSubheaderExample = (): JSX.Element => (
                 icon={{ name: 'menu', direction: 'auto' }}
             />
             <DrawerSubheader>
-                <View style={{ padding: 10 }}>
-                    <TextInput label={'Add Navigation Group'} mode="outlined" />
-                </View>
+                <TextInput label={'Add Navigation Group'} mode="outlined" style={{ margin: 16 }} />
             </DrawerSubheader>
             <DrawerBody>
                 <DrawerNavGroup title={'Navigation Group'}>

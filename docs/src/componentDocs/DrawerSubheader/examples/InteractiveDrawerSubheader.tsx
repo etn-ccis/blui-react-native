@@ -10,9 +10,7 @@ const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
         icon={{name: 'menu', direction: 'auto'}}
     />
     <DrawerSubheader>
-        <View style={{padding: 10}}>
-            <TextInput label={'Add Navigation Group'} mode="outlined" />
-        </View>
+        <TextInput label={'Add Navigation Group'} mode="outlined" style={{ margin: 16 }} />
     </DrawerSubheader>
     <DrawerBody>
         <DrawerNavGroup title={'Navigation Group'}>
@@ -38,7 +36,7 @@ const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
 export const InteractiveDrawerSubheader = (): JSX.Element => (
     <Box>
         <InteractiveDrawerSubheaderExample />
-        <CodeBlock code={codeSnippet} language="jsx" dataLine="7-11" />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="7-9" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
             url="componentDocs/DrawerSubheader/examples/InteractiveDrawerSubheaderExample.tsx"
