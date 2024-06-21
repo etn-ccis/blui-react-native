@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {UserMenuAvatarFormatExample} from './UserMenuAvatarFormatExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { UserMenuAvatarFormatExample } from './UserMenuAvatarFormatExample';
 
 const codeSnippet = `<UserMenu
   avatar={
@@ -27,12 +27,12 @@ const codeSnippet = `<UserMenu
 />`;
 
 export const UserMenuAvatarFormat = (): JSX.Element => (
-  <Box>
-    <UserMenuAvatarFormatExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/UserMenu/examples/UserMenuAvatarFormatExample.tsx"
-    />
-  </Box>
+    <Box>
+        <UserMenuAvatarFormatExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/UserMenu/examples/UserMenuAvatarFormatExample.tsx"
+        />
+    </Box>
 );

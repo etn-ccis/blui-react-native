@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {MobileStepperDotVariantExample} from './MobileStepperDotVariantExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { MobileStepperDotVariantExample } from './MobileStepperDotVariantExample';
 
 const codeSnippet = `<MobileStepper
       activeStep={2}
@@ -26,12 +26,12 @@ const codeSnippet = `<MobileStepper
     />`;
 
 export const MobileStepperDotVariant = (): JSX.Element => (
-  <Box>
-    <MobileStepperDotVariantExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine='20' />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/MobileStepper/examples/MobileStepperDotVariantExample.tsx"
-    />
-  </Box>
+    <Box>
+        <MobileStepperDotVariantExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="20" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/MobileStepper/examples/MobileStepperDotVariantExample.tsx"
+        />
+    </Box>
 );

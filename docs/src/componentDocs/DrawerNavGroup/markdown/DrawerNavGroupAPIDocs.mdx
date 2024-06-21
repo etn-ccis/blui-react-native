@@ -9,19 +9,20 @@ A `<DrawerNavGroup>` is used inside of the `<DrawerBody>` to organize links/cont
 The `items` property supports nested items to generate collapsible sections in the menu. This can be used to create an arbitrary tree depth, but we do not recommend going more than two levels deep in a navigation Drawer. You can also build the navigation links declaratively by passing `<DrawerNavItem>` children to the `<DrawerNavGroup>`.
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '600px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Drawer Nav Group Anatomy"
-    src={DrawerNavGroupAnatomy}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '600px',
+        }}
+        component="img"
+        alt="Drawer Nav Group Anatomy"
+        src={DrawerNavGroupAnatomy}
+    />
 </Box>
 
 ### DrawerNavGroup API

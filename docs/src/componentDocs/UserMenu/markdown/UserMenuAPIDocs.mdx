@@ -7,38 +7,40 @@ import userMenuAvatarImage from '../images/userMenuAvatar.png';
 The `<UserMenu>` is a combination of an Avatar and a Menu that is used to hold user account-related information and actions. It is typically used in the top-right corner of an application and indicates who is logged in.
 
 <Box
-  sx={{
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
-    mb: 2,
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '40%',
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        mb: 2,
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="User Menu"
-    src={userMenuOpenedImage}
-  />
-  <Box
-    sx={{
-      width: '40%',
-    }}
-    component="img"
-    alt="User Menu Avatar"
-    src={userMenuAvatarImage}
-  />
+>
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="User Menu"
+        src={userMenuOpenedImage}
+    />
+    <Box
+        sx={{
+            width: '40%',
+        }}
+        component="img"
+        alt="User Menu Avatar"
+        src={userMenuAvatarImage}
+    />
 </Box>
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  ![placeholder image](https://placehold.co/500x300)
+    sx={{
+        width: '100%',
+        textAlign: 'center',
+    }}
+>
+    ![placeholder image](https://placehold.co/500x300)
 </Box>
 
 ## API

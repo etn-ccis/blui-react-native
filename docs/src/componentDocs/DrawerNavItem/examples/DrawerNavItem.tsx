@@ -1,7 +1,7 @@
 import React from 'react';
-import {Box} from '@mui/material';
-import {DrawerNavItemExample} from './DrawerNavItemExample';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
+import { Box } from '@mui/material';
+import { DrawerNavItemExample } from './DrawerNavItemExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 
 const codeSnippet = `<Drawer>
     <DrawerBody>
@@ -25,12 +25,12 @@ const codeSnippet = `<Drawer>
 `;
 
 export const DrawerNavItem = (): JSX.Element => (
-  <Box>
-    <DrawerNavItemExample />
-    <CodeBlock code={codeSnippet} language={'jsx'} dataLine="3-17" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/DrawerNavItem/examples/DrawerNavItemExample.tsx"
-    />
-  </Box>
+    <Box>
+        <DrawerNavItemExample />
+        <CodeBlock code={codeSnippet} language={'jsx'} dataLine="3-17" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/DrawerNavItem/examples/DrawerNavItemExample.tsx"
+        />
+    </Box>
 );

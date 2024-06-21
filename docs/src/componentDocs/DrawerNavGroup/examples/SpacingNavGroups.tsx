@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {SpacingNavGroupsExample} from './SpacingNavGroupsExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { SpacingNavGroupsExample } from './SpacingNavGroupsExample';
 
 const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     <DrawerBody>
@@ -18,12 +18,12 @@ const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
     </DrawerBody>
 </Drawer>`;
 export const SpacingNavGroups = (): JSX.Element => (
-  <Box>
-    <SpacingNavGroupsExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="7" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/DrawerNavGroup/examples/SpacingNavGroupsExample.tsx"
-    />
-  </Box>
+    <Box>
+        <SpacingNavGroupsExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="7" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/DrawerNavGroup/examples/SpacingNavGroupsExample.tsx"
+        />
+    </Box>
 );

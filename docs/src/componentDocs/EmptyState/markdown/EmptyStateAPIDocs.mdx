@@ -6,27 +6,29 @@ import EmptyStateImage from '../images/emptyState.png';
 The `<EmptyState>` component is an element that can be used as a placeholder when no data is present (such as an empty list, or a placeholder page for future content). This is only used when no data is available, rather than during loading (see [empty states pattern](https://brightlayer-ui.github.io/patterns/empty-states)).
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '500px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Empty state with all props"
-    src={EmptyStateImage}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '500px',
+        }}
+        component="img"
+        alt="Empty state with all props"
+        src={EmptyStateImage}
+    />
 </Box>
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  ![placeholder image](https://placehold.co/400x300)
+    sx={{
+        width: '100%',
+        textAlign: 'center',
+    }}
+>
+    ![placeholder image](https://placehold.co/400x300)
 </Box>
 
 ## API

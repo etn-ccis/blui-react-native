@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {UserMenuHeaderExample} from './UserMenuHeaderExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { UserMenuHeaderExample } from './UserMenuHeaderExample';
 
 const codeSnippet = `<UserMenu
   avatar={<Avatar.Text size={30} label="MH" />}
@@ -17,12 +17,12 @@ const codeSnippet = `<UserMenu
 `;
 
 export const UserMenuHeader = (): JSX.Element => (
-  <Box>
-    <UserMenuHeaderExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/UserMenu/examples/UserMenuHeaderExample.tsx"
-    />
-  </Box>
+    <Box>
+        <UserMenuHeaderExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/UserMenu/examples/UserMenuHeaderExample.tsx"
+        />
+    </Box>
 );

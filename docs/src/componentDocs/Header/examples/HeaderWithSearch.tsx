@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {HeaderWithSearchExample} from './HeaderWithSearchExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { HeaderWithSearchExample } from './HeaderWithSearchExample';
 
 const codeSnippet = `<Header
     title={'Valley Forge'}
@@ -20,12 +20,12 @@ const codeSnippet = `<Header
 />`;
 
 export const HeaderWithSearch = (): JSX.Element => (
-  <Box>
-    <HeaderWithSearchExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="14" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Header/examples/HeaderWithSearchExample.tsx"
-    />
-  </Box>
+    <Box>
+        <HeaderWithSearchExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="14" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/Header/examples/HeaderWithSearchExample.tsx"
+        />
+    </Box>
 );

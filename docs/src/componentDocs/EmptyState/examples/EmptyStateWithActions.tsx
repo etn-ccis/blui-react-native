@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {EmptyStateWithActionsExample} from './EmptyStateWithActionsExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { EmptyStateWithActionsExample } from './EmptyStateWithActionsExample';
 
 const codeSnippet = `<EmptyState
     icon={{name: 'devices'}}
@@ -15,12 +15,12 @@ const codeSnippet = `<EmptyState
 />`;
 
 export const EmptyStateWithActions = (): JSX.Element => (
-  <Box>
-    <EmptyStateWithActionsExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine={'5, 6-9'} />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/EmptyState/examples/EmptyStateWithActionsExample.tsx"
-    />
-  </Box>
+    <Box>
+        <EmptyStateWithActionsExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine={'5, 6-9'} />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/EmptyState/examples/EmptyStateWithActionsExample.tsx"
+        />
+    </Box>
 );

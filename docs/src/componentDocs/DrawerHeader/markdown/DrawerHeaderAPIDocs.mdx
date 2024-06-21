@@ -6,19 +6,20 @@ import DrawerHeaderAnatomy from '../images/drawerHeaderAnatomy.png';
 The `<DrawerHeader>` is a subsection that appears at the top of `<Drawer>`. Its content can be provided by the `title`, `subtitle`, and `icon` props, or you can pass in your own custom content via `titleContent`.
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '600px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Drawer Header Anatomy"
-    src={DrawerHeaderAnatomy}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '600px',
+        }}
+        component="img"
+        alt="Drawer Header Anatomy"
+        src={DrawerHeaderAnatomy}
+    />
 </Box>
 
 ### DrawerHeader API

@@ -7,19 +7,20 @@ import SharedProps from '../../Drawer/markdown/SharedProps.mdx';
 The `<DrawerNavItem>` is an individual line item in the `<Drawer>`. These can be generated for you by using the `items` prop of the `<DrawerNavGroup>` and passing in an array of objects with the following API. You can also create these line items by directly passing them as children to the `<DrawerNavGroup>`. Each `<DrawerNavItem>` also supports the ability to nest items (using its own `items` prop or children).
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '600px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Nav Item Anatomy"
-    src={NavItemAnatomy}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '600px',
+        }}
+        component="img"
+        alt="Nav Item Anatomy"
+        src={NavItemAnatomy}
+    />
 </Box>
 
 ### Drawer Nav Item API

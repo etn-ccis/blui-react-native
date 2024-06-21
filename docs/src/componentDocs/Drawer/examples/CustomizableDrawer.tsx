@@ -1,7 +1,7 @@
 import React from 'react';
-import {Box} from '@mui/material';
-import {CustomizableDrawerExample} from './CustomizableDrawerExample';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
+import { Box } from '@mui/material';
+import { CustomizableDrawerExample } from './CustomizableDrawerExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 
 const codeSnippet = `<Drawer activeItem="item1" style={{width: 250, margin: 'auto'}}>
     <DrawerHeader
@@ -45,12 +45,12 @@ const codeSnippet = `<Drawer activeItem="item1" style={{width: 250, margin: 'aut
 </Drawer>`;
 
 export const CustomizableDrawer = (): JSX.Element => (
-  <Box>
-    <CustomizableDrawerExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Drawer/examples/CustomizableDrawerExample.tsx"
-    />
-  </Box>
+    <Box>
+        <CustomizableDrawerExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/Drawer/examples/CustomizableDrawerExample.tsx"
+        />
+    </Box>
 );

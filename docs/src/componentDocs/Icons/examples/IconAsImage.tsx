@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {IconAsImageExample} from './IconAsImageExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { IconAsImageExample } from './IconAsImageExample';
 
 const codeSnippet = `<Hero
     label={'Image'}
@@ -12,12 +12,9 @@ const codeSnippet = `<Hero
 />`;
 
 export const IconAsImage = (): JSX.Element => (
-  <Box>
-    <IconAsImageExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs\Icons\examples\IconAsImageExample.tsx"
-    />
-  </Box>
+    <Box>
+        <IconAsImageExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs\Icons\examples\IconAsImageExample.tsx" />
+    </Box>
 );
