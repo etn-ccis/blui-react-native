@@ -6,7 +6,6 @@ import {
   DrawerNavItem,
 } from '@brightlayer-ui/react-native-components';
 import {ExampleShowcase} from '../../../shared';
-import * as colors from '@brightlayer-ui/colors';
 
 export const BasicDrawerBodyExample = (): JSX.Element => (
   <ExampleShowcase>
