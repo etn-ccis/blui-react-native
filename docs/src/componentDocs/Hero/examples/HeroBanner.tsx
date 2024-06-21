@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {HeroBannerExample} from './HeroBannerExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { HeroBannerExample } from './HeroBannerExample';
 
 const codeSnippet = `<View style={{width: 300, margin: 'auto'}}>
     <HeroBanner>
@@ -24,12 +24,9 @@ const codeSnippet = `<View style={{width: 300, margin: 'auto'}}>
 </View>`;
 
 export const HeroBanner = (): JSX.Element => (
-  <Box>
-    <HeroBannerExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Hero/examples/HeroBannerExample.tsx"
-    />
-  </Box>
+    <Box>
+        <HeroBannerExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/Hero/examples/HeroBannerExample.tsx" />
+    </Box>
 );

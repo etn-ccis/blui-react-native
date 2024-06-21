@@ -1,6 +1,6 @@
 import React from 'react';
-import {ExampleShowcase} from '../../../shared';
-import {CollapsibleHeaderLayout} from '@brightlayer-ui/react-native-components';
+import { ExampleShowcase } from '../../../shared';
+import { CollapsibleHeaderLayout } from '@brightlayer-ui/react-native-components';
 import image from '../images/farm.jpg';
 import {getBodyFiller} from '../../../utils';
 import {View} from 'react-native';

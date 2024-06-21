@@ -1,35 +1,22 @@
 {
-  "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
+    "parser": "@typescript-eslint/parser",
+    "extends": ["@brightlayer-ui/eslint-config/tsx"],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "rules": {
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "variable", // Applies to variables
+                "format": ["camelCase", "PascalCase", "UPPER_CASE"], // Allowed formats
+                "leadingUnderscore": "allow", // Optional: Allow leading underscores
+                "trailingUnderscore": "allow" // Optional: Allow trailing underscores
+            }
         ]
-      }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
-      "rules": {}
     }
-  ]
 }

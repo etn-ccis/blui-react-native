@@ -1,11 +1,11 @@
-import {device, element, by, expect} from 'detox';
+import { device, element, by, expect } from 'detox';
 
 describe('Showcase', () => {
-  beforeEach(async () => {
-    await device.reloadReactNative();
-  });
+    beforeEach(async () => {
+        await device.reloadReactNative();
+    });
 
-  it('should display welcome message', async () => {
-    await expect(element(by.id('heading'))).toHaveText('Welcome Showcase 👋');
-  });
+    it('should display welcome message', async () => {
+        await expect(element(by.id('heading'))).toHaveText('Welcome Showcase 👋');
+    });
 });

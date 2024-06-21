@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {ListItemTagUsingInfoListItemExample} from './ListItemTagUsingInfoListItemExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { ListItemTagUsingInfoListItemExample } from './ListItemTagUsingInfoListItemExample';
 
 const codeSnippet = `<InfoListItem
     icon={{name: 'battery-charging-full'}}
@@ -26,12 +26,12 @@ const codeSnippet = `<InfoListItem
 />`;
 
 export const ListItemTagUsingInfoListItem = (): JSX.Element => (
-  <Box>
-    <ListItemTagUsingInfoListItemExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="8-18" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/ListItemTag/examples/ListItemTagUsingInfoListItemExample.tsx"
-    />
-  </Box>
+    <Box>
+        <ListItemTagUsingInfoListItemExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="8-18" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/ListItemTag/examples/ListItemTagUsingInfoListItemExample.tsx"
+        />
+    </Box>
 );

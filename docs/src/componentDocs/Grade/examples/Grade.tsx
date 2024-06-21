@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {GradeExample} from './GradeExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { GradeExample } from './GradeExample';
 
 const codeSnippet = `<Grade.APlus/>
 <Grade.A/>
@@ -18,12 +18,9 @@ const codeSnippet = `<Grade.APlus/>
 <Grade.F/>`;
 
 export const Grade = (): JSX.Element => (
-  <Box>
-    <GradeExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Grade/examples/GradeExample.tsx"
-    />
-  </Box>
+    <Box>
+        <GradeExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/Grade/examples/GradeExample.tsx" />
+    </Box>
 );

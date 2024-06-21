@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {InfoListItemClickableExample} from './InfoListItemClickableExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { InfoListItemClickableExample } from './InfoListItemClickableExample';
 
 const codeSnippet = `<InfoListItem
     dense
@@ -33,12 +33,12 @@ const codeSnippet = `<InfoListItem
 />`;
 
 export const InfoListItemClickable = (): JSX.Element => (
-  <Box>
-    <InfoListItemClickableExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="10, 20, 27" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Header/examples/InfoListItemClickableExample.tsx"
-    />
-  </Box>
+    <Box>
+        <InfoListItemClickableExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="10, 20, 27" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/Header/examples/InfoListItemClickableExample.tsx"
+        />
+    </Box>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {HeaderWithActionsExample} from './HeaderWithActionsExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { HeaderWithActionsExample } from './HeaderWithActionsExample';
 
 const codeSnippet = `<Header
     title={'Valley Forge'}
@@ -21,12 +21,9 @@ const codeSnippet = `<Header
 />`;
 
 export const HeaderWithActions = (): JSX.Element => (
-  <Box>
-    <HeaderWithActionsExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="4-14" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Header/examples/HeaderActionsExample.tsx"
-    />
-  </Box>
+    <Box>
+        <HeaderWithActionsExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="4-14" />
+        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/Header/examples/HeaderActionsExample.tsx" />
+    </Box>
 );

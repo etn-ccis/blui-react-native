@@ -1,80 +1,93 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default",
-      "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json"
+    "$schema": "./node_modules/nx/schemas/nx-schema.json",
+    "namedInputs": {
+        "default": ["{projectRoot}/**/*", "sharedGlobals"],
+        "production": [
+            "default",
+            "!{projectRoot}/.eslintrc.json",
+            "!{projectRoot}/eslint.config.js",
+            "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+            "!{projectRoot}/tsconfig.spec.json"
+        ],
+        "sharedGlobals": []
+    },
+    "projects": {
+        "docs": {
+            "architect": {
+                "lint": {
+                    "executor": "@nx/eslint:eslint",
+                    "options": {
+                        "command": "eslint \"src/**/**.{ts,tsx}\"",
+                        "outputs": ["{options.outputPath}"]
+                    }
+                }
+            }
+        }
+    },
+    "plugins": [
+        {
+            "plugin": "@nx/react-native/plugin",
+            "options": {
+                "startTargetName": "start",
+                "upgradeTargetname": "update",
+                "bundleTargetName": "bundle",
+                "podInstallTargetName": "pod-install",
+                "runIosTargetName": "run-ios",
+                "runAndroidTargetName": "run-android",
+                "buildIosTargetName": "build-ios",
+                "buildAndroidTargetName": "build-android",
+                "syncDepsTargetName": "sync-deps"
+            }
+        },
+        {
+            "plugin": "@nx/eslint-plugin",
+            "options": {
+                "targetName": "lint"
+            }
+        },
+        {
+            "plugin": "@nx/webpack/plugin",
+            "options": {
+                "buildTargetName": "build",
+                "serveTargetName": "serve",
+                "previewTargetName": "preview"
+            }
+        },
+        {
+            "plugin": "@nx/detox/plugin",
+            "options": {
+                "buildTargetName": "build",
+                "startTargetName": "start",
+                "testTargetName": "test"
+            }
+        },
+        {
+            "plugin": "@nx/vite/plugin",
+            "options": {
+                "buildTargetName": "build",
+                "testTargetName": "test",
+                "serveTargetName": "serve",
+                "previewTargetName": "preview",
+                "serveStaticTargetName": "serve-static"
+            }
+        }
     ],
-    "sharedGlobals": []
-  },
-  "plugins": [
-    {
-      "plugin": "@nx/react-native/plugin",
-      "options": {
-        "startTargetName": "start",
-        "upgradeTargetname": "update",
-        "bundleTargetName": "bundle",
-        "podInstallTargetName": "pod-install",
-        "runIosTargetName": "run-ios",
-        "runAndroidTargetName": "run-android",
-        "buildIosTargetName": "build-ios",
-        "buildAndroidTargetName": "build-android",
-        "syncDepsTargetName": "sync-deps"
-      }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/webpack/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview"
-      }
-    },
-    {
-      "plugin": "@nx/detox/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "startTargetName": "start",
-        "testTargetName": "test"
-      }
-    },
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview",
-        "serveStaticTargetName": "serve-static"
-      }
+    "nxCloudAccessToken": "MTEyNzZmNDAtYjk3Ni00ZGE2LTlmMjAtZTA2ZmI4M2JhNTFlfHJlYWQtd3JpdGU=",
+    "generators": {
+        "@nx/react": {
+            "application": {
+                "babel": true,
+                "style": "css",
+                "linter": "eslint",
+                "bundler": "vite"
+            },
+            "component": {
+                "style": "css"
+            },
+            "library": {
+                "style": "css",
+                "linter": "eslint"
+            }
+        }
     }
-  ],
-  "nxCloudAccessToken": "MTEyNzZmNDAtYjk3Ni00ZGE2LTlmMjAtZTA2ZmI4M2JhNTFlfHJlYWQtd3JpdGU=",
-  "generators": {
-    "@nx/react": {
-      "application": {
-        "babel": true,
-        "style": "css",
-        "linter": "eslint",
-        "bundler": "vite"
-      },
-      "component": {
-        "style": "css"
-      },
-      "library": {
-        "style": "css",
-        "linter": "eslint"
-      }
-    }
-  }
 }

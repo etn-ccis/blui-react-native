@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {GradeCustomColorExample} from './GradeCustomColorExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { GradeCustomColorExample } from './GradeCustomColorExample';
 
 const codeSnippet = `<Grade 
   label="AB"
@@ -10,12 +10,12 @@ const codeSnippet = `<Grade
 />`;
 
 export const GradeCustomColor = (): JSX.Element => (
-  <Box>
-    <GradeCustomColorExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine='3-4' />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Grade/examples/GradeCustomColourExample.tsx"
-    />
-  </Box>
+    <Box>
+        <GradeCustomColorExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="3-4" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/Grade/examples/GradeCustomColourExample.tsx"
+        />
+    </Box>
 );

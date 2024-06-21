@@ -9,27 +9,29 @@ The Grade component is lightweight wrapper around the React Native Paper [Avatar
 {/* TODO: This image needs to be updated to show standard Grades, not random colors */}
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '150px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Gradecomponent"
-    src={GradeComponentImage}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '150px',
+        }}
+        component="img"
+        alt="Gradecomponent"
+        src={GradeComponentImage}
+    />
 </Box>
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  ![placeholder image](https://placehold.co/400x300)
+    sx={{
+        width: '100%',
+        textAlign: 'center',
+    }}
+>
+    ![placeholder image](https://placehold.co/400x300)
 </Box>
 
 ## Grade API
@@ -53,19 +55,20 @@ Any other props will be provided to the root element ([**View**](https://reactna
 There are a number of preset values available with standard grades and colors already configured. You should use these if they make sense for your target location (these are based on the US grade system). Presets are available by accessing the nested component by name (e.g., `<Grade.APlus/>`)
 
 <Box
-  sx={{
-    width: '100%',
-    textAlign: 'center',
-  }}>
-  <Box
     sx={{
-      width: '100%',
-      maxWidth: '200px',
+        width: '100%',
+        textAlign: 'center',
     }}
-    component="img"
-    alt="Grade Subcomponent"
-    src={GradeCSubComponentImage}
-  />
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '200px',
+        }}
+        component="img"
+        alt="Grade Subcomponent"
+        src={GradeCSubComponentImage}
+    />
 </Box>
 
 ### Grade Presets API

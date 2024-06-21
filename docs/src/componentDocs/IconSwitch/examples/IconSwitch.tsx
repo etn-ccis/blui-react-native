@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {IconSwitchExample} from './IconSwitchExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { IconSwitchExample } from './IconSwitchExample';
 
 const codeSnippet = `<View style={{flexDirection: 'column'}}>
   <View style={{padding: 10}}>
@@ -18,12 +18,12 @@ const codeSnippet = `<View style={{flexDirection: 'column'}}>
   </View>
 </View>`;
 export const IconSwitch = (): JSX.Element => (
-  <Box>
-    <IconSwitchExample />
-    <CodeBlock code={codeSnippet} language="jsx" dataLine="3,6,9,12" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/IconSwitch/examples/IconSwitchExample.tsx"
-    />
-  </Box>
+    <Box>
+        <IconSwitchExample />
+        <CodeBlock code={codeSnippet} language="jsx" dataLine="3,6,9,12" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/IconSwitch/examples/IconSwitchExample.tsx"
+        />
+    </Box>
 );

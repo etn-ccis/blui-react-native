@@ -1,7 +1,7 @@
 import React from 'react';
-import {Box} from '@mui/material';
-import {SelectingANavItemExample} from './SelectingANavItemExample';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
+import { Box } from '@mui/material';
+import { SelectingANavItemExample } from './SelectingANavItemExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 
 const codeSnippet = `<Drawer activeItem={selected}>
   <DrawerBody>
@@ -30,12 +30,12 @@ const codeSnippet = `<Drawer activeItem={selected}>
 </Drawer>`;
 
 export const SelectingANavItem = (): JSX.Element => (
-  <Box>
-    <SelectingANavItemExample />
-    <CodeBlock code={codeSnippet} language={'jsx'} dataLine="1" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/DrawerNavItem/examples/SelectingANavItemExample.tsx"
-    />
-  </Box>
+    <Box>
+        <SelectingANavItemExample />
+        <CodeBlock code={codeSnippet} language={'jsx'} dataLine="1" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/DrawerNavItem/examples/SelectingANavItemExample.tsx"
+        />
+    </Box>
 );

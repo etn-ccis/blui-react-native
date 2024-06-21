@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {SpacerWithPixelExample} from './SpacerWithPixelExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { SpacerWithPixelExample } from './SpacerWithPixelExample';
 
 const codeSnippet = `
   <View>
@@ -32,12 +32,12 @@ const codeSnippet = `
   </View>
   `;
 export const SpacerWithPixel = (): JSX.Element => (
-  <Box>
-    <SpacerWithPixelExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Spacer/examples/SpacerWithPixelExample.tsx"
-    />
-  </Box>
+    <Box>
+        <SpacerWithPixelExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/Spacer/examples/SpacerWithPixelExample.tsx"
+        />
+    </Box>
 );

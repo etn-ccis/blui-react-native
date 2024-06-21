@@ -1,7 +1,7 @@
 import React from 'react';
-import {Box} from '@mui/material';
-import {CollapsibleHeaderLayoutExample} from './CollapsibleHeaderLayoutExample';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
+import { Box } from '@mui/material';
+import { CollapsibleHeaderLayoutExample } from './CollapsibleHeaderLayoutExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 
 const codeSnippet = `<CollapsibleHeaderLayout
   HeaderProps={{
@@ -25,15 +25,13 @@ const codeSnippet = `<CollapsibleHeaderLayout
 />
 `;
 
-export const CollapsibleHeaderLayout = (): JSX.Element => {
-  return (
+export const CollapsibleHeaderLayout = (): JSX.Element => (
     <Box>
-      <CollapsibleHeaderLayoutExample />
-      <CodeBlock code={codeSnippet} language={'jsx'} />
-      <CodeBlockActionButtonRow
-        copyText={codeSnippet}
-        url="componentDocs/CollapsibleHeaderLayout/examples/CollapsibleHeaderLayoutExamples.tsx"
-      />
+        <CollapsibleHeaderLayoutExample />
+        <CodeBlock code={codeSnippet} language={'jsx'} />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/CollapsibleHeaderLayout/examples/CollapsibleHeaderLayoutExamples.tsx"
+        />
     </Box>
-  );
-};
+);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import {CodeBlock, CodeBlockActionButtonRow} from '../../../shared';
-import {SpacerWithFlexExample} from './SpacerWithFlexExample';
+import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
+import { SpacerWithFlexExample } from './SpacerWithFlexExample';
 
 const codeSnippet = `
 <View style={{display: 'flex', flexDirection: 'row', height: 56, width: 300}}>
@@ -18,12 +18,12 @@ const codeSnippet = `
 `;
 
 export const SpacerWithFlex = (): JSX.Element => (
-  <Box>
-    <SpacerWithFlexExample />
-    <CodeBlock code={codeSnippet} language="jsx" />
-    <CodeBlockActionButtonRow
-      copyText={codeSnippet}
-      url="componentDocs/Spacer/examples/SpacerWithFlexExample.tsx"
-    />
-  </Box>
+    <Box>
+        <SpacerWithFlexExample />
+        <CodeBlock code={codeSnippet} language="jsx" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/Spacer/examples/SpacerWithFlexExample.tsx"
+        />
+    </Box>
 );
