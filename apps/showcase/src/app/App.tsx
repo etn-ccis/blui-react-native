@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar, TouchableOpacity, Linking } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
 
-export const App = () => {
+export const App = (): JSX.Element => {
     const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
     const scrollViewRef = useRef<null | ScrollView>(null);
 
@@ -45,7 +45,7 @@ export const App = () => {
                                         d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
                                     />
                                 </Svg>
-                                <Text style={[styles.textLg, styles.heroTitleText]}>You're up and running</Text>
+                                <Text style={[styles.textLg, styles.heroTitleText]}>{`You're up and running`}</Text>
                             </View>
                             <TouchableOpacity
                                 style={styles.whatsNextButton}
@@ -56,7 +56,7 @@ export const App = () => {
                                     });
                                 }}
                             >
-                                <Text style={[styles.textMd, styles.textCenter]}>What's next?</Text>
+                                <Text style={[styles.textMd, styles.textCenter]}>{`What's next?`}</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -66,7 +66,7 @@ export const App = () => {
                             <TouchableOpacity
                                 style={[styles.listItem, styles.learning]}
                                 onPress={() =>
-                                    Linking.openURL('https://nx.dev/getting-started/intro?utm_source=nx-project')
+                                    void Linking.openURL('https://nx.dev/getting-started/intro?utm_source=nx-project')
                                 }
                             >
                                 <Svg width={24} height={24} stroke="#000000" fill="none" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@ export const App = () => {
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={[styles.listItem, styles.learning]}
-                                onPress={() => Linking.openURL('https://blog.nrwl.io/?utm_source=nx-project')}
+                                onPress={() => void Linking.openURL('https://blog.nrwl.io/?utm_source=nx-project')}
                             >
                                 <Svg width={24} height={24} stroke="#000000" fill="none" viewBox="0 0 24 24">
                                     <Path
@@ -120,7 +120,9 @@ export const App = () => {
                             <TouchableOpacity
                                 style={[styles.listItem, styles.learning]}
                                 onPress={() =>
-                                    Linking.openURL('https://www.youtube.com/@NxDevtools/videos?utm_source=nx-project')
+                                    void Linking.openURL(
+                                        'https://www.youtube.com/@NxDevtools/videos?utm_source=nx-project'
+                                    )
                                 }
                             >
                                 <Svg width={24} height={24} fill="#000000" viewBox="0 0 24 24">
@@ -142,7 +144,7 @@ export const App = () => {
                             <TouchableOpacity
                                 style={[styles.listItem, styles.learning]}
                                 onPress={() =>
-                                    Linking.openURL(
+                                    void Linking.openURL(
                                         'https://nx.dev/react-tutorial/1-code-generation?utm_source=nx-project'
                                     )
                                 }
@@ -170,7 +172,7 @@ export const App = () => {
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={[styles.listItem, styles.learning]}
-                                onPress={() => Linking.openURL('https://nxplaybook.com/?utm_source=nx-project')}
+                                onPress={() => void Linking.openURL('https://nxplaybook.com/?utm_source=nx-project')}
                             >
                                 <Svg width={24} height={24} stroke="#000000" fill="none" viewBox="0 0 24 24">
                                     <Path d="M12 14l9-5-9-5-9 5 9 5z"></Path>
@@ -200,7 +202,7 @@ export const App = () => {
                     <View style={[styles.section, styles.shadowBox]}>
                         <TouchableOpacity
                             onPress={() =>
-                                Linking.openURL(
+                                void Linking.openURL(
                                     'https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console&utm_source=nx-project'
                                 )
                             }
@@ -223,7 +225,9 @@ export const App = () => {
 
                     <View style={[styles.section, styles.shadowBox]}>
                         <TouchableOpacity
-                            onPress={() => Linking.openURL('https://plugins.jetbrains.com/plugin/21060-nx-console')}
+                            onPress={() =>
+                                void Linking.openURL('https://plugins.jetbrains.com/plugin/21060-nx-console')
+                            }
                         >
                             <View style={[styles.listItem, styles.learning]}>
                                 <Svg width={48} height={48} viewBox="20 20 60 60">
@@ -253,7 +257,7 @@ export const App = () => {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.section}>
-                        <TouchableOpacity onPress={() => Linking.openURL('https://nx.app/?utm_source=nx-project')}>
+                        <TouchableOpacity onPress={() => void Linking.openURL('https://nx.app/?utm_source=nx-project')}>
                             <View style={styles.shadowBox}>
                                 <View style={[styles.listItem, styles.marginBottomMd]}>
                                     <Svg
@@ -288,7 +292,7 @@ export const App = () => {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.section}>
-                        <TouchableOpacity onPress={() => Linking.openURL('https://nx.app/?utm_source=nx-project')}>
+                        <TouchableOpacity onPress={() => void Linking.openURL('https://nx.app/?utm_source=nx-project')}>
                             <View style={[styles.listItem, styles.shadowBox]}>
                                 <Svg width={48} height={48} fill="#000000" viewBox="0 0 24 24">
                                     <Path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
@@ -384,7 +388,7 @@ export const App = () => {
                             </View>
                             <View style={styles.codeBlock}>
                                 <Text style={[styles.textXS, styles.monospace, styles.comment]}>
-                                    # See what's affected by changes
+                                    {`# See what's affected by changes`}
                                 </Text>
                                 <Text style={[styles.textXS, styles.monospace, styles.marginBottomMd]}>
                                     nx affected:graph
