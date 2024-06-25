@@ -2,10 +2,11 @@ import React from 'react';
 import { Hero, HeroBanner } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
 import { View } from 'react-native';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const HeroBannerExample = (): JSX.Element => (
     <ExampleShowcase>
-        <View style={{ width: 300, margin: 'auto' }}>
+        <View style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <HeroBanner>
                 <Hero
                     icon={{ family: 'brightlayer-ui', name: 'grade_a' }}

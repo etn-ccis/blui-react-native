@@ -4,13 +4,14 @@ import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { ScoreCard, Hero, HeroBanner } from '@brightlayer-ui/react-native-components';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const ScoreCardWithBadgeExample = (): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <ExampleShowcase>
             <ScoreCard
-                style={{ width: 350, margin: 'auto' }}
+                style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                 headerTitle="Station 3"
                 headerSubtitle="High Humidity Alarm"
                 headerInfo="4 Devices"
