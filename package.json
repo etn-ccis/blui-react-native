@@ -4,8 +4,8 @@
     "license": "MIT",
     "type": "module",
     "scripts": {
-        "lint": "yarn docs-lint",
-        "lint:fix": "yarn docs-lint:fix",
+        "lint": "yarn docs-lint && yarn showcase-lint",
+        "lint:fix": "yarn docs-lint:fix && yarn showcase-lint:fix",
         "prettier": "yarn docs-prettier",
         "prettier:check": "yarn docs-prettier:check",
         "docs-start": "npx nx serve docs",
@@ -13,6 +13,8 @@
         "docs-prettier:check": "prettier \"docs/src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check",
         "docs-lint": "eslint \"docs/src/**/**.{ts,tsx}\"",
         "docs-lint:fix": "eslint \"docs/src/**/*.{ts,tsx}\" --fix",
+        "showcase-lint": "eslint \"apps/showcase/**/**.{ts,tsx}\"",
+        "showcase-lint:fix": "eslint \"apps/showcase/**/*.{ts,tsx}\" --fix",
         "docs-build": "npx nx build docs --no-cloud"
     },
     "nx": {},
@@ -112,5 +114,4 @@
         "vitest": "^1.3.1",
         "webpack-cli": "^5.1.4"
     }
-
 }
