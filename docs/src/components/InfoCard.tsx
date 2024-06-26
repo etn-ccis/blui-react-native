@@ -51,7 +51,7 @@ const styles: { [key: string]: SxProps } = {
 };
 
 export const InfoCard: React.FC<InfoCardProps> = (props): JSX.Element => {
-    const { background = {} } = props;
+    const { background = {}, aspectRatio = '2x1' } = props;
 
     return (
         <Box
@@ -69,14 +69,14 @@ export const InfoCard: React.FC<InfoCardProps> = (props): JSX.Element => {
                         backgroundImage: `url(${props.source})`,
                         backgroundPosition: background.position,
                         backgroundSize: background.size,
-                        pt: getTopPaddingForAspectRatio(props.aspectRatio),
+                        pt: getTopPaddingForAspectRatio(aspectRatio),
                         ...styles.image,
                     }}
                 />
             ) : (
                 <Box
                     sx={{
-                        pt: getTopPaddingForAspectRatio(props.aspectRatio),
+                        pt: getTopPaddingForAspectRatio(aspectRatio),
                         ...styles.image,
                     }}
                 >
@@ -108,6 +108,3 @@ export const InfoCard: React.FC<InfoCardProps> = (props): JSX.Element => {
     );
 };
 InfoCard.displayName = 'InfoCard';
-InfoCard.defaultProps = {
-    aspectRatio: '2x1',
-};
