@@ -32,10 +32,8 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn
-            # - run: yarn docs-prettier
-            #   working-directory: docs
-        #   - run: yarn docs-lint
-        #     working-directory: docs
+            - run: yarn prettier:check
+            - run: yarn docs-lint
 
     build_rn_docs:
         runs-on: ubuntu-latest
