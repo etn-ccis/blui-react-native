@@ -18,7 +18,7 @@ export const CollapsibleHeaderLayoutExample = (): JSX.Element => (
                     actionItems: [
                         {
                             icon: { name: 'more-vert' },
-                            onPress: () => {},
+                            onPress: (): void => {},
                         },
                     ],
                     variant: 'dynamic',
