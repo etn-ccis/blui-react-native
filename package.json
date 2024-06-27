@@ -6,8 +6,8 @@
     "scripts": {
         "lint": "yarn docs-lint && yarn showcase-lint",
         "lint:fix": "yarn docs-lint:fix && yarn showcase-lint:fix",
-        "prettier": "yarn docs-prettier",
-        "prettier:check": "yarn docs-prettier:check",
+        "prettier": "yarn docs-prettier && yarn showcase-prettier",
+        "prettier:check": "yarn docs-prettier:check && showcase-prettier:check",
         "docs-start": "npx nx serve docs",
         "docs-prettier": "prettier \"docs/src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
         "docs-prettier:check": "prettier \"docs/src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check",
@@ -16,7 +16,7 @@
         "showcase-lint": "eslint \"apps/showcase/**/**.{ts,tsx}\"",
         "showcase-lint:fix": "eslint \"apps/showcase/**/*.{ts,tsx}\" --fix",
         "showcase-prettier": "prettier \"apps/showcase/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check",
-        "showcase-prettier:fix": "prettier \"apps/showcase/**/*.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
+        "showcase-prettier:check": "prettier \"apps/showcase/**/*.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
         "docs-build": "npx nx build docs --no-cloud"
     },
     "nx": {},
