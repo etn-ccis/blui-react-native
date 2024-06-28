@@ -1,11 +1,11 @@
 import Tooltip, { TooltipProps } from '@mui/material/Tooltip';
 import React, { useState } from 'react';
-import { copyTextToClipboard } from './utilities';
 import { isMobile } from 'react-device-detect';
 import CopyAllIcon from '@mui/icons-material/CopyAll';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { Theme, SxProps } from '@mui/material/styles';
+import { copyTextToClipboard } from '../utils';
 
 type Position = 'bottom' | 'top' | 'left' | 'right';
 
