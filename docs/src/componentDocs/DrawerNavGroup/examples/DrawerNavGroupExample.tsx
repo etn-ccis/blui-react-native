@@ -1,10 +1,11 @@
 import React from 'react';
 import { Drawer, DrawerBody, DrawerNavGroup, DrawerNavItem } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const DrawerNavGroupExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Drawer style={{ width: 250, margin: 'auto' }}>
+        <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerBody>
                 <DrawerNavGroup title="Locations" hidePadding>
                     <DrawerNavItem title="Regional" itemID="1" />

@@ -15,7 +15,7 @@ const codeSnippet = `<CollapsibleHeaderLayout
         onPress: () => {},
       },
     ],
-    variant: 'static',
+    variant: 'dynamic',
     backgroundImage: require('./assets/images/farm.jpg'),
     searchableConfig: {onChangeText: () => {}},
     expandable: true,

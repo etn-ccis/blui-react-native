@@ -1,10 +1,11 @@
 import React from 'react';
 import { ExampleShowcase } from '../../../shared';
 import { Drawer, DrawerBody, DrawerNavGroup, DrawerNavItem } from '@brightlayer-ui/react-native-components';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const NestedNavItemExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Drawer style={{ width: 250, margin: 'auto' }}>
+        <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerBody>
                 <DrawerNavGroup>
                     <DrawerNavItem

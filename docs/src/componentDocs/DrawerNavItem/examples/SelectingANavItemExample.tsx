@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { ExampleShowcase } from '../../../shared';
 import { Drawer, DrawerBody, DrawerNavItem } from '@brightlayer-ui/react-native-components';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const SelectingANavItemExample = (): JSX.Element => {
     const [selected, setSelected] = useState('notification');
 
     return (
         <ExampleShowcase>
-            <Drawer style={{ width: 250, margin: 'auto' }} activeItem={selected}>
+            <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }} activeItem={selected}>
                 <DrawerBody>
                     <DrawerNavItem
                         itemID={'account'}

@@ -5,12 +5,13 @@ import { Text } from 'react-native-paper';
 import { Image, View } from 'react-native';
 import EatonLogoLight from '../images/EatonLogoLight.png';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const DrawerFooterExample = (): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <ExampleShowcase>
-            <Drawer style={{ width: 320, margin: 'auto' }}>
+            <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
                 <DrawerBody>
                     <DrawerNavItem
                         itemID={'account'}

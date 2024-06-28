@@ -3,7 +3,7 @@ import React from 'react';
 import { DrawerExample } from './DrawerExample';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 
-const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
+const codeSnippet = `<Drawer>
     <DrawerHeader
         title={'Drawer Title'}
         subtitle={'Drawer Subtitle'}
