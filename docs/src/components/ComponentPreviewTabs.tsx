@@ -144,10 +144,10 @@ export const ComponentPreviewTabs = (): JSX.Element => {
                 </Box>
             </TabPanel>
             <TabPanel value={value} index={2}>
-        <Box sx={[playgroundContentStyles]}>
-          <Outlet />
-        </Box>
-      </TabPanel>
+                <Box sx={[playgroundContentStyles]}>
+                    <Outlet />
+                </Box>
+            </TabPanel>
         </>
     );
 };
