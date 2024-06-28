@@ -33,7 +33,7 @@ jobs:
                   cache: 'yarn'
             - run: yarn
             - run: yarn prettier:check
-            - run: yarn docs-lint
+            - run: yarn lint
 
     build_rn_docs:
         runs-on: ubuntu-latest
