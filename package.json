@@ -85,7 +85,7 @@
         "@testing-library/jest-dom": "~6.4.2",
         "@testing-library/jest-native": "~5.4.3",
         "@testing-library/react": "14.0.0",
-        "@testing-library/react-native": "~12.4.2",
+        "@testing-library/react-native": "~12.5.1",
         "@types/node": "20.13.0",
         "@types/prismjs": "^1.26.4",
         "@types/react": "~18.2.45",
