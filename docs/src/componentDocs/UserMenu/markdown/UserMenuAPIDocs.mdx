@@ -14,33 +14,25 @@ The `<UserMenu>` is a combination of an Avatar and a Menu that is used to hold u
         mb: 2,
         width: '100%',
         textAlign: 'center',
+        overflowX: 'scroll',
     }}
 >
     <Box
         sx={{
-            width: '40%',
+            height: '400px',
         }}
         component="img"
         alt="User Menu"
-        src={userMenuOpenedImage}
+        src={userMenuAvatarImage}
     />
     <Box
         sx={{
-            width: '40%',
+            height: '400px',
         }}
         component="img"
         alt="User Menu Avatar"
-        src={userMenuAvatarImage}
+        src={userMenuOpenedImage}
     />
-</Box>
-
-<Box
-    sx={{
-        width: '100%',
-        textAlign: 'center',
-    }}
->
-    ![placeholder image](https://placehold.co/500x300)
 </Box>
 
 ## API
