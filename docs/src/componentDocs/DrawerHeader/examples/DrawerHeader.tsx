@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 import { DrawerHeaderExample } from './DrawerHeaderExample';
 
-const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
+const codeSnippet = `<Drawer>
     <DrawerHeader title="Title" subtitle="Subtitle" icon={{name: 'menu'}} />
 </Drawer>
 `;

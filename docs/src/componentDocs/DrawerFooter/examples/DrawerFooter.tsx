@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 import { DrawerFooterExample } from './DrawerFooterExample';
 
-const codeSnippet = `<Drawer style={{width: 320, margin: 'auto'}}>
+const codeSnippet = `<Drawer>
         <DrawerBody>
           <DrawerNavItem
             itemID={'account'}

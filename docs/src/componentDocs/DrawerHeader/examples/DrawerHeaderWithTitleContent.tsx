@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 import { DrawerHeaderWithTitleContentExample } from './DrawerHeaderWithTitleContentExample';
 
-const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
+const codeSnippet = `<Drawer>
     <DrawerHeader
         backgroundImage={{uri: backgroundImage}}
         backgroundColor={'#007bc1'}

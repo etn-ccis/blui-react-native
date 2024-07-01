@@ -1,10 +1,11 @@
 import React from 'react';
 import { Drawer, DrawerBody, DrawerNavGroup, DrawerNavItem } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const BasicDrawerBodyExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Drawer style={{ width: 250, margin: 'auto' }}>
+        <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerBody hidePadding>
                 <DrawerNavGroup title={'Navigation Group'}>
                     <DrawerNavItem
@@ -14,9 +15,6 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
                             family: 'material-community',
                             name: 'account',
                             direction: 'auto',
-                        }}
-                        InfoListItemProps={{
-                            iconAlign: 'center',
                         }}
                     />
                     <DrawerNavItem
@@ -28,22 +26,16 @@ export const BasicDrawerBodyExample = (): JSX.Element => (
                             direction: 'auto',
                         }}
                         activeItemBackgroundShape={'round'}
-                        InfoListItemProps={{
-                            iconAlign: 'center',
-                        }}
                     />
                     <DrawerNavItem
                         itemID={'item3'}
                         title={'Localization'}
                         icon={{
                             family: 'material-community',
-                            name: 'circle',
+                            name: 'map',
                             direction: 'auto',
                         }}
                         activeItemBackgroundShape={'round'}
-                        InfoListItemProps={{
-                            iconAlign: 'center',
-                        }}
                     />
                 </DrawerNavGroup>
             </DrawerBody>

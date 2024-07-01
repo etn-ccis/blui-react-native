@@ -9,10 +9,11 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
 import { TextInput } from 'react-native-paper';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const InteractiveDrawerSubheaderExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Drawer style={{ width: 250, margin: 'auto' }}>
+        <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerHeader
                 title={'Drawer Title'}
                 subtitle={'Drawer Subtitle'}

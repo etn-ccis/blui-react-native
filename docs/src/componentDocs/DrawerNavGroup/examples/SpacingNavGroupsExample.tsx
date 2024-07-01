@@ -2,10 +2,11 @@ import React from 'react';
 import Divider from '@mui/material/Divider';
 import { Drawer, DrawerBody, DrawerNavGroup, DrawerNavItem, Spacer } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const SpacingNavGroupsExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Drawer style={{ width: 250, margin: 'auto' }}>
+        <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerBody>
                 <DrawerNavGroup title="Group 1" hidePadding titleDivider={false}>
                     <DrawerNavItem title="Item 1" itemID="1" />

@@ -2,13 +2,13 @@ import React from 'react';
 import { ExampleShowcase } from '../../../shared';
 import { CollapsibleHeaderLayout } from '@brightlayer-ui/react-native-components';
 import image from '../images/farm.jpg';
-import { getBodyFiller } from '../../../utils';
+import { DRAWER_WIDTH, getBodyFiller } from '../../../utils';
 import { View } from 'react-native';
 import { Box } from '@mui/material';
 
 export const CollapsibleHeaderLayoutExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Box sx={{ width: 400, margin: 'auto' }}>
+        <Box sx={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <CollapsibleHeaderLayout
                 HeaderProps={{
                     title: 'Valley Forge',

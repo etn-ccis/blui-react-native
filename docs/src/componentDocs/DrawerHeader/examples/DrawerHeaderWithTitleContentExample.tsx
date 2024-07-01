@@ -4,10 +4,11 @@ import { ExampleShowcase } from '../../../shared';
 import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import backgroundImage from '../../../shared/images/topology_40.png';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const DrawerHeaderWithTitleContentExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Drawer style={{ width: 250, margin: 'auto' }}>
+        <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerHeader
                 backgroundImage={{ uri: backgroundImage }}
                 backgroundColor={'#007bc1'}
