@@ -1580,6 +1580,16 @@
     "@seznam/compose-react-refs" "^1.0.6"
     color "^4.2.3"
 
+"@brightlayer-ui/react-doc-components@^1.0.0-alpha.0":
+  version "1.0.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-doc-components/-/react-doc-components-1.0.0-alpha.0.tgz#5222756d874e09896d7734e460735926cd78f7f7"
+  integrity sha512-ZMNDUuop1c5j/h/+fAuNo1gNn1TUKK9e2VH2ssnKJg1tMjpwyXuU21zPmJa39NgS7C9Y7q8MrR1UkgsYbKECWA==
+  dependencies:
+    color "^4.0.0"
+    lodash.debounce "^4.0.8"
+    lodash.groupby "^4.6.0"
+    prismjs "^1.29.0"
+
 "@brightlayer-ui/react-native-components@^8.0.3":
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-8.0.3.tgz#0b5c27f5f231c7147dc12c52558897beadacab95"
@@ -5725,7 +5735,7 @@ color@^3.1.2:
     color-convert "^1.9.3"
     color-string "^1.6.0"
 
-color@^4.2.3:
+color@^4.0.0, color@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/color/-/color-4.2.3.tgz#d781ecb5e57224ee43ea9627560107c0e0c6463a"
   integrity sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==
@@ -9593,6 +9603,11 @@ lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
+
+lodash.groupby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
+  integrity sha512-5dcWxm23+VAoz+awKmBaiBvzox8+RqMgFhi7UvX9DHZr2HdxHXM/Wrf8cfKpsW37RNrvtPn6hSwNqurSILbmJw==
 
 lodash.memoize@^4.1.2:
   version "4.1.2"

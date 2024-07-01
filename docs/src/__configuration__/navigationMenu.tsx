@@ -55,6 +55,9 @@ import ScoreCardAPIDocs from '../componentDocs/ScoreCard/markdown/ScoreCardAPIDo
 import SpacerAPIDocs from '../componentDocs/Spacer/markdown/SpacerAPIDocs.mdx';
 import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.mdx';
 
+// Playground components
+import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
+
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
     icon?: JSX.Element;
@@ -94,6 +97,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <ChannelValueAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ChannelValuePlaygroundComponent />,
                     },
                 ],
             },
