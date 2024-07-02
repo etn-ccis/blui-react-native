@@ -26,7 +26,7 @@
         "@brightlayer-ui/icons": "^2.3.0",
         "@brightlayer-ui/icons-mui": "^3.6.0",
         "@brightlayer-ui/react-components": "^6.3.0",
-        "@brightlayer-ui/react-doc-components": "^1.0.0-alpha.0",
+        "@brightlayer-ui/react-doc-components": "^1.0.0-alpha.12",
         "@brightlayer-ui/react-native-components": "^8.0.3",
         "@brightlayer-ui/react-native-themes": "^7.0.1",
         "@brightlayer-ui/react-native-vector-icons": "^2.2.0",

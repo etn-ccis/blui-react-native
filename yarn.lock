@@ -1580,15 +1580,14 @@
     "@seznam/compose-react-refs" "^1.0.6"
     color "^4.2.3"
 
-"@brightlayer-ui/react-doc-components@^1.0.0-alpha.0":
-  version "1.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-doc-components/-/react-doc-components-1.0.0-alpha.0.tgz#5222756d874e09896d7734e460735926cd78f7f7"
-  integrity sha512-ZMNDUuop1c5j/h/+fAuNo1gNn1TUKK9e2VH2ssnKJg1tMjpwyXuU21zPmJa39NgS7C9Y7q8MrR1UkgsYbKECWA==
+"@brightlayer-ui/react-doc-components@^1.0.0-alpha.12":
+  version "1.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-doc-components/-/react-doc-components-1.0.0-alpha.12.tgz#3c170742c245bfe1a2943b53ac9ed4c3ac02d1de"
+  integrity sha512-Ya/FIg2toXdza+wsfw/6FdtBNUlfr+Jx5VKGRH6Ms7+43SxGl9Bl5tt6CWymJDmvnW6zBwl0mIw2bTJGADwpkw==
   dependencies:
     color "^4.0.0"
     lodash.debounce "^4.0.8"
     lodash.groupby "^4.6.0"
-    prismjs "^1.29.0"
 
 "@brightlayer-ui/react-native-components@^8.0.3":
   version "8.0.3"
