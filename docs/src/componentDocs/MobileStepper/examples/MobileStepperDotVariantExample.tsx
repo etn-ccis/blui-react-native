@@ -12,7 +12,7 @@ export const MobileStepperDotVariantExample = (): JSX.Element => (
                 <Button
                     onPress={() => ({})}
                     mode="outlined"
-                    style={{ width: 100, alignSelf: 'flex-start', marginRight: 40 }}
+                    style={{ width: 100, alignSelf: 'flex-start', marginRight: 8 }}
                 >
                     Back
                 </Button>
@@ -21,7 +21,7 @@ export const MobileStepperDotVariantExample = (): JSX.Element => (
                 <Button
                     onPress={() => ({})}
                     mode="contained"
-                    style={{ width: 100, alignSelf: 'flex-end', marginLeft: 40 }}
+                    style={{ width: 100, alignSelf: 'flex-end', marginLeft: 8 }}
                 >
                     Next
                 </Button>

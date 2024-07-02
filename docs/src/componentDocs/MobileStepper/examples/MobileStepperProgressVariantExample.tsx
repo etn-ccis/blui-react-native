@@ -11,14 +11,22 @@ export const MobileStepperProgressVariantExample = (): JSX.Element => (
             steps={5}
             leftButton={
                 <View style={{ flex: 1 }}>
-                    <Button style={{ width: 100, alignSelf: 'flex-start' }} onPress={() => ({})} mode="outlined">
+                    <Button
+                        style={{ width: 100, alignSelf: 'flex-start', marginRight: -8 }}
+                        onPress={() => ({})}
+                        mode="outlined"
+                    >
                         Back
                     </Button>
                 </View>
             }
             rightButton={
                 <View style={{ flex: 1 }}>
-                    <Button style={{ width: 100, alignSelf: 'flex-end' }} onPress={() => ({})} mode="contained">
+                    <Button
+                        style={{ width: 100, alignSelf: 'flex-end', marginLeft: -8 }}
+                        onPress={() => ({})}
+                        mode="contained"
+                    >
                         Next
                     </Button>
                 </View>
