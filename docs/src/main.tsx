@@ -30,7 +30,7 @@ import * as RNBLUIThemes from '@brightlayer-ui/react-native-themes';
 // Brightlayer UI Icon font
 import '@brightlayer-ui/icons/BrightlayerUIIcons.css';
 // prismJs
-// import 'prismjs/components/prism-jsx.js';
+import 'prismjs/components/prism-jsx.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 

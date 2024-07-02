@@ -62,10 +62,10 @@ const inputConfig: InputConfig = [
     },
     {
         id: 'iconColor',
-        label: 'color',
+        label: 'iconColor',
         type: 'color',
         typeLabel: 'string',
-        description: 'The color of the font',
+        description: 'The color of the icon',
         required: false,
         category: 'Optional Props',
         defaultValue: 'inherit',
