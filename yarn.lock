@@ -1589,10 +1589,10 @@
     lodash.debounce "^4.0.8"
     lodash.groupby "^4.6.0"
 
-"@brightlayer-ui/react-native-components@^8.0.3":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-8.0.3.tgz#0b5c27f5f231c7147dc12c52558897beadacab95"
-  integrity sha512-gs4yVm8fy47ld3Lbkac2ECvOB/U6xjWjzuuCLu19F8W3fG4X9LQH1/5Vg8Pp/C0PV8B9qFEfgtMAltOVWmbZMw==
+"@brightlayer-ui/react-native-components@^8.0.4-alpha.1":
+  version "8.0.4-beta.2"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-8.0.4-beta.2.tgz#d00325919c3ed3b2faaa47c588b2001705dd7dc3"
+  integrity sha512-pYTvUjhm8iyGsTcvZsSKgxsPnXkE6N4PJZmctH3OWbGKV2HTtaKgxxas7YbjtWuwPjTHBPZkoy1wuZmbAwAqfA==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
     color "^4.2.3"
@@ -3747,10 +3747,10 @@
     pretty-format "^29.0.3"
     redent "^3.0.0"
 
-"@testing-library/react-native@~12.4.2":
-  version "12.4.5"
-  resolved "https://registry.yarnpkg.com/@testing-library/react-native/-/react-native-12.4.5.tgz#16528aeae7b29238872478f3d1132a2bf821365d"
-  integrity sha512-SfwFwV1MrnvL//9T4C4UyusnZfWy2IOftNU7mG+bspk23bDM9HH1TxsMvec7JVZleraicDO7tP1odFqwb4KPcg==
+"@testing-library/react-native@~12.5.1":
+  version "12.5.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-native/-/react-native-12.5.1.tgz#8ff67e87589d7d3307fce8ec41131c898c9dbd98"
+  integrity sha512-PApr3f6DmSJF/EIiWYZfcBzuy6w7fK8TW4a6KfQHTeAcfZ6lADtRO7R0QM5WI+b7tJ33JvIPgzCg1MiuRz4v0g==
   dependencies:
     jest-matcher-utils "^29.7.0"
     pretty-format "^29.7.0"
