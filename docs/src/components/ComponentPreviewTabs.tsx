@@ -55,12 +55,12 @@ const outletContainerStyles = {
     pb: 6,
 };
 
-// const playgroundContentStyles = {
-//     maxHeight: `calc(100vh - 64px)`,
-//     height: '100%',
-//     display: 'flex',
-//     flex: '1 1 0px',
-// };
+const playgroundContentStyles = {
+    maxHeight: `calc(100vh - 64px)`,
+    height: '100%',
+    display: 'flex',
+    flex: '1 1 0px',
+};
 
 export const ComponentPreviewTabs = (): JSX.Element => {
     const navigate = useNavigate();
@@ -102,16 +102,16 @@ export const ComponentPreviewTabs = (): JSX.Element => {
             >
                 <Tab to="examples" component={Link} sx={tabStyles} label="Examples" replace={true} {...a11yProps(0)} />
                 <Tab to="api-docs" component={Link} sx={tabStyles} label="API Docs" replace={true} {...a11yProps(1)} />
-                {/* {!hidePlaygroundTab && (
-          <Tab
-            to="playground"
-            component={Link}
-            sx={tabStyles}
-            label="Playground"
-            replace={true}
-            {...a11yProps(2)}
-          />
-        )} */}
+                {!hidePlaygroundTab && (
+                    <Tab
+                        to="playground"
+                        component={Link}
+                        sx={tabStyles}
+                        label="Playground"
+                        replace={true}
+                        {...a11yProps(2)}
+                    />
+                )}
             </Tabs>
             <TabPanel value={value} index={0}>
                 <Box
@@ -143,11 +143,11 @@ export const ComponentPreviewTabs = (): JSX.Element => {
                     </Box>
                 </Box>
             </TabPanel>
-            {/* <TabPanel value={value} index={2}>
-        <Box sx={[playgroundContentStyles]}>
-          <Outlet />
-        </Box>
-      </TabPanel> */}
+            <TabPanel value={value} index={2}>
+                <Box sx={[playgroundContentStyles]}>
+                    <Outlet />
+                </Box>
+            </TabPanel>
         </>
     );
 };
