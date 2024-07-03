@@ -1,5 +1,7 @@
 export const DRAWER_WIDTH = 300;
 
+export const DEMO_WIDTH = 700;
+
 export const PADDING = 24;
 
 export const PAGE_WIDTH = {
