@@ -10,6 +10,7 @@ import {
     getPropsMapping,
     Playground,
 } from '@brightlayer-ui/react-doc-components';
+import 'prismjs/components/prism-jsx.min';
 import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
 
 const inputConfig: InputConfig = [
