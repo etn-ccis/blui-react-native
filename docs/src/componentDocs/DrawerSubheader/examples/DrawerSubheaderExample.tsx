@@ -9,10 +9,11 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
 import { Text } from 'react-native-paper';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const DrawerSubheaderExample = (): JSX.Element => (
     <ExampleShowcase>
-        <Drawer style={{ width: 250, margin: 'auto' }}>
+        <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerHeader title="Title" />
             <DrawerSubheader>
                 <Text style={{ padding: 16 }}>Custom Content Goes here</Text>

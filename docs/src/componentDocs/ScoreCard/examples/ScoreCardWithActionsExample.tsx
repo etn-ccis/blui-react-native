@@ -4,13 +4,14 @@ import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { ScoreCard, Hero, InfoListItem } from '@brightlayer-ui/react-native-components';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
+import { DRAWER_WIDTH } from '../../../utils';
 
 export const ScoreCardWithActionsExample = (): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <ExampleShowcase>
             <ScoreCard
-                style={{ width: 350, margin: 'auto' }}
+                style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                 headerTitle="Header Actions"
                 actionItems={[
                     { icon: { name: 'star-outline' } },

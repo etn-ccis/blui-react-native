@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 import { DrawerNavGroupCompositionExample } from './DrawerNavGroupCompositionExample';
 
-const codeSnippet = `<Drawer style={{width: 250, margin: 'auto'}}>
+const codeSnippet = `<Drawer>
     <DrawerBody>
         <DrawerNavGroup title="Group 1" hidePadding titleDivider={false}>
             <DrawerNavItem title="Item 1" itemID="1" />
