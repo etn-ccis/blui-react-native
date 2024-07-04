@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'react-native-paper';
 import { EmptyState } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
+import { DEMO_WIDTH } from '../../../utils';
 
 export const EmptyStateWithActionsExample = (): JSX.Element => (
     <ExampleShowcase>
@@ -14,6 +15,7 @@ export const EmptyStateWithActionsExample = (): JSX.Element => (
                     Add Device
                 </Button>
             }
+            style={{ width: DEMO_WIDTH, margin: 'auto' }}
         />
     </ExampleShowcase>
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExampleShowcase } from '../../../shared';
 import { InfoListItem } from '@brightlayer-ui/react-native-components';
+import { DEMO_WIDTH } from '../../../utils';
 
 export const InfoListItemClickableExample = (): JSX.Element => (
     <ExampleShowcase>
@@ -14,6 +15,7 @@ export const InfoListItemClickableExample = (): JSX.Element => (
             iconAlign={'center'}
             onPress={() => {}}
             chevron
+            style={{ width: DEMO_WIDTH, margin: 'auto' }}
         />
         <InfoListItem
             title={'Output Voltage'}
@@ -24,6 +26,7 @@ export const InfoListItemClickableExample = (): JSX.Element => (
             icon={{ name: 'check-circle' }}
             chevron
             onPress={() => {}}
+            style={{ width: DEMO_WIDTH, margin: 'auto' }}
         />
         <InfoListItem
             dense
@@ -31,6 +34,7 @@ export const InfoListItemClickableExample = (): JSX.Element => (
             icon={{ name: 'battery-charging-full' }}
             chevron
             onPress={() => {}}
+            style={{ width: DEMO_WIDTH, margin: 'auto' }}
         />
     </ExampleShowcase>
 );
