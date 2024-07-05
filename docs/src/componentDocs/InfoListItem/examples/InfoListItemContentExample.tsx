@@ -3,6 +3,7 @@ import { ExampleShowcase } from '../../../shared';
 import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { InfoListItem, ChannelValue } from '@brightlayer-ui/react-native-components';
+import { DEMO_WIDTH } from '../../../utils';
 
 export const InfoListItemContentExample = (): JSX.Element => (
     <ExampleShowcase>
@@ -18,6 +19,7 @@ export const InfoListItemContentExample = (): JSX.Element => (
                 </View>
             }
             rightComponent={<ChannelValue value={'15'} units={'A'} />}
+            style={{ width: DEMO_WIDTH, margin: 'auto' }}
         />
     </ExampleShowcase>
 );
