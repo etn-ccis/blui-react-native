@@ -1,4 +1,4 @@
-### blui-react-native
+## blui-react-native
 
 This blui-react-native leverages the power of nx to manage a collection of Brightlayer UI React Native libraries and example projects within a single codebase. This approach, known as a monorepo, offers a structured and efficient way to develop and maintain multiple interconnected projects.
 
