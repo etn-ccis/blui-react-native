@@ -18,7 +18,7 @@ const inputConfig: InputConfig = [
         id: 'label',
         type: 'string',
         typeLabel: `string`,
-        initialValue: 'A+',
+        initialValue: 'H',
         description: 'The text shown in the circle',
         required: true,
         category: 'Required Props',
@@ -55,7 +55,7 @@ const inputConfig: InputConfig = [
         maxValue: 60,
         valueStep: 4,
         category: 'Optional Props',
-        defaultValue: 'inherit',
+        defaultValue: 40,
     },
 ];
 
