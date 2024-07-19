@@ -12,7 +12,6 @@ import { IconSource } from '@brightlayer-ui/react-native-components/core/__types
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import { Avatar } from 'react-native-paper';
-import { jsx } from '@emotion/react';
 
 const inputConfig: InputConfig = [
     // Optional Props
