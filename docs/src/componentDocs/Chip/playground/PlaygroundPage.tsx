@@ -66,10 +66,14 @@ const inputConfig: InputConfig = [
     },
     {
         id: 'mode',
-        type: 'string',
+        type: 'select',
         typeLabel: `string`,
         initialValue: 'elevated',
-        description: 'The size of the circle in px',
+        description: 'The mode of the chip',
+        options: [
+            { label: 'elevated', value: 'elevated' },
+            { label: 'outlined', value: 'outlined' },
+        ],
         required: false,
         category: 'Optional Props',
     },
@@ -84,7 +88,7 @@ const inputConfig: InputConfig = [
     },
 ];
 const ChipPreview: PreviewComponent = ({ data }) => {
-    const { avatar, icon, ...rest } = data as unknown as ChipProps;
+    const { mode, avatar, icon, ...rest } = data as unknown as ChipProps;
     const getIcon = (value: string): IconSource | undefined => {
         switch (value) {
             case 'info':
@@ -102,9 +106,24 @@ const ChipPreview: PreviewComponent = ({ data }) => {
                 return undefined;
         }
     };
+    const getMode = (value: string): 'outlined' | 'elevated' | undefined => {
+        switch (value) {
+            case 'elevated':
+                return 'elevated';
+            case 'outlined':
+                return 'outlined';
+            default:
+                return undefined;
+        }
+    };
     return (
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
-            <Chip {...rest} icon={getIcon(icon as unknown as string)} avatar={getAvtar(avatar as unknown as boolean)}>
+            <Chip
+                {...rest}
+                icon={getIcon(icon as unknown as string)}
+                avatar={getAvtar(avatar as unknown as boolean)}
+                mode={getMode(mode as unknown as string)}
+            >
                 {' '}
                 label
             </Chip>
@@ -122,11 +141,22 @@ const getIconSnippet = (value: any): string | undefined => {
     }
 };
 
+const getModeSnippet = (value: any): string | undefined => {
+    switch (value) {
+        case 'elevated':
+            return 'elevated';
+        case 'outlined':
+            return 'outlined';
+        default:
+            return undefined;
+    }
+};
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Chip
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'avatar'] })}
+    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'avatar', 'mode'] })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
     ${data.avatar && data.avatar !== 'undefined' ? `avatar={<Avatar.Icon size={40} icon="account-circle" />}` : ''}
+    ${data.mode && data.mode !== 'undefined' ? `mode={${getModeSnippet(data.mode)}}` : ''}
 >label</Chip>`.replace(/^\s*$(?:\r\n?|\n)/gm, '');
 
 export const ChipPlaygroundComponent = (): JSX.Element => (
