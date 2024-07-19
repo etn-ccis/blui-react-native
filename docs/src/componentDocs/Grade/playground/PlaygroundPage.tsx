@@ -27,16 +27,15 @@ const inputConfig: InputConfig = [
     {
         id: 'fontColor',
         type: 'color',
-        initialValue: 'white',
         typeLabel: 'string',
         description: 'The color of the text label',
         required: false,
         category: 'Optional Props',
+        defaultValue: 'inherit',
     },
     {
         id: 'backgroundColor',
         type: 'color',
-        initialValue: 'green',
         typeLabel: 'string',
         description: 'The background color of the circle',
         required: false,
