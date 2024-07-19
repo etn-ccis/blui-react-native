@@ -32,6 +32,7 @@ const inputConfig: InputConfig = [
         required: false,
         category: 'Optional Props',
         defaultValue: 'inherit',
+        allowMuiColors: true,
     },
     {
         id: 'backgroundColor',
@@ -41,6 +42,7 @@ const inputConfig: InputConfig = [
         required: false,
         category: 'Optional Props',
         defaultValue: 'inherit',
+        allowMuiColors: true,
     },
     {
         id: 'size',
