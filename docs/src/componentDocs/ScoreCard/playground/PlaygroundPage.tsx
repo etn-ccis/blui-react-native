@@ -13,11 +13,9 @@ import { Hero, HeroBanner, InfoListItem, ScoreCard, ScoreCardProps } from '@brig
 import Notifications from '@mui/icons-material/Notifications';
 import ListAlt from '@mui/icons-material/ListAlt';
 import Cloud from '@mui/icons-material/Cloud';
-import { removeEmptyProps } from '../../../utils';
-// import { getImage } from '../../../utils';
+import { getImage, removeEmptyProps } from '../../../utils/utilities';
 import { View } from 'react-native';
 import 'prismjs/components/prism-jsx.min';
-// import { DRAWER_WIDTH } from '../../../utils';
 
 const inputConfig: InputConfig = [
     // Required Props
@@ -37,7 +35,7 @@ const inputConfig: InputConfig = [
         type: 'boolean',
         typeLabel: `IconSource`,
         initialValue: false,
-        description: 'actionItems in the header',
+        description: 'Display actionItems in the header',
         required: false,
         category: 'Optional Props',
     },
@@ -57,7 +55,7 @@ const inputConfig: InputConfig = [
     {
         id: 'headerBackgroundImage',
         type: 'select',
-        typeLabel: `string`,
+        typeLabel: `ImageSourcePropType`,
         description: 'An image to display in the header',
         initialValue: 'undefined',
         defaultValue: 'undefined',
@@ -154,10 +152,9 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
             <Box>
                 <ScoreCard
-                    // style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                     {...removeEmptyProps(rest)}
                     headerTitle={rest.headerTitle}
-                    // headerBackgroundImage={getImage(headerBackgroundImage || '')}
+                    headerBackgroundImage={getImage(headerBackgroundImage?.toString() ?? '')}
                     actionItems={getActionItems(actionItems as unknown as boolean)}
                     actionRow={
                         <View>
@@ -193,31 +190,25 @@ const generateSnippet: CodeSnippetFunction = (data) =>
     `<ScoreCard 
     ${getPropsToString(getPropsMapping(data, inputConfig), {
         join: '\n\t',
-        skip: ['numberOfHeroes', 'headerBackgroundImage'],
+        skip: ['numberOfHeroes', 'headerBackgroundImage', 'actionItems'],
     })}
     ${data.headerBackgroundImage !== 'undefined'
-            ? `headerBackgroundImage={'../images/${data.headerBackgroundImage as string}.png'}`
-            : ''
-        }
+        ? `headerBackgroundImage={uri:('../images/${data.headerBackgroundImage as string}.png')}`
+        : ''
+    }
     ${((data.numberOfHeroes as number) ?? 0) > 0
             ? `badge={
         <HeroBanner>
             <Hero
-                icon={<Temp fontSize={'inherit'} />}
+                icon={{ family: 'brightlayer-ui', name: 'temp' }}
                 label={'Temperature'}
-                iconSize={48}
-                iconBackgroundColor={Colors.white[50]}
                 ChannelValueProps={{ value: 98, units: '°F' }}
-                fontSize={'normal'}
             />
             ${((data.numberOfHeroes as number) ?? 0) > 1
                 ? `<Hero
-                icon={<Moisture fontSize={'inherit'} htmlColor={Colors.blue[300]} />}
+                icon={{ family: 'brightlayer-ui', name: 'moisture' }}
                 label={'Humidity'}
                 ChannelValueProps={{ value: 54, units: '%' }}
-                iconSize={48}
-                iconBackgroundColor={Colors.white[50]}
-                fontSize={'normal'}
             />`
                 : ''
             }
@@ -226,24 +217,18 @@ const generateSnippet: CodeSnippetFunction = (data) =>
             : ''
         }
 >
-    <List sx={{ padding: '.5rem 0' }}>
     <InfoListItem
         dense
-        sx={{ height: '2.25rem' }}
         title={'0 Alarms'}
         icon={<Notifications />}
     />
     <InfoListItem
         dense
-        sx={{ height: '2.25rem' }}
-        fontColor={Colors.blue[500]}
-        iconColor={Colors.blue[500]}
         title={'1 Event'}
         icon={<ListAlt />}
     />
     <InfoListItem
         dense
-        sx={{ height: '2.25rem' }}
         title={'Online'}
         icon={<Cloud />}
     />
