@@ -22,6 +22,7 @@ import { Text } from 'react-native-paper';
 import { View } from 'react-native';
 import { sharedPropsConfig } from './sharedPropsConfig';
 import 'prismjs/components/prism-jsx.min';
+import { DRAWER_WIDTH } from '../../../utils';
 
 const inputConfig: InputConfig = [
     // Optional Props
@@ -76,9 +77,7 @@ const DrawerPreview: PreviewComponent = ({ data }) => {
         {
             itemID: 'Overview',
             title: 'Overview',
-            // onPress: (): void => updateData('activeItem', 'Overview'),
             icon: { name: 'dashboard' },
-            // expandIcon: {family: 'material', name: 'arrow-drop-down'},
             collapseIcon: getCollapseIcon(collapseIcon as unknown as string),
             expandIcon: getExpandIcon(expandIcon as unknown as string),
             items: [
@@ -120,13 +119,12 @@ const DrawerPreview: PreviewComponent = ({ data }) => {
             sx={{
                 m: '16px 0',
                 maxHeight: '100%',
-                maxWidth: '80%',
-                marginLeft: '10%',
+                maxWidth: '100%',
                 position: 'relative',
             }}
             ref={containerRef}
         >
-            <Drawer {...rest}>
+            <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }} {...rest}>
                 <DrawerHeader title="Header" />
                 <DrawerBody>
                     <DrawerNavGroup items={navGroupItems}></DrawerNavGroup>
