@@ -57,6 +57,7 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 
 // Playground components
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
+import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -329,6 +330,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <HeroAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <HeroPlaygroundComponent />,
                     },
                 ],
             },
