@@ -1,0 +1,60 @@
+import Box from '@mui/material/Box';
+import DrawerNavGroupAnatomy from '../images/drawerNavGroupAnatomy.png';
+import SharedProps from '../../Drawer/markdown/SharedProps.mdx';
+
+# Drawer Nav Group
+
+A `<DrawerNavGroup>` is used inside of the `<DrawerBody>` to organize links/content. Each group consists of an (optional) group title and a series of navigation items. Most visual props are inherited from the `<DrawerBody>` but can be overridden at the NavGroup level if desired.
+
+The `items` property supports nested items to generate collapsible sections in the menu. This can be used to create an arbitrary tree depth, but we do not recommend going more than two levels deep in a navigation Drawer. You can also build the navigation links declaratively by passing `<DrawerNavItem>` children to the `<DrawerNavGroup>`.
+
+<Box
+    sx={{
+        width: '100%',
+        textAlign: 'center',
+    }}
+>
+    <Box
+        sx={{
+            width: '100%',
+            maxWidth: '600px',
+        }}
+        component="img"
+        alt="Drawer Nav Group Anatomy"
+        src={DrawerNavGroupAnatomy}
+    />
+</Box>
+
+### DrawerNavGroup API
+
+<Box>
+
+| Prop Name                       | Description                                                | Type        | Required | Default                  |
+| ------------------------------- | ---------------------------------------------------------- | ----------- | -------- | ------------------------ |
+| items                           | List of navigation items to render                         | `NavItem[]` | yes      |                          |
+| title                           | Text to display in the group header                        | `string`    | no       |                          |
+| titleColor                      | Color used for the title text                              | `string`    | no       | `theme.colors.onSurface` |
+| titleContent                    | Custom element, substitute for title                       | `ReactNode` | no       |                          |
+| titleDivider                    | Whether to show a divider below the title                  | `boolean`   | no       | true                     |
+| [...sharedProps](#shared-props) | Props that can be set at any level in the drawer hierarchy | -           | -        |                          |
+
+</Box>
+
+Any other props will be provided to the root element ([**View**](https://reactnative.dev/docs/view)).
+
+#### Styles
+
+You can override the internal styles used by Brightlayer UI by passing a `styles` prop. The DrawerNavGroup supports the following keys:
+
+<Box>
+
+| Name        | Description                            |
+| ----------- | -------------------------------------- |
+| root        | Styles applied to the root element     |
+| textContent | Styles applied to the text wrapper     |
+| title       | Styles applied to the title element    |
+| divider     | Styles applied to the divider elements |
+
+</Box>
+
+<SharedProps />
