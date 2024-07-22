@@ -107,9 +107,9 @@ export const getIcon = (icon: string, iconProps?: SvgIconProps): JSX.Element | u
 export const getImage = (image: string): ImageSourcePropType | undefined => {
     switch (image.toLowerCase()) {
         case 'pattern':
-            return {uri: topologyBgImage};
+            return { uri: topologyBgImage };
         case 'farm':
-            return {uri: farmBgImage};
+            return { uri: farmBgImage };
         case 'undefined':
             return undefined;
         default:

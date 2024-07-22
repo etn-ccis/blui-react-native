@@ -148,7 +148,7 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
                     { icon: { name: 'star-outline' } },
                     { icon: { name: 'settings' } },
                     { icon: { name: 'more-vert' } },
-                ]
+                ];
             default:
                 return undefined;
         }
@@ -174,25 +174,16 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
                                 flexBasis: 'auto',
                                 minWidth: 140,
                                 justifyContent: 'space-between',
-                            }}>
-                            {heroes.slice(0, numberOfHeroes)}</HeroBanner>}
+                            }}
+                        >
+                            {heroes.slice(0, numberOfHeroes)}
+                        </HeroBanner>
+                    }
                 >
                     <View>
-                        <InfoListItem
-                            dense
-                            title={'0 Alarms'}
-                            icon={<Notifications />}
-                        />
-                        <InfoListItem
-                            dense
-                            title={'1 Event'}
-                            icon={<ListAlt />}
-                        />
-                        <InfoListItem
-                            dense
-                            title={'Online'}
-                            icon={<Cloud />}
-                        />
+                        <InfoListItem dense title={'0 Alarms'} icon={<Notifications />} />
+                        <InfoListItem dense title={'1 Event'} icon={<ListAlt />} />
+                        <InfoListItem dense title={'Online'} icon={<Cloud />} />
                     </View>
                 </ScoreCard>
             </Box>
@@ -206,11 +197,13 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         join: '\n\t',
         skip: ['numberOfHeroes', 'headerBackgroundImage', 'actionItems'],
     })}
-    ${data.headerBackgroundImage !== 'undefined'
+    ${
+        data.headerBackgroundImage !== 'undefined'
             ? `headerBackgroundImage={uri:('../images/${data.headerBackgroundImage as string}.png')}`
             : ''
-        }
-    ${((data.numberOfHeroes as number) ?? 0) > 0
+    }
+    ${
+        ((data.numberOfHeroes as number) ?? 0) > 0
             ? `badge={
         <HeroBanner>
             <Hero
@@ -220,20 +213,21 @@ const generateSnippet: CodeSnippetFunction = (data) =>
                 ChannelValueProps={{ value: 98, units: '°F' }}
                 style={{ overflow: 'visible' }}
             />
-            ${((data.numberOfHeroes as number) ?? 0) > 1
-                ? `<Hero
+            ${
+                ((data.numberOfHeroes as number) ?? 0) > 1
+                    ? `<Hero
                 icon={{ family: 'brightlayer-ui', name: 'moisture' }}
                 label={'Humidity'}
                 iconBackgroundColor={theme.colors.surface}
                 ChannelValueProps={{ value: 54, units: '%' }}
                 style={{ overflow: 'visible' }}
             />`
-                : ''
+                    : ''
             }
         </HeroBanner>
     }`
             : ''
-        }
+    }
 >
     <InfoListItem
         dense
