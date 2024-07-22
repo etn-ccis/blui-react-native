@@ -103,7 +103,6 @@ const inputConfig: InputConfig = [
 const HeroPreview: PreviewComponent = ({ data }) => {
     const {
         icon,
-        htmlColor,
         value: channelValue,
         units,
         valueIcon,
