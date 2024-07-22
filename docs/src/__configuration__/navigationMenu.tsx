@@ -58,6 +58,7 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 // Playground components
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
+import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -120,6 +121,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <ChipAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ChipPlaygroundComponent />,
                     },
                 ],
             },
