@@ -15,6 +15,7 @@ import ListAlt from '@mui/icons-material/ListAlt';
 import Cloud from '@mui/icons-material/Cloud';
 import { getImage, removeEmptyProps } from '../../../utils/utilities';
 import { View } from 'react-native';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 import 'prismjs/components/prism-jsx.min';
 
 const inputConfig: InputConfig = [
@@ -121,18 +122,23 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
     const { headerBackgroundImage, actionItems, numberOfHeroes, ...rest } = data as unknown as ScoreCardProps & {
         numberOfHeroes: number;
     };
+    const theme = useExtendedTheme();
     const heroes: JSX.Element[] = [
         <Hero
             key={'hero1'}
             icon={{ family: 'brightlayer-ui', name: 'temp' }}
             label={'Temperature'}
+            iconBackgroundColor={theme.colors.surface}
             ChannelValueProps={{ value: 98, units: '°F' }}
+            style={{ overflow: 'visible' }}
         />,
         <Hero
             key={'hero2'}
             icon={{ family: 'brightlayer-ui', name: 'moisture' }}
             label={'Humidity'}
+            iconBackgroundColor={theme.colors.surface}
             ChannelValueProps={{ value: 54, units: '%' }}
+            style={{ overflow: 'visible' }}
         />,
     ];
     const getActionItems = (value: boolean): any => {
@@ -161,7 +167,15 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
                             <InfoListItem dense chevron title={'View Location'} hidePadding />
                         </View>
                     }
-                    badge={<HeroBanner>{heroes.slice(0, numberOfHeroes)}</HeroBanner>}
+                    badge={
+                        <HeroBanner
+                            style={{
+                                flex: 0,
+                                flexBasis: 'auto',
+                                minWidth: 140,
+                                justifyContent: 'space-between',
+                            }}>
+                            {heroes.slice(0, numberOfHeroes)}</HeroBanner>}
                 >
                     <View>
                         <InfoListItem
@@ -193,22 +207,26 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         skip: ['numberOfHeroes', 'headerBackgroundImage', 'actionItems'],
     })}
     ${data.headerBackgroundImage !== 'undefined'
-        ? `headerBackgroundImage={uri:('../images/${data.headerBackgroundImage as string}.png')}`
-        : ''
-    }
+            ? `headerBackgroundImage={uri:('../images/${data.headerBackgroundImage as string}.png')}`
+            : ''
+        }
     ${((data.numberOfHeroes as number) ?? 0) > 0
             ? `badge={
         <HeroBanner>
             <Hero
                 icon={{ family: 'brightlayer-ui', name: 'temp' }}
                 label={'Temperature'}
+                iconBackgroundColor={theme.colors.surface}
                 ChannelValueProps={{ value: 98, units: '°F' }}
+                style={{ overflow: 'visible' }}
             />
             ${((data.numberOfHeroes as number) ?? 0) > 1
                 ? `<Hero
                 icon={{ family: 'brightlayer-ui', name: 'moisture' }}
                 label={'Humidity'}
+                iconBackgroundColor={theme.colors.surface}
                 ChannelValueProps={{ value: 54, units: '%' }}
+                style={{ overflow: 'visible' }}
             />`
                 : ''
             }
