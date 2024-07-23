@@ -98,10 +98,7 @@ const EmptyStatePreview: PreviewComponent = ({ data }) => {
     return (
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
             <EmptyState
-                title={rest.title}
-                description={rest.description}
-                iconColor={rest.iconColor}
-                iconSize={rest.iconSize}
+                {...rest}
                 icon={getIcon(icon as unknown as string)}
                 actions={
                     showAction ? (
