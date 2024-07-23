@@ -10,9 +10,6 @@ import {
 } from '@brightlayer-ui/react-doc-components';
 import Stack from '@mui/material/Stack';
 import { Hero, HeroBanner, InfoListItem, ScoreCard, ScoreCardProps } from '@brightlayer-ui/react-native-components';
-import Notifications from '@mui/icons-material/Notifications';
-import ListAlt from '@mui/icons-material/ListAlt';
-import Cloud from '@mui/icons-material/Cloud';
 import { getImage, removeEmptyProps } from '../../../utils/utilities';
 import { View } from 'react-native';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
@@ -181,9 +178,9 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
                     }
                 >
                     <View>
-                        <InfoListItem dense title={'0 Alarms'} icon={<Notifications />} />
-                        <InfoListItem dense title={'1 Event'} icon={<ListAlt />} />
-                        <InfoListItem dense title={'Online'} icon={<Cloud />} />
+                        <InfoListItem dense title={'0 Alarms'} icon={{ name: 'notifications' }} />
+                        <InfoListItem dense title={'1 Event'} icon={{ name: 'list-alt' }} />
+                        <InfoListItem dense title={'Online'} icon={{ name: 'cloud' }} />
                     </View>
                 </ScoreCard>
             </Box>
@@ -198,17 +195,15 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         skip: ['numberOfHeroes', 'headerBackgroundImage', 'actionItems'],
     })}
     ${data.headerBackgroundImage !== 'undefined' ? `headerBackgroundImage={headerBackgroundImage}` : ''}
-    ${
-        data.actionItems && data.actionItems !== 'undefined'
+    ${data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[
         { icon: { name: 'star-outline' } },
         { icon: { name: 'settings' } },
         { icon: { name: 'more-vert' } },
     ]}`
             : ''
-    }
-    ${
-        ((data.numberOfHeroes as number) ?? 0) > 0
+        }
+    ${((data.numberOfHeroes as number) ?? 0) > 0
             ? `badge={
         <HeroBanner>
             <Hero
@@ -218,38 +213,23 @@ const generateSnippet: CodeSnippetFunction = (data) =>
                 ChannelValueProps={{ value: 98, units: '°F' }}
                 style={{ overflow: 'visible' }}
             />
-            ${
-                ((data.numberOfHeroes as number) ?? 0) > 1
-                    ? `<Hero
+            ${((data.numberOfHeroes as number) ?? 0) > 1
+                ? `<Hero
                 icon={{ family: 'brightlayer-ui', name: 'moisture' }}
                 label={'Humidity'}
                 iconBackgroundColor={theme.colors.surface}
                 ChannelValueProps={{ value: 54, units: '%' }}
                 style={{ overflow: 'visible' }}
             />`
-                    : ''
+                : ''
             }
         </HeroBanner>
     }`
             : ''
-    }
->
-    <InfoListItem
-        dense
-        title={'0 Alarms'}
-        icon={<Notifications />}
-    />
-    <InfoListItem
-        dense
-        title={'1 Event'}
-        icon={<ListAlt />}
-    />
-    <InfoListItem
-        dense
-        title={'Online'}
-        icon={<Cloud />}
-    />
-    </List>
+        }>
+    <InfoListItem dense title={'0 Alarms'} icon={{ name: 'notifications' }} />
+    <InfoListItem dense title={'1 Event'} icon={{ name: 'list-alt' }} />
+    <InfoListItem dense title={'Online'} icon={{ name: 'cloud' }} />
 </ScoreCard>`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
         .replace(/(?:^|)( {4}|\t)/gm, '    ');
