@@ -197,11 +197,7 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         join: '\n\t',
         skip: ['numberOfHeroes', 'headerBackgroundImage', 'actionItems'],
     })}
-    ${
-        data.headerBackgroundImage !== 'undefined'
-            ? `headerBackgroundImage={headerBackgroundImage}`
-            : ''
-    }
+    ${data.headerBackgroundImage !== 'undefined' ? `headerBackgroundImage={headerBackgroundImage}` : ''}
     ${
         data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[
