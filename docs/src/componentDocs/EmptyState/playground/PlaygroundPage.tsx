@@ -15,7 +15,6 @@ import Button from '@mui/material/Button';
 import { removeEmptyProps } from '../../../utils/';
 import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
 
-
 const inputConfig: InputConfig = [
     // Required Props
     {
@@ -61,7 +60,7 @@ const inputConfig: InputConfig = [
         maxValue: 200,
         valueStep: 4,
         category: 'Optional Props',
-        defaultValue: 100 ,
+        defaultValue: 100,
     },
     {
         id: 'iconColor',
@@ -91,7 +90,7 @@ const EmptyStatePreview: PreviewComponent = ({ data }) => {
     const getIcon = (value: string): IconSource | undefined => {
         switch (value) {
             case 'devices':
-                return { family: 'material', name: 'devices'};
+                return { family: 'material', name: 'devices' };
             case 'undefined':
             default:
                 return undefined;
@@ -124,14 +123,12 @@ const getIconSnippet = (value: any): string | undefined => {
         default:
             return undefined;
     }
-}
+};
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<EmptyState 
     ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'showAction'] })}
-    ${
-        data.icon && data.icon !== 'undefined'
-            ? `icon={${getIconSnippet(data.icon)}}` : ''}
+    ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
     ${
         data.showAction
             ? `actions={
