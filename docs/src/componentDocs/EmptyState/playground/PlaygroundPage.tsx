@@ -12,7 +12,6 @@ import Stack from '@mui/material/Stack';
 import { EmptyState, EmptyStateProps } from '@brightlayer-ui/react-native-components';
 import Add from '@mui/icons-material/Add';
 import Button from '@mui/material/Button';
-import { removeEmptyProps } from '../../../utils/';
 import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
 
 const inputConfig: InputConfig = [
@@ -86,7 +85,7 @@ const inputConfig: InputConfig = [
 ];
 
 const EmptyStatePreview: PreviewComponent = ({ data }) => {
-    const { icon, showAction, iconSize, ...rest } = data as unknown as EmptyStateProps & { showAction?: boolean };
+    const { icon, showAction, ...rest } = data as unknown as EmptyStateProps & { showAction?: boolean };
     const getIcon = (value: string): IconSource | undefined => {
         switch (value) {
             case 'devices':
@@ -99,9 +98,10 @@ const EmptyStatePreview: PreviewComponent = ({ data }) => {
     return (
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
             <EmptyState
-                {...removeEmptyProps(rest)}
                 title={rest.title}
-                iconSize={iconSize}
+                description={rest.description}
+                iconColor={rest.iconColor}
+                iconSize={rest.iconSize}
                 icon={getIcon(icon as unknown as string)}
                 actions={
                     showAction ? (
