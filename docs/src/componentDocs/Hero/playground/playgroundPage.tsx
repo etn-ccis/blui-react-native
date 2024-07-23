@@ -53,13 +53,12 @@ const inputConfig: InputConfig = [
         required: false,
         initialValue: 36,
         minValue: 10,
-        maxValue: 100,
+        maxValue: 48,
         valueStep: 4,
         defaultValue: 'inherit',
         category: 'Optional Props',
     },
 
-    // ChannelValueProps
     {
         id: 'value',
         type: 'string',
@@ -129,24 +128,6 @@ const HeroPreview: PreviewComponent = ({ data }) => {
         </Stack>
     );
 };
-
-// const getIconSnippet = (value: any): string | undefined => {
-//     switch (value) {
-//         case 'TrendingUp':
-//             return JSON.stringify({ family: 'material', name: 'trending-up' });
-//         case 'TrendingDown':
-//             return JSON.stringify({ family: 'material', name: 'trending-down' });
-
-//         case 'Schedule':
-//             return JSON.stringify({ family: 'material', name: 'schedule' });
-//         case 'Dashboard':
-//             return JSON.stringify({ family: 'material', name: 'dashboard' });
-
-//         case 'undefined':
-//         default:
-//             return undefined;
-//     }
-// };
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Hero
