@@ -199,7 +199,7 @@ const generateSnippet: CodeSnippetFunction = (data) =>
     })}
     ${
         data.headerBackgroundImage !== 'undefined'
-            ? `headerBackgroundImage={uri:('../images/${data.headerBackgroundImage as string}.png')}`
+            ? `headerBackgroundImage={headerBackgroundImage}`
             : ''
     }
     ${
