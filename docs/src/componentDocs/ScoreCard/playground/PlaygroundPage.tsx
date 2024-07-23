@@ -202,6 +202,11 @@ const generateSnippet: CodeSnippetFunction = (data) =>
             ? `headerBackgroundImage={uri:('../images/${data.headerBackgroundImage as string}.png')}`
             : ''
     }
+    ${data.actionItems && data.actionItems !== 'undefined' ? `actionItems={[
+        { icon: { name: 'star-outline' } },
+        { icon: { name: 'settings' } },
+        { icon: { name: 'more-vert' } },
+    ]}` : ''}
     ${
         ((data.numberOfHeroes as number) ?? 0) > 0
             ? `badge={
