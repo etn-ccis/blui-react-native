@@ -132,7 +132,8 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
         <Hero
             key={'hero2'}
             icon={{ family: 'brightlayer-ui', name: 'grade_a' }}
-            label={'Grade'} iconSize={48}
+            label={'Grade'}
+            iconSize={48}
             iconBackgroundColor={theme.colors.surface}
             ChannelValueProps={{ value: '98', units: '/100', unitSpace: 'hide' }}
         />,
@@ -194,15 +195,17 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         skip: ['numberOfHeroes', 'headerBackgroundImage', 'actionItems'],
     })}
     ${data.headerBackgroundImage !== 'undefined' ? `headerBackgroundImage={headerBackgroundImage}` : ''}
-    ${data.actionItems && data.actionItems !== 'undefined'
+    ${
+        data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[
         { icon: { name: 'star-outline' } },
         { icon: { name: 'settings' } },
         { icon: { name: 'more-vert' } },
     ]}`
             : ''
-        }
-    ${((data.numberOfHeroes as number) ?? 0) > 0
+    }
+    ${
+        ((data.numberOfHeroes as number) ?? 0) > 0
             ? `badge={
         <HeroBanner>
             <Hero
@@ -212,19 +215,20 @@ const generateSnippet: CodeSnippetFunction = (data) =>
                 iconBackgroundColor={theme.colors.surface}
                 ChannelValueProps={{ value: 54, units: '%' }}
             />
-            ${((data.numberOfHeroes as number) ?? 0) > 1
-                ? `<Hero
+            ${
+                ((data.numberOfHeroes as number) ?? 0) > 1
+                    ? `<Hero
                 icon={{ family: 'brightlayer-ui', name: 'grade_a' }}
                 label={'Grade'} iconSize={48}
                 iconBackgroundColor={theme.colors.surface}
                 ChannelValueProps={{ value: '98', units: '/100', unitSpace: 'hide' }}
             />`
-                : ''
+                    : ''
             }
         </HeroBanner>
     }`
             : ''
-        }>
+    }>
     <InfoListItem dense title={'0 Alarms'} icon={{ name: 'notifications' }} />
     <InfoListItem dense title={'1 Event'} icon={{ name: 'list-alt' }} />
     <InfoListItem dense title={'Online'} icon={{ name: 'cloud' }} />
