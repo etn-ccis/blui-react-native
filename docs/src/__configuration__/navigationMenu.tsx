@@ -58,8 +58,10 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 // Playground components
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
 import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playground';
+import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
+import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -348,6 +350,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <HeroAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <HeroPlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -415,6 +422,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <ListItemTagAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ListItemTagPlaygroundComponent />,
                     },
                 ],
             },
