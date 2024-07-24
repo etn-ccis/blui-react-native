@@ -146,10 +146,21 @@ const DrawerHeaderPreview: PreviewComponent = ({ data }) => {
                 ></DrawerHeader>
                 <DrawerBody>
                     <DrawerNavGroup>
-                        <DrawerNavItem icon={{ name: 'person' }} itemID={'Identity Management'} title={'Identity Management'} />
+                        <DrawerNavItem
+                            icon={{ name: 'person' }}
+                            itemID={'Identity Management'}
+                            title={'Identity Management'}
+                        />
                         <DrawerNavItem icon={{ name: 'today' }} itemID={'Calendar'} title={'Calendar'} />
-                        <DrawerNavItem icon={{ name: 'accessibility' }} title={'Accessibility'} itemID={'Accessibility'} />
-                        <DrawerNavItem icon={{ name: 'notifications-active' }} title={'Notifications'} itemID={'Notifications'}
+                        <DrawerNavItem
+                            icon={{ name: 'accessibility' }}
+                            title={'Accessibility'}
+                            itemID={'Accessibility'}
+                        />
+                        <DrawerNavItem
+                            icon={{ name: 'notifications-active' }}
+                            title={'Notifications'}
+                            itemID={'Notifications'}
                         />
                     </DrawerNavGroup>
                 </DrawerBody>
