@@ -3,6 +3,15 @@ import { InputConfig } from '@brightlayer-ui/react-doc-components';
 export const sharedPropsConfig: InputConfig = [
     // Shared Props
     {
+        id: 'activeChevronColor',
+        type: 'color',
+        typeLabel: 'string',
+        description: ` chevron color for the active item`,
+        required: false,
+        initialValue: '',
+        category: 'Shared Props',
+    },
+    {
         id: 'activeItemBackgroundColor',
         type: 'color',
         typeLabel: 'string',
@@ -56,6 +65,15 @@ export const sharedPropsConfig: InputConfig = [
         required: false,
         initialValue: false,
         defaultValue: false,
+        category: 'Shared Props',
+    },
+    {
+        id: 'chevronColor',
+        type: 'color',
+        typeLabel: 'string',
+        description: `Color override for the chevron icon `,
+        required: false,
+        initialValue: '',
         category: 'Shared Props',
     },
     {
