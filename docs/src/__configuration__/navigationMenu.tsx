@@ -57,6 +57,7 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 
 // Playground components
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
+import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playground';
 import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
@@ -287,6 +288,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <EmptyStateAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <EmptyStatePlaygroundComponent />,
                     },
                 ],
             },
