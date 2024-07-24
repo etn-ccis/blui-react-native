@@ -60,6 +60,7 @@ import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/p
 import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
+import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -182,6 +183,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 title: 'API Docs',
                                 path: 'api-docs',
                                 element: <DrawerHeaderAPIDocs />,
+                            },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerHeaderPlaygroundComponent />,
                             },
                         ],
                     },
