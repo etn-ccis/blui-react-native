@@ -77,7 +77,7 @@ const inputConfig: InputConfig = [
         id: 'showAction',
         label: 'Show Actions',
         type: 'boolean',
-        description: 'Whether to show action section or not',
+        description: 'Additional components to render below the text',
         required: false,
         initialValue: false,
         category: 'Other Configuration',
