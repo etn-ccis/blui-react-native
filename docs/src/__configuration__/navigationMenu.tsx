@@ -61,6 +61,7 @@ import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playg
 import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
+import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
 import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
@@ -478,6 +479,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <ScoreCardAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ScoreCardPlaygroundComponent />,
                     },
                 ],
             },
