@@ -2,6 +2,7 @@ import React from 'react';
 import { EmptyState } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
 import { Text } from 'react-native-paper';
+import { DEMO_WIDTH } from '../../../utils';
 
 export const EmptyStateWithContentExample = (): JSX.Element => (
     <ExampleShowcase>
@@ -15,6 +16,7 @@ export const EmptyStateWithContentExample = (): JSX.Element => (
                     to view this content.
                 </Text>
             }
+            style={{ width: DEMO_WIDTH, margin: 'auto' }}
         />
     </ExampleShowcase>
 );
