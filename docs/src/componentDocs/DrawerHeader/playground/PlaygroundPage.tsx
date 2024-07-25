@@ -223,17 +223,18 @@ const generateSnippet: CodeSnippetFunction = (data) =>
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
     ${
         data.titleContent && data.titleContent !== 'undefined'
-            ? `titleContent={<View style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: 10 }}>
-                <Text>
-                    API Documentation
-                </Text> 
-                <ListItemTag
-                    label="v1.50.8"
-                    backgroundColor={'#FFFFFF'}
-                    fontColor={'#007bc1'}
-                    style={{ width: '50%' }}
-                />
-            </View>}`
+            ? `titleContent={
+        <View style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: 10 }}>
+            <Text>
+                API Documentation
+            </Text> 
+        <ListItemTag
+            label="v1.50.8"
+            backgroundColor={'#FFFFFF'}
+            fontColor={'#007bc1'}
+            style={{ width: '50%' }}
+        />
+        </View>}`
             : ''
     }
     ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
