@@ -16,9 +16,12 @@ import {
     DrawerHeaderProps,
     DrawerNavGroup,
     DrawerNavItem,
+    ListItemTag,
 } from '@brightlayer-ui/react-native-components';
 import { getImage, removeEmptyProps, DRAWER_WIDTH } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
+import { View } from 'react-native';
+import { Text } from 'react-native-paper';
 
 const inputConfig: InputConfig = [
     // Required Props
@@ -41,6 +44,15 @@ const inputConfig: InputConfig = [
         description: 'The text to show on the second line',
         required: false,
         initialValue: 'Organize your menu items here',
+        category: 'Optional Props',
+    },
+    {
+        id: 'titleContent',
+        type: 'boolean',
+        typeLabel: `ReactNode`,
+        initialValue: false,
+        description: 'Custom content for header title area',
+        required: false,
         category: 'Optional Props',
     },
     {
@@ -114,7 +126,7 @@ const inputConfig: InputConfig = [
 ];
 
 const DrawerHeaderPreview: PreviewComponent = ({ data }) => {
-    const { icon, backgroundImage, ...rest } = data as unknown as DrawerHeaderProps;
+    const { icon, backgroundImage, titleContent, ...rest } = data as unknown as DrawerHeaderProps;
     const containerRef = useRef(null);
     const getIcon = (value: string): IconSource | undefined => {
         switch (value) {
@@ -123,6 +135,26 @@ const DrawerHeaderPreview: PreviewComponent = ({ data }) => {
             case 'arrow-back':
                 return { name: 'arrow-back' };
             case 'undefined':
+            default:
+                return undefined;
+        }
+    };
+    const getTitleContent = (value: boolean): any => {
+        switch (value) {
+            case true:
+                return (
+                    <View
+                        style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: 10 }}
+                    >
+                        <Text>API Documentation</Text>
+                        <ListItemTag
+                            label="v1.50.8"
+                            backgroundColor={'#FFFFFF'}
+                            fontColor={'#007bc1'}
+                            style={{ width: '50%' }}
+                        />
+                    </View>
+                );
             default:
                 return undefined;
         }
@@ -143,6 +175,7 @@ const DrawerHeaderPreview: PreviewComponent = ({ data }) => {
                     {...removeEmptyProps(rest)}
                     icon={getIcon(icon as unknown as string)}
                     backgroundImage={getImage(backgroundImage?.toString() ?? '')}
+                    titleContent={getTitleContent(titleContent as unknown as boolean)}
                 ></DrawerHeader>
                 <DrawerBody>
                     <DrawerNavGroup>
@@ -183,8 +216,26 @@ const getIconSnippet = (value: any): string | undefined => {
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<DrawerHeader 
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'backgroundImage'] })}
+    ${getPropsToString(getPropsMapping(data, inputConfig), {
+        join: '\n\t',
+        skip: ['icon', 'backgroundImage', 'titleContent'],
+    })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
+    ${
+        data.titleContent && data.titleContent !== 'undefined'
+            ? `titleContent={<View style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginLeft: 10 }}>
+                <Text>
+                    API Documentation
+                </Text> 
+                <ListItemTag
+                    label="v1.50.8"
+                    backgroundColor={'#FFFFFF'}
+                    fontColor={'#007bc1'}
+                    style={{ width: '50%' }}
+                />
+            </View>}`
+            : ''
+    }
     ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
 />`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
