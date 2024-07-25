@@ -57,10 +57,13 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 
 // Playground components
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
+import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playground';
 import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
 import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
+import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
+import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -293,6 +296,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <EmptyStateAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <EmptyStatePlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -422,6 +430,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <ListItemTagAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ListItemTagPlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -472,6 +485,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <ScoreCardAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ScoreCardPlaygroundComponent />,
                     },
                 ],
             },
