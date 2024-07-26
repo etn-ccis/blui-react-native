@@ -20,8 +20,8 @@ import Box from '@mui/material/Box';
 import ArrowBack from '@mui/icons-material/ArrowBack';
 import topologyBgImage from '../assets/topology_40.png';
 import farmBgImage from '../assets/farm.jpg';
-import { ImageSourcePropType } from 'react-native';
 import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
+import { ImageSourcePropType } from 'react-native';
 
 export const getSnakeCase = (str: string): string => str.replace(/[A-Z]/g, '_$&').toLowerCase().slice(1);
 

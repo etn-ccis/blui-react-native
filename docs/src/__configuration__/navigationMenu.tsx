@@ -62,6 +62,7 @@ import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playg
 import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
+import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
 import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
 import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
 
@@ -191,6 +192,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 title: 'API Docs',
                                 path: 'api-docs',
                                 element: <DrawerHeaderAPIDocs />,
+                            },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerHeaderPlaygroundComponent />,
                             },
                         ],
                     },
