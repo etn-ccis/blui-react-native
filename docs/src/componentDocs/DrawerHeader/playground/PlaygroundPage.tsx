@@ -89,15 +89,6 @@ const inputConfig: InputConfig = [
         category: 'Optional Props',
     },
     {
-        id: 'divider',
-        type: 'boolean',
-        description: 'Optional divider which appears beneath the header',
-        required: false,
-        initialValue: false,
-        defaultValue: false,
-        category: 'Optional Props',
-    },
-    {
         id: 'fontColor',
         type: 'color',
         typeLabel: 'string',
