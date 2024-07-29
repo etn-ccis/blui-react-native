@@ -59,7 +59,7 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
 import { DrawerPlaygroundComponent } from '../componentDocs/Drawer/playground';
 import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
-import { DrawerNavGroupPlaygroundComponent } from '../componentDocs/DrawerNavGroup/playground/PlaygroundPage'
+import { DrawerNavGroupPlaygroundComponent } from '../componentDocs/DrawerNavGroup/playground/PlaygroundPage';
 import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playground';
 import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';

@@ -141,7 +141,7 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
         >
             <Box>
                 <Drawer activeItem={activeItem} style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
-                    <DrawerHeader title="Header Title" icon={{name: 'menu'}} />
+                    <DrawerHeader title="Header Title" icon={{ name: 'menu' }} />
                     <DrawerBody>
                         <DrawerNavGroup
                             items={navGroupItems}
@@ -152,7 +152,7 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
                     </DrawerBody>
                 </Drawer>
             </Box>
-            </Box>
+        </Box>
     );
 };
 const getCollapseIcon = (value: any): any => {
