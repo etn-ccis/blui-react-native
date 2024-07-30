@@ -107,7 +107,7 @@ export const sharedPropsConfig: InputConfig = [
     {
         id: 'expandIcon',
         type: 'select',
-        typeLabel: 'JSX.Element',
+        typeLabel: 'iconSource',
         description: 'Icon used to collapse drawer items',
         initialValue: 'undefined',
         options: ['undefined', 'Add'],
