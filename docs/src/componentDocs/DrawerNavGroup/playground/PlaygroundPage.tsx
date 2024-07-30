@@ -15,10 +15,13 @@ import {
     DrawerNavGroup,
     NavItem,
     DrawerNavGroupProps,
+    ListItemTag,
 } from '@brightlayer-ui/react-native-components';
 import * as Colors from '@brightlayer-ui/colors';
 import { sharedPropsConfig } from '../../Drawer/playground/sharedPropsConfig';
 import { getIcon, removeEmptyProps, DRAWER_WIDTH } from '../../../utils';
+import { View } from 'react-native';
+import { Text } from 'react-native-paper';
 
 const inputConfig: InputConfig = [
     // Required Props
@@ -52,6 +55,15 @@ const inputConfig: InputConfig = [
         defaultValue: true,
         category: 'Optional Props',
     },
+    {
+        id: 'titleContent',
+        type: 'boolean',
+        typeLabel: `ReactNode`,
+        initialValue: false,
+        description: 'Custom element, substitute for title',
+        required: false,
+        category: 'Optional Props',
+    },
 
     // Shared Props
     ...sharedPropsConfig,
@@ -61,11 +73,11 @@ const inputConfig: InputConfig = [
 ];
 
 const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
-    const { expandIcon, collapseIcon, ...rest } = data as unknown as Omit<
+    const { expandIcon, collapseIcon, titleContent, ...rest } = data as unknown as Omit<
         DrawerNavGroupProps,
         'collapseIcon' | 'expandIcon'
     > & { collapseIcon: string; expandIcon: string };
-    const [activeItem, setActiveItem] = useState('Overview');
+    const [activeItem, setActiveItem] = useState('Devices');
     const containerRef = useRef(null);
     const getCollapseIcon = (value: string): any => {
         switch (value) {
@@ -81,6 +93,27 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
             case 'Add':
                 return { family: 'material', name: 'add' };
             case 'undefined':
+            default:
+                return undefined;
+        }
+    };
+    const getTitleContent = (value: boolean): any => {
+        switch (value) {
+            case true:
+                return (
+                    <View
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            padding: 16,
+                        }}
+                    >
+                        <Text>Nav Group Title Content</Text>
+                        <ListItemTag label="v1.0.3" />
+                    </View>
+                );
             default:
                 return undefined;
         }
@@ -144,6 +177,7 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
                     <DrawerHeader title="Header Title" icon={{ name: 'menu' }} />
                     <DrawerBody>
                         <DrawerNavGroup
+                            titleContent={getTitleContent(titleContent as unknown as boolean)}
                             items={navGroupItems}
                             collapseIcon={getIcon(collapseIcon)}
                             expandIcon={getIcon(expandIcon)}
@@ -176,7 +210,26 @@ const getExpandIcon = (value: any): any => {
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<DrawerNavGroup
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['collapseIcon', 'expandIcon'] })}
+    ${getPropsToString(getPropsMapping(data, inputConfig), {
+        join: '\n\t',
+        skip: ['collapseIcon', 'expandIcon', 'titleContent'],
+    })}
+    ${
+        data.titleContent && data.titleContent !== 'undefined'
+            ? `titleContent={
+            <View style={{ display: 'flex',flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center',padding: 16 }}>
+                <Text>
+                    Nav Group Title Content
+                </Text> 
+            <ListItemTag
+                label="v1.0.3"
+                backgroundColor={'#FFFFFF'}
+                fontColor={'#007bc1'}
+                style={{ width: '50%' }}
+            />
+            </View>}`
+            : ''
+    }
     ${data.collapseIcon !== 'undefined' ? `collapseIcon={${getCollapseIcon(data.collapseIcon as string)}}` : ''}
     ${data.expandIcon !== 'undefined' ? `expandIcon={${getExpandIcon(data.expandIcon as string)}}` : ''}
     items={navGroupItems}
