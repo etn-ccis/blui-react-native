@@ -155,6 +155,7 @@ const getIconSnippet = (value: any): string | undefined => {
             return undefined;
     }
 };
+
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<ChannelValue 
     ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon'] })}
