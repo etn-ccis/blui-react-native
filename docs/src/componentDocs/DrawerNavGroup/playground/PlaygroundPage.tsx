@@ -124,7 +124,6 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
             icon: { name: 'dashboard' },
             itemID: 'Overview',
             title: 'Overview',
-            // onPress: (): void => setActiveItem('Overview'),
             collapseIcon: getCollapseIcon(collapseIcon as unknown as string),
             expandIcon: getExpandIcon(expandIcon as unknown as string),
             items: [
