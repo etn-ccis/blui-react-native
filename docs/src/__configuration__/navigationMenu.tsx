@@ -58,14 +58,16 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 // Playground components
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
 import { DrawerPlaygroundComponent } from '../componentDocs/Drawer/playground';
+import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
+import { DrawerNavGroupPlaygroundComponent } from '../componentDocs/DrawerNavGroup/playground/PlaygroundPage';
 import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playground';
 import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
-import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
 import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
 import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
 import { DrawerNavItemPlaygroundComponent } from '../componentDocs/DrawerNavItem/playground/PlaygroundPage';
+import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -250,6 +252,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 path: 'api-docs',
                                 element: <DrawerNavGroupAPIDocs />,
                             },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerNavGroupPlaygroundComponent />,
+                            },
                         ],
                     },
                     {
@@ -407,6 +414,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <IconSwitchAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <IconSwitchPlaygroundComponent />,
                     },
                 ],
             },
