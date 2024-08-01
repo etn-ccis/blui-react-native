@@ -9,7 +9,14 @@ import {
     Playground,
 } from '@brightlayer-ui/react-doc-components';
 import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
-import { Drawer, DrawerNavItem, DrawerNavItemProps, DrawerNavGroup, DrawerBody, ListItemTag } from '@brightlayer-ui/react-native-components';
+import {
+    Drawer,
+    DrawerNavItem,
+    DrawerNavItemProps,
+    DrawerNavGroup,
+    DrawerBody,
+    ListItemTag,
+} from '@brightlayer-ui/react-native-components';
 import { sharedPropsConfig } from '../../Drawer/playground/sharedPropsConfig';
 import { getIconSnippetWithProps, removeEmptyProps, DRAWER_WIDTH } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
@@ -144,8 +151,16 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                 {...removeEmptyProps(rest)}
                                 title={rest.title}
                             >
-                                <DrawerNavItem itemID={'Web'} title={'Web'} onPress={() => setActiveItem('Web')} />
-                                <DrawerNavItem itemID={'Mobile'} title={'Mobile'} onPress={() => setActiveItem('Mobile')} />
+                                <DrawerNavItem
+                                    itemID={'Web'}
+                                    title={'Web'}
+                                    icon={{ name: 'account' }}
+                                    onPress={() => setActiveItem('Web')} />
+                                <DrawerNavItem
+                                    itemID={'Mobile'}
+                                    title={'Mobile'}
+                                    onPress={() => setActiveItem('Mobile')}
+                                />
                             </DrawerNavItem>
                             <DrawerNavItem
                                 itemID={'Accessibility'}
