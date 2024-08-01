@@ -49,8 +49,7 @@ const IconSwitchPreivew: PreviewComponent = ({ data }) => {
 
     return (
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
-            <IconSwitch {...rest} value={value ? true : undefined}>
-            </IconSwitch>
+            <IconSwitch {...rest} value={value ? true : undefined}></IconSwitch>
         </Stack>
     );
 };
