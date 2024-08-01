@@ -155,7 +155,8 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                     itemID={'Web'}
                                     title={'Web'}
                                     icon={{ name: 'account' }}
-                                    onPress={() => setActiveItem('Web')} />
+                                    onPress={() => setActiveItem('Web')}
+                                />
                                 <DrawerNavItem
                                     itemID={'Mobile'}
                                     title={'Mobile'}
