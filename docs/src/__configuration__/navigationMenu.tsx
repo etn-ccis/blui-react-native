@@ -65,6 +65,7 @@ import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/Playgr
 import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
 import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
 import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
+import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -401,6 +402,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <IconSwitchAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <IconSwitchPlaygroundComponent />,
                     },
                 ],
             },
