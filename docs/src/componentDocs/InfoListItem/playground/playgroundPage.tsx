@@ -37,7 +37,7 @@ const inputConfig: InputConfig = [
         id: 'backgroundColor',
         type: 'color',
         typeLabel: 'string',
-        description: 'The color used for the background',
+        description: 'The color used for the background of the InfoListItem',
         required: false,
         initialValue: '',
         category: 'Optional Props',
@@ -64,7 +64,7 @@ const inputConfig: InputConfig = [
         id: 'divider',
         type: 'select',
         typeLabel: `'full' | 'partial'`,
-        description: 'Show a row separator below the row',
+        description: 'Show a dividing line below the row',
         initialValue: 'undefined',
         defaultValue: 'undefined',
         options: ['undefined', 'partial', 'full'],
@@ -75,7 +75,7 @@ const inputConfig: InputConfig = [
         id: 'fontColor',
         type: 'color',
         typeLabel: 'string',
-        description: 'Main text color',
+        description: 'Color to use for text elements',
         required: false,
         initialValue: '',
         category: 'Optional Props',
@@ -83,7 +83,7 @@ const inputConfig: InputConfig = [
     {
         id: 'hidePadding',
         type: 'boolean',
-        description: 'Remove left padding if no icon is used',
+        description: 'Hide padding reserved for icons when there is no icon',
         required: false,
         initialValue: false,
         defaultValue: false,
@@ -132,7 +132,7 @@ const inputConfig: InputConfig = [
         id: 'statusColor',
         type: 'color',
         typeLabel: 'string',
-        description: 'Status stripe and icon color',
+        description: 'Color to use for status (affects status stripe and icon)',
         required: false,
         initialValue: '',
         category: 'Optional Props',
@@ -170,11 +170,12 @@ const inputConfig: InputConfig = [
         required: false,
         initialValue: '·',
         category: 'Optional Props',
+        disabled: true,
     },
     {
         id: 'wrapInfo',
         type: 'boolean',
-        description: 'Whether to wrap info on overflow',
+        description: 'Whether the info line text should wrap to multiple lines on overflow',
         required: false,
         initialValue: false,
         defaultValue: false,
@@ -183,7 +184,7 @@ const inputConfig: InputConfig = [
     {
         id: 'wrapSubtitle',
         type: 'boolean',
-        description: 'Whether to wrap subtitle on overflow',
+        description: 'Whether the subtitle line text should wrap to multiple lines on overflow',
         required: false,
         initialValue: false,
         defaultValue: false,
@@ -192,23 +193,11 @@ const inputConfig: InputConfig = [
     {
         id: 'wrapTitle',
         type: 'boolean',
-        description: 'Whether to wrap title on overflow',
+        description: 'Whether the title line text should wrap to multiple lines on overflow',
         required: false,
         initialValue: false,
         defaultValue: false,
         category: 'Optional Props',
-    },
-
-    // Other Configuration
-    {
-        id: 'clickable',
-        label: 'Add onPress',
-        type: 'boolean',
-        description: 'A function to execute when pressed',
-        required: false,
-        initialValue: false,
-        defaultValue: false,
-        category: 'Other Configuration',
     },
 ];
 const InfoListItemPreview: PreviewComponent = ({ data }) => {
@@ -227,7 +216,6 @@ const InfoListItemPreview: PreviewComponent = ({ data }) => {
                 title={title}
                 icon={getRNIcon(icon as unknown as string)}
                 style={{ maxWidth: 700 }}
-                onPress={clickable ? (): void => {} : undefined}
                 divider={divider === 'undefined' ? undefined : divider}
                 rightComponent={rightComponent ? <ChannelValue value={'15'} units={'A'} /> : undefined}
                 leftComponent={
@@ -246,10 +234,9 @@ const generateSnippet: CodeSnippetFunction = (data) =>
     `<InfoListItem 
     ${getPropsToString(getPropsMapping(data, inputConfig), {
         join: '\n\t',
-        skip: ['icon', 'clickable', 'rightComponent', 'leftComponent'],
+        skip: ['icon', 'rightComponent', 'leftComponent'],
     })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getRNIconSnippet(data.icon as string)}}` : ''}
-    ${data.clickable ? `onPress={(): void => {}}` : ``}
     ${
         data.leftComponent
             ? `leftComponent={<View>
