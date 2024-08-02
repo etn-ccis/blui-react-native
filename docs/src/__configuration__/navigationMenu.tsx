@@ -67,7 +67,7 @@ import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/Playgr
 import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
 import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
 import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
-import { UserMenuPlaygroundComponent } from '../componentDocs/UserMenu/playground'
+import { UserMenuPlaygroundComponent } from '../componentDocs/UserMenu/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;

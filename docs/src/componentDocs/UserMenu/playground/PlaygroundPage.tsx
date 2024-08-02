@@ -11,7 +11,7 @@ import {
 import Stack from '@mui/material/Stack';
 import { UserMenu, UserMenuProps } from '@brightlayer-ui/react-native-components';
 import { Avatar } from 'react-native-paper';
-import trexImage from '../images/trex.png'
+import trexImage from '../images/trex.png';
 import { removeEmptyProps } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
 
@@ -85,22 +85,24 @@ const UserMenuPreview: PreviewComponent = ({ data }) => {
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
             <UserMenu
                 {...removeEmptyProps(rest)}
-                avatar={imageAvatar ? <Avatar.Image source={{ uri: trexImage }} /> : <Avatar.Text size={40} label="AV" />}
+                avatar={
+                    imageAvatar ? <Avatar.Image source={{ uri: trexImage }} /> : <Avatar.Text size={40} label="AV" />
+                }
                 menuItems={[
                     {
                         title: 'Settings',
                         icon: { name: 'settings' },
-                        onPress: (): void => { },
+                        onPress: (): void => {},
                     },
                     {
                         title: 'Contact Us',
                         icon: { name: 'email' },
-                        onPress: (): void => { },
+                        onPress: (): void => {},
                     },
                     {
                         title: 'Log Out',
                         icon: { name: 'exit-to-app' },
-                        onPress: (): void => { },
+                        onPress: (): void => {},
                     },
                 ]}
             />
