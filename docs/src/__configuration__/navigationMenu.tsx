@@ -69,7 +69,6 @@ import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/pla
 import { InfoListItemPlaygroundComponent } from '../componentDocs/InfoListItem/playground';
 import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
 
-
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
     icon?: JSX.Element;
