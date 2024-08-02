@@ -66,6 +66,7 @@ import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
 import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
 import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
+import { DrawerNavItemPlaygroundComponent } from '../componentDocs/DrawerNavItem/playground/PlaygroundPage';
 import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
@@ -272,6 +273,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 title: 'API Docs',
                                 path: 'api-docs',
                                 element: <DrawerNavItemAPIDocs />,
+                            },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerNavItemPlaygroundComponent />,
                             },
                         ],
                     },
