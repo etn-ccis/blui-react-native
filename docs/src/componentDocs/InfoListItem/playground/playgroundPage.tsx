@@ -201,12 +201,11 @@ const inputConfig: InputConfig = [
     },
 ];
 const InfoListItemPreview: PreviewComponent = ({ data }) => {
-    const { icon, divider, title, clickable, rightComponent, leftComponent, ...rest } = data as unknown as Omit<
+    const { icon, divider, title, rightComponent, leftComponent, ...rest } = data as unknown as Omit<
         InfoListItemProps,
         'divider'
     > & {
         divider: 'full' | 'partial' | 'undefined';
-        clickable: boolean;
     };
 
     return (
