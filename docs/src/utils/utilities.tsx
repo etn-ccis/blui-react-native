@@ -114,6 +114,8 @@ export const getRNIcon = (value: string): IconSource | undefined => {
             return { family: 'material', name: 'schedule' };
         case 'Dashboard':
             return { family: 'material', name: 'dashboard' };
+        case 'Devices':
+            return { family: 'material', name: 'devices' };
         case 'undefined':
         default:
             return undefined;
@@ -129,6 +131,8 @@ export const getRNIconSnippet = (value: any): string | undefined => {
             return JSON.stringify({ family: 'material', name: 'schedule' });
         case 'Dashboard':
             return JSON.stringify({ family: 'material', name: 'dashboard' });
+        case 'Devices':
+            return JSON.stringify({ family: 'material', name: 'devices' });
         case 'undefined':
         default:
             return undefined;
