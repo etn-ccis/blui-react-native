@@ -70,6 +70,7 @@ import { InfoListItemPlaygroundComponent } from '../componentDocs/InfoListItem/p
 import { DrawerNavItemPlaygroundComponent } from '../componentDocs/DrawerNavItem/playground/PlaygroundPage';
 import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
 import { UserMenuPlaygroundComponent } from '../componentDocs/UserMenu/playground';
+import { HeaderPlaygroundComponent } from '../componentDocs/Header/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -360,6 +361,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <HeaderAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <HeaderPlaygroundComponent />,
                     },
                 ],
             },
