@@ -24,7 +24,6 @@ const inputConfig: InputConfig = [
         description: 'Total number of steps to display (>0)',
         required: true,
         category: 'Required Props',
-        defaultValue: 1,
     },
     {
         id: 'activeStep',
@@ -37,7 +36,6 @@ const inputConfig: InputConfig = [
         valueStep: 1,
         required: true,
         category: 'Required Props',
-        defaultValue: 0,
     },
     // Optional Props
     {
@@ -96,16 +94,31 @@ const inputConfig: InputConfig = [
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<MobileStepper
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t' })}
+    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['leftButton', 'rightButton'] })}
+    ${
+        data.leftButton
+            ? `leftButton={
+        <Button onPress={() => ({})} mode="outlined" style={{ width: 100, alignSelf: 'flex-start', marginRight: 40 }}>
+            Back
+        </Button>
+    }`
+            : ''
+    }
+    ${
+        data.rightButton
+            ? `rightButton={
+        <Button onPress={() => ({})} mode="contained" style={{ width: 100, alignSelf: 'flex-end', marginLeft: 40 }}>
+            Next
+        </Button>
+    }`
+            : ''
+    }
  />`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
         .replace(/(?:^|)( {4}|\t)/gm, '    ');
 
 const MobileStepperPreview: PreviewComponent = ({ data }) => {
-    const { leftButton, rightButton, ...rest } = data as unknown as MobileStepperProps & {
-        leftButton?: boolean;
-        rightButton?: boolean;
-    };
+    const { leftButton, rightButton, ...rest } = data as unknown as MobileStepperProps;
 
     return (
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
@@ -133,6 +146,7 @@ const MobileStepperPreview: PreviewComponent = ({ data }) => {
                         </Button>
                     ) : undefined
                 }
+                styles={{ progressBar: { width: 100 } }}
             />
         </Stack>
     );
