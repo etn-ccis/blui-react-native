@@ -9,10 +9,7 @@ import {
     Playground,
 } from '@brightlayer-ui/react-doc-components';
 import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
-import {
-    Header,
-    HeaderProps
-} from '@brightlayer-ui/react-native-components';
+import { Header, HeaderProps } from '@brightlayer-ui/react-native-components';
 import { getBodyFiller, getImage, DRAWER_WIDTH } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
 
@@ -121,7 +118,8 @@ const inputConfig: InputConfig = [
         id: 'variant',
         type: 'select',
         typeLabel: `'static' | 'dynamic'`,
-        description: 'The resize mode of the Header (static will resize only on taps, if enabled. Dynamic will resize as the screen is scrolled)',
+        description:
+            'The resize mode of the Header (static will resize only on taps, if enabled. Dynamic will resize as the screen is scrolled)',
         required: false,
         initialValue: 'static',
         options: ['static', 'dynamic'],
@@ -189,9 +187,7 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
     const getActionItems = (value: boolean): any => {
         switch (value) {
             case true:
-                return [
-                    { icon: { name: 'settings' } },
-                ];
+                return [{ icon: { name: 'settings' } }];
             default:
                 return undefined;
         }
@@ -207,21 +203,26 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
             }}
             ref={containerRef}
         >
-            <Header style={{ width: DRAWER_WIDTH, margin: 'auto' }} {...rest}
+            <Header
+                style={{ width: DRAWER_WIDTH, margin: 'auto' }}
+                {...rest}
                 title={'Valley Forge'}
                 subtitle={'The Last Stand'}
                 icon={getIcon(icon as unknown as string)}
                 actionItems={getActionItems(actionItems as unknown as boolean)}
                 // searchableConfig={{ onChangeText: () => {} }}
                 backgroundImage={getImage(backgroundImage?.toString() ?? '')}
-                variant='static'
+                variant="static"
             />
-            <Box style={{ width: DRAWER_WIDTH, margin: 'auto' }}
+            <Box
+                style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                 id={SCROLL_CONTAINER_ID}
-                sx={{ height: 225, 
+                sx={{
+                    height: 225,
                     overflow: 'scroll',
                     backgroundColor: 'background.paper',
-                scrollbarWidth: 'none', '&::-webkit-scrollbar': {display:'none'}
+                    scrollbarWidth: 'none',
+                    '&::-webkit-scrollbar': { display: 'none' },
                 }}
             >
                 {getBodyFiller()}
@@ -240,14 +241,18 @@ const getIconSnippet = (value: any): string | undefined => {
 };
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Header
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'actionItems', 'backgroundImage'] })}
+    ${getPropsToString(getPropsMapping(data, inputConfig), {
+        join: '\n\t',
+        skip: ['icon', 'actionItems', 'backgroundImage'],
+    })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
-    ${data.actionItems && data.actionItems !== 'undefined'
+    ${
+        data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[
         { icon: { name: 'settings' } },
     ]}`
             : ''
-        }
+    }
     ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
   />
     `
