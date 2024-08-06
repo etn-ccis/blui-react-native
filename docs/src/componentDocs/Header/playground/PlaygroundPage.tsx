@@ -8,12 +8,12 @@ import {
     getPropsMapping,
     Playground,
 } from '@brightlayer-ui/react-doc-components';
+import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
 import {
     Header,
     HeaderProps
 } from '@brightlayer-ui/react-native-components';
-import { getBodyFiller, getImage, removeEmptyProps, DRAWER_WIDTH } from '../../../utils';
-import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
+import { getBodyFiller, getImage, DRAWER_WIDTH } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
 
 const inputConfig: InputConfig = [
@@ -46,15 +46,15 @@ const inputConfig: InputConfig = [
         required: false,
         category: 'Optional Props',
     },
-    {
-        id: 'searchableConfig',
-        type: 'boolean',
-        typeLabel: `searchableConfig`,
-        initialValue: false,
-        description: 'Configuration object for search behavior',
-        required: false,
-        category: 'Optional Props',
-    },
+    // {
+    //     id: 'searchableConfig',
+    //     type: 'boolean',
+    //     typeLabel: ``,
+    //     initialValue: false,
+    //     description: 'Configuration object for search behavior',
+    //     required: false,
+    //     category: 'Optional Props',
+    // },
     {
         id: 'actionItemColor',
         type: 'color',
@@ -80,7 +80,7 @@ const inputConfig: InputConfig = [
         description: 'An image to blend with the colored background in the header',
         initialValue: 'undefined',
         defaultValue: 'undefined',
-        options: ['undefined', 'farm'],
+        options: ['undefined', 'farm', 'pattern'],
         required: false,
         category: 'Optional Props',
     },
@@ -126,6 +126,7 @@ const inputConfig: InputConfig = [
         initialValue: 'static',
         options: ['static', 'dynamic'],
         category: 'Optional Props',
+        disabled: true,
     },
     {
         id: 'fontColor',
@@ -142,7 +143,7 @@ const inputConfig: InputConfig = [
         typeLabel: 'string',
         description: 'Third line of text (hidden on collapse)',
         required: false,
-        initialValue: 'Info text',
+        initialValue: 'Text hidden on collapse',
         category: 'Optional Props',
     },
     {
@@ -175,7 +176,7 @@ const inputConfig: InputConfig = [
 const HeaderPreview: PreviewComponent = ({ data }) => {
     const { icon, backgroundImage, actionItems, variant, searchableConfig, ...rest } = data as unknown as HeaderProps;
     const containerRef = useRef(null);
-    const SCROLL_CONTAINER_ID = 'BLUIAppBar-playground-scroll-container-1';
+    const SCROLL_CONTAINER_ID = 'playground-scroll-container';
     const getIcon = (value: string): IconSource | undefined => {
         switch (value) {
             case 'menu':
@@ -190,7 +191,6 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
             case true:
                 return [
                     { icon: { name: 'settings' } },
-                    { icon: { name: 'more-vert' } },
                 ];
             default:
                 return undefined;
@@ -212,13 +212,17 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
                 subtitle={'The Last Stand'}
                 icon={getIcon(icon as unknown as string)}
                 actionItems={getActionItems(actionItems as unknown as boolean)}
-                searchableConfig={{ onChangeText: () => {} }}
+                // searchableConfig={{ onChangeText: () => {} }}
                 backgroundImage={getImage(backgroundImage?.toString() ?? '')}
                 variant='static'
             />
             <Box style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                 id={SCROLL_CONTAINER_ID}
-                sx={{ height: 400, overflow: 'scroll', backgroundColor: 'background.paper' }}
+                sx={{ height: 225, 
+                    overflow: 'scroll',
+                    backgroundColor: 'background.paper',
+                scrollbarWidth: 'none', '&::-webkit-scrollbar': {display:'none'}
+                }}
             >
                 {getBodyFiller()}
             </Box>
@@ -236,12 +240,11 @@ const getIconSnippet = (value: any): string | undefined => {
 };
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Header
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'actionItems', 'searchableConfig', 'backgroundImage'] })}
+    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'actionItems', 'backgroundImage'] })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
     ${data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[
         { icon: { name: 'settings' } },
-        { icon: { name: 'more-vert' } },
     ]}`
             : ''
         }
