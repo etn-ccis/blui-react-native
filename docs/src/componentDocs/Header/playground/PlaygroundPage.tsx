@@ -172,7 +172,7 @@ const inputConfig: InputConfig = [
 ];
 
 const HeaderPreview: PreviewComponent = ({ data }) => {
-    const { icon, backgroundImage, actionItems, variant, searchableConfig, ...rest } = data as unknown as HeaderProps;
+    const { icon, backgroundImage, actionItems, ...rest } = data as unknown as HeaderProps;
     const containerRef = useRef(null);
     const SCROLL_CONTAINER_ID = 'playground-scroll-container';
     const getIcon = (value: string): IconSource | undefined => {
