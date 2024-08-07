@@ -35,6 +35,15 @@ const inputConfig: InputConfig = [
         category: 'Optional Props',
     },
     {
+        id: 'info',
+        type: 'string',
+        typeLabel: 'string',
+        description: 'Third line of text (hidden on collapse)',
+        required: false,
+        initialValue: 'Text hidden on collapse',
+        category: 'Optional Props',
+    },
+    {
         id: 'actionItems',
         type: 'boolean',
         typeLabel: `IconSource`,
@@ -43,15 +52,14 @@ const inputConfig: InputConfig = [
         required: false,
         category: 'Optional Props',
     },
-    // {
-    //     id: 'searchableConfig',
-    //     type: 'boolean',
-    //     typeLabel: ``,
-    //     initialValue: false,
-    //     description: 'Configuration object for search behavior',
-    //     required: false,
-    //     category: 'Optional Props',
-    // },
+    {
+        id: 'searchableConfig',
+        type: 'boolean',
+        typeLabel: ``,
+        description: 'Configuration object for search behavior',
+        required: false,
+        category: 'Optional Props',
+    },
     {
         id: 'actionItemColor',
         type: 'color',
@@ -119,7 +127,7 @@ const inputConfig: InputConfig = [
         type: 'select',
         typeLabel: `'static' | 'dynamic'`,
         description:
-            'The resize mode of the Header (static will resize only on taps, if enabled. Dynamic will resize as the screen is scrolled)',
+            'The resize mode of the Header (static will resize only on taps, if enabled. Dynamic will resize as the screen is scrolled see CollapsibleHeaderLayout)',
         required: false,
         initialValue: 'static',
         options: ['static', 'dynamic'],
@@ -130,18 +138,9 @@ const inputConfig: InputConfig = [
         id: 'fontColor',
         type: 'color',
         typeLabel: 'string',
-        description: 'Color of the title, subtitle, info, and icons in the header',
+        description: 'Color of the title, subtitle and info in the header',
         required: false,
         initialValue: '',
-        category: 'Optional Props',
-    },
-    {
-        id: 'info',
-        type: 'string',
-        typeLabel: 'string',
-        description: 'Third line of text (hidden on collapse)',
-        required: false,
-        initialValue: 'Text hidden on collapse',
         category: 'Optional Props',
     },
     {
@@ -172,7 +171,7 @@ const inputConfig: InputConfig = [
 ];
 
 const HeaderPreview: PreviewComponent = ({ data }) => {
-    const { icon, backgroundImage, actionItems, ...rest } = data as unknown as HeaderProps;
+    const { icon, backgroundImage, actionItems, searchableConfig, ...rest } = data as unknown as HeaderProps;
     const containerRef = useRef(null);
     const SCROLL_CONTAINER_ID = 'playground-scroll-container';
     const getIcon = (value: string): IconSource | undefined => {
@@ -188,6 +187,20 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
         switch (value) {
             case true:
                 return [{ icon: { name: 'settings' } }];
+            default:
+                return undefined;
+        }
+    };
+    const getSearchConfig = (value: boolean): any => {
+        switch (value) {
+            case true:
+                return (
+                    <Header
+                        title={''}
+                        searchableConfig={{ onChangeText: () => { } }}
+                    >
+                    </Header>
+                );
             default:
                 return undefined;
         }
@@ -210,7 +223,8 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
                 subtitle={'The Last Stand'}
                 icon={getIcon(icon as unknown as string)}
                 actionItems={getActionItems(actionItems as unknown as boolean)}
-                // searchableConfig={{ onChangeText: () => {} }}
+                searchableConfig={getSearchConfig(searchableConfig as unknown as boolean)}
+                styles={{ backgroundImage: { width: DRAWER_WIDTH, margin: 'auto' } }}
                 backgroundImage={getImage(backgroundImage?.toString() ?? '')}
                 variant="static"
             />
@@ -243,17 +257,19 @@ const generateSnippet: CodeSnippetFunction = (data) =>
     `<Header
     ${getPropsToString(getPropsMapping(data, inputConfig), {
         join: '\n\t',
-        skip: ['icon', 'actionItems', 'backgroundImage'],
+        skip: ['icon', 'actionItems', 'backgroundImage', 'searchableConfig'],
     })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
-    ${
-        data.actionItems && data.actionItems !== 'undefined'
+    ${data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[
         { icon: { name: 'settings' } },
     ]}`
             : ''
-    }
+        }
     ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
+    ${data.searchableConfig && data.searchableConfig !== 'undefined'
+            ? `searchableConfig={{ onChangeText: () => {} }}` : ''
+        }
   />
     `
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
