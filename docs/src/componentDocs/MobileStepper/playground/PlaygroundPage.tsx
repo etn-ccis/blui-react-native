@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Box, Stack } from '@mui/material';
 import {
     CodeSnippetFunction,
@@ -7,6 +7,7 @@ import {
     InputConfig,
     Playground,
     PreviewComponent,
+    usePlaygroundValues,
 } from '@brightlayer-ui/react-doc-components';
 import { MobileStepper, MobileStepperProps } from '@brightlayer-ui/react-native-components';
 import { Button } from 'react-native-paper';
@@ -119,6 +120,17 @@ const generateSnippet: CodeSnippetFunction = (data) =>
 
 const MobileStepperPreview: PreviewComponent = ({ data }) => {
     const { leftButton, rightButton, ...rest } = data as unknown as MobileStepperProps;
+    const totalSteps = rest.steps;
+    const [currentStep, setCurrentStep] = useState(0);
+
+    const updateStep = useCallback(
+        (delta: number): void => {
+            setCurrentStep(currentStep + delta);
+        },
+        [currentStep]
+    );
+
+    const { updateData } = usePlaygroundValues();
 
     return (
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
@@ -127,7 +139,11 @@ const MobileStepperPreview: PreviewComponent = ({ data }) => {
                 leftButton={
                     leftButton ? (
                         <Button
-                            onPress={() => ({})}
+                            disabled={currentStep === 0}
+                            onPress={(): void => {
+                                updateStep(-1);
+                                updateData('activeStep', currentStep - 1);
+                            }}
                             mode="outlined"
                             style={{ width: 100, alignSelf: 'flex-start', marginRight: 40 }}
                         >
@@ -138,7 +154,11 @@ const MobileStepperPreview: PreviewComponent = ({ data }) => {
                 rightButton={
                     rightButton ? (
                         <Button
-                            onPress={() => ({})}
+                            disabled={currentStep === totalSteps - 1}
+                            onPress={(): void => {
+                                updateStep(1);
+                                updateData('activeStep', currentStep + 1);
+                            }}
                             mode="contained"
                             style={{ width: 100, alignSelf: 'flex-end', marginLeft: 40 }}
                         >
