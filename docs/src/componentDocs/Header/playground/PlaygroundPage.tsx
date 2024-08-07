@@ -194,13 +194,7 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
     const getSearchConfig = (value: boolean): any => {
         switch (value) {
             case true:
-                return (
-                    <Header
-                        title={''}
-                        searchableConfig={{ onChangeText: () => { } }}
-                    >
-                    </Header>
-                );
+                return <Header title={''} searchableConfig={{ onChangeText: () => {} }}></Header>;
             default:
                 return undefined;
         }
@@ -260,16 +254,19 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         skip: ['icon', 'actionItems', 'backgroundImage', 'searchableConfig'],
     })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
-    ${data.actionItems && data.actionItems !== 'undefined'
+    ${
+        data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[
         { icon: { name: 'settings' } },
     ]}`
             : ''
-        }
+    }
     ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
-    ${data.searchableConfig && data.searchableConfig !== 'undefined'
-            ? `searchableConfig={{ onChangeText: () => {} }}` : ''
-        }
+    ${
+        data.searchableConfig && data.searchableConfig !== 'undefined'
+            ? `searchableConfig={{ onChangeText: () => {} }}`
+            : ''
+    }
   />
     `
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
