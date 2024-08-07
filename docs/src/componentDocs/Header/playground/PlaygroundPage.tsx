@@ -213,8 +213,6 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
             <Header
                 style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                 {...rest}
-                title={'Valley Forge'}
-                subtitle={'The Last Stand'}
                 icon={getIcon(icon as unknown as string)}
                 actionItems={getActionItems(actionItems as unknown as boolean)}
                 searchableConfig={getSearchConfig(searchableConfig as unknown as boolean)}
