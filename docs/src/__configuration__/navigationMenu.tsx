@@ -66,6 +66,7 @@ import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
 import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
 import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
+import { MobileStepperPlaygroundComponent } from '../componentDocs/MobileStepper/playground';
 import { InfoListItemPlaygroundComponent } from '../componentDocs/InfoListItem/playground';
 import { DrawerNavItemPlaygroundComponent } from '../componentDocs/DrawerNavItem/playground/PlaygroundPage';
 import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
@@ -482,6 +483,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <MobileStepperAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <MobileStepperPlaygroundComponent />,
                     },
                 ],
             },
