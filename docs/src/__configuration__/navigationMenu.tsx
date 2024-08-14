@@ -31,6 +31,7 @@ import SpacerExamples from '../componentDocs/Spacer/markdown/SpacerExamples.mdx'
 import UserMenuExamples from '../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
 
 // API Docs markdown
+import AutoCompleteAPIDocs from '../componentDocs/AutoComplete/markdown/AutoCompleteAPIDocs.mdx';
 import ChannelValueAPIDocs from '../componentDocs/ChannelValue/markdown/ChannelValueAPIDocs.mdx';
 import ChipAPIDocs from '../componentDocs/Chip/markdown/ChipAPIDocs.mdx';
 import CollapsibleHeaderAPIDocs from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutAPIDocs.mdx';
@@ -97,6 +98,18 @@ export const pageDefinitions: RouteConfig[] = [
                 title: 'All Components',
                 path: 'component-catalog',
                 element: <MarkdownPage title={'Components'} markdown={AllComponents} />,
+            },
+            {
+                title: 'Auto Complete',
+                path: 'auto-complete/',
+                element: <ComponentPreviewPage title={'Auto Complete'} />,
+                children: [
+                    {
+                        title: 'API Docs',
+                        path: 'api-docs',
+                        element: <AutoCompleteAPIDocs />,
+                    },
+                ],
             },
             {
                 title: 'Channel Value',
