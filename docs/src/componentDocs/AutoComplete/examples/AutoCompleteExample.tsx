@@ -21,7 +21,7 @@ export const AutoCompleteExample = (): JSX.Element => {
                     //     setChipValue(arr);
                     // }}
                     onDelete={(item) => {
-                        let arr = chipValue.filter((str) => str !== item);
+                        const arr = chipValue.filter((str) => str !== item);
                         setChipValue(arr);
                     }}
                     options={['Dubai', 'London', 'New York', 'Paris', 'Shanghai', 'Sydney', 'San Francisco']}
