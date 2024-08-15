@@ -5,25 +5,26 @@ import { DRAWER_WIDTH } from '../../../utils';
 import { ScrollView } from 'react-native';
 
 export const AutoCompleteExample = (): JSX.Element => {
-    const [chipValue, setChipValue] = useState(['New York']);
+    const [chipValue, setChipValue] = useState<string[]>(['New York']);
     return (
         <ExampleShowcase>
-            <ScrollView style={{ width: DRAWER_WIDTH, margin: 'auto' }}
+            <ScrollView
+                style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                 nestedScrollEnabled={true}
                 keyboardShouldPersistTaps={'handled'}
             >
                 <AutoComplete
                     label="Popular Cities"
                     helperText="Helper text"
-                    onChange={(arr) => {
-                        setChipValue(arr);
-                    }}
+                    value={chipValue}
+                    // onChange={(arr) => {
+                    //     setChipValue(arr);
+                    // }}
                     onDelete={(item) => {
                         let arr = chipValue.filter((str) => str !== item);
                         setChipValue(arr);
                     }}
-                    value={['New York']}
-                    options={['Dubai', 'London', 'Paris', 'Shanghai', 'Sydney', 'San Francisco']}
+                    options={['Dubai', 'London', 'New York', 'Paris', 'Shanghai', 'Sydney', 'San Francisco']}
                 />
             </ScrollView>
         </ExampleShowcase>

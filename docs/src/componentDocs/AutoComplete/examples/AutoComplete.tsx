@@ -6,6 +6,7 @@ import { AutoCompleteExample } from './AutoCompleteExample';
 const codeSnippet = `<AutoComplete
     label="Popular Cities"
     helperText="Helper text"
+    value={chipValue}
     onChange={(arr) => {
         setChipValue(arr);
     }}
@@ -13,8 +14,7 @@ const codeSnippet = `<AutoComplete
         let arr = chipValue.filter((str) => str !== item);
         setChipValue(arr);
     }}
-    value={['New York']}
-    options={['Dubai', 'London', 'Paris', 'Shanghai', 'Sydney', 'San Francisco']}
+    options={['Dubai', 'London', 'New York', 'Paris', 'Shanghai', 'Sydney', 'San Francisco']}
 />`;
 
 export const AutoComplete = (): JSX.Element => (
