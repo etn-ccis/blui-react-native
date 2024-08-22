@@ -59,25 +59,25 @@ const CollapsibleHeaderLayoutPreview: PreviewComponent = ({ data }) => {
             }}
             ref={containerRef}
         >
-            <CollapsibleHeaderLayout {...rest}
+            <CollapsibleHeaderLayout
+                {...rest}
                 style={{ width: DRAWER_WIDTH, margin: 'auto' }}
                 HeaderProps={{
                     title: 'Valley Forge',
                     subtitle: 'The Last Stand',
                     info: 'Text hidden on collapse',
                     icon: { name: 'menu' },
-                    onIconPress: () => { },
+                    onIconPress: () => {},
                     actionItems: [
                         {
                             icon: { name: 'more-vert' },
-                            onPress: (): void => { },
+                            onPress: (): void => {},
                         },
                     ],
                     expandable: true,
                     variant: 'dynamic',
                     collapsedHeight: collapsedHeight,
                     expandedHeight: expandedHeight,
-
                 }}
             >
                 <View style={{ height: 200 }}>{getBodyFiller()}</View>
@@ -86,7 +86,7 @@ const CollapsibleHeaderLayoutPreview: PreviewComponent = ({ data }) => {
     );
 };
 const generateSnippet: CodeSnippetFunction = (data) =>
-`<CollapsibleHeaderLayout
+    `<CollapsibleHeaderLayout
     HeaderProps={{
         title: 'Valley Forge',
         subtitle: 'The Last Stand',
@@ -101,9 +101,7 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         ],
         expandable: true,
         variant: 'dynamic',
-        ${
-            getPropsToString(getPropsMapping(data, inputConfig), {join: '\n\t', skip: ['icon', 'backgroundImage'],
-        })}
+        ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'backgroundImage'] })}
     }}
   />
     `
@@ -117,6 +115,10 @@ export const CollapsibleHeaderLayoutPlaygroundComponent = (): JSX.Element => (
             height: { xs: 'calc(100vh - 105px)', sm: 'calc(100vh - 113px)' },
         }}
     >
-        <Playground inputConfig={inputConfig} codeSnippet={generateSnippet} previewComponent={CollapsibleHeaderLayoutPreview} />
+        <Playground
+            inputConfig={inputConfig}
+            codeSnippet={generateSnippet}
+            previewComponent={CollapsibleHeaderLayoutPreview}
+        />
     </Box>
 );
