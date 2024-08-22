@@ -101,7 +101,10 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         ],
         expandable: true,
         variant: 'dynamic',
-        ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'backgroundImage'] })}
+        ${getPropsToString(getPropsMapping(data, inputConfig), {
+            join: '\n\t',
+            skip: [''],
+        })}
     }}
   />
     `
