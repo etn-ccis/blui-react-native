@@ -73,6 +73,7 @@ import { DrawerNavItemPlaygroundComponent } from '../componentDocs/DrawerNavItem
 import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
 import { UserMenuPlaygroundComponent } from '../componentDocs/UserMenu/playground';
 import { HeaderPlaygroundComponent } from '../componentDocs/Header/playground';
+import { CollapsibleHeaderLayoutPlaygroundComponent } from '../componentDocs/CollapsibleHeaderLayout/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -169,6 +170,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <CollapsibleHeaderAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <CollapsibleHeaderLayoutPlaygroundComponent />,
                     },
                 ],
             },
