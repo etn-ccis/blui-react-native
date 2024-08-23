@@ -6,7 +6,7 @@ import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { SxProps, Theme, useTheme } from '@mui/material/styles';
 import { TabPanel } from './TabPanel';
 
-const hidePlaygroundTabs = ['drawer-layout', 'spacer', 'drawer-body', 'drawer-subheader', 'drawer-footer'];
+const hidePlaygroundTabs = ['drawer-layout', 'spacer', 'drawer-body', 'drawer-subheader', 'drawer-footer', 'auto-complete'];
 
 function a11yProps(index: number): any {
     return {
