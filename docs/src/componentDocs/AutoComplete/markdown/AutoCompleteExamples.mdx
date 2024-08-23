@@ -4,15 +4,19 @@ import { AutoCompleteLimitTags } from '../examples/AutoCompleteLimitTags';
 
 ## Auto Complete
 
-The `<AutoComplete>` is a component that features a standard text input accompanied by a list of suggested options.
+The basic `<AutoComplete>` is a standard text input that shows a filtered list of available options as you type.
 
 <AutoComplete />
 
-The `<AutoComplete>` component with `allowCustomtag` prop to pass text to the chip.
+## Allowing Custom Tags
+
+If you would like to allow the user to enter their own custom values without being restricted to the suggested options, you can use the `allowCustomtag` prop.
 
 <AutoCompleteCustomTags />
 
-The `<AutoComplete>` component with `limitTags` prop to set the number of Chips to be shown.
+## Selection Limits
+
+You can adjust the limitations on the selections with the `limitTags` (sets how many options can be selected) and `limitCharacterCountTag` (limits how many characters can be used in a custom option) props.
 
 <AutoCompleteLimitTags />
 
