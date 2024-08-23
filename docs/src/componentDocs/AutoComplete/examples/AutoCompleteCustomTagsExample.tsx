@@ -17,7 +17,7 @@ export const AutoCompleteCustomTagsExample = (): JSX.Element => {
                     helperText="Helper text"
                     label="Popular Cities"
                     value={chipValue}
-                    options={['Dubai','London','New York','Paris']}
+                    options={['Dubai', 'London', 'New York', 'Paris']}
                     allowCustomtag={true}
                     onChange={(item = []) => {
                         setChipValue(item);
