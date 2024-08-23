@@ -32,6 +32,7 @@ import SpacerExamples from '../componentDocs/Spacer/markdown/SpacerExamples.mdx'
 import UserMenuExamples from '../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
 
 // API Docs markdown
+import AutoCompleteAPIDocs from '../componentDocs/AutoComplete/markdown/AutoCompleteAPIDocs.mdx';
 import ChannelValueAPIDocs from '../componentDocs/ChannelValue/markdown/ChannelValueAPIDocs.mdx';
 import ChipAPIDocs from '../componentDocs/Chip/markdown/ChipAPIDocs.mdx';
 import CollapsibleHeaderAPIDocs from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutAPIDocs.mdx';
@@ -108,6 +109,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'examples',
                         path: 'examples',
                         element: <AutoCompleteExample />,
+                    },
+                    {
+                        title: 'API Docs',
+                        path: 'api-docs',
+                        element: <AutoCompleteAPIDocs />,
                     },
                 ],
             },
