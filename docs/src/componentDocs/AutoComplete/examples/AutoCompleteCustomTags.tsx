@@ -1,22 +1,26 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
-import { AutoCompleteBasicExample } from './AutoCompleteBasicExample';
+import { AutoCompleteCustomTagsExample } from './AutoCompleteCustomTagsExample';
 
 const codeSnippet = `<AutoComplete
     helperText="Helper text"
     label="Popular Cities"
-    value={['New York']}
+    value={chipValue}
     options={['Dubai','London','New York','Paris']}
+    allowCustomtag={true}
+    onChange={(item = []) => {
+        setChipValue(item);
+    }}
 />`;
 
-export const AutoComplete = (): JSX.Element => (
+export const AutoCompleteCustomTags = (): JSX.Element => (
     <Box>
-        <AutoCompleteBasicExample />
+        <AutoCompleteCustomTagsExample />
         <CodeBlock code={codeSnippet} language="jsx" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/AutoComplete/examples/AutoCompleteBasicExample.tsx"
+            url="componentDocs/AutoComplete/examples/AutoCompleteCustomTagsExample.tsx"
         />
     </Box>
 );

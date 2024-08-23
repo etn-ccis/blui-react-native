@@ -4,8 +4,7 @@ import { AutoComplete } from '@brightlayer-ui/react-native-components';
 import { DRAWER_WIDTH } from '../../../utils';
 import { ScrollView } from 'react-native';
 
-export const AutoCompleteExample = (): JSX.Element => {
-    const [chipValue, setChipValue] = useState<string[]>(['New York']);
+export const AutoCompleteBasicExample = (): JSX.Element => {
     return (
         <ExampleShowcase>
             <ScrollView
@@ -14,17 +13,10 @@ export const AutoCompleteExample = (): JSX.Element => {
                 keyboardShouldPersistTaps={'handled'}
             >
                 <AutoComplete
-                    label="Popular Cities"
                     helperText="Helper text"
-                    value={chipValue}
-                    // onChange={(arr) => {
-                    //     setChipValue(arr);
-                    // }}
-                    onDelete={(item) => {
-                        const arr = chipValue.filter((str) => str !== item);
-                        setChipValue(arr);
-                    }}
-                    options={['Dubai', 'London', 'New York', 'Paris', 'Shanghai', 'Sydney', 'San Francisco']}
+                    label="Popular Cities"
+                    value={['New York']}
+                    options={['Dubai','London','New York','Paris']}
                 />
             </ScrollView>
         </ExampleShowcase>
