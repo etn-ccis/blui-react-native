@@ -14,7 +14,7 @@ export const AutoCompleteCustomTagsExample = (): JSX.Element => {
                 keyboardShouldPersistTaps={'handled'}
             >
                 <AutoComplete
-                    helperText="Helper text"
+                    helperText="Select a destination"
                     label="Popular Cities"
                     value={chipValue}
                     options={['Dubai', 'London', 'New York', 'Paris']}

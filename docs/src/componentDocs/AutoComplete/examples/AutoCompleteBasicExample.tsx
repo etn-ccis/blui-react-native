@@ -12,7 +12,7 @@ export const AutoCompleteBasicExample = (): JSX.Element => (
             keyboardShouldPersistTaps={'handled'}
         >
             <AutoComplete
-                helperText="Helper text"
+                helperText="Select a destination"
                 label="Popular Cities"
                 value={['New York']}
                 options={['Dubai', 'London', 'New York', 'Paris']}
