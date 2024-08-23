@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ExampleShowcase } from '../../../shared';
 import { AutoComplete } from '@brightlayer-ui/react-native-components';
 import { DRAWER_WIDTH } from '../../../utils';
 import { ScrollView } from 'react-native';
 
-export const AutoCompleteBasicExample = (): JSX.Element => {
-    return (
+export const AutoCompleteBasicExample = (): JSX.Element => (
         <ExampleShowcase>
             <ScrollView
                 style={{ width: DRAWER_WIDTH, margin: 'auto' }}
@@ -21,4 +20,3 @@ export const AutoCompleteBasicExample = (): JSX.Element => {
             </ScrollView>
         </ExampleShowcase>
     );
-};
