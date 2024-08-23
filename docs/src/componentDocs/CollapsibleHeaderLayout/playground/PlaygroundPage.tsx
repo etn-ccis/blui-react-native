@@ -26,7 +26,7 @@ const inputConfig: InputConfig = [
         minValue: 56,
         maxValue: 180,
         defaultValue: 56,
-        category: 'Optional Props',
+        category: 'Header props',
     },
     {
         id: 'expandedHeight',
@@ -38,7 +38,7 @@ const inputConfig: InputConfig = [
         minValue: 100,
         maxValue: 240,
         defaultValue: 200,
-        category: 'Optional Props',
+        category: 'Header props',
     },
 
     // Other Configuration
