@@ -1,27 +1,32 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
-import { AutoCompleteLimitTagsExample } from './AutoCompleteLimitTagsExample';
 
-const codeSnippet = ` <AutoComplete
-    helperText="Helper text"
-    label="Popular Cities"
-    value={chipValue}
-    options={['Dubai']}
-    allowCustomtag={true}
-    onChange={(item = []) => {
-        setChipValue(item);
-    }}
-    limitTags={3}
-/>`;
+const codeSnippet = `<ScrollView
+    nestedScrollEnabled={true}
+    keyboardShouldPersistTaps={'handled'}
+>
+    <AutoComplete
+        helperText="Select a destination"
+        label="Popular Cities"
+        value={chipValue}
+        options={['Dubai']}
+        onChange={(item = []) => {
+            setChipValue(item);
+        }}
+        onDelete={(item) => {
+            let arr = chipValue.filter((str) => str !== item);
+            setChipValue(arr);
+        }}
+        allowCustomtag={true}
+        limitTags={3}
+        limitCharacterCountTag={10}
+    />
+</ScrollView>`;
 
 export const AutoCompleteLimitTags = (): JSX.Element => (
     <Box>
-        <AutoCompleteLimitTagsExample />
         <CodeBlock code={codeSnippet} language="jsx" />
-        <CodeBlockActionButtonRow
-            copyText={codeSnippet}
-            url="componentDocs/AutoComplete/examples/AutoCompleteLimitTagsExample.tsx"
-        />
+        <CodeBlockActionButtonRow copyText={codeSnippet} />
     </Box>
 );

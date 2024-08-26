@@ -1,26 +1,30 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
-import { AutoCompleteCustomTagsExample } from './AutoCompleteCustomTagsExample';
 
-const codeSnippet = `<AutoComplete
-    helperText="Helper text"
-    label="Popular Cities"
-    value={chipValue}
-    options={['Dubai','London','New York','Paris']}
-    allowCustomtag={true}
-    onChange={(item = []) => {
-        setChipValue(item);
-    }}
-/>`;
+const codeSnippet = `<ScrollView
+    nestedScrollEnabled={true}
+    keyboardShouldPersistTaps={'handled'}
+>
+    <AutoComplete
+        helperText="Select a destination"
+        label="Popular Cities"
+        value={chipValue}
+        options={['Dubai', 'London', 'New York', 'Paris']}
+        onChange={(item = []) => {
+            setChipValue(item);
+        }}
+        onDelete={(item) => {
+            let arr = chipValue.filter((str) => str !== item);
+            setChipValue(arr);
+        }}
+        allowCustomtag={true}
+    />
+</ScrollView>`;
 
 export const AutoCompleteCustomTags = (): JSX.Element => (
     <Box>
-        <AutoCompleteCustomTagsExample />
         <CodeBlock code={codeSnippet} language="jsx" />
-        <CodeBlockActionButtonRow
-            copyText={codeSnippet}
-            url="componentDocs/AutoComplete/examples/AutoCompleteCustomTagsExample.tsx"
-        />
+        <CodeBlockActionButtonRow copyText={codeSnippet} />
     </Box>
 );
