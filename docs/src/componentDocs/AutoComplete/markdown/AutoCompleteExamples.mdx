@@ -1,0 +1,22 @@
+import { AutoComplete } from '../examples/AutoComplete';
+import { AutoCompleteCustomTags } from '../examples/AutoCompleteCustomTags';
+import { AutoCompleteLimitTags } from '../examples/AutoCompleteLimitTags';
+
+## Auto Complete
+
+The basic `<AutoComplete>` is a standard text input that shows a filtered list of available options as you type.
+
+<AutoComplete />
+
+## Allowing Custom Tags
+
+If you would like to allow the user to enter their own custom values without being restricted to the suggested options, you can use the `allowCustomtag` prop.
+
+<AutoCompleteCustomTags />
+
+## Selection Limits
+
+You can adjust the limitations on the selections with the `limitTags` (sets how many options can be selected) and `limitCharacterCountTag` (limits how many characters can be used in a custom option) props.
+
+<AutoCompleteLimitTags />
+

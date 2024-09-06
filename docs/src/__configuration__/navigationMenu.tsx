@@ -6,6 +6,7 @@ import { ComponentPreviewPage, HomePage, MarkdownPage } from '../components/page
 import AllComponents from '../componentDocs/allComponents.mdx';
 
 // Examples markdown
+import AutoCompleteExample from '../componentDocs/AutoComplete/markdown/AutoCompleteExamples.mdx';
 import ChannelValueExamples from '../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
 import ChipExamples from '../componentDocs/Chip/markdown/ChipExamples.mdx';
 import CollapsibleHeaderLayoutExamples from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutExamples.mdx';
@@ -105,6 +106,11 @@ export const pageDefinitions: RouteConfig[] = [
                 path: 'auto-complete/',
                 element: <ComponentPreviewPage title={'Auto Complete'} />,
                 children: [
+                    {
+                        title: 'examples',
+                        path: 'examples',
+                        element: <AutoCompleteExample />,
+                    },
                     {
                         title: 'API Docs',
                         path: 'api-docs',
