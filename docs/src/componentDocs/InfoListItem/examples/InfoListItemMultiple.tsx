@@ -13,7 +13,7 @@ export const InfoListItemMultiple = (): JSX.Element => (
         <CodeBlock code={codeSnippet} language="jsx" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/Header/examples/InfoListItemMultipleExample.tsx"
+            url="componentDocs/InfoListItem/examples/InfoListItemMultipleExample.tsx"
         />
     </Box>
 );

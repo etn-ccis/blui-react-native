@@ -23,7 +23,7 @@ export const InfoListItemContent = (): JSX.Element => (
         <CodeBlock code={codeSnippet} language="jsx" dataLine="6-11, 12" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/Header/examples/InfoListItemContentExample.tsx"
+            url="componentDocs/InfoListItem/examples/InfoListItemContentExample.tsx"
         />
     </Box>
 );
