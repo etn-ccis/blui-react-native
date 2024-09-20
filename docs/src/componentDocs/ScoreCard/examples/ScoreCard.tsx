@@ -17,6 +17,6 @@ export const ScoreCard = (): JSX.Element => (
     <Box>
         <ScoreCardExample />
         <CodeBlock code={codeSnippet} language="jsx" />
-        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/Header/examples/ScoreCardExample.tsx" />
+        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/ScoreCard/examples/ScoreCardExample.tsx" />
     </Box>
 );

@@ -13,6 +13,8 @@ const hidePlaygroundTabs = [
     'drawer-subheader',
     'drawer-footer',
     'auto-complete',
+    'overline',
+    'icons',
 ];
 
 function a11yProps(index: number): any {

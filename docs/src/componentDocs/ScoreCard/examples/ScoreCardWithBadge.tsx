@@ -41,7 +41,7 @@ export const ScoreCardWithBadge = (): JSX.Element => (
         <CodeBlock code={codeSnippet} language="jsx" dataLine="5-27" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/Header/examples/ScoreCardWithBadgeExample.tsx"
+            url="componentDocs/ScoreCard/examples/ScoreCardWithBadgeExample.tsx"
         />
     </Box>
 );

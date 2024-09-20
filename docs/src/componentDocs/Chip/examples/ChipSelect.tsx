@@ -10,6 +10,6 @@ export const ChipSelect = (): JSX.Element => (
     <Box>
         <ChipSelectExample />
         <CodeBlock code={codeSnippet} language={'jsx'} />
-        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/Chip/examples/ChipSelect.tsx" />
+        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/Chip/examples/ChipSelectExample.tsx" />
     </Box>
 );

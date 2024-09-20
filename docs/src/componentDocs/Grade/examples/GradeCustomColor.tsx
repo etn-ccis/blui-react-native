@@ -15,7 +15,7 @@ export const GradeCustomColor = (): JSX.Element => (
         <CodeBlock code={codeSnippet} language="jsx" dataLine="3-4" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/Grade/examples/GradeCustomColourExample.tsx"
+            url="componentDocs/Grade/examples/GradeCustomColorExample.tsx"
         />
     </Box>
 );
