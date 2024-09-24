@@ -20,6 +20,8 @@ import Box from '@mui/material/Box';
 import ArrowBack from '@mui/icons-material/ArrowBack';
 import topologyBgImage from '../assets/topology_40.png';
 import farmBgImage from '../assets/farm.jpg';
+import { IconSource } from '@brightlayer-ui/react-native-components/core/__types__';
+import { ImageSourcePropType } from 'react-native';
 
 export const getSnakeCase = (str: string): string => str.replace(/[A-Z]/g, '_$&').toLowerCase().slice(1);
 
@@ -102,13 +104,46 @@ export const getIcon = (icon: string, iconProps?: SvgIconProps): JSX.Element | u
             return undefined;
     }
 };
-
-export const getImage = (image: string): string | undefined => {
+export const getRNIcon = (value: string): IconSource | undefined => {
+    switch (value) {
+        case 'TrendingUp':
+            return { family: 'material', name: 'trending-up' };
+        case 'TrendingDown':
+            return { family: 'material', name: 'trending-down' };
+        case 'Schedule':
+            return { family: 'material', name: 'schedule' };
+        case 'Dashboard':
+            return { family: 'material', name: 'dashboard' };
+        case 'Devices':
+            return { family: 'material', name: 'devices' };
+        case 'undefined':
+        default:
+            return undefined;
+    }
+};
+export const getRNIconSnippet = (value: any): string | undefined => {
+    switch (value) {
+        case 'TrendingUp':
+            return JSON.stringify({ family: 'material', name: 'trending-up' });
+        case 'TrendingDown':
+            return JSON.stringify({ family: 'material', name: 'trending-down' });
+        case 'Schedule':
+            return JSON.stringify({ family: 'material', name: 'schedule' });
+        case 'Dashboard':
+            return JSON.stringify({ family: 'material', name: 'dashboard' });
+        case 'Devices':
+            return JSON.stringify({ family: 'material', name: 'devices' });
+        case 'undefined':
+        default:
+            return undefined;
+    }
+};
+export const getImage = (image: string): ImageSourcePropType | undefined => {
     switch (image.toLowerCase()) {
         case 'pattern':
-            return topologyBgImage;
+            return { uri: topologyBgImage };
         case 'farm':
-            return farmBgImage;
+            return { uri: farmBgImage };
         case 'undefined':
             return undefined;
         default:

@@ -31,7 +31,7 @@ export const CollapsibleHeaderLayout = (): JSX.Element => (
         <CodeBlock code={codeSnippet} language={'jsx'} />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/CollapsibleHeaderLayout/examples/CollapsibleHeaderLayoutExamples.tsx"
+            url="componentDocs/CollapsibleHeaderLayout/examples/CollapsibleHeaderLayoutExample.tsx"
         />
     </Box>
 );

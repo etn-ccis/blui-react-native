@@ -17,7 +17,7 @@ export const InfoListItemStatus = (): JSX.Element => (
         <CodeBlock code={codeSnippet} language="jsx" dataLine="6" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/Header/examples/InfoListItemStatusExample.tsx"
+            url="componentDocs/InfoListItem/examples/InfoListItemStatusExample.tsx"
         />
     </Box>
 );

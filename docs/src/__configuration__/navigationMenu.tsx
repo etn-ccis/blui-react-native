@@ -6,6 +6,7 @@ import { ComponentPreviewPage, HomePage, MarkdownPage } from '../components/page
 import AllComponents from '../componentDocs/allComponents.mdx';
 
 // Examples markdown
+import AutoCompleteExample from '../componentDocs/AutoComplete/markdown/AutoCompleteExamples.mdx';
 import ChannelValueExamples from '../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
 import ChipExamples from '../componentDocs/Chip/markdown/ChipExamples.mdx';
 import CollapsibleHeaderLayoutExamples from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutExamples.mdx';
@@ -31,6 +32,7 @@ import SpacerExamples from '../componentDocs/Spacer/markdown/SpacerExamples.mdx'
 import UserMenuExamples from '../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
 
 // API Docs markdown
+import AutoCompleteAPIDocs from '../componentDocs/AutoComplete/markdown/AutoCompleteAPIDocs.mdx';
 import ChannelValueAPIDocs from '../componentDocs/ChannelValue/markdown/ChannelValueAPIDocs.mdx';
 import ChipAPIDocs from '../componentDocs/Chip/markdown/ChipAPIDocs.mdx';
 import CollapsibleHeaderAPIDocs from '../componentDocs/CollapsibleHeaderLayout/markdown/CollapsibleHeaderLayoutAPIDocs.mdx';
@@ -57,8 +59,22 @@ import UserMenuAPIDocs from '../componentDocs/UserMenu/markdown/UserMenuAPIDocs.
 
 // Playground components
 import { ChannelValuePlaygroundComponent } from '../componentDocs/ChannelValue/playground';
+import { DrawerPlaygroundComponent } from '../componentDocs/Drawer/playground';
+import { DrawerHeaderPlaygroundComponent } from '../componentDocs/DrawerHeader/playground/PlaygroundPage';
+import { DrawerNavGroupPlaygroundComponent } from '../componentDocs/DrawerNavGroup/playground/PlaygroundPage';
+import { EmptyStatePlaygroundComponent } from '../componentDocs/EmptyState/playground';
+import { HeroPlaygroundComponent } from '../componentDocs/Hero/playground';
 import { GradePlaygroundComponent } from '../componentDocs/Grade/playground';
 import { ChipPlaygroundComponent } from '../componentDocs/Chip/playground/PlaygroundPage';
+import { ScoreCardPlaygroundComponent } from '../componentDocs/ScoreCard/playground';
+import { ListItemTagPlaygroundComponent } from '../componentDocs/ListItemTag/playground';
+import { MobileStepperPlaygroundComponent } from '../componentDocs/MobileStepper/playground';
+import { InfoListItemPlaygroundComponent } from '../componentDocs/InfoListItem/playground';
+import { DrawerNavItemPlaygroundComponent } from '../componentDocs/DrawerNavItem/playground/PlaygroundPage';
+import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playground';
+import { UserMenuPlaygroundComponent } from '../componentDocs/UserMenu/playground';
+import { HeaderPlaygroundComponent } from '../componentDocs/Header/playground';
+import { CollapsibleHeaderLayoutPlaygroundComponent } from '../componentDocs/CollapsibleHeaderLayout/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -84,6 +100,23 @@ export const pageDefinitions: RouteConfig[] = [
                 title: 'All Components',
                 path: 'component-catalog',
                 element: <MarkdownPage title={'Components'} markdown={AllComponents} />,
+            },
+            {
+                title: 'Auto Complete',
+                path: 'auto-complete/',
+                element: <ComponentPreviewPage title={'Auto Complete'} />,
+                children: [
+                    {
+                        title: 'examples',
+                        path: 'examples',
+                        element: <AutoCompleteExample />,
+                    },
+                    {
+                        title: 'API Docs',
+                        path: 'api-docs',
+                        element: <AutoCompleteAPIDocs />,
+                    },
+                ],
             },
             {
                 title: 'Channel Value',
@@ -144,6 +177,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <CollapsibleHeaderAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <CollapsibleHeaderLayoutPlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -165,6 +203,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 path: 'api-docs',
                                 element: <DrawerAPIDocs />,
                             },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerPlaygroundComponent />,
+                            },
                         ],
                     },
                     {
@@ -181,6 +224,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 title: 'API Docs',
                                 path: 'api-docs',
                                 element: <DrawerHeaderAPIDocs />,
+                            },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerHeaderPlaygroundComponent />,
                             },
                         ],
                     },
@@ -233,6 +281,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 path: 'api-docs',
                                 element: <DrawerNavGroupAPIDocs />,
                             },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerNavGroupPlaygroundComponent />,
+                            },
                         ],
                     },
                     {
@@ -249,6 +302,11 @@ export const pageDefinitions: RouteConfig[] = [
                                 title: 'API Docs',
                                 path: 'api-docs',
                                 element: <DrawerNavItemAPIDocs />,
+                            },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <DrawerNavItemPlaygroundComponent />,
                             },
                         ],
                     },
@@ -285,6 +343,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <EmptyStateAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <EmptyStatePlaygroundComponent />,
                     },
                 ],
             },
@@ -325,6 +388,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <HeaderAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <HeaderPlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -341,6 +409,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <HeroAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <HeroPlaygroundComponent />,
                     },
                 ],
             },
@@ -376,6 +449,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <IconSwitchAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <IconSwitchPlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -392,6 +470,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <InfoListItemAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <InfoListItemPlaygroundComponent />,
                     },
                 ],
             },
@@ -410,6 +493,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <ListItemTagAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ListItemTagPlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -426,6 +514,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <MobileStepperAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <MobileStepperPlaygroundComponent />,
                     },
                 ],
             },
@@ -461,6 +554,11 @@ export const pageDefinitions: RouteConfig[] = [
                         path: 'api-docs',
                         element: <ScoreCardAPIDocs />,
                     },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <ScoreCardPlaygroundComponent />,
+                    },
                 ],
             },
             {
@@ -494,6 +592,11 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'API Docs',
                         path: 'api-docs',
                         element: <UserMenuAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <UserMenuPlaygroundComponent />,
                     },
                 ],
             },

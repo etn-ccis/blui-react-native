@@ -38,7 +38,7 @@ export const InfoListItemClickable = (): JSX.Element => (
         <CodeBlock code={codeSnippet} language="jsx" dataLine="10, 20, 27" />
         <CodeBlockActionButtonRow
             copyText={codeSnippet}
-            url="componentDocs/Header/examples/InfoListItemClickableExample.tsx"
+            url="componentDocs/InfoListItem/examples/InfoListItemClickableExample.tsx"
         />
     </Box>
 );

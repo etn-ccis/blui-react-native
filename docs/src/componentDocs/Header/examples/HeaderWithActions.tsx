@@ -24,6 +24,9 @@ export const HeaderWithActions = (): JSX.Element => (
     <Box>
         <HeaderWithActionsExample />
         <CodeBlock code={codeSnippet} language="jsx" dataLine="4-14" />
-        <CodeBlockActionButtonRow copyText={codeSnippet} url="componentDocs/Header/examples/HeaderActionsExample.tsx" />
+        <CodeBlockActionButtonRow
+            copyText={codeSnippet}
+            url="componentDocs/Header/examples/HeaderWithActionsExample.tsx"
+        />
     </Box>
 );
