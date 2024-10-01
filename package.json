@@ -75,7 +75,7 @@
         "@nx/vite": "18.3.4",
         "@nx/web": "18.3.4",
         "@nx/webpack": "18.3.4",
-        "@nx/workspace": "18.3.4",
+        "@nx/workspace": "19.8.3",
         "@react-native-community/cli-platform-android": "12.3.0",
         "@react-native/babel-preset": "^0.73.18",
         "@react-native/metro-config": "^0.73.2",
