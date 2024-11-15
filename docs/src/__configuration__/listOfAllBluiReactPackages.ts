@@ -10,7 +10,6 @@ export const listOfAllBluiReactPackages = [
     '@brightlayer-ui/react-native-auth-workflow',
     '@brightlayer-ui/eslint-config',
     '@brightlayer-ui/prettier-config',
-    '@brightlayer-ui/cli',
     '@brightlayer-ui/react-native-template-authentication-typescript',
     '@brightlayer-ui/react-native-template-routing-typescript',
     '@brightlayer-ui/react-native-template-blank-typescript',
