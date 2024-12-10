@@ -5,6 +5,11 @@ import { ComponentPreviewPage, HomePage, MarkdownPage } from '../components/page
 // Site markdown docs
 import AllComponents from '../componentDocs/allComponents.mdx';
 
+//Getting started docs
+import Environment from '../componentDocs/GettingStarted/Environment.mdx'
+import ReactNative from '../componentDocs/GettingStarted/ReactNative.mdx'
+import ReactNativeTesting from '../componentDocs/GettingStarted/ReactNativeTesting.mdx'
+
 // Examples markdown
 import AutoCompleteExample from '../componentDocs/AutoComplete/markdown/AutoCompleteExamples.mdx';
 import ChannelValueExamples from '../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
@@ -90,6 +95,30 @@ export const pageDefinitions: RouteConfig[] = [
         path: '/',
         element: <HomePage />,
         hidden: true,
+    },
+    {
+        title: 'Getting Started',
+        path: '/getting-started/',
+        element: <Outlet />,
+        pages: [
+            {
+                title: 'Environment',
+                path: 'environment',
+                element: <MarkdownPage title={'Environment Setup'} markdown={Environment} />,
+            },
+            {
+                title: 'Start a BLUI Project',
+                path: 'start-a-project',
+                element: <MarkdownPage title={'Start a Brightlayer UI Project'} markdown={ReactNative} />,
+            },
+            {
+                title: 'Testing a BLUI Project',
+                path: 'test-a-project',
+                element: (
+                    <MarkdownPage title={'Testing Brightlayer UI Projects'} markdown={ReactNativeTesting} />
+                ),
+            },
+        ],
     },
     {
         title: 'Components',
