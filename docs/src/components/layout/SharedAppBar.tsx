@@ -22,7 +22,7 @@ import Box from '@mui/material/Box';
 import { toggleDrawer, changeSiteTheme } from '../../redux/appState';
 // import { changeDirection } from '../redux/appState';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
-import { useTheme } from '@mui/material/styles';
+import { useColorScheme, useTheme } from '@mui/material/styles';
 import { RootState } from '../../redux/store';
 import { SiteThemeType } from '../../__types__';
 // import { UIDirection } from '../__types__';
@@ -64,8 +64,11 @@ export const SharedAppBar: React.FC<SharedAppBarProps> = (props): JSX.Element =>
     // const siteDirection = useAppSelector((state: RootState) => state.appState.siteDirection);
     const linkToThemesOverview = `${import.meta.env.BASE_URL ? import.meta.env.BASE_URL : ''}/themes/overview`;
 
+    const { setMode } = useColorScheme();
+
     const onClickThemeSelectorItem = React.useCallback(
         (option: SiteThemeType): void => {
+            setMode(option);
             dispatch(
                 changeSiteTheme({
                     siteTheme: option,
