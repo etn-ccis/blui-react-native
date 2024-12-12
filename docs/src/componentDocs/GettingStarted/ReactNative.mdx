@@ -114,6 +114,22 @@ Brightlayer UI provides packages for code standards and style using ESLint and P
 
 > NOTE: the ESLint package is only available for TypeScript projects.
 
+# Testing Your Brightlayer UI React Native Applications
+
+Testing is a critical component of successfully building and releasing an application. Despite the value and importance of testing, it is common for teams to overlook or neglect it. Testing should be considered from the very beginning of development, not as an afterthought once development is complete. In general, every time you write a new piece of code or update existing code, you should also write a test that verifies that your code is correct.
+
+## Testing Frameworks
+
+The Brightlayer UI React Native template projects are pre-configured with Jest for testing framework. When creating a new React Native project from Brightlayer UI templates, a sample test is created in your project for you (test files are identified by the .test.tsx file extension). You can execute the tests by running the following in your terminal:
+
+<CodeBlock code={`npm test`} language={'sh'} />
+
+or
+
+<CodeBlock code={`yarn test`} language={'sh'} />
+
+This will run your tests and show the pass/fail output in the terminal.
+
 ## License Information
 
 [React Native](https://github.com/facebook/react-native/blob/main/LICENSE) is available under the MIT License.
