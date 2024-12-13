@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid2';
 import { componentCatalogLinks } from '../__configuration__/ComponentCatalogLinks';
 import { useNavigate } from 'react-router-dom';
 import { InfoCard } from './InfoCard';
@@ -10,7 +10,7 @@ export const ComponentCatalogGrids: React.FC = () => {
     return (
         <Grid container spacing={6} sx={{ mt: 4 }}>
             {componentCatalogLinks.map((link) => (
-                <Grid xs={12} sm={6} md={4} key={link.title}>
+                <Grid size={{xs: 12, sm: 6, md: 4}} key={link.title}>
                     <InfoCard
                         spacing={6}
                         source={link.image}
