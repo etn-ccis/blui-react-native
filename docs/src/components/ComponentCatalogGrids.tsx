@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Unstable_Grid2'
+import Grid from '@mui/material/Unstable_Grid2';
 import { componentCatalogLinks } from '../__configuration__/ComponentCatalogLinks';
 import { useNavigate } from 'react-router-dom';
 import { InfoCard } from './InfoCard';
