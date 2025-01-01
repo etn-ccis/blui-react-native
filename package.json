@@ -111,7 +111,7 @@
         "nx": "18.3.4",
         "prettier": "^2.6.2",
         "react-native-svg": "14.1.0",
-        "react-native-svg-transformer": "1.2.0",
+        "react-native-svg-transformer": "1.5.0",
         "react-native-web": "^0.19.12",
         "react-test-renderer": "18.2.0",
         "typescript": "~5.4.2",
