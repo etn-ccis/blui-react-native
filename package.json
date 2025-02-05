@@ -7,8 +7,7 @@
   "scripts": {
     "prepare": "husky",
     "prettier": "prettier '{examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --write",
-    "prettier:check": "prettier '{examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check",
-    "test": ""
+    "prettier:check": "prettier '{examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check"
   },
   "devDependencies": {
     "@brightlayer-ui/prettier-config": "^1.0.3",
