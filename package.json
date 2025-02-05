@@ -1,7 +1,20 @@
 {
-    "private": true,
-    "workspaces": [
-        "packages/*",
-        "examples/*"
-    ]
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "prettier": "prettier '{examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --write",
+    "prettier:check": "prettier '{examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check",
+    "test": ""
+  },
+  "devDependencies": {
+    "@brightlayer-ui/prettier-config": "^1.0.3",
+    "eslint-config-prettier": "^10.0.1",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2"
+  },
+  "prettier": "@brightlayer-ui/prettier-config"
 }

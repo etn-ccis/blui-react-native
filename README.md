@@ -1,6 +1,8 @@
 # blui-react-native
 
-This blui-react-native leverages the power of nx to manage a collection of Brightlayer UI React Native libraries and example projects within a single codebase. This approach, known as a monorepo, offers a structured and efficient way to develop and maintain multiple interconnected projects.
+![npm](https://img.shields.io/npm/v/@brightlayer-ui/react-native-components?label=%40brightlayer-ui%2Freact-native)
+
+This blui-react-native leverages the power of yarn workspaces to manage a collection of Brightlayer UI React Native libraries and example projects within a single codebase. This approach, known as a monorepo, offers a structured and efficient way to develop and maintain multiple interconnected projects. Yarn Workspaces is a feature that allows users to install dependencies from multiple package.json files in subfolders of a single root package.json file, all in one go.
 
 ## Getting Started
 
@@ -23,58 +25,14 @@ yarn install
 
 This will install all dependencies for the monorepo and its libraries.
 
-## Development Setup
+## Included Packages
 
-Build a Library:
+[blui-react-native-cli-templates](https://github.com/etn-ccis/blui-react-native-cli-templates)
 
-```shell
-npx nx build <library-name>
-```
+[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-progress-icons.svg?label=@brightlayer-ui/react-native-progress-icons&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-progress-icons)
 
-Run a Library Example:
+[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-auth-workflow.svg?label=@brightlayer-ui/react-native-auth-workflow&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-auth-workflow)
 
-```shell
-npx nx serve <example-name>
-```
+[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-components?label=%40brightlayer-ui%2Freact-native-components)](https://www.npmjs.com/package/@brightlayer-ui/react-native-components)
 
-Start the Development Server (for all examples):
-
-```shell
-npx nx serve all
-```
-
-Run Tests for a Library/Example:
-
-```shell
-npx nx test <library-name/example-name>
-```
-
-Run Tests for All Libraries:
-
-```shell
-npx nx test all
-```
-
-Run Lint for a Library/Example:
-
-```shell
-npx nx lint <library-name/example-name>
-```
-
-Run Tests for All Libraries:
-
-```shell
-npx nx lint all
-```
-
-Run Prettier for a Library/Example:
-
-```shell
-npx nx format:write <library-name/example-name>
-```
-
-Run Tests for All Libraries:
-
-```shell
-npx nx format:write all
-```
+[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-themes.svg?label=@brightlayer-ui/react-native-themes&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-themes)
