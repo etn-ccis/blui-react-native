@@ -1,19 +1,35 @@
 {
+  "name": "blui-react-native",
+  "version": "0.0.0",
+  "license": "MIT",
   "private": true,
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
   "scripts": {
+    "lint": "eslint \"**/**.{tsx,ts}\"",
+    "lint:fix": "eslint \"**/**.{tsx,ts}\" --fix",
     "prepare": "husky",
     "prettier": "prettier '{examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --write",
     "prettier:check": "prettier '{examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check"
   },
   "devDependencies": {
+    "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
     "@brightlayer-ui/prettier-config": "^1.0.3",
-    "eslint-config-prettier": "^10.0.1",
+    "@eslint/compat": "^1.2.6",
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.37.2",
+    "eslint-plugin-react-hooks": "5.0.0",
+    "globals": "^15.14.0",
     "husky": "^9.1.7",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "typescript-eslint": "^8.0.0"
   },
   "prettier": "@brightlayer-ui/prettier-config"
 }
