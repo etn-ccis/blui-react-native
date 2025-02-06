@@ -1,10 +1,22 @@
 # blui-react-native
 
-![npm](https://img.shields.io/npm/v/@brightlayer-ui/react-native-components?label=%40brightlayer-ui%2Freact-native)
+[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-progress-icons.svg?label=@brightlayer-ui/react-native-progress-icons&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-progress-icons) [![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-auth-workflow.svg?label=@brightlayer-ui/react-native-auth-workflow&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-auth-workflow) [![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-components?label=%40brightlayer-ui%2Freact-native-components)](https://www.npmjs.com/package/@brightlayer-ui/react-native-components) [![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-themes.svg?label=@brightlayer-ui/react-native-themes&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-themes)
 
-This blui-react-native leverages the power of yarn workspaces to manage a collection of Brightlayer UI React Native libraries and example projects within a single codebase. This approach, known as a monorepo, offers a structured and efficient way to develop and maintain multiple interconnected projects. Yarn Workspaces is a feature that allows users to install dependencies from multiple package.json files in subfolders of a single root package.json file, all in one go.
+This blui-react-native is the one stop repository for all of the Brightlayer UI React Native packages, showcase examples and consolidated dev docs projects within a single codebase. You need to clone this repo and do yarn install at root level, all of the projects dependencies will be installed together, then checkout to any of the project folder and run.
 
-## Getting Started
+## Included Packages
+
+- [auth-workflow](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/auth-workflow)
+
+- [cli-templates](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/cli-templates)
+
+- [components](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/components)
+
+- [progress-icons](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/progress-icons)
+
+- [themes](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/themes)
+
+## Contributing
 
 Prerequisites:
 
@@ -23,16 +35,16 @@ cd blui-react-native
 yarn install
 ```
 
-This will install all dependencies for the monorepo and its libraries.
+Run docs project:
 
-## Included Packages
+```shell
+cd docs
+yarn dev
+```
 
-[blui-react-native-cli-templates](https://github.com/etn-ccis/blui-react-native-cli-templates)
+Run example projects:
 
-[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-progress-icons.svg?label=@brightlayer-ui/react-native-progress-icons&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-progress-icons)
-
-[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-auth-workflow.svg?label=@brightlayer-ui/react-native-auth-workflow&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-auth-workflow)
-
-[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-components?label=%40brightlayer-ui%2Freact-native-components)](https://www.npmjs.com/package/@brightlayer-ui/react-native-components)
-
-[![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-themes.svg?label=@brightlayer-ui/react-native-themes&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-themes)
+```shell
+cd examples/showcase
+yarn start
+```
