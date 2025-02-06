@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+LC_ALL=C
+
+local_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+valid_branch_prefix="^(feature|bug|experiment|release)\/[a-z0-9-]+$"
+whitelist="(^dev$|^master$|)"
+
+message="There is something wrong with your branch name.
+Branch names in this project must adhere to this contract: $valid_branch_prefix.
+Your commit will be rejected. You should rename your branch to a valid name and try again.
+
+Rename the current branch by running git branch -m <newname>"
+
+if [[ ! $local_branch =~ $valid_branch_prefix ]]
+then
+    if [[ ! $local_branch =~ $whitelist ]]
+    then
+        echo -e "$message"
+        exit 1
+    fi
+fi
+
+exit 0
