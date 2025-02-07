@@ -6,15 +6,15 @@ This blui-react-native is the one stop repository for all of the Brightlayer UI 
 
 ## Included Packages
 
-- [auth-workflow](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/auth-workflow)
+- [auth-workflow](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-workflows)
 
-- [cli-templates](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/cli-templates)
+- [cli-templates](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-cli-templates)
 
-- [components](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/components)
+- [components](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-component-library)
 
-- [progress-icons](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/progress-icons)
+- [progress-icons](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-progress-icons)
 
-- [themes](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/themes)
+- [themes](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-themes)
 
 ## Contributing
 
