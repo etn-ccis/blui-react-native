@@ -1,1 +1,0 @@
-cd ./components && yarn && yarn prettier:check && yarn lint && yarn coverage & cd ..
