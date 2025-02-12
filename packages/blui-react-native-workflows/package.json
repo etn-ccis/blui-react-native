@@ -44,7 +44,7 @@
         "lint": "eslint \"**/**/*.{tsx,ts}\" && cd example && yarn lint",
         "prettier": "prettier \"**/**.{tsx,ts,js,json}\" --write",
         "prettier:check": "prettier \"**/**.{tsx,ts,js,json}\" --check",
-        "build": "bob build",
+        "build": "tsc --build",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies --exclude ./example -json LICENSES.json",
         "validate": "yarn prettier && yarn lint && yarn typescript && yarn test",
         "precommit": "yarn validate && yarn generate:licenses",
