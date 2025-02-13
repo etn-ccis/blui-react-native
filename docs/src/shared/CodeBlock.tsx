@@ -36,7 +36,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = (props): JSX.Element => {
                 style={{
                     margin: 0,
                     width: '100%',
-                    backgroundColor: Colors.black[800],
+                    // backgroundColor: Colors.black[800],
                     borderRadius: 4,
                 }}
             >

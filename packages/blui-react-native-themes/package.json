@@ -2,7 +2,7 @@
     "name": "@brightlayer-ui/react-native-themes",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "7.0.1",
+    "version": "7.0.2",
     "description": "React Native themes for Brightlayer UI applications",
     "main": "./dist/index.js",
     "scripts": {
