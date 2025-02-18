@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, fireEvent, render, RenderResult, screen } from '@testing-library/react-native';
 import { ErrorMessageBox } from 'src/components';
 import { Provider as PaperProvider } from 'react-native-paper';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 
 describe('ErrorMessageBox Test', () => {
     const onClose = jest.fn();

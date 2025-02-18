@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup, RenderResult, screen, fireEvent } from '@testing-library/react-native';
 import { ChangePasswordScreenBase } from '../../screens/ChangePasswordScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import '@testing-library/react-native/extend-expect';
+// // import '@testing-library/react-native/extend-expect';
 
 afterEach(cleanup);
 

@@ -10,7 +10,10 @@
         "noEmit": false,
         "strict": true,
         "skipLibCheck": true,
-        "target": "esnext"
+        "target": "esnext",
+        "paths": {
+        "react": [ "../../node_modules/@types/react" ]
+    }
     },
     "include": ["src"]
 }

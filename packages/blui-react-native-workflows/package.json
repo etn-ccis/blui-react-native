@@ -41,14 +41,8 @@
         "start:example-ipad": "yarn install:dependencies-ios && yarn build && yarn link:workflows && cd example && yarn ipad",
         "start:example-android": "yarn install:dependencies-android && yarn build && yarn link:workflows && cd example && yarn android",
         "test": "jest src --maxWorkers=2",
-        "lint": "eslint \"**/**/*.{tsx,ts}\" && cd example && yarn lint",
-        "prettier": "prettier \"**/**.{tsx,ts,js,json}\" --write",
-        "prettier:check": "prettier \"**/**.{tsx,ts,js,json}\" --check",
         "build": "yarn && tsc",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies --exclude ./example -json LICENSES.json",
-        "validate": "yarn prettier && yarn lint && yarn typescript && yarn test",
-        "precommit": "yarn validate && yarn generate:licenses",
-        "update:submodule": "git submodule update --remote",
         "typescript": "tsc --noEmit",
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
         "coverage": "yarn test --coverage --watchAll=false",
@@ -101,7 +95,7 @@
         "@react-navigation/native-stack": "^6.11.0",
         "@react-navigation/stack": "^6.3.20",
         "@testing-library/jest-dom": "^6.6.2",
-        "@testing-library/react-native": "^12.8.0",
+        "@testing-library/react-native": "^13.0.1",
         "@types/color": "^3.0.3",
         "@types/jest": "^29.0.3",
         "@types/lodash.clonedeep": "^4.5.6",
@@ -122,10 +116,10 @@
         "i18next": "^23.15.1",
         "identity-obj-proxy": "^3.0.0",
         "intl-pluralrules": "^2.0.1",
-        "jest": "^29.6.3",
+        "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.1.2",
         "jest-junit": "^10.0.0",
-        "jsdom": "^16.2.2",
+        "jsdom": "^22.1.0",
         "metro-react-native-babel-preset": "^0.77.0",
         "npm-license-crawler": "^0.2.1",
         "prettier": "2.8.8",
@@ -165,14 +159,12 @@
             "url": "http://localhost/"
         },
         "setupFiles": [
-            "./node_modules/react-native-gesture-handler/jestSetup.js",
+            "../../node_modules/react-native-gesture-handler/jestSetup.js",
             "./jestSetupFile.js"
         ],
-        "setupFilesAfterEnv": [
-            "<rootDir>setup-tests.js"
-        ],
         "moduleNameMapper": {
-            ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+            ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy",
+            "^react-native$": "<rootDir>/../../node_modules/react-native"
         },
         "moduleFileExtensions": [
             "ts",
@@ -186,11 +178,11 @@
             "<rootDir>"
         ],
         "modulePathIgnorePatterns": [
-            "<rootDir>/example/node_modules",
-            "<rootDir>/lib/"
+            "<rootDir>/node_modules",
+            "<rootDir>/../../node_modules"
         ],
         "transformIgnorePatterns": [
-            "node_modules/(?!(|react-native|@react-native/*|@brightlayer-ui/react-native-components|react-native-vector-icons|react-native-reanimated|react-native-animatable|react-native-iphone-x-helper|react-native-modal|react-native-safe-area-context|react-native-collapsible|@react-native/polyfills|react-native-status-bar-height|react-native-webview|react-native-webview|@okta/okta-react-native/*)/)"
+            "../../node_modules/(?!(|react-native|@react-native/*|@brightlayer-ui/react-native-components|react-native-vector-icons|react-native-reanimated|react-native-animatable|react-native-iphone-x-helper|react-native-modal|react-native-safe-area-context|react-native-collapsible|@react-native/polyfills|react-native-status-bar-height|react-native-webview|react-native-webview|@okta/okta-react-native/*)/)"
         ]
     },
     "@react-native-community/bob": {

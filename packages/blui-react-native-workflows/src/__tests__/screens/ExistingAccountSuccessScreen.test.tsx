@@ -1,6 +1,6 @@
 import React from 'react';
 import { RenderResult, cleanup, fireEvent, render, screen } from '@testing-library/react-native';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 import { ExistingAccountSuccessScreen, SuccessScreenProps } from '../../screens';
 import { registrationContextProviderProps } from '../../testUtils';
 import { RegistrationContextProvider, RegistrationWorkflowContextProvider } from '../../contexts';

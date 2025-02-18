@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 import { cleanup, render, screen, fireEvent, RenderResult, waitFor } from '@testing-library/react-native';
 import { CreatePasswordScreen, CreatePasswordScreenProps } from '../../screens';
 import { RegistrationContextProvider } from '../../contexts';

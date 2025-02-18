@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup, screen, fireEvent } from '@testing-library/react-native';
 import { ContactSupportScreenBase } from '../../screens/ContactScreen/ContactSupportScreenBase';
 import { Icon, Text, Provider as PaperProvider } from 'react-native-paper';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 
 afterEach(cleanup);
 

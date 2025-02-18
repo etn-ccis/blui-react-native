@@ -86,14 +86,14 @@ describe('spacer', () => {
                 flexGrow: 12,
                 color: 'red',
                 height: '30%',
-                width: '1rem',
+                width: '100%',
             },
         });
         const instance = TestRenderer.create(<Spacer styles={spacerStyles} style={{ borderRadius: 3 }} />).root;
         const spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props.style).toMatchObject([
             { flex: 1, height: 'auto', width: 'auto' },
-            { color: 'red', flexGrow: 12, height: '30%', width: '1rem' },
+            { color: 'red', flexGrow: 12, height: '30%', width: '100%' },
             { borderRadius: 3 },
         ]);
     });

@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import { VerifyCodeScreenBase } from '../../screens/VerifyCodeScreen';
 import { PaperProvider } from 'react-native-paper';

@@ -74,6 +74,9 @@
         "jestSetupFile.js",
         "lib/**/*",
         "docs/**/*",
-        "example/**/*"
+        "example/**/*",
+        "setup-tests.js",
+        "coverage/**/*",
+        "dist/**/*",
     ]
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 import { cleanup, render, fireEvent, screen } from '@testing-library/react-native';
 import { CreateAccountScreen } from '../../screens/CreateAccountScreen';
 import { RegistrationWorkflow } from 'src/components';

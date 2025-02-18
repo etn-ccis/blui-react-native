@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 import { RenderResult, cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import { ForgotPasswordScreenBase, ForgotPasswordScreenProps } from '../../screens';
 import { PaperProvider, Text } from 'react-native-paper';

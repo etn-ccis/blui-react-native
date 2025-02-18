@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render, RenderResult, screen } from '@testing-library/react-native';
 import { Provider as PaperProvider, Text } from 'react-native-paper';
-import '@testing-library/react-native/extend-expect';
+// import '@testing-library/react-native/extend-expect';
 import { ResetPasswordScreenBase, ResetPasswordScreenProps } from '../../screens';
 jest.useFakeTimers();
 
