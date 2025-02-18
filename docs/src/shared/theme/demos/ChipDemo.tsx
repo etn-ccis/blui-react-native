@@ -7,7 +7,6 @@ import { Avatar } from 'react-native-paper';
 export const ChipDemo: JSX.Element = (
     <TableContainer>
         <Table key={'button'}>
-            
             <TableBody>
                 <TableRow>
                     <TableCell>
@@ -15,7 +14,7 @@ export const ChipDemo: JSX.Element = (
                             avatar={<Avatar.Icon size={20} icon="account-circle" />}
                             style={{
                                 marginTop: 10,
-                                width:200,
+                                width: 200,
                             }}
                         >
                             Outlined chip
@@ -24,23 +23,20 @@ export const ChipDemo: JSX.Element = (
                         <Chip
                             avatar={<Avatar.Icon size={20} icon="account-circle" />}
                             disabled
-                           
                             style={{
                                 marginTop: 10,
-                                width:210,
+                                width: 210,
                             }}
                         >
                             Outlined Chip disabled
                         </Chip>
 
-                       
                         <Chip
                             mode="elevated"
                             disabled
-                           
                             style={{
                                 marginTop: 10,
-                                width:200,
+                                width: 200,
                             }}
                         >
                             Elevated Chip disabled
@@ -48,37 +44,23 @@ export const ChipDemo: JSX.Element = (
                     </TableCell>
 
                     <TableCell>
-                        {/* <Chip
-                            icon={{ name: 'info' }}
-                            avatar={<Avatar.Icon size={40} icon="account-circle" />}
-                            // mode={outlined}
-                        >
-                            label
-                        </Chip> */}
-
-                        {/* <Chip selected showSelectedCheck mode="outlined" style={{ marginTop: 10, width:200, }}>
-                            Selected Chip
-                        </Chip> */}
-                         <Chip
+                        <Chip
                             mode="elevated"
                             style={{
                                 marginTop: 10,
-                                width:200,
+                                width: 200,
                             }}
                         >
                             Elevated Chip
                         </Chip>
-                        <Chip selected showSelectedCheck mode="elevated" style={{ marginTop: 10,width:200,}}>
+                        <Chip selected showSelectedCheck mode="elevated" style={{ marginTop: 10, width: 200 }}>
                             Selected Chip
                         </Chip>
-                        <Chip selected showSelectedCheck disabled style={{ marginTop: 10 ,}}>
+                        <Chip selected showSelectedCheck disabled style={{ marginTop: 10 }}>
                             Selected Chip disabled
                         </Chip>
                     </TableCell>
                 </TableRow>
-                
-                
-                
             </TableBody>
         </Table>
     </TableContainer>
