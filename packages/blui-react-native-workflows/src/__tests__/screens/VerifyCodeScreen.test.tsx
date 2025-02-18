@@ -1,5 +1,5 @@
 import React from 'react';
-// import '@testing-library/react-native/extend-expect';
+
 import { RenderResult, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { RegistrationWorkflow } from 'src/components';
 import { RegistrationContextProvider } from 'src/contexts';

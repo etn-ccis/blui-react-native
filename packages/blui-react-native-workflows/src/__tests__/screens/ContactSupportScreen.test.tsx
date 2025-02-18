@@ -1,5 +1,5 @@
 import React from 'react';
-// import '@testing-library/react-native/extend-expect';
+
 import { cleanup, render, screen, RenderResult, fireEvent } from '@testing-library/react-native';
 import { AuthContextProvider } from '../../contexts';
 import { authContextProviderProps } from '../../testUtils';

@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-// import '@testing-library/react-native/extend-expect';
+
 import { cleanup, render, fireEvent, screen, waitFor } from '@testing-library/react-native';
 import renderer from 'react-test-renderer';
 import { EulaScreen } from '../../screens/EulaScreen';

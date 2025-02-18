@@ -1,5 +1,5 @@
 import React from 'react';
-// import '@testing-library/react-native/extend-expect';
+
 import { cleanup, render, screen, RenderResult, fireEvent, waitFor } from '@testing-library/react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { RegistrationContextProvider } from '../../contexts';

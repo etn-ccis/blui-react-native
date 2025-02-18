@@ -1,6 +1,6 @@
 import React from 'react';
 // import '@testing-library/jest-dom';
-// import '@testing-library/react-native/extend-expect';
+
 import { cleanup, render, fireEvent, screen } from '@testing-library/react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { CreateAccountScreenBase } from '../../screens/CreateAccountScreen';

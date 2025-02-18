@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-// import '@testing-library/react-native/extend-expect';
+
 import { CreatePasswordScreenBase } from '../../screens';
 import { render, screen } from '@testing-library/react-native';
 import { PaperProvider } from 'react-native-paper';

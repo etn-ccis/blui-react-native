@@ -4,7 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthContextProvider } from '../../contexts';
 import { authContextProviderProps } from '../../testUtils';
 import { ChangePasswordScreen, ChangePasswordScreenProps } from '../../screens/ChangePasswordScreen';
-// import '@testing-library/react-native/extend-expect';
+
 
 const passwordRequirements = [
     {

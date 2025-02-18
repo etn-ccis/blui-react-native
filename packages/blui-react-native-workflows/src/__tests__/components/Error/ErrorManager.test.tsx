@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, render, RenderResult, screen } from '@testing-library/react-native';
 import { ErrorManager, ErrorManagerProps } from 'src/components';
 import { Provider as PaperProvider } from 'react-native-paper';
-// import '@testing-library/react-native/extend-expect';
+
 
 describe('ErrorManager Test', () => {
     const onClose = jest.fn();
