@@ -8,9 +8,9 @@ import AllComponents from '../componentDocs/allComponents.mdx';
 //Getting started docs
 import Environment from '../componentDocs/GettingStarted/Environment.mdx';
 import ReactNative from '../componentDocs/GettingStarted/ReactNative.mdx';
-import overview from '../markdownDocs/overview.mdx';
-import usage from '../markdownDocs/usage.mdx';
-import customization from '../markdownDocs/customization.mdx';
+import Overview from '../markdownDocs/Overview.mdx';
+import Usage from '../markdownDocs/Usage.mdx';
+import Customization from '../markdownDocs/Customization.mdx';
 
 // Examples markdown
 import AutoCompleteExample from '../componentDocs/AutoComplete/markdown/AutoCompleteExamples.mdx';
@@ -634,17 +634,17 @@ export const pageDefinitions: RouteConfig[] = [
             {
                 title: 'Overview',
                 path: 'overview',
-                element: <MarkdownPage title={'Theme Overview'} markdown={overview} />,
+                element: <MarkdownPage title={'Theme Overview'} markdown={Overview} />,
             },
             {
                 title: 'Usage',
-                path: 'Usage',
-                element: <MarkdownPage title={'Theme Usage'} markdown={usage} />,
+                path: 'usage',
+                element: <MarkdownPage title={'Theme Usage'} markdown={Usage} />,
             },
             {
                 title: 'Customization',
                 path: 'customization',
-                element: <MarkdownPage title={'Theme Customization'} markdown={customization} />,
+                element: <MarkdownPage title={'Theme Customization'} markdown={Customization} />,
             },
         ],
     },
