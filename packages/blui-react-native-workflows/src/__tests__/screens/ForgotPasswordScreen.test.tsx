@@ -1,5 +1,5 @@
 import React from 'react';
-import '@testing-library/react-native/extend-expect';
+
 import { ForgotPasswordScreen, ForgotPasswordScreenProps } from 'src/screens';
 import { RenderResult, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { AuthContextProvider } from '../../contexts';

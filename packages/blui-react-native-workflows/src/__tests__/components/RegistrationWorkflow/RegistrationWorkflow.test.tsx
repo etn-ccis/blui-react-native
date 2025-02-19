@@ -16,7 +16,7 @@ import { registrationContextProviderProps } from '../../../testUtils';
 import { Button, Text, Provider as PaperProvider, TextInput } from 'react-native-paper';
 import { View } from 'react-native';
 import { RegistrationWorkflowProps } from 'src/components/RegistrationWorkflow/types';
-import '@testing-library/react-native/extend-expect';
+
 
 afterEach(cleanup);
 

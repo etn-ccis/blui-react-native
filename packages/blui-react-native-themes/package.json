@@ -1,5 +1,5 @@
 {
-    "name": "@brightlayer-ui/react-native-themes-alpha.0",
+    "name": "@brightlayer-ui/react-native-themes",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
     "version": "7.0.2",
@@ -27,10 +27,7 @@
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
         "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-themes",
         "update:submodule": "git submodule update --remote",
-        "prettier": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
-        "prettier:check": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check",
-        "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json",
-        "precommit": "yarn build && yarn generate:licenses && yarn prettier && yarn test"
+        "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json"
     },
     "repository": {
         "type": "git",
@@ -59,7 +56,7 @@
         "npm-license-crawler": "^0.2.1",
         "prettier": "^3.0.0",
         "react": "^18.2.0",
-        "react-native": "~0.74.1",
+        "react-native": "0.75.2",
         "react-native-paper": "^5.0.0",
         "typescript": "^5.0.4"
     },

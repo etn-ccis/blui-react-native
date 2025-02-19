@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, fireEvent, render, RenderResult, screen } from '@testing-library/react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import '@testing-library/react-native/extend-expect';
+
 import { RegistrationSuccessScreen, SuccessScreenProps } from '../../screens';
 import { registrationContextProviderProps } from '../../testUtils';
 import { RegistrationContextProvider, RegistrationWorkflowContextProvider } from '../../contexts';

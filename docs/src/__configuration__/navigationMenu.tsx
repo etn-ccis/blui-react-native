@@ -8,6 +8,9 @@ import AllComponents from '../componentDocs/allComponents.mdx';
 //Getting started docs
 import Environment from '../componentDocs/GettingStarted/Environment.mdx';
 import ReactNative from '../componentDocs/GettingStarted/ReactNative.mdx';
+import Overview from '../markdownDocs/Overview.mdx';
+import Usage from '../markdownDocs/Usage.mdx';
+import Customization from '../markdownDocs/Customization.mdx';
 
 // Examples markdown
 import AutoCompleteExample from '../componentDocs/AutoComplete/markdown/AutoCompleteExamples.mdx';
@@ -620,6 +623,28 @@ export const pageDefinitions: RouteConfig[] = [
                         element: <UserMenuPlaygroundComponent />,
                     },
                 ],
+            },
+        ],
+    },
+    {
+        title: 'Themes',
+        path: '/themes/',
+        element: <Outlet />,
+        pages: [
+            {
+                title: 'Overview',
+                path: 'overview',
+                element: <MarkdownPage title={'Theme Overview'} markdown={Overview} />,
+            },
+            {
+                title: 'Usage',
+                path: 'usage',
+                element: <MarkdownPage title={'Theme Usage'} markdown={Usage} />,
+            },
+            {
+                title: 'Customization',
+                path: 'customization',
+                element: <MarkdownPage title={'Theme Customization'} markdown={Customization} />,
             },
         ],
     },

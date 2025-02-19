@@ -1,5 +1,5 @@
 import React from 'react';
-import '@testing-library/react-native/extend-expect';
+
 import { ResetPasswordScreen, ResetPasswordScreenProps } from '../../screens/ResetPasswordScreen';
 import { RenderResult, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { AuthContextProvider } from '../../contexts';
