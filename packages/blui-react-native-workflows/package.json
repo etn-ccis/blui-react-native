@@ -1,0 +1,220 @@
+{
+    "name": "@brightlayer-ui/react-native-auth-workflow",
+    "description": "Re-usable workflow components for Authentication and Registration within Eaton applications.",
+    "version": "7.0.1",
+    "license": "BSD-3-Clause",
+    "author": {
+        "name": "Brightlayer UI",
+        "email": "brightlayer-ui@eaton.com"
+    },
+    "homepage": "https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow"
+    },
+    "keywords": [
+        "Brightlayer UI",
+        "Auth",
+        "Authentication",
+        "Eaton",
+        "React Native",
+        "Workflow"
+    ],
+    "prettier": "@brightlayer-ui/prettier-config",
+    "main": "lib/commonjs/index.js",
+    "module": "lib/module/index.js",
+    "types": "lib/typescript/src/index.d.ts",
+    "files": [
+        "lib",
+        "CHANGELOG.md",
+        "LICENSES.json",
+        "LICENSE.md",
+        "package.json"
+    ],
+    "scripts": {
+        "install:dependencies": "yarn install:dependencies-ios",
+        "install:dependencies-ios": "yarn && cd example && yarn && cd ios && pod install",
+        "install:dependencies-android": "yarn && cd example && yarn",
+        "link:workflows": "bash ./scripts/linkWorkflow.sh",
+        "start:example": "yarn start:example-ios",
+        "start:example-ios": "yarn install:dependencies-ios && yarn build && yarn link:workflows && cd example && yarn ios",
+        "start:example-ipad": "yarn install:dependencies-ios && yarn build && yarn link:workflows && cd example && yarn ipad",
+        "start:example-android": "yarn install:dependencies-android && yarn build && yarn link:workflows && cd example && yarn android",
+        "test": "jest src --maxWorkers=2",
+        "build": "yarn && tsc",
+        "generate:licenses": "npm-license-crawler -onlyDirectDependencies --exclude ./example -json LICENSES.json",
+        "typescript": "tsc --noEmit",
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "coverage": "yarn test --coverage --watchAll=false",
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-auth-workflow",
+        "prepare": "cd .. && husky install login-workflow/.husky"
+    },
+    "dependencies": {
+        "color": "^4.2.3",
+        "lodash.clonedeep": "^4.5.0"
+    },
+    "peerDependencies": {
+        "@brightlayer-ui/react-native-components": "^8.0.4",
+        "@brightlayer-ui/react-native-vector-icons": "^2.0.0",
+        "@okta/okta-react-native": "^2.12.0",
+        "i18next": "^23.11.5",
+        "react": "18.3.1",
+        "react-i18next": "^15.0.2",
+        "react-native": "0.75.2",
+        "react-native-gesture-handler": "^2.19.0",
+        "react-native-keyboard-aware-scroll-view": "^0.9.5",
+        "react-native-pager-view": "^6.4.1",
+        "react-native-paper": "^5.12.5",
+        "react-native-reanimated": "^3.15.2",
+        "react-native-safe-area-context": "^4.11.0",
+        "react-native-vector-icons": "^10.2.0",
+        "react-native-webview": "^13.12.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.20.0",
+        "@babel/preset-env": "^7.20.0",
+        "@babel/preset-react": "^7.23.3",
+        "@babel/runtime": "^7.20.0",
+        "@brightlayer-ui/colors": "^4.0.0",
+        "@brightlayer-ui/eslint-config": "^3.0.1",
+        "@brightlayer-ui/icons-svg": "^1.14.0",
+        "@brightlayer-ui/prettier-config": "^1.0.3",
+        "@brightlayer-ui/react-native-auth-workflow": "7.0.0-beta.0",
+        "@brightlayer-ui/react-native-components": "^8.0.4",
+        "@brightlayer-ui/react-native-themes": "^7.0.1",
+        "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
+        "@okta/okta-react-native": "^2.12.0",
+        "@react-native-async-storage/async-storage": "^2.0.0",
+        "@react-native-community/bob": "^0.10.0",
+        "@react-native-community/masked-view": "^0.1.10",
+        "@react-native/eslint-config": "0.75.2",
+        "@react-native/metro-config": "0.76.3",
+        "@react-native/typescript-config": "0.75.2",
+        "@react-navigation/drawer": "^6.6.6",
+        "@react-navigation/native": "^6.1.18",
+        "@react-navigation/native-stack": "^6.11.0",
+        "@react-navigation/stack": "^6.3.20",
+        "@testing-library/jest-dom": "^6.6.2",
+        "@testing-library/react-native": "^13.0.1",
+        "@types/color": "^3.0.3",
+        "@types/jest": "^29.0.3",
+        "@types/lodash.clonedeep": "^4.5.6",
+        "@types/node": "^18.7.16",
+        "@types/react": "^18.2.6",
+        "@types/react-native": "^0.70.0",
+        "@types/react-native-vector-icons": "^6.4.12",
+        "@types/react-test-renderer": "^18.0.0",
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "babel-jest": "^29.6.3",
+        "date-fns": "^3.6.0",
+        "eslint": "^8.19.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-react": "^7.31.0",
+        "eslint-plugin-react-hooks": "^4.0.0",
+        "husky": "^9.1.7",
+        "i18next": "^23.15.1",
+        "identity-obj-proxy": "^3.0.0",
+        "intl-pluralrules": "^2.0.1",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.1.2",
+        "jest-junit": "^10.0.0",
+        "jsdom": "^22.1.0",
+        "metro-react-native-babel-preset": "^0.77.0",
+        "npm-license-crawler": "^0.2.1",
+        "prettier": "2.8.8",
+        "react": "18.3.1",
+        "react-i18next": "^15.0.2",
+        "react-native": "0.75.2",
+        "react-native-dotenv": "^3.4.11",
+        "react-native-gesture-handler": "^2.19.0",
+        "react-native-keyboard-aware-scroll-view": "^0.9.5",
+        "react-native-modal": "^12.0.2",
+        "react-native-pager-view": "^6.4.1",
+        "react-native-paper": "^5.12.5",
+        "react-native-reanimated": "^3.15.2",
+        "react-native-restart": "^0.0.27",
+        "react-native-safe-area-context": "^4.11.0",
+        "react-native-screens": "^3.34.0",
+        "react-native-select-dropdown": "^3.4.0",
+        "react-native-svg": "^15.7.1",
+        "react-native-svg-transformer": "^1.5.0",
+        "react-native-vector-icons": "^10.2.0",
+        "react-native-webview": "^13.12.2",
+        "react-test-renderer": "18.3.1",
+        "typescript": "5.0.4"
+    },
+    "jest": {
+        "coverageDirectory": "./coverage/",
+        "collectCoverage": true,
+        "coverageThreshold": {
+            "global": {
+                "lines": 80
+            }
+        },
+        "testEnvironment": "node",
+        "preset": "react-native",
+        "verbose": true,
+        "testEnvironmentOptions": {
+            "url": "http://localhost/"
+        },
+        "setupFiles": [
+            "../../node_modules/react-native-gesture-handler/jestSetup.js",
+            "./jestSetupFile.js"
+        ],
+        "moduleNameMapper": {
+            ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy",
+            "^react-native$": "<rootDir>/../../node_modules/react-native"
+        },
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ],
+        "modulePaths": [
+            "<rootDir>"
+        ],
+        "modulePathIgnorePatterns": [
+            "<rootDir>/node_modules",
+            "<rootDir>/../../node_modules"
+        ],
+        "transformIgnorePatterns": [
+            "../../node_modules/(?!(|react-native|@react-native/*|@brightlayer-ui/react-native-components|react-native-vector-icons|react-native-reanimated|react-native-animatable|react-native-iphone-x-helper|react-native-modal|react-native-safe-area-context|react-native-collapsible|@react-native/polyfills|react-native-status-bar-height|react-native-webview|react-native-webview|@okta/okta-react-native/*)/)"
+        ]
+    },
+    "@react-native-community/bob": {
+        "source": "src",
+        "output": "lib",
+        "targets": [
+            "commonjs",
+            "module",
+            "typescript"
+        ],
+        "files": [
+            "src/"
+        ]
+    },
+    "eslintIgnore": [
+        "node_modules/",
+        "lib/"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-push": "yarn lint && yarn typescript && yarn test"
+        }
+    },
+    "jest-junit": {
+        "reporters": [
+            "jest-junit"
+        ],
+        "output": "./junit.xml",
+        "classNameTemplate": "{classname}-{title}",
+        "titleTemplate": "{classname}-{title}",
+        "ancestorSeparator": " › ",
+        "suiteNameTemplate": "{filepath}",
+        "usePathForSuiteName": "true"
+    }
+}
