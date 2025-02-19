@@ -1,1 +1,1 @@
-yarn && yarn prettier:check && yarn lint
+pnpm install && pnpm run prettier:check && pnpm run lint
