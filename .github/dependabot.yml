@@ -1,7 +1,10 @@
 version: 2
 updates:
     - package-ecosystem: 'npm'
-      directory: '/'
+      directories:
+      - "/docs"
+      - "/examples/*"
+      - "/packages/*"
       schedule:
           interval: 'monthly'
           day: 'wednesday'

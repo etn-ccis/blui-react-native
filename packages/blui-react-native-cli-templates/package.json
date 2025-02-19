@@ -4,11 +4,6 @@
     "private": true,
     "scripts": {
         "test": "jest",
-        "lint": "eslint \"**/**.{ts,tsx}\"",
-        "lint:fix": "eslint \"**/**.{ts,tsx}\" --fix",
-        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
-        "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check",
-        "precommit": "cd demo && bash ./scripts/buildBlankTypescript.sh && cd .. && yarn lint && yarn prettier && yarn generate:licenses",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json"
     },
     "dependencies": {
