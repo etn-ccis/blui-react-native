@@ -55,11 +55,11 @@ jobs:
             - run: yarn --immutable
             - run: yarn docs-build --base=${{env.base-href}} && touch ./dist/docs/.nojekyll
             - name: Save dist
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: docs
                   if-no-files-found: error
-                  path: dist/docs
+                  path: docs/dist/docs
 
     deploy_rn_docs_dev:
         runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             - name: Download build
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v4
               with:
                   name: docs
                   path: dist/docs
@@ -96,7 +96,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             - name: Download build
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v4
               with:
                   name: docs
                   path: dist/docs
