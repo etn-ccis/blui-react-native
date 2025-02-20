@@ -51,7 +51,6 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn install --immutable
-              working-directory: components
             - run: yarn coverage
               working-directory: packages/blui-react-native-component-library
             - name: Upload to Codecov
