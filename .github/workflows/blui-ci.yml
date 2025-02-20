@@ -40,7 +40,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [18.x]
+                node-version: [20.x]
 
         steps:
             - name: Checkout
@@ -68,7 +68,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [18.x]
+                node-version: [20.x]
 
         steps:
             - name: Checkout
@@ -93,7 +93,7 @@ jobs:
             
         strategy:
             matrix:
-                node-version: [18.x]
+                node-version: [20.x]
         steps:
             - uses: actions/checkout@v4
             - name: Use Node.js ${{ matrix.node-version }}
@@ -107,9 +107,9 @@ jobs:
             - name: Save build
               uses: actions/upload-artifact@v4
               with:
-                  name: dist
+                  name: theme-dist
                   if-no-files-found: error
-                  path: packages/blui-react-native-themes/dist
+                  path: packages/blui-react-native-themes/theme-dist
             - run: yarn test
               working-directory: packages/blui-react-native-themes
 
