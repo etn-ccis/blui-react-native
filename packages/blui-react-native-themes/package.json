@@ -1,0 +1,72 @@
+{
+    "name": "@brightlayer-ui/react-native-themes",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
+    "license": "BSD-3-Clause",
+    "version": "7.0.2",
+    "description": "React Native themes for Brightlayer UI applications",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "initialize": "bash scripts/initializeSubmodule.sh",
+        "install:showcase-ios": "cd demos/showcase && yarn && cd ios && pod install && cd ../../.. && yarn link:themes",
+        "install:showcase-android": "cd demos/showcase && yarn && cd ../.. && yarn link:themes",
+        "start": "yarn start:showcase",
+        "start:showcase": "yarn initialize && yarn start:showcase-ios",
+        "start:showcase-ios": "yarn initialize && yarn install:showcase-ios && cd demos/showcase && yarn ios",
+        "start:showcase-android": "yarn initialize && yarn install:showcase-android && cd demos/showcase && yarn android",
+        "build": "yarn && tsc",
+        "link:themes": "bash ./scripts/linkThemes.sh",
+        "test": "bash ./scripts/buildTest.sh",
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-themes",
+        "update:submodule": "git submodule update --remote",
+        "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/etn-ccis/blui-react-native-themes.git"
+    },
+    "bugs": {
+        "url": "https://github.com/etn-ccis/blui-react-native-themes/issues"
+    },
+    "homepage": "https://github.com/etn-ccis/blui-react-native-themes/tree/master",
+    "keywords": [
+        "Brightlayer UI",
+        "themes",
+        "Eaton",
+        "React Native"
+    ],
+    "dependencies": {
+        "@brightlayer-ui/colors": "4.0.0",
+        "color": "^4.2.3"
+    },
+    "peerDependencies": {
+        "react-native-paper": "^5.0.0"
+    },
+    "devDependencies": {
+        "@brightlayer-ui/prettier-config": "^1.0.3",
+        "@types/color": "^4.2.0",
+        "npm-license-crawler": "^0.2.1",
+        "prettier": "^3.0.0",
+        "react": "^18.2.0",
+        "react-native": "0.75.2",
+        "react-native-paper": "^5.0.0",
+        "typescript": "^5.0.4"
+    },
+    "prettier": "@brightlayer-ui/prettier-config",
+    "files": [
+        "package.json",
+        "README.md",
+        "LICENSE",
+        "LICENSES.json",
+        "CHANGELOG.md",
+        "/dist"
+    ]
+}

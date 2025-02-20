@@ -1,7 +1,6 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import mdx from '@mdx-js/rollup';
 import remarkGfm from 'remark-gfm';
 import reactNativeWeb from 'vite-plugin-react-native-web';
@@ -24,7 +23,6 @@ export default defineConfig({
 
     plugins: [
         react(),
-        nxViteTsPaths(),
         mdx({
             /* jsxImportSource: …, otherOptions… */
             remarkPlugins: [remarkGfm],
@@ -38,11 +36,6 @@ export default defineConfig({
             css: true,
         }),
     ],
-
-    // Uncomment this if you are using workers.
-    // worker: {
-    //  plugins: [ nxViteTsPaths() ],
-    // },
 
     build: {
         outDir: '../dist/docs',

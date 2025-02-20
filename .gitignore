@@ -16,6 +16,7 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
+/.yarn/cache
 
 # IDE - VSCode
 .vscode/*
@@ -37,8 +38,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-.nx/cache
 
 # React Native
 
@@ -83,6 +82,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+/.yarn/install-state.gz
 
 # fastlane
 #
@@ -109,6 +109,6 @@ yarn-error.log
 # testing
 /coverage
 
-
 apps/showcase-e2e/artifacts
 node_modules
+**/**/coverage

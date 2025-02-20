@@ -94,6 +94,7 @@ export const ComponentPreviewTabs = (): JSX.Element => {
                 onChange={handleChange}
                 aria-label="component docs tabs"
                 centered
+                textColor="inherit"
                 sx={{
                     width: '100%',
                     display: 'flex',

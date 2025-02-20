@@ -1,0 +1,135 @@
+import React from 'react';
+import { Divider } from '../../layout/Divider';
+import { CodeBlock } from '../../shared';
+
+{/* KEYWORDS: react native framework templates guide tutorial */}
+
+# Getting Started with Brightlayer UI
+
+The following instructions will guide you through starting a new Brightlayer UI project using React Native. Alternatively, you can also start your project by downloading one of our code samples from [Github](https://github.com/etn-ccis?q=blui) (the Login or Navigation examples are good projects to start from).
+
+# Generating a New Project with the Brightlayer UI React Native Templates
+
+The fastest way to start a new Brightlayer UI project is to use the [Brightlayer UI React Native Templates](https://brightlayer-ui.github.io/resources/developer). This will automatically create a starter project for you with all of the necessary Brightlayer UI dependencies pre-configured. To start a React Native project use any of these 3 different configurations:
+
+<CodeBlock code={`npx @react-native-community/cli init MyApp --template @brightlayer-ui/react-native-template-blank-typescript
+npx @react-native-community/cli init MyApp --template @brightlayer-ui/react-native-template-routing-typescript
+npx @react-native-community/cli init MyApp --template @brightlayer-ui/react-native-template-authentication-typescript`} language={'sh'} />
+
+You will be asked to provide a name for your project and whether you want to use the Brightlayer UI eslint and prettier configuration files.
+
+The Brightlayer UI templates will automatically include:
+
+-   React Native Paper Component Library ([react-native-paper](https://www.npmjs.com/package/react-native-paper))
+-   Brightlayer UI Component Library ([@brightlayer-ui/react-native-components](https://www.npmjs.com/package//@brightlayer-ui/react-native-components))
+-   Brightlayer UI Themes ([@brightlayer-ui/react-native-themes](https://www.npmjs.com/package/@brightlayer-ui/react-native-themes))
+-   Brightlayer UI Icons ([@brightlayer-ui/react-native-vector-icons](https://www.npmjs.com/package/@brightlayer-ui/react-native-vector-icons))
+-   Brightlayer UI Colors ([@brightlayer-ui/colors](https://www.npmjs.com/package/@brightlayer-ui/colors))
+-   Brightlayer UI ESLint and Prettier configurations, if selected ([@brightlayer-ui/eslint-config](https://www.npmjs.com/package/@brightlayer-ui/eslint-config) / [@brightlayer-ui/prettier-config](https://www.npmjs.com/package/@brightlayer-ui/prettier-config))
+-   Open Sans font
+
+For detailed usage instructions, refer to the [Brightlayer UI React Native Templates documentation](https://github.com/etn-ccis/blui-react-native-cli-templates?tab=readme-ov-file#react-native-cli-templates).
+
+<Divider />
+
+# Integrating Brightlayer UI into an Existing Project
+
+Before taking the following steps, you'll want to make sure that you have an existing application. If you used the Brightlayer UI Templates to start your project, these steps have already been done for you automatically.
+
+## Including the Component Libraries
+
+Material Components
+React Native projects should make use of the React-Native-Paper component library. Our Brightlayer UI themes are designed to work with these components. You'll also want to install react-native-vector-icons to access the Material icons.
+
+<CodeBlock code={`npm install --save react-native-paper@4.0.0 react-native-vector-icons`} language={'sh'} />
+or
+<CodeBlock code={`yarn add react-native-paper@4.0.0 react-native-vector-icons`} language={'sh'} />
+
+> NOTE: react-native-paper@5.0.0 is currently available, however, we only support React Native Paper v4 at this time. Please be sure to keep peer-dependencies aligned as defined above to avoid potential conflicts.
+
+### Brightlayer UI Components
+
+Additionally, we have a [supplemental library](/components/component-catalog) of components designed specifically for Brightlayer UI applications. If you wish to use these components, you can install them by running:
+
+<CodeBlock code={`npm install --save @brightlayer-ui/react-native-components`} language={'sh'} />
+
+or
+
+<CodeBlock code={`yarn add @brightlayer-ui/react-native-components`} language={'sh'} />
+
+## Adding Brightlayer UI Themes
+
+By default, your application will be themed to use the [Brightlayer UI theme](https://www.npmjs.com/package/@brightlayer-ui/react-native-themes).
+
+If you are using the recommended component libraries, your application will be themed with the Google Material theme by default. To use the Brightlayer UI theme, first install it:
+
+<CodeBlock code={`npm install --save @brightlayer-ui/react-native-themes`} language={'sh'} />
+or
+<CodeBlock code={`yarn add @brightlayer-ui/react-native-themes`} language={'sh'} />
+
+> Using the Brightlayer UI React Native theme requires that you add the Open Sans font to your application. You can learn how to do this by reading the instructions for Vanilla React Native. You can find the fonts here.
+
+### Applying the Theme
+Import the theme files and React Native Paper theme provider into your application, e.g. in App.js:
+
+<CodeBlock code={`import { Provider as ThemeProvider } from 'react-native-paper';
+import * as BLUIThemes from '@brightlayer-ui/react-native-themes';
+...
+<ThemeProvider theme={BLUIThemes.blue}>
+    <App />
+</ThemeProvider>`} language={'sh'} />
+
+For detailed information about theming, refer to the [react-native-paper theming guide](https://callstack.github.io/react-native-paper/docs/guides/theming).
+
+> NOTE: This theme only applies to the components in the react-native-paper and @brightlayer-ui/react-native-components package. It will not theme the components from other third party libraries. If you wish to use our theme to style your own components, refer to the react-native-paper theming guide.
+
+<Divider />
+
+# Writing a React Native Application
+If you are familiar with React development, React Native will be relatively simple to understand. The application logic remains the same, while the UI requires a little adjustment. Rather than typical HTML elements, React Native UIs are built with a special library of Components, including `<View>, <Text>, <Image>`, etc. React Native layouts are built exclusively using FlexBox.
+
+## Running your application
+After you've created your application using the Brightlayer UI templates, it can be run from the command line:
+
+<CodeBlock code={`cd YourAppName
+
+npm run <ios|android>
+or
+yarn <ios|android>`} language={'sh'} />
+
+When you make changes to the source code, the application will automatically rebuild and update on the device.
+
+> To run on an Android emulator, the emulator must already be running or you will see an error message, "No connected devices found."
+
+> On a Mac, you may be prompted to install watchman (brew install watchman) or update a few settings to run the application.
+
+### Final Build
+Now, you can open the project folders in xCode (/ios/projectName.xcodeproj) or Android Studio (/android) and perform builds from the IDE. Depending on the version of React Native you are using, you may have to manually bundle your JS code for Android.
+
+# Additional Information
+
+## Code Formatting / Style
+
+Brightlayer UI provides packages for code standards and style using ESLint and Prettier. These packages are used internally by the Brightlayer UI team, but they can also be used in your projects. You can find instructions for adding these packages to your project on [GitHub](https://github.com/etn-ccis/blui-code-standards).
+
+> NOTE: the ESLint package is only available for TypeScript projects.
+
+# Testing Your Brightlayer UI React Native Applications
+
+Testing is a critical component of successfully building and releasing an application. Despite the value and importance of testing, it is common for teams to overlook or neglect it. Testing should be considered from the very beginning of development, not as an afterthought once development is complete. In general, every time you write a new piece of code or update existing code, you should also write a test that verifies that your code is correct.
+
+## Testing Frameworks
+
+The Brightlayer UI React Native template projects are pre-configured with Jest for testing framework. When creating a new React Native project from Brightlayer UI templates, a sample test is created in your project for you (test files are identified by the .test.tsx file extension). You can execute the tests by running the following in your terminal:
+
+<CodeBlock code={`npm test`} language={'sh'} />
+
+or
+
+<CodeBlock code={`yarn test`} language={'sh'} />
+
+This will run your tests and show the pass/fail output in the terminal.
+
+## License Information
+
+[React Native](https://github.com/facebook/react-native/blob/main/LICENSE) is available under the MIT License.
