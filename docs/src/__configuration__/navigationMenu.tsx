@@ -5,6 +5,22 @@ import { ComponentPreviewPage, HomePage, MarkdownPage } from '../components/page
 // Site markdown docs
 import AllComponents from '../componentDocs/allComponents.mdx';
 
+import Overview from '../workflowDocs/Overview/overview.mdx';
+import AuthenticationWorkflow from '../workflowDocs/AuthenticationWorkflow/authenticationWorkflow.mdx';
+import RegistrationWorkflow from '../workflowDocs/RegistrationWorkflow/registrationWorkflow.mdx';
+import Customization from '../workflowDocs/Customization/customization.mdx';
+import ErrorManagement from '../workflowDocs/ErrorManagement/errorManagement.mdx';
+import LanguageSupport from '../workflowDocs/LanguageSupport/languageSupport.mdx';
+import ErrorHandling from '../workflowDocs/ErrorHandling/errorHandling.mdx';
+
+// workflow components
+import BasicDialog from '../workflowDocs/Components/BasicDialog/basicDialog.mdx';
+import ErrorManager from '../workflowDocs/Components/ErrorManager/errorManager.mdx';
+import PasswordTextField from '../workflowDocs/Components/PasswordTextField/passwordTextField.mdx';
+import RegistrationForm from '../workflowDocs/Components/RegistrationWorkflow/registrationWorkflow.mdx';
+import SetPassword from '../workflowDocs/Components/SetPassword/setPassword.mdx';
+import WorkflowCard from '../workflowDocs/Components/WorkflowCard/workflowCard.mdx';
+
 // Examples markdown
 import AutoCompleteExample from '../componentDocs/AutoComplete/markdown/AutoCompleteExamples.mdx';
 import ChannelValueExamples from '../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
@@ -600,6 +616,116 @@ export const pageDefinitions: RouteConfig[] = [
                     },
                 ],
             },
+        ],
+    },
+    {
+        title: 'Workflows',
+        path: '/worlflows/',
+        element: <Outlet />,
+        pages: [
+            {
+                title: 'Overview',
+                path: 'getting-started/',
+                element: <MarkdownPage title={'Overview'} markdown={Overview} />,
+            },
+            {
+                title: 'Authentication Workflow',
+                path: 'authentication-workflow/',
+                element: <MarkdownPage title={'Authentication Workflow'} markdown={AuthenticationWorkflow} />,
+            },
+            {
+                title: 'Registration Workflow',
+                path: 'registration-workflow/',
+                element: <MarkdownPage title={'Registration Workflow'} markdown={RegistrationWorkflow} />,
+            },
+            {
+                title: 'Customization',
+                path: 'customization/',
+                element: <MarkdownPage title={'Customization'} markdown={Customization} />,
+            },
+            {
+                title: 'Error Management',
+                path: 'error-management/',
+                element: <MarkdownPage title={'Error Management'} markdown={ErrorManagement} />,
+            },
+            {
+                title: 'Language Support',
+                path: 'language-support',
+                element: <MarkdownPage title={'Language Support'} markdown={LanguageSupport} />,
+            },
+            {
+                title: 'Error Handling',
+                path: 'error-handling',
+                element: <MarkdownPage title={'Error Handling'} markdown={ErrorHandling} />,
+            },
+            {
+                title: 'Components',
+                path: '',
+                pages: [
+                    {
+                        title: 'Basic Dialog',
+                        path: 'basic-dialog/',
+                        element: <MarkdownPage title={'Basic Dialog'} markdown={BasicDialog} />,
+                    },
+                    // {
+                    //     title: 'Error Manager',
+                    //     path: 'error-manager/',
+                    //     element: <MarkdownPage title={'Error Manager'} markdown={ErrorHandling} />,  
+                    // },
+                    // {
+                    //     title: 'Password Text Field',
+                    //     path: 'password-text-field/',
+                    //     element: <MarkdownPage title={'Password Text Field'} markdown={PasswordTextField} />,  
+                    // },
+                    // {
+                    //     title: 'Set Password',
+                    //     path: 'set-password/',
+                    //     element: <MarkdownPage title={'Set Password'} markdown={SetPassword} />,  
+                    // },
+                    // {
+                    //     title: 'Workflow Card',
+                    //     path: 'workflow-card/',
+                    //     element: <MarkdownPage title={'Workflow Card'} markdown={WorkflowCard} />,  
+                    // },
+                ],
+            },
+            // {
+            //     title: 'Components',
+            //     path: 'components/',
+            //     element: <ComponentPreviewPage title={'Components'} />,
+            //     children: [
+            //         {
+            //             title: 'Basic Dialog',
+            //             path: 'basic-dialog',
+            //             element: <BasicDialog />,
+            //         },
+            //         // {
+            //         //     title: 'Error Manager',
+            //         //     path: 'error-manager',
+            //         //     element: <ErrorManager />,
+            //         // },
+            //         // {
+            //         //     title: 'Password Text Field',
+            //         //     path: 'password-text-field',
+            //         //     element: <PasswordTextField />,
+            //         // },
+            //         // {
+            //         //     title: 'Registration Workflow',
+            //         //     path: 'registration-workflow',
+            //         //     element: <RegistrationForm />,
+            //         // },
+            //         // {
+            //         //     title: 'Set Password',
+            //         //     path: 'set-password',
+            //         //     element: <SetPassword />,
+            //         // },
+            //         // {
+            //         //     title: 'Workflow Card',
+            //         //     path: 'workflow-card',
+            //         //     element: <WorkflowCard />,
+            //         // },
+            //     ],
+            // },
         ],
     },
 ];
