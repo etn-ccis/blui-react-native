@@ -57,11 +57,36 @@ jobs:
               uses: codecov/codecov-action@v5
               with:
                   token: ${{ secrets.CODECOV_TOKEN }}
-                  directory: ./components/coverage/
+                  directory: packages/blui-react-native-component-library/coverage/
                   files: cobertura-coverage.xml
                   flags: unittests
                   name: codecov-report
                   verbose: true
+
+    build_components_library:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [18.x]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+              working-directory: packages/blui-react-native-component-library
+            - run: yarn build
+            - name: Save build
+              uses: actions/upload-artifact@v4
+              with:
+                  name: dist
+                  if-no-files-found: error
+                  path: packages/blui-react-native-component-library/dist
     # build_rn_docs:
     #     runs-on: ubuntu-latest
 
