@@ -84,9 +84,9 @@ jobs:
             - name: Save build
               uses: actions/upload-artifact@v4
               with:
-                  name: dist
+                  name: lib-dist
                   if-no-files-found: error
-                  path: packages/blui-react-native-component-library/dist
+                  path: packages/blui-react-native-component-library/lib-dist
                   
     build_theme_verify_artifacts:
         runs-on: ubuntu-latest

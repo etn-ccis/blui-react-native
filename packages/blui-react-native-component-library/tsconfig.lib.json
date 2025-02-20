@@ -1,7 +1,7 @@
 {
     "extends": "./tsconfig",
     "compilerOptions": {
-        "outDir": "./dist",
+        "outDir": "./lib-dist",
         "declaration": true
     },
     "exclude": ["src/**/*.test.tsx"]
