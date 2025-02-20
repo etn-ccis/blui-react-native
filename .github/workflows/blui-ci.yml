@@ -79,8 +79,8 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
-              working-directory: packages/blui-react-native-component-library
             - run: yarn build
+              working-directory: packages/blui-react-native-component-library
             - name: Save build
               uses: actions/upload-artifact@v4
               with:
