@@ -87,6 +87,32 @@ jobs:
                   name: dist
                   if-no-files-found: error
                   path: packages/blui-react-native-component-library/dist
+                  
+    build_theme_verify_artifacts:
+        runs-on: ubuntu-latest
+            
+        strategy:
+            matrix:
+                node-version: [18.x]
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - run: yarn build
+              working-directory: packages/blui-react-native-themes
+            - name: Save build
+              uses: actions/upload-artifact@v4
+              with:
+                  name: dist
+                  if-no-files-found: error
+                  path: packages/blui-react-native-themes/dist
+            - run: yarn test
+              working-directory: packages/blui-react-native-themes
+
     # build_rn_docs:
     #     runs-on: ubuntu-latest
 
@@ -105,7 +131,8 @@ jobs:
     #               node-version: ${{ matrix.node-version }}
     #               cache: 'yarn'
     #         - run: yarn --immutable
-    #         - run: yarn docs-build --base=${{env.base-href}} && touch ./dist/docs/.nojekyll
+    #         - run: yarn build --base=${{env.base-href}} && touch ./dist/docs/.nojekyll
+    #           working-directory: docs
     #         - name: Save dist
     #           uses: actions/upload-artifact@v4
     #           with:
