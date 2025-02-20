@@ -5,7 +5,6 @@ import { AuthContextProvider } from '../../contexts';
 import { authContextProviderProps } from '../../testUtils';
 import { ChangePasswordScreen, ChangePasswordScreenProps } from '../../screens/ChangePasswordScreen';
 
-
 const passwordRequirements = [
     {
         description: 'Check 1',
