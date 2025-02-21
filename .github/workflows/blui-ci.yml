@@ -33,7 +33,7 @@ jobs:
                   cache: 'yarn'
             - run: yarn
             - run: yarn prettier:check
-            # - run: yarn lint
+            - run: yarn lint
 
     unit_tests_components:
         runs-on: ubuntu-latest
@@ -190,7 +190,7 @@ jobs:
               with:
                   name: progress-icon-dist
                   if-no-files-found: error
-                  path: packages/blui-react-native-progress-icons/progress-icon-dist
+                  path: packages/blui-react-native-progress-icons/dist
       
     # build_rn_docs:
     #     runs-on: ubuntu-latest
