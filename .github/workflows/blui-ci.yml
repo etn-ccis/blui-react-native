@@ -165,7 +165,7 @@ jobs:
               with:
                   name: workflow-dist
                   if-no-files-found: error
-                  path:  packages/blui-react-native-workflows/workflow-dist
+                  path:  packages/blui-react-native-workflows/dist
 
     build_rn_progress_icons:
         runs-on: ubuntu-latest
