@@ -4,13 +4,13 @@
     "license": "BSD-3-Clause",
     "version": "7.0.2",
     "description": "React Native themes for Brightlayer UI applications",
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "main": "./theme-dist/index.js",
+    "module": "./theme-dist/index.js",
+    "types": "./theme-dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/index.js",
-            "require": "./dist/index.js"
+            "import": "./theme-dist/index.js",
+            "require": "./theme-dist/index.js"
         }
     },
     "scripts": {
