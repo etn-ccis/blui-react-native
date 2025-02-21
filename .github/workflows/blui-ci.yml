@@ -35,7 +35,7 @@ jobs:
             - run: yarn prettier:check
             # - run: yarn lint
 
-    components_unit_tests:
+    unit_tests_components:
         runs-on: ubuntu-latest
 
         strategy:
@@ -112,6 +112,34 @@ jobs:
                   path: packages/blui-react-native-themes/theme-dist
             - run: yarn test
               working-directory: packages/blui-react-native-themes
+    
+    unit_test_workflows:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+    - run: yarn --immutable
+      working-directory: packages/blui-react-native-workflows
+    - run: yarn coverage
+      working-directory: packages/blui-react-native-workflows
+    - name: Upload to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        directory: packages/blui-react-native-workflows/coverage/
+        files: clover.xml
+        flags: unittests
+        name: codecov-report
+        verbose: true
 
     # build_rn_docs:
     #     runs-on: ubuntu-latest
