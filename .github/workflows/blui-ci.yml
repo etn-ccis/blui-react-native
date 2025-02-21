@@ -157,8 +157,8 @@ jobs:
             - run: yarn --immutable
               working-directory: packages/blui-react-native-workflows
             - run: |
-                  PACKAGED_VERSION=`node -p "require('../../../theme-tarball/package.json').version"`
-                  yarn add ../../../theme-tarball/brightlayer-ui-react-native-themes-$PACKAGED_VERSION.tgz
+                  PACKAGED_VERSION=`node -p "require('../../../../theme-tarball/package.json').version"`
+                  yarn add ../../../../theme-tarball/brightlayer-ui-react-native-themes-$PACKAGED_VERSION.tgz
               working-directory: packages/blui-react-native-workflows
             - run: yarn coverage
               working-directory: packages/blui-react-native-workflows
