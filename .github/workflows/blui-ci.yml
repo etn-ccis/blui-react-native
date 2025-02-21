@@ -130,7 +130,7 @@ jobs:
         - run: yarn --immutable
         - run: yarn link:themes
           working-directory: packages/blui-react-native-themes
-        - run: yarn coverage
+        - run: yarn build
           working-directory: packages/blui-react-native-workflows
         - name: Upload to Codecov
           uses: codecov/codecov-action@v5
