@@ -14,7 +14,7 @@ export const ExampleShowcase = React.forwardRef(
             sx={{
                 my: 2,
                 backgroundColor: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? colors.white[600] : colors.darkBlack[300],
+                    theme.palette.mode === 'light' ? "#eceeee" : "#2b353a", //change it using theme.palette syntax
                 p: 4,
                 color: 'text.primary',
                 borderRadius: '4px',
