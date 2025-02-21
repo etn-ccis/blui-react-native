@@ -128,7 +128,6 @@ jobs:
             node-version: ${{ matrix.node-version }}
             cache: 'yarn'
         - run: yarn --immutable
-          working-directory: packages/blui-react-native-workflows
         - run: yarn coverage
           working-directory: packages/blui-react-native-workflows
         - name: Upload to Codecov
