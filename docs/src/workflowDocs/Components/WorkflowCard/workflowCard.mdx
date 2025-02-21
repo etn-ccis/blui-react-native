@@ -1,13 +1,17 @@
+import workflowCard from './images/workflow-card.png';
+import { CodeBlock } from '../../../shared';
+
 # WorkflowCard
 
 The WorkflowCard is a set of components that can be used to define custom screens within the workflows. Using these utility components will ensure that your custom screens match the style of the built-in screens for a seamless experience.
 
-<img width="400" alt="WorkflowCard" src="../../media/workflow-card.png">
+<img width="400" alt="WorkflowCard" src={workflowCard} />
 
 ### Usage
 
-```tsx
-import {
+<CodeBlock
+    language={'jsx'}
+    code={`import {
     WorkflowCard,
     WorkflowCardHeader,
     WorkflowCardBody,
@@ -18,8 +22,8 @@ import {
     <WorkflowCardHeader {...headerProps} />
     <WorkflowCardBody {...cardBodyProps}>{/* Your Screen Contents */}</WorkflowCardBody>
     <WorkflowCardActions {...actionsProps} />
-</WorkflowCard>;
-```
+</WorkflowCard>;`}
+/>
 
 ### API
 

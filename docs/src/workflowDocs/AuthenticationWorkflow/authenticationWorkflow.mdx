@@ -1,3 +1,5 @@
+import { CodeBlock } from '../../shared';
+
 # Login / Authentication Workflow Guide
 
 The authentication workflow includes screens related to user authentication including Login, Forgot Password, Reset Password, etc.
@@ -13,7 +15,7 @@ You must supply the `AuthContextProvider` with the following props / data:
 -   `navigate`: a function that can be called to navigate to a new route
 -   `routeConfig`: an object describing the URLs you are using for the relevant routes so the workflow can correctly navigate between screens
 
-More information about the required and optional props can found in the [API](#api) section.
+More information about the required and optional props can be found in the [API](#api) section.
 
 ## Implement AuthUIActions
 
@@ -23,8 +25,8 @@ The example project includes a skeleton implementation of all required functions
 
 1. Create a `AuthUIActions.ts` file
     - This file will handle the implementation of the authentication related actions (such as login and forgot password).
-    - You can copy this file directly from the [example](../example/src/actions/AuthUIActions.tsx) project as a starting point and then update the implementation details if you choose.
-2. You might also want to copy over the `example/src/store` and `example/src/constants` folders, which provide a very basic mechanism for storing important data using LocalStorage
+    - You can copy this file directly from the [example](https://github.com/etn-ccis/blui-react-native/blob/docs/src/workflowDocs/Example/AuthUIActions.tsx) project as a starting point and then update the implementation details if you choose.
+2. You might also want to copy over the [store](https://github.com/etn-ccis/blui-react-native/blob/docs/src/workflowDocs/Example/store) and [constants](https://github.com/etn-ccis/blui-react-native/blob/docs/src/workflowDocs/Example/constants) folders, which provide a very basic mechanism for storing important data using LocalStorage
     -   You will want to switch this out for a more secure approach before going to production with your application.
 
 ## Okta Example Usage
@@ -44,17 +46,18 @@ More information about the required and optional props can found in the [API](#o
 
 Each feature/screen from the Okta Auth Workflow that you wish to use should be rendered on a separate route.
 
-```tsx
- <OktaAuthContextProvider 
+<CodeBlock
+    language={'jsx'}
+    code={`<OktaAuthContextProvider 
     language={'en'} 
     navigate={navigate} 
     routeConfig={{}}
  >
     <OktaRedirectLoginScreen />
- </OktaAuthContextProvider>
-```
+ </OktaAuthContextProvider>`}
+/>
 
-For a detailed explanation of setting up routes, see the [Routing](./routing.md) guide.
+For a detailed explanation of setting up routes, see the [Routing](/workflows/routing/) guide.
 
 ### Okta Auth Context Provider API
 
@@ -73,8 +76,9 @@ Here is an example of how you would set up the Login workflow.
 
 Each feature/screen from the Auth Workflow that you wish to use should be rendered on a separate route.
 
-```tsx
-<AuthContextProvider
+<CodeBlock
+    language={'jsx'}
+    code={`<AuthContextProvider
     actions={actions}
     language={'en'}
     navigate={navigate}
@@ -87,8 +91,8 @@ Each feature/screen from the Auth Workflow that you wish to use should be render
         <ContactSupportScreen />
         <ResetPasswordScreen />
     </ErrorContextProvider>
-</AuthContextProvider>
-```
+</AuthContextProvider>`}
+/>
 
 ## API
 
@@ -102,7 +106,7 @@ Each feature/screen from the Auth Workflow that you wish to use should be render
 | routeConfig* | `RouteConfig` | An object that defines the various routes for the authentication workflow. See [RouteConfig](#routeconfig) for more information. |  |
 | i18n | `i18n` | An optional i18n object that is used to translate the UI. This is only needed if you want to use custom translation keys / languages inside any of the workflow screens |  |
 | rememberMeDetails | `{ email?: string, rememberMe?: boolean }` | An optional object that is used to initialize the data on the Login screen. If not provided, the email field will be empty and the remember me checkbox will be unchecked. |  |
-| errorConfig | `ErrorContextProviderProps` | An object that is used to configure error handling within the workflow. See [Error Management](./error-management.md) for more information. |  |
+| errorConfig | `ErrorContextProviderProps` | An object that is used to configure error handling within the workflow. See [Error Management](/workflows/error-management/) for more information. |  |
 
 
 ### AuthUIActions

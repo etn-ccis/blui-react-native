@@ -1,11 +1,14 @@
+import { CodeBlock } from '../../../shared';
+
 # BasicDialog
 
 Component that renders a basic dialog. This component provides a title, a body, and a close button.
 
 ## Usage
 
-```tsx
-import { BasicDialog } from '@brightlayer-ui/react-native-auth-workflow';
+<CodeBlock
+    language={'jsx'}
+    code={`import { BasicDialog } from '@brightlayer-ui/react-native-auth-workflow';
 
 ...
 
@@ -13,8 +16,8 @@ import { BasicDialog } from '@brightlayer-ui/react-native-auth-workflow';
   title="Notice!"
   body="This is an example notice"
   onDismiss={() => console.log('close')}  
+/>`}
 />
-```
 
 ## API
 

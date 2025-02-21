@@ -1,22 +1,24 @@
+import errorDialog from './images/error-dialog.png';
+import errorBox from './images/error-box.png';
+import { CodeBlock } from '../../../shared';
+
 # ErrorManager
 
 Component that manages the display of error messages. Can be configured to display a dialog, a message box, or neither.
 
-<img width="400" alt="Error Dialog" src="../../media/error-dialog.png">
-<img width="400" alt="Error Box" src="../../media/error-box.png">
-
 ## Usage
 
-```tsx
-import { ErrorManager } from '@brightlayer-ui/react-native-auth-workflow';
+<CodeBlock
+    language={'jsx'}
+    code={`import { ErrorManager } from '@brightlayer-ui/react-native-auth-workflow';
 
 ...
 
 <ErrorManager>
     {/* When configured as a message-box, the box will appear before or after the elements passed as children */}
     {children}
-</ErrorManager>
-```
+</ErrorManager>`}
+/>
 
 ## API
 
