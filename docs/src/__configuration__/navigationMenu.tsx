@@ -12,6 +12,42 @@ import Overview from '../markdownDocs/Overview.mdx';
 import Usage from '../markdownDocs/Usage.mdx';
 import Customization from '../markdownDocs/Customization.mdx';
 
+// workflow docs
+import WorkflowOverview from '../workflowDocs/Overview/overview.mdx';
+import AuthenticationWorkflow from '../workflowDocs/AuthenticationWorkflow/authenticationWorkflow.mdx';
+import RegistrationWorkflow from '../workflowDocs/RegistrationWorkflow/registrationWorkflow.mdx';
+import WorkflowCustomization from '../workflowDocs/Customization/customization.mdx';
+import ErrorManagement from '../workflowDocs/ErrorManagement/errorManagement.mdx';
+import LanguageSupport from '../workflowDocs/LanguageSupport/languageSupport.mdx';
+import ErrorHandling from '../workflowDocs/ErrorHandling/errorHandling.mdx';
+import Routing from '../workflowDocs/Routing/routing.mdx';
+
+// workflow components
+import BasicDialog from '../workflowDocs/Components/BasicDialog/basicDialog.mdx';
+import ErrorManager from '../workflowDocs/Components/ErrorManager/errorManager.mdx';
+import PasswordTextField from '../workflowDocs/Components/PasswordTextField/passwordTextField.mdx';
+import RegistrationForm from '../workflowDocs/Components/RegistrationWorkflow/registrationWorkflow.mdx';
+import SetPassword from '../workflowDocs/Components/SetPassword/setPassword.mdx';
+import WorkflowCard from '../workflowDocs/Components/WorkflowCard/workflowCard.mdx';
+import WorkflowComponents from '../workflowDocs/Components/components.mdx';
+
+// workflow screens
+import WorkflowScreens from '../workflowDocs/Screens/screens.mdx';
+import AccountDetails from '../workflowDocs/Screens/AccountDetails/accountDetails.mdx';
+import ChangePassword from '../workflowDocs/Screens/ChangePassword/changePassword.mdx';
+import Contact from '../workflowDocs/Screens/Contact/contact.mdx';
+import CreateAccount from '../workflowDocs/Screens/CreateAccount/createAccount.mdx';
+import CreatePassword from '../workflowDocs/Screens/CreatePassword/createPassword.mdx';
+import Eula from '../workflowDocs/Screens/Eula/eula.mdx';
+import ExistingAccountSuccess from '../workflowDocs/Screens/ExistingAccountSuccess/existingAccountSuccess.mdx';
+import ForgotPassword from '../workflowDocs/Screens/ForgotPassword/forgotPassword.mdx';
+import Login from '../workflowDocs/Screens/Login/login.mdx';
+import OktaLogin from '../workflowDocs/Screens/OktaLogin/oktaLogin.mdx';
+import RegistrationSuccess from '../workflowDocs/Screens/RegistrationSuccess/registrationSuccess.mdx';
+import ResetPassword from '../workflowDocs/Screens/ResetPassword/resetPassword.mdx';
+import Success from '../workflowDocs/Screens/Success/success.mdx';
+import VerifyCode from '../workflowDocs/Screens/VerifyCode/verifyCode.mdx';
+
 // Examples markdown
 import AutoCompleteExample from '../componentDocs/AutoComplete/markdown/AutoCompleteExamples.mdx';
 import ChannelValueExamples from '../componentDocs/ChannelValue/markdown/ChannelValueExamples.mdx';
@@ -645,6 +681,170 @@ export const pageDefinitions: RouteConfig[] = [
                 title: 'Customization',
                 path: 'customization',
                 element: <MarkdownPage title={'Theme Customization'} markdown={Customization} />,
+            },
+        ],
+    },
+    {
+        title: 'Workflows',
+        path: '/workflows/',
+        element: <Outlet />,
+        pages: [
+            {
+                title: 'Overview',
+                path: 'getting-started/',
+                element: <MarkdownPage title={'Overview'} markdown={WorkflowOverview} />,
+            },
+            {
+                title: 'Authentication Workflow',
+                path: 'authentication-workflow/',
+                element: <MarkdownPage title={'Authentication Workflow'} markdown={AuthenticationWorkflow} />,
+            },
+            {
+                title: 'Registration Workflow',
+                path: 'registration-workflow/',
+                element: <MarkdownPage title={'Registration Workflow'} markdown={RegistrationWorkflow} />,
+            },
+            {
+                title: 'Customization',
+                path: 'customization/',
+                element: <MarkdownPage title={'Customization'} markdown={WorkflowCustomization} />,
+            },
+            {
+                title: 'Error Management',
+                path: 'error-management/',
+                element: <MarkdownPage title={'Error Management'} markdown={ErrorManagement} />,
+            },
+            {
+                title: 'Language Support',
+                path: 'language-support/',
+                element: <MarkdownPage title={'Language Support'} markdown={LanguageSupport} />,
+            },
+            {
+                title: 'Error Handling',
+                path: 'error-handling/',
+                element: <MarkdownPage title={'Error Handling'} markdown={ErrorHandling} />,
+            },
+            {
+                title: 'Routing',
+                path: 'routing/',
+                element: <MarkdownPage title={'Routing'} markdown={Routing} />,
+            },
+            {
+                title: 'Components',
+                path: '',
+                pages: [
+                    {
+                        title: 'Overview',
+                        path: 'components/',
+                        element: <MarkdownPage title={'Components'} markdown={WorkflowComponents} />,
+                    },
+                    {
+                        title: 'Basic Dialog',
+                        path: 'basic-dialog/',
+                        element: <MarkdownPage title={'Basic Dialog'} markdown={BasicDialog} />,
+                    },
+                    {
+                        title: 'Error Manager',
+                        path: 'error-manager/',
+                        element: <MarkdownPage title={'Error Manager'} markdown={ErrorManager} />,
+                    },
+                    {
+                        title: 'Password Text Field',
+                        path: 'password-text-field/',
+                        element: <MarkdownPage title={'Error Manager'} markdown={PasswordTextField} />,
+                    },
+                    {
+                        title: 'Set Password',
+                        path: 'set-password/',
+                        element: <MarkdownPage title={'Set Password'} markdown={SetPassword} />,
+                    },
+                    {
+                        title: 'WorkflowCard*',
+                        path: 'workflow-card/',
+                        element: <MarkdownPage title={'WorkflowCard*'} markdown={WorkflowCard} />,
+                    },
+                ],
+            },
+            {
+                title: 'Screens',
+                path: '',
+                pages: [
+                    {
+                        title: 'Overview',
+                        path: 'screens/',
+                        element: <MarkdownPage title={'Screens'} markdown={WorkflowScreens} />,
+                    },
+                    {
+                        title: 'Account Details',
+                        path: 'account-details/',
+                        element: <MarkdownPage title={'Account Details'} markdown={AccountDetails} />,
+                    },
+                    {
+                        title: 'Change Password',
+                        path: 'change-password/',
+                        element: <MarkdownPage title={'Change Password'} markdown={ChangePassword} />,
+                    },
+                    {
+                        title: 'Contact',
+                        path: 'contact/',
+                        element: <MarkdownPage title={'Contact'} markdown={Contact} />,
+                    },
+                    {
+                        title: 'Create Account',
+                        path: 'create-account/',
+                        element: <MarkdownPage title={'Create Account'} markdown={CreateAccount} />,
+                    },
+                    {
+                        title: 'Create Password',
+                        path: 'create-password/',
+                        element: <MarkdownPage title={'Create Password'} markdown={CreatePassword} />,
+                    },
+                    {
+                        title: 'Eula',
+                        path: 'eula/',
+                        element: <MarkdownPage title={'Eula'} markdown={Eula} />,
+                    },
+                    {
+                        title: 'Existing Account Success',
+                        path: 'existing-account-success/',
+                        element: <MarkdownPage title={'Existing Account Success'} markdown={ExistingAccountSuccess} />,
+                    },
+                    {
+                        title: 'Forgot Password',
+                        path: 'forgot-password/',
+                        element: <MarkdownPage title={'Forgot Password'} markdown={ForgotPassword} />,
+                    },
+                    {
+                        title: 'Login',
+                        path: 'login/',
+                        element: <MarkdownPage title={'Login'} markdown={Login} />,
+                    },
+                    {
+                        title: 'Okta Login',
+                        path: 'okta-login/',
+                        element: <MarkdownPage title={'Okta Login'} markdown={OktaLogin} />,
+                    },
+                    {
+                        title: 'Registration Success',
+                        path: 'registration-success/',
+                        element: <MarkdownPage title={'Registration Success'} markdown={RegistrationSuccess} />,
+                    },
+                    {
+                        title: 'Reset Password',
+                        path: 'reset-password/',
+                        element: <MarkdownPage title={'Reset Password'} markdown={ResetPassword} />,
+                    },
+                    {
+                        title: 'Success',
+                        path: 'success/',
+                        element: <MarkdownPage title={'Success'} markdown={Success} />,
+                    },
+                    {
+                        title: 'Verify Code',
+                        path: 'verify-code/',
+                        element: <MarkdownPage title={'Verify Code'} markdown={VerifyCode} />,
+                    },
+                ],
             },
         ],
     },
