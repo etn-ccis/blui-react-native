@@ -128,6 +128,8 @@ jobs:
             node-version: ${{ matrix.node-version }}
             cache: 'yarn'
         - run: yarn --immutable
+        - run: yarn link:themes
+          working-directory: packages/blui-react-native-themes
         - run: yarn coverage
           working-directory: packages/blui-react-native-workflows
         - name: Upload to Codecov
