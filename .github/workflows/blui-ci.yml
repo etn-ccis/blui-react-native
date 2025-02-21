@@ -113,7 +113,7 @@ jobs:
             - run: yarn test
               working-directory: packages/blui-react-native-themes
     
-    unit_test_workflows:
+    unit_tests_workflows:
         runs-on: ubuntu-latest
 
         strategy:
@@ -121,28 +121,31 @@ jobs:
             node-version: [18.x]
 
         steps:
-        - uses: actions/checkout@v4
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v4
-          with:
-            node-version: ${{ matrix.node-version }}
-            cache: 'yarn'
-        - run: yarn --immutable
-        - run: yarn build
-          working-directory: packages/blui-react-native-themes
-        - run: yarn link:themes
-          working-directory: packages/blui-react-native-themes
-        - run: yarn coverage
-          working-directory: packages/blui-react-native-workflows
-        - name: Upload to Codecov
-          uses: codecov/codecov-action@v5
-          with:
-            token: ${{ secrets.CODECOV_TOKEN }}
-            directory: packages/blui-react-native-workflows/coverage/
-            files: clover.xml
-            flags: unittests
-            name: codecov-report
-            verbose: true
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - name: Download theme build
+              uses: actions/download-artifact@v4
+              with:
+                  name: theme-dist
+                  path: packages/blui-react-native-themes/theme-dist
+            - run: yarn link:themes
+              working-directory: packages/blui-react-native-themes
+            - run: yarn coverage
+              working-directory: packages/blui-react-native-workflows
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/blui-react-native-workflows/coverage/
+                  files: clover.xml
+                  flags: unittests
+                  name: codecov-report
+                  verbose: true
 
     # build_rn_docs:
     #     runs-on: ubuntu-latest
