@@ -1928,7 +1928,7 @@ __metadata:
     "@brightlayer-ui/prettier-config": ^1.0.3
     "@brightlayer-ui/react-native-auth-workflow": 7.0.0-beta.0
     "@brightlayer-ui/react-native-components": ^8.0.4
-    "@brightlayer-ui/react-native-themes": ^7.0.1
+    "@brightlayer-ui/react-native-themes": "workspace:*"
     "@brightlayer-ui/react-native-vector-icons": ^2.4.0
     "@okta/okta-react-native": ^2.12.0
     "@react-native-async-storage/async-storage": ^2.0.0
@@ -2138,25 +2138,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brightlayer-ui/react-native-themes@^7.0.1, @brightlayer-ui/react-native-themes@workspace:*, @brightlayer-ui/react-native-themes@workspace:packages/blui-react-native-themes":
-  version: 0.0.0-use.local
-  resolution: "@brightlayer-ui/react-native-themes@workspace:packages/blui-react-native-themes"
-  dependencies:
-    "@brightlayer-ui/colors": 4.0.0
-    "@brightlayer-ui/prettier-config": ^1.0.3
-    "@types/color": ^4.2.0
-    color: ^4.2.3
-    npm-license-crawler: ^0.2.1
-    prettier: ^3.0.0
-    react: ^18.2.0
-    react-native: 0.75.2
-    react-native-paper: ^5.0.0
-    typescript: ^5.0.4
-  peerDependencies:
-    react-native-paper: ^5.0.0
-  languageName: unknown
-  linkType: soft
-
 "@brightlayer-ui/react-native-themes@npm:7.0.1":
   version: 7.0.1
   resolution: "@brightlayer-ui/react-native-themes@npm:7.0.1"
@@ -2180,6 +2161,25 @@ __metadata:
   checksum: 952c34c0e147ac9e85c601b759d3d49cacd36f6691fdd54c4773e43593da1c7e4a1415e0558f8325b14463f291472ba8dd38a84aa2b6a06ad413f9e1d316dd96
   languageName: node
   linkType: hard
+
+"@brightlayer-ui/react-native-themes@workspace:*, @brightlayer-ui/react-native-themes@workspace:packages/blui-react-native-themes":
+  version: 0.0.0-use.local
+  resolution: "@brightlayer-ui/react-native-themes@workspace:packages/blui-react-native-themes"
+  dependencies:
+    "@brightlayer-ui/colors": 4.0.0
+    "@brightlayer-ui/prettier-config": ^1.0.3
+    "@types/color": ^4.2.0
+    color: ^4.2.3
+    npm-license-crawler: ^0.2.1
+    prettier: ^3.0.0
+    react: ^18.2.0
+    react-native: 0.75.2
+    react-native-paper: ^5.0.0
+    typescript: ^5.0.4
+  peerDependencies:
+    react-native-paper: ^5.0.0
+  languageName: unknown
+  linkType: soft
 
 "@brightlayer-ui/react-native-vector-icons@npm:^2.0.0, @brightlayer-ui/react-native-vector-icons@npm:^2.2.0, @brightlayer-ui/react-native-vector-icons@npm:^2.4.0":
   version: 2.4.0

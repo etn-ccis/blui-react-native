@@ -208,6 +208,12 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
+            - name: Download rn theme build
+              uses: actions/download-artifact@v4
+              with:
+                  name: theme-dist
+                  if-no-files-found: error
+                  path: packages/blui-react-native-themes/theme-dist
             - run: yarn build --base=${{env.base-href}} && touch ./dist/docs/.nojekyll
               working-directory: docs
             - name: Save dist
