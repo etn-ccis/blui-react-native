@@ -2138,7 +2138,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brightlayer-ui/react-native-themes@^7.0.1, @brightlayer-ui/react-native-themes@workspace:packages/blui-react-native-themes":
+"@brightlayer-ui/react-native-themes@^7.0.1, @brightlayer-ui/react-native-themes@workspace:*, @brightlayer-ui/react-native-themes@workspace:packages/blui-react-native-themes":
   version: 0.0.0-use.local
   resolution: "@brightlayer-ui/react-native-themes@workspace:packages/blui-react-native-themes"
   dependencies:
@@ -11454,7 +11454,7 @@ __metadata:
     "@brightlayer-ui/react-components": ^6.3.0
     "@brightlayer-ui/react-doc-components": ^1.0.0-alpha.12
     "@brightlayer-ui/react-native-components": ^8.0.4
-    "@brightlayer-ui/react-native-themes": ^7.0.1
+    "@brightlayer-ui/react-native-themes": "workspace:*"
     "@brightlayer-ui/react-native-vector-icons": ^2.2.0
     "@brightlayer-ui/react-themes": ^8.0.0-alpha.0
     "@emotion/css": ^11.11.2
