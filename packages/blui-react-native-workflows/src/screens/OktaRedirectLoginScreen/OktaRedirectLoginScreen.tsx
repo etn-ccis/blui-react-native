@@ -48,7 +48,9 @@ export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLogin
 
     const createOktaConfig = async (): Promise<void> => {
         // eslint-disable-next-line
-        await createConfig(oktaConfigObject);
+        if (oktaConfigObject) {
+            await createConfig(oktaConfigObject);
+        } 
     };
 
     useEffect(() => {

@@ -114,3 +114,5 @@ yarn-error.log
 apps/showcase-e2e/artifacts
 node_modules
 **/**/coverage
+
+**/**/tsconfig.tsbuildinfo

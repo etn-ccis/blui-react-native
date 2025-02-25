@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { AuthUIActions } from '@brightlayer-ui/react-native-auth-workflow';
-import { AppContextType } from '../contexts/AppContextProvider';
+// import { AppContextType } from '../contexts/AppContextProvider';
 import { LocalStorage } from './store/local-storage';
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
@@ -14,7 +14,7 @@ function isRandomFailure(): boolean {
     return false; // randomResponseNumber < 10;
 }
 
-type AuthUIActionsWithApp = (appHelper: AppContextType) => AuthUIActions;
+type AuthUIActionsWithApp = (appHelper: any) => AuthUIActions; // later change appHelper type from any to AppContextType
 
 /**
  * Example implementation of [[AuthUIActions]] to start with during development.
