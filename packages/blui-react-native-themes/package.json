@@ -21,7 +21,7 @@
         "start:showcase": "yarn initialize && yarn start:showcase-ios",
         "start:showcase-ios": "yarn initialize && yarn install:showcase-ios && cd demos/showcase && yarn ios",
         "start:showcase-android": "yarn initialize && yarn install:showcase-android && cd demos/showcase && yarn android",
-        "build": "yarn && tsc",
+        "build": "tsc",
         "link:themes": "bash ./scripts/linkThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
