@@ -143,7 +143,7 @@ export const componentsMap = {
                 mb: 1,
                 display: 'flex',
                 backgroundColor: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? theme.palette.background.default : "#2b353a", //change it using theme.palette syntax
+                    theme.palette.mode === 'light' ? theme.palette.background.default : '#2b353a', //change it using theme.palette syntax
                 '& code': {
                     width: '100%',
                 },
@@ -161,7 +161,7 @@ export const componentsMap = {
                 p: '0px 5px',
                 border: (theme: Theme) => `1px solid ${theme.palette.divider}`,
                 backgroundColor: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? theme.palette.background.default : "#2b353a", //change it using theme.palette syntax
+                    theme.palette.mode === 'light' ? theme.palette.background.default : '#2b353a', //change it using theme.palette syntax
                 borderRadius: '2px',
                 fontFamily: `'Roboto Mono', monospace`,
                 lineHeight: '1.6',
@@ -175,7 +175,7 @@ export const componentsMap = {
             color={'textPrimary'}
             sx={{
                 backgroundColor: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? theme.palette.background.default : "#2b353a", //change it using theme.palette syntax
+                    theme.palette.mode === 'light' ? theme.palette.background.default : '#2b353a', //change it using theme.palette syntax
                 fontFamily: `'Roboto Mono', monospace`,
                 border: (theme: Theme) =>
                     theme.palette.mode === 'light' ? undefined : `${theme.palette.divider} 1px solid`,
@@ -219,15 +219,13 @@ export const componentsMap = {
                     borderBottom: 0,
                 },
                 thead: {
-                    backgroundColor: (theme: Theme): string =>
-                        theme.palette.mode === 'light' ? "#eceeee" : "#2b353a",
+                    backgroundColor: (theme: Theme): string => (theme.palette.mode === 'light' ? '#eceeee' : '#2b353a'),
                 },
                 'tbody tr:nth-of-type(odd)': {
                     backgroundColor: 'background.paper',
                 },
                 'tbody tr:nth-of-type(even)': {
-                    backgroundColor: (theme: Theme): string =>
-                        theme.palette.mode === 'light' ? "#eceeee" : "#2b353a",
+                    backgroundColor: (theme: Theme): string => (theme.palette.mode === 'light' ? '#eceeee' : '#2b353a'),
                 },
                 td: {
                     fontSize: '0.875rem',

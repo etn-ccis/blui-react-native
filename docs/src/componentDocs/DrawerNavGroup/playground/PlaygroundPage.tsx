@@ -150,7 +150,7 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
             title: 'Devices',
             itemID: 'Devices',
             subtitle: '5 new warnings',
-            statusColor: "#f0cb2f", //change it using theme.palette syntax
+            statusColor: '#f0cb2f', //change it using theme.palette syntax
             onPress: (): void => setActiveItem('Devices'),
         },
         {

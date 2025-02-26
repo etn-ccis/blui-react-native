@@ -1,3 +1,2 @@
-declare module "@mdx-js/react";
-declare module "*.mdx";
- 
+declare module '@mdx-js/react';
+declare module '*.mdx';

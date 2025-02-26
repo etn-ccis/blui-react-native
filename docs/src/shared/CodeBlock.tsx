@@ -36,7 +36,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = (props): JSX.Element => {
                 style={{
                     margin: 0,
                     width: '100%',
-                    backgroundColor: "#2b353a", //change it using theme.palette syntax
+                    backgroundColor: '#2b353a', //change it using theme.palette syntax
                     borderRadius: 4,
                 }}
             >

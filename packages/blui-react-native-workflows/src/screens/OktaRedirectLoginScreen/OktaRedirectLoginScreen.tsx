@@ -50,7 +50,7 @@ export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLogin
         // eslint-disable-next-line
         if (oktaConfigObject) {
             await createConfig(oktaConfigObject);
-        } 
+        }
     };
 
     useEffect(() => {
