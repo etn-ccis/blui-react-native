@@ -59,7 +59,7 @@ jobs:
                   token: ${{ secrets.CODECOV_TOKEN }}
                   directory: packages/blui-react-native-component-library/coverage/
                   files: cobertura-coverage.xml
-                  flags: unittests
+                  flags: component-tests
                   name: codecov-report
                   verbose: true
 
