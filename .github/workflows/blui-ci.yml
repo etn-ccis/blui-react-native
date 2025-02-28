@@ -135,7 +135,7 @@ jobs:
                   token: ${{ secrets.CODECOV_TOKEN }}
                   directory: packages/blui-react-native-workflows/coverage/
                   files: clover.xml
-                  flags: unittests
+                  flags: login-wf-tests
                   name: codecov-report
                   verbose: true
 
