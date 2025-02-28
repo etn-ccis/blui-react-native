@@ -115,7 +115,6 @@ jobs:
 
     unit_tests_workflows:
         runs-on: ubuntu-latest
-        # needs: npm_pack
         strategy:
           matrix:
             node-version: [18.x]
@@ -130,15 +129,15 @@ jobs:
             - run: yarn --immutable
             - run: yarn coverage
               working-directory: packages/blui-react-native-workflows
-            # - name: Upload to Codecov
-            #   uses: codecov/codecov-action@v5
-            #   with:
-            #       token: ${{ secrets.CODECOV_TOKEN }}
-            #       directory: packages/blui-react-native-workflows/coverage/
-            #       files: clover.xml
-            #       flags: unittests
-            #       name: codecov-report
-            #       verbose: true
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/blui-react-native-workflows/coverage/
+                  files: clover.xml
+                  flags: unittests
+                  name: codecov-report
+                  verbose: true
 
     build_login_workflow:
         runs-on: ubuntu-latest
