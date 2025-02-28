@@ -56,7 +56,7 @@
         "npm-license-crawler": "^0.2.1",
         "prettier": "^3.0.0",
         "react": "^18.2.0",
-        "react-native": "~0.74.1",
+        "react-native": "0.75.2",
         "react-native-paper": "^5.0.0",
         "typescript": "^5.0.4"
     },
