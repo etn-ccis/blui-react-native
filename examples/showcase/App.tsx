@@ -1,0 +1,26 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
+
+import React from 'react';
+import {Button} from 'react-native-paper';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import {Text, View} from 'react-native';
+
+function App(): React.JSX.Element {
+  const theme = useExtendedTheme();
+
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>React Native Monorepo with Yarn workspaces</Text>
+      <Button mode="contained" style={{backgroundColor: theme.colors.primary}}>
+        Brightlayer UI
+      </Button>
+    </View>
+  );
+}
+
+export default App;
