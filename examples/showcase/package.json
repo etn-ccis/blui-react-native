@@ -10,14 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "@brightlayer-ui/react-native-components": "^8.0.4",
-    "@brightlayer-ui/react-native-themes": "^7.0.1",
-    "@brightlayer-ui/react-native-vector-icons": "^2.2.0",
+    "@brightlayer-ui/react-native-themes": "workspace:^",
     "react": "18.3.1",
     "react-native": "0.76.7",
-    "react-native-paper": "^5.0.0",
-    "react-native-safe-area-context": "^4.0.0",
-    "react-native-vector-icons": "^9.0.0"
+    "react-native-paper": "^5.13.1",
+    "react-native-safe-area-context": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

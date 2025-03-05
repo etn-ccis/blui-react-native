@@ -226,8 +226,7 @@ export type ExtendedTheme = Omit<MD3Theme, 'colors'> & {
     };
 };
 
-export const useExtendedTheme = (overrides?: $DeepPartial<ExtendedTheme>): ExtendedTheme =>
-    useTheme<ExtendedTheme>(overrides);
+export const useExtendedTheme = useTheme<ExtendedTheme>;
 
 export type bluiFontWeight = '300' | '400' | '600' | '700' | '800' | undefined;
 
