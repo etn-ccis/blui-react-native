@@ -68,8 +68,8 @@ export const IconSwitch: React.FC<IconSwitchProps> = (props) => {
             backgroundColor: disabled
                 ? theme.colors.sliderTrackDisabled
                 : value
-                ? theme.colors.primary
-                : theme.colors.surfaceContainerHighest,
+                  ? theme.colors.primary
+                  : theme.colors.surfaceContainerHighest,
             borderColor: value ? undefined : disabled ? theme.colors.disabled : theme.colors.outline,
             borderWidth: value ? 0 : 2,
             borderRadius: 100,
@@ -87,8 +87,8 @@ export const IconSwitch: React.FC<IconSwitchProps> = (props) => {
                     ? theme.colors.surface
                     : theme.colors.onDisabledContainer
                 : value
-                ? theme.colors.onPrimary
-                : theme.colors.onBackground,
+                  ? theme.colors.onPrimary
+                  : theme.colors.onBackground,
         },
     });
 

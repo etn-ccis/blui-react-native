@@ -6,11 +6,9 @@ import { Add, HelpOutline, LocationOff } from '@mui/icons-material';
 export const EmptyStateDemo: JSX.Element = (
     <Box sx={{ maxWidth: 400, py: 5, px: 3 }}>
         <EmptyState
-            icon={{"family":"material","name":"devices"}}
+            icon={{ family: 'material', name: 'devices' }}
             title={'No Devices'}
-            description={
-                'Check your network connection or add a new device'
-            }
+            description={'Check your network connection or add a new device'}
             actions={
                 <Button color={'primary'} variant={'contained'} startIcon={<Add />}>
                     Add a Device

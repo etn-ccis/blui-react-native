@@ -3,7 +3,6 @@ import { render, cleanup, screen, fireEvent } from '@testing-library/react-nativ
 import { ContactSupportScreenBase } from '../../screens/ContactScreen/ContactSupportScreenBase';
 import { Icon, Text, Provider as PaperProvider } from 'react-native-paper';
 
-
 afterEach(cleanup);
 
 describe('ContactSupportScreenBase tests', () => {
