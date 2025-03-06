@@ -560,8 +560,8 @@ export const Header: React.FC<HeaderProps> = (props) => {
                             ? scrollableDistance
                             : null
                         : inDynamicRange
-                        ? 0
-                        : scrollPositionValue - scrollableDistance,
+                          ? 0
+                          : scrollPositionValue - scrollableDistance,
             });
         } else {
             expand.start();
@@ -575,8 +575,8 @@ export const Header: React.FC<HeaderProps> = (props) => {
                             ? 0
                             : null
                         : inDynamicRange
-                        ? 0
-                        : scrollPositionValue + scrollableDistance,
+                          ? 0
+                          : scrollPositionValue + scrollableDistance,
             });
         }
     }, [

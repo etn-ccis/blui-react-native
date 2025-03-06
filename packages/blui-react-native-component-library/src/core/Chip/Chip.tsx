@@ -105,36 +105,36 @@ export const Chip: React.FC<ChipProps> = (props) => {
             ? //the chip background color should be transparent in case it is set to disable in outline mode
               'transparent'
             : selected
-            ? //the chip background color should be primary[80] in case it is set to selected in outline mode
-              theme.colors.primaryContainer
-            : //the chip background color should be transparent in case it is set to unselected in outline mode
-              'transparent'
+              ? //the chip background color should be primary[80] in case it is set to selected in outline mode
+                theme.colors.primaryContainer
+              : //the chip background color should be transparent in case it is set to unselected in outline mode
+                'transparent'
         : disabled
-        ? //the chip background color should be neutral[10] 5% in case it is set to disable in elevated mode
-          theme.colors.disabledContainer
-        : selected
-        ? //the chip background color should be primary[80] in case it is set to selected in elevated mode
-          theme.colors.primaryContainer
-        : //the chip background color should be neutral[97] in case it is set to unselected in elevated mode
-          theme.colors.surfaceContainerLow;
+          ? //the chip background color should be neutral[10] 5% in case it is set to disable in elevated mode
+            theme.colors.disabledContainer
+          : selected
+            ? //the chip background color should be primary[80] in case it is set to selected in elevated mode
+              theme.colors.primaryContainer
+            : //the chip background color should be neutral[97] in case it is set to unselected in elevated mode
+              theme.colors.surfaceContainerLow;
 
     const DefaultTextColor = isOutlined
         ? disabled
             ? //the chip text color should be neutral[10] 20% in case it is set to disable in outline mode
               theme.colors.disabled
             : selected
-            ? //the chip text color should be primary[80] in case it is set to selected in outline mode
-              theme.colors.onPrimaryContainer
-            : //the chip text color should be neutralVariant[30] in case it is set to unselected in outline mode
-              theme.colors.onSurfaceVariant
+              ? //the chip text color should be primary[80] in case it is set to selected in outline mode
+                theme.colors.onPrimaryContainer
+              : //the chip text color should be neutralVariant[30] in case it is set to unselected in outline mode
+                theme.colors.onSurfaceVariant
         : disabled
-        ? //the chip text color should be neutral[10] 25% in case it is set to disable in elevated mode
-          theme.colors.onDisabledContainer
-        : selected
-        ? //the chip text color should be BLUIColors.primary[30] in case it is set to selected in elevated mode
-          theme.colors.onPrimaryContainer
-        : //the chip text color should be neutralVariant[30] in case it is set to unselected in elevated mode
-          theme.colors.onSurfaceVariant;
+          ? //the chip text color should be neutral[10] 25% in case it is set to disable in elevated mode
+            theme.colors.onDisabledContainer
+          : selected
+            ? //the chip text color should be BLUIColors.primary[30] in case it is set to selected in elevated mode
+              theme.colors.onPrimaryContainer
+            : //the chip text color should be neutralVariant[30] in case it is set to unselected in elevated mode
+              theme.colors.onSurfaceVariant;
 
     const getIcon = (): JSX.Element | undefined => {
         if (icon) {
@@ -153,11 +153,11 @@ export const Chip: React.FC<ChipProps> = (props) => {
     const chipStyle = isElevated
         ? {}
         : selected
-        ? {}
-        : {
-              borderWidth: 1,
-              borderColor: borderColor ? borderColor : disabled ? theme.colors.disabled : theme.colors.outline,
-          };
+          ? {}
+          : {
+                borderWidth: 1,
+                borderColor: borderColor ? borderColor : disabled ? theme.colors.disabled : theme.colors.outline,
+            };
 
     const renderCloseIcon = (): JSX.Element => <Icon source={{ name: 'close' }} size={18} color={DefaultTextColor} />;
     const renderIcon = (): JSX.Element | undefined => getIcon();

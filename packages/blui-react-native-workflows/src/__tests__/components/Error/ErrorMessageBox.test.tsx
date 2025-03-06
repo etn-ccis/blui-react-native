@@ -3,7 +3,6 @@ import { cleanup, fireEvent, render, RenderResult, screen } from '@testing-libra
 import { ErrorMessageBox } from 'src/components';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-
 describe('ErrorMessageBox Test', () => {
     const onClose = jest.fn();
 

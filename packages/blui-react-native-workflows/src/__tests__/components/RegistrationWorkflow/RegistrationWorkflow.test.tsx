@@ -17,7 +17,6 @@ import { Button, Text, Provider as PaperProvider, TextInput } from 'react-native
 import { View } from 'react-native';
 import { RegistrationWorkflowProps } from 'src/components/RegistrationWorkflow/types';
 
-
 afterEach(cleanup);
 
 const defaultProps: RegistrationWorkflowProps = {
