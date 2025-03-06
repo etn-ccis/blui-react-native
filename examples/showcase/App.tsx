@@ -6,12 +6,12 @@
  */
 
 import React from 'react';
-import {Button} from 'react-native-paper';
+import {Button, useTheme} from 'react-native-paper';
 import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 import {Text, View} from 'react-native';
 
 function App(): React.JSX.Element {
-  const theme = useExtendedTheme();
+  const theme = useTheme();
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
