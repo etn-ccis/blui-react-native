@@ -15,6 +15,8 @@ import {
   InfoListItem,
   ListItemTag,
 } from '@brightlayer-ui/react-native-components';
+import ProgessIconExample from './src/ProgessIconExample';
+import 'react-native-svg'
 
 function App(): React.JSX.Element {
   const theme = useTheme();
@@ -23,9 +25,8 @@ function App(): React.JSX.Element {
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>React Native Monorepo with Yarn workspaces</Text>
       <Button mode="contained" style={{backgroundColor: theme.colors.primary}}>
-        Brightlayer UI
+        <Text  style={{color: 'white'}}>Brightlayer UI</Text>
       </Button>
-
       <Chip>Outlined Chip</Chip>
       <InfoListItem
         title={'Title'}
@@ -57,6 +58,7 @@ function App(): React.JSX.Element {
         subtitleSeparator={'/'}
         backgroundColor={theme.colors.secondary}
       />
+      <ProgessIconExample/>
     </View>
   );
 }
