@@ -5,7 +5,7 @@
     "description": "Reusable React Native components for Brightlayer UI applications",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/etn-ccis/blui-react-native-component-library"
+        "url": "git+https://github.com/etn-ccis/blui-react-native"
     },
     "keywords": [
         "react native",
@@ -13,9 +13,9 @@
         "brightlayer-ui"
     ],
     "bugs": {
-        "url": "https://github.com/etn-ccis/blui-react-native-component-library/issues"
+        "url": "https://github.com/etn-ccis/blui-react-native/issues"
     },
-    "homepage": "https://github.com/etn-ccis/blui-react-native-component-library#readme",
+    "homepage": "https://github.com/etn-ccis/blui-react-native#readme",
     "license": "BSD-3-Clause",
     "main": "./dist/index.js",
     "module": "./dist/index.js",
@@ -27,18 +27,12 @@
         }
     },
     "scripts": {
-        "lint": "eslint \"src/**/*.{ts,tsx}\"",
-        "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
         "build": "tsc --p tsconfig.lib.json",
         "test": "jest",
         "test:watch": "jest --watch",
         "coverage": "yarn test --coverage --watchAll=false",
-        "verify-build": "tsc --noEmit",
-        "watch:showcase": "tsc --p tsconfig.lib.json --watch --outdir ../demos/showcase/node_modules/@brightlayer-ui/react-native-components",
-        "prettier": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
-        "prettier:check": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check"
+        "verify-build": "tsc --noEmit"
     },
-    "prettier": "@brightlayer-ui/prettier-config",
     "dependencies": {
         "@brightlayer-ui/react-native-themes": "7.0.1",
         "color": "^4.2.3",
@@ -77,7 +71,7 @@
         "jest": "^29.7.0",
         "prettier": "^2.7.1",
         "react": "^18.1.0",
-        "react-native": "0.75.2",
+        "react-native": "0.76.7",
         "react-native-paper": "^5.0.0",
         "react-native-safe-area-context": "^4.3.3",
         "react-native-svg": "^15.1.0",
