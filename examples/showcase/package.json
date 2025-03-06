@@ -10,8 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@brightlayer-ui/react-native-themes": "workspace:^",
     "@brightlayer-ui/react-native-progress-icons": "workspace:*",
+    "@brightlayer-ui/react-native-themes": "workspace:^",
     "@brightlayer-ui/react-native-vector-icons": "^2.2.0",
     "react": "18.3.1",
     "react-native": "0.76.7",
