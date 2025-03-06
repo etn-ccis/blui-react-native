@@ -1977,7 +1977,7 @@ __metadata:
     jest: ^29.7.0
     prettier: ^2.7.1
     react: ^18.1.0
-    react-native: 0.75.2
+    react-native: 0.76.7
     react-native-collapsible: ^1.6.0
     react-native-keyboard-aware-scroll-view: ^0.9.5
     react-native-modal: ">=13.0.1"
