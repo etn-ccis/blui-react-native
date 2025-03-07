@@ -3,7 +3,6 @@ import { cleanup, render, RenderResult, screen } from '@testing-library/react-na
 import { ErrorManager, ErrorManagerProps } from 'src/components';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-
 describe('ErrorManager Test', () => {
     const onClose = jest.fn();
 

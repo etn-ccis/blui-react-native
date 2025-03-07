@@ -40,10 +40,10 @@ export const CreatePasswordScreen: React.FC<CreatePasswordScreenProps> = (props)
     const passwordRef = useRef(null);
     const confirmRef = useRef(null);
     const [passwordInput, setPasswordInput] = useState(
-        password !== '' ? password : PasswordProps?.initialNewPasswordValue ?? ''
+        password !== '' ? password : (PasswordProps?.initialNewPasswordValue ?? '')
     );
     const [confirmInput, setConfirmInput] = useState(
-        confirmPassword !== '' ? confirmPassword : PasswordProps?.initialConfirmPasswordValue ?? ''
+        confirmPassword !== '' ? confirmPassword : (PasswordProps?.initialConfirmPasswordValue ?? '')
     );
     const [isLoading, setIsLoading] = useState(false);
     const passwordReqs = PasswordProps?.passwordRequirements ?? defaultPasswordRequirements(t);
