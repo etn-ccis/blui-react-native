@@ -7,9 +7,11 @@ import {
   ListItemTag,
   Grade,
 } from '@brightlayer-ui/react-native-components';
-import {Avatar, Text} from 'react-native-paper';
+import {Avatar, Text, useTheme} from 'react-native-paper';
 
 const Components = () => {
+  const theme = useTheme();
+
   return (
     <View style={{width: '100%', padding: 16, alignItems: 'center'}}>
       <Text variant="titleMedium" style={{color: 'black'}}>
@@ -45,6 +47,18 @@ const Components = () => {
         subtitle={'Subtitle'}
         info={'Info'}
         hidePadding
+      />
+      {/* Indicating Status with Avatar */}
+      <InfoListItem
+        title={'Title'}
+        icon={{family: 'brightlayer-ui', name: 'leaf'}}
+        subtitle={'Subtitle'}
+        statusColor={theme.colors.primary}
+        backgroundColor={theme.colors.inversePrimary}
+        avatar
+        divider={'partial'}
+        chevron
+        style={{marginBottom: 20}}
       />
       <ChannelValue
         value="5"
