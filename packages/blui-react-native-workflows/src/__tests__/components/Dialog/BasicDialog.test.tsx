@@ -3,7 +3,6 @@ import { cleanup, fireEvent, render, RenderResult, screen } from '@testing-libra
 import { BasicDialog, BasicDialogProps } from 'src/components';
 import { Provider as PaperProvider } from 'react-native-paper';
 
-
 describe('BasicDialog Test', () => {
     const renderer = (props?: BasicDialogProps): RenderResult =>
         render(
