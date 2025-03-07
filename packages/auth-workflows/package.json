@@ -40,7 +40,7 @@
         "start:example-ipad": "yarn install:dependencies-ios && yarn build && yarn link:workflows && cd example && yarn ipad",
         "start:example-android": "yarn install:dependencies-android && yarn build && yarn link:workflows && cd example && yarn android",
         "test": "jest src --maxWorkers=2",
-        "build": "yarn && tsc",
+        "build": "rm -rf dist && mkdir dist && cd dist && mkdir assets && cd assets && mkdir images && cd ../.. && yarn && tsc && cp -R src/assets dist/assets",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies --exclude ./example -json LICENSES.json",
         "typescript": "tsc --noEmit",
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
