@@ -6,19 +6,26 @@
  */
 
 import React from 'react';
-import {Button} from 'react-native-paper';
+import {Button, useTheme} from 'react-native-paper';
 import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 import {Text, View} from 'react-native';
+import ProgessIconExample from './src/ProgessIconExample';
+import 'react-native-svg';
 
 function App(): React.JSX.Element {
-  const theme = useExtendedTheme();
+  const theme = useTheme();
 
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>React Native Monorepo with Yarn workspaces</Text>
-      <Button mode="contained" style={{backgroundColor: theme.colors.primary}}>
-        Brightlayer UI
+      <Button
+        mode="contained"
+        style={{
+          backgroundColor: theme.colors.primary,
+        }}>
+        <Text style={{color: 'white'}}>Brightlayer UI</Text>
       </Button>
+      <ProgessIconExample />
     </View>
   );
 }
