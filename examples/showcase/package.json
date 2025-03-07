@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@brightlayer-ui/react-native-components": "workspace:^",
-    "@brightlayer-ui/react-native-themes": "workspace:^",
-    "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
     "@brightlayer-ui/react-native-progress-icons": "workspace:*",
+    "@brightlayer-ui/react-native-themes": "workspace:^",
+    "@brightlayer-ui/react-native-vector-icons": "^2.2.0",
     "react": "18.3.1",
     "react-native": "0.76.7",
     "react-native-paper": "^5.0.0",
-    "react-native-safe-area-context": "^5.3.0",
+    "react-native-safe-area-context": "^4.0.0",
     "react-native-svg": "^15.11.2",
     "react-native-vector-icons": "^9.0.0"
   },

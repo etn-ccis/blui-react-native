@@ -2895,9 +2895,9 @@ __metadata:
   linkType: hard
 
 "@google-cloud/promisify@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "@google-cloud/promisify@npm:4.0.0"
-  checksum: edd189398c5ed5b7b64a373177d77c87d076a248c31b8ae878bb91e2411d89860108bcb948c349f32628973a823bd131beb53ec008fd613a8cb466ef1d89de49
+  version: 4.1.0
+  resolution: "@google-cloud/promisify@npm:4.1.0"
+  checksum: 96d18c594e3701f5d171966dda625f183107192d6d5feee0dc53b7a7755c93f1158c873878890bffdd8b80e50da8439ec6d03e169042534cb9bd2cdc45c29fff
   languageName: node
   linkType: hard
 
@@ -3764,36 +3764,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/core-downloads-tracker@npm:^6.4.6":
-  version: 6.4.6
-  resolution: "@mui/core-downloads-tracker@npm:6.4.6"
-  checksum: 9dee13f48851dc2f3b7406bfbc7ed75d7288d57d3e1b22461fbdd955337d88182f5b88ed99975eb17eabc5026e50acebf03d1b565dc15556ca673608e338c02a
+"@mui/core-downloads-tracker@npm:^6.4.7":
+  version: 6.4.7
+  resolution: "@mui/core-downloads-tracker@npm:6.4.7"
+  checksum: b6c5a8e5664cbfde4213bcc5af3e0500bcf2e209c5dc1fd12a157fd8ed14b1f011dfcf404965943b8244c851c74e4389e695aa735ded29f08f2abf46872f9199
   languageName: node
   linkType: hard
 
 "@mui/icons-material@npm:^6.1.4":
-  version: 6.4.6
-  resolution: "@mui/icons-material@npm:6.4.6"
+  version: 6.4.7
+  resolution: "@mui/icons-material@npm:6.4.7"
   dependencies:
     "@babel/runtime": ^7.26.0
   peerDependencies:
-    "@mui/material": ^6.4.6
+    "@mui/material": ^6.4.7
     "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 91ba075a80654b75a8fa39dbc3b603acbddc9bee18297fe68659140b04ae27c8cf8999455e85e20d285b276d82b9be2066f6573e5fa0f98fa6c23436cdbaa1c7
+  checksum: a58d1d541afe23ca496017d9aafba551e2a02de7f940348dca3b4eec91b31ca34387081c93470e992f17e3dc75a2c00f8c5b28618759e5c1cb73ffc93e1c78b7
   languageName: node
   linkType: hard
 
 "@mui/material@npm:^6.1.4":
-  version: 6.4.6
-  resolution: "@mui/material@npm:6.4.6"
+  version: 6.4.7
+  resolution: "@mui/material@npm:6.4.7"
   dependencies:
     "@babel/runtime": ^7.26.0
-    "@mui/core-downloads-tracker": ^6.4.6
-    "@mui/system": ^6.4.6
+    "@mui/core-downloads-tracker": ^6.4.7
+    "@mui/system": ^6.4.7
     "@mui/types": ^7.2.21
     "@mui/utils": ^6.4.6
     "@popperjs/core": ^2.11.8
@@ -3806,7 +3806,7 @@ __metadata:
   peerDependencies:
     "@emotion/react": ^11.5.0
     "@emotion/styled": ^11.3.0
-    "@mui/material-pigment-css": ^6.4.6
+    "@mui/material-pigment-css": ^6.4.7
     "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
     react: ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3819,7 +3819,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 36699f61e4098a7ae9583c5cdd281893c84e50f831f0d4e1d71ccf28051daffc7cdb5a916c9d7417c9d532a0bddb6fe82e7d76244a669175e66c5b4c1b2bd6a1
+  checksum: 6770658779b75bfb5b63812ef3e6c7b8d72f5e721d3d7aa71a3f5fa20c41648598b4c889200bdac58bc0efa979f4cddeb1e09c5c7269187f02b5792fae56857c
   languageName: node
   linkType: hard
 
@@ -3863,9 +3863,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/system@npm:^6.4.6":
-  version: 6.4.6
-  resolution: "@mui/system@npm:6.4.6"
+"@mui/system@npm:^6.4.7":
+  version: 6.4.7
+  resolution: "@mui/system@npm:6.4.7"
   dependencies:
     "@babel/runtime": ^7.26.0
     "@mui/private-theming": ^6.4.6
@@ -3887,7 +3887,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 592d300f869e2255e3f44ac77b8fc665125f57f31e4eccd805cf806fbbe891c67dea8fb0bb5c413496e407b0c7799ff904c10fcf7a344601b5dd97c4978d515f
+  checksum: 334c1a8e912d23d96477ee41bef5535c747cee5c6c533a1c9cbbde7834a3b9efb6389969063c88d6c15121c48bedd17eb9a9e14f6ed9cb2e22b6e5587df86cff
   languageName: node
   linkType: hard
 
@@ -6557,13 +6557,12 @@ __metadata:
   linkType: hard
 
 "@testing-library/react-native@npm:^13.0.1":
-  version: 13.1.0
-  resolution: "@testing-library/react-native@npm:13.1.0"
+  version: 13.2.0
+  resolution: "@testing-library/react-native@npm:13.2.0"
   dependencies:
     chalk: ^4.1.2
     jest-matcher-utils: ^29.7.0
     pretty-format: ^29.7.0
-    react-native-gesture-handler: ^2.23.1
     redent: ^3.0.0
   peerDependencies:
     jest: ">=29.0.0"
@@ -6573,7 +6572,7 @@ __metadata:
   peerDependenciesMeta:
     jest:
       optional: true
-  checksum: 0adb9bdbb4637f92cf1861d5ebd8bc9091310446fba4035a7d6a8902216659fbfec8d8944a6f088f97f8dd6b67d8cf1752c8482f6eabf6973fa62ff1c6baa5a5
+  checksum: fa2f59353b27a5afea72c04296e94e597b7e20f09f7e69d5dd1693da15bdeabfdd1ba655b1e194dbf5727b9dfa92de5af06ec77484b3392aab96dab4f7c05e44
   languageName: node
   linkType: hard
 
@@ -8659,9 +8658,9 @@ __metadata:
   linkType: hard
 
 "axe-core@npm:^4.10.0, axe-core@npm:^4.6.2":
-  version: 4.10.2
-  resolution: "axe-core@npm:4.10.2"
-  checksum: 2b9b1c93ea73ea9f206604e4e17bd771d2d835f077bde54517d73028b8865c69b209460e73d5b109968cbdb39ab3d28943efa5695189bd79e16421ce1706719e
+  version: 4.10.3
+  resolution: "axe-core@npm:4.10.3"
+  checksum: e89fa5bcad9216f2de29bbdf95d6211d8c5b1025cbdcf56b6695c18b2e9a1eebd0b997a0141334169f6f062fc68fd39a5b97f86348d9f5be05958eade5c1ec78
   languageName: node
   linkType: hard
 
@@ -11322,9 +11321,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.73":
-  version: 1.5.112
-  resolution: "electron-to-chromium@npm:1.5.112"
-  checksum: 626e9e0d919d2e23cb37b20ea9ff916be1b2ef96a4955bdfc18f8203a2c98e66fd9cc62a9d1969291538f4c962201add11cc124ca2cab6cde99360ed7802ef58
+  version: 1.5.113
+  resolution: "electron-to-chromium@npm:1.5.113"
+  checksum: 7339108c6379ce36cf64560d431c42fc4b4fc3ac2ed434aad1730a39bc03fed5273faba3c7aa9387efc361b3732653c16ecdf23e33d8f0c67de378a7a5206cf9
   languageName: node
   linkType: hard
 
@@ -13271,8 +13270,8 @@ __metadata:
   linkType: hard
 
 "firebase-tools@npm:^13.28.0":
-  version: 13.32.0
-  resolution: "firebase-tools@npm:13.32.0"
+  version: 13.33.0
+  resolution: "firebase-tools@npm:13.33.0"
   dependencies:
     "@electric-sql/pglite": ^0.2.16
     "@google-cloud/cloud-sql-connector": ^1.3.3
@@ -13344,7 +13343,7 @@ __metadata:
     yaml: ^2.4.1
   bin:
     firebase: lib/bin/firebase.js
-  checksum: 1e703e8975b590457dabf7eb5ff887d9f5d957a74375a4de39fb501ccd11dc88e671ba9ffdca6c28ef0e7eb1ed55dab6bee63acae73cc9726243fae8985bfd2c
+  checksum: dc9ac6f270032c5e6591eb58aa83439e2512e6c5085c1feecfae3b5514f9c9442acf5b0e220a7256e0b2be5070b61adb93f58df85ae3485a730aee89b3810435
   languageName: node
   linkType: hard
 
@@ -21294,7 +21293,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gesture-handler@npm:^2.16.2, react-native-gesture-handler@npm:^2.19.0, react-native-gesture-handler@npm:^2.23.1":
+"react-native-gesture-handler@npm:^2.16.2, react-native-gesture-handler@npm:^2.19.0":
   version: 2.24.0
   resolution: "react-native-gesture-handler@npm:2.24.0"
   dependencies:
@@ -21432,16 +21431,6 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: acf94ea2a30a3ec5594b467f8e0942ac48c10cbb5d34d16beba33cc0052f7c82dfd6ace754fa55f41d55143f134d3d3fa908eaf4cc9dec5743d6c4483b23520a
-  languageName: node
-  linkType: hard
-
-"react-native-safe-area-context@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "react-native-safe-area-context@npm:5.3.0"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 21f18b1286fc7bc6f38f864b7468848c16c58106ae429633e8f655dabb80571beba19ac8aa8bc5e1b2e926d75afddd7ded919a56450aa00c36d56f7fb421f782
   languageName: node
   linkType: hard
 
@@ -23011,12 +23000,9 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
-<<<<<<<<< Temporary merge branch 1
-    "@brightlayer-ui/react-native-themes": "workspace:^"
-=========
-    "@brightlayer-ui/react-native-components": ^8.0.4
+    "@brightlayer-ui/react-native-components": "workspace:^"
     "@brightlayer-ui/react-native-progress-icons": "workspace:*"
-    "@brightlayer-ui/react-native-themes": ^7.0.1
+    "@brightlayer-ui/react-native-themes": "workspace:^"
     "@brightlayer-ui/react-native-vector-icons": ^2.2.0
     "@react-native-community/cli": 15.0.1
     "@react-native-community/cli-platform-android": 15.0.1
@@ -23036,6 +23022,7 @@ __metadata:
     react-native: 0.76.7
     react-native-paper: ^5.0.0
     react-native-safe-area-context: ^4.0.0
+    react-native-svg: ^15.11.2
     react-native-vector-icons: ^9.0.0
     react-test-renderer: 18.3.1
     typescript: 5.0.4
@@ -25298,8 +25285,8 @@ __metadata:
   linkType: hard
 
 "vite@npm:^6.0.5":
-  version: 6.2.0
-  resolution: "vite@npm:6.2.0"
+  version: 6.2.1
+  resolution: "vite@npm:6.2.1"
   dependencies:
     esbuild: ^0.25.0
     fsevents: ~2.3.3
@@ -25345,7 +25332,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 0f2b6232fe94184885dd025609995874ac75279a85596a4053a283bd8bd0391f8ed3e7efb3e8f94073811a2b237c626e850990b04d2c7a1dc33f05d150f36bcd
+  checksum: d7379a9870c888681f7e4a861095e7f568ecd4cb99a5eed2dec65dc205ce863783d45c66a1a275868e23732087009533eadec999061c1ddef96aa8aaa0dcf6d2
   languageName: node
   linkType: hard
 
@@ -26082,9 +26069,9 @@ __metadata:
   linkType: hard
 
 "yocto-queue@npm:^1.0.0":
-  version: 1.1.1
-  resolution: "yocto-queue@npm:1.1.1"
-  checksum: f2e05b767ed3141e6372a80af9caa4715d60969227f38b1a4370d60bffe153c9c5b33a862905609afc9b375ec57cd40999810d20e5e10229a204e8bde7ef255c
+  version: 1.2.0
+  resolution: "yocto-queue@npm:1.2.0"
+  checksum: 6154113e60285f75c9d59c65056ea3842d3d5c999a4c692568155dcc5b9c038850374eae1f04507090eeee8129b8110d9c7259d1aa9fe323957fd46892b655fc
   languageName: node
   linkType: hard
 
