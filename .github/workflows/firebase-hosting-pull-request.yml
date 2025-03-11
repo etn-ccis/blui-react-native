@@ -13,12 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: yarn --immutable
+      - run: yarn --immutable 
       - run: yarn build
         working-directory: docs
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_BLUI_REACT_NATIVE_DOCS }}
-          expires: 2d
           projectId: blui-react-native-docs

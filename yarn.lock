@@ -9296,6 +9296,7 @@ __metadata:
     eslint-plugin-jsx-a11y: 6.7.1
     eslint-plugin-react: 7.37.2
     eslint-plugin-react-hooks: 5.0.0
+    firebase-tools: ^13.33.0
     globals: ^15.14.0
     husky: ^9.1.7
     prettier: ^3.4.2
@@ -13557,7 +13558,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firebase-tools@npm:^13.28.0":
+"firebase-tools@npm:^13.28.0, firebase-tools@npm:^13.33.0":
   version: 13.33.0
   resolution: "firebase-tools@npm:13.33.0"
   dependencies:
