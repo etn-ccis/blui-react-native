@@ -14,7 +14,7 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "noEmit": false,
+        "noEmit": true,
         "jsx": "react-jsx"
     },
     "files": [],
@@ -28,15 +28,12 @@
         "src/**/*.spec.jsx",
         "src/**/*.test.jsx"
     ],
-    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx", "src/**/*.mdx"],
+    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.mdx"],
 
     "references": [
         {
             "path": "./tsconfig.app.json"
         },
-        {
-            "path": "./tsconfig.spec.json"
-        }
     ],
     "extends": "../tsconfig.base.json"
 }
