@@ -26,19 +26,18 @@ export default defineConfig({
         }),
     ],
     cacheDir: '../node_modules/.vite/docs',
-    
+
     server: {
         port: 4200,
         host: 'localhost',
         open: true,
     },
-    
+
     preview: {
         port: 4300,
         host: 'localhost',
     },
-    
-    
+
     root: __dirname,
     build: {
         emptyOutDir: true,
