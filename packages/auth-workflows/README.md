@@ -1,6 +1,6 @@
 # React Native Auth Workflow
 
-[![Build](https://github.com/etn-ccis/blui-react-native-workflows/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-react-native-workflows/actions/workflows/blui-ci.yml) ![npm (scoped)](https://img.shields.io/npm/v/@brightlayer-ui/react-native-auth-workflow) [![codecov](https://codecov.io/gh/etn-ccis/blui-react-native-workflows/branch/master/graph/badge.svg?token=U4OI0D5UVP)](https://codecov.io/gh/etn-ccis/blui-react-native-workflows)
+[![Build](https://github.com/etn-ccis/blui-react-native/blob/dev/.github/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-react-native/blob/dev/.github/workflows/blui-ci.yml) ![npm (scoped)](https://img.shields.io/npm/v/@brightlayer-ui/react-native-auth-workflow) [![codecov](https://codecov.io/gh/etn-ccis/blui-react-native-workflows/branch/master/graph/badge.svg?token=U4OI0D5UVP)](https://codecov.io/gh/etn-ccis/blui-react-native-workflows)
 
 The React Native Auth Workflow package provides a consistent UI implementation of authentication-related capabilities for use in Eaton web applications built with React Native.
 
@@ -18,8 +18,8 @@ This package is flexible, allowing you to use the Login and Registration flows i
 
 These workflows are back-end agnostic, meaning you can use them with any back-end API you wish. You simply need to provide an implementation for several key functions (actions) that are called at various points within the workflows based on user interaction.
 
-<img width="400" alt="Login" src="https://github.com/etn-ccis/blui-react-native-workflows/blob/master/login-workflow/media/screens/okta-login.png?raw=true">
-<img width="400" alt="Create Password" src="https://github.com/etn-ccis/blui-react-native-workflows/blob/master/login-workflow/media/screens/create-password.png?raw=true">
+<img width="400" alt="Login" src="https://github.com/etn-ccis/blui-react-native/tree/packages/auth-workflows/media/screens/okta-login.png?raw=true">
+<img width="400" alt="Create Password" src="https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/media/screens/create-password.png?raw=true">
 
 # Installation
 
@@ -52,7 +52,7 @@ yarn add @brightlayer-ui/react-native-components @brightlayer-ui/react-native-ve
 
 # Usage
 
-To use the package, read our [Integration](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/integration.md) instructions. Even if you are starting from scratch, it may be useful for you to refer to the [Example](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/example) project while getting started.
+To use the package, read our [Integration](https://github.com/etn-ccis/blui-react-native/tree/master/packages/auth-workflows/docs/integration.md) instructions. Even if you are starting from scratch, it may be useful for you to refer to the [Example](https://github.com/etn-ccis/blui-react-native/examples/showcase) project while getting started.
 
 In short, you will need to:
 
@@ -66,14 +66,14 @@ In short, you will need to:
 
 ## Learn More
 
--   [Setting Up Routing](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/routing.md)
--   [Language Support](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/language-support.md)
--   [Adding an Authentication/Login Workflow](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/authentication-workflow.md)
--   [Adding a Registration Workflow](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/registration-workflow.md)
--   [Handling Errors](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/error-management.md)
--   [Customizing Workflows](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/customization.md)
--   [Components & APIs](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/components/README.md)
--   [Screens](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/screens/README.md)
+-   [Setting Up Routing](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/routing.md)
+-   [Language Support](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/language-support.md)
+-   [Adding an Authentication/Login Workflow](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/authentication-workflow.md)
+-   [Adding a Registration Workflow](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/registration-workflow.md)
+-   [Handling Errors](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/error-management.md)
+-   [Customizing Workflows](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/customization.md)
+-   [Components & APIs](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/components/README.md)
+-   [Screens](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/screens/README.md)
 
 # Migrating from v5 => v6
 
@@ -90,15 +90,14 @@ Some notable changes include:
 -   Greater customization of screens through props (and moving customization properties to the screens they affect instead of handling all customizations through a monolithic wrapper component)
 -   Improved error management mechanism (customizable)
 
-Learn more about upgrading your existing application by reading our [Migrating Guide](https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow/docs/migration-guide-5-6.md)
+Learn more about upgrading your existing application by reading our [Migrating Guide](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/migration-guide-5-6.md)
 
 # Contributors
 
 To work on this package as a contributor, first clone down the repository:
 
 ```shell
-git clone https://github.com/etn-ccis/blui-react-native-workflows
-cd react-native-workflows/login-workflow
+git clone https://github.com/etn-ccis/blui-react-native
 ```
 
 You can install all necessary dependencies and run the demo project by running:

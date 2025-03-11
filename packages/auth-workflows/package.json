@@ -7,10 +7,10 @@
         "name": "Brightlayer UI",
         "email": "brightlayer-ui@eaton.com"
     },
-    "homepage": "https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow",
+    "homepage": "https://github.com/etn-ccis/blui-react-native/tree/dev/packages/auth-workflows",
     "repository": {
         "type": "git",
-        "url": "https://github.com/etn-ccis/blui-react-native-workflows/tree/master/login-workflow"
+        "url": "https://github.com/etn-ccis/blui-react-native/tree/dev/packages/auth-workflows"
     },
     "keywords": [
         "Brightlayer UI",
@@ -45,8 +45,7 @@
         "typescript": "tsc --noEmit",
         "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
         "coverage": "yarn test --coverage --watchAll=false",
-        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-auth-workflow",
-        "prepare": "cd .. && husky install login-workflow/.husky"
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-auth-workflow"
     },
     "dependencies": {
         "color": "^4.2.3",
