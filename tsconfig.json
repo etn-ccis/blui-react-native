@@ -5,12 +5,12 @@
         "esModuleInterop": true,
         "jsx": "react",
         "lib": ["es6"],
-        "module": "commonjs",
+        "module": "ESNext",
         "moduleResolution": "node",
         "noEmit": false,
         "strict": true,
         "skipLibCheck": true,
         "target": "esnext"
     },
-    "include": ["**/*.tsx", "**/*.ts"]
+    "include": ["**/*.tsx", "**/*.ts", "docs/vite.config.ts"]
 }
