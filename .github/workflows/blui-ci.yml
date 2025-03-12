@@ -111,28 +111,28 @@ jobs:
                   if-no-files-found: error
                   path: docs/dist
 
-    unit_tests_workflows:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [18.x]
+    # unit_tests_workflows:
+    #     runs-on: ubuntu-latest
+    #     strategy:
+    #         matrix:
+    #             node-version: [18.x]
 
-        steps:
-            - uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v4
-              with:
-                  name: docs
-                  path: docs/dist
-            - name: deploy
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                  token: ${{ secrets.CODECOV_TOKEN }}
-                  directory: packages/auth-workflows/coverage/
-                  files: clover.xml
-                  flags: login-wf-tests
-                  name: codecov-report
-                  verbose: true
+    #     steps:
+    #         - uses: actions/checkout@v4
+    #         - name: Use Node.js ${{ matrix.node-version }}
+    #           uses: actions/setup-node@v4
+    #           with:
+    #               name: docs
+    #               path: docs/dist
+    #         - name: deploy
+    #           uses: JamesIves/github-pages-deploy-action@v4
+    #           with:
+    #               token: ${{ secrets.CODECOV_TOKEN }}
+    #               directory: packages/auth-workflows/coverage/
+    #               files: clover.xml
+    #               flags: login-wf-tests
+    #               name: codecov-report
+    #               verbose: true
 
     build_login_workflow:
         runs-on: ubuntu-latest
@@ -208,7 +208,7 @@ jobs:
                   name: theme-dist
                   if-no-files-found: error
                   path: packages/themes/theme-dist
-            - run: yarn build --base=${{env.base-href}} && touch ./dist/docs/.nojekyll
+            - run: yarn build
               working-directory: docs
             - name: Save dist
               uses: actions/upload-artifact@v4
