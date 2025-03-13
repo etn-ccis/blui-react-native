@@ -17,7 +17,6 @@ const Components = () => {
       <Text variant="titleMedium" style={{color: 'black'}}>
         React Native Components
       </Text>
-
       <View style={{alignItems: 'flex-start'}}>
         <Chip>Outlined Chip</Chip>
         <Chip
