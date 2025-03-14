@@ -31,6 +31,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: "https://registry.npmjs.org"
       - run: yarn --immutable
-        working-directory: packages/progress-icons
       - run: npm run publish:package -- -b ${{env.BRANCH}}
         working-directory: packages/progress-icons

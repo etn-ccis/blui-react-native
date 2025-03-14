@@ -16,8 +16,8 @@
     "scripts": {
         "build": "tsc",
         "test": "bash ./scripts/buildTest.sh",
-        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
-        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-themes",
+        "publish:package": "cd dist && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "cd dist && npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-themes",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json"
     },
     "repository": {
