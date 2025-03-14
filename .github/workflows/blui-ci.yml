@@ -163,27 +163,28 @@ jobs:
               working-directory: packages/themes
 
     # keep publishing steps at end of workflow
-    publish-templates:
-      uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
-      secrets: inherit
-      needs: prettier_lint
+    
+    # publish-templates:
+    #   uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
+    #   secrets: inherit
+    #   needs: prettier_lint
 
-    publish-components:
-        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
-        secrets: inherit
-        needs: [prettier_lint, build_components_library]
+    # publish-components:
+    #     uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
+    #     secrets: inherit
+    #     needs: [prettier_lint, build_components_library]
 
-    publish-auth-workflow:
-        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-auth-workflow.yml@dev
-        secrets: inherit
-        needs: [prettier_lint, build_login_workflow]
+    # publish-auth-workflow:
+    #     uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-auth-workflow.yml@dev
+    #     secrets: inherit
+    #     needs: [prettier_lint, build_login_workflow]
 
-    publish-progress-icons:
-        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-progress-icons.yml@dev
-        secrets: inherit
-        needs: [prettier_lint, build_rn_progress_icons]
+    # publish-progress-icons:
+    #     uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-progress-icons.yml@dev
+    #     secrets: inherit
+    #     needs: [prettier_lint, build_rn_progress_icons]
 
-    publish-themes:
-        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-themes.yml@dev
-        secrets: inherit
-        needs: [prettier_lint, build_theme_verify_artifacts]
+    # publish-themes:
+    #     uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-themes.yml@dev
+    #     secrets: inherit
+    #     needs: [prettier_lint, build_theme_verify_artifacts]
