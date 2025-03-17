@@ -32,8 +32,8 @@
         "test:watch": "jest --watch",
         "coverage": "yarn test --coverage --watchAll=false",
         "verify-build": "tsc --noEmit",
-        "publish:package": "cd distName && rm -f *.tgz && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
-        "tag:package": "cd distName && set npm_config_yes=true && npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-component-library"
+        "publish:package": "cd dist && rm -f *.tgz && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "cd dist && set npm_config_yes=true && npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-component-library"
     },
     "dependencies": {
         "@brightlayer-ui/react-native-themes": "7.0.1",
