@@ -60,7 +60,7 @@ export const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = (props)
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: (): void => {
-            if (props.errorDisplayConfig && props.errorDisplayConfig.onClose) props.errorDisplayConfig.onClose();
+            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
             if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
         },
     };
@@ -85,7 +85,7 @@ export const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = (props)
                 setIsLoading(true);
                 await actions.forgotPassword(email);
                 if (props.showSuccessScreen === false) {
-                    navigate(routeConfig.LOGIN as string);
+                    navigate(routeConfig.LOGIN!);
                 } else {
                     setShowSuccessScreen(true);
                 }
@@ -95,7 +95,7 @@ export const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = (props)
                 setIsLoading(false);
             }
         },
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
         [actions, triggerError]
     );
 
@@ -151,7 +151,7 @@ export const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = (props)
             WorkflowCardActionsProps?.onNext?.();
         },
         onPrevious: (): void => {
-            navigate(routeConfig.LOGIN as string);
+            navigate(routeConfig.LOGIN!);
             WorkflowCardActionsProps?.onPrevious?.();
             clearEmailInput();
         },
@@ -202,7 +202,7 @@ export const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = (props)
                     fullWidthButton: true,
                     onNext: (): void => {
                         clearEmailInput();
-                        navigate(routeConfig.LOGIN as string);
+                        navigate(routeConfig.LOGIN!);
                         setShowSuccessScreen(false);
                     },
                 },

@@ -35,7 +35,7 @@ export const ChangePasswordScreen: React.FC<ChangePasswordScreenProps> = (props)
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: (): void => {
-            if (props.errorDisplayConfig && props.errorDisplayConfig.onClose) props.errorDisplayConfig.onClose();
+            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
             if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
         },
     };
@@ -54,8 +54,8 @@ export const ChangePasswordScreen: React.FC<ChangePasswordScreenProps> = (props)
         if (PasswordProps?.passwordRequirements?.length === 0) {
             return confirmInput === passwordInput;
         }
-        for (let i = 0; i < passwordRequirements.length; i++) {
-            if (!new RegExp(passwordRequirements[i].regex).test(passwordInput)) return false;
+        for (const requirement of passwordRequirements) {
+            if (!new RegExp(requirement.regex).test(passwordInput)) return false;
         }
         return confirmInput === passwordInput;
     }, [PasswordProps?.passwordRequirements?.length, passwordRequirements, passwordInput, confirmInput]);

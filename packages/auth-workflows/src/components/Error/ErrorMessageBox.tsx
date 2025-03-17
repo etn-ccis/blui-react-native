@@ -18,7 +18,7 @@ const makeStyles = (
     StyleSheet.create({
         errorMessageBox: {
             width: '100%',
-            backgroundColor: props.backgroundColor || theme.colors.error,
+            backgroundColor: props.backgroundColor ?? theme.colors.error,
             borderRadius: 16,
             padding: 16,
             marginVertical: 8,
@@ -27,13 +27,13 @@ const makeStyles = (
             justifyContent: 'space-between',
         },
         title: {
-            color: props.fontColor || theme.colors.onError,
+            color: props.fontColor ?? theme.colors.onError,
         },
         message: {
-            color: props.fontColor || theme.colors.onError,
+            color: props.fontColor ?? theme.colors.onError,
         },
         icon: {
-            color: props.fontColor || theme.colors.onError,
+            color: props.fontColor ?? theme.colors.onError,
         },
     });
 

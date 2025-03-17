@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { ChangePasswordScreenProps } from './types';
@@ -36,11 +38,11 @@ export const ChangePasswordScreenBase: React.FC<ChangePasswordScreenProps> = (pr
 
     const styles = makeStyles();
 
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
-    const passwordProps = props.PasswordProps || { onPasswordChange: () => ({}) };
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
+    const passwordProps = props.PasswordProps ?? { onPasswordChange: () => ({}) };
 
     const getSuccessScreen = (
         _props: SuccessScreenProps,
@@ -53,7 +55,7 @@ export const ChangePasswordScreenBase: React.FC<ChangePasswordScreenProps> = (pr
     };
 
     return showSuccessScreen ? (
-        getSuccessScreen(slotProps?.SuccessScreen || {}, slots?.SuccessScreen)
+        getSuccessScreen(slotProps?.SuccessScreen ?? {}, slots?.SuccessScreen)
     ) : (
         <WorkflowCard {...cardBaseProps}>
             <WorkflowCardHeader {...headerProps} />

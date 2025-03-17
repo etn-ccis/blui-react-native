@@ -31,10 +31,10 @@ export const VerifyCodeScreenBase: React.FC<React.PropsWithChildren<VerifyCodeSc
         verifyCodeTextInputProps,
     } = props;
 
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
 
     const [verifyCode, setVerifyCode] = React.useState(initialValue ?? '');
     const [shouldValidateCode, setShouldValidateCode] = React.useState(false);
@@ -60,7 +60,6 @@ export const VerifyCodeScreenBase: React.FC<React.PropsWithChildren<VerifyCodeSc
             setShouldValidateCode(true);
             handleVerifyCodeInputChange(verifyCode);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleOnNext = (): void => {
@@ -91,8 +90,9 @@ export const VerifyCodeScreenBase: React.FC<React.PropsWithChildren<VerifyCodeSc
                             if (verifyCode.length > 0 && isCodeValid && actionsProps.canGoNext) handleOnNext();
                         }}
                         onBlur={(e): void => {
-                            // eslint-disable-next-line no-unused-expressions
-                            verifyCodeTextInputProps?.onBlur && verifyCodeTextInputProps.onBlur(e);
+                            if (verifyCodeTextInputProps?.onBlur) {
+                                return verifyCodeTextInputProps.onBlur(e);
+                            }
                             setShouldValidateCode(true);
                         }}
                     />

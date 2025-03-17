@@ -28,17 +28,17 @@ export const ContactSupportScreenBase: React.FC<ContactSupportScreenProps> = (pr
         onDismiss,
     } = props;
     const theme = useExtendedTheme();
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
 
     return (
         <WorkflowCard {...cardBaseProps}>
             <WorkflowCardHeader {...headerProps} />
             {icon && (
                 <View style={{ alignItems: 'center', marginTop: 48, marginBottom: 16 }}>
-                    <Icon source={icon} size={iconSize || 24} color={theme.colors.disabled} />
+                    <Icon source={icon} size={iconSize ?? 24} color={theme.colors.disabled} />
                 </View>
             )}
             <WorkflowCardBody {...cardBodyProps}>
@@ -53,7 +53,7 @@ export const ContactSupportScreenBase: React.FC<ContactSupportScreenProps> = (pr
             </WorkflowCardBody>
             <WorkflowCardActions
                 {...actionsProps}
-                nextLabel={dismissButtonLabel || actionsProps.nextLabel}
+                nextLabel={dismissButtonLabel ?? actionsProps.nextLabel}
                 onNext={(): void => {
                     if (onDismiss) onDismiss();
                     if (actionsProps.onNext) actionsProps.onNext();

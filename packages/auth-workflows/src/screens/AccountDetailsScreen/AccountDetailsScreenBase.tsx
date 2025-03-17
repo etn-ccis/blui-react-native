@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useCallback, useEffect, useRef } from 'react';
 import { TextInput, HelperText } from 'react-native-paper';
 import { WorkflowCard, WorkflowCardActions, WorkflowCardBody, WorkflowCardHeader } from '../../components/WorkflowCard';
@@ -36,16 +37,16 @@ export const AccountDetailsScreenBase: React.FC<AccountDetailsScreenProps> = (pr
     } = props;
     const styles = makeStyles();
 
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
 
     const firstNameRef = useRef<any>(null);
     const lastNameRef = useRef<any>(null);
 
-    const [firstNameInput, setFirstNameInput] = React.useState(initialFirstName ? initialFirstName : '');
-    const [lastNameInput, setLastNameInput] = React.useState(initialLastName ? initialLastName : '');
+    const [firstNameInput, setFirstNameInput] = React.useState(initialFirstName ?? '');
+    const [lastNameInput, setLastNameInput] = React.useState(initialLastName ?? '');
 
     const [isFirstNameValid, setIsFirstNameValid] = React.useState(false);
     const [isLastNameValid, setIsLastNameValid] = React.useState(false);
@@ -87,7 +88,6 @@ export const AccountDetailsScreenBase: React.FC<AccountDetailsScreenProps> = (pr
             setShouldValidateLastName(true);
             handleLastNameInputChange(lastNameInput);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

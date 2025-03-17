@@ -29,18 +29,18 @@ const makeStyles = (
             flexDirection: 'row',
         },
         mobileHeader: {
-            backgroundColor: backgroundColor || theme.colors.primaryContainer,
+            backgroundColor: backgroundColor ?? theme.colors.primaryContainer,
         },
         tabletHeader: {
-            backgroundColor: backgroundColor || 'transparent',
+            backgroundColor: backgroundColor ?? 'transparent',
         },
         headerContent: {
             marginLeft: 16,
             justifyContent: 'center',
-            color: textColor || (isTablet ? theme.colors.onSurface : theme.colors.onPrimaryContainer),
+            color: textColor ?? (isTablet ? theme.colors.onSurface : theme.colors.onPrimaryContainer),
         },
         headerText: {
-            color: textColor || (isTablet ? theme.colors.onSurface : theme.colors.onPrimaryContainer),
+            color: textColor ?? (isTablet ? theme.colors.onSurface : theme.colors.onPrimaryContainer),
         },
     });
 
@@ -60,22 +60,22 @@ export const WorkflowCardHeader: React.FC<WorkflowCardHeaderProps> = (props) => 
     const statusBarHeight = insets.top;
     const getIcon = (): JSX.Element | undefined => {
         if (icon) {
-            return <Icon source={icon} color={iconColor || theme.colors.onSurface} size={24} />;
+            return <Icon source={icon} color={iconColor ?? theme.colors.onSurface} size={24} />;
         }
-        return <Icon source={{ name: 'close' }} color={iconColor || theme.colors.onSurface} size={24} />;
+        return <Icon source={{ name: 'close' }} color={iconColor ?? theme.colors.onSurface} size={24} />;
     };
     return (
         <View>
             {!isTablet && (
                 <View
                     style={{
-                        backgroundColor: backgroundColor || theme.colors.primaryContainer,
+                        backgroundColor: backgroundColor ?? theme.colors.primaryContainer,
                         height: statusBarHeight,
                     }}
                 >
                     <StatusBar
                         barStyle={
-                            Color(backgroundColor || theme.colors.primaryContainer).isDark()
+                            Color(backgroundColor ?? theme.colors.primaryContainer).isDark()
                                 ? 'light-content'
                                 : 'dark-content'
                         }

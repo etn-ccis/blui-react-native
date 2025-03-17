@@ -26,10 +26,10 @@ const makeStyles = (): StyleSheet.NamedStyles<{
 export const SuccessScreenBase: React.FC<SuccessScreenProps> = (props) => {
     const { dismissButtonLabel = '', canDismiss, onDismiss, EmptyStateProps } = props;
 
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
-    const bodyProps = props.WorkflowCardBodyProps || {};
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
+    const bodyProps = props.WorkflowCardBodyProps ?? {};
     const styles = makeStyles();
 
     return (
@@ -43,7 +43,7 @@ export const SuccessScreenBase: React.FC<SuccessScreenProps> = (props) => {
             <WorkflowCardActions
                 {...actionsProps}
                 nextLabel={dismissButtonLabel || actionsProps.nextLabel}
-                canGoNext={canDismiss || actionsProps.canGoNext}
+                canGoNext={canDismiss ?? actionsProps.canGoNext}
                 onNext={(): void => {
                     if (onDismiss) onDismiss();
                     if (actionsProps.onNext) actionsProps.onNext();

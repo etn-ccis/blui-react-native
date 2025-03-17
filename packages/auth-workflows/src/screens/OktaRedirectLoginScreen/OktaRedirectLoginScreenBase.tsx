@@ -158,7 +158,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
                         mode="contained"
                         style={defaultStyles.loginButton}
                     >
-                        {loginButtonLabel || 'Sign In with Okta'}
+                        {loginButtonLabel ?? 'Sign In with Okta'}
                     </Button>
                 </View>
 
@@ -174,7 +174,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
                                 onPress={handleForgotPassword}
                                 testID={'blui-login-forgot-password-label'}
                             >
-                                {forgotPasswordLabel || 'Forgot your password?'}
+                                {forgotPasswordLabel ?? 'Forgot your password?'}
                             </Text>
                         </View>
                     )}
@@ -185,7 +185,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
                             testID={'blui-okta-login-self-register-wrapper'}
                         >
                             <Text variant="bodyMedium" testID={'blui-okta-login-self-register-instruction-label'}>
-                                {selfRegisterInstructions || 'Need an account?'}
+                                {selfRegisterInstructions ?? 'Need an account?'}
                             </Text>
                             <Text
                                 variant="labelLarge"
@@ -193,7 +193,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
                                 onPress={handleSelfRegister}
                                 testID={'blui-okta-login-self-register-label'}
                             >
-                                {selfRegisterButtonLabel || 'Register now!'}
+                                {selfRegisterButtonLabel ?? 'Register now!'}
                             </Text>
                         </View>
                     )}
@@ -209,7 +209,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
                                 onPress={handleContactSupport}
                                 testID={'blui-okta-login-contact-support-label'}
                             >
-                                {contactSupportLabel || 'Contact Support'}
+                                {contactSupportLabel ?? 'Contact Support'}
                             </Text>
                         </View>
                     )}

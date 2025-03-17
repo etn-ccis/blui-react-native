@@ -32,7 +32,6 @@ describe('RegistrationWorkflowContext', () => {
 
         const CustomFlow: React.FC = () => {
             const Screen1: React.FC = () => {
-                // eslint-disable-next-line
                 values = renderHook((): RegistrationWorkflowContextProps => useRegistrationWorkflowContext());
                 return <Text>Screen 1</Text>;
             };
@@ -54,7 +53,7 @@ describe('RegistrationWorkflowContext', () => {
         await ((): void => expect(values.result.current.screenData['Eula'].accepted).toBeTruthy());
         // eslint-disable-next-line
         await ((): void =>
-            expect(values.result.current.screenData['CreateAccount'].emailAddress).toBe(
+            expect(values.result.current.screenData.CreateAccount.emailAddress).toBe(
                 'emailAddress@emailAddress.emailAddress'
             ));
     });

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState, useCallback, useEffect } from 'react';
 import PasswordRequirements from './PasswordRequirements';
 import { SetPasswordProps } from './types';
@@ -86,9 +87,9 @@ export const SetPassword: React.FC<React.PropsWithChildren<SetPasswordProps>> = 
     );
 
     const isValidPassword = useCallback((): boolean => {
-        const requirementsToCheck = passwordRequirements ? passwordRequirements : defaultPasswordRequirements(t);
-        for (let i = 0; i < requirementsToCheck.length; i++) {
-            if (!new RegExp(requirementsToCheck[i].regex).test(passwordInput)) return false;
+        const requirementsToCheck = passwordRequirements ?? defaultPasswordRequirements(t);
+        for (const requirement of requirementsToCheck) {
+            if (!new RegExp(requirement.regex).test(passwordInput)) return false;
         }
 
         return true;
@@ -104,8 +105,9 @@ export const SetPassword: React.FC<React.PropsWithChildren<SetPasswordProps>> = 
                 error={passwordInput !== '' && !isValidPassword()}
                 {...passwordTextFieldProps}
                 onChangeText={(text: string) => {
-                    // eslint-disable-next-line no-unused-expressions
-                    passwordTextFieldProps?.onChangeText && passwordTextFieldProps.onChangeText(text);
+                    if (passwordTextFieldProps?.onChangeText) {
+                        passwordTextFieldProps.onChangeText(text);
+                    }
                     onPassChange(text);
                 }}
                 returnKeyType="next" // Show "next" button on keyboard
@@ -135,7 +137,7 @@ export const SetPassword: React.FC<React.PropsWithChildren<SetPasswordProps>> = 
             />
             {hasConfirmPasswordError() && (
                 <HelperText type="error" visible={hasConfirmPasswordError()} style={defaultStyle.errorHelperText}>
-                    {passwordNotMatchError || t('bluiCommon:FORMS.PASS_MATCH_ERROR')}
+                    {passwordNotMatchError ?? t('bluiCommon:FORMS.PASS_MATCH_ERROR')}
                 </HelperText>
             )}
             {!hasConfirmPasswordError() && confirmInput !== '' && confirmInput === passwordInput && (

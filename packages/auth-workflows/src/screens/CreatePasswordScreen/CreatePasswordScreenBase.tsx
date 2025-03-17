@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import {
     ErrorManager,
@@ -17,11 +18,11 @@ import { CreatePasswordScreenProps } from './types';
  * @category Component
  */
 export const CreatePasswordScreenBase: React.FC<CreatePasswordScreenProps> = (props) => {
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
-    const passwordProps = props.PasswordProps || { onPasswordChange: () => ({}) };
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
+    const passwordProps = props.PasswordProps ?? { onPasswordChange: () => ({}) };
     const { errorDisplayConfig } = props;
 
     return (

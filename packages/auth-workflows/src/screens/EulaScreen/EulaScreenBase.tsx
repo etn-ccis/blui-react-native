@@ -72,10 +72,10 @@ export const EulaScreenBase: React.FC<EulaScreenProps> = (props) => {
         refreshConfig,
     } = props;
 
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
     const theme = useExtendedTheme();
     const { t } = useTranslation();
     const scrollViewRef = useRef<ScrollView>(null);
@@ -124,7 +124,7 @@ export const EulaScreenBase: React.FC<EulaScreenProps> = (props) => {
                             <TouchableOpacity style={defaultStyles.retryBody} onPress={refreshConfig?.onRefresh}>
                                 <Icon source={{ name: 'refresh' }} />
                                 <Text variant={'titleSmall'} style={defaultStyles.text}>
-                                    {refreshConfig?.refreshButtonLabel || t('bluiCommon:MESSAGES.RETRY')}
+                                    {refreshConfig?.refreshButtonLabel ?? t('bluiCommon:MESSAGES.RETRY')}
                                 </Text>
                             </TouchableOpacity>
                         </View>
@@ -178,10 +178,10 @@ export const EulaScreenBase: React.FC<EulaScreenProps> = (props) => {
                             <ErrorManager {...errorDisplayConfig}>
                                 <Checkbox.Item
                                     testID="blui-eula-checkbox"
-                                    color={checkboxProps?.color || theme.colors.primary}
+                                    color={checkboxProps?.color ?? theme.colors.primary}
                                     disabled={!checkboxEnable}
                                     status={eulaAccepted ? 'checked' : 'unchecked'}
-                                    label={checkboxLabel as string}
+                                    label={checkboxLabel!}
                                     onPress={() => {
                                         handleEulaAcceptedChecked(!eulaAccepted);
                                     }}

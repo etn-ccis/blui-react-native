@@ -20,14 +20,14 @@ export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLogin
         loginButtonLabel = t('bluiCommon:ACTIONS.OKTA_SIGN_IN'),
         showForgotPassword = true,
         forgotPasswordLabel = t('bluiCommon:LABELS.FORGOT_PASSWORD'),
-        onForgotPassword = (): void => navigate(routeConfig.FORGOT_PASSWORD as string),
+        onForgotPassword = (): void => navigate(routeConfig.FORGOT_PASSWORD!),
         showSelfRegistration = true,
         selfRegisterInstructions = t('bluiCommon:LABELS.NEED_ACCOUNT'),
         selfRegisterButtonLabel = t('bluiCommon:ACTIONS.CREATE_ACCOUNT'),
-        onSelfRegister = (): void => navigate(routeConfig.REGISTER_SELF as string),
+        onSelfRegister = (): void => navigate(routeConfig.REGISTER_SELF!),
         showContactSupport = true,
         contactSupportLabel = t('bluiCommon:MESSAGES.CONTACT'),
-        onContactSupport = (): void => navigate(routeConfig.SUPPORT as string),
+        onContactSupport = (): void => navigate(routeConfig.SUPPORT!),
         showCyberSecurityBadge = true,
         projectImage,
         header,
@@ -47,13 +47,11 @@ export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLogin
     };
 
     const createOktaConfig = async (): Promise<void> => {
-        // eslint-disable-next-line
         await createConfig(oktaConfigObject);
     };
 
     useEffect(() => {
         void createOktaConfig();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

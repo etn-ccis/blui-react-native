@@ -21,7 +21,7 @@ export const EulaScreen: React.FC<EulaScreenProps> = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: (): void => {
-            if (props.errorDisplayConfig && props.errorDisplayConfig.onClose) props.errorDisplayConfig.onClose();
+            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
             if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
         },
     };
@@ -47,7 +47,7 @@ export const EulaScreen: React.FC<EulaScreenProps> = (props) => {
         ...otherEulaScreenProps
     } = props;
 
-    const eulaAccepted = initialCheckboxValue ? initialCheckboxValue : screenData.Eula.accepted;
+    const eulaAccepted = initialCheckboxValue ?? screenData.Eula.accepted;
     const [isLoading, setIsLoading] = useState(true);
     const [eulaData, setEulaData] = useState<string | JSX.Element>();
     const [eulaFetchError, setEulaFetchError] = useState(false);
@@ -71,7 +71,6 @@ export const EulaScreen: React.FC<EulaScreenProps> = (props) => {
             setIsLoading(false);
             setEulaData(eulaContent);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [eulaContent, t, actions, language]);
 
     const onNext = useCallback(async (): Promise<void> => {
@@ -86,7 +85,7 @@ export const EulaScreen: React.FC<EulaScreenProps> = (props) => {
                     (await actions?.validateUserRegistrationRequest?.(
                         screenData.VerifyCode.code,
                         screenData.CreateAccount.emailAddress
-                    )) || {};
+                    )) ?? {};
                 isAccExist = accountExists;
                 if (isAccExist) {
                     updateScreenData({
@@ -146,13 +145,12 @@ export const EulaScreen: React.FC<EulaScreenProps> = (props) => {
             screenData.Eula = { ...screenData, accepted };
             props?.onEulaAcceptedChange?.(accepted);
         },
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
         [screenData]
     );
 
     useEffect(() => {
         void loadAndCacheEula();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [language]);
 
     const {

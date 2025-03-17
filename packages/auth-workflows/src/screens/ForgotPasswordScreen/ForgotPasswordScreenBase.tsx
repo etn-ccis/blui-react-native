@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useCallback, useState } from 'react';
 import {
     ErrorManager,
@@ -23,7 +24,7 @@ export const ForgotPasswordScreenBase: React.FC<React.PropsWithChildren<ForgotPa
     const {
         emailLabel,
         initialEmailValue,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
         emailValidator = (email: string): boolean | string =>
             new RegExp(EMAIL_REGEX).test(email) ? true : 'Please enter a valid email',
         SuccessScreen,
@@ -35,16 +36,16 @@ export const ForgotPasswordScreenBase: React.FC<React.PropsWithChildren<ForgotPa
 
     const [emailInput, setEmailInput] = useState(initialEmailValue ?? '');
 
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
 
     const validateEmail = (): boolean => typeof emailValidator(emailInput) !== 'string';
 
     const [isEmailValid, setIsEmailValid] = useState(validateEmail);
     const [emailError, setEmailError] = useState(!validateEmail() ? emailValidator(emailInput) : '');
-    const [shouldValidateEmail, setShouldValidateEmail] = useState(emailInput !== '' ?? validateEmail);
+    const [shouldValidateEmail, setShouldValidateEmail] = useState(emailInput !== '' || validateEmail);
 
     const handleEmailInputChange = useCallback(
         (email: string) => {

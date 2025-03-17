@@ -21,7 +21,7 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: (): void => {
-            if (props.errorDisplayConfig && props.errorDisplayConfig.onClose) props.errorDisplayConfig.onClose();
+            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
             if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
         },
     };
@@ -61,7 +61,6 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
         } finally {
             setIsLoading(false);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleOnNext = useCallback(async (): Promise<void> => {
@@ -69,7 +68,7 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
             setIsLoading(true);
             await actions.setPassword(code, passwordInput, email);
             if (props.showSuccessScreen === false) {
-                navigate(routeConfig.LOGIN as string);
+                navigate(routeConfig.LOGIN!);
             } else {
                 setShowSuccessScreen(true);
             }
@@ -84,8 +83,8 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
         if (passwordReqs?.length === 0) {
             return confirmInput === passwordInput;
         }
-        for (let i = 0; i < passwordReqs.length; i++) {
-            if (!new RegExp(passwordReqs[i].regex).test(passwordInput)) return false;
+        for (const req of passwordReqs) {
+            if (!new RegExp(req.regex).test(passwordInput)) return false;
         }
         return confirmInput === passwordInput;
     }, [passwordReqs, passwordInput, confirmInput]);
@@ -101,7 +100,6 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
     useEffect(() => {
         // eslint-disable-next-line
         verifyResetCode();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const clearScreenData = (): void => {
@@ -147,7 +145,7 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
         },
         onPrevious: (): void => {
             clearScreenData();
-            navigate(routeConfig.LOGIN as string);
+            navigate(routeConfig.LOGIN!);
             WorkflowCardActionsProps?.onPrevious?.();
         },
     };
@@ -207,9 +205,8 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
                 ...errorDisplayConfig,
                 onClose: hasVerifyCodeError
                     ? (): void => {
-                          navigate(routeConfig.LOGIN as string);
-                          // eslint-disable-next-line no-unused-expressions
-                          errorDisplayConfig.onClose;
+                          navigate(routeConfig.LOGIN!);
+                          errorDisplayConfig.onClose?.();
                       }
                     : errorDisplayConfig.onClose,
             }}

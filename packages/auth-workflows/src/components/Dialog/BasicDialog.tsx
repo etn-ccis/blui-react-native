@@ -44,7 +44,7 @@ export const BasicDialog: React.FC<BasicDialogProps> = (props) => {
                             onDismiss?.();
                         }}
                     >
-                        {dismissButtonText || 'Okay'}
+                        {dismissButtonText ?? 'Okay'}
                     </Button>
                 </Dialog.Actions>
             </Dialog>

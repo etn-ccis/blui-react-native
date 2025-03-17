@@ -111,9 +111,9 @@ describe('RegistrationWorkflow', () => {
             void result.current.nextScreen({ screenId: 'Eula', values: { accepted: true } });
         });
 
-        expect(result.current.screenData['Eula'].accepted).toBeTruthy();
-        expect(result.current.screenData['CreateAccount'].emailAddress).toBe('emailAddress@emailAddress.com');
-        expect(result.current.screenData['VerifyCode'].code).toBe('123');
+        expect(result.current.screenData.Eula.accepted).toBeTruthy();
+        expect(result.current.screenData.CreateAccount.emailAddress).toBe('emailAddress@emailAddress.com');
+        expect(result.current.screenData.VerifyCode.code).toBe('123');
     });
 
     it('should set screen data for custom registration workflow in the context', () => {
@@ -136,9 +136,9 @@ describe('RegistrationWorkflow', () => {
             });
         });
         // @ts-ignore
-        expect(result.current.screenData['Other']['Screen1'].test).toBe('test');
+        expect(result.current.screenData.Other.Screen1.test).toBe('test');
         // @ts-ignore
-        void ((): void => expect(result.current.screenData['Other']['Screen2'].test2).toBe('test2'));
+        void ((): void => expect(result.current.screenData.Other.Screen2.test2).toBe('test2'));
     });
 
     it('should check for lower bound of initialScreenIndex props', () => {
@@ -189,8 +189,8 @@ describe('RegistrationWorkflow', () => {
         );
         const { result } = renderHook(() => useRegistrationWorkflowContext(), { wrapper });
 
-        expect(result.current.screenData['Eula'].accepted).toBeFalsy();
-        expect(result.current.screenData['CreateAccount'].emailAddress).toBe('');
+        expect(result.current.screenData.Eula.accepted).toBeFalsy();
+        expect(result.current.screenData.CreateAccount.emailAddress).toBe('');
 
         void act(() => {
             void result.current.nextScreen({ screenId: 'Eula', values: { accepted: true } });
@@ -203,7 +203,7 @@ describe('RegistrationWorkflow', () => {
             });
         });
 
-        expect(result.current.screenData['Eula'].accepted).toBeTruthy();
+        expect(result.current.screenData.Eula.accepted).toBeTruthy();
         expect(screen.getByText('Account Exists!!!')).toBeOnTheScreen();
     });
 
@@ -222,8 +222,8 @@ describe('RegistrationWorkflow', () => {
         );
         const { result } = renderHook(() => useRegistrationWorkflowContext(), { wrapper });
 
-        expect(result.current.screenData['Eula'].accepted).toBeFalsy();
-        expect(result.current.screenData['CreateAccount'].emailAddress).toBe('');
+        expect(result.current.screenData.Eula.accepted).toBeFalsy();
+        expect(result.current.screenData.CreateAccount.emailAddress).toBe('');
 
         void act(() => {
             void result.current.nextScreen({ screenId: 'Eula', values: { accepted: true } });
@@ -236,7 +236,7 @@ describe('RegistrationWorkflow', () => {
             });
         });
 
-        expect(result.current.screenData['Eula'].accepted).toBeTruthy();
+        expect(result.current.screenData.Eula.accepted).toBeTruthy();
         void ((): void => expect(screen.getByText('Account Exists!!!')).toBeInTheDocument());
     });
 

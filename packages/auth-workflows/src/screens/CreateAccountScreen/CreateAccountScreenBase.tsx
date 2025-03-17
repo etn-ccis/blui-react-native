@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useCallback, useEffect } from 'react';
 import { CreateAccountScreenProps } from './types';
 import {
@@ -28,12 +29,12 @@ export const CreateAccountScreenBase: React.FC<CreateAccountScreenProps & { inpu
         errorDisplayConfig,
     } = props;
 
-    const cardBaseProps = props.WorkflowCardBaseProps || {};
-    const headerProps = props.WorkflowCardHeaderProps || {};
-    const cardBodyProps = props.WorkflowCardBodyProps || {};
-    const actionsProps = props.WorkflowCardActionsProps || {};
+    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
+    const headerProps = props.WorkflowCardHeaderProps ?? {};
+    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
+    const actionsProps = props.WorkflowCardActionsProps ?? {};
 
-    const [emailInput, setEmailInput] = React.useState(initialValue ? initialValue : '');
+    const [emailInput, setEmailInput] = React.useState(initialValue ?? '');
     const [isEmailValid, setIsEmailValid] = React.useState(emailValidator(initialValue ?? '') ?? false);
     const [emailError, setEmailError] = React.useState('');
     const [shouldValidateEmail, setShouldValidateEmail] = React.useState(false);
@@ -53,7 +54,6 @@ export const CreateAccountScreenBase: React.FC<CreateAccountScreenProps & { inpu
             setShouldValidateEmail(true);
             handleEmailInputChange(emailInput);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <WorkflowCard {...cardBaseProps}>
