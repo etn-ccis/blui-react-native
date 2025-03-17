@@ -37,11 +37,11 @@ jobs:
 
     build_rn_progress_icons:
         runs-on: ubuntu-latest
-    
+
         strategy:
-          matrix:
-            node-version: [18.x]
-    
+            matrix:
+                node-version: [18.x]
+
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -49,7 +49,7 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-                  cache: "yarn"
+                  cache: 'yarn'
             - run: yarn install --immutable
             - run: yarn build
               working-directory: packages/progress-icons
@@ -162,12 +162,64 @@ jobs:
             - run: yarn test
               working-directory: packages/themes
 
+    unit_tests_components:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [20.x]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn install --immutable
+            - run: yarn coverage
+              working-directory: packages/component-library
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/component-library/coverage/
+                  files: cobertura-coverage.xml
+                  flags: component-tests
+                  name: codecov-report
+                  verbose: true
+
+    build_components_library:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [20.x]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - run: yarn build
+              working-directory: packages/component-library
+            - name: Save build
+              uses: actions/upload-artifact@v4
+              with:
+                  name: lib-dist
+                  if-no-files-found: error
+                  path: packages/component-library/dist
     # keep publishing steps at end of workflow
-    
+
     publish-templates:
-      uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
-      secrets: inherit
-      needs: prettier_lint
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
+        secrets: inherit
+        needs: prettier_lint
 
     publish-components:
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
