@@ -37,11 +37,11 @@ jobs:
 
     build_rn_progress_icons:
         runs-on: ubuntu-latest
-    
+
         strategy:
-          matrix:
-            node-version: [18.x]
-    
+            matrix:
+                node-version: [18.x]
+
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -49,7 +49,7 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-                  cache: "yarn"
+                  cache: 'yarn'
             - run: yarn install --immutable
             - run: yarn build
               working-directory: packages/progress-icons
@@ -214,3 +214,29 @@ jobs:
                   name: lib-dist
                   if-no-files-found: error
                   path: packages/component-library/dist
+    # keep publishing steps at end of workflow
+
+    publish-templates:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
+        secrets: inherit
+        needs: prettier_lint
+
+    publish-components:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_components_library]
+
+    publish-auth-workflow:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-auth-workflow.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_login_workflow]
+
+    publish-progress-icons:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-progress-icons.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_rn_progress_icons]
+
+    publish-themes:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-themes.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_theme_verify_artifacts]
