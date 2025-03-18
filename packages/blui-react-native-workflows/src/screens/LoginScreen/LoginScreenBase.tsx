@@ -150,7 +150,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
 
     const theme = useExtendedTheme();
     const { isTablet } = useScreenDimensions();
-    const [username, setUsername] = React.useState<string>(initialUsernameValue || '');
+    const [username, setUsername] = React.useState<string>(initialUsernameValue ?? '');
     const [password, setPassword] = React.useState<string>('');
     const [rememberMe, setRememberMe] = React.useState<boolean | undefined>(rememberMeInitialValue);
 
@@ -243,19 +243,15 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                                 mode="flat"
                                 {...usernameTextFieldProps}
                                 onChangeText={(e): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    usernameTextFieldProps?.onChangeText && usernameTextFieldProps.onChangeText(e);
+                                    usernameTextFieldProps?.onChangeText?.(e);
                                     handleUsernameInputChange(e);
                                 }}
                                 onSubmitEditing={(e: any): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    usernameTextFieldProps?.onSubmitEditing &&
-                                        usernameTextFieldProps.onSubmitEditing(e);
+                                    usernameTextFieldProps?.onSubmitEditing?.(e);
                                     if (passwordField.current) passwordField.current.focus();
                                 }}
                                 onBlur={(e): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    usernameTextFieldProps?.onBlur && usernameTextFieldProps.onBlur(e);
+                                    usernameTextFieldProps?.onBlur?.(e);
                                     setShouldValidateUsername(true);
                                 }}
                             />
@@ -273,19 +269,17 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                                 error={shouldValidatePassword && !isPasswordValid}
                                 {...passwordTextFieldProps}
                                 onChangeText={(e: any): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    passwordTextFieldProps?.onChange && passwordTextFieldProps.onChange(e);
+                                    passwordTextFieldProps?.onChange?.(e);
                                     handlePasswordInputChange(e);
                                 }}
                                 onSubmitEditing={(e: any): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    passwordTextFieldProps?.onSubmitEditing &&
+                                    if (passwordTextFieldProps?.onSubmitEditing) {
                                         passwordTextFieldProps.onSubmitEditing(e);
+                                    }
                                     handleLoginSubmit();
                                 }}
                                 onBlur={(e): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    passwordTextFieldProps?.onBlur && passwordTextFieldProps.onBlur(e);
+                                    passwordTextFieldProps?.onBlur?.(e);
                                     setShouldValidatePassword(true);
                                 }}
                             />
@@ -308,7 +302,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                                 testID={'blui-login-remember-me-login'}
                                 style={defaultStyles.rememberMeText}
                             >
-                                {rememberMeLabel || 'Remember Me'}
+                                {rememberMeLabel ?? 'Remember Me'}
                             </Text>
                         </View>
                     )}
@@ -328,7 +322,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                             mode="contained"
                             style={defaultStyles.loginButton}
                         >
-                            {loginButtonLabel || 'Log In'}
+                            {loginButtonLabel ?? 'Log In'}
                         </Button>
                     </View>
                 </View>
@@ -341,7 +335,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                             onPress={handleForgotPassword}
                             testID={'blui-login-forgot-password-label'}
                         >
-                            {forgotPasswordLabel || 'Forgot your password?'}
+                            {forgotPasswordLabel ?? 'Forgot your password?'}
                         </Text>
                     </View>
                 )}
@@ -349,7 +343,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                 {showSelfRegistration && (
                     <View style={defaultStyles.selfRegisterWrapper} testID={'blui-login-self-register-wrapper'}>
                         <Text variant="bodyMedium" testID={'blui-login-self-register-instruction-label'}>
-                            {selfRegisterInstructions || 'Need an account?'}
+                            {selfRegisterInstructions ?? 'Need an account?'}
                         </Text>
                         <Text
                             variant="labelLarge"
@@ -357,7 +351,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                             onPress={handleSelfRegister}
                             testID={'blui-login-self-register-label'}
                         >
-                            {selfRegisterButtonLabel || 'Register now!'}
+                            {selfRegisterButtonLabel ?? 'Register now!'}
                         </Text>
                     </View>
                 )}
@@ -370,7 +364,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                             onPress={handleContactSupport}
                             testID={'blui-login-contact-support-label'}
                         >
-                            {contactSupportLabel || 'Contact Support'}
+                            {contactSupportLabel ?? 'Contact Support'}
                         </Text>
                     </View>
                 )}

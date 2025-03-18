@@ -28,7 +28,7 @@ export const AccountDetailsScreen: React.FC<AccountDetailsScreenProps> = (props)
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: (): void => {
-            if (props.errorDisplayConfig && props.errorDisplayConfig.onClose) props.errorDisplayConfig.onClose();
+            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
             if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
         },
     };

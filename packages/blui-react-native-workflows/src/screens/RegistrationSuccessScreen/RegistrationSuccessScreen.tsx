@@ -44,7 +44,7 @@ export const RegistrationSuccessScreen: React.FC<SuccessScreenProps> = (props) =
 
     const {
         canDismiss = true,
-        onDismiss = (): void => navigate(routeConfig.LOGIN as string),
+        onDismiss = (): void => navigate(routeConfig.LOGIN!),
         WorkflowCardHeaderProps,
         WorkflowCardActionsProps,
         WorkflowCardBodyProps,
@@ -56,7 +56,7 @@ export const RegistrationSuccessScreen: React.FC<SuccessScreenProps> = (props) =
         title: t('bluiRegistration:REGISTRATION.STEPS.COMPLETE'),
         ...WorkflowCardHeaderProps,
         onIconPress: (): void => {
-            navigate(routeConfig.LOGIN as string);
+            navigate(routeConfig.LOGIN!);
             resetScreenData();
         },
     };

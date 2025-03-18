@@ -3,7 +3,7 @@ import { TextStyle, StyleProp, StyleSheet } from 'react-native';
 import { Text, TextProps } from 'react-native-paper';
 import { useFontScale } from '../__contexts__/font-scale-context';
 import { $DeepPartial } from '@callstack/react-theme-provider';
-import { calculateHeight, fontStyleBold } from '../Utility/shared';
+import { calculateHeight, useFontStyles } from '../Utility/shared';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 export type ListItemTagProps = Omit<TextProps<'bodyMedium'>, 'children' | 'theme' | 'variant'> & {
@@ -42,7 +42,8 @@ const listItemTagStyles = (
     props: ListItemTagProps,
     theme: ExtendedTheme,
     fontScale: number,
-    fontSize: number
+    fontSize: number,
+    fontStyleBold: TextStyle
 ): StyleSheet.NamedStyles<{
     root: TextStyle;
 }> =>
@@ -82,9 +83,10 @@ export const ListItemTag: React.FC<ListItemTagProps> = (props) => {
         /* eslint-enable @typescript-eslint/no-unused-vars */
         ...otherTextProps
     } = props;
+    const { fontStyleBold } = useFontStyles();
     const theme = useExtendedTheme(themeOverride);
     const fontScale = useFontScale();
-    const defaultStyles = listItemTagStyles(props, theme, fontScale, props.fontSize || 10);
+    const defaultStyles = listItemTagStyles(props, theme, fontScale, props.fontSize || 10, fontStyleBold);
 
     return (
         <Text variant={'bodyMedium'} style={[defaultStyles.root, styles.root, style]} {...otherTextProps}>

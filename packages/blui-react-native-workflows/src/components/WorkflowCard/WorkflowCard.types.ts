@@ -146,14 +146,14 @@ export type WorkflowCardActionsProps = ViewProps & {
      * @param {Object} [data] - data collected from the card / screen
      * @returns {void}
      */
-    onPrevious?: (data?: { [key: string]: any }) => void;
+    onPrevious?: (data?: Record<string, any>) => void;
 
     /**
      * Function that is called when the next button is clicked
      * @param {Object} [data] - data collected from the card / screen
      * @returns {void}
      */
-    onNext?: (data?: { [key: string]: any }) => void;
+    onNext?: (data?: Record<string, any>) => void;
 
     /**
      * The current step in the registration workflow

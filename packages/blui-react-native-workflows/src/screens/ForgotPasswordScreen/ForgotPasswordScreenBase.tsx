@@ -23,7 +23,7 @@ export const ForgotPasswordScreenBase: React.FC<React.PropsWithChildren<ForgotPa
     const {
         emailLabel,
         initialEmailValue,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
         emailValidator = (email: string): boolean | string =>
             new RegExp(EMAIL_REGEX).test(email) ? true : 'Please enter a valid email',
         SuccessScreen,
@@ -44,7 +44,7 @@ export const ForgotPasswordScreenBase: React.FC<React.PropsWithChildren<ForgotPa
 
     const [isEmailValid, setIsEmailValid] = useState(validateEmail);
     const [emailError, setEmailError] = useState(!validateEmail() ? emailValidator(emailInput) : '');
-    const [shouldValidateEmail, setShouldValidateEmail] = useState(emailInput !== '' ?? validateEmail);
+    const [shouldValidateEmail, setShouldValidateEmail] = useState(emailInput !== '' && validateEmail);
 
     const handleEmailInputChange = useCallback(
         (email: string) => {
@@ -109,13 +109,15 @@ export const ForgotPasswordScreenBase: React.FC<React.PropsWithChildren<ForgotPa
                                 testID="blui-forgot-password-textinput"
                                 {...emailTextInputProps}
                                 onBlur={(e): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    emailTextInputProps?.onBlur && emailTextInputProps.onBlur(e);
+                                    if (emailTextInputProps?.onBlur) {
+                                        emailTextInputProps.onBlur(e);
+                                    }
                                     setShouldValidateEmail(true);
                                 }}
                                 onChangeText={(email: string): void => {
-                                    // eslint-disable-next-line no-unused-expressions
-                                    emailTextInputProps?.onChangeText && emailTextInputProps.onChangeText(email);
+                                    if (emailTextInputProps?.onChangeText) {
+                                        emailTextInputProps.onChangeText(email);
+                                    }
                                     handleEmailInputChange(email);
                                 }}
                                 onSubmitEditing={(): void => {

@@ -21,7 +21,7 @@ export const EulaScreen: React.FC<EulaScreenProps> = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: (): void => {
-            if (props.errorDisplayConfig && props.errorDisplayConfig.onClose) props.errorDisplayConfig.onClose();
+            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
             if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
         },
     };

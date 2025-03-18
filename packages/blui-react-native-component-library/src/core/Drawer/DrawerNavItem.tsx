@@ -12,7 +12,7 @@ import { IconSource } from '../__types__';
 import { Icon } from '../Icon';
 import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-context';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleRegular, fontStyleSemiBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 export type DrawerNavItemStyles = {
     root?: StyleProp<ViewStyle>;
@@ -185,7 +185,7 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
         activeItemFontColor = theme.colors.onPrimaryContainer,
         activeItemIconColor = theme.colors.onPrimaryContainer,
         backgroundColor /* eslint-disable-line @typescript-eslint/no-unused-vars */,
-        chevron /* eslint-disable-line @typescript-eslint/no-unused-vars */,
+        chevron,
         chevronColor = theme.colors.onSurfaceVariant,
         collapseIcon = { family: 'material', name: props.depth ? 'arrow-drop-up' : 'expand-less' },
         disableActiveItemParentStyles = false,
@@ -234,7 +234,7 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
     };
 
     const insets = useSafeAreaInsets();
-
+    const { fontStyleSemiBold, fontStyleRegular } = useFontStyles();
     const [expanded, setExpanded] = useState(isInActiveTree); // isInActiveTree: there is a bug in the react-native-collapsible that incorrectly calculates the initial panel height when using nested collapse panels
     const active = activeItem === itemID;
     const hasAction = Boolean(onItemSelect || onPress || (items && items.length > 0) || Boolean(children));
@@ -257,7 +257,7 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
             // notify the parent that it should now be in the active tree
             notifyActiveParent([itemID]);
         }
-    }, [activeItem, notifyActiveParent]);
+    }, [activeItem, notifyActiveParent, itemID, previousActive]);
 
     // Handle click callbacks
     const onPressAction = useCallback((): void => {
@@ -285,7 +285,17 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
                 />
             </View>
         );
-    }, [items, children, styles, defaultStyles, collapseIcon, expanded, expandIcon]);
+    }, [
+        items,
+        children,
+        styles,
+        defaultStyles,
+        collapseIcon,
+        expanded,
+        expandIcon,
+        disableScaling,
+        theme.colors.onSurfaceVariant,
+    ]);
     const actionComponent = getActionComponent();
 
     const getChildren = useCallback(
@@ -302,7 +312,7 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
                         },
                     } as DrawerNavItemProps)
                 ),
-        [props, activeHierarchy]
+        [props, activeHierarchy, children, depth, itemID, notifyActiveParent]
     );
 
     const infoListItemStyles = styles.infoListItem || {};
@@ -358,19 +368,18 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
                     {/* If the NavItem has child items defined, render them in a collapse panel */}
                     {((items && items.length > 0) || Boolean(children)) && (
                         <Collapsible collapsed={!expanded}>
-                            {items &&
-                                items.map((subItem: DrawerNavItemProps, index: number) => (
-                                    <DrawerNavItem
-                                        key={`itemList_${index}`}
-                                        {...subItem}
-                                        {...inheritSharedProps({ ...defaultProps, ...props }, subItem)}
-                                        depth={depth + 1}
-                                        isInActiveTree={activeHierarchy.includes(subItem.itemID)}
-                                        notifyActiveParent={(ids: string[] = []): void => {
-                                            notifyActiveParent(ids.concat(itemID));
-                                        }}
-                                    />
-                                ))}
+                            {items?.map((subItem: DrawerNavItemProps, index: number) => (
+                                <DrawerNavItem
+                                    key={`itemList_${index}`}
+                                    {...subItem}
+                                    {...inheritSharedProps({ ...defaultProps, ...props }, subItem)}
+                                    depth={depth + 1}
+                                    isInActiveTree={activeHierarchy.includes(subItem.itemID)}
+                                    notifyActiveParent={(ids: string[] = []): void => {
+                                        notifyActiveParent(ids.concat(itemID));
+                                    }}
+                                />
+                            ))}
                             {getChildren()}
                         </Collapsible>
                     )}

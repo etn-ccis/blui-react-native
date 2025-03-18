@@ -22,7 +22,7 @@ export const ThemeExplorer: React.FC = () => {
     const colorScheme = useColorScheme();
     const [localThemeDark, setLocalThemeDark] = useState(colorScheme.mode === 'dark');
     const [selectedComponent, setSelectedComponent] = useState(0);
-    console.log('in theme explorer', componentList[selectedComponent], selectedComponent, componentList);
+
     return (
         <ThemeProvider theme={theme}>
             <Card

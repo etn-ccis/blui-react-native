@@ -45,7 +45,7 @@ const isIconFamily = (source: JSX.Element | IconFamily | IconSourceBase): source
  */
 export const Icon: React.FC<IconProps> = (props) => {
     const { theme: themeOverride, ...otherProps } = props;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     const theme = useExtendedTheme(themeOverride);
     const { maxScale, disableScaling } = useFontScaleSettings();
     const {

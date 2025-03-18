@@ -24,7 +24,7 @@ export const interleave = <TElement, TSeparator>(
     return output;
 };
 
-export type LabeledArrays<T> = { [label: string]: T[] };
+export type LabeledArrays<T> = Record<string, T[]>;
 
 /**
  * groupBy function

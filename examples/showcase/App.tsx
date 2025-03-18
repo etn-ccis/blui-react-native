@@ -7,7 +7,6 @@
 
 import React from 'react';
 import {Button, useTheme} from 'react-native-paper';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 import {Text, View} from 'react-native';
 import ProgessIconExample from './src/ProgessIconExample';
 import 'react-native-svg';

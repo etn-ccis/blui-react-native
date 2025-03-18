@@ -5,7 +5,7 @@ import { RouteConfig } from '../../types';
 export type AccountDetails = {
     firstName: string;
     lastName: string;
-    extra?: { [key: string]: boolean | string | number };
+    extra?: Record<string, boolean | string | number>;
 };
 
 // this should be updated to add new actions for greater control

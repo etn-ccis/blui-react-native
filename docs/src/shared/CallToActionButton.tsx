@@ -37,7 +37,7 @@ type CallToActionButtonProps = {
     minCardHeight?: 'unset' | number;
 } & CardProps;
 
-const styles: { [key: string]: SxProps<Theme> } = {
+const styles: Record<string, SxProps<Theme>> = {
     root: {
         width: CTA_BUTTON.WIDTH,
         maxWidth: '100%',
