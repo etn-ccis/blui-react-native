@@ -8,7 +8,7 @@
         "url": "https://github.com/etn-ccis/blui-react-native/issues"
     },
     "homepage": "https://github.com/etn-ccis/blui-react-native/blob/dev/packages/blui-react-native-progress-icons/README.md",
-    "main": "./dist/index.js",
+    "main": "./index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
@@ -69,7 +69,7 @@
         "jest": "^28.0.0",
         "prettier": "^3.2.5",
         "react": "^18.3.1",
-        "react-native": "0.75.2",
+        "react-native": "0.76.7",
         "react-native-svg": "^15.3.0",
         "react-native-vector-icons": "^9.2.0",
         "react-test-renderer": "^17.0.0",

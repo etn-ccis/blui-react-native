@@ -10,7 +10,7 @@ import * as BLUIThemes from '@brightlayer-ui/react-native-themes';
 
 export default function Main() {
   return (
-    <ThemeProvider theme={BLUIThemes.blueDark}>
+    <ThemeProvider theme={BLUIThemes.blue}>
       <App />
     </ThemeProvider>
   );
