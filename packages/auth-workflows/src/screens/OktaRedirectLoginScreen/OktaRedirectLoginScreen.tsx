@@ -47,7 +47,11 @@ export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLogin
     };
 
     const createOktaConfig = async (): Promise<void> => {
-        oktaConfigObject && await createConfig(oktaConfigObject);
+        if (oktaConfigObject) {
+            await createConfig(oktaConfigObject);
+        } else {
+            console.error('Okta config object is undefined');
+        }
     };
 
     useEffect(() => {

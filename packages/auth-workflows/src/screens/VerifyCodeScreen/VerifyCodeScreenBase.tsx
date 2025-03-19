@@ -91,7 +91,7 @@ export const VerifyCodeScreenBase: React.FC<React.PropsWithChildren<VerifyCodeSc
                         }}
                         onBlur={(e): void => {
                             if (verifyCodeTextInputProps?.onBlur) {
-                                return verifyCodeTextInputProps.onBlur(e);
+                                verifyCodeTextInputProps.onBlur(e);
                             }
                             setShouldValidateCode(true);
                         }}

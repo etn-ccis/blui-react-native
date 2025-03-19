@@ -242,21 +242,15 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                                 mode="flat"
                                 {...usernameTextFieldProps}
                                 onChangeText={(e): void => {
-                                    if (usernameTextFieldProps?.onChangeText) {
-                                        usernameTextFieldProps.onChangeText(e);
-                                    }
+                                    usernameTextFieldProps?.onChangeText?.(e);
                                     handleUsernameInputChange(e);
                                 }}
                                 onSubmitEditing={(e: any): void => {
-                                    if (usernameTextFieldProps?.onSubmitEditing) {
-                                        usernameTextFieldProps.onSubmitEditing(e);
-                                    }
+                                    usernameTextFieldProps?.onSubmitEditing?.(e);
                                     if (passwordField.current) passwordField.current.focus();
                                 }}
                                 onBlur={(e): void => {
-                                    if (usernameTextFieldProps?.onBlur) {
-                                        usernameTextFieldProps.onBlur(e);
-                                    }
+                                    usernameTextFieldProps?.onBlur?.(e);
                                     setShouldValidateUsername(true);
                                 }}
                             />
@@ -268,9 +262,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                             <PasswordTextField
                                 ref={passwordField}
                                 onChangeText={(e: any): void => {
-                                    if (passwordTextFieldProps?.onChange) {
-                                        passwordTextFieldProps.onChange(e);
-                                    }
+                                    passwordTextFieldProps?.onChange?.(e);
                                     handlePasswordInputChange(e);
                                 }}
                                 onSubmitEditing={(e: any): void => {
@@ -280,9 +272,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                                     handleLoginSubmit();
                                 }}
                                 onBlur={(e): void => {
-                                    if (passwordTextFieldProps?.onBlur) {
-                                        passwordTextFieldProps.onBlur(e);
-                                    }
+                                    passwordTextFieldProps?.onBlur?.(e);
                                     setShouldValidatePassword(true);
                                 }}
                             />
@@ -380,7 +370,8 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                         testID={'blui-login-cyber-security-badge-wrapper'}
                     >
                         <Image
-                            style={cyberSecurityBadgeSize as ImageStyle}
+                            //@ts-ignore
+                            style={{ ...cyberSecurityBadgeSize }}
                             resizeMode="contain"
                             source={require('../../assets/images/cybersecurity_certified.png')}
                         />

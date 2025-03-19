@@ -33,7 +33,7 @@ const useUpdateScrollView = (
                 else contentPadding.setValue(padding);
             }
             // Only update the scroll position if it is not null and is different from the current
-            if (scrollRef && scrollRef.current && scrollTo !== null && scrollTo !== scrollValue) {
+            if (scrollRef?.current && scrollTo !== null && scrollTo !== scrollValue) {
                 scrollRef.current.scrollTo({
                     x: 0,
                     y: scrollTo,
@@ -49,7 +49,7 @@ export type CollapsibleLayoutProps = ViewProps & {
     HeaderProps: BLUIHeaderProps;
 
     /** Scroll component passed as a prop */
-    /* eslint-disable @typescript-eslint/naming-convention */
+
     ScrollComponent?: (
         handleScroll: (e: any) => void,
         contentPadding: Animated.Value,
@@ -148,7 +148,7 @@ export const CollapsibleHeaderLayout: React.FC<CollapsibleLayoutProps> = (props)
             animatedScrollValue.removeListener(scroll);
             contentPadding.removeListener(padding);
         };
-    }, [onScrollChange, onPaddingChange]);
+    }, [onScrollChange, onPaddingChange, animatedScrollValue, contentPadding]);
 
     const updateScrollView = useUpdateScrollView(
         contentPaddingValue,

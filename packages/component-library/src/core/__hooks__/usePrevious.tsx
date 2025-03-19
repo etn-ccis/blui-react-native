@@ -7,8 +7,7 @@ import { useRef, useEffect } from 'react';
  * render for the purposes of conditionally updating aspects of a component based on
  * whether particular variables have changed.
  */
-/* eslint-disable-next-line @typescript-eslint/ban-types */
-export const usePrevious = <T extends {}>(value: T): T | undefined => {
+export const usePrevious = <T,>(value: T): T | undefined => {
     // The ref object is a generic container whose current property is mutable ...
     // ... and can hold any value, similar to an instance property on a class
     const ref = useRef<T>();

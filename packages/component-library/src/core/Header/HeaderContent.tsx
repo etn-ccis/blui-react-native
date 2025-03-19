@@ -18,7 +18,7 @@ import { useHeaderHeight } from './contexts/HeaderHeightContextProvider';
 import { useHeaderDimensions } from '../__hooks__/useHeaderDimensions';
 import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-context';
 import { ExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleRegular, fontStyleSemiBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 const headerContentStyles = StyleSheet.create({
     titleContainer: {
@@ -58,11 +58,12 @@ type HeaderTitleProps = {
  * used for displaying and resizing the title text.
  */
 const HeaderTitle: React.FC<HeaderTitleProps> = (props) => {
-    const { title, theme, style } = props;
+    const { title, style } = props;
     const { color: textColor } = useColor();
     const { headerHeight } = useHeaderHeight();
     const { REGULAR_HEIGHT, EXTENDED_HEIGHT } = useHeaderDimensions();
     const { maxScale, disableScaling } = useFontScaleSettings();
+    const { fontStyleSemiBold } = useFontStyles();
     const getTitleStyle = useCallback(
         () => ({
             color: textColor,
@@ -75,7 +76,7 @@ const HeaderTitle: React.FC<HeaderTitleProps> = (props) => {
             writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
             textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
         }),
-        [textColor, headerHeight, theme, REGULAR_HEIGHT, EXTENDED_HEIGHT]
+        [textColor, headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontStyleSemiBold]
     );
 
     return typeof title === 'string' ? (
@@ -113,12 +114,12 @@ type HeaderSubtitleProps = {
  * used for displaying and resizing the subtitle text.
  */
 const HeaderSubtitle: React.FC<HeaderSubtitleProps> = (props) => {
-    const { subtitle, theme, style } = props;
+    const { subtitle, style } = props;
     const { color: textColor } = useColor();
     const { maxScale, disableScaling } = useFontScaleSettings();
     const { headerHeight } = useHeaderHeight();
     const { REGULAR_HEIGHT, EXTENDED_HEIGHT } = useHeaderDimensions();
-
+    const { fontStyleRegular } = useFontStyles();
     const getSubtitleStyle = useCallback(
         () => ({
             color: textColor,
@@ -131,7 +132,7 @@ const HeaderSubtitle: React.FC<HeaderSubtitleProps> = (props) => {
             writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
             textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
         }),
-        [textColor, theme]
+        [textColor, headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontStyleRegular]
     );
 
     if (subtitle) {
@@ -172,13 +173,13 @@ type HeaderInfoProps = {
  * used for displaying and resizing the info text.
  */
 const HeaderInfo: React.FC<HeaderInfoProps> = (props) => {
-    const { info, theme, style } = props;
+    const { info, style } = props;
     const { color: textColor } = useColor();
     const { headerHeight } = useHeaderHeight();
     const { maxScale, disableScaling } = useFontScaleSettings();
     const fontScale = useFontScale();
     const { REGULAR_HEIGHT, EXTENDED_HEIGHT } = useHeaderDimensions();
-
+    const { fontStyleRegular } = useFontStyles();
     const getInfoStyle = useCallback(
         () => ({
             color: textColor,
@@ -201,7 +202,7 @@ const HeaderInfo: React.FC<HeaderInfoProps> = (props) => {
             writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
             textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
         }),
-        [textColor, theme, headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontScale]
+        [textColor, headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontScale, fontStyleRegular]
     );
 
     if (info) {

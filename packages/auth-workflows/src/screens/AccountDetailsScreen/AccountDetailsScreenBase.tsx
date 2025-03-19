@@ -104,8 +104,9 @@ export const AccountDetailsScreenBase: React.FC<AccountDetailsScreenProps> = (pr
                         error={shouldValidateFirstName && !isFirstNameValid}
                         {...firstNameTextInputProps}
                         onChangeText={(text: string): void => {
-                            // eslint-disable-next-line no-unused-expressions
-                            firstNameTextInputProps?.onChangeText && firstNameTextInputProps.onChangeText(text);
+                            if (firstNameTextInputProps?.onChangeText) {
+                                firstNameTextInputProps.onChangeText(text);
+                            }
                             handleFirstNameInputChange(text);
                         }}
                         onSubmitEditing={(): void => {
@@ -124,8 +125,9 @@ export const AccountDetailsScreenBase: React.FC<AccountDetailsScreenProps> = (pr
                         style={[styles.textInput]}
                         {...lastNameTextInputProps}
                         onChangeText={(text: string): void => {
-                            // eslint-disable-next-line no-unused-expressions
-                            lastNameTextInputProps?.onChangeText && lastNameTextInputProps.onChangeText(text);
+                            if (lastNameTextInputProps?.onChangeText) {
+                                lastNameTextInputProps.onChangeText(text);
+                            }
                             handleLastNameInputChange(text);
                         }}
                         onSubmitEditing={(): void => {

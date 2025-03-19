@@ -71,13 +71,15 @@ export const CreateAccountScreenBase: React.FC<CreateAccountScreenProps & { inpu
                         autoCapitalize="none"
                         {...emailTextFieldProps}
                         onChangeText={(text): void => {
-                            // eslint-disable-next-line no-unused-expressions
-                            emailTextFieldProps?.onChangeText && emailTextFieldProps.onChangeText(text);
+                            if (emailTextFieldProps?.onChangeText) {
+                                emailTextFieldProps.onChangeText(text);
+                            }
                             handleEmailInputChange(text);
                         }}
                         onBlur={(e): void => {
-                            // eslint-disable-next-line no-unused-expressions
-                            emailTextFieldProps?.onBlur && emailTextFieldProps.onBlur(e);
+                            if (emailTextFieldProps?.onBlur) {
+                                emailTextFieldProps.onBlur(e);
+                            }
                             setShouldValidateEmail(true);
                         }}
                         onSubmitEditing={(): void => {

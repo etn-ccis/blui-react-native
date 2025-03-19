@@ -6,7 +6,7 @@ import { Icon } from '../Icon';
 import { Spacer } from '../Utility';
 import { IconSource } from '../__types__';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { calculateHeight, fontStyleLight, fontStyleSemiBold } from '../Utility/shared';
+import { calculateHeight, useFontStyles } from '../Utility/shared';
 
 const prefixUnitWhitelist = ['$'];
 const suffixUnitWhitelist = ['%', '℉', '°F', '℃', '°C', '°'];
@@ -16,9 +16,6 @@ const defaultStyles = StyleSheet.create({
         maxWidth: '100%',
         flexDirection: 'row',
         alignItems: 'center',
-    },
-    unitsDefaultFont: {
-        ...fontStyleLight,
     },
 });
 
@@ -110,6 +107,8 @@ export const ChannelValue: React.FC<ChannelValueProps> = (props) => {
     } = props;
 
     const theme = useExtendedTheme(themeOverride);
+    const { fontStyleSemiBold, fontStyleLight } = useFontStyles();
+
     const getColor = useCallback((): string => {
         if (!color) return theme.colors.onSurface;
         return color;
@@ -142,7 +141,7 @@ export const ChannelValue: React.FC<ChannelValueProps> = (props) => {
                                     fontSize: fontSize,
                                     lineHeight: calculateHeight(fontSize),
                                 },
-                                defaultStyles.unitsDefaultFont,
+                                fontStyleLight,
                                 styles.units,
                             ]}
                         >
@@ -156,7 +155,7 @@ export const ChannelValue: React.FC<ChannelValueProps> = (props) => {
                 );
             }
         },
-        [units, fontSize, getColor, styles, unitSpace]
+        [units, fontSize, getColor, styles, unitSpace, fontStyleLight]
     );
 
     const prefixUnits = useCallback((): JSX.Element | undefined => {

@@ -73,12 +73,18 @@ const OpenURLButton = (props: any): JSX.Element => {
     const defaultStyles = styles(theme);
 
     const handlePress = useCallback(async () => {
-        await Linking.openURL(url);
+        try {
+            await Linking.openURL(url);
+        } catch (error) {
+            console.error('Failed to open URL:', error);
+        }
     }, [url]);
 
     return (
         <Button
-            onPress={(): Promise<void> => handlePress()}
+            onPress={() => {
+                handlePress().catch((error) => console.error('Failed to open URL:', error));
+            }}
             labelStyle={defaultStyles.openURLButtonText}
             uppercase={false}
         >

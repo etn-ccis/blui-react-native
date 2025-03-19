@@ -26,7 +26,7 @@ export const LoginScreen: React.FC<React.PropsWithChildren<LoginScreenProps>> = 
         ...props.errorDisplayConfig,
         onClose: (): void => {
             if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (errorManagerConfig.onClose) errorManagerConfig.onClose();
         },
     };
 

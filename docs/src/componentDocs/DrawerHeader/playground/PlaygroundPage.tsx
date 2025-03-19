@@ -165,7 +165,7 @@ const DrawerHeaderPreview: PreviewComponent = ({ data }) => {
                 <DrawerHeader
                     {...removeEmptyProps(rest)}
                     icon={getIcon(icon as unknown as string)}
-                    backgroundImage={getImage(backgroundImage?.toString() ?? '')}
+                    backgroundImage={typeof backgroundImage === 'string' ? getImage(backgroundImage) : undefined}
                     titleContent={getTitleContent(titleContent as unknown as boolean)}
                 ></DrawerHeader>
                 <DrawerBody>
@@ -205,6 +205,18 @@ const getIconSnippet = (value: any): string | undefined => {
     }
 };
 
+const getBackgroundImageSnippet = (value: any): string => {
+    switch (value) {
+        case 'farm':
+            return 'getImage("farm")';
+        case 'pattern':
+            return 'getImage("pattern")';
+        case 'undefined':
+        default:
+            return 'undefined';
+    }
+};
+
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<DrawerHeader 
     ${getPropsToString(getPropsMapping(data, inputConfig), {
@@ -228,7 +240,11 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         </View>}`
             : ''
     }
-    ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
+    ${
+        data.backgroundImage !== 'undefined'
+            ? `backgroundImage={${getBackgroundImageSnippet(data.backgroundImage)}}`
+            : ''
+    }
 />`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
         .replace(/(?:^|)( {4}|\t)/gm, '    ');

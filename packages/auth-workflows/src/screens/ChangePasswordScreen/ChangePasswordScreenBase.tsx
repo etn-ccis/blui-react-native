@@ -38,11 +38,11 @@ export const ChangePasswordScreenBase: React.FC<ChangePasswordScreenProps> = (pr
 
     const styles = makeStyles();
 
-    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
-    const headerProps = props.WorkflowCardHeaderProps ?? {};
-    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
-    const actionsProps = props.WorkflowCardActionsProps ?? {};
-    const passwordProps = props.PasswordProps ?? { onPasswordChange: () => ({}) };
+    const cardBaseProps = props.WorkflowCardBaseProps || {};
+    const headerProps = props.WorkflowCardHeaderProps || {};
+    const cardBodyProps = props.WorkflowCardBodyProps || {};
+    const actionsProps = props.WorkflowCardActionsProps || {};
+    const passwordProps = props.PasswordProps || { onPasswordChange: (): void => {} };
 
     const getSuccessScreen = (
         _props: SuccessScreenProps,
@@ -68,9 +68,9 @@ export const ChangePasswordScreenBase: React.FC<ChangePasswordScreenProps> = (pr
                             label={currentPasswordLabel}
                             {...currentPasswordTextInputProps}
                             onChangeText={(text: string) => {
-                                // eslint-disable-next-line no-unused-expressions
-                                currentPasswordTextInputProps?.onChangeText &&
+                                if (currentPasswordTextInputProps?.onChangeText) {
                                     currentPasswordTextInputProps.onChangeText(text);
+                                }
                                 handleChange(text);
                             }}
                             returnKeyType="done" // Show "next" button on keyboard

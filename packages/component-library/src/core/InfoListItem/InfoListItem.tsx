@@ -17,7 +17,7 @@ import { Icon } from '../Icon';
 import { IconSource } from '../__types__';
 import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-context';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleSemiBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 type IconAlign = 'left' | 'center' | 'right';
 
@@ -72,7 +72,8 @@ const Divider: React.FC<DividerProps> = (props) => {
 const infoListItemStyles = (
     props: InfoListItemProps,
     theme: ExtendedTheme,
-    fontScale: number
+    fontScale: number,
+    fontStyleSemiBold: TextStyle
 ): StyleSheet.NamedStyles<{
     root: ViewStyle;
     title: TextStyle;
@@ -323,7 +324,8 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
     const theme = useExtendedTheme(themeOverride);
     const fontScale = useFontScale();
     const { disableScaling, maxScale } = useFontScaleSettings();
-    const defaultStyles = infoListItemStyles(props, theme, fontScale);
+    const { fontStyleSemiBold } = useFontStyles();
+    const defaultStyles = infoListItemStyles(props, theme, fontScale, fontStyleSemiBold);
 
     const {
         avatar,
@@ -385,7 +387,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
         );
 
         return withKeys(separate(renderableSubtitleParts, subtitleSeparator));
-    }, [subtitle, subtitleSeparator, styles]);
+    }, [subtitle, subtitleSeparator, styles.subtitle, wrapSubtitle, defaultStyles.subtitle]);
 
     const getInfo = useCallback((): JSX.Element[] | null => {
         if (!info) {
@@ -397,7 +399,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
         );
 
         return withKeys(separate(renderableInfoParts, subtitleSeparator));
-    }, [info, subtitleSeparator, styles]);
+    }, [info, subtitleSeparator, styles.info, wrapInfo, defaultStyles.info]);
 
     const getRightComponent = useCallback(
         (): JSX.Element | undefined => (
@@ -415,7 +417,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
                 )}
             </>
         ),
-        [rightComponent, chevron, theme]
+        [rightComponent, chevron, chevronColor, disableScaling, maxScale, defaultStyles.flipIcon]
     );
 
     return (

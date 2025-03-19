@@ -19,12 +19,11 @@ import { SuccessScreenBase, SuccessScreenProps } from '../SuccessScreen';
  *
  */
 export const ResetPasswordScreenBase: React.FC<ResetPasswordScreenProps> = (props) => {
-    const cardBaseProps = props.WorkflowCardBaseProps ?? {};
-    const headerProps = props.WorkflowCardHeaderProps ?? {};
-    const cardBodyProps = props.WorkflowCardBodyProps ?? {};
-    const actionsProps = props.WorkflowCardActionsProps ?? {};
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    const passwordProps = props.PasswordProps ?? { onPasswordChange: () => ({}) };
+    const cardBaseProps = props.WorkflowCardBaseProps || {};
+    const headerProps = props.WorkflowCardHeaderProps || {};
+    const cardBodyProps = props.WorkflowCardBodyProps || {};
+    const actionsProps = props.WorkflowCardActionsProps || {};
+    const passwordProps = props.PasswordProps || { onPasswordChange: (): void => {} };
     const { showSuccessScreen, SuccessScreen, SuccessScreenProps: successScreenProps, errorDisplayConfig } = props;
 
     const getSuccessScreen = (

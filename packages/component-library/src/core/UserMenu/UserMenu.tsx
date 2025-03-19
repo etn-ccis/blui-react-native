@@ -7,7 +7,7 @@ import { $DeepPartial } from '@callstack/react-theme-provider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFontScale } from '../__contexts__/font-scale-context';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleSemiBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 export type UserMenuProps = {
     /** Avatar component to display as the menu trigger */
@@ -101,9 +101,9 @@ export const UserMenu: React.FC<UserMenuProps> = (props) => {
             React.cloneElement(avatar, {
                 size: avatarSize * fontScale,
             }),
-        [avatar]
+        [avatar, avatarSize, fontScale]
     );
-
+    const { fontStyleSemiBold } = useFontStyles();
     const getMenu = useCallback(
         (): JSX.Element => (
             <>
@@ -124,44 +124,56 @@ export const UserMenu: React.FC<UserMenuProps> = (props) => {
                         <Divider style={{ marginLeft: -1 * insets.left, marginRight: -1 * insets.right }} />
                     </>
                 )}
-                {menuItems &&
-                    menuItems.map((menuItem: InfoListItemProps, index: number) => {
-                        const menuItemStyles = menuItem.styles || {};
-                        return (
-                            <InfoListItem
-                                {...menuItem}
-                                key={index}
-                                onPress={(): void => {
-                                    closeMenu();
-                                    if (menuItem.onPress) menuItem.onPress();
-                                }}
-                                iconColor={menuItem.iconColor || iconColor}
-                                iconAlign="center"
-                                fontColor={menuItem.fontColor || fontColor}
-                                backgroundColor={menuItem.backgroundColor || backgroundColor}
-                                dense={menuItem.dense !== undefined ? menuItem.dense : true}
-                                styles={Object.assign(menuItemStyles, {
-                                    title: Object.assign(
-                                        {
-                                            fontSize: 16,
-                                            ...fontStyleSemiBold,
-                                        },
-                                        menuItemStyles.title
-                                    ),
-                                    divider: Object.assign(
-                                        {
-                                            marginLeft: -1 * insets.left,
-                                            marginRight: -1 * insets.right,
-                                        },
-                                        menuItemStyles.divider
-                                    ),
-                                })}
-                            />
-                        );
-                    })}
+                {menuItems?.map((menuItem: InfoListItemProps, index: number) => {
+                    const menuItemStyles = menuItem.styles || {};
+                    return (
+                        <InfoListItem
+                            {...menuItem}
+                            key={index}
+                            onPress={(): void => {
+                                closeMenu();
+                                if (menuItem.onPress) menuItem.onPress();
+                            }}
+                            iconColor={menuItem.iconColor || iconColor}
+                            iconAlign="center"
+                            fontColor={menuItem.fontColor || fontColor}
+                            backgroundColor={menuItem.backgroundColor || backgroundColor}
+                            dense={menuItem.dense !== undefined ? menuItem.dense : true}
+                            styles={Object.assign(menuItemStyles, {
+                                title: Object.assign(
+                                    {
+                                        fontSize: 16,
+                                        ...fontStyleSemiBold,
+                                    },
+                                    menuItemStyles.title
+                                ),
+                                divider: Object.assign(
+                                    {
+                                        marginLeft: -1 * insets.left,
+                                        marginRight: -1 * insets.right,
+                                    },
+                                    menuItemStyles.divider
+                                ),
+                            })}
+                        />
+                    );
+                })}
             </>
         ),
-        [menuItems, menuTitle, menuSubtitle, iconColor, fontColor, backgroundColor]
+        [
+            menuItems,
+            menuTitle,
+            menuSubtitle,
+            iconColor,
+            fontColor,
+            backgroundColor,
+            defaultStyles.avatar,
+            getAvatar,
+            insets.left,
+            insets.right,
+            styles.avatar,
+            fontStyleSemiBold,
+        ]
     );
 
     return (

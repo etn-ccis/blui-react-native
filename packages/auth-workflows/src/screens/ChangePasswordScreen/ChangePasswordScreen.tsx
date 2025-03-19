@@ -54,8 +54,8 @@ export const ChangePasswordScreen: React.FC<ChangePasswordScreenProps> = (props)
         if (PasswordProps?.passwordRequirements?.length === 0) {
             return confirmInput === passwordInput;
         }
-        for (const requirement of passwordRequirements) {
-            if (!new RegExp(requirement.regex).test(passwordInput)) return false;
+        for (const req of passwordRequirements) {
+            if (!new RegExp(req.regex).test(passwordInput)) return false;
         }
         return confirmInput === passwordInput;
     }, [PasswordProps?.passwordRequirements?.length, passwordRequirements, passwordInput, confirmInput]);
