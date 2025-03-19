@@ -22914,6 +22914,7 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
+    "@brightlayer-ui/react-native-auth-workflow": "workspace:^"
     "@brightlayer-ui/react-native-components": "workspace:^"
     "@brightlayer-ui/react-native-progress-icons": "workspace:*"
     "@brightlayer-ui/react-native-themes": "workspace:^"
