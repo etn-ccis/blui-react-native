@@ -28,12 +28,12 @@ export type ScreenData = {
      * @param {object} AccountDetails - Stores firstName and lastName and extra fields of Account Details Screen.
      *
      */
-    AccountDetails: { firstName: string; lastName: string; extra?: { [key: string]: boolean | string | number } };
+    AccountDetails: { firstName: string; lastName: string; extra?: Record<string, boolean | string | number> };
     /**
      * @param {object} Other - Stores data of custom screen.
      *
      */
-    Other?: { [key: string]: { [key: string]: boolean | string | number } };
+    Other?: Record<string, Record<string, boolean | string | number>>;
 };
 
 export type IndividualScreenData =
@@ -42,7 +42,7 @@ export type IndividualScreenData =
     | { screenId: 'VerifyCode'; values: ScreenData['VerifyCode']; isAccountExist?: boolean }
     | { screenId: 'CreatePassword'; values: ScreenData['CreatePassword']; isAccountExist?: boolean }
     | { screenId: 'AccountDetails'; values: ScreenData['AccountDetails']; isAccountExist?: boolean }
-    | { screenId: string; values: { [key: string]: boolean | string | number }; isAccountExist?: boolean };
+    | { screenId: string; values: Record<string, boolean | string | number>; isAccountExist?: boolean };
 
 export type RegistrationWorkflowContextProps = {
     /**

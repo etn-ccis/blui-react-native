@@ -26,7 +26,6 @@ import Routing from '../workflowDocs/Routing/routing.mdx';
 import BasicDialog from '../workflowDocs/Components/BasicDialog/basicDialog.mdx';
 import ErrorManager from '../workflowDocs/Components/ErrorManager/errorManager.mdx';
 import PasswordTextField from '../workflowDocs/Components/PasswordTextField/passwordTextField.mdx';
-import RegistrationForm from '../workflowDocs/Components/RegistrationWorkflow/registrationWorkflow.mdx';
 import SetPassword from '../workflowDocs/Components/SetPassword/setPassword.mdx';
 import WorkflowCard from '../workflowDocs/Components/WorkflowCard/workflowCard.mdx';
 import WorkflowComponents from '../workflowDocs/Components/components.mdx';

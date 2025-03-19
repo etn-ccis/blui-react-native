@@ -9,7 +9,7 @@ import { $DeepPartial } from '@callstack/react-theme-provider';
 import { Icon } from '../Icon';
 import { IconSource } from '../__types__';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleRegular } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 import { StyleProp, ViewStyle } from 'react-native';
 
 /**
@@ -95,7 +95,7 @@ export const Chip: React.FC<ChipProps> = (props) => {
         styles = {},
         ...rest
     } = props;
-
+    const { fontStyleRegular } = useFontStyles();
     const theme = useExtendedTheme(themeOverride);
     const isOutlined = mode === 'outlined';
     const isElevated = mode === 'elevated';

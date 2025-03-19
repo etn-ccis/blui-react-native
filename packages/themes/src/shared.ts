@@ -1,7 +1,4 @@
-import { Platform } from 'react-native';
-
 import { MD3Theme, useTheme } from 'react-native-paper';
-import { $DeepPartial } from '@callstack/react-theme-provider';
 
 export const fontConfig = {
     displaySmall: {
@@ -228,14 +225,14 @@ export type ExtendedTheme = Omit<MD3Theme, 'colors'> & {
 
 export const useExtendedTheme = useTheme<ExtendedTheme>;
 
-export type bluiFontWeight = '300' | '400' | '600' | '700' | '800' | undefined;
+export type BluiFontWeight = '300' | '400' | '600' | '700' | '800' | undefined;
 
 export type FontStyle = {
     fontFamily: string;
-    fontWeight: bluiFontWeight;
+    fontWeight: BluiFontWeight;
 };
 
-export const useFontWeight = (weight: bluiFontWeight): FontStyle => {
+export const useFontWeight = (weight: BluiFontWeight): FontStyle => {
     switch (weight) {
         case '300':
             return {

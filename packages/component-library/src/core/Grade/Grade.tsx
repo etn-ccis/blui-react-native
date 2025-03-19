@@ -8,7 +8,7 @@ import { StyleProp, ViewProps, ViewStyle } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import { $DeepPartial } from '@callstack/react-theme-provider';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 /**
  * Props for the Grade component.
@@ -90,8 +90,10 @@ const mixColors = (
     const mixedColor = `rgba(${mixedRgb[0]}, ${mixedRgb[1]}, ${mixedRgb[2]}, ${transparency})`;
     return mixedColor;
 };
+
 const GradeBase = (props: GradeProps): JSX.Element => {
     const defaultTheme = useExtendedTheme();
+    const { fontStyleBold } = useFontStyles();
     const {
         label,
         fontColor,
@@ -133,7 +135,8 @@ const GradeBase = (props: GradeProps): JSX.Element => {
 /**
  * A component used to render an A+ Grade
  */
-GradeBase.APlus = (props: FixedGradeProps): JSX.Element => {
+// const theme = useGradeTheme();
+const APlus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -144,10 +147,11 @@ GradeBase.APlus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.APlus = APlus;
 /**
  * A component used to render an A Grade
  */
-GradeBase.A = (props: FixedGradeProps): JSX.Element => {
+const A = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -158,10 +162,11 @@ GradeBase.A = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.A = A;
 /**
  * A component used to render an A- Grade
  */
-GradeBase.AMinus = (props: FixedGradeProps): JSX.Element => {
+const AMinus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -177,10 +182,11 @@ GradeBase.AMinus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.AMinus = AMinus;
 /**
  * A component used to render a B+ Grade"
  */
-GradeBase.BPlus = (props: FixedGradeProps): JSX.Element => {
+const BPlus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -196,10 +202,11 @@ GradeBase.BPlus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.BPlus = BPlus;
 /**
  * A component used to render a B Grade
  */
-GradeBase.B = (props: FixedGradeProps): JSX.Element => {
+const B = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -210,10 +217,11 @@ GradeBase.B = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.B = B;
 /**
  * A component used to render a B- Grade
  */
-GradeBase.BMinus = (props: FixedGradeProps): JSX.Element => {
+const BMinus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -224,10 +232,11 @@ GradeBase.BMinus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.BMinus = BMinus;
 /**
  * A component used to render a C+ Grade
  */
-GradeBase.CPlus = (props: FixedGradeProps): JSX.Element => {
+const CPlus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -238,10 +247,11 @@ GradeBase.CPlus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.CPlus = CPlus;
 /**
  * A component used to render a C Grade
  */
-GradeBase.C = (props: FixedGradeProps): JSX.Element => {
+const C = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -252,10 +262,11 @@ GradeBase.C = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.C = C;
 /**
  * A component used to render a C- Grade
  */
-GradeBase.CMinus = (props: FixedGradeProps): JSX.Element => {
+const CMinus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -266,10 +277,11 @@ GradeBase.CMinus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.CMinus = CMinus;
 /**
  * A component used to render a D+ Grade
  */
-GradeBase.DPlus = (props: FixedGradeProps): JSX.Element => {
+const DPlus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -280,10 +292,11 @@ GradeBase.DPlus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.DPlus = DPlus;
 /**
  * A component used to render a D Grade
  */
-GradeBase.D = (props: FixedGradeProps): JSX.Element => {
+const D = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -294,10 +307,11 @@ GradeBase.D = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.D = D;
 /**
  * A component used to render a D- Grade
  */
-GradeBase.DMinus = (props: FixedGradeProps): JSX.Element => {
+const DMinus = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -308,10 +322,11 @@ GradeBase.DMinus = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.DMinus = DMinus;
 /**
  * A component used to render an F Grade
  */
-GradeBase.F = (props: FixedGradeProps): JSX.Element => {
+const F = (props: FixedGradeProps): JSX.Element => {
     const theme = useExtendedTheme();
     return (
         <GradeBase
@@ -322,6 +337,7 @@ GradeBase.F = (props: FixedGradeProps): JSX.Element => {
         />
     );
 };
+GradeBase.F = F;
 
 /**
  * A component used to render a score/grade inside of an Avatar. Includes several sub-components with predefined styles for several common grades.

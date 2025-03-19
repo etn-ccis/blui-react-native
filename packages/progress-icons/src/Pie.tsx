@@ -113,8 +113,8 @@ Z
                         fill={color}
                         clipPath={`url(#blui-donut-clip-${stroke})`}
                         d={`M 12,12 H 24 A 12,12,0,${rangeValue(percent, 0, 100) >= 50 ? 1 : 0},1,${
-                            getCoordinates(rangeValue(percent, 0, 100))['x']
-                        },${getCoordinates(rangeValue(percent, 0, 100))['y']}Z`}
+                            getCoordinates(rangeValue(percent, 0, 100)).x
+                        },${getCoordinates(rangeValue(percent, 0, 100)).y}Z`}
                     />
                 )}
                 {rangeValue(percent, 0, 100) === 100 && outlined && (

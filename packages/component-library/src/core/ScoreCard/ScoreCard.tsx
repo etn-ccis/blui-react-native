@@ -211,7 +211,6 @@ const ActionPanel: React.FC<ActionPanelProps> = (props) => {
     const defaultStyles = actionPanelStyles(fontScale);
 
     const getIcon = useCallback(
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         (icon: IconSource): JSX.Element | undefined => {
             if (icon) {
                 return <Icon source={icon} size={24} color={color} />;

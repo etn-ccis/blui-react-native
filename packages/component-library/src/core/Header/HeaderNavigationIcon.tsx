@@ -8,7 +8,7 @@ import { useSearch } from './contexts/SearchContextProvider';
 import { useColor } from './contexts/ColorContextProvider';
 import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-context';
 
-const makeStyles = (): StyleSheet.NamedStyles<{
+const useStyles = (): StyleSheet.NamedStyles<{
     navigation: ViewStyle;
     flipIcon: ViewStyle;
 }> => {
@@ -27,6 +27,7 @@ const makeStyles = (): StyleSheet.NamedStyles<{
         },
     });
 };
+
 type HeaderNavigationProps = {
     /** A component to render for the navigation icon */
     icon?: IconSource;
@@ -44,6 +45,7 @@ type HeaderNavigationProps = {
     /** Style to apply to the Touchable element */
     style?: StyleProp<ViewStyle>;
 };
+
 /**
  * HeaderNavigationIcon component
  *
@@ -53,7 +55,7 @@ export const HeaderNavigationIcon: React.FC<HeaderNavigationProps> = (props) => 
     const { icon, navigationIconColor, onPress, style } = props;
     const { searching, onClose } = useSearch();
     const { color } = useColor();
-    const defaultStyles = makeStyles();
+    const defaultStyles = useStyles();
     const { disableScaling, maxScale } = useFontScaleSettings();
 
     if (searching) {

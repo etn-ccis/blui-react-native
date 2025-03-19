@@ -54,7 +54,7 @@ describe('RegistrationWorkflowContext', () => {
         await ((): void => expect(values.result.current.screenData['Eula'].accepted).toBeTruthy());
         // eslint-disable-next-line
         await ((): void =>
-            expect(values.result.current.screenData['CreateAccount'].emailAddress).toBe(
+            expect(values.result.current.screenData.CreateAccount.emailAddress).toBe(
                 'emailAddress@emailAddress.emailAddress'
             ));
     });

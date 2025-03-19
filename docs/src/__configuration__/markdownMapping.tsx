@@ -64,42 +64,42 @@ export const componentsMap = {
         <Headline
             className={'markdownH1'}
             style={{ marginBottom: 32, hyphens: 'auto' }}
-            hash={getHash(props.children?.toString() || 'h1')}
+            hash={getHash(React.Children.toArray(props.children).map(String).join('') || 'h1')}
             TypographyProps={{ variant: 'h4', ...props }}
         />
     ),
     h2: (props: TypographyProps): JSX.Element => (
         <Headline
             style={{ marginTop: 64, marginBottom: 16 }}
-            hash={getHash(props.children?.toString() || 'h2')}
+            hash={getHash(React.Children.toArray(props.children).map(String).join('') || 'h2')}
             TypographyProps={{ variant: 'h6', ...props }}
         />
     ),
     h3: (props: TypographyProps): JSX.Element => (
         <Headline
             style={{ marginTop: 32, marginBottom: 16 }}
-            hash={getHash(props.children?.toString() || 'h3')}
+            hash={getHash(React.Children.toArray(props.children).map(String).join('') || 'h3')}
             TypographyProps={{ variant: 'body1', style: { fontWeight: 600 }, ...props }}
         />
     ),
     h4: (props: TypographyProps): JSX.Element => (
         <Headline
             style={{ marginTop: 16 }}
-            hash={getHash(props.children?.toString() || 'h4')}
+            hash={getHash(React.Children.toArray(props.children).map(String).join('') || 'h4')}
             TypographyProps={{ variant: 'subtitle1', ...props }}
         />
     ),
     h5: (props: TypographyProps): JSX.Element => (
         <Headline
             style={{ marginTop: 8 }}
-            hash={getHash(props.children?.toString() || 'h5')}
+            hash={getHash(React.Children.toArray(props.children).map(String).join('') || 'h5')}
             TypographyProps={{ variant: 'body2', ...props }}
         />
     ),
     h6: (props: TypographyProps): JSX.Element => (
         <Headline
             style={{ marginTop: 8, fontSize: '0.75rem' }}
-            hash={getHash(props.children?.toString() || 'h6')}
+            hash={getHash(React.Children.toArray(props.children).map(String).join('') || 'h6')}
             TypographyProps={{ variant: 'body2', ...props }}
         />
     ),

@@ -6,6 +6,7 @@ import { Header } from '../Header';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { EdgeInsets } from '../__types__';
 import { cleanup } from '@testing-library/react-native';
+
 jest.mock('react-native-safe-area-context', () => ({
     useSafeAreaInsets: (): EdgeInsets => ({
         top: 0,
@@ -14,14 +15,20 @@ jest.mock('react-native-safe-area-context', () => ({
         bottom: 0,
     }),
 }));
-const insets = useSafeAreaInsets();
-const fontScale = PixelRatio.getFontScale();
-const heightWithStatusBar = (height: number): number => height * fontScale + insets.top;
+
+const useInsets = (): EdgeInsets => useSafeAreaInsets();
 
 describe('CollapsibleHeaderLayout', () => {
     afterEach(cleanup);
     let instance: ReactTestInstance;
+    let insets: EdgeInsets;
+    let fontScale: number;
+    let heightWithStatusBar: (height: number) => number;
+
     beforeEach(() => {
+        insets = useInsets();
+        fontScale = PixelRatio.getFontScale();
+        heightWithStatusBar = (height: number): number => height * fontScale + insets.top;
         instance = TestRenderer.create(<CollapsibleHeaderLayout HeaderProps={{ title: 'Hello' }} />).root;
     });
 

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { StyleSheet, ViewStyle, ViewProps } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Surface } from 'react-native-paper';
@@ -28,6 +28,7 @@ const makeStyles = (
             paddingBottom: insets.bottom,
         },
     });
+
 export type DrawerProps = ViewProps &
     AllSharedProps & {
         /** The itemID of the currently active / selected item */
@@ -78,16 +79,19 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
         ...viewProps
     } = props;
 
-    const defaultProps: Partial<DrawerProps> = {
-        activeItemBackgroundShape: 'square',
-        chevron: false,
-        divider: false,
-        hidePadding: true,
-        styles: {},
-    };
-
     const theme = useExtendedTheme(themeOverride);
     const insets = useSafeAreaInsets();
+
+    const defaultProps: Partial<DrawerProps> = useMemo(
+        () => ({
+            activeItemBackgroundShape: 'square',
+            chevron: false,
+            divider: false,
+            hidePadding: true,
+            styles: {},
+        }),
+        []
+    );
 
     const defaultStyles = makeStyles(props, theme, insets);
 
@@ -102,7 +106,7 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
                     }
                     return React.cloneElement(child, inheritableProps);
                 }),
-        [props, theme]
+        [props, theme, defaultProps]
     );
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button } from '@mui/material';
 import { EmptyState } from '@brightlayer-ui/react-native-components';
-import { Add, HelpOutline, LocationOff } from '@mui/icons-material';
+import { Add } from '@mui/icons-material';
 
 export const EmptyStateDemo: JSX.Element = (
     <Box sx={{ maxWidth: 400, py: 5, px: 3 }}>
