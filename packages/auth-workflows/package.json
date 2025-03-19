@@ -31,14 +31,6 @@
         "package.json"
     ],
     "scripts": {
-        "install:dependencies": "yarn workspace @brightlayer-ui/react-native-auth-workflow install:dependencies-ios",
-        "install:dependencies-ios": "yarn && cd example && yarn && cd ios && pod install",
-        "install:dependencies-android": "yarn && cd example && yarn",
-        "link:workflows": "bash ./scripts/linkWorkflow.sh",
-        "start:example": "yarn workspace @brightlayer-ui/react-native-auth-workflow start:example-ios",
-        "start:example-ios": "yarn install:dependencies-ios && yarn build && yarn link:workflows && cd example && yarn ios",
-        "start:example-ipad": "yarn install:dependencies-ios && yarn build && yarn link:workflows && cd example && yarn ipad",
-        "start:example-android": "yarn install:dependencies-android && yarn build && yarn link:workflows && cd example && yarn android",
         "test": "jest src --maxWorkers=2",
         "build": "rm -rf dist && tsc && mkdir -p dist/assets && cp -R src/assets/* dist/assets/",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies --exclude ./example -json LICENSES.json",
