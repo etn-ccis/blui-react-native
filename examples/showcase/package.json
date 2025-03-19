@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@brightlayer-ui/react-native-auth-workflow": "workspace:^",
     "@brightlayer-ui/react-native-components": "workspace:^",
     "@brightlayer-ui/react-native-progress-icons": "workspace:*",
     "@brightlayer-ui/react-native-themes": "workspace:^",
