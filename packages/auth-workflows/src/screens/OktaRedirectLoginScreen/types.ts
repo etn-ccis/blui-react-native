@@ -1,3 +1,4 @@
+import { ImageStyle, StyleProp } from 'react-native';
 import { WorkflowCardBaseProps } from '../../components/WorkflowCard/WorkflowCard.types';
 
 export type OktaLoginScreenProps = WorkflowCardBaseProps & {
@@ -92,7 +93,7 @@ export type OktaLoginScreenProps = WorkflowCardBaseProps & {
     /**
      * The size of the cyber security image
      */
-    cyberSecurityBadgeSize?: { height?: number | string; width?: number | string };
+    cyberSecurityBadgeSize?: StyleProp<ImageStyle>;
 
     /**
      * oktaConfigObject is an object containing configuration settings required for integrating with Okta.

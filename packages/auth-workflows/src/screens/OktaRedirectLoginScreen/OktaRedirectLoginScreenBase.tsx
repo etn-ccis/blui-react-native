@@ -225,7 +225,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
                         >
                             <Image
                                 testID={'blui-okta-login-cyber-security-badge-image'}
-                                style={{ ...cyberSecurityBadgeSize }}
+                                style={cyberSecurityBadgeSize}
                                 resizeMode="contain"
                                 source={require('../../assets/images/cybersecurity_certified.png')}
                             />
