@@ -68,7 +68,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [20.x]
+                node-version: [18.x]
 
         steps:
             - name: Checkout
@@ -78,7 +78,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
-            - run: yarn --immutable
+            - run: yarn install --immutable
             - run: yarn build
               working-directory: packages/blui-react-native-component-library
             - name: Save build
@@ -207,62 +207,85 @@ jobs:
               with:
                   name: theme-dist
                   if-no-files-found: error
-                  path: packages/themes/theme-dist
-            - run: yarn build --base=${{env.base-href}}
-              working-directory: docs
-            - name: Save dist
+                  path: packages/themes/dist
+            - run: yarn test
+              working-directory: packages/themes
+
+    unit_tests_components:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [20.x]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn install --immutable
+            - run: yarn coverage
+              working-directory: packages/component-library
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/component-library/coverage/
+                  files: cobertura-coverage.xml
+                  flags: component-tests
+                  name: codecov-report
+                  verbose: true
+
+    build_components_library:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [20.x]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - run: yarn build
+              working-directory: packages/component-library
+            - name: Save build
               uses: actions/upload-artifact@v4
               with:
-                  name: docs
+                  name: lib-dist
                   if-no-files-found: error
-                  path: docs/dist
+                  path: packages/component-library/dist
+    # keep publishing steps at end of workflow
 
-    # deploy_rn_docs_dev:
-    #     runs-on: ubuntu-latest
-    #     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
-    #     needs: build_rn_docs
-    #     env:
-    #         DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
-    #     steps:
-    #         - name: Checkout
-    #           uses: actions/checkout@v4
-    #         - name: Download build
-    #           uses: actions/download-artifact@v4
-    #           with:
-    #               name: docs
-    #               path: dist/docs
-    #         - name: deploy
-    #           uses: JamesIves/github-pages-deploy-action@v4
-    #           with:
-    #               folder: dist/docs
-    #               token: ${{env.DEV_DEPLOY_TOKEN}}
-    #               repository-name: brightlayer-ui-components/react-native-dev
-    #               branch: master
-    #               git-config-name: Brightlayer UI Agent
-    #               git-config-email: brightlayer-ui@eaton.com
-    #               commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
+    publish-templates:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
+        secrets: inherit
+        needs: prettier_lint
 
-    # deploy_rn_docs_prod:
-    #     runs-on: ubuntu-latest
-    #     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-    #     needs: build_rn_docs
-    #     env:
-    #         DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
-    #     steps:
-    #         - name: Checkout
-    #           uses: actions/checkout@v4
-    #         - name: Download build
-    #           uses: actions/download-artifact@v4
-    #           with:
-    #               name: docs
-    #               path: dist/docs
-    #         - name: deploy
-    #           uses: JamesIves/github-pages-deploy-action@v4
-    #           with:
-    #               folder: dist/docs
-    #               token: ${{env.DEV_DEPLOY_TOKEN}}
-    #               repository-name: brightlayer-ui-components/react-native
-    #               branch: master
-    #               git-config-name: Brightlayer UI Agent
-    #               git-config-email: brightlayer-ui@eaton.com
-    #               commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
+    publish-components:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_components_library]
+
+    publish-auth-workflow:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-auth-workflow.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_login_workflow]
+
+    publish-progress-icons:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-progress-icons.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_rn_progress_icons]
+
+    publish-themes:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-themes.yml@dev
+        secrets: inherit
+        needs: [prettier_lint, build_theme_verify_artifacts]
