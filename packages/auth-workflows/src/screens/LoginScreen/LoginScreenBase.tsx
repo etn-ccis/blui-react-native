@@ -3,7 +3,7 @@ import { LoginScreenProps } from './types';
 import { WorkflowCard } from '../../components/WorkflowCard';
 import { WorkflowCardBody } from '../../components/WorkflowCard/WorkflowCardBody';
 import { ErrorManager, PasswordTextField } from '../../components';
-import { Image, View, StyleSheet, ViewStyle, Keyboard, ImageStyle } from 'react-native';
+import { Image, View, StyleSheet, ViewStyle, Keyboard } from 'react-native';
 import { Button, Checkbox, HelperText, Text, TextInput } from 'react-native-paper';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 import { useScreenDimensions } from '../../hooks/useScreenDimensions';

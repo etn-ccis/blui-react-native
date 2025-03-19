@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import React from 'react';
 import { StyleSheet, TextStyle } from 'react-native';
 import { ChangePasswordScreenProps } from './types';

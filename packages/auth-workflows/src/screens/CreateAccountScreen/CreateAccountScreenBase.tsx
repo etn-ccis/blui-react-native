@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useCallback, useEffect } from 'react';
 import { CreateAccountScreenProps } from './types';
 import {

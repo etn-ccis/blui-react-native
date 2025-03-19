@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useCallback, useState } from 'react';
 import {
     ErrorManager,

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, { useState, useCallback, useEffect } from 'react';
 import PasswordRequirements from './PasswordRequirements';
 import { SetPasswordProps } from './types';
