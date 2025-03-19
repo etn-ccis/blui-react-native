@@ -3,7 +3,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
     ...bluiRecommended,
-    { ignores: ['dist','docs/dist/**/**'] },
+    { ignores: ['dist', 'docs/dist/**/**', 'packages/**/dist/**'] },
     {
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
@@ -16,7 +16,7 @@ export default [
             'react-hooks': reactHooks,
         },
         rules: {
-            '@typescript-eslint/prefer-nullish-coalescing':'off',
+            '@typescript-eslint/prefer-nullish-coalescing': 'off',
         },
     },
     {
@@ -68,7 +68,6 @@ export default [
                     format: ['camelCase', 'PascalCase'],
                 },
             ],
-            
         },
     },
     {
