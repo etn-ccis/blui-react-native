@@ -55,7 +55,7 @@ export const App = (): JSX.Element => {
                 setLoginData({ email: userData.rememberMeData.user, rememberMe: userData.rememberMeData.rememberMe });
                 setAuthenticated(Boolean(userData.userId));
                 await getLanguage();
-            } catch (e) {
+            } catch {
                 // handle any error state, rejected promises, etc..
             } finally {
                 setIsLoading(false);
@@ -63,7 +63,6 @@ export const App = (): JSX.Element => {
         };
         // eslint-disable-next-line
         initialize();
-        // eslint-disable-next-line
     }, []);
 
     return isLoading ? (

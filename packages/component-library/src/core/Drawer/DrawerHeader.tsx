@@ -20,14 +20,16 @@ import { useHeaderDimensions } from '../__hooks__/useHeaderDimensions';
 import { Icon } from '../Icon';
 import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-context';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleRegular, fontStyleSemiBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 const makeStyles = (
     props: DrawerHeaderProps,
     theme: ExtendedTheme,
     insets: EdgeInsets,
     height: number,
-    fontScale: number
+    fontScale: number,
+    fontStyleSemiBold: TextStyle,
+    fontStyleRegular: TextStyle
 ): StyleSheet.NamedStyles<{
     root: ViewStyle;
     icon: ViewStyle;
@@ -181,12 +183,22 @@ export const DrawerHeader: React.FC<DrawerHeaderProps> = (props) => {
         theme: themeOverride,
         ...viewProps
     } = props;
+
     const theme = useExtendedTheme(themeOverride);
     const insets = useSafeAreaInsets();
     const { REGULAR_HEIGHT } = useHeaderDimensions();
     const { disableScaling } = useFontScaleSettings();
     const fontScale = useFontScale();
-    const defaultStyles = makeStyles(props, theme, insets, REGULAR_HEIGHT, fontScale);
+    const { fontStyleSemiBold, fontStyleRegular } = useFontStyles();
+    const defaultStyles = makeStyles(
+        props,
+        theme,
+        insets,
+        REGULAR_HEIGHT,
+        fontScale,
+        fontStyleSemiBold,
+        fontStyleRegular
+    );
 
     const getIcon = useCallback((): JSX.Element | undefined => {
         if (icon) {
@@ -208,7 +220,7 @@ export const DrawerHeader: React.FC<DrawerHeaderProps> = (props) => {
                 </View>
             );
         }
-    }, [defaultStyles, styles, icon, fontColor, onIconPress]);
+    }, [defaultStyles, styles, icon, fontColor, onIconPress, disableScaling, theme.colors.onSurface]);
 
     const getHeaderContent = useCallback(
         (): ReactNode =>

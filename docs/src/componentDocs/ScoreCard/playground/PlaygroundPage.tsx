@@ -157,7 +157,9 @@ const ScoreCardPreview: PreviewComponent = ({ data }) => {
                 <ScoreCard
                     {...removeEmptyProps(rest)}
                     headerTitle={rest.headerTitle}
-                    headerBackgroundImage={getImage(headerBackgroundImage?.toString() ?? '')}
+                    headerBackgroundImage={
+                        typeof headerBackgroundImage === 'string' ? getImage(headerBackgroundImage) : undefined
+                    }
                     actionItems={getActionItems(actionItems as unknown as boolean)}
                     actionRow={
                         <View>
@@ -194,7 +196,11 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         join: '\n\t',
         skip: ['numberOfHeroes', 'headerBackgroundImage', 'actionItems'],
     })}
-    ${data.headerBackgroundImage !== 'undefined' ? `headerBackgroundImage={headerBackgroundImage}` : ''}
+    ${
+        data.headerBackgroundImage !== 'undefined'
+            ? `headerBackgroundImage={getImage('${data.headerBackgroundImage}')}`
+            : ''
+    }
     ${
         data.actionItems && data.actionItems !== 'undefined'
             ? `actionItems={[

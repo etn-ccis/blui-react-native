@@ -7,7 +7,7 @@ import { Icon } from '../Icon';
 import { IconSource } from '../__types__';
 import { useFontScale } from '../__contexts__/font-scale-context';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleSemiBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 type HeroStyles = {
     root?: ViewStyle;
@@ -15,7 +15,7 @@ type HeroStyles = {
     values?: ViewStyle;
     label?: TextStyle;
 };
-
+const { fontStyleSemiBold } = useFontStyles();
 const makeStyles = (theme: ExtendedTheme, fontScale: number): StyleSheet.NamedStyles<HeroStyles> =>
     StyleSheet.create({
         root: {

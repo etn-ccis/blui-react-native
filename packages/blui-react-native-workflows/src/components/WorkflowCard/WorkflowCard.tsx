@@ -60,7 +60,7 @@ export const WorkflowCard: React.FC<WorkflowCardBaseProps> = (props) => {
 
     return (
         <ImageBackground
-            source={backgroundImage ? backgroundImage : defaultImage}
+            source={backgroundImage ?? defaultImage}
             resizeMode="repeat"
             style={[
                 {

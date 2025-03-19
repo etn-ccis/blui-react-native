@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { StyleSheet, TouchableOpacity, ViewProps, I18nManager, StyleProp, ViewStyle, Animated } from 'react-native';
 import { Icon } from '../Icon/Icon';
 import { $DeepPartial } from '@callstack/react-theme-provider';
@@ -45,10 +45,15 @@ export const IconSwitch: React.FC<IconSwitchProps> = (props) => {
     const theme = useExtendedTheme(props.theme);
 
     const rtl = I18nManager.isRTL;
-    const toggleStyles = {
-        transform: [{ translateX: value ? (showIcon ? (rtl ? -22 : 22) : rtl ? -18 : 18) : 0 }],
-        transition: 'transform 50ms ease-in-out',
-    };
+
+    const toggleStyles = useMemo(
+        () => ({
+            transform: [{ translateX: value ? (showIcon ? (rtl ? -22 : 22) : rtl ? -18 : 18) : 0 }],
+            transition: 'transform 50ms ease-in-out',
+        }),
+        [value, showIcon, rtl]
+    );
+
     const onPressSwitch = (): void => {
         const newValue = !value;
         onValueChange(newValue);
@@ -57,7 +62,7 @@ export const IconSwitch: React.FC<IconSwitchProps> = (props) => {
     useEffect(() => {
         // Update the toggleStyles based on the current value
         toggleStyles.transform = [{ translateX: value ? (showIcon ? (rtl ? -22 : 22) : rtl ? -18 : 18) : 0 }];
-    }, [value]);
+    }, [value, rtl, showIcon, toggleStyles]);
 
     const defaultStyles = StyleSheet.create({
         track: {

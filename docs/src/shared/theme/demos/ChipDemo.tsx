@@ -1,6 +1,5 @@
 import React from 'react';
-import { Check, AccountCircle } from '@mui/icons-material';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
 import { Chip } from '@brightlayer-ui/react-native-components';
 import { Avatar } from 'react-native-paper';
 

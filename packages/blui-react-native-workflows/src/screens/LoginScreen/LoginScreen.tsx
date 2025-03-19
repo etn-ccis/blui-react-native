@@ -25,8 +25,8 @@ export const LoginScreen: React.FC<React.PropsWithChildren<LoginScreenProps>> = 
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: (): void => {
-            if (props.errorDisplayConfig && props.errorDisplayConfig.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
+            if (errorManagerConfig.onClose) errorManagerConfig.onClose();
         },
     };
 
@@ -44,7 +44,7 @@ export const LoginScreen: React.FC<React.PropsWithChildren<LoginScreenProps>> = 
             }
             return true;
         },
-        initialUsernameValue = rememberMeDetails?.email || '',
+        initialUsernameValue = rememberMeDetails?.email ?? '',
         passwordLabel = t('bluiCommon:LABELS.PASSWORD'),
         passwordTextFieldProps,
         passwordValidator = (password: string): string | boolean => {
@@ -55,21 +55,21 @@ export const LoginScreen: React.FC<React.PropsWithChildren<LoginScreenProps>> = 
         },
         showRememberMe = true,
         rememberMeLabel = t('bluiCommon:ACTIONS.REMEMBER'),
-        rememberMeInitialValue = rememberMeDetails?.rememberMe || false,
+        rememberMeInitialValue = rememberMeDetails?.rememberMe ?? false,
         onRememberMeChanged = (value: boolean): void => {
             props.onRememberMeChanged?.(value);
         },
         loginButtonLabel = t('bluiCommon:ACTIONS.LOG_IN'),
         showForgotPassword = true,
         forgotPasswordLabel = t('bluiCommon:LABELS.FORGOT_PASSWORD'),
-        onForgotPassword = (): void => navigate(routeConfig.FORGOT_PASSWORD as string),
+        onForgotPassword = (): void => navigate(routeConfig.FORGOT_PASSWORD!),
         showSelfRegistration = true,
         selfRegisterInstructions = t('bluiCommon:LABELS.NEED_ACCOUNT'),
         selfRegisterButtonLabel = t('bluiCommon:ACTIONS.CREATE_ACCOUNT'),
-        onSelfRegister = (): void => navigate(routeConfig.REGISTER_SELF as string),
+        onSelfRegister = (): void => navigate(routeConfig.REGISTER_SELF!),
         showContactSupport = true,
         contactSupportLabel = t('bluiCommon:MESSAGES.CONTACT'),
-        onContactSupport = (): void => navigate(routeConfig.SUPPORT as string),
+        onContactSupport = (): void => navigate(routeConfig.SUPPORT!),
         showCyberSecurityBadge = true,
         projectImage,
         header,

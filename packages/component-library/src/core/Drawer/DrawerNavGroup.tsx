@@ -9,7 +9,7 @@ import { NavGroupContext } from './context';
 import { EdgeInsets, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFontScale } from '../__contexts__/font-scale-context';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
-import { fontStyleSemiBold } from '../Utility/shared';
+import { useFontStyles } from '../Utility/shared';
 
 export type DrawerNavGroupStyles = {
     root?: StyleProp<ViewStyle>;
@@ -40,11 +40,13 @@ export type DrawerNavGroupProps = AllSharedProps &
         /** Style overrides for internal elements. The styles you provide will be combined with the default styles. */
         styles?: DrawerNavGroupStyles;
     };
+
 const makeStyles = (
     props: DrawerNavGroupProps,
     theme: ExtendedTheme,
     insets: EdgeInsets,
-    fontScale: number
+    fontScale: number,
+    fontStyleSemiBold: TextStyle
 ): StyleSheet.NamedStyles<{
     root: ViewStyle;
     textContent: ViewStyle;
@@ -96,8 +98,8 @@ const findID = (item: DrawerNavItemProps | NestedDrawerNavItemProps, activeItem:
 
     // else, loop through the branches by items
     if (item.items) {
-        for (let i = 0; i < item.items.length; i++) {
-            if (findID(item.items[i], activeItem)) {
+        for (const subItem of item.items) {
+            if (findID(subItem, activeItem)) {
                 return true;
             }
         }
@@ -105,8 +107,8 @@ const findID = (item: DrawerNavItemProps | NestedDrawerNavItemProps, activeItem:
     // and by children
     if (item.children) {
         const childItems = findChildByType(item.children, ['DrawerNavItem']);
-        for (let i = 0; i < childItems.length; i++) {
-            if (findID(childItems[i].props, activeItem)) {
+        for (const child of childItems) {
+            if (findID(child.props, activeItem)) {
                 return true;
             }
         }
@@ -159,9 +161,10 @@ export const DrawerNavGroup: React.FC<DrawerNavGroupProps> = (props) => {
         ...viewProps
     } = props;
     const theme = useExtendedTheme(themeOverride);
+    const { fontStyleSemiBold } = useFontStyles();
     const insets = useSafeAreaInsets();
     const fontScale = useFontScale();
-    const defaultStyles = makeStyles(props, theme, insets, fontScale);
+    const defaultStyles = makeStyles(props, theme, insets, fontScale, fontStyleSemiBold);
     const { activeItem } = useDrawerContext();
 
     const defaultProps: Partial<DrawerNavGroupProps> = {
@@ -177,7 +180,7 @@ export const DrawerNavGroup: React.FC<DrawerNavGroupProps> = (props) => {
     useEffect(() => {
         if (!findID({ items: props.items, children: props.children } as DrawerNavItemProps, activeItem))
             setActiveHierarchyItems([]);
-    }, [activeItem]);
+    }, [activeItem, props.items, props.children]);
 
     const getChildren = useCallback(
         (): JSX.Element[] =>

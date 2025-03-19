@@ -23,7 +23,7 @@ export const ResetPasswordScreenBase: React.FC<ResetPasswordScreenProps> = (prop
     const headerProps = props.WorkflowCardHeaderProps || {};
     const cardBodyProps = props.WorkflowCardBodyProps || {};
     const actionsProps = props.WorkflowCardActionsProps || {};
-    const passwordProps = props.PasswordProps || { onPasswordChange: () => ({}) };
+    const passwordProps = props.PasswordProps || { onPasswordChange: (): void => {} };
     const { showSuccessScreen, SuccessScreen, SuccessScreenProps: successScreenProps, errorDisplayConfig } = props;
 
     const getSuccessScreen = (

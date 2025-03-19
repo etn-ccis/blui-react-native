@@ -32,8 +32,7 @@ const convertNavItems = (
     dispatch: any
 ): NavItem[] => {
     const convertedItems: NavItem[] = [];
-    for (let i = 0; i < navData.length; i++) {
-        const item = navData[i];
+    for (const item of navData) {
         const fullURL = `${parentUrl}${item.path || ''}`;
         convertedItems.push({
             title: item.title,

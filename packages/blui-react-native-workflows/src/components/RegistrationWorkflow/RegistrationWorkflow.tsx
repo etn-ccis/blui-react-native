@@ -119,7 +119,7 @@ export const RegistrationWorkflow: React.FC<React.PropsWithChildren<Registration
     const selectedPage = React.useRef(0);
 
     const updateScreenData = (data: IndividualScreenData): void => {
-        const { Other }: { [key: string]: any } = screenData;
+        const { Other }: Record<string, any> = screenData;
         const { screenId, values, isAccountExist: accountExists } = data;
 
         if (accountExists) {
@@ -161,7 +161,7 @@ export const RegistrationWorkflow: React.FC<React.PropsWithChildren<Registration
             setTimeout(() => {
                 setLoading(true);
             }, timeOutDelay);
-            if (actions && actions.completeRegistration) {
+            if (actions?.completeRegistration) {
                 const { Eula, CreateAccount, VerifyCode, CreatePassword, AccountDetails, Other } = screenData;
                 const userInfo = {
                     ...Eula,
@@ -227,7 +227,7 @@ export const RegistrationWorkflow: React.FC<React.PropsWithChildren<Registration
                 updateScreenData(data);
                 if (currentScreen === 0) {
                     resetScreenData();
-                    navigate(routeConfig.LOGIN as string);
+                    navigate(routeConfig.LOGIN!);
                 } else {
                     setCurrentScreen((i) => i - 1);
                     viewPagerRef.current?.setPage(currentScreen - 1);

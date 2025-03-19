@@ -181,7 +181,7 @@ export const EulaScreenBase: React.FC<EulaScreenProps> = (props) => {
                                     color={checkboxProps?.color || theme.colors.primary}
                                     disabled={!checkboxEnable}
                                     status={eulaAccepted ? 'checked' : 'unchecked'}
-                                    label={checkboxLabel as string}
+                                    label={checkboxLabel!}
                                     onPress={() => {
                                         handleEulaAcceptedChecked(!eulaAccepted);
                                     }}

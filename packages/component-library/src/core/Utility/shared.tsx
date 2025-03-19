@@ -5,8 +5,25 @@ export const getPrimary500 = (theme: MD3Theme): string | undefined => theme.colo
 
 export const calculateHeight = (fontSize: number): number => Math.ceil((fontSize * 1.25) / 4) * 4;
 
-export const fontStyleLight = useFontWeight('300');
-export const fontStyleRegular = useFontWeight('400');
-export const fontStyleSemiBold = useFontWeight('600');
-export const fontStyleBold = useFontWeight('700');
-export const fontStyleExtraBold = useFontWeight('800');
+type FontStyles = {
+    fontStyleLight: ReturnType<typeof useFontWeight>;
+    fontStyleRegular: ReturnType<typeof useFontWeight>;
+    fontStyleSemiBold: ReturnType<typeof useFontWeight>;
+    fontStyleBold: ReturnType<typeof useFontWeight>;
+    fontStyleExtraBold: ReturnType<typeof useFontWeight>;
+};
+export const useFontStyles = (): FontStyles => {
+    const fontStyleLight = useFontWeight('300');
+    const fontStyleRegular = useFontWeight('400');
+    const fontStyleSemiBold = useFontWeight('600');
+    const fontStyleBold = useFontWeight('700');
+    const fontStyleExtraBold = useFontWeight('800');
+
+    return {
+        fontStyleLight,
+        fontStyleRegular,
+        fontStyleSemiBold,
+        fontStyleBold,
+        fontStyleExtraBold,
+    };
+};

@@ -86,9 +86,9 @@ export const SetPassword: React.FC<React.PropsWithChildren<SetPasswordProps>> = 
     );
 
     const isValidPassword = useCallback((): boolean => {
-        const requirementsToCheck = passwordRequirements ? passwordRequirements : defaultPasswordRequirements(t);
-        for (let i = 0; i < requirementsToCheck.length; i++) {
-            if (!new RegExp(requirementsToCheck[i].regex).test(passwordInput)) return false;
+        const requirementsToCheck = passwordRequirements ?? defaultPasswordRequirements(t);
+        for (const req of requirementsToCheck) {
+            if (!new RegExp(req.regex).test(passwordInput)) return false;
         }
 
         return true;
@@ -104,8 +104,7 @@ export const SetPassword: React.FC<React.PropsWithChildren<SetPasswordProps>> = 
                 error={passwordInput !== '' && !isValidPassword()}
                 {...passwordTextFieldProps}
                 onChangeText={(text: string) => {
-                    // eslint-disable-next-line no-unused-expressions
-                    passwordTextFieldProps?.onChangeText && passwordTextFieldProps.onChangeText(text);
+                    passwordTextFieldProps?.onChangeText?.(text);
                     onPassChange(text);
                 }}
                 returnKeyType="next" // Show "next" button on keyboard
@@ -124,8 +123,7 @@ export const SetPassword: React.FC<React.PropsWithChildren<SetPasswordProps>> = 
                 error={hasConfirmPasswordError()}
                 {...confirmPasswordTextFieldProps}
                 onChangeText={(text: string) => {
-                    // eslint-disable-next-line no-unused-expressions
-                    confirmPasswordTextFieldProps?.onChangeText && confirmPasswordTextFieldProps.onChangeText(text);
+                    confirmPasswordTextFieldProps?.onChangeText?.(text);
                     onConfirmChange(text);
                 }}
                 returnKeyType="done" // Show "next" button on keyboard

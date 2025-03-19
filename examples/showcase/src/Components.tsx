@@ -9,7 +9,7 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import {Avatar, Text, useTheme} from 'react-native-paper';
 
-const Components = () => {
+const Components: React.FC = () => {
   const theme = useTheme();
 
   return (
