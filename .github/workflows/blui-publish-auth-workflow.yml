@@ -2,7 +2,7 @@ name: Publish Auth Workflow
 
 on:
   push:
-    branches: [ "dev", "master" ]
+    branches: ['dev', 'master']
   pull_request:
       branches: ['dev', 'master']
   pull_request_target:
