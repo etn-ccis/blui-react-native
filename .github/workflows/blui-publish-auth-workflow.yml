@@ -5,6 +5,11 @@ on:
     branches: [ "dev", "master" ]
   pull_request:
       branches: ['dev', 'master']
+  pull_request_target:
+      types:
+          - opened
+      branches:
+          - '*/*'
   workflow_call:
 
 permissions:
