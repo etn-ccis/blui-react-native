@@ -1832,9 +1832,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@brightlayer-ui/react-native-auth-workflow@workspace:packages/blui-react-native-workflows":
+"@brightlayer-ui/react-native-auth-workflow@workspace:^, @brightlayer-ui/react-native-auth-workflow@workspace:packages/auth-workflows":
   version: 0.0.0-use.local
-  resolution: "@brightlayer-ui/react-native-auth-workflow@workspace:packages/blui-react-native-workflows"
+  resolution: "@brightlayer-ui/react-native-auth-workflow@workspace:packages/auth-workflows"
   dependencies:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
@@ -1917,7 +1917,7 @@ __metadata:
     i18next: ^23.11.5
     react: 18.3.1
     react-i18next: ^15.0.2
-    react-native: 0.75.2
+    react-native: 0.76.7
     react-native-gesture-handler: ^2.19.0
     react-native-keyboard-aware-scroll-view: ^0.9.5
     react-native-pager-view: ^6.4.1
@@ -22914,6 +22914,7 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
+    "@brightlayer-ui/react-native-auth-workflow": "workspace:^"
     "@brightlayer-ui/react-native-components": "workspace:^"
     "@brightlayer-ui/react-native-progress-icons": "workspace:*"
     "@brightlayer-ui/react-native-themes": "workspace:^"

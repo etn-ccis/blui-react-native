@@ -67,6 +67,11 @@ export default [
                     selector: 'import',
                     format: ['camelCase', 'PascalCase'],
                 },
+                {
+                    selector: 'variable',
+                    format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'PascalCase'],
+                    leadingUnderscore: 'allow',
+                },
             ],
         },
     },
