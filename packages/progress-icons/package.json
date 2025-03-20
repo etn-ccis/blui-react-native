@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/react-native-progress-icons",
-    "version": "2.0.0-alpha.0",
+    "version": "2.0.0",
     "description": "React Native progress icons for Brightlayer UI applications",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
