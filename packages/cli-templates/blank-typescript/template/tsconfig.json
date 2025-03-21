@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "declaration": true,
+        "declarationDir": "dist",
+        "module": "ESNext",
+        "target": "ES5",
+        "lib": ["ESNext", "DOM"],
+        "jsx": "react",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true
+    },
+    "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+}
