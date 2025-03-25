@@ -24,7 +24,7 @@
         "test": "yarn test:functions && yarn test:build",
         "verify-build": "tsc --noEmit",
         "publish:package": "cd dist && rm -f *.tgz && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
-        "tag:package": "npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-progress-icons"
+        "tag:package": "cd dist && npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-progress-icons"
     },
     "repository": {
         "type": "git",

@@ -2,7 +2,14 @@ name: Publish Auth Workflow
 
 on:
   push:
-    branches: [ "dev", "master" ]
+    branches: ['dev', 'master']
+  pull_request:
+      branches: ['dev', 'master']
+  pull_request_target:
+      types:
+          - opened
+      branches:
+          - '*/*'
   workflow_call:
 
 permissions:
@@ -21,11 +28,11 @@ jobs:
       BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
     steps:
       - uses: actions/checkout@v4
-      - name: Download workflow dist
+      - name: Download auth dist
         uses: actions/download-artifact@v4
         with:
-          name: workflow-dist
-          path: packages/auth-workflows/workflow-dist
+          name: auth-dist
+          path: packages/auth-workflows/dist
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
