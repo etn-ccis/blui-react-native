@@ -1,27 +1,28 @@
 {
-    "plugins": [
-        // ...
-        "react-hooks"
-    ],
     "compilerOptions": {
-        "outDir": "dist",
+        "allowSyntheticDefaultImports": true,
         "declaration": true,
-        "declarationDir": "dist",
-        "module": "ESNext",
-        "target": "ES5",
-        "lib": ["ESNext", "DOM"],
-        "jsx": "react",
-        "moduleResolution": "node",
         "esModuleInterop": true,
+        "outDir": "dist",
+        "declarationDir": "dist",
+        "jsx": "react",
+        "lib": ["es6"],
+        "module": "es6",
+        "moduleResolution": "node",
+        "noEmit": false,
+        "strict": true,
         "skipLibCheck": true,
-        "strict": true
+        "target": "es6",
+        "paths": {
+            "react": ["../../node_modules/@types/react"]
+        }
     },
-    "include": ["src/*"],
+    "include": ["src"],
     "exclude": [
+        "src/__tests__",
         "node_modules",
-        "babel.config.js",
-        "metro.config.js",
-        "jest.config.js",
+        "babel.config.cjs",
+        "metro.config.cjs",
         "tsconfig.json",
         "jestSetupFile.js",
         "lib/**/*",
