@@ -10978,7 +10978,7 @@ __metadata:
     typescript: ~5.6.2
     typescript-eslint: ^8.18.2
     typewriter-effect: ^2.21.0
-    vite: ^6.0.5
+    vite: ^6.2.3
     vite-plugin-dts: ^4.5.3
     vite-plugin-prismjs: ^0.0.11
     vite-plugin-react-native-web: ^1.0.2
@@ -25263,7 +25263,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.0.5":
+"vite@npm:^6.2.3":
   version: 6.2.3
   resolution: "vite@npm:6.2.3"
   dependencies:
