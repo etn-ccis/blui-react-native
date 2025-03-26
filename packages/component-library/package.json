@@ -47,7 +47,7 @@
     "peerDependencies": {
         "@brightlayer-ui/react-native-vector-icons": "^2.0.0",
         "react": "^17.0.0 || ^18.0.0",
-        "react-native": "0.68.0 || 0.69.0 || ^0.70.0",
+        "react-native": "0.68.0 || 0.69.0 || 0.76.7",
         "react-native-paper": "^5.0.0",
         "react-native-safe-area-context": "^5.3.0",
         "react-native-vector-icons": "^9.0.0"
