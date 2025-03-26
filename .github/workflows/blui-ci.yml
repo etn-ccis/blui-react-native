@@ -18,7 +18,6 @@ permissions:
 jobs:
     prettier_lint:
         runs-on: ubuntu-latest
-
         strategy:
             matrix:
                 node-version: [20.x]
@@ -31,36 +30,38 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
-            - run: yarn
+            - run: yarn --immutable
             - run: yarn prettier:check
             - run: yarn lint
               
-    # test_auth_workflow:
-    #     runs-on: ubuntu-latest
-    #     strategy:
-    #         matrix:
-    #             node-version: [20.x]
+    test_auth_workflow:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
         
-    #     steps:
-    #         - uses: actions/checkout@v4
-    #         - name: Use Node.js ${{ matrix.node-version }}
-    #           uses: actions/setup-node@v4
-    #           with:
-    #               name: docs
-    #               path: docs/dist
-    #         - name: deploy
-    #           uses: JamesIves/github-pages-deploy-action@v4
-    #           with:
-    #               token: ${{ secrets.CODECOV_TOKEN }}
-    #               directory: packages/auth-workflows/coverage/
-    #               files: clover.xml
-    #               flags: login-wf-tests
-    #               name: codecov-report
-    #               verbose: true
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - run: yarn coverage
+              working-directory: packages/auth-workflows
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/auth-workflows/coverage/
+                  files: cobertura-coverage.xml
+                  flags: auth-tests
+                  name: codecov-report
+                  verbose: true
             
     build_auth_workflow:
         runs-on: ubuntu-latest
-              
         strategy:
             matrix:
                 node-version: [20.x]
@@ -83,37 +84,35 @@ jobs:
                   if-no-files-found: error
                   path: packages/auth-workflows/dist
 
-    # test_component_library:
-    #     runs-on: ubuntu-latest
+    test_component_library:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
               
-    #     strategy:
-    #         matrix:
-    #             node-version: [20.x]
-              
-    #     steps:
-    #         - name: Checkout
-    #           uses: actions/checkout@v4
-    #         - name: Use Node.js ${{ matrix.node-version }}
-    #           uses: actions/setup-node@v4
-    #           with:
-    #               node-version: ${{ matrix.node-version }}
-    #               cache: 'yarn'
-    #         - run: yarn install --immutable
-    #         - run: yarn coverage
-    #           working-directory: packages/component-library
-    #         - name: Upload to Codecov
-    #           uses: codecov/codecov-action@v5
-    #           with:
-    #               token: ${{ secrets.CODECOV_TOKEN }}
-    #               directory: packages/component-library/coverage/
-    #               files: cobertura-coverage.xml
-    #               flags: component-tests
-    #               name: codecov-report
-    #               verbose: true
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - run: yarn coverage
+              working-directory: packages/component-library
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/component-library/coverage/
+                  files: cobertura-coverage.xml
+                  flags: component-tests
+                  name: codecov-report
+                  verbose: true
 
     build_component_library:
         runs-on: ubuntu-latest
-              
         strategy:
             matrix:
                 node-version: [20.x]
@@ -138,7 +137,6 @@ jobs:
     
     build_progress_icons:
         runs-on: ubuntu-latest
-                
         strategy:
             matrix:
                 node-version: [20.x]
@@ -151,7 +149,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
-            - run: yarn install --immutable
+            - run: yarn --immutable
             - run: yarn build
               working-directory: packages/progress-icons
             - name: Save progress icon build
@@ -163,7 +161,6 @@ jobs:
 
     build_theme_verify_artifacts:
         runs-on: ubuntu-latest
-
         strategy:
             matrix:
                 node-version: [20.x]
@@ -188,7 +185,6 @@ jobs:
 
     build_rn_docs:
       runs-on: ubuntu-latest
-        
       strategy:
           matrix:
               node-version: [20.x]
@@ -283,7 +279,7 @@ jobs:
         secrets: inherit
         needs: [build_progress_icons]
 
-    publish-themes:
-        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-themes.yml@dev
-        secrets: inherit
-        needs: [build_theme_verify_artifacts]
+    # publish-themes:
+    #     uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-themes.yml@dev
+    #     secrets: inherit
+    #     needs: [build_theme_verify_artifacts]

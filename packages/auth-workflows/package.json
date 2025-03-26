@@ -31,7 +31,7 @@
         "package.json"
     ],
     "scripts": {
-        "test": "jest src --maxWorkers=2",
+        "test": "jest",
         "build": "rm -rf dist && tsc && mkdir -p dist/assets && cp -R src/assets/* dist/assets/",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies --exclude ./example -json LICENSES.json",
         "typescript": "tsc --noEmit",
@@ -56,7 +56,7 @@
         "react-native-pager-view": "^6.4.1",
         "react-native-paper": "^5.12.5",
         "react-native-reanimated": "^3.15.2",
-        "react-native-safe-area-context": "^4.11.0",
+        "react-native-safe-area-context": "^5.3.0",
         "react-native-vector-icons": "^10.2.0",
         "react-native-webview": "^13.12.2"
     },
@@ -71,12 +71,12 @@
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@brightlayer-ui/react-native-auth-workflow": "7.0.0-beta.0",
         "@brightlayer-ui/react-native-components": "^8.0.4",
-        "@brightlayer-ui/react-native-themes": "^7.0.1",
         "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
         "@okta/okta-react-native": "^2.12.0",
         "@react-native-async-storage/async-storage": "^2.0.0",
         "@react-native-community/bob": "^0.10.0",
         "@react-native-community/masked-view": "^0.1.10",
+        "@react-native/babel-preset": "^0.78.1",
         "@react-native/eslint-config": "0.75.2",
         "@react-native/metro-config": "0.76.3",
         "@react-native/typescript-config": "0.75.2",
@@ -85,7 +85,7 @@
         "@react-navigation/native-stack": "^6.11.0",
         "@react-navigation/stack": "^6.3.20",
         "@testing-library/jest-dom": "^6.6.2",
-        "@testing-library/react-native": "^13.0.1",
+        "@testing-library/react-native": "^13.2.0",
         "@types/color": "^3.0.3",
         "@types/jest": "^29.0.3",
         "@types/lodash.clonedeep": "^4.5.6",
@@ -124,7 +124,7 @@
         "react-native-paper": "^5.12.5",
         "react-native-reanimated": "^3.15.2",
         "react-native-restart": "^0.0.27",
-        "react-native-safe-area-context": "^4.11.0",
+        "react-native-safe-area-context": "^5.3.0",
         "react-native-screens": "^3.34.0",
         "react-native-select-dropdown": "^3.4.0",
         "react-native-svg": "^15.7.1",
@@ -133,47 +133,6 @@
         "react-native-webview": "^13.12.2",
         "react-test-renderer": "18.3.1",
         "typescript": "5.0.4"
-    },
-    "jest": {
-        "coverageDirectory": "./coverage/",
-        "collectCoverage": true,
-        "coverageThreshold": {
-            "global": {
-                "lines": 80
-            }
-        },
-        "testEnvironment": "node",
-        "preset": "react-native",
-        "verbose": true,
-        "testEnvironmentOptions": {
-            "url": "http://localhost/"
-        },
-        "setupFiles": [
-            "../../node_modules/react-native-gesture-handler/jestSetup.js",
-            "./jestSetupFile.js"
-        ],
-        "moduleNameMapper": {
-            ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy",
-            "^react-native$": "<rootDir>/../../node_modules/react-native"
-        },
-        "moduleFileExtensions": [
-            "ts",
-            "tsx",
-            "js",
-            "jsx",
-            "json",
-            "node"
-        ],
-        "modulePaths": [
-            "<rootDir>"
-        ],
-        "modulePathIgnorePatterns": [
-            "<rootDir>/node_modules",
-            "<rootDir>/../../node_modules"
-        ],
-        "transformIgnorePatterns": [
-            "../../node_modules/(?!(|react-native|@react-native/*|@brightlayer-ui/react-native-components|react-native-vector-icons|react-native-reanimated|react-native-animatable|react-native-iphone-x-helper|react-native-modal|react-native-safe-area-context|react-native-collapsible|@react-native/polyfills|react-native-status-bar-height|react-native-webview|react-native-webview|@okta/okta-react-native/*)/)"
-        ]
     },
     "@react-native-community/bob": {
         "source": "src",

@@ -1,5 +1,4 @@
 import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
-jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('react-i18next', () => ({
     useTranslation: () => ({ t: (key) => key }),
     ...jest.requireActual('react-i18next'),
