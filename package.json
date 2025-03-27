@@ -9,29 +9,31 @@
         "docs"
     ],
     "scripts": {
+        "build:all": "yarn workspaces foreach -t run build",
         "lint": "eslint \"**/**.{tsx,ts}\"",
         "lint:fix": "eslint \"**/**.{tsx,ts}\" --fix",
         "prepare": "husky",
         "prettier": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --write",
-        "prettier:check": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check"
+        "prettier:check": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check",
+        "test:all": "yarn workspaces foreach -t run test"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
+        "@brightlayer-ui/eslint-config": "^4.0.0",
         "@brightlayer-ui/prettier-config": "^1.0.3",
-        "@eslint/compat": "^1.2.6",
+        "@eslint/compat": "^1.2.7",
         "@eslint/eslintrc": "^3.2.0",
-        "@eslint/js": "^9.8.0",
-        "eslint": "^9.8.0",
+        "@eslint/js": "^9.23.0",
+        "eslint": "^9.23.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "2.31.0",
-        "eslint-plugin-jsx-a11y": "6.7.1",
-        "eslint-plugin-react": "7.37.2",
-        "eslint-plugin-react-hooks": "5.0.0",
+        "eslint-plugin-jsx-a11y": "6.10.2",
+        "eslint-plugin-react": "7.37.4",
+        "eslint-plugin-react-hooks": "^5.0.0",
         "firebase-tools": "^13.33.0",
-        "globals": "^15.14.0",
+        "globals": "^16.0.0",
         "husky": "^9.1.7",
-        "prettier": "^3.4.2",
-        "typescript-eslint": "^8.0.0"
+        "prettier": "^3.5.3",
+        "typescript-eslint": "^8.28.0"
     },
     "prettier": "@brightlayer-ui/prettier-config"
 }
