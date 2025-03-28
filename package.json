@@ -9,11 +9,13 @@
         "docs"
     ],
     "scripts": {
+        "build:all": "yarn workspaces foreach -t run build",
         "lint": "eslint \"**/**.{tsx,ts}\"",
         "lint:fix": "eslint \"**/**.{tsx,ts}\" --fix",
         "prepare": "husky",
         "prettier": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --write",
-        "prettier:check": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check"
+        "prettier:check": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check",
+        "test:all": "yarn workspaces foreach -t run test"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
