@@ -260,6 +260,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                         </View>
                         <View style={defaultStyles.passwordWrapper}>
                             <PasswordTextField
+                                testID={'blui-login-password-text-field'}
                                 ref={passwordField}
                                 onChangeText={(e: any): void => {
                                     passwordTextFieldProps?.onChange?.(e);
