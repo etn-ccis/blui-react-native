@@ -21229,6 +21229,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-config@npm:^1.5.5":
+  version: 1.5.5
+  resolution: "react-native-config@npm:1.5.5"
+  peerDependencies:
+    react-native-windows: ">=0.61"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: 96b83f6eaed4d4dd3095c18abdebb6231a9d5206203dbef65070414fb8f0582f30872dbc5120b47bb9e2e019ea842a9678838f7056d0f5e7b9c68de9ff5f971a
+  languageName: node
+  linkType: hard
+
 "react-native-dotenv@npm:^3.4.11":
   version: 3.4.11
   resolution: "react-native-dotenv@npm:3.4.11"
@@ -22935,6 +22947,7 @@ __metadata:
     prettier: 2.8.8
     react: 18.3.1
     react-native: 0.76.7
+    react-native-config: ^1.5.5
     react-native-paper: ^5.0.0
     react-native-safe-area-context: ^5.3.0
     react-native-svg: ^15.11.2
