@@ -259,6 +259,31 @@ jobs:
                   git-config-email: brightlayer-ui@eaton.com
                   commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
 
+    publish_theme:
+      runs-on: ubuntu-latest
+      if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+      needs: build_theme_verify_artifacts
+      strategy:
+        matrix:
+          node-version: [20.x]
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+      steps:
+        - uses: actions/checkout@v4
+        - name: Download theme dist
+          uses: actions/download-artifact@v4
+          with:
+            name: theme-dist
+            path: packages/themes/dist
+        - uses: actions/setup-node@v4
+          with:
+            node-version: ${{ matrix.node-version }}
+            registry-url: 'https://registry.npmjs.org'
+        - run: yarn --immutable
+        - run: npm run publish:package -- -b ${{env.BRANCH}}
+          working-directory: packages/themes
+
     publish-templates:
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
         secrets: inherit
@@ -267,19 +292,14 @@ jobs:
     publish-components:
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
         secrets: inherit
-        needs: [build_component_library]
+        needs: build_component_library
 
     publish-auth-workflow:
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-auth-workflow.yml@dev
         secrets: inherit
-        needs: [build_auth_workflow]
+        needs: build_auth_workflow
 
     publish-progress-icons:
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-progress-icons.yml@dev
         secrets: inherit
-        needs: [build_progress_icons]
-
-    # publish-themes:
-    #     uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-themes.yml@dev
-    #     secrets: inherit
-    #     needs: [build_theme_verify_artifacts]
+        needs: build_progress_icons
