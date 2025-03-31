@@ -17,7 +17,7 @@
     },
     "homepage": "https://github.com/etn-ccis/blui-react-native#readme",
     "license": "BSD-3-Clause",
-    "main": "./index.js",
+    "main": "index.js",
     "type": "module",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
