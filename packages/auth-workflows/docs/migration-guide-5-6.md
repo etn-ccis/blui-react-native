@@ -125,4 +125,4 @@ Your new app architecture will look something like this once you have made all o
 </I18nextProvider>
 ```
 
-Refer to the [Example](../example/) application for detailed reference.
+<!-- Refer to the [Example](../example/) application for detailed reference. -->
