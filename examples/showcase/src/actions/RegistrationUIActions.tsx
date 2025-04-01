@@ -126,7 +126,6 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
       validationCode: string,
       validationEmail?: string,
     ): Promise<{codeValid: boolean | string; accountExists?: boolean}> => {
-
       if (validateCodeRetries >= 10) {
         await sleep(800);
         throw new Error(
