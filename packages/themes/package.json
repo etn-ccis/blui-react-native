@@ -4,7 +4,7 @@
     "license": "BSD-3-Clause",
     "version": "7.0.2",
     "description": "React Native themes for Brightlayer UI applications",
-    "main": "./dist/index.js",
+    "main": "./index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
@@ -14,7 +14,7 @@
         }
     },
     "scripts": {
-        "build": "tsc",
+        "build": "bash ./scripts/buildThemes.sh",
         "test": "bash ./scripts/buildTest.sh",
         "publish:package": "cd dist && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
         "tag:package": "cd dist && npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-themes",
@@ -51,13 +51,5 @@
         "react-native-paper": "^5.0.0",
         "typescript": "^5.0.4"
     },
-    "prettier": "@brightlayer-ui/prettier-config",
-    "files": [
-        "package.json",
-        "README.md",
-        "LICENSE",
-        "LICENSES.json",
-        "CHANGELOG.md",
-        "/dist"
-    ]
+    "prettier": "@brightlayer-ui/prettier-config"
 }

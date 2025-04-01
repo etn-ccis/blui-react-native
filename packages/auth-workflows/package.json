@@ -21,18 +21,11 @@
         "Workflow"
     ],
     "prettier": "@brightlayer-ui/prettier-config",
-    "main": "dist/index.js",
+    "main": "./index.js",
     "type": "module",
-    "files": [
-        "/dist",
-        "CHANGELOG.md",
-        "LICENSES.json",
-        "LICENSE.md",
-        "package.json"
-    ],
     "scripts": {
         "test": "jest",
-        "build": "rm -rf dist && tsc && mkdir -p dist/assets && cp -R src/assets/* dist/assets/",
+        "build": "bash ./scripts/buildAuth.sh",
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies --exclude ./example -json LICENSES.json",
         "typescript": "tsc --noEmit",
         "publish:package": "cd dist && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
@@ -134,21 +127,8 @@
         "react-test-renderer": "18.3.1",
         "typescript": "5.0.4"
     },
-    "@react-native-community/bob": {
-        "source": "src",
-        "output": "lib",
-        "targets": [
-            "commonjs",
-            "module",
-            "typescript"
-        ],
-        "files": [
-            "src/"
-        ]
-    },
     "eslintIgnore": [
-        "node_modules/",
-        "lib/"
+        "node_modules/"
     ],
     "husky": {
         "hooks": {
