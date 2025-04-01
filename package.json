@@ -5,6 +5,9 @@
     "private": true,
     "workspaces": [
         "packages/*",
+        "packages/cli-templates/authentication-typescript",
+        "packages/cli-templates/blank-typescript",
+        "packages/cli-templates/routing-typescript",
         "examples/*",
         "docs"
     ],

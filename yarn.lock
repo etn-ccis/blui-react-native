@@ -2037,6 +2037,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@brightlayer-ui/react-native-template-authentication-typescript@workspace:packages/cli-templates/authentication-typescript":
+  version: 0.0.0-use.local
+  resolution: "@brightlayer-ui/react-native-template-authentication-typescript@workspace:packages/cli-templates/authentication-typescript"
+  languageName: unknown
+  linkType: soft
+
+"@brightlayer-ui/react-native-template-blank-typescript@workspace:packages/cli-templates/blank-typescript":
+  version: 0.0.0-use.local
+  resolution: "@brightlayer-ui/react-native-template-blank-typescript@workspace:packages/cli-templates/blank-typescript"
+  languageName: unknown
+  linkType: soft
+
+"@brightlayer-ui/react-native-template-routing-typescript@workspace:packages/cli-templates/routing-typescript":
+  version: 0.0.0-use.local
+  resolution: "@brightlayer-ui/react-native-template-routing-typescript@workspace:packages/cli-templates/routing-typescript"
+  languageName: unknown
+  linkType: soft
+
 "@brightlayer-ui/react-native-themes@npm:7.0.1":
   version: 7.0.1
   resolution: "@brightlayer-ui/react-native-themes@npm:7.0.1"
