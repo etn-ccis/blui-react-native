@@ -134,6 +134,33 @@ jobs:
                   name: lib-dist
                   if-no-files-found: error
                   path: packages/component-library/dist
+
+    test_progress_icons:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+                          
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - run: yarn coverage
+              working-directory: packages/progress-icons
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/progress-icons/coverage/
+                  files: cobertura-coverage.xml
+                  flags: progress-icons-tests
+                  name: codecov-report
+                  verbose: true
     
     build_progress_icons:
         runs-on: ubuntu-latest
