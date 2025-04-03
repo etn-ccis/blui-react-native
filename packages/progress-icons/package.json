@@ -22,6 +22,7 @@
     },
     "scripts": {
         "build": "bash scripts/buildIcons.sh",
+        "coverage": "jest src --coverage --watchAll=false",
         "test:build": "bash scripts/testBuild.sh",
         "test:functions": "jest src --maxWorkers=2",
         "test": "yarn test:functions && yarn test:build",
