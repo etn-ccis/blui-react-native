@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/naming-convention */
 import {AuthUIActions} from '@brightlayer-ui/react-native-auth-workflow';
 import {AppContextType} from '../contexts/AppContextProvider';
 import {LocalStorage} from '../store/local-storage';
 import Config from 'react-native-config';
 
+// prettier-ignore
 const sleep = (ms: number): Promise<void> =>
-  new Promise(resolve => setTimeout(resolve, ms));
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 function getRandomInt(max: number): number {
   return Math.floor(Math.random() * Math.floor(max));
@@ -25,7 +27,9 @@ type AuthUIActionsWithApp = (appHelper: AppContextType) => AuthUIActions;
  * appropriate actions (often api calls, local network storage, credential updates, etc) and update
  * the global security state based on the actionable needs of the user.
  */
-export const ProjectAuthUIActions: AuthUIActionsWithApp = appHelper => ({
+
+// prettier-ignore
+export const ProjectAuthUIActions: AuthUIActionsWithApp = (appHelper) => ({
   /**
    * Initialize the application security state. This will involve reading any local storage,
    * validating existing credentials (token expiration, for example). At the end of validation,

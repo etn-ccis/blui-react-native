@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/naming-convention */
 import {
   RegistrationUIActions,
   AccountDetails,
 } from '@brightlayer-ui/react-native-auth-workflow';
 import Config from 'react-native-config';
 
+// prettier-ignore
 const sleep = (ms: number): Promise<void> =>
-  new Promise(resolve => setTimeout(resolve, ms));
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 function getRandomInt(max: number): number {
   return Math.floor(Math.random() * Math.floor(max));
