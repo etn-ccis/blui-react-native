@@ -124,17 +124,15 @@ export const ProjectAuthUIActions: AuthUIActionsWithApp = (appHelper) => ({
    * @returns Resolve if email sending was successful, otherwise reject.
    */
   forgotPassword: async (email: string): Promise<void> => {
-    try {
-      const forgetPasswordApiUrl = `${
-        Config.API_URL ?? ''
-      }/api/v1/accesscontrol/users/{YOUR_USER_ID}/account/recovery`;
-      const response = await fetch(forgetPasswordApiUrl, {
-        method: 'POST',
-      });
-      return response.json();
-    } catch (e: any) {
-      throw new Error(e.message);
-    }
+    await sleep(500);
+
+    // Example API call commented out
+    // const forgetPasswordApiUrl = `${Config.API_URL ?? ''}/api/v1/accesscontrol/users/{YOUR_USER_ID}/account/recovery`;
+    // const response = await fetch(forgetPasswordApiUrl, { method: 'POST' });
+    // return response.json();
+
+    // Resolve the action with a placeholder
+    return;
   },
   /**
    * The user has tapped on an email with a password reset link, which they received after
@@ -173,21 +171,21 @@ export const ProjectAuthUIActions: AuthUIActionsWithApp = (appHelper) => ({
     password: string,
     email?: string,
   ): Promise<void> => {
-    try {
-      const setPasswordApiUrl = `${
-        Config.API_URL ?? ''
-      }/api/v1/accesscontrol/users/{YOUR_USER_ID}/password`;
-      const response = await fetch(setPasswordApiUrl, {
-        method: 'PUT',
-        body: JSON.stringify({
-          new_password: password,
-          verification_code: code,
-        }),
-      });
-      return response.json();
-    } catch (err: any) {
-      throw new Error(err.data.errorMessage);
-    }
+    await sleep(500);
+
+    // Example API call commented out
+    // const setPasswordApiUrl = `${Config.API_URL ?? ''}/api/v1/accesscontrol/users/{YOUR_USER_ID}/password`;
+    // const response = await fetch(setPasswordApiUrl, {
+    //   method: 'PUT',
+    //   body: JSON.stringify({
+    //     new_password: password,
+    //     verification_code: code,
+    //   }),
+    // });
+    // return response.json();
+
+    // Resolve the action with a placeholder
+    return;
   },
   /**
    * An authenticated user wants to change their password.
@@ -204,20 +202,20 @@ export const ProjectAuthUIActions: AuthUIActionsWithApp = (appHelper) => ({
     oldPassword: string,
     newPassword: string,
   ): Promise<void> => {
-    try {
-      const changePasswordApiUrl = `${
-        Config.API_URL ?? ''
-      }/api/v1/accesscontrol/password`;
-      const response = await fetch(changePasswordApiUrl, {
-        method: 'POST',
-        body: JSON.stringify({
-          current_password: oldPassword,
-          new_password: newPassword,
-        }),
-      });
-      return response.json();
-    } catch (err: any) {
-      throw new Error(err.data.errorMessage);
-    }
+    await sleep(500);
+
+    // Example API call commented out
+    // const changePasswordApiUrl = `${Config.API_URL ?? ''}/api/v1/accesscontrol/password`;
+    // const response = await fetch(changePasswordApiUrl, {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     current_password: oldPassword,
+    //     new_password: newPassword,
+    //   }),
+    // });
+    // return response.json();
+
+    // Resolve the action with a placeholder
+    return;
   },
 });
