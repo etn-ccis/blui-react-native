@@ -36,20 +36,21 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
      * @returns Resolve with EULA, otherwise reject with an error message.
      */
     loadEula: async (): Promise<string> => {
-      // await sleep(1000);
+      // Example API call commented out
+      // This API call is just for example purposes and should be replaced with your actual implementation.
+      // const eulaApiUrl = `${Config.API_URL ?? ''}iam/v1/users/eula/profile`;
+      // try {
+      //   const response = await fetch(eulaApiUrl, {
+      //     headers: { 'x-realm': 'eaton' },
+      //   });
+      //   const eulaData = await response.json();
+      //   return eulaData;
+      // } catch (error: any) {
+      //   throw new Error(error.message);
+      // }
 
-      const eulaApiUrl = `${Config.API_URL ?? ''}iam/v1/users/eula/profile`;
-      try {
-        const response = await fetch(eulaApiUrl, {
-          headers: {'x-realm': 'eaton'},
-        });
-
-        const eulaData = await response.json();
-
-        return eulaData;
-      } catch (error: any) {
-        throw new Error(error.message);
-      }
+      // Resolve the action with a placeholder value
+      return 'EULA_PLACEHOLDER_TEXT';
     },
 
     /**
@@ -69,40 +70,50 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
     requestRegistrationCode: async (email: string): Promise<string> => {
       try {
         validateCodeRetries = 0;
-        const registrationCodeApiUrl = `${
-          Config.API_URL ?? ''
-        }/api/v1/registration/user/register/${email}`;
-        const response = await fetch(registrationCodeApiUrl, {
-          method: 'POST',
-          body: JSON.stringify({
-            adopter_id: 'YOUR_ADOPTER_ID',
-            expire_at: 'EXPIRY_DATE', // Use this format 2025-03-26T10:19:26.276Z
-            custom_attributes_by_adopter: {}, // Optional
-          }),
-        });
-        return response.json();
+
+        // Example API call commented out
+        // const registrationCodeApiUrl = `${
+        //   Config.API_URL ?? ''
+        // }/api/v1/registration/user/register/${email}`;
+        // const response = await fetch(registrationCodeApiUrl, {
+        //   method: 'POST',
+        //   body: JSON.stringify({
+        //     adopter_id: 'YOUR_ADOPTER_ID',
+        //     expire_at: 'EXPIRY_DATE', // Use this format 2025-03-26T10:19:26.276Z
+        //     custom_attributes_by_adopter: {}, // Optional
+        //   }),
+        // });
+        // return response.json();
+
+        // Resolve the action with a placeholder value
+        return 'REGISTRATION_CODE_PLACEHOLDER';
       } catch (err: any) {
-        throw new Error(err.data.errorMessage);
+        throw new Error('Error requesting registration code.');
       }
     },
 
     createPassword: async (password: string): Promise<boolean> => {
       try {
         validateCodeRetries = 0;
-        const registrationCodeApiUrl = `${
-          Config.API_URL ?? ''
-        }/api/v1/registration/user/${'YOUR_EMAIL'}/password`;
-        const response = await fetch(registrationCodeApiUrl, {
-          method: 'POST',
-          body: JSON.stringify({
-            adopter_id: 'YOUR_ADOPTER_ID',
-            verification_code: 'YOUR_VERIFICATION_CODE',
-            password: password,
-          }),
-        });
-        return response.json();
+
+        // Example API call commented out
+        // const registrationCodeApiUrl = `${
+        //   Config.API_URL ?? ''
+        // }/api/v1/registration/user/${'YOUR_EMAIL'}/password`;
+        // const response = await fetch(registrationCodeApiUrl, {
+        //   method: 'POST',
+        //   body: JSON.stringify({
+        //     adopter_id: 'YOUR_ADOPTER_ID',
+        //     verification_code: 'YOUR_VERIFICATION_CODE',
+        //     password: password,
+        //   }),
+        // });
+        // return response.json();
+
+        // Resolve the action with a placeholder value
+        return true;
       } catch (err: any) {
-        throw new Error(err.data.errorMessage);
+        throw new Error('Error creating password.');
       }
     },
 
@@ -135,20 +146,27 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
         );
       } else {
         try {
-          const verifySignUpCodeApiUrl = `${
-            Config.API_URL ?? ''
-          }/api/v1/registration/user/${validationEmail}/verification`;
-          const response = await fetch(verifySignUpCodeApiUrl, {
-            method: 'POST',
-            body: JSON.stringify({
-              adopter_id: 'YOUR_ADOPTER_ID',
-              verification_Code: validationCode,
-            }),
-          });
-          const responseData = await response.json();
+          // Example API call commented out
+          // const verifySignUpCodeApiUrl = `${
+          //   Config.API_URL ?? ''
+          // }/api/v1/registration/user/${validationEmail}/verification`;
+          // const response = await fetch(verifySignUpCodeApiUrl, {
+          //   method: 'POST',
+          //   body: JSON.stringify({
+          //     adopter_id: 'YOUR_ADOPTER_ID',
+          //     verification_Code: validationCode,
+          //   }),
+          // });
+          // const responseData = await response.json();
+          // return {
+          //   codeValid: responseData.codeValid,
+          //   accountExists: responseData.accountExists,
+          // };
+
+          // Resolve the action with placeholder values
           return {
-            codeValid: responseData.codeValid,
-            accountExists: responseData.accountExists,
+            codeValid: true,
+            accountExists: false,
           };
         } catch (err: any) {
           if (err.status === 400) {
@@ -166,32 +184,34 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
       const organizationName = 'Acme Co.';
       const userInfo = {email: email, organizationName};
 
-      const body = {
-        areaCode: userData.phoneNumberPrefix.toString(),
-        country: userData.country,
-        email: userData.emailAddress,
-        licenseAccepted: true,
-        firstName: userData.firstName,
-        lastName: userData.lastName,
-        mfa: userData.multifactorAuth,
-        ...(userData.phoneNumber !== '' && {phoneNumber: userData.phoneNumber}),
-      };
+      // Example API call commented out
+      // const body = {
+      //   areaCode: userData.phoneNumberPrefix.toString(),
+      //   country: userData.country,
+      //   email: userData.emailAddress,
+      //   licenseAccepted: true,
+      //   firstName: userData.firstName,
+      //   lastName: userData.lastName,
+      //   mfa: userData.multifactorAuth,
+      //   ...(userData.phoneNumber !== '' && { phoneNumber: userData.phoneNumber }),
+      // };
 
-      try {
-        const verifySignUpCodeApiUrl = `${
-          Config.API_URL ?? ''
-        }/iam/v1/users/signup`;
-        await fetch(verifySignUpCodeApiUrl, {
-          method: 'POST',
-          body: JSON.stringify(body),
-          headers: {
-            'x-realm': 'eaton',
-          },
-        });
-      } catch (err: any) {
-        throw new Error(err.data.errorMessage);
-      }
+      // try {
+      //   const verifySignUpCodeApiUrl = `${
+      //     Config.API_URL ?? ''
+      //   }/iam/v1/users/signup`;
+      //   await fetch(verifySignUpCodeApiUrl, {
+      //     method: 'POST',
+      //     body: JSON.stringify(body),
+      //     headers: {
+      //       'x-realm': 'eaton',
+      //     },
+      //   });
+      // } catch (err: any) {
+      //   throw new Error(err.data.errorMessage);
+      // }
 
+      // Resolve the action with placeholder values
       return userInfo;
     },
   });
