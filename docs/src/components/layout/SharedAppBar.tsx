@@ -25,6 +25,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { useColorScheme, useTheme } from '@mui/material/styles';
 import { RootState } from '../../redux/store';
 import { SiteThemeType } from '../../__types__';
+import { SearchBar } from '../pages/SearchBar';
 // import { UIDirection } from '../__types__';
 
 export type SharedAppBarProps = {
@@ -192,6 +193,7 @@ export const SharedAppBar: React.FC<SharedAppBarProps> = (props): JSX.Element =>
                     </IconButton>
                 </Toolbar>
             </AppBar>
+            <SearchBar />
             <ThemeSelector />
         </>
     );

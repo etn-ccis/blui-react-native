@@ -7,7 +7,8 @@
         "start": "vite",
         "build": "tsc && vite build",
         "lint": "eslint .",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "indexer": "cd __scripts__/crawl && node crawler.cjs && node indexer.cjs && cd ../.. && prettier \"database/*.json\" --write"
     },
     "dependencies": {
         "@brightlayer-ui/colors": "^3.1.1",
@@ -30,12 +31,14 @@
         "@mui/icons-material": "^6.1.4",
         "@mui/material": "^6.1.4",
         "@reduxjs/toolkit": "^2.2.4",
+        "natural": "^8.0.1",
         "prismjs": "^1.29.0",
         "react": "^18.3.1",
         "react-app-polyfill": "^3.0.0",
         "react-countup": "^6.5.3",
         "react-device-detect": "^2.2.3",
         "react-dom": "^18.3.1",
+        "react-ga": "^3.3.1",
         "react-ga4": "^2.1.0",
         "react-native": "0.76.7",
         "react-native-gesture-handler": "^2.16.2",
