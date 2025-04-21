@@ -8,9 +8,10 @@ import {
   Grade,
 } from '@brightlayer-ui/react-native-components';
 import {Avatar, Text, useTheme} from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const Components: React.FC = () => {
-  const theme = useTheme();
+  const theme = useExtendedTheme();
 
   return (
     <View style={{width: '100%', padding: 16, alignItems: 'center'}}>
@@ -72,14 +73,14 @@ const Components: React.FC = () => {
         value="2.5:1"
         icon={{name: 'settings'}}
         fontSize={14}
-        style={{marginTop: 12}}
+        style={{marginTop: 12}} 
       />
       {/* Font size : 16px */}
       <ChannelValue
         value="Concord"
         icon={'🍇'}
         fontSize={16}
-        style={{marginTop: 12}}
+        style={{marginTop: 12}} 
       />
       {/* Font size : 10px */}
       <ListItemTag label={'IN PROGRESS'} />
@@ -92,7 +93,7 @@ const Components: React.FC = () => {
         fontSize={14}
       />
       <Grade.APlus style={{marginBottom: 10}} />
-      <Grade.A style={{marginBottom: 10}} />
+      <Grade.A style={{marginBottom: 10}} />  
     </View>
   );
 };

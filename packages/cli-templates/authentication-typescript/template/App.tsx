@@ -37,11 +37,11 @@ export const App = (): JSX.Element => {
                 setLanguage(storedLanguage);
                 void i18n.changeLanguage(storedLanguage);
             } else {
-                const locale =
-                    Platform.OS === 'ios'
-                        ? NativeModules.SettingsManager.settings.AppleLocale
-                        : NativeModules.I18nManager.localeIdentifier;
-                setLanguage(locale?.substring(0, 2) || 'en');
+                const locale = 'en'
+                //     Platform.OS === 'ios'
+                //         ? NativeModules.SettingsManager.settings.AppleLocale
+                //         : NativeModules.I18nManager.localeIdentifier;
+                // setLanguage(locale?.substring(0, 2) || 'en');
             }
         } catch (error) {
             console.error('Error getting language from Async Storage:', error);

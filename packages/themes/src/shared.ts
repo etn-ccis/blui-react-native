@@ -223,7 +223,7 @@ export type ExtendedTheme = Omit<MD3Theme, 'colors'> & {
     };
 };
 
-export const useExtendedTheme = useTheme<ExtendedTheme>;
+export const useExtendedTheme: () => ExtendedTheme = useTheme;
 
 export type BluiFontWeight = '300' | '400' | '600' | '700' | '800' | undefined;
 

@@ -3,8 +3,6 @@
         "allowSyntheticDefaultImports": true,
         "declaration": true,
         "esModuleInterop": true,
-        "outDir": "dist",
-        "declarationDir": "dist",
         "jsx": "react",
         "lib": ["es6"],
         "module": "es6",

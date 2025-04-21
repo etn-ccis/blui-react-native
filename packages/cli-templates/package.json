@@ -10,17 +10,17 @@
         "react": "18.3.1"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^4.0.0",
+        "@brightlayer-ui/eslint-config": "^3.0.1",
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@react-native-community/eslint-config": "^3.2.0",
         "@typescript-eslint/eslint-plugin": "^7.18.0",
         "@typescript-eslint/parser": "^7.18.0",
-        "eslint": "^9.24.0",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-react": "^7.37.5",
+        "eslint": "^8.57.1",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-react": "^7.37.2",
         "npm-license-crawler": "^0.2.1",
         "prettier": "^3.4.2",
-        "typescript": "5.8.3"
+        "typescript": "5.7.2"
     },
     "prettier": "@brightlayer-ui/prettier-config"
 }

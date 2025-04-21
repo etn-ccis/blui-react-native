@@ -2,12 +2,9 @@
     "name": "@brightlayer-ui/react-native-themes",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "7.0.3-alpha.1",
+    "version": "7.0.2",
     "description": "React Native themes for Brightlayer UI applications",
     "main": "./dist/index.js",
-    "publishConfig": {
-        "main": "./index.js"
-    },
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
@@ -17,7 +14,7 @@
         }
     },
     "scripts": {
-        "build": "bash ./scripts/buildThemes.sh",
+        "build": "tsc",
         "test": "bash ./scripts/buildTest.sh",
         "publish:package": "cd dist && set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
         "tag:package": "cd dist && npx -p @brightlayer-ui/tag blui-tag -s -blui-react-native-themes",
@@ -49,10 +46,18 @@
         "@types/color": "^4.2.0",
         "npm-license-crawler": "^0.2.1",
         "prettier": "^3.0.0",
-        "react": "^18.3.1",
+        "react": "^18.2.0",
         "react-native": "0.76.7",
-        "react-native-paper": "^5.13.3",
-        "typescript": "^5.8.3"
+        "react-native-paper": "^5.0.0",
+        "typescript": "^5.0.4"
     },
-    "prettier": "@brightlayer-ui/prettier-config"
+    "prettier": "@brightlayer-ui/prettier-config",
+    "files": [
+        "package.json",
+        "README.md",
+        "LICENSE",
+        "LICENSES.json",
+        "CHANGELOG.md",
+        "/dist"
+    ]
 }

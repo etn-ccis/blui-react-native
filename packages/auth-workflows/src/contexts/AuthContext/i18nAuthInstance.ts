@@ -3,10 +3,10 @@ import { AuthDictionaries } from './AuthDictionaries';
 import { SharedDictionaries } from '../SharedDictionaries';
 import { NativeModules, Platform } from 'react-native';
 
-const locale =
-    Platform.OS === 'ios'
-        ? NativeModules.SettingsManager.settings.AppleLocale
-        : NativeModules.I18nManager.localeIdentifier;
+const locale = 'en'
+    // Platform.OS === 'ios'
+    //     ? NativeModules.SettingsManager.settings.AppleLocale
+    //     : NativeModules.I18nManager.localeIdentifier;
 
 export const i18nAuthInstance = i18next.createInstance(
     {
