@@ -7,7 +7,7 @@
         "target": "ES5",
         "lib": ["ESNext", "DOM"],
         "jsx": "react",
-        "moduleResolution": "node",
+        "moduleResolution": "node10",
         "esModuleInterop": true,
         "skipLibCheck": true,
         "strict": true

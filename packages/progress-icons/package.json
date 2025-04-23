@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/react-native-progress-icons",
-    "version": "2.0.0",
+    "version": "2.0.1-alpha.1",
     "description": "React Native progress icons for Brightlayer UI applications",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
@@ -9,6 +9,9 @@
     },
     "homepage": "https://github.com/etn-ccis/blui-react-native/blob/dev/packages/blui-react-native-progress-icons/README.md",
     "main": "./dist/index.js",
+    "publishConfig": {
+        "main": "./index.js"
+    },
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
@@ -19,6 +22,7 @@
     },
     "scripts": {
         "build": "bash scripts/buildIcons.sh",
+        "coverage": "jest src --coverage --watchAll=false",
         "test:build": "bash scripts/testBuild.sh",
         "test:functions": "jest src --maxWorkers=2",
         "test": "yarn test:functions && yarn test:build",
@@ -46,7 +50,7 @@
     },
     "peerDependencies": {
         "react": "^16.13.0 || ^17.0.0",
-        "react-native": "^0.76.7",
+        "react-native": "0.76.7",
         "react-native-svg": ">=9.6.1"
     },
     "devDependencies": {
@@ -56,7 +60,6 @@
         "@types/faker": "^4.1.5",
         "@types/jest": "^25.0.15",
         "@types/node": "^18.11.18",
-        "@types/react": "^19.0.0",
         "@types/react-native": "^0.73.0",
         "@types/react-test-renderer": "^16.8.3",
         "@typescript-eslint/eslint-plugin": "^4.8.0",

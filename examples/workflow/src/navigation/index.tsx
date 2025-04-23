@@ -105,7 +105,7 @@ const AuthRouter = (): any => {
             <AuthContextProvider
                 language={app.language}
                 actions={ProjectAuthUIActions(app)}
-                // i18n={i18nAppInstance}
+                i18n={i18nAppInstance}
                 navigate={(destination: -1 | string) => {
                     if (typeof destination === 'string') {
                         switch (destination) {
@@ -147,7 +147,7 @@ const RegistrationRouter = (): any => {
             <RegistrationContextProvider
                 language={app.language}
                 actions={ProjectRegistrationUIActions()}
-                // i18n={i18nAppInstance}
+                i18n={i18nAppInstance}
                 routeConfig={{
                     LOGIN: 'Login',
                     FORGOT_PASSWORD: 'ForgotPassword',
@@ -208,7 +208,7 @@ export const MainRouter = (): any => {
                 }}
             >
                 <Stack.Screen name="AuthProviderExample" component={AuthRouter} />
-                {/* <Stack.Screen name="RegistrationProviderExample" component={RegistrationRouter} /> */}
+                <Stack.Screen name="RegistrationProviderExample" component={RegistrationRouter} />
             </Stack.Navigator>
         </NavigationContainer>
         
