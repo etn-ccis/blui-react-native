@@ -1,16 +1,12 @@
 {
     "name": "blui-react-native",
-    "version": "0.0.0",
-    "license": "MIT",
-    "private": true,
-    "workspaces": [
-        "packages/*",
-        "packages/cli-templates/authentication-typescript",
-        "packages/cli-templates/blank-typescript",
-        "packages/cli-templates/routing-typescript",
-        "examples/*",
-        "docs"
-    ],
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.8.0",
     "scripts": {
         "build:all": "yarn workspaces foreach -t run build",
         "lint": "eslint \"**/**.{tsx,ts}\"",
