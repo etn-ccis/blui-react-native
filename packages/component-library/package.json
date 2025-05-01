@@ -61,7 +61,7 @@
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@brightlayer-ui/react-native-vector-icons": "^2.0.0",
         "@faker-js/faker": "^9.0.3",
-        "@react-native/babel-preset": "^0.78.1",
+        "@react-native/babel-preset": "^0.79.2",
         "@testing-library/react-native": "^13.2.0",
         "@types/color": "^4.2.0",
         "@types/jest": "^29.0.1",
