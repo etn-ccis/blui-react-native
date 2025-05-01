@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, StyleProp, ViewStyle, I18nManager } from 'react-native';
+import { TouchableOpacity, StyleSheet, StyleProp, ViewStyle, I18nManager, TextStyle } from 'react-native';
 import { ICON_SIZE } from './constants';
 import { IconSource } from '../__types__';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -10,7 +10,7 @@ import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-c
 
 const useStyles = (): StyleSheet.NamedStyles<{
     navigation: ViewStyle;
-    flipIcon: ViewStyle;
+    flipIcon: TextStyle;
 }> => {
     const fontScale = useFontScale();
     return StyleSheet.create({
@@ -24,7 +24,7 @@ const useStyles = (): StyleSheet.NamedStyles<{
         },
         flipIcon: {
             transform: [{ scaleX: -1 }],
-        },
+        } as TextStyle,
     });
 };
 

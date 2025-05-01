@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 
 # Remove previous build
 rm -rf ./dist
-pnpm && tsc --p tsconfig.lib.json
+tsc --p tsconfig.lib.json
 
 echo -e "${BLUE}Copying Package Resources${NC}"
 cp -r package.json ./dist/package.json

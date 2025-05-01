@@ -13,7 +13,7 @@ react {
     //   The folder where the react-native NPM package is. Default is ../../node_modules/react-native
     reactNativeDir = file("../../node_modules/react-native")
     //   The folder where the react-native Codegen package is. Default is ../../node_modules/@react-native/codegen
-    codegenDir = file("../../../../node_modules/.pnpm/@react-native+codegen@0.76.7_@babel+preset-env@7.26.9_@babel+core@7.26.10_/node_modules/@react-native/codegen")
+    codegenDir = file("../../node_modules/@react-native/codegen")
     //   The cli.js file which is the React Native CLI entrypoint. Default is ../../node_modules/react-native/cli.js
     cliFile = file("../../node_modules/react-native/cli.js")
 

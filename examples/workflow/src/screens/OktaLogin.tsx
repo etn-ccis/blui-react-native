@@ -51,7 +51,6 @@ export const OktaLogin: React.FC<React.PropsWithChildren<OktaLoginScreenProps>> 
                         source={require('../assets/images/eaton_stacked_logo.png')}
                     />
                 }
-                // eslint-disable-next-line
                 oktaConfigObject={oktaConfig.oidc}
             />
         </OktaAuthContextProvider>

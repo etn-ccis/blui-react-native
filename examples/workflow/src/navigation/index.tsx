@@ -11,7 +11,7 @@ import {
 import i18nAppInstance from '../../translations/i18n';
 import { NavigationDrawer } from './navigation-drawer';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Dimensions, View, Text } from 'react-native';
+import { Dimensions, View } from 'react-native';
 
 import { ProjectAuthUIActions } from '../actions/AuthUIActions';
 import { ProjectRegistrationUIActions } from '../actions/RegistrationUIActions';

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/naming-convention */
+
 import {AuthUIActions} from '@brightlayer-ui/react-native-auth-workflow';
 import {AppContextType} from '../contexts/AppContextProvider';
 import {LocalStorage} from '../store/local-storage';

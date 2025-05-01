@@ -51,7 +51,6 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
         try {
             await AsyncStorage.setItem('userLanguage', newLanguage);
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.error('Error setting new language:', error);
         }
     };
