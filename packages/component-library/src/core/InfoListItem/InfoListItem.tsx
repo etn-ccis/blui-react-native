@@ -86,7 +86,7 @@ const infoListItemStyles = (
     iconWrapper: ViewStyle;
     avatar: ViewStyle;
     mainContent: ViewStyle;
-    flipIcon: ViewStyle;
+    flipIcon: TextStyle;
 }> => {
     const isWrapEnabled = props.wrapSubtitle || props.wrapTitle || props.wrapInfo;
     return StyleSheet.create({
@@ -412,6 +412,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
                         color={chevronColor}
                         allowFontScaling={!disableScaling}
                         maxFontSizeMultiplier={maxScale}
+                        // style={{transform: [{ scaleX: I18nManager.isRTL ? -1 : 1 }]}}
                         style={I18nManager.isRTL ? defaultStyles.flipIcon : {}}
                     />
                 )}

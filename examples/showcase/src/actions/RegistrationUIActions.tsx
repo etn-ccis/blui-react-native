@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/require-await */
+/* eslint-disable require-await */
 import {
   RegistrationUIActions,
   AccountDetails,
@@ -35,7 +36,7 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
      *
      * @returns Resolve with EULA, otherwise reject with an error message.
      */
-    loadEula: async (): Promise<string> => {
+    loadEula: async (): Promise<string> =>
       // Example API call commented out
       // This API call is just for example purposes and should be replaced with your actual implementation.
       // const eulaApiUrl = `${Config.API_URL ?? ''}iam/v1/users/eula/profile`;
@@ -50,9 +51,7 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
       // }
 
       // Resolve the action with a placeholder value
-      return 'EULA_PLACEHOLDER_TEXT';
-    },
-
+      'EULA_PLACEHOLDER_TEXT',
     /**
      * The user accepted the EULA.
      * The API should now update accepted EULA.

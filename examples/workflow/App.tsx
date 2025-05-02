@@ -30,7 +30,6 @@ export const App = (): JSX.Element => {
     });
     const [isLoading, setIsLoading] = useState(true);
     const { i18n } = useTranslation();
-
     const getLanguage = async (): Promise<void> => {
         try {
             const storedLanguage = await AsyncStorage.getItem('userLanguage');
@@ -38,13 +37,22 @@ export const App = (): JSX.Element => {
                 setLanguage(storedLanguage);
                 void i18n.changeLanguage(storedLanguage);
             } else {
-                const locale = 'en';
-                // Platform.OS === 'ios'
-                //     ? NativeModules.SettingsManager.settings.AppleLocale
-                //     : NativeModules.I18nManager.localeIdentifier;
+                let locale = 'en';
+                locale =
+                    Platform.OS === 'ios'
+                        ? NativeModules.SettingsManager.settings.AppleLocale ||
+                          NativeModules.SettingsManager.settings.AppleLocale[0]
+                        : NativeModules.I18nManager.localeIdentifier;
                 setLanguage(locale?.substring(0, 2) || 'en');
             }
         } catch (error) {
+            let locale = 'en';
+            locale =
+                Platform.OS === 'ios'
+                    ? NativeModules.SettingsManager.settings.AppleLocale ||
+                      NativeModules.SettingsManager.settings.AppleLocale[0]
+                    : NativeModules.I18nManager.localeIdentifier;
+            setLanguage(locale?.substring(0, 2) || 'en');
             console.error('Error getting language from Async Storage:', error);
         }
     };
@@ -56,7 +64,6 @@ export const App = (): JSX.Element => {
                 .then((res) => console.log(res.access_token)) // eslint-disable-next-line
                 .catch((err) => console.log(err));
         } catch (error) {
-            // eslint-disable-next-line
             console.error('Okta error for access token', error);
         }
     };
@@ -64,7 +71,7 @@ export const App = (): JSX.Element => {
     useEffect(() => {
         EventEmitter.addListener('signInSuccess', handleSignInSuccess);
 
-        return () => {
+        return (): any => {
             EventEmitter.removeAllListeners('signInSuccess');
         };
     }, []);
@@ -79,7 +86,8 @@ export const App = (): JSX.Element => {
                 // setLoginData({ email: userData.rememberMeData.user, rememberMe: userData.rememberMeData.rememberMe });
                 setAuthenticated(Boolean(authState?.authenticated));
                 await getLanguage();
-            } catch (e) {
+            } catch (error) {
+                console.error('Error initializing authentication state:', error);
                 // handle any error state, rejected promises, etc..
             } finally {
                 setIsLoading(false);
@@ -87,9 +95,7 @@ export const App = (): JSX.Element => {
         };
         // eslint-disable-next-line
         initialize();
-        // eslint-disable-next-line
     }, []);
-
     return isLoading ? (
         <Spinner visible={isLoading} />
     ) : (

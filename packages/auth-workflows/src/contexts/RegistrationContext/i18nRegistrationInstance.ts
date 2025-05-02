@@ -1,7 +1,6 @@
 import i18next from 'i18next';
 import { RegistrationDictionaries } from './RegistrationDictionaries';
 import { SharedDictionaries } from '../SharedDictionaries';
-import { NativeModules, Platform } from 'react-native';
 
 const locale = 'en';
 // Platform.OS === 'ios'

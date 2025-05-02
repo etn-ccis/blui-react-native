@@ -6,7 +6,12 @@
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "noEmit": true
+        "noEmit": true,
+        "moduleResolution": "node", // Ensures Node.js-style module resolution
+        "baseUrl": ".", // Base directory for resolving non-relative imports
+        "paths": {
+            "*": ["node_modules/*"] // Resolves modules from node_modules
+        }
     },
     "include": ["src", "index.ts", "index.tsx"]
 }

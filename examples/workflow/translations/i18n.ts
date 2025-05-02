@@ -1,8 +1,7 @@
 import i18next from 'i18next';
 import { AppDictionaries } from './dictionary';
 import { initReactI18next } from 'react-i18next';
-import { NativeModules, Platform } from 'react-native';
-
+import 'intl-pluralrules';
 const locale = 'en';
 // Platform.OS === 'ios'
 //     ? NativeModules.SettingsManager.settings.AppleLocale
