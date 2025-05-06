@@ -1,1 +1,1 @@
-pnpm i && pnpm prettier:check && pnpm lint
+yarn add && yarn prettier:check && yarn lint

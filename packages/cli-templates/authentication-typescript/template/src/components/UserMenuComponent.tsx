@@ -81,8 +81,7 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
             rightComponent: (
                 <SelectDropdown
                     defaultValue={languageOptions.find((option) => option.value === i18n.language)}
-                    // eslint-disable-next-line
-                    onSelect={(item) => handleLanguageChange(item.value)}
+                    onSelect={(item: any) => handleLanguageChange(item.value)}
                     data={languageOptions}
                     buttonStyle={{ backgroundColor: theme.colors.background }}
                     buttonTextStyle={{ color: theme.colors.primary }}
