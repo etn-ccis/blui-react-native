@@ -3380,7 +3380,7 @@ __metadata:
     react-native-svg: "npm:^15.7.1"
     react-native-svg-transformer: "npm:^1.5.0"
     react-native-vector-icons: "npm:^9.0.0"
-    react-native-webview: "npm:13.12.2"
+    react-native-webview: "npm:^13.12.2"
     react-test-renderer: "npm:18.3.1"
     typescript: "npm:5.0.4"
   languageName: unknown
@@ -9162,16 +9162,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-webview@npm:13.12.2":
-  version: 13.12.2
-  resolution: "react-native-webview@npm:13.12.2"
+"react-native-webview@npm:^13.12.2":
+  version: 13.13.5
+  resolution: "react-native-webview@npm:13.13.5"
   dependencies:
     escape-string-regexp: "npm:^4.0.0"
     invariant: "npm:2.2.4"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10c0/f10921205b6c140bc87f7fbc65547243598653bd37c5aded2c17414774fb4ba4bbf23a5c13bf9180ccecd78c5f581aaa5a97127754bb6cc603611bea5744db79
+  checksum: 10c0/187441eac5a747acb58ae388b07611fcb13c6c8c801b7e3fc5175ea46e20cbc28db38ce777459fa4f405a3b4703e3011cd04c9218ac4a088a8a06031a8a2629c
   languageName: node
   linkType: hard
 
