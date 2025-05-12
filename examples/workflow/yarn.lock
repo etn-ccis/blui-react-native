@@ -3335,7 +3335,6 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.25.2"
     "@babel/preset-env": "npm:^7.25.3"
-    "@babel/runtime": "npm:^7.25.0"
     "@brightlayer-ui/colors": "npm:^4.0.0"
     "@brightlayer-ui/icons-svg": "npm:^1.14.0"
     "@brightlayer-ui/react-native-auth-workflow": "npm:^7.0.1"
