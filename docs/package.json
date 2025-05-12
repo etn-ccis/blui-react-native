@@ -43,6 +43,7 @@
         "react-native-safe-area-context": "^4.0.0",
         "react-native-vector-icons": "^9.0.0",
         "react-redux": "^9.1.2",
+        "react-router": "6.30.0",
         "react-router-dom": "6.11.2",
         "remark-gfm": "^4.0.0",
         "typewriter-effect": "^2.21.0",

@@ -1,12 +1,11 @@
 import i18next from 'i18next';
 import { RegistrationDictionaries } from './RegistrationDictionaries';
 import { SharedDictionaries } from '../SharedDictionaries';
-import { NativeModules, Platform } from 'react-native';
 
-const locale =
-    Platform.OS === 'ios'
-        ? NativeModules.SettingsManager.settings.AppleLocale
-        : NativeModules.I18nManager.localeIdentifier;
+const locale = 'en';
+// Platform.OS === 'ios'
+//     ? NativeModules.SettingsManager.settings.AppleLocale
+//     : NativeModules.I18nManager.localeIdentifier;
 
 export const i18nRegistrationInstance = i18next.createInstance(
     {

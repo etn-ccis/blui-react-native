@@ -107,4 +107,12 @@ export default [
             ],
         },
     },
+    {
+        files: ['docs/**/*.{ts,tsx}'],
+        rules: {
+            'react-hooks/rules-of-hooks': 'error',
+            'react-hooks/exhaustive-deps': 'warn',
+            '@typescript-eslint/no-redundant-type-constituents': 'warn',
+        },
+    },
 ];

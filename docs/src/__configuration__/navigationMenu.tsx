@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteProps, Outlet } from 'react-router';
+import { RouteProps, Outlet } from 'react-router-dom';
 import { ComponentPreviewPage, HomePage, MarkdownPage } from '../components/pages';
 
 // Site markdown docs
