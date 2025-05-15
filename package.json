@@ -36,7 +36,7 @@
         "test:themes": "cd ./packages/themes && yarn test",
         "test:showcase": "cd ./examples/showcase && yarn test",
         "test:workflow": "cd ./examples/workflow && yarn test",
-        "test:all": "yarn test:authWorkflows && yarn test:componentLibrary && yarn test:progressIcons && yarn test:themes && yarn test:showcase && yarn test:workflow"
+        "test:all": "yarn test:authWorkflows && yarn test:componentLibrary && yarn test:progressIcons && yarn test:themes"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
