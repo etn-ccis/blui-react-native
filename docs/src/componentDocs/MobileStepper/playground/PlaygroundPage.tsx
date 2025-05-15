@@ -18,7 +18,7 @@ const inputConfig: InputConfig = [
         id: 'steps',
         type: 'number',
         typeLabel: `number`,
-        initialValue: 1,
+        initialValue: 3,
         minValue: 1,
         maxValue: 10,
         valueStep: 1,
