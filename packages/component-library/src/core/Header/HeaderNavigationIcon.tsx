@@ -19,7 +19,6 @@ const useStyles = (): StyleSheet.NamedStyles<{
             width: 40 * fontScale,
             marginLeft: -8 * fontScale,
             marginRight: 24,
-            marginTop: 8 * fontScale,
             padding: 8 * fontScale,
         },
         flipIcon: {
