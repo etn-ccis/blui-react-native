@@ -42,8 +42,8 @@ describe('ForgotPasswordScreenBase Tests', () => {
             },
         });
         const input = screen.getByTestId('blui-forgot-password-textinput');
-        const nextButton = screen.getByTestId('blui-workflow-card-actions-next-button-text');
-        expect(nextButton).toBeDisabled();
+        const nextButton = screen.getByTestId('blui-workflow-card-actions-next-button');
+        expect(nextButton.props.accessibilityState?.disabled).toBe(true);
         fireEvent.changeText(input, 'test@eaton.com');
         expect(input.props.value).toBe('test@eaton.com');
         fireEvent.press(nextButton);

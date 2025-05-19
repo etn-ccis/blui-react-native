@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react-native';
 import '@testing-library/jest-dom';
-import '@testing-library/react-native/extend-expect';
 import { AuthContextProvider } from '../../contexts';
 import { authContextProviderProps } from '../../testUtils';
 import { LoginScreen } from '../../screens/LoginScreen';
