@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-
+import '@testing-library/jest-native/extend-expect';
 import { RenderResult, cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import { ForgotPasswordScreenBase, ForgotPasswordScreenProps } from '../../screens';
 import { PaperProvider, Text } from 'react-native-paper';
@@ -43,7 +43,7 @@ describe('ForgotPasswordScreenBase Tests', () => {
         });
         const input = screen.getByTestId('blui-forgot-password-textinput');
         const nextButton = screen.getByTestId('blui-workflow-card-actions-next-button');
-        expect(nextButton.props.accessibilityState?.disabled).toBe(true);
+        expect(nextButton).toBeDisabled();
         fireEvent.changeText(input, 'test@eaton.com');
         expect(input.props.value).toBe('test@eaton.com');
         fireEvent.press(nextButton);

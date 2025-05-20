@@ -77,7 +77,7 @@ describe('LoginScreen', () => {
         const checkbox = getByTestId('blui-login-remember-me-checkbox');
         expect(checkbox.props.accessibilityState.checked).toBe(false);
         fireEvent.press(checkbox);
-        expect(checkbox.props.accessibilityState.checked).toBe(true); // or true, depending on your default
+        expect(checkbox.props.accessibilityState.checked).toBe(true);
     });
     test('triggers onSubmitEditing when pressing enter key on username field', () => {
         const mockSubmitEditing = jest.fn();
