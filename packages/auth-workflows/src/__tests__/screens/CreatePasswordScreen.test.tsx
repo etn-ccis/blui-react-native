@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-
+import '@testing-library/jest-native/extend-expect';
 import { cleanup, render, screen, fireEvent, RenderResult, waitFor } from '@testing-library/react-native';
 import { CreatePasswordScreen, CreatePasswordScreenProps } from '../../screens';
 import { RegistrationContextProvider } from '../../contexts';
@@ -107,9 +107,8 @@ describe('Create Password Screen', () => {
 
         fireEvent.changeText(passwordField, 'A');
         fireEvent.changeText(confirmPasswordField, 'A');
-
-        expect(passwordField).toHaveDisplayValue('A');
-        expect(confirmPasswordField).toHaveDisplayValue('A');
+        expect(passwordField.props.value).toBe('A');
+        expect(confirmPasswordField.props.value).toBe('A');
     });
 
     it('should call onPrevious, when Back button clicked', () => {

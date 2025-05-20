@@ -5,6 +5,7 @@ import { AuthContextProvider } from '../../contexts';
 import { authContextProviderProps } from '../../testUtils';
 import { LoginScreen } from '../../screens/LoginScreen';
 import { Provider as PaperProvider } from 'react-native-paper';
+import '@testing-library/jest-native/extend-expect';
 
 afterEach(cleanup);
 
@@ -74,9 +75,9 @@ describe('LoginScreen', () => {
             </AuthContextProvider>
         );
         const checkbox = getByTestId('blui-login-remember-me-checkbox');
-
+        expect(checkbox.props.accessibilityState.checked).toBe(false);
         fireEvent.press(checkbox);
-        expect(checkbox).toBeChecked();
+        expect(checkbox.props.accessibilityState.checked).toBe(true); // or true, depending on your default
     });
     test('triggers onSubmitEditing when pressing enter key on username field', () => {
         const mockSubmitEditing = jest.fn();
