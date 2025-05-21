@@ -17,7 +17,7 @@ describe('InfoListItem', () => {
                     <InfoListItem title={'some title'} subtitle={'some subtitle'} />
                 ).root;
 
-                const textElements = instance.findAllByType(Text);
+                const textElements = instance.findAllByType(Text as any);
 
                 expect(textElements).toHaveLength(2);
                 expect(textElements[1].props.children).toEqual('some subtitle');
@@ -45,7 +45,7 @@ describe('InfoListItem', () => {
             });
 
             it('renders Text elements for the title, string from subtitles, and interpunct separator', () => {
-                const textElements = instance.findAllByType(Text);
+                const textElements = instance.findAllByType(Text as any);
 
                 expect(textElements).toHaveLength(3);
 
@@ -54,7 +54,7 @@ describe('InfoListItem', () => {
             });
 
             it('renders Text elements for the title, string from subtitles, and CUSTOM interpunct separator', () => {
-                const textElements = instance2.findAllByType(Text);
+                const textElements = instance2.findAllByType(Text as any);
 
                 expect(textElements).toHaveLength(3);
 
@@ -76,14 +76,14 @@ describe('InfoListItem', () => {
         describe('when provided', () => {
             it('appears when there is no rightComponent', () => {
                 instance = TestRenderer.create(<InfoListItem title={'some title'} chevron />).root;
-                expect(instance.findAllByType(Icon)).toHaveLength(1);
+                expect(instance.findAllByType(Icon as any)).toHaveLength(1);
             });
 
             it('appears when there is a rightComponent', () => {
                 instance = TestRenderer.create(
                     <InfoListItem title={'some title'} chevron rightComponent={<View />} />
                 ).root;
-                expect(instance.findAllByType(Icon)).toHaveLength(1);
+                expect(instance.findAllByType(Icon as any)).toHaveLength(1);
             });
         });
 
@@ -99,7 +99,7 @@ describe('InfoListItem', () => {
                 ).root;
             });
             it('does not show its chevron', () => {
-                expect(instance.findAllByType(Icon)).toHaveLength(0);
+                expect(instance.findAllByType(Icon as any)).toHaveLength(0);
             });
         });
     });

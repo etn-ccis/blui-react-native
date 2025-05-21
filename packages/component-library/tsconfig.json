@@ -3,19 +3,14 @@
         "allowSyntheticDefaultImports": true,
         "declaration": true,
         "esModuleInterop": true,
-        "outDir": "dist",
-        "declarationDir": "dist",
         "jsx": "react",
         "lib": ["es6"],
-        "module": "es6",
+        "module": "commonjs",
         "moduleResolution": "node",
         "noEmit": false,
         "strict": true,
         "skipLibCheck": true,
-        "target": "es6",
-        "paths": {
-            "react": ["../../node_modules/@types/react"]
-        }
+        "target": "esnext"
     },
     "include": ["src"]
 }

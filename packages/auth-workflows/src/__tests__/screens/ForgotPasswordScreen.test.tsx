@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ForgotPasswordScreen, ForgotPasswordScreenProps } from 'src/screens';
+import { ForgotPasswordScreen, ForgotPasswordScreenProps } from '../../screens';
 import { RenderResult, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { AuthContextProvider } from '../../contexts';
 import { authContextProviderProps } from '../../testUtils';

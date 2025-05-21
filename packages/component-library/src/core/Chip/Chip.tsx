@@ -68,7 +68,7 @@ export type ChipProps = Omit<PaperChipProps, 'icon' | 'mode' | 'selectedColor'> 
     /**
      * @prop {React.ReactElement} [avatar] - Avatar component to be displayed in the Chip.
      */
-    avatar?: React.ReactElement; // New prop for passing Avatar component
+    avatar?: React.ReactElement<any>; // New prop for passing Avatar component
     /**
      * Style overrides for internal elements. The styles you provide will be combined with the default styles.
      */

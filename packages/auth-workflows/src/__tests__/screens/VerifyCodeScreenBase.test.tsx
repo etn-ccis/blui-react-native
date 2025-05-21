@@ -1,5 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
+import '@testing-library/jest-native/extend-expect';
 
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import { VerifyCodeScreenBase } from '../../screens/VerifyCodeScreen';
@@ -38,6 +39,7 @@ describe('VerifyCodeScreenBase  Tests', () => {
     });
 
     it('should call onNext callBack function', () => {
+        const mockOnNext = jest.fn();
         render(
             <PaperProvider>
                 <VerifyCodeScreenBase
@@ -46,7 +48,7 @@ describe('VerifyCodeScreenBase  Tests', () => {
                     WorkflowCardActionsProps={{
                         showNext: true,
                         nextLabel: 'Next',
-                        onNext: () => jest.fn(),
+                        onNext: mockOnNext,
                     }}
                 />
             </PaperProvider>
@@ -54,6 +56,7 @@ describe('VerifyCodeScreenBase  Tests', () => {
         const nextButton = screen.getByText('Next');
         expect(nextButton).toBeEnabled();
         fireEvent.press(nextButton);
+        expect(mockOnNext).toHaveBeenCalled();
     });
 
     it('should call onPrevious callBack function', () => {

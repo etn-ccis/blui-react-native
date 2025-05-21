@@ -32,7 +32,13 @@
         "prepare": "husky",
         "prettier": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --write",
         "prettier:check": "prettier '{docs,examples,packages}/**/*.{ts,tsx,js,jsx,json,css,scss,html}' --check",
-        "test:all": ""
+        "test:authWorkflows": "cd ./packages/auth-workflows && yarn test",
+        "test:componentLibrary": "cd ./packages/component-library && yarn test",
+        "test:progressIcons": "cd ./packages/progress-icons && yarn test:functions",
+        "test:themes": "cd ./packages/themes && yarn test",
+        "test:showcase": "cd ./examples/showcase && yarn test",
+        "test:workflow": "cd ./examples/workflow && yarn test",
+        "test:all": "yarn test:authWorkflows && yarn test:componentLibrary && yarn test:progressIcons && yarn test:themes"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",

@@ -1,6 +1,6 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
-import { HeroBanner, Hero } from '..';
+import { HeroBanner, Hero } from '../';
 import { View } from 'react-native';
 import { IconFamily } from '../__types__';
 import { cleanup } from '@testing-library/react-native';
@@ -19,7 +19,7 @@ describe('HeroBanner', () => {
             </HeroBanner>
         ).root;
 
-        expect(instance.findAllByType(Hero)).toHaveLength(4);
+        expect(instance.findAllByType(Hero as any)).toHaveLength(4);
     });
 
     describe('divider', () => {
@@ -27,7 +27,7 @@ describe('HeroBanner', () => {
         it('does not render if the prop is not specified', () => {
             const instance = TestRenderer.create(<HeroBanner />).root;
 
-            expect(instance.findAllByType(View)).toHaveLength(1);
+            expect(instance.findAllByType(View as any)).toHaveLength(1);
         });
 
         it('does render if the prop is set to true', () => {
