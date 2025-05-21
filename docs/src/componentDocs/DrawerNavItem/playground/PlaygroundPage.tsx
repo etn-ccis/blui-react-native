@@ -20,6 +20,7 @@ import {
 import { sharedPropsConfig } from '../../Drawer/playground/sharedPropsConfig';
 import { getIconSnippetWithProps, removeEmptyProps, DRAWER_WIDTH } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const inputConfig: InputConfig = [
     // Required Props
@@ -93,6 +94,7 @@ const inputConfig: InputConfig = [
 ];
 
 const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
+    const theme = useExtendedTheme();
     const { expandIcon, collapseIcon, icon, rightComponent, ...rest } = data as unknown as Omit<
         DrawerNavItemProps,
         'collapseIcon' | 'expandIcon' | 'icon'
@@ -143,6 +145,7 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                     <DrawerBody>
                         <DrawerNavGroup>
                             <DrawerNavItem
+                                itemFontColor={theme.colors.onSurface}
                                 itemID={'Home'}
                                 icon={getIcon(icon as unknown as string)}
                                 collapseIcon={getCollapseIcon(collapseIcon)}
@@ -152,18 +155,21 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                 title={rest.title}
                             >
                                 <DrawerNavItem
+                                    itemFontColor={theme.colors.onSurface}
                                     itemID={'Web'}
                                     title={'Web'}
                                     icon={{ name: 'account' }}
                                     onPress={() => setActiveItem('Web')}
                                 />
                                 <DrawerNavItem
+                                    itemFontColor={theme.colors.onSurface}
                                     itemID={'Mobile'}
                                     title={'Mobile'}
                                     onPress={() => setActiveItem('Mobile')}
                                 />
                             </DrawerNavItem>
                             <DrawerNavItem
+                                itemFontColor={theme.colors.onSurface}
                                 itemID={'Accessibility'}
                                 title={'Accessibility'}
                                 icon={{ name: 'accessibility' }}

@@ -22,6 +22,7 @@ import { sharedPropsConfig } from '../../Drawer/playground/sharedPropsConfig';
 import { getIcon, removeEmptyProps, DRAWER_WIDTH } from '../../../utils';
 import { View } from 'react-native';
 import { Text } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const inputConfig: InputConfig = [
     // Required Props
@@ -73,6 +74,7 @@ const inputConfig: InputConfig = [
 ];
 
 const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
+    const theme = useExtendedTheme();
     const { expandIcon, collapseIcon, titleContent, ...rest } = data as unknown as Omit<
         DrawerNavGroupProps,
         'collapseIcon' | 'expandIcon'
@@ -126,13 +128,16 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
             title: 'Overview',
             collapseIcon: getCollapseIcon(collapseIcon as unknown as string),
             expandIcon: getExpandIcon(expandIcon as unknown as string),
+            itemFontColor: theme.colors.onSurface,
             items: [
                 {
+                    itemFontColor: theme.colors.onSurface,
                     itemID: 'Monthly Report',
                     title: 'Monthly Report',
                     onPress: (): void => setActiveItem('Monthly Report'),
                 },
                 {
+                    itemFontColor: theme.colors.onSurface,
                     itemID: 'Annual Report',
                     title: 'Annual Report',
                     onPress: (): void => setActiveItem('Annual Report'),
@@ -140,12 +145,14 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
             ],
         },
         {
+            itemFontColor: theme.colors.onSurface,
             icon: { name: 'toc' },
             itemID: 'Timeline',
             title: 'Timeline',
             onPress: (): void => setActiveItem('Timeline'),
         },
         {
+            itemFontColor: theme.colors.onSurface,
             icon: { name: 'devices' },
             title: 'Devices',
             itemID: 'Devices',
@@ -154,6 +161,7 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
             onPress: (): void => setActiveItem('Devices'),
         },
         {
+            itemFontColor: theme.colors.onSurface,
             icon: { name: 'airport-shuttle' },
             itemID: 'Schedule',
             title: 'Schedule',
