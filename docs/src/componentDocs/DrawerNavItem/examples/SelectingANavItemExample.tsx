@@ -11,6 +11,7 @@ export const SelectingANavItemExample = (): JSX.Element => {
             <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }} activeItem={selected}>
                 <DrawerBody>
                     <DrawerNavItem
+                        hidePadding
                         itemID={'account'}
                         title={'Account'}
                         icon={{
@@ -22,6 +23,7 @@ export const SelectingANavItemExample = (): JSX.Element => {
                         activeItemBackgroundShape="round"
                     />
                     <DrawerNavItem
+                        hidePadding
                         itemID={'notification'}
                         title={'Notification'}
                         icon={{
@@ -33,6 +35,7 @@ export const SelectingANavItemExample = (): JSX.Element => {
                         activeItemBackgroundShape="round"
                     />
                     <DrawerNavItem
+                        hidePadding
                         itemID={'localization'}
                         title={'Localization'}
                         icon={{

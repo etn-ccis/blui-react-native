@@ -9,6 +9,7 @@ export const NestedNavItemExample = (): JSX.Element => (
             <DrawerBody>
                 <DrawerNavGroup>
                     <DrawerNavItem
+                        hidePadding
                         itemID={'account'}
                         title={'Account'}
                         icon={{
@@ -18,6 +19,7 @@ export const NestedNavItemExample = (): JSX.Element => (
                         }}
                     />
                     <DrawerNavItem
+                        hidePadding
                         itemID={'notification'}
                         title={'Notification'}
                         icon={{
@@ -26,10 +28,11 @@ export const NestedNavItemExample = (): JSX.Element => (
                             direction: 'auto',
                         }}
                     >
-                        <DrawerNavItem itemID={'web'} title={'Web'} />
-                        <DrawerNavItem itemID={'mobile'} title={'Mobile'} />
+                        <DrawerNavItem hidePadding itemID={'web'} title={'Web'} />
+                        <DrawerNavItem hidePadding itemID={'mobile'} title={'Mobile'} />
                     </DrawerNavItem>
                     <DrawerNavItem
+                        hidePadding
                         itemID={'localization'}
                         title={'Localization'}
                         icon={{
