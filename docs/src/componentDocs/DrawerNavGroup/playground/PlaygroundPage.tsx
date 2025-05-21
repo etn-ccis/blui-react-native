@@ -131,11 +131,13 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
                     itemID: 'Monthly Report',
                     title: 'Monthly Report',
                     onPress: (): void => setActiveItem('Monthly Report'),
+                    hidePadding: rest.hidePadding,
                 },
                 {
                     itemID: 'Annual Report',
                     title: 'Annual Report',
                     onPress: (): void => setActiveItem('Annual Report'),
+                    hidePadding: rest.hidePadding,
                 },
             ],
         },
@@ -181,6 +183,7 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
                             collapseIcon={getIcon(collapseIcon)}
                             expandIcon={getIcon(expandIcon)}
                             {...removeEmptyProps(rest)}
+                            hidePadding
                         />
                     </DrawerBody>
                 </Drawer>

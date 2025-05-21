@@ -8,6 +8,7 @@ export const DrawerNavItemExample = (): JSX.Element => (
         <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
             <DrawerBody>
                 <DrawerNavItem
+                    hidePadding
                     itemID={'account'}
                     title={'Account'}
                     icon={{
@@ -17,12 +18,14 @@ export const DrawerNavItemExample = (): JSX.Element => (
                     }}
                 />
                 <DrawerNavItem
+                    hidePadding
                     itemID={'notification'}
                     title={'Notification'}
                     icon={{ family: 'material-community', name: 'bell', direction: 'auto' }}
                     activeItemBackgroundShape={'round'}
                 />
                 <DrawerNavItem
+                    hidePadding
                     itemID={'localization'}
                     title={'Localization'}
                     icon={{

@@ -150,14 +150,17 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                 rightComponent={rightComponent ? <ListItemTag label="New" /> : undefined}
                                 {...removeEmptyProps(rest)}
                                 title={rest.title}
+                                hidePadding
                             >
                                 <DrawerNavItem
+                                    hidePadding={rest.hidePadding}
                                     itemID={'Web'}
                                     title={'Web'}
                                     icon={{ name: 'account' }}
                                     onPress={() => setActiveItem('Web')}
                                 />
                                 <DrawerNavItem
+                                    hidePadding={rest.hidePadding}
                                     itemID={'Mobile'}
                                     title={'Mobile'}
                                     onPress={() => setActiveItem('Mobile')}
