@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { Box, Stack } from '@mui/material';
 import {
     CodeSnippetFunction,
@@ -31,7 +31,7 @@ const inputConfig: InputConfig = [
         type: 'number',
         typeLabel: `number`,
         initialValue: 0,
-        description: 'The index of the active step (>= 0)',
+        description: 'The index of the active step (>= 0, < steps) ',
         minValue: 0,
         maxValue: 9,
         valueStep: 1,
@@ -119,30 +119,21 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         .replace(/(?:^|)( {4}|\t)/gm, '    ');
 
 const MobileStepperPreview: PreviewComponent = ({ data }) => {
-    const { leftButton, rightButton, ...rest } = data as unknown as MobileStepperProps;
+    const { leftButton, rightButton, activeStep, ...rest } = data as unknown as MobileStepperProps;
     const totalSteps = rest.steps;
-    const [currentStep, setCurrentStep] = useState(0);
-
-    const updateStep = useCallback(
-        (delta: number): void => {
-            setCurrentStep(currentStep + delta);
-        },
-        [currentStep]
-    );
-
     const { updateData } = usePlaygroundValues();
 
     return (
         <Stack alignItems={'center'} justifyContent={'center'} sx={{ width: '100%', height: '100%' }}>
             <MobileStepper
                 {...rest}
+                activeStep={activeStep}
                 leftButton={
                     leftButton ? (
                         <Button
-                            disabled={currentStep === 0}
+                            disabled={activeStep === 0}
                             onPress={(): void => {
-                                updateStep(-1);
-                                updateData('activeStep', currentStep - 1);
+                                updateData('activeStep', activeStep - 1);
                             }}
                             mode="outlined"
                             style={{ width: 100, alignSelf: 'flex-start', marginRight: 40 }}
@@ -154,10 +145,9 @@ const MobileStepperPreview: PreviewComponent = ({ data }) => {
                 rightButton={
                     rightButton ? (
                         <Button
-                            disabled={currentStep === totalSteps - 1}
+                            disabled={activeStep >= totalSteps - 1}
                             onPress={(): void => {
-                                updateStep(1);
-                                updateData('activeStep', currentStep + 1);
+                                updateData('activeStep', activeStep + 1);
                             }}
                             mode="contained"
                             style={{ width: 100, alignSelf: 'flex-end', marginLeft: 40 }}
