@@ -153,10 +153,8 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                 rightComponent={rightComponent ? <ListItemTag label="New" /> : undefined}
                                 {...removeEmptyProps(rest)}
                                 title={rest.title}
-                                hidePadding
                             >
                                 <DrawerNavItem
-                                    hidePadding={rest.hidePadding}
                                     itemFontColor={theme.colors.onSurface}
                                     itemID={'Web'}
                                     title={'Web'}
@@ -164,7 +162,6 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                     onPress={() => setActiveItem('Web')}
                                 />
                                 <DrawerNavItem
-                                    hidePadding={rest.hidePadding}
                                     itemFontColor={theme.colors.onSurface}
                                     itemID={'Mobile'}
                                     title={'Mobile'}
@@ -172,11 +169,11 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                 />
                             </DrawerNavItem>
                             <DrawerNavItem
-                                itemFontColor={theme.colors.onSurface}
                                 itemID={'Accessibility'}
                                 title={'Accessibility'}
                                 icon={{ name: 'accessibility' }}
                                 onPress={() => setActiveItem('Accessibility')}
+                                {...removeEmptyProps(rest)}
                             />
                         </DrawerNavGroup>
                     </DrawerBody>
@@ -217,9 +214,10 @@ const getExpandIcon = (value: any): any => {
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<DrawerNavItem
+    hidePadding={${data.hidePadding}}
     ${getPropsToString(getPropsMapping(data, inputConfig), {
         join: '\n\t',
-        skip: ['collapseIcon', 'expandIcon', 'icon', 'rightComponent'],
+        skip: ['collapseIcon', 'expandIcon', 'icon', 'rightComponent', 'hidePadding'],
     })}
     ${data.rightComponent ? `rightComponent={<ListItemTag label="New" />}` : ``}
     ${data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon as string)}}` : ''}

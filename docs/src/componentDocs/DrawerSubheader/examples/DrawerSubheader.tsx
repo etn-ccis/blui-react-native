@@ -8,7 +8,7 @@ const codeSnippet = `<Drawer>
   <DrawerSubheader>
       <Text style={{padding: 16}}>Custom Content Goes here</Text>
   </DrawerSubheader>
-  <DrawerBody>
+  <DrawerBody hidePadding>
       <DrawerNavGroup>
           <DrawerNavItem title="Dashboard" itemID="1" />
           <DrawerNavItem title="Locations" itemID="2" />

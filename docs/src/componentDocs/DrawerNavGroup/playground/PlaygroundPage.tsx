@@ -135,14 +135,12 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
                     itemID: 'Monthly Report',
                     title: 'Monthly Report',
                     onPress: (): void => setActiveItem('Monthly Report'),
-                    hidePadding: rest.hidePadding,
                 },
                 {
                     itemFontColor: theme.colors.onSurface,
                     itemID: 'Annual Report',
                     title: 'Annual Report',
                     onPress: (): void => setActiveItem('Annual Report'),
-                    hidePadding: rest.hidePadding,
                 },
             ],
         },
@@ -191,7 +189,6 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
                             collapseIcon={getIcon(collapseIcon)}
                             expandIcon={getIcon(expandIcon)}
                             {...removeEmptyProps(rest)}
-                            hidePadding
                         />
                     </DrawerBody>
                 </Drawer>
@@ -220,9 +217,10 @@ const getExpandIcon = (value: any): any => {
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<DrawerNavGroup
+    hidePadding={${data.hidePadding}}
     ${getPropsToString(getPropsMapping(data, inputConfig), {
         join: '\n\t',
-        skip: ['collapseIcon', 'expandIcon', 'titleContent'],
+        skip: ['collapseIcon', 'expandIcon', 'titleContent', 'hidePadding'],
     })}
     ${
         data.titleContent && data.titleContent !== 'undefined'
