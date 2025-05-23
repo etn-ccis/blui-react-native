@@ -101,7 +101,7 @@ const ChipPreview: PreviewComponent = ({ data }) => {
     const getAvtar = (value: boolean): React.ReactElement | undefined => {
         switch (value) {
             case true:
-                return <Avatar.Icon size={40} icon="account-circle" />;
+                return <Avatar.Icon size={20} icon="home" />;
             default:
                 return undefined;
         }
@@ -151,11 +151,12 @@ const getModeSnippet = (value: any): string | undefined => {
             return undefined;
     }
 };
+
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Chip
     ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'avatar', 'mode'] })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
-    ${data.avatar && data.avatar !== 'undefined' ? `avatar={<Avatar.Icon size={40} icon="account-circle" />}` : ''}
+    ${data.avatar && data.avatar !== 'undefined' ? `avatar={<Avatar.Icon size={20} icon="home" />}` : ''}
     ${data.mode && data.mode !== 'undefined' ? `mode={${getModeSnippet(data.mode)}}` : ''}
 >label</Chip>`.replace(/^\s*$(?:\r\n?|\n)/gm, '');
 
