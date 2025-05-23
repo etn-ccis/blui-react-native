@@ -17,6 +17,7 @@ export default [
         },
         rules: {
             '@typescript-eslint/prefer-nullish-coalescing': 'off',
+            '@typescript-eslint/no-redundant-type-constituents': 'off',
         },
     },
     {
