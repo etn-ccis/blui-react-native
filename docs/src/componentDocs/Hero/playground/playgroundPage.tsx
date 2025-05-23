@@ -136,18 +136,11 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         skip: ['icon', 'htmlColor', 'value', 'units', 'valueIcon'],
     })}
     ${data.icon && data.icon !== 'undefined' ? `icon={${getRNIconSnippet(data.icon as string)}}` : ''}
-    ChannelValueProps={{
-        ${getPropsToString(getPropsMapping(data, inputConfig), {
-            join: '\n\t\t',
-            format: 'object',
-            skip: ['icon', 'label', 'iconBackgroundColor', 'iconSize', 'htmlColor', 'valueIcon'],
-        })}
-        ${
-            data.valueIcon && data.valueIcon !== 'undefined'
-                ? `icon={ ${getRNIconSnippet(data.valueIcon as string)}},`
-                : ''
-        }
-    }}
+    ${`ChannelValueProps={{ 
+        value: ${data.value},
+        units: '${data.units}',
+        ${data.valueIcon && data.valueIcon !== 'undefined' ? `icon:${getRNIconSnippet(data.valueIcon)},` : ''}
+    }}`}
 />`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
         .replace(/(?:^|)( {4}|\t)/gm, '    ');
