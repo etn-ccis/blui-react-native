@@ -32,7 +32,7 @@ jobs:
                   cache: 'yarn'
             - run: yarn --immutable
             - run: yarn prettier:check
-            # - run: yarn lint
+            - run: yarn lint
               
     test_auth_workflow:
         runs-on: ubuntu-latest
@@ -48,6 +48,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
+              working-directory: packages/auth-workflows
             - run: yarn coverage
               working-directory: packages/auth-workflows
             - name: Upload to Codecov
@@ -59,7 +60,6 @@ jobs:
                   flags: auth-tests
                   name: codecov-report
                   verbose: true
-            
     build_auth_workflow:
         runs-on: ubuntu-latest
         strategy:
@@ -99,6 +99,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
+              working-directory: packages/component-library
             - run: yarn coverage
               working-directory: packages/component-library
             - name: Upload to Codecov
@@ -126,6 +127,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
+              working-directory: packages/component-library
             - run: yarn build
               working-directory: packages/component-library
             - name: Save build
@@ -150,6 +152,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
+              working-directory: packages/progress-icons
             - run: yarn coverage
               working-directory: packages/progress-icons
             - name: Upload to Codecov
@@ -199,6 +202,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
+              working-directory: packages/themes
             - run: yarn build
               working-directory: packages/themes
             - name: Save dist
@@ -227,6 +231,7 @@ jobs:
                 node-version: ${{ matrix.node-version }}
                 cache: 'yarn'
           - run: yarn --immutable
+            working-directory: docs
           - run: yarn build --base=${{env.base-href}} && touch ./dist/.nojekyll
             working-directory: docs
           - name: Save dist
