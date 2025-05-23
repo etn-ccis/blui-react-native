@@ -48,6 +48,17 @@ if (!container) throw new Error('Root Element was not found in the DOM');
 const root = ReactDOMClient.createRoot(container);
 const basename = import.meta.env.BASE_URL || '/';
 
+// Suppress the BackHandler warning on web
+if (typeof window !== 'undefined') {
+    const originalWarn = console.error;
+    console.error = (...args: unknown[]): void => {
+        if (typeof args[0] === 'string' && args[0].includes('BackHandler is not supported on web')) {
+            return;
+        }
+        originalWarn(...args);
+    };
+}
+
 const ThemedApp = (): JSX.Element => {
     const siteTheme = useAppSelector((state: RootState) => state.appState.siteTheme);
     const siteDirection = useAppSelector((state: RootState) => state.appState.siteDirection);
