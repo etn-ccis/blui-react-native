@@ -92,21 +92,15 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         subtitle: 'The Last Stand',
         info: 'Text hidden on collapse',
         icon: { name: 'menu' },
-        onIconPress: () => { },
-        actionItems: [
-            {
-                icon: { name: 'more-vert' },
-                onPress: (): void => { },
-            },
-        ],
+        onIconPress: () => {},
         expandable: true,
         variant: 'dynamic',
         ${getPropsToString(getPropsMapping(data, inputConfig), {
             join: '\n\t',
-            skip: [''],
+            skip: ['icon', 'actionItems', 'backgroundImage', 'searchableConfig'],
         })}
     }}
-  />
+/>
     `
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
         .replace(/(?:^|)( {4}|\t)/gm, '    ');
