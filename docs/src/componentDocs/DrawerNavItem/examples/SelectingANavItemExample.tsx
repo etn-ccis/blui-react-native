@@ -12,6 +12,7 @@ export const SelectingANavItemExample = (): JSX.Element => {
             <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }} activeItem={selected}>
                 <DrawerBody>
                     <DrawerNavItem
+                        hidePadding
                         itemFontColor={theme.colors.onSurface}
                         itemID={'account'}
                         title={'Account'}
@@ -24,6 +25,7 @@ export const SelectingANavItemExample = (): JSX.Element => {
                         activeItemBackgroundShape="round"
                     />
                     <DrawerNavItem
+                        hidePadding
                         itemFontColor={theme.colors.onSurface}
                         itemID={'notification'}
                         title={'Notification'}
@@ -36,6 +38,7 @@ export const SelectingANavItemExample = (): JSX.Element => {
                         activeItemBackgroundShape="round"
                     />
                     <DrawerNavItem
+                        hidePadding
                         itemFontColor={theme.colors.onSurface}
                         itemID={'localization'}
                         title={'Localization'}

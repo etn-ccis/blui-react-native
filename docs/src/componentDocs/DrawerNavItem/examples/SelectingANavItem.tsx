@@ -4,7 +4,7 @@ import { SelectingANavItemExample } from './SelectingANavItemExample';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 
 const codeSnippet = `<Drawer activeItem={selected}>
-  <DrawerBody>
+  <DrawerBody hidePadding>
     <DrawerNavItem
       itemID={'account'}
       title={'Account'}

@@ -11,6 +11,7 @@ export const DrawerNavItemExample = (): JSX.Element => {
             <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
                 <DrawerBody>
                     <DrawerNavItem
+                        hidePadding
                         itemFontColor={theme.colors.onSurface}
                         itemID={'account'}
                         title={'Account'}
@@ -21,6 +22,7 @@ export const DrawerNavItemExample = (): JSX.Element => {
                         }}
                     />
                     <DrawerNavItem
+                        hidePadding
                         itemFontColor={theme.colors.onSurface}
                         itemID={'notification'}
                         title={'Notification'}
@@ -28,6 +30,7 @@ export const DrawerNavItemExample = (): JSX.Element => {
                         activeItemBackgroundShape={'round'}
                     />
                     <DrawerNavItem
+                        hidePadding
                         itemFontColor={theme.colors.onSurface}
                         itemID={'localization'}
                         title={'Localization'}

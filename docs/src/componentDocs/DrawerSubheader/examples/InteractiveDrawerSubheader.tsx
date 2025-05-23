@@ -12,7 +12,7 @@ const codeSnippet = `<Drawer>
     <DrawerSubheader>
         <TextInput label={'Add Navigation Group'} mode="outlined" style={{ margin: 16 }} />
     </DrawerSubheader>
-    <DrawerBody>
+    <DrawerBody hidePadding>
         <DrawerNavGroup title={'Navigation Group'}>
             <DrawerNavItem
                 itemID={'item1'}

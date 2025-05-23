@@ -169,11 +169,11 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                 />
                             </DrawerNavItem>
                             <DrawerNavItem
-                                itemFontColor={theme.colors.onSurface}
                                 itemID={'Accessibility'}
                                 title={'Accessibility'}
                                 icon={{ name: 'accessibility' }}
                                 onPress={() => setActiveItem('Accessibility')}
+                                {...removeEmptyProps(rest)}
                             />
                         </DrawerNavGroup>
                     </DrawerBody>
@@ -214,9 +214,10 @@ const getExpandIcon = (value: any): any => {
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<DrawerNavItem
+    hidePadding={${data.hidePadding}}
     ${getPropsToString(getPropsMapping(data, inputConfig), {
         join: '\n\t',
-        skip: ['collapseIcon', 'expandIcon', 'icon', 'rightComponent'],
+        skip: ['collapseIcon', 'expandIcon', 'icon', 'rightComponent', 'hidePadding'],
     })}
     ${data.rightComponent ? `rightComponent={<ListItemTag label="New" />}` : ``}
     ${data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon as string)}}` : ''}

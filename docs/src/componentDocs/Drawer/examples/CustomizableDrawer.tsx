@@ -9,7 +9,7 @@ const codeSnippet = `<Drawer activeItem="item1">
         subtitle={'Drawer Subtitle'}
         icon={{ name: 'menu', direction: 'auto' }}
     />
-    <DrawerBody>
+    <DrawerBody hidePadding>
         {/* Using children */}
         <DrawerNavGroup title={'Navigation Group 1'}>
             <DrawerNavItem

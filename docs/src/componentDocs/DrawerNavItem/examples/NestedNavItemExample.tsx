@@ -12,6 +12,7 @@ export const NestedNavItemExample = (): JSX.Element => {
                 <DrawerBody>
                     <DrawerNavGroup>
                         <DrawerNavItem
+                            hidePadding
                             itemFontColor={theme.colors.onSurface}
                             itemID={'account'}
                             title={'Account'}
@@ -22,6 +23,7 @@ export const NestedNavItemExample = (): JSX.Element => {
                             }}
                         />
                         <DrawerNavItem
+                            hidePadding
                             itemFontColor={theme.colors.onSurface}
                             itemID={'notification'}
                             title={'Notification'}
@@ -31,10 +33,21 @@ export const NestedNavItemExample = (): JSX.Element => {
                                 direction: 'auto',
                             }}
                         >
-                            <DrawerNavItem itemFontColor={theme.colors.onSurface} itemID={'web'} title={'Web'} />
-                            <DrawerNavItem itemFontColor={theme.colors.onSurface} itemID={'mobile'} title={'Mobile'} />
+                            <DrawerNavItem
+                                hidePadding
+                                itemFontColor={theme.colors.onSurface}
+                                itemID={'web'}
+                                title={'Web'}
+                            />
+                            <DrawerNavItem
+                                hidePadding
+                                itemFontColor={theme.colors.onSurface}
+                                itemID={'mobile'}
+                                title={'Mobile'}
+                            />
                         </DrawerNavItem>
                         <DrawerNavItem
+                            hidePadding
                             itemFontColor={theme.colors.onSurface}
                             itemID={'localization'}
                             title={'Localization'}

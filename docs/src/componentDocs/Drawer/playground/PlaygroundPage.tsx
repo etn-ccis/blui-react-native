@@ -158,7 +158,8 @@ const getExpandIcon = (value: any): any => {
 };
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Drawer 
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon'] })}
+    hidePadding={${data.hidePadding}}
+    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'hidePadding'] })}
     ${
         data.collapseIcon && data.collapseIcon !== 'undefined'
             ? `collapseIcon={${getCollapseIcon(data.collapseIcon)}}`

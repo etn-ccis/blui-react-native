@@ -4,7 +4,7 @@ import { NestedNavItemExample } from './NestedNavItemExample';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 
 const codeSnippet = `<Drawer>
-    <DrawerBody>
+    <DrawerBody hidePadding>
         <DrawerNavItem
             itemID={'account'}
             title={'Account'}

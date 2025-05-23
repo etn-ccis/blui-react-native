@@ -14,7 +14,7 @@ const codeSnippet = `<Drawer>
             <Text>Subheader content here</Text>
         </View>
     </DrawerSubheader>
-    <DrawerBody>
+    <DrawerBody hidePadding>
         <DrawerNavGroup title={'Navigation Group'}>
             <DrawerNavItem itemID={'item31'} title={'Item 1'}></DrawerNavItem>
             <DrawerNavItem itemID={'item31'} title={'Item 2'}></DrawerNavItem>

@@ -217,9 +217,10 @@ const getExpandIcon = (value: any): any => {
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<DrawerNavGroup
+    hidePadding={${data.hidePadding}}
     ${getPropsToString(getPropsMapping(data, inputConfig), {
         join: '\n\t',
-        skip: ['collapseIcon', 'expandIcon', 'titleContent'],
+        skip: ['collapseIcon', 'expandIcon', 'titleContent', 'hidePadding'],
     })}
     ${
         data.titleContent && data.titleContent !== 'undefined'
