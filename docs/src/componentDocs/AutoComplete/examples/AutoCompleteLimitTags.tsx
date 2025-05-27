@@ -14,9 +14,9 @@ const codeSnippet = `<AutoComplete
         let arr = chipValue.filter((str) => str !== item);
         setChipValue(arr);
     }}
-    allowCustomtag={true}
+    allowCustomTag={true}
     limitTags={3}
-    limitCharacterCountTag={10}
+    tagCharacterLimit={10}
 />`;
 
 export const AutoCompleteLimitTags = (): JSX.Element => (

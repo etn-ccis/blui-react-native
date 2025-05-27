@@ -14,7 +14,7 @@ const codeSnippet = `<AutoComplete
         let arr = chipValue.filter((str) => str !== item);
         setChipValue(arr);
     }}
-    allowCustomtag={true}
+    allowCustomTag={true}
 />`;
 
 export const AutoCompleteCustomTags = (): JSX.Element => (

@@ -29,14 +29,14 @@ import { AutoComplete } from '@brightlayer-ui/react-native-components';
 | label                  | Text to display as component label                                                            | `string`                      | no       |         |
 | options                | List of Options to show in dropdown                                                           | `string[]`                    | no       |         |
 | tagInputFieldProps     | Props to spread to the TextInput component                                                    | `TextInputProps`              | no       |         |
-| chipProps              | Props to spread to the Chip component                                                         | `ChipProps`                   | no       |         |
+| ChipProps              | Props to spread to the Chip component                                                         | `ChipProps`                   | no       |         |
 | limitTags              | Number of Chip to be shown                                                                    | `number`                      | no       | 6       |
-| limitCharacterCountTag | Number of character count for a Chip                                                          | `number`                      | no       | 16      |
+| tagCharacterLimit | Number of character count for a Chip                                                          | `number`                      | no       | 16      |
 | onChange               | Callback for when the text in the Textinput changes                                           | `function`                    | no       |         |
 | onDelete               | Callback for when the chip close icon is clicked                                              | `function`                    | no       |         |
 | disabled               | Prop to disable the AutoComplete Component                                                    | `boolean`                     | no       | false   |
 | value                  | List of pre-populated chips to display inside TextField                                       | `string[]`                    | no       |         |
-| allowCustomtag         | Prop to let user pass a custom text to chip (inCase of false can only pass text from options) | `boolean`                     | no       | false   |
+| allowCustomTag         | Prop to let user pass a custom text to chip (inCase of false can only pass text from options) | `boolean`                     | no       | false   |
 | theme                  | Theme value overrides specific to this component                                              | `$DeepPartial<ExtendedTheme>` | no       |         |
 
 </div>

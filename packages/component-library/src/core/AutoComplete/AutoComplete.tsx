@@ -29,7 +29,7 @@ export type AutocompleteProps = ViewProps & {
     /** Props to spread to the TextInput component. */
     tagInputFieldProps?: TextInputProps;
     /** Props to spread to the Chip component. */
-    chipProps?: ChipProps;
+    ChipProps?: ChipProps;
     /** Number of Chip to be shown
      *
      *  @default: 6
@@ -41,7 +41,7 @@ export type AutocompleteProps = ViewProps & {
      *  @default: 16
      *
      */
-    limitCharacterCountTag?: number;
+    tagCharacterLimit?: number;
     /** Callback for when the text in the Textinput changes */
     onChange?: (details?: string[]) => void;
     /** Callback for when the chip close icon is clicked */
@@ -59,7 +59,7 @@ export type AutocompleteProps = ViewProps & {
      *  @default: false
      *
      */
-    allowCustomtag?: boolean;
+    allowCustomTag?: boolean;
 
     styles?: {
         root?: StyleProp<ViewStyle>;
@@ -186,16 +186,16 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
         value = [],
         options = [],
         limitTags = 6,
-        limitCharacterCountTag = 16,
+        tagCharacterLimit = 16,
         helperText,
         tagInputFieldProps,
-        chipProps,
+        ChipProps,
         onChange,
         onDelete,
         label = '',
         styles,
         disabled = false,
-        allowCustomtag = false,
+        allowCustomTag = false,
     } = props;
     const theme = useExtendedTheme(themeOverride);
     function filterChips(chipOptions: string[], chipValue: string[]): string[] {
@@ -217,7 +217,7 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
         setHideDropDownTags(true);
     };
     const handleOnChangeText = (text: string): void => {
-        if (text.length <= limitCharacterCountTag && value.length < limitTags) {
+        if (text.length <= tagCharacterLimit && value.length < limitTags) {
             setTextInput(text);
             const searchData = filterChips(options, value);
             let arr;
@@ -231,7 +231,7 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
     };
     const handleSubmitText = (): void => {
         if (value.length < limitTags && textInput.length >= 1) {
-            if (allowCustomtag === true || filterOptions.includes(textInput)) {
+            if (allowCustomTag === true || filterOptions.includes(textInput)) {
                 const newChip = [...value];
                 newChip.push(textInput);
                 setFilterOptions(filterChips(options, newChip));
@@ -282,7 +282,7 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
                                         onClose={(): void => {
                                             removeChipItem(item);
                                         }}
-                                        {...chipProps}
+                                        {...ChipProps}
                                     >
                                         {item}
                                     </Chip>
@@ -342,7 +342,7 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
                     {helperText ? helperText : ''}
                 </HelperText>
                 <HelperText type="info" visible={true} style={[defaultStyles.counterHelper, styles?.helperCounter]}>
-                    {textInput.length} / {limitCharacterCountTag}
+                    {textInput.length} / {tagCharacterLimit}
                 </HelperText>
             </View>
             <View style={[defaultStyles.bottomMargin]}></View>
