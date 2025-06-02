@@ -26,7 +26,7 @@ const useStyles = (): StyleSheet.NamedStyles<{
         flipIcon: {
             transform: [{ scaleX: -1 }],
         } as TextStyle,
-         backArrow: {
+        backArrow: {
             marginTop: 0,
         },
     });
