@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
  * @category Component
  */
 export const RegistrationWorkflow: React.FC<React.PropsWithChildren<RegistrationWorkflowProps>> = (props) => {
-    const { errorDisplayConfig: registrationWorkflowErrorConfig } = props;
+    const { errorDisplayConfig: registrationWorkflowErrorConfig, eulaIsHtml } = props;
     const [isAccountExist, setIsAccountExist] = useState(false);
     const { triggerError, errorManagerConfig: globalErrorManagerConfig } = useErrorManager();
     const { actions, navigate, routeConfig } = useRegistrationContext();
@@ -74,12 +74,12 @@ export const RegistrationWorkflow: React.FC<React.PropsWithChildren<Registration
         isInviteRegistration,
         children = isInviteRegistration
             ? [
-                  <EulaScreen key="EulaScreen" />,
+                  <EulaScreen key="EulaScreen" html={eulaIsHtml} />,
                   <CreatePasswordScreen key="CreatePasswordScreen" />,
                   <AccountDetailsScreen key="AccountDetailsScreen" />,
               ]
             : [
-                  <EulaScreen key="EulaScreen" />,
+                  <EulaScreen key="EulaScreen" html={eulaIsHtml}/>,
                   <CreateAccountScreen key="CreateAccountScreen" />,
                   <VerifyCodeScreen key="VerifyCodeScreen" />,
                   <CreatePasswordScreen key="CreatePasswordScreen" />,
@@ -236,6 +236,7 @@ export const RegistrationWorkflow: React.FC<React.PropsWithChildren<Registration
             updateScreenData={updateScreenData}
             resetScreenData={resetScreenData}
             isInviteRegistration={isInviteRegistration}
+            eulaIsHtml={eulaIsHtml}
         >
             <ErrorManager {...errorDisplayConfig} mode="dialog">
                 {showSuccessScreen ? (

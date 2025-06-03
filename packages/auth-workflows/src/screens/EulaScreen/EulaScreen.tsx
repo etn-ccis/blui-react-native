@@ -42,10 +42,12 @@ export const EulaScreen: React.FC<EulaScreenProps> = (props) => {
         WorkflowCardActionsProps,
         eulaContent,
         checkboxLabel = t('bluiRegistration:REGISTRATION.EULA.AGREE_TERMS'),
-        html,
+        html: htmlProp,
         initialCheckboxValue,
         ...otherEulaScreenProps
     } = props;
+
+    const html = htmlProp !== undefined ? htmlProp : regWorkflow?.eulaIsHtml;
 
     const eulaAccepted = initialCheckboxValue ?? screenData.Eula.accepted;
     const [isLoading, setIsLoading] = useState(true);
