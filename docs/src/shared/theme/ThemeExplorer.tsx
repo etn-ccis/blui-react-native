@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Spacer } from '@brightlayer-ui/react-components';
-import { blue as theme } from '@brightlayer-ui/react-native-themes';
+import { theme } from '@brightlayer-ui/react-themes';
 import { ThemeProvider } from '@mui/material/styles';
 import {
     Card,
