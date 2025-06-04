@@ -98,7 +98,6 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
     );
 
     useEffect(() => {
-        // eslint-disable-next-line
         verifyResetCode();
     }, []);
 
