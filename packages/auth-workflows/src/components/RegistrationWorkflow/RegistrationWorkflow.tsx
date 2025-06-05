@@ -79,7 +79,7 @@ export const RegistrationWorkflow: React.FC<React.PropsWithChildren<Registration
                   <AccountDetailsScreen key="AccountDetailsScreen" />,
               ]
             : [
-                  <EulaScreen key="EulaScreen" html={eulaIsHtml}/>,
+                  <EulaScreen key="EulaScreen" html={eulaIsHtml} />,
                   <CreateAccountScreen key="CreateAccountScreen" />,
                   <VerifyCodeScreen key="VerifyCodeScreen" />,
                   <CreatePasswordScreen key="CreatePasswordScreen" />,

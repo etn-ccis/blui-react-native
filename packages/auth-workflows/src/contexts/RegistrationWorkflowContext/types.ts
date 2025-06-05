@@ -83,7 +83,7 @@ export type RegistrationWorkflowContextProps = {
      */
     isInviteRegistration?: boolean;
 
-     /**
+    /**
      * If true, the EULA content is HTML and should be rendered as such.
      */
     eulaIsHtml?: boolean;
