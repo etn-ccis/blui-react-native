@@ -169,11 +169,13 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                                 />
                             </DrawerNavItem>
                             <DrawerNavItem
+                                itemFontColor={theme.colors.onSurface}
                                 itemID={'Accessibility'}
-                                title={'Accessibility'}
                                 icon={{ name: 'accessibility' }}
                                 onPress={() => setActiveItem('Accessibility')}
                                 {...removeEmptyProps(rest)}
+                                title={'Accessibility'}
+                                subtitle={''}
                             />
                         </DrawerNavGroup>
                     </DrawerBody>

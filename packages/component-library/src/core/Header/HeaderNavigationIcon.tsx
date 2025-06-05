@@ -11,6 +11,7 @@ import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-c
 const useStyles = (): StyleSheet.NamedStyles<{
     navigation: ViewStyle;
     flipIcon: TextStyle;
+    backArrow: ViewStyle;
 }> => {
     const fontScale = useFontScale();
     return StyleSheet.create({
@@ -20,10 +21,14 @@ const useStyles = (): StyleSheet.NamedStyles<{
             marginLeft: -8 * fontScale,
             marginRight: 24,
             padding: 8 * fontScale,
+            marginTop: 8 * fontScale,
         },
         flipIcon: {
             transform: [{ scaleX: -1 }],
         } as TextStyle,
+        backArrow: {
+            marginTop: 0,
+        },
     });
 };
 
@@ -63,7 +68,7 @@ export const HeaderNavigationIcon: React.FC<HeaderNavigationProps> = (props) => 
                 testID={'header-search-close'}
                 accessibilityLabel={'header-search-close'}
                 onPress={onClose ? (): void => onClose() : undefined}
-                style={[defaultStyles.navigation, style]}
+                style={[defaultStyles.navigation, defaultStyles.backArrow, style]}
             >
                 <Icon
                     name={'arrow-back'}
