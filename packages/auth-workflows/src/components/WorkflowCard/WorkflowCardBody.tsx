@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { Platform, StyleSheet, View, ViewStyle } from 'react-native';
 import { useScreenDimensions } from '../../hooks/useScreenDimensions';
 import { WorkflowCardBodyProps } from './WorkflowCard.types';
 import { Card } from 'react-native-paper';
@@ -44,7 +44,7 @@ export const WorkflowCardBody: React.FC<WorkflowCardBodyProps> = (props) => {
                     contentInsetAdjustmentBehavior="always"
                     bounces={false}
                     keyboardShouldPersistTaps={'handled'}
-                    extraScrollHeight={-80}
+                    extraScrollHeight={Platform.OS === 'ios' ? -80 : 0}
                 >
                     <WorkflowCardInstructions {...WorkflowCardInstructionProps} />
                     <Card.Content style={[defaultStyles.workflowBody, style]} {...otherCardContentProps}>
