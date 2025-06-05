@@ -44,6 +44,7 @@ export const WorkflowCardBody: React.FC<WorkflowCardBodyProps> = (props) => {
                     contentInsetAdjustmentBehavior="always"
                     bounces={false}
                     keyboardShouldPersistTaps={'handled'}
+                    extraScrollHeight={-80}
                 >
                     <WorkflowCardInstructions {...WorkflowCardInstructionProps} />
                     <Card.Content style={[defaultStyles.workflowBody, style]} {...otherCardContentProps}>
