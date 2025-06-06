@@ -21,4 +21,9 @@ cp -r LICENSE ./dist/LICENSE
 cp -r CHANGELOG.md ./dist/CHANGELOG.md
 cp -r LICENSES.json ./dist/LICENSES.json
 
+echo -e "${BLUE}Updating the package to ESM format${NC}"
+
+tsc-esm-fix dist
+
+
 echo -e "${GRAY}Complete${NC}\r\n"

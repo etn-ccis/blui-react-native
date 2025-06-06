@@ -10,7 +10,8 @@
         "noEmit": false,
         "strict": true,
         "skipLibCheck": true,
-        "target": "esnext"
+        "target": "esnext",
+        "outDir": "dist"
     },
     "include": ["src"]
 }

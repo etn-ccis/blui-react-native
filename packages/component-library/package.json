@@ -88,6 +88,7 @@
         "react-native-vector-icons": "^9.2.0",
         "react-test-renderer": "^18.2.0",
         "ts-jest": "^29.0.0",
+        "tsc-esm-fix": "^3.1.2",
         "typescript": "5.5.2"
     },
     "directories": {
