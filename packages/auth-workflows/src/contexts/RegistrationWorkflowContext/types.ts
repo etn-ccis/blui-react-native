@@ -82,4 +82,9 @@ export type RegistrationWorkflowContextProps = {
      * @param {boolean} isInviteRegistration - Indicates whether this workflow is for invitation-based registration.
      */
     isInviteRegistration?: boolean;
+
+    /**
+     * If true, the EULA content is HTML and should be rendered as such.
+     */
+    eulaIsHtml?: boolean;
 };

@@ -24,6 +24,11 @@ export type SharedRegistrationWorkflowProps = {
      * The configuration for customizing how errors are displayed
      */
     errorDisplayConfig?: ErrorManagerProps;
+
+    /**
+     * If true, the EULA content is HTML and should be rendered as such.
+     */
+    eulaIsHtml?: boolean;
 };
 
 export type SelfRegistrationWorkflowProps = SharedRegistrationWorkflowProps & {
