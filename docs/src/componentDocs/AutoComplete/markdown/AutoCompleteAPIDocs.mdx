@@ -22,26 +22,25 @@ The `<AutoComplete>` is a component that features a standard text input accompan
     />
 </Box>
 
-
 ## API
 
 <Box>
 
-| Prop Name              | Description                                                                                   | Type                          | Required | Default |
-| ---------------------- | --------------------------------------------------------------------------------------------- | ----------------------------- | -------- | ------- |
-| allowCustomtag         | Prop to let user pass a custom text to chip (inCase of false can only pass text from options) | `boolean`                     | no       | false   |
-| chipProps              | Props to spread to the Chip component                                                         | `ChipProps`                   | no       |         |
-| disabled               | Prop to disable the AutoComplete Component                                                    | `boolean`                     | no       | false   |
-| helperText             | Text to display the Helper Text                                                               | `string`                      | no       |         |
-| label                  | Text to display as component label                                                            | `string`                      | no       |         |
-| limitCharacterCountTag | Number of character count for a Chip                                                          | `number`                      | no       | 16      |
-| limitTags              | Number of Chip to be shown                                                                    | `number`                      | no       | 6       |
-| onChange               | Callback for when the text in the Textinput changes                                           | `function`                    | no       |         |
-| onDelete               | Callback for when the chip close icon is clicked                                              | `function`                    | no       |         |
-| options                | List of Options to show in dropdown                                                           | `string[]`                    | no       |         |
-| tagInputFieldProps     | Props to spread to the TextInput component                                                    | `TextInputProps`              | no       |         |
-| value                  | List of pre-populated chips to display inside TextField                                       | `string[]`                    | no       |         |
-| theme                  | Theme value overrides specific to this component                                              | `$DeepPartial<ExtendedTheme>` | no       |         |
+| Prop Name          | Description                                                                                   | Type                          | Required | Default |
+| ------------------ | --------------------------------------------------------------------------------------------- | ----------------------------- | -------- | ------- |
+| allowCustomTag     | Prop to let user pass a custom text to chip (inCase of false can only pass text from options) | `boolean`                     | no       | false   |
+| ChipProps          | Props to spread to the Chip component                                                         | `ChipProps`                   | no       |         |
+| disabled           | Prop to disable the AutoComplete Component                                                    | `boolean`                     | no       | false   |
+| helperText         | Text to display the Helper Text                                                               | `string`                      | no       |         |
+| label              | Text to display as component label                                                            | `string`                      | no       |         |
+| tagCharacterLimit  | Number of character count for a Chip                                                          | `number`                      | no       | 16      |
+| limitTags          | Number of Chip to be shown                                                                    | `number`                      | no       | 6       |
+| onChange           | Callback for when the text in the Textinput changes                                           | `function`                    | no       |         |
+| onDelete           | Callback for when the chip close icon is clicked                                              | `function`                    | no       |         |
+| options            | List of Options to show in dropdown                                                           | `string[]`                    | no       |         |
+| tagInputFieldProps | Props to spread to the TextInput component                                                    | `TextInputProps`              | no       |         |
+| value              | List of pre-populated chips to display inside TextField                                       | `string[]`                    | no       |         |
+| theme              | Theme value overrides specific to this component                                              | `$DeepPartial<ExtendedTheme>` | no       |         |
 
 </Box>
 

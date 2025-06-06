@@ -77,7 +77,7 @@ describe('AutoComplete', () => {
 
     it('handles character limit on tag input', async () => {
         const { getByTestId } = render(
-            <AutoComplete helperText="Helper Text" options={['Option 1', 'Option 2']} limitCharacterCountTag={5} />
+            <AutoComplete helperText="Helper Text" options={['Option 1', 'Option 2']} tagCharacterLimit={5} />
         );
         // eslint-disable-next-line
         const input = await getByTestId('tagInput');

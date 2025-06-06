@@ -76,7 +76,7 @@ export const SharedAppBar: React.FC<SharedAppBarProps> = (props): JSX.Element =>
             );
             setThemeSelectorAnchorEl(null);
         },
-        [dispatch]
+        [dispatch, setMode]
     );
 
     // See hidden RTL site options below
@@ -156,7 +156,7 @@ export const SharedAppBar: React.FC<SharedAppBarProps> = (props): JSX.Element =>
                 </Box>
             </Menu>
         ),
-        [siteTheme, themeSelectorAnchorEl]
+        [siteTheme, themeSelectorAnchorEl, linkToThemesOverview, onClickThemeSelectorItem]
     );
 
     return (
