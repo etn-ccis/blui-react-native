@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
  * @category Component
  */
 export const RegistrationWorkflow: React.FC<React.PropsWithChildren<RegistrationWorkflowProps>> = (props) => {
-    const { errorDisplayConfig: registrationWorkflowErrorConfig, eulaIsHtml } = props;
+    const { errorDisplayConfig: registrationWorkflowErrorConfig, eulaIsHtml = false } = props;
     const [isAccountExist, setIsAccountExist] = useState(false);
     const { triggerError, errorManagerConfig: globalErrorManagerConfig } = useErrorManager();
     const { actions, navigate, routeConfig } = useRegistrationContext();

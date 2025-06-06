@@ -29,3 +29,4 @@ import { RegistrationWorkflow } from '@brightlayer-ui/react-native-auth-workflow
 | isInviteRegistration | `boolean` | Indicated whether this workflow is for invitation-based registration. If true, several of the default screens will be skipped | `false` |
 | initialScreenIndex | `number` | The initial screen index to start the registration workflow from. | `0` |
 | successScreen | `JSX.Element` | Success screen to render when a new account is successfully created |  |
+| eulaIsHtml           | `boolean`                              | If true, the EULA content is HTML and should be rendered as such.                                                                  | `false` |
