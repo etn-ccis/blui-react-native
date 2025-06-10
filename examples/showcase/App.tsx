@@ -6,37 +6,67 @@
  */
 
 import React from 'react';
-import {View} from 'react-native';
-import {Button, Text} from 'react-native-paper';
-import ProgessIconExample from './src/ProgessIconExample';
-import 'react-native-svg';
-import Components from './src/Components';
-import {blue, useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import {I18nManager} from 'react-native';
 
-function App(): React.JSX.Element {
-  const theme = useExtendedTheme(blue);
+import {KitchenSink} from './components/KitchenSink';
+import {CollapsibleHeaderLayout} from '@brightlayer-ui/react-native-components';
+import {UserMenuExample} from './components/UserMenuExample';
+import {useThemeContext} from './contexts/ThemeContext';
+import RNRestart from 'react-native-restart';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from './router';
+
+export const toggleRTL = (): void => {
+  if (I18nManager.isRTL) {
+    I18nManager.allowRTL(false);
+    I18nManager.forceRTL(false);
+  } else {
+    I18nManager.forceRTL(true);
+  }
+  RNRestart.Restart();
+};
+
+type AppProps = {
+  navigation: StackNavigationProp<RootStackParamList, 'App'>;
+};
+
+export const App: React.FC<AppProps> = ({navigation}) => {
+  const {theme: themeType, setTheme} = useThemeContext();
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+    <CollapsibleHeaderLayout
+      HeaderProps={{
+        variant: 'dynamic',
+        title: 'Valley Forge',
+        subtitle: 'The Last Stand',
+        icon: {name: 'menu'},
+        info: 'hello',
+        expandable: true,
+        backgroundImage: require('./assets/images/farm.jpg'),
+        onIconPress: (): void => {
+          navigation.openDrawer();
+        },
+        searchableConfig: {placeholder: 'Search', autoFocus: true},
+        actionItems: [
+          {
+            icon: {name: 'more'},
+            onPress: (): void => {},
+            component: (
+              <UserMenuExample
+                onToggleRTL={toggleRTL}
+                onToggleTheme={(): void =>
+                  setTheme(themeType === 'light' ? 'dark' : 'light')
+                }
+              />
+            ),
+          },
+        ],
+      }}
+      ScrollViewProps={{
+        nestedScrollEnabled: true,
+        keyboardShouldPersistTaps: 'handled',
       }}>
-      <Text style={{color: 'black'}} variant="titleMedium">
-        React Native Monorepo with PNPM workspaces
-      </Text>
-      <Button
-        mode="contained"
-        style={{
-          backgroundColor: theme.colors.primary,
-          width: 200,
-        }}>
-        <Text style={{color: 'white'}}>Brightlayer UI</Text>
-      </Button>
-      <ProgessIconExample />
-      <Components />
-    </View>
+      <KitchenSink />
+    </CollapsibleHeaderLayout>
   );
-}
-
-export default App;
+};

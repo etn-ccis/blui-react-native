@@ -1,19 +1,22 @@
-/**
- * @format
- */
-
+import 'react-native-gesture-handler';
+import React, {useState} from 'react';
 import {AppRegistry} from 'react-native';
-import App from './App';
+import {Provider as PaperProvider} from 'react-native-paper';
 import {name as appName} from './app.json';
-import {Provider as ThemeProvider} from 'react-native-paper';
 import {blue, blueDark} from '@brightlayer-ui/react-native-themes';
+import {ThemeContext, ThemeType} from './contexts/ThemeContext';
+import {MainRouter} from './router';
 
-export default function Main() {
+const Wrapper = () => {
+  const [theme, setTheme] = useState('light');
+
   return (
-    <ThemeProvider theme={blue}>
-      <App />
-    </ThemeProvider>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <PaperProvider theme={theme === 'light' ? blue : blueDark}>
+        <MainRouter />
+      </PaperProvider>
+    </ThemeContext.Provider>
   );
-}
+};
 
-AppRegistry.registerComponent(appName, () => Main);
+AppRegistry.registerComponent(appName, () => Wrapper);
