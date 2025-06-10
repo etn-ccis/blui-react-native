@@ -1,9 +1,15 @@
 # Change Log
-## v8.0.5 
+
+## v9.0.0 (Unreleased)
 
 ### Added
 
 -   Added `chevronColor` prop to InfoListItem
+
+### Changed
+
+-   The `allowCustomtag`, `limitCharacterCountTag` and `chipProps` props of `<Autocomplete>` component to `allowCustomTag`, `tagCharacterLimit` and `ChipProps` respectively ([#170](https://github.com/etn-ccis/blui-react-native/issues/170)).
+-   Removed margin top of `arrow-back` in `<HeaderNavigationIcon/>` component ([#162](https://github.com/etn-ccis/blui-react-native/issues/162)).
 
 
 ## v8.0.4 (July 22, 2024)
