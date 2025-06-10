@@ -5,6 +5,7 @@
     "version": "7.0.3-alpha.1",
     "description": "React Native themes for Brightlayer UI applications",
     "main": "./dist/index.js",
+    "type": "module",
     "publishConfig": {
         "main": "./index.js"
     },
@@ -54,6 +55,7 @@
         "react": "^18.2.0",
         "react-native": "0.76.7",
         "react-native-paper": "^5.0.0",
+        "tsc-esm-fix": "^3.1.2",
         "typescript": "^5.0.4"
     },
     "prettier": "@brightlayer-ui/prettier-config"
