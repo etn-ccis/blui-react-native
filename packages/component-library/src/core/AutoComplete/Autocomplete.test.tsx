@@ -19,19 +19,15 @@ describe('AutoComplete', () => {
             />
         );
 
-        // eslint-disable-next-line
         const input = await getByTestId('tagInput');
         expect(input.props.value).toBe('');
 
-        // eslint-disable-next-line
         const chip1 = await getByText('Chip 1');
         expect(chip1).toBeTruthy();
 
-        // eslint-disable-next-line
         const chip2 = await getByText('Chip 2');
         expect(chip2).toBeTruthy();
 
-        // eslint-disable-next-line
         const helperText = await getByText('This is a helper text');
         expect(helperText).toBeTruthy();
     });
@@ -79,7 +75,7 @@ describe('AutoComplete', () => {
         const { getByTestId } = render(
             <AutoComplete helperText="Helper Text" options={['Option 1', 'Option 2']} tagCharacterLimit={5} />
         );
-        // eslint-disable-next-line
+
         const input = await getByTestId('tagInput');
         fireEvent.changeText(input, 'This');
         fireEvent.changeText(input, '');
