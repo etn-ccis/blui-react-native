@@ -23,7 +23,7 @@
         "build:all": "yarn build:themes && yarn build:components && yarn build:authWorkflows && yarn build:progressIcons",
         "link:all": "yarn buildLink:themes && yarn buildLink:components && yarn buildLink:authWorkflows && yarn buildLink:progressIcons",
         "showcase-Android": "yarn installShowcaseDependencies && yarn link:all && cd ./examples/showcase && yarn android",
-        "showcase-iOS": "yarn installShowcaseDependencies && yarn link:all && cd ./examples/showcase && yarn ios",
+        "showcase-iOS": "yarn installShowcaseDependencies && yarn link:all && cd ./examples/showcase && cd ios && pod install && cd .. && yarn ios",
         "workflow-Android": "yarn installWorklowDependencies && yarn link:all && cd ./examples/workflow && yarn android",
         "workflow-iOS": "yarn installWorklowDependencies && yarn link:all && cd ./examples/workflow && yarn ios",
         "startDocs": "yarn installDocsDependencies && cd ./docs && yarn start",
