@@ -1,6 +1,5 @@
 import React, {useState, useCallback, useEffect, JSX} from 'react';
 import {StyleSheet, View, FlatList} from 'react-native';
-import * as Colors from '@brightlayer-ui/colors';
 import {
   Header,
   InfoListItem,
@@ -10,19 +9,21 @@ import {sampleData, Data} from '../data/data';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {useTheme} from 'react-native-paper';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.white[50],
-  },
-});
+const useStyles = (theme: any): any =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.background,
+    },
+  });
 
 export const List: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
+  const styles = useStyles(theme);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(sampleData);
   const data = sampleData;
@@ -57,13 +58,7 @@ export const List: React.FC = () => {
     <View style={styles.container}>
       <Header
         title={'Search Bar'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}

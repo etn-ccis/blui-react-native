@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
-import * as Colors from '@brightlayer-ui/colors';
 import {
   Header,
   InfoListItem,
@@ -11,8 +10,9 @@ import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {IconToggle} from './components/IconToggle';
 import {getAlarmList, formatDate, AlarmDataObject} from './data/alarmData';
 import {useNavigation} from '@react-navigation/native';
-import {Divider, Text, useTheme} from 'react-native-paper';
+import {Divider, Text} from 'react-native-paper';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const FILTERS = {
   TIME: 'time',
@@ -25,45 +25,46 @@ const TYPES = {
   EVENT: 'settings',
 };
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.white[100],
-    flex: 1,
-    position: 'relative',
-  },
-  bottomSheetItemTitle: {
-    paddingLeft: 16,
-    color: Colors.black[500],
-    fontFamily: 'OpenSans-Regular',
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    marginVertical: 8,
-  },
-  rowHeader: {
-    padding: 8,
-    backgroundColor: Colors.white[100],
-  },
-  footer: {
-    margin: 0,
-    backgroundColor: Colors.white[100],
-    shadowColor: Colors.black[900],
-    shadowOffset: {
-      width: 0,
-      height: 10,
+const useStyles = (theme: any): any =>
+  StyleSheet.create({
+    container: {
+      backgroundColor: theme.colors.background,
+      flex: 1,
+      position: 'relative',
     },
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    elevation: 10,
-    position: 'absolute',
-    display: 'flex',
-    bottom: 0,
-    width: '100%',
-    maxWidth: 600,
-  },
-});
+    bottomSheetItemTitle: {
+      paddingLeft: 16,
+      color: theme.colors.surfaceVariant,
+      fontFamily: 'OpenSans-Regular',
+    },
+    row: {
+      flexDirection: 'row',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+      marginVertical: 8,
+    },
+    rowHeader: {
+      padding: 8,
+      backgroundColor: theme.colors.background,
+    },
+    footer: {
+      margin: 0,
+      backgroundColor: theme.colors.background,
+      shadowColor: theme.colors.onSurfaceVariant,
+      shadowOffset: {
+        width: 0,
+        height: 10,
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 10,
+      elevation: 10,
+      position: 'absolute',
+      display: 'flex',
+      bottom: 0,
+      width: '100%',
+      maxWidth: 600,
+    },
+  });
 
 export const sortEvents = (
   currentSort: string,
@@ -125,7 +126,9 @@ const alarmList = getAlarmList(20);
 export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
+  const styles = useStyles(theme);
+
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const [currentSort, setCurrentSort] = useState('time');
   const [showAlarms, setShowAlarms] = useState(true);
@@ -148,13 +151,7 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
   return (
     <>
       <Header
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -164,7 +161,7 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
             icon: (
               <MatIcon
                 name="more-vert"
-                color={theme.colors.onPrimary || Colors.white[50]}
+                color={theme.colors.onPrimary}
                 size={24}
               />
             ),
@@ -182,13 +179,13 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
                 key={index}
                 title={`${item.active ? 'ACTIVE: ' : ''}${item.details}`}
                 subtitle={formatDate(item.date)}
-                backgroundColor={Colors.white[50]}
+                backgroundColor={theme.colors.background}
                 icon={
                   (item.type === 'alarm' && item.active && (
                     <MatIcon
                       name="notifications-active"
                       size={24}
-                      color={Colors.white[100]}
+                      color={theme.colors.onPrimary}
                     />
                   )) ||
                   (item.type === 'alarm' && !item.active && (
@@ -214,8 +211,10 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
                   )) ||
                   undefined
                 }
-                fontColor={item.active ? Colors.red[500] : undefined}
-                statusColor={item.active ? Colors.red[500] : undefined}
+                fontColor={item.active ? theme.colors.errorNonText : undefined}
+                statusColor={
+                  item.active ? theme.colors.errorNonText : undefined
+                }
                 avatar={item.active}
               />
             ))}

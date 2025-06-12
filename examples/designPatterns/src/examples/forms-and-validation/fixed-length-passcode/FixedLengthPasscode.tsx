@@ -12,8 +12,8 @@ import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {TextInput} from '../shared/TextInput';
-import {Button, Divider, Text, useTheme} from 'react-native-paper';
-import * as Colors from '@brightlayer-ui/colors';
+import {Button, Divider, Text} from 'react-native-paper';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): StyleSheet.NamedStyles<{
   section: ViewStyle;
@@ -54,7 +54,7 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
   const styles = makeStyles();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const [dimensions, setDimensions] = useState({
     window: Dimensions.get('window'),
   });
@@ -124,16 +124,10 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: Colors.white[50]}}>
+    <View style={{flex: 1, backgroundColor: theme.colors.background}}>
       <Header
         title={'Fixed Length Passcode'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -177,12 +171,12 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
                       : undefined,
                   color:
                     !isLoading && passcodeSubmitted && passcodeSuccess
-                      ? Colors.green[500]
+                      ? theme.colors.successNonText
                       : undefined,
                 }}
                 rightText={{
                   text: isLoading ? 'verifying...' : '',
-                  style: {color: isLoading ? Colors.gray[500] : ''},
+                  style: {color: isLoading ? theme.colors.outline : ''},
                 }}
                 maxLength={6}
                 disabled={isLoading || (passcodeSubmitted && passcodeSuccess)}
@@ -193,7 +187,11 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
               style={styles.resetFormButton}
               onPress={resetForm}
               icon={(): JSX.Element => (
-                <MatIcon name="refresh" color={Colors.blue[500]} size={24} />
+                <MatIcon
+                  name="refresh"
+                  color={theme.colors.primaryNonText}
+                  size={24}
+                />
               )}>
               Reset Form
             </Button>

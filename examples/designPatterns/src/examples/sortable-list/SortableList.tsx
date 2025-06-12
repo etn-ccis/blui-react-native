@@ -3,10 +3,10 @@ import {Header, InfoListItem} from '@brightlayer-ui/react-native-components';
 import {View, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
-import * as Colors from '@brightlayer-ui/colors';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import DraggableFlatList from 'react-native-draggable-flatlist';
-import {Surface, Text, useTheme} from 'react-native-paper';
+import {Surface, Text} from 'react-native-paper';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 type ListItem = {
   name: string;
@@ -51,17 +51,19 @@ const exampleData: ListItem[] = [
   },
 ];
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.white[50],
-  },
-});
+const useStyles = (theme: any): any =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.onPrimary,
+    },
+  });
 
 export const SortableListScreen: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
+  const styles = useStyles(theme);
   const [sortableData, setSortableData] = useState(exampleData);
   const [isSortable, setIsSortable] = useState(false);
 
@@ -82,7 +84,7 @@ export const SortableListScreen: React.FC = () => {
               size={24}
             />
           }
-          backgroundColor={Colors.white[50]}
+          backgroundColor={theme.colors.onPrimary}
         />
       </Surface>
     </TouchableOpacity>
@@ -108,30 +110,16 @@ export const SortableListScreen: React.FC = () => {
     <View style={styles.container}>
       <Header
         title={'Sortable List'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
         actionItems={[
           {
             icon: isSortable ? (
-              <MatIcon
-                name="check"
-                color={theme.colors.onPrimary || Colors.white[50]}
-                size={24}
-              />
+              <MatIcon name="check" color={theme.colors.onPrimary} size={24} />
             ) : (
-              <MatIcon
-                name="edit"
-                color={theme.colors.onPrimary || Colors.white[50]}
-                size={24}
-              />
+              <MatIcon name="edit" color={theme.colors.onPrimary} size={24} />
             ),
             onPress: (): void => {
               toggleEdit();

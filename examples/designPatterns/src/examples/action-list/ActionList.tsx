@@ -6,11 +6,11 @@ import {
 } from '@brightlayer-ui/react-native-components';
 import {View, FlatList, SafeAreaView, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import * as Colors from '@brightlayer-ui/colors';
-import {Button, useTheme} from 'react-native-paper';
+import {Button} from 'react-native-paper';
 import Modal from 'react-native-modal';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 export type ListItem = {
   id?: number;
@@ -40,7 +40,7 @@ const prepareData = (): ListItem[] => {
 };
 
 export const ActionListScreen: React.FC<ActionListProps> = props => {
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const {hardcodedData} = props;
 
   const styles = StyleSheet.create({
@@ -92,34 +92,20 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
       <Header
         testID="header"
         title={'Action List'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
         actionItems={[
           {
             icon: (
-              <MatIcon
-                name="delete"
-                color={theme.colors.onPrimary || Colors.white[50]}
-                size={24}
-              />
+              <MatIcon name="delete" color={theme.colors.onPrimary} size={24} />
             ),
             onPress: deleteAll,
           },
           {
             icon: (
-              <MatIcon
-                name="add"
-                color={theme.colors.onPrimary || Colors.white[50]}
-                size={24}
-              />
+              <MatIcon name="add" color={theme.colors.onPrimary} size={24} />
             ),
             onPress: addItem,
           },
@@ -153,7 +139,7 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
             <Button
               testID="empty-state-add-button"
               icon={(): JSX.Element => (
-                <MatIcon name="add" color={Colors.white[50]} size={24} />
+                <MatIcon name="add" color={theme.colors.onPrimary} size={24} />
               )}
               onPress={addItem}
               mode="contained">
@@ -169,7 +155,7 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
           onBackdropPress={hideActionsPanel}
           supportedOrientations={['portrait', 'landscape']}
           style={{justifyContent: 'flex-end', margin: 0}}>
-          <View style={{backgroundColor: Colors.white[50]}}>
+          <View style={{backgroundColor: theme.colors.background}}>
             <InfoListItem
               title={'Remove'}
               icon={
