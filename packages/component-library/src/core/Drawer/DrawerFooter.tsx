@@ -11,7 +11,7 @@ type DrawerFooterProps = {
     /**
      * children element that need to be rendered inside footer
      */
-    children?: JSX.Element;
+    children?: React.JSX.Element;
 };
 
 /**

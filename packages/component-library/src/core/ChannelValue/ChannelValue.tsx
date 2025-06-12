@@ -125,7 +125,7 @@ export const ChannelValue: React.FC<ChannelValueProps> = (props) => {
     }, [icon, fontSize, getColor, iconColor, iconSize]);
 
     const getUnits = useCallback(
-        (spacerLocation: 'before' | 'after'): JSX.Element | undefined => {
+        (spacerLocation: 'before' | 'after'): React.JSX.Element | undefined => {
             if (units) {
                 return (
                     <>
@@ -158,13 +158,13 @@ export const ChannelValue: React.FC<ChannelValueProps> = (props) => {
         [units, fontSize, getColor, styles, unitSpace, fontStyleLight]
     );
 
-    const prefixUnits = useCallback((): JSX.Element | undefined => {
+    const prefixUnits = useCallback((): React.JSX.Element | undefined => {
         if ((!I18nManager.isRTL && prefix) || (I18nManager.isRTL && !prefix)) {
             return getUnits('after');
         }
     }, [prefix, getUnits]);
 
-    const suffixUnits = useCallback((): JSX.Element | undefined => {
+    const suffixUnits = useCallback((): React.JSX.Element | undefined => {
         if ((I18nManager.isRTL && prefix) || (!I18nManager.isRTL && !prefix)) {
             return getUnits('before');
         }

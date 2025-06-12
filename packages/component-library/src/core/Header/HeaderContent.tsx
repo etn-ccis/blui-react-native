@@ -332,7 +332,7 @@ export const HeaderContent: React.FC<HeaderContentProps> = (props) => {
 
     const { REGULAR_HEIGHT, EXTENDED_HEIGHT } = useHeaderDimensions();
 
-    let content: JSX.Element[] = [];
+    let content: React.JSX.Element[] = [];
 
     if (searchConfig && searching) {
         content = [<SearchContent key={'search-content'} theme={theme} style={styles.search} />];

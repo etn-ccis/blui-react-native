@@ -242,13 +242,13 @@ export type InfoListItemProps = ViewProps & {
     info?: string | React.ReactNode[];
 
     /** Custom content to render between the icon and the text elements */
-    leftComponent?: JSX.Element;
+    leftComponent?: React.JSX.Element;
 
     /** Callback function to execute when the list item is pressed. */
     onPress?: () => void;
 
     /** Custom content to render to the right of the text elements */
-    rightComponent?: JSX.Element;
+    rightComponent?: React.JSX.Element;
 
     /** Color to use indicating status. This will apply to the status stripe and icon
      *
@@ -363,7 +363,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
         return statusColor ? statusColor : theme.colors.onSurfaceVariant;
     }, [iconColor, avatar, statusColor, theme]);
 
-    const getIcon = useCallback((): JSX.Element | undefined => {
+    const getIcon = useCallback((): React.JSX.Element | undefined => {
         if (icon) {
             return (
                 <View style={avatar ? [defaultStyles.avatar, styles.avatar] : [defaultStyles.icon, styles.icon]}>
@@ -373,7 +373,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
         }
     }, [icon, avatar, getIconColor, defaultStyles, styles]);
 
-    const getSubtitle = useCallback((): JSX.Element[] | null => {
+    const getSubtitle = useCallback((): React.JSX.Element[] | null => {
         if (!subtitle) {
             return null;
         }
@@ -389,7 +389,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
         return withKeys(separate(renderableSubtitleParts, subtitleSeparator));
     }, [subtitle, subtitleSeparator, styles.subtitle, wrapSubtitle, defaultStyles.subtitle]);
 
-    const getInfo = useCallback((): JSX.Element[] | null => {
+    const getInfo = useCallback((): React.JSX.Element[] | null => {
         if (!info) {
             return null;
         }
@@ -402,7 +402,7 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
     }, [info, subtitleSeparator, styles.info, wrapInfo, defaultStyles.info]);
 
     const getRightComponent = useCallback(
-        (): JSX.Element | undefined => (
+        (): React.JSX.Element | undefined => (
             <>
                 {rightComponent && rightComponent}
                 {chevron && (

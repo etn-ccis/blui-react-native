@@ -11,7 +11,7 @@ import { useFontStyles } from '../Utility/shared';
 
 export type UserMenuProps = {
     /** Avatar component to display as the menu trigger */
-    avatar: JSX.Element;
+    avatar: React.JSX.Element;
     /** Background color of the bottom sheet
      *
      * @default: theme.colors.surface
@@ -105,7 +105,7 @@ export const UserMenu: React.FC<UserMenuProps> = (props) => {
     );
     const { fontStyleSemiBold } = useFontStyles();
     const getMenu = useCallback(
-        (): JSX.Element => (
+        (): React.JSX.Element => (
             <>
                 {menuTitle && (
                     <>

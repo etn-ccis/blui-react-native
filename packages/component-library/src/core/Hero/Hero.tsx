@@ -126,7 +126,7 @@ export const Hero: React.FC<HeroProps> = (props) => {
         [theme]
     );
 
-    const getIcon = useCallback((): JSX.Element | undefined => {
+    const getIcon = useCallback((): React.JSX.Element | undefined => {
         if (icon) {
             return <Icon source={icon} size={normalizeIconSize()} color={getColor(iconColor)} />;
         }

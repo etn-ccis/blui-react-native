@@ -1,22 +1,29 @@
 import React from 'react';
-import { Overline } from '.';
-import { cleanup } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
+import { Overline } from '.';
 
 describe('Overline', () => {
-    afterEach(cleanup);
     it('Overline Renders', () => {
-        const tree = TestRenderer.create(<Overline>Overline</Overline>).toJSON();
-        expect(tree).toMatchSnapshot();
+        let renderer: TestRenderer.ReactTestRenderer;
+        TestRenderer.act(() => {
+            renderer = TestRenderer.create(<Overline>Overline</Overline>);
+        });
+        expect(renderer!.toJSON()).toMatchSnapshot();
     });
 
     it('Renders the color correctly', () => {
-        const tree = TestRenderer.create(<Overline>Overline </Overline>).toJSON;
-        expect(tree).toMatchSnapshot();
+        let renderer: TestRenderer.ReactTestRenderer;
+        TestRenderer.act(() => {
+            renderer = TestRenderer.create(<Overline>Overline </Overline>);
+        });
+        expect(renderer!.toJSON()).toMatchSnapshot();
     });
 
     it('Accepts style override', () => {
-        const tree = TestRenderer.create(<Overline style={{ color: 'blue', fontSize: 9 }}>Overline </Overline>).toJSON;
-        expect(tree).toMatchSnapshot();
+        let renderer: TestRenderer.ReactTestRenderer;
+        TestRenderer.act(() => {
+            renderer = TestRenderer.create(<Overline style={{ color: 'blue', fontSize: 9 }}>Overline </Overline>);
+        });
+        expect(renderer!.toJSON()).toMatchSnapshot();
     });
 });

@@ -1,39 +1,39 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react-native';
+import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { AutoComplete } from './AutoComplete'; // Replace with your actual path
 
 describe('AutoComplete', () => {
     afterEach(() => jest.clearAllMocks());
 
     it('renders the AutoComplete component', () => {
-        render(<AutoComplete helperText="Helper Text" />);
+        void waitFor(() => {
+            render(<AutoComplete helperText="Helper Text" />);
+        });
     });
 
-    it('renders with initial props', async () => {
-        const { getByTestId, getByText } = render(
-            <AutoComplete
-                value={['Chip 1', 'Chip 2']}
-                options={['Option 1', 'Option 2']}
-                helperText="This is a helper text"
-                limitTags={3}
-            />
-        );
+    it('renders with initial props', () => {
+        void waitFor(() => {
+            const { getByTestId, getByText } = render(
+                <AutoComplete
+                    value={['Chip 1', 'Chip 2']}
+                    options={['Option 1', 'Option 2']}
+                    helperText="This is a helper text"
+                    limitTags={3}
+                />
+            );
 
-        // eslint-disable-next-line
-        const input = await getByTestId('tagInput');
-        expect(input.props.value).toBe('');
+            const input = getByTestId('tagInput');
+            expect(input.props.value).toBe('');
 
-        // eslint-disable-next-line
-        const chip1 = await getByText('Chip 1');
-        expect(chip1).toBeTruthy();
+            const chip1 = getByText('Chip 1');
+            expect(chip1).toBeTruthy();
 
-        // eslint-disable-next-line
-        const chip2 = await getByText('Chip 2');
-        expect(chip2).toBeTruthy();
+            const chip2 = getByText('Chip 2');
+            expect(chip2).toBeTruthy();
 
-        // eslint-disable-next-line
-        const helperText = await getByText('This is a helper text');
-        expect(helperText).toBeTruthy();
+            const helperText = getByText('This is a helper text');
+            expect(helperText).toBeTruthy();
+        });
     });
     // @todo
     // it('toggles dropdown menu on input click and selecting an option', async () => {
@@ -75,17 +75,18 @@ describe('AutoComplete', () => {
     //     expect(mockOnChange).toHaveBeenCalledWith(['Option 1']);
     // });
 
-    it('handles character limit on tag input', async () => {
-        const { getByTestId } = render(
-            <AutoComplete helperText="Helper Text" options={['Option 1', 'Option 2']} tagCharacterLimit={5} />
-        );
-        // eslint-disable-next-line
-        const input = await getByTestId('tagInput');
-        fireEvent.changeText(input, 'This');
-        fireEvent.changeText(input, '');
-        fireEvent.changeText(input, 'Hello');
-        fireEvent.changeText(input, 'This is a very long tag');
+    it('handles character limit on tag input', () => {
+        void waitFor(() => {
+            const { getByTestId } = render(
+                <AutoComplete helperText="Helper Text" options={['Option 1', 'Option 2']} tagCharacterLimit={5} />
+            );
+            const input = getByTestId('tagInput');
+            fireEvent.changeText(input, 'This');
+            fireEvent.changeText(input, '');
+            fireEvent.changeText(input, 'Hello');
+            fireEvent.changeText(input, 'This is a very long tag');
 
-        expect(input.props.value.length).toBe(5);
+            expect(input.props.value.length).toBe(5);
+        });
     });
 });

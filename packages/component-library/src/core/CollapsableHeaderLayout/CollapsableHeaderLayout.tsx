@@ -54,7 +54,7 @@ export type CollapsibleLayoutProps = ViewProps & {
         handleScroll: (e: any) => void,
         contentPadding: Animated.Value,
         contentOffset: { x: number; y: number }
-    ) => JSX.Element;
+    ) => React.JSX.Element;
 
     /** Props to spread to the ScrollView component. */
     ScrollViewProps?: RNScrollViewProps;
@@ -66,7 +66,7 @@ export type CollapsibleLayoutProps = ViewProps & {
     //     handleScroll: (e: any) => void,
     //     contentPadding: Animated.Value,
     //     contentOffset: { x: number; y: number }
-    // ) => JSX.Element;
+    // ) => React.JSX.Element;
 
     /** Style overrides for internal elements. The styles you provide will be combined with the default styles. */
     styles?: {

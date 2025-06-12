@@ -1,29 +1,36 @@
 import React from 'react';
-import { ChannelValue } from '.';
-import { cleanup } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
+import { ChannelValue } from '.';
 
 describe('ChannelValue', () => {
-    afterEach(cleanup);
-    it('ChannelValue Renders', () => {
-        const tree = TestRenderer.create(<ChannelValue value="2" />).toJSON();
-        expect(tree).toMatchSnapshot();
+    it('ChannelValue Renders', async () => {
+        let renderer: TestRenderer.ReactTestRenderer;
+        await TestRenderer.act(() => {
+            renderer = TestRenderer.create(<ChannelValue value="2" />);
+        });
+        expect(renderer!.toJSON()).toMatchSnapshot();
     });
 
-    it('Renders the background color and font color correctly', () => {
-        const tree = TestRenderer.create(
-            <ChannelValue
-                value="50"
-                units="%"
-                icon={{ family: 'material-community', name: 'chart-pie' }}
-                iconColor="red"
-            />
-        ).toJSON;
-        expect(tree).toMatchSnapshot();
+    it('Renders the background color and font color correctly', async () => {
+        let renderer: TestRenderer.ReactTestRenderer;
+        await TestRenderer.act(() => {
+            renderer = TestRenderer.create(
+                <ChannelValue
+                    value="50"
+                    units="%"
+                    icon={{ family: 'material-community', name: 'chart-pie' }}
+                    iconColor="red"
+                />
+            );
+        });
+        expect(renderer!.toJSON()).toMatchSnapshot();
     });
 
-    it('Accepts style override', () => {
-        const tree = TestRenderer.create(<ChannelValue value="2" style={{ backgroundColor: 'red' }} />).toJSON;
-        expect(tree).toMatchSnapshot();
+    it('Accepts style override', async () => {
+        let renderer: TestRenderer.ReactTestRenderer;
+        await TestRenderer.act(() => {
+            renderer = TestRenderer.create(<ChannelValue value="2" style={{ backgroundColor: 'red' }} />);
+        });
+        expect(renderer!.toJSON()).toMatchSnapshot();
     });
 });
