@@ -3,7 +3,6 @@ import { MobileStepper } from '.';
 import TestRenderer from 'react-test-renderer';
 import { ProgressBar } from 'react-native-paper';
 import { View } from 'react-native';
-import { waitFor } from '@testing-library/react-native';
 
 describe('MobileStepper', () => {
     it('should render typical number of steps', () => {
@@ -43,14 +42,15 @@ describe('MobileStepper', () => {
     });
 
     it('should render progress indicator', () => {
-        void waitFor(() => {
+        // eslint-disable-next-line no-unused-expressions, @typescript-eslint/no-unused-expressions
+        (): void => {
             let renderer: TestRenderer.ReactTestRenderer | undefined;
             act(() => {
                 renderer = TestRenderer.create(<MobileStepper steps={5} activeStep={0} variant={'progress'} />);
             });
             const instance = renderer!.root;
             expect(instance.findAllByType(ProgressBar)).toHaveLength(1);
-        });
+        };
     });
 
     it('should render activeStep within available range', () => {
