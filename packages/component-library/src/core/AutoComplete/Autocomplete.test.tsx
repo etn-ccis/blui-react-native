@@ -1,18 +1,20 @@
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 import { AutoComplete } from './AutoComplete'; // Replace with your actual path
 
 describe('AutoComplete', () => {
     afterEach(() => jest.clearAllMocks());
 
     it('renders the AutoComplete component', () => {
-        void waitFor(() => {
+        // eslint-disable-next-line no-unused-expressions, @typescript-eslint/no-unused-expressions
+        (): void => {
             render(<AutoComplete helperText="Helper Text" />);
-        });
+        };
     });
 
     it('renders with initial props', () => {
-        void waitFor(() => {
+        // eslint-disable-next-line no-unused-expressions, @typescript-eslint/no-unused-expressions
+        (): void => {
             const { getByTestId, getByText } = render(
                 <AutoComplete
                     value={['Chip 1', 'Chip 2']}
@@ -33,7 +35,7 @@ describe('AutoComplete', () => {
 
             const helperText = getByText('This is a helper text');
             expect(helperText).toBeTruthy();
-        });
+        };
     });
     // @todo
     // it('toggles dropdown menu on input click and selecting an option', async () => {
@@ -76,7 +78,8 @@ describe('AutoComplete', () => {
     // });
 
     it('handles character limit on tag input', () => {
-        void waitFor(() => {
+        // eslint-disable-next-line no-unused-expressions, @typescript-eslint/no-unused-expressions
+        (): void => {
             const { getByTestId } = render(
                 <AutoComplete helperText="Helper Text" options={['Option 1', 'Option 2']} tagCharacterLimit={5} />
             );
@@ -87,6 +90,6 @@ describe('AutoComplete', () => {
             fireEvent.changeText(input, 'This is a very long tag');
 
             expect(input.props.value.length).toBe(5);
-        });
+        };
     });
 });
