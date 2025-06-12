@@ -6,6 +6,19 @@
 
 -   Added `chevronColor` prop to InfoListItem
 
+### Fixed
+
+- Chip and Scorecard playground crashes page. ([#164](https://github.com/etn-ccis/blui-react-native/issues/164)).
+- Async Stepper playground dots and button. ([#163](https://github.com/etn-ccis/blui-react-native/issues/163)).
+- search bar back arrow misaligned. ([#162](https://github.com/etn-ccis/blui-react-native/issues/162))
+- Drawer item text spacing. ([#161](https://github.com/etn-ccis/blui-react-native/issues/161)).
+- Drawer default font color should not be blue.([#160](https://github.com/etn-ccis/blui-react-native/issues/160)).
+- User menu BackHandler is not supported. ([#143](https://github.com/etn-ccis/blui-react-native/issues/143)).
+- Update auto complete prop names. ([#170](https://github.com/etn-ccis/blui-react-native/issues/170)).
+- Drawer playground not displaying default nav item font color in dark theme view. ([#119](https://github.com/etn-ccis/blui-react-native/issues/119)).
+- Border is getting added when type in the input field. ([#86](https://github.com/etn-ccis/blui-react-native/issues/86).
+
+
 ### Changed
 
 -   The `allowCustomtag`, `limitCharacterCountTag` and `chipProps` props of `<Autocomplete>` component to `allowCustomTag`, `tagCharacterLimit` and `ChipProps` respectively ([#170](https://github.com/etn-ccis/blui-react-native/issues/170)).
