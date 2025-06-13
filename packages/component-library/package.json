@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/react-native-components",
-    "version": "9.0.0-alpha.0",
+    "version": "9.0.0-alpha.4",
     "author": "brightlayer-ui <brightlayer-ui@eaton.com>",
     "description": "Reusable React Native components for Brightlayer UI applications",
     "repository": {
@@ -43,6 +43,8 @@
         "@brightlayer-ui/react-native-themes": "7.0.1",
         "@callstack/react-theme-provider": "^3.0.9",
         "@types/prop-types": "^15.7.15",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
         "color": "^4.2.3",
         "prop-types": "^15.8.1",
         "react-native-collapsible": "^1.6.2",
@@ -80,7 +82,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jest": "^30.0.0",
         "prettier": "^3.5.3",
-        "react": "^19.1.0",
+        "react": "^19.0.0",
         "react-native": "0.79.3",
         "react-native-paper": "^5.14.5",
         "react-native-safe-area-context": "5.4.1",
