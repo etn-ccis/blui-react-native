@@ -17,6 +17,7 @@ permissions:
 
 jobs:
     prettier_lint:
+        name: Code Quality Check
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -35,6 +36,7 @@ jobs:
             - run: yarn lint
               
     test_auth_workflow:
+        name: Test Auth Workflow
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -61,6 +63,7 @@ jobs:
                   name: codecov-report
                   verbose: true
     build_auth_workflow:
+        name: Build Workflow
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -85,6 +88,7 @@ jobs:
                   path: packages/auth-workflows/dist
 
     test_component_library:
+        name: Test Component Library
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -113,6 +117,7 @@ jobs:
                   verbose: true
 
     build_component_library:
+        name: Build Component Library
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -138,6 +143,7 @@ jobs:
                   path: packages/component-library/dist
 
     test_progress_icons:
+        name: Test Progress Icons
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -166,6 +172,7 @@ jobs:
                   verbose: true
     
     build_progress_icons:
+        name: Build Progress Icons
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -190,6 +197,7 @@ jobs:
                   path: packages/progress-icons/dist
 
     build_theme_verify_artifacts:
+        name: Build and Test Themes
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -215,6 +223,7 @@ jobs:
               working-directory: packages/themes
 
     build_rn_docs:
+      name: Build React Native Docs
       runs-on: ubuntu-latest
       strategy:
           matrix:
@@ -242,6 +251,7 @@ jobs:
                 path: docs/dist
 
     deploy_rn_docs_dev:
+      name: Deploy React Native Docs (Dev)
       runs-on: ubuntu-latest
       if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
       needs: build_rn_docs
@@ -267,6 +277,7 @@ jobs:
                 commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
         
     deploy_rn_docs_prod:
+        name: Deploy React Native Docs (Prod)
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         needs: build_rn_docs
@@ -292,6 +303,7 @@ jobs:
                   commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
 
     publish_theme:
+      name: Publish Theme
       runs-on: ubuntu-latest
       if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
       needs: build_theme_verify_artifacts
