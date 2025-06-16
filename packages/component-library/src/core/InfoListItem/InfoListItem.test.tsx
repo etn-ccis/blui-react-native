@@ -3,9 +3,9 @@ import TestRenderer from 'react-test-renderer';
 import { InfoListItem } from '.';
 import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { cleanup } from '@testing-library/react-native';
+import { cleanup, render } from '@testing-library/react-native';
 
-const OtherComponent = (): JSX.Element => <View />;
+const OtherComponent = (): React.JSX.Element => <View />;
 
 describe('InfoListItem', () => {
     describe('subtitle', () => {
@@ -13,9 +13,7 @@ describe('InfoListItem', () => {
         describe('string subtitle', () => {
             afterEach(cleanup);
             it('renders as a Text element when a string is passed in', () => {
-                const instance = TestRenderer.create(
-                    <InfoListItem title={'some title'} subtitle={'some subtitle'} />
-                ).root;
+                const instance = render(<InfoListItem title={'some title'} subtitle={'some subtitle'} />).root;
 
                 const textElements = instance.findAllByType(Text as any);
 
@@ -29,13 +27,13 @@ describe('InfoListItem', () => {
             let instance2: TestRenderer.ReactTestInstance;
 
             beforeEach(() => {
-                instance = TestRenderer.create(
+                instance = render(
                     <InfoListItem
                         title={'some title'}
                         subtitle={['details...', <OtherComponent key={'otherComponent_1'} />]}
                     />
                 ).root;
-                instance2 = TestRenderer.create(
+                instance2 = render(
                     <InfoListItem
                         title={'some title'}
                         subtitleSeparator={'-'}
@@ -75,21 +73,19 @@ describe('InfoListItem', () => {
 
         describe('when provided', () => {
             it('appears when there is no rightComponent', () => {
-                instance = TestRenderer.create(<InfoListItem title={'some title'} chevron />).root;
+                instance = render(<InfoListItem title={'some title'} chevron />).root;
                 expect(instance.findAllByType(Icon as any)).toHaveLength(1);
             });
 
             it('appears when there is a rightComponent', () => {
-                instance = TestRenderer.create(
-                    <InfoListItem title={'some title'} chevron rightComponent={<View />} />
-                ).root;
+                instance = render(<InfoListItem title={'some title'} chevron rightComponent={<View />} />).root;
                 expect(instance.findAllByType(Icon as any)).toHaveLength(1);
             });
         });
 
         describe('when not provided', () => {
             beforeEach(() => {
-                instance = TestRenderer.create(
+                instance = render(
                     <InfoListItem
                         title={'some title'}
                         onPress={(): void => {

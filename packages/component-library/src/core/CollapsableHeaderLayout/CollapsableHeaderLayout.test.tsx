@@ -1,11 +1,11 @@
 import React from 'react';
 import { PixelRatio, ScrollView } from 'react-native';
-import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
+import { ReactTestInstance } from 'react-test-renderer';
 import { CollapsibleHeaderLayout } from './CollapsableHeaderLayout';
 import { Header } from '../Header';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { EdgeInsets } from '../__types__';
-import { cleanup } from '@testing-library/react-native';
+import { cleanup, render } from '@testing-library/react-native';
 
 jest.mock('react-native-safe-area-context', () => ({
     useSafeAreaInsets: (): EdgeInsets => ({
@@ -29,7 +29,7 @@ describe('CollapsibleHeaderLayout', () => {
         insets = useInsets();
         fontScale = PixelRatio.getFontScale();
         heightWithStatusBar = (height: number): number => height * fontScale + insets.top;
-        instance = TestRenderer.create(<CollapsibleHeaderLayout HeaderProps={{ title: 'Hello' }} />).root;
+        instance = render(<CollapsibleHeaderLayout HeaderProps={{ title: 'Hello' }} />).root;
     });
 
     it('renders without error', () => {
@@ -54,7 +54,7 @@ describe('CollapsibleHeaderLayout', () => {
     });
 
     it('renders correct sizes (static) - custom props', () => {
-        instance = TestRenderer.create(
+        instance = render(
             <CollapsibleHeaderLayout
                 HeaderProps={{
                     title: 'Hello',
@@ -70,7 +70,7 @@ describe('CollapsibleHeaderLayout', () => {
     });
 
     it('renders correct sizes (dynamic) - custom props', () => {
-        instance = TestRenderer.create(
+        instance = render(
             <CollapsibleHeaderLayout
                 HeaderProps={{
                     title: 'Hello',
@@ -87,7 +87,7 @@ describe('CollapsibleHeaderLayout', () => {
     });
 
     it('renders correct sizes (static, startExpanded) - custom props', () => {
-        instance = TestRenderer.create(
+        instance = render(
             <CollapsibleHeaderLayout
                 HeaderProps={{
                     title: 'Hello',
@@ -105,7 +105,7 @@ describe('CollapsibleHeaderLayout', () => {
     });
 
     it('renders correct sizes (dynamic, startExpanded) - custom props', () => {
-        instance = TestRenderer.create(
+        instance = render(
             <CollapsibleHeaderLayout
                 HeaderProps={{
                     title: 'Hello',

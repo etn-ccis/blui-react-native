@@ -200,7 +200,7 @@ export const DrawerHeader: React.FC<DrawerHeaderProps> = (props) => {
         fontStyleRegular
     );
 
-    const getIcon = useCallback((): JSX.Element | undefined => {
+    const getIcon = useCallback((): React.JSX.Element | undefined => {
         if (icon) {
             return (
                 <View style={[defaultStyles.icon, styles.icon]}>

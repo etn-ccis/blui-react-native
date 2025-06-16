@@ -122,7 +122,7 @@ const HeaderText: React.FC<HeaderTextProps> = (props) => {
 
 type FooterProps = {
     /** Content to render in the action row */
-    actionRow?: JSX.Element;
+    actionRow?: React.JSX.Element;
     /** Style overrides for the View component */
     style?: StyleProp<ViewStyle>;
 };
@@ -148,7 +148,7 @@ const Footer: React.FC<FooterProps> = (props) => {
 
 type HeroPanelProps = {
     /** Content to render in the badge */
-    badge?: JSX.Element;
+    badge?: React.JSX.Element;
     /** Offset to use for positioning the badge vertically */
     badgeOffset?: number;
     /** Style overrides for the View component */
@@ -211,7 +211,7 @@ const ActionPanel: React.FC<ActionPanelProps> = (props) => {
     const defaultStyles = actionPanelStyles(fontScale);
 
     const getIcon = useCallback(
-        (icon: IconSource): JSX.Element | undefined => {
+        (icon: IconSource): React.JSX.Element | undefined => {
             if (icon) {
                 return <Icon source={icon} size={24} color={color} />;
             }
@@ -291,7 +291,7 @@ export type ScoreCardProps = Omit<React.ComponentProps<typeof Card>, 'children' 
     actionItems?: HeaderIcon[];
 
     /** Component to render for the card footer */
-    actionRow?: JSX.Element;
+    actionRow?: React.JSX.Element;
 
     /**  The color of the action icon
      *
@@ -302,7 +302,7 @@ export type ScoreCardProps = Omit<React.ComponentProps<typeof Card>, 'children' 
     /** Component to render in the call-out area on the right side of the card body.
      * This is usually a single `Hero` or `HeroBanner`containing multiple Heroes.
      */
-    badge?: JSX.Element;
+    badge?: React.JSX.Element;
 
     /** Vertical offset for the badge component to move it up and down */
     badgeOffset?: number;

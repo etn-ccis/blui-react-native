@@ -63,7 +63,7 @@ export const inheritSharedProps = (parent: AllSharedProps, child: AllSharedProps
  * @param type an array of displayName values to search for
  * @returns an array of child elements whose displayName is in the search array
  */
-export const findChildByType = (children: ReactNode, type: string[]): JSX.Element[] =>
+export const findChildByType = (children: ReactNode, type: string[]): React.JSX.Element[] =>
     React.Children.map(children, (child: any) => {
         if (child?.type) {
             const name = child.type.displayName;

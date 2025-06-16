@@ -51,12 +51,12 @@ export const renderableInfoComponent = (
     wrapInfo = false
 ): React.ReactNode => renderInfoComponent(element, style, wrapInfo);
 
-export const interpunct = (separator?: string, style?: StyleProp<TextStyle>): JSX.Element => (
+export const interpunct = (separator?: string, style?: StyleProp<TextStyle>): React.JSX.Element => (
     <Text variant={'bodySmall'} style={[{ marginHorizontal: 4 }, style]}>
         {separator || '\u00B7'}
     </Text>
 );
-export const withKeys = (array: React.ReactNode[]): JSX.Element[] =>
+export const withKeys = (array: React.ReactNode[]): React.JSX.Element[] =>
     array.map((element, index) => <Fragment key={index}>{element}</Fragment>);
 export const separate = (array: React.ReactNode[], separator?: string): React.ReactNode[] =>
     interleave(array, () => interpunct(separator));

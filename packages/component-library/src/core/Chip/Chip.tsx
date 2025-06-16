@@ -33,7 +33,7 @@ import { StyleProp, ViewStyle } from 'react-native';
  * A customizable Chip component.
  *
  * @param {ChipProps} props - The props for the Chip component.
- * @returns {JSX.Element} - The rendered Chip component.
+ * @returns {React.JSX.Element} - The rendered Chip component.
  */
 
 export type ChipProps = Omit<PaperChipProps, 'icon' | 'mode' | 'selectedColor'> & {
@@ -136,7 +136,7 @@ export const Chip: React.FC<ChipProps> = (props) => {
             : //the chip text color should be neutralVariant[30] in case it is set to unselected in elevated mode
               theme.colors.onSurfaceVariant;
 
-    const getIcon = (): JSX.Element | undefined => {
+    const getIcon = (): React.JSX.Element | undefined => {
         if (icon) {
             return (
                 <Icon
@@ -159,8 +159,10 @@ export const Chip: React.FC<ChipProps> = (props) => {
                 borderColor: borderColor ? borderColor : disabled ? theme.colors.disabled : theme.colors.outline,
             };
 
-    const renderCloseIcon = (): JSX.Element => <Icon source={{ name: 'close' }} size={18} color={DefaultTextColor} />;
-    const renderIcon = (): JSX.Element | undefined => getIcon();
+    const renderCloseIcon = (): React.JSX.Element => (
+        <Icon source={{ name: 'close' }} size={18} color={DefaultTextColor} />
+    );
+    const renderIcon = (): React.JSX.Element | undefined => getIcon();
 
     return (
         <>

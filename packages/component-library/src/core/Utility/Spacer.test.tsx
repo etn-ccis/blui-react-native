@@ -1,13 +1,12 @@
 import React from 'react';
-import TestRenderer from 'react-test-renderer';
 import { StyleSheet, ViewStyle } from 'react-native';
-import { cleanup } from '@testing-library/react-native';
+import { cleanup, render } from '@testing-library/react-native';
 import { Spacer } from './Spacer';
 
 describe('spacer', () => {
     afterEach(cleanup);
     it('renders the correct default style', () => {
-        const instance = TestRenderer.create(<Spacer />).root;
+        const instance = render(<Spacer />).root;
         const spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props.style).toMatchObject([
             {
@@ -21,13 +20,13 @@ describe('spacer', () => {
     });
 
     it('passes in the inherited view props', () => {
-        const instance = TestRenderer.create(<Spacer removeClippedSubviews={true} />).root;
+        const instance = render(<Spacer removeClippedSubviews={true} />).root;
         const spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props).toMatchObject({ removeClippedSubviews: true });
     });
 
     it('renders flex properties', () => {
-        let instance = TestRenderer.create(<Spacer flex={2} />).root;
+        let instance = render(<Spacer flex={2} />).root;
         let spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props.style).toMatchObject([
             {
@@ -39,7 +38,7 @@ describe('spacer', () => {
             undefined,
         ]);
 
-        instance = TestRenderer.create(<Spacer flex={3} />).root;
+        instance = render(<Spacer flex={3} />).root;
         spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props.style).toMatchObject([
             {
@@ -51,7 +50,7 @@ describe('spacer', () => {
             undefined,
         ]);
 
-        instance = TestRenderer.create(<Spacer flex={0} />).root;
+        instance = render(<Spacer flex={0} />).root;
         spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props.style).toMatchObject([
             {
@@ -65,7 +64,7 @@ describe('spacer', () => {
     });
 
     it('renders static properties', () => {
-        const instance = TestRenderer.create(<Spacer flex={0} width={42} height={123} />).root;
+        const instance = render(<Spacer flex={0} width={42} height={123} />).root;
         const spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props.style).toMatchObject([
             {
@@ -89,7 +88,7 @@ describe('spacer', () => {
                 width: '100%',
             },
         });
-        const instance = TestRenderer.create(<Spacer styles={spacerStyles} style={{ borderRadius: 3 }} />).root;
+        const instance = render(<Spacer styles={spacerStyles} style={{ borderRadius: 3 }} />).root;
         const spacer = instance.find((x) => x.props.testID === 'spacer-root');
         expect(spacer.props.style).toMatchObject([
             { flex: 1, height: 'auto', width: 'auto' },

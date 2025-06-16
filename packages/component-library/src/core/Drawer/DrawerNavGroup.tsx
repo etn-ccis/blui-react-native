@@ -183,7 +183,7 @@ export const DrawerNavGroup: React.FC<DrawerNavGroupProps> = (props) => {
     }, [activeItem, props.items, props.children]);
 
     const getChildren = useCallback(
-        (): JSX.Element[] =>
+        (): React.JSX.Element[] =>
             findChildByType(children, ['DrawerNavItem'])
                 // .slice(0, 1)
                 .map((child) =>
