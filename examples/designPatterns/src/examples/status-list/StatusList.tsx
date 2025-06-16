@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {JSX, useCallback} from 'react';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {View, FlatList, StyleSheet, ViewStyle} from 'react-native';
 import {
@@ -6,19 +6,17 @@ import {
   InfoListItem,
   EmptyState,
   ListItemTag,
+  InfoListItemProps,
 } from '@brightlayer-ui/react-native-components';
-import {useTheme} from 'react-native-paper';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {InfoListItemProps} from '@brightlayer-ui/react-native-components/core/info-list-item/info-list-item';
-import * as Colors from '@brightlayer-ui/colors';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 export type ActionListProps = {
   hardcodedData?: InfoListItemProps[];
   navigation: DrawerNavigationProp<Record<string, undefined>>;
 };
-
 const useStyles = (
-  theme: ReactNativePaper.Theme,
+  theme: any,
 ): StyleSheet.NamedStyles<{container: ViewStyle}> =>
   StyleSheet.create({
     container: {
@@ -30,6 +28,7 @@ const useStyles = (
 const createInfoListItemConfig = (
   index: number,
   randomStatus: string,
+  theme: any,
   tag?: boolean,
 ): InfoListItemProps => {
   switch (randomStatus) {
@@ -41,54 +40,62 @@ const createInfoListItemConfig = (
           <MatIcon
             name="notifications"
             size={24}
-            color={tag ? Colors.white[50] : Colors.red[500]}
+            color={tag ? theme.colors.onPrimary : theme.colors.error}
           />
         ),
-        statusColor: tag ? Colors.red[500] : 'transparent',
+        statusColor: tag ? theme.colors.error : 'transparent',
         rightComponent: tag ? (
-          <ListItemTag label={'NEW'} backgroundColor={Colors.red[500]} />
+          <ListItemTag label={'NEW'} backgroundColor={theme.colors.error} />
         ) : undefined,
       };
     case 'warning':
       return {
         title: `Item ${index}`,
         subtitle: `Status: ${randomStatus}`,
-        icon: <MatIcon name="warning" size={24} color={Colors.orange[500]} />,
+        icon: (
+          <MatIcon
+            name="warning"
+            size={24}
+            color={theme.colors.orangeNonText}
+          />
+        ),
       };
     case 'normal':
     default:
       return {
         title: `Item ${index}`,
         subtitle: `Status: ${randomStatus}`,
-        icon: <MatIcon name="home" size={24} color={Colors.black[500]} />,
+        icon: <MatIcon name="home" size={24} color={theme.colors.outline} />,
       };
   }
 };
 
-const createRandomItem = (): InfoListItemProps => {
+const createRandomItem = (theme: any): InfoListItemProps => {
   const int = parseInt(`${Math.random() * 100}`, 10);
   switch (Math.floor(Math.random() * 5)) {
     case 0:
-      return createInfoListItemConfig(int, 'alarm');
+      return createInfoListItemConfig(int, 'alarm', theme);
     case 1:
-      return createInfoListItemConfig(int, 'alarm', true);
+      return createInfoListItemConfig(int, 'alarm', theme, true);
     case 2:
-      return createInfoListItemConfig(int, 'warning');
+      return createInfoListItemConfig(int, 'warning', theme);
     default:
-      return createInfoListItemConfig(int, 'normal');
+      return createInfoListItemConfig(int, 'normal', theme);
   }
 };
 
-const list: InfoListItemProps[] = [];
+// const list: InfoListItemProps[] = [];
 
-for (let i = 0; i < 20; i++) {
-  list.push(createRandomItem());
-}
+// for (let i = 0; i < 20; i++) {
+//   list.push(createRandomItem());
+// }
 
 export const StatusListScreen: React.FC<ActionListProps> = props => {
-  const {hardcodedData: data = list, navigation} = props;
-  const theme: ReactNativePaper.Theme = useTheme();
+  const {hardcodedData, navigation} = props;
+  const theme = useExtendedTheme();
   const styles = useStyles(theme);
+  const data =
+    hardcodedData ?? Array.from({length: 20}, () => createRandomItem(theme));
 
   const toggleMenu = useCallback((): void => {
     navigation.openDrawer();
@@ -99,15 +106,7 @@ export const StatusListScreen: React.FC<ActionListProps> = props => {
       <Header
         testID="header"
         title={'Status List'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={
-              theme.colors.textPalette?.onPrimary?.main || Colors.white[50]
-            }
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -120,7 +119,7 @@ export const StatusListScreen: React.FC<ActionListProps> = props => {
           renderItem={({item}): JSX.Element => (
             <InfoListItem
               hidePadding
-              iconColor={theme.colors.text}
+              iconColor={theme.colors.onPrimary}
               statusColor={'transparent'}
               avatar
               divider={'partial'}

@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {Text, useTheme} from 'react-native-paper';
+import {Text} from 'react-native-paper';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import * as Colors from '@brightlayer-ui/colors';
 import {ThemeProp} from 'react-native-paper/lib/typescript/types';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): Record<string, any> =>
   StyleSheet.create({
@@ -25,15 +25,15 @@ type RequirementCheckProps = {
 
 export const RequirementCheck: React.FC<RequirementCheckProps> = props => {
   const {isChecked, text} = props;
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const styles = makeStyles();
 
   function iconColorIfValid(valid: boolean): string {
-    return valid ? theme.colors.primary : Colors.gray['200'];
+    return valid ? theme.colors.primary : theme.colors.onSurfaceVariant;
   }
 
   function textColorIfValid(valid: boolean): string {
-    return valid ? Colors.gray['300'] : theme.colors.onSurface;
+    return valid ? theme.colors.onSurfaceVariant : theme.colors.onSurface;
   }
 
   return (

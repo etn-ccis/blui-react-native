@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {JSX} from 'react';
 import {StyleSheet, View} from 'react-native';
-import * as Colors from '@brightlayer-ui/colors';
 import {Hero} from '@brightlayer-ui/react-native-components';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 type IconToggleProps = {
   icon: JSX.Element;
@@ -23,7 +23,10 @@ const styles = StyleSheet.create({
 export const IconToggle: React.FC<IconToggleProps> = props => {
   const {icon, label, active, onPress} = props;
   const {iconContainer} = styles;
-  const color = active ? Colors.blue['500'] : Colors.black['500'];
+  const theme = useExtendedTheme();
+  const color = active
+    ? theme.colors.primaryNonText
+    : theme.colors.surfaceVariant;
 
   return (
     <View style={iconContainer}>

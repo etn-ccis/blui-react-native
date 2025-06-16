@@ -98,7 +98,7 @@ export const ResetPasswordScreen: React.FC<ResetPasswordScreenProps> = (props) =
     );
 
     useEffect(() => {
-        verifyResetCode();
+        void verifyResetCode();
     }, []);
 
     const clearScreenData = (): void => {

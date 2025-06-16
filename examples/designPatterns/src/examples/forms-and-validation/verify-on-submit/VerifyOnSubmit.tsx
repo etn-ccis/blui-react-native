@@ -12,8 +12,8 @@ import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {TextInput} from '../shared/TextInput';
-import {Button, Text, useTheme} from 'react-native-paper';
-import * as Colors from '@brightlayer-ui/colors';
+import {Button, Text} from 'react-native-paper';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): StyleSheet.NamedStyles<{
   section: ViewStyle;
@@ -53,7 +53,7 @@ export const VerifyOnSubmitScreen: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
   const styles = makeStyles();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const [dimensions, setDimensions] = useState({
     window: Dimensions.get('window'),
   });
@@ -147,7 +147,9 @@ export const VerifyOnSubmitScreen: React.FC = () => {
           !isLoading ? (
             <MatIcon
               name="search"
-              color={!serialNumber ? Colors.gray[500] : Colors.white[50]}
+              color={
+                !serialNumber ? theme.colors.outline : theme.colors.onPrimary
+              }
               size={24}
             />
           ) : (
@@ -176,7 +178,7 @@ export const VerifyOnSubmitScreen: React.FC = () => {
         actions={
           <Button
             icon={(): JSX.Element => (
-              <MatIcon name="add" color={Colors.blue[500]} size={24} />
+              <MatIcon name="add" color={theme.colors.primary} size={24} />
             )}
             onPress={resetForm}
             mode="outlined">
@@ -188,16 +190,10 @@ export const VerifyOnSubmitScreen: React.FC = () => {
   );
 
   return (
-    <View style={{flex: 1, backgroundColor: Colors.white[50]}}>
+    <View style={{flex: 1, backgroundColor: theme.colors.background}}>
       <Header
         title={'Verify On Submit'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}

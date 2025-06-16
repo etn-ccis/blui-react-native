@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import {StyleSheet, ScrollView, View, ViewStyle} from 'react-native';
-import * as Colors from '@brightlayer-ui/colors';
 import {Header, InfoListItem} from '@brightlayer-ui/react-native-components';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import alarms, {formatDate} from './data/alarmData';
 import {BottomSheetScreen} from './components/BottomSheet';
-import {useTheme} from 'react-native-paper';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {ThemeProp} from 'react-native-paper/lib/typescript/types';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const useStyles = (
   theme: ThemeProp,
@@ -26,7 +25,7 @@ export const BottomSheetAlarmsScreen: React.FC = () => {
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const defaultStyles = useStyles(theme);
 
   const toggleMenu = (): void => {
@@ -37,13 +36,7 @@ export const BottomSheetAlarmsScreen: React.FC = () => {
     <View style={defaultStyles.container}>
       <Header
         title={'Bottom Sheet'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -52,7 +45,7 @@ export const BottomSheetAlarmsScreen: React.FC = () => {
             icon: (
               <MatIcon
                 name="more-vert"
-                color={theme.colors.onPrimary || Colors.white[50]}
+                color={theme.colors.onPrimary}
                 size={24}
               />
             ),
@@ -73,7 +66,7 @@ export const BottomSheetAlarmsScreen: React.FC = () => {
                 <MatIcon
                   name="notifications-active"
                   size={24}
-                  color={Colors.white[100]}
+                  color={theme.colors.onPrimary}
                 />
               ) : (
                 <MatIcon
@@ -83,9 +76,15 @@ export const BottomSheetAlarmsScreen: React.FC = () => {
                 />
               )
             }
-            iconColor={item.active ? Colors.white[100] : Colors.black[500]}
-            fontColor={item.active ? Colors.red[500] : Colors.black[500]}
-            statusColor={item.active ? Colors.red[500] : Colors.white[100]}
+            iconColor={
+              item.active ? theme.colors.background : theme.colors.onBackground
+            }
+            fontColor={
+              item.active ? theme.colors.error : theme.colors.onBackground
+            }
+            statusColor={
+              item.active ? theme.colors.error : theme.colors.background
+            }
             avatar={item.active}
           />
         ))}

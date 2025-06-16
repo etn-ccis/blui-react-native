@@ -12,14 +12,13 @@ import {
   TextInput as PaperTextInput,
   Text,
   TextInputProps,
-  useTheme,
 } from 'react-native-paper';
-import * as Colors from '@brightlayer-ui/colors';
 import {Spacer} from '@brightlayer-ui/react-native-components';
 import {ThemeProp} from 'react-native-paper/lib/typescript/types';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (
-  theme: ThemeProp,
+  theme: any,
 ): StyleSheet.NamedStyles<{
   textInput: TextStyle;
   errorText: TextStyle;
@@ -30,19 +29,19 @@ const makeStyles = (
     textInput: {
       height: 70,
       fontSize: 18,
-      backgroundColor: Colors.white['200'],
+      backgroundColor: theme.colors?.background,
     },
     errorText: {
       color: theme.colors?.error,
       fontSize: 12,
     },
     helperText: {
-      color: Colors.gray[500],
+      color: theme.colors?.outline,
       fontSize: 12,
     },
     helperTextRight: {
       paddingRight: 13,
-      color: Colors.gray[500],
+      color: theme.colors?.outline,
       fontSize: 12,
     },
   });
@@ -92,7 +91,7 @@ const TextInputRender: React.ForwardRefRenderFunction<
     rightText,
     ...inputProps
   } = props;
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const styles = makeStyles(theme);
 
   const inputRef = React.useRef<ReactTextInput>(null);
@@ -103,7 +102,7 @@ const TextInputRender: React.ForwardRefRenderFunction<
   }));
 
   const selectionColor =
-    Platform.OS === 'android' ? Colors.blue['100'] : undefined;
+    Platform.OS === 'android' ? theme.colors.primary : undefined;
   return (
     <View>
       <PaperTextInput
@@ -113,7 +112,7 @@ const TextInputRender: React.ForwardRefRenderFunction<
         autoCapitalize={autoCapitalize}
         returnKeyType={returnKeyType}
         textContentType={props.secureTextEntry ? 'oneTimeCode' : 'none'} // "oneTimeCode" is workaround to avoid iOS 12 "strong password" autofill overlay on secure input password fields (ISSUE TRACKING: https://github.com/facebook/react-native/issues/21911)
-        underlineColor={Colors.gray['100']}
+        underlineColor={theme.colors.surface}
         selectionColor={selectionColor}
         right={
           rightIcon?.name ? (

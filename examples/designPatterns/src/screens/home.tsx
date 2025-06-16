@@ -3,45 +3,47 @@ import {Header} from '@brightlayer-ui/react-native-components';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import {View, Linking, StyleSheet, ScrollView, Animated} from 'react-native';
-import * as Colors from '@brightlayer-ui/colors';
-import {Button, Divider, Text, useTheme} from 'react-native-paper';
+import {Button, Divider, Text} from 'react-native-paper';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
-const styles = StyleSheet.create({
-  container: {
-    paddingLeft: 16,
-    paddingRight: 16,
-    paddingBottom: '100%',
-  },
-  header: {
-    paddingTop: 72,
-  },
-  paragraph: {
-    marginTop: 24,
-  },
-  patternsMenuButton: {
-    marginTop: 24,
-    marginBottom: 40,
-    borderColor: Colors.blue[500],
-    alignSelf: 'flex-start',
-  },
-  divider: {
-    marginBottom: 32,
-    marginHorizontal: -16,
-  },
-  link: {
-    marginBottom: 16,
-    alignSelf: 'flex-start',
-  },
-  linkContent: {
-    color: Colors.black[500],
-  },
-});
+const useStyles = (theme: any): any =>
+  StyleSheet.create({
+    container: {
+      paddingLeft: 16,
+      paddingRight: 16,
+      paddingBottom: '100%',
+    },
+    header: {
+      paddingTop: 72,
+    },
+    paragraph: {
+      marginTop: 24,
+    },
+    patternsMenuButton: {
+      marginTop: 24,
+      marginBottom: 40,
+      borderColor: theme.colors.primaryNonText,
+      alignSelf: 'flex-start',
+    },
+    divider: {
+      marginBottom: 32,
+      marginHorizontal: -16,
+    },
+    link: {
+      marginBottom: 16,
+      alignSelf: 'flex-start',
+    },
+    linkContent: {
+      color: theme.colors.outline,
+    },
+  });
 
 export const Home: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
+  const styles = useStyles(theme);
 
   const toggleMenu = (): void => {
     navigation.openDrawer();
@@ -85,13 +87,7 @@ export const Home: React.FC = () => {
     <View style={{flex: 1}}>
       <Header
         title={'Brightlayer UI Design Patterns'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -131,7 +127,7 @@ export const Home: React.FC = () => {
           <Button
             style={styles.patternsMenuButton}
             mode={'outlined'}
-            color={Colors.blue[500]}
+            color={theme.colors.primaryNonText}
             onPress={(): void => {
               toggleMenu();
             }}>
