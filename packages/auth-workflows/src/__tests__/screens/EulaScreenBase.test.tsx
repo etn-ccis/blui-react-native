@@ -2,35 +2,31 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { cleanup, render, fireEvent } from '@testing-library/react-native';
 import { SAMPLE_EULA } from '../../constants/index';
-import { EulaScreenBase } from 'src/screens/EulaScreen';
+import { EulaScreenBase } from '../../screens/EulaScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import renderer from 'react-test-renderer';
 
 afterEach(cleanup);
 
 describe('Eula Screen Base', () => {
     it('renders Text Eula content', () => {
-        const rendered = renderer
-            .create(
-                <SafeAreaProvider>
-                    <EulaScreenBase
-                        eulaContent={SAMPLE_EULA}
-                        checkboxLabel={'I have read and agree to the Terms & Conditions'}
-                        onEulaAcceptedChange={(accepted: boolean): boolean => accepted}
-                    />
-                </SafeAreaProvider>
-            )
-            .toJSON();
+        const rendered = render(
+            <SafeAreaProvider>
+                <EulaScreenBase
+                    eulaContent={SAMPLE_EULA}
+                    checkboxLabel={'I have read and agree to the Terms & Conditions'}
+                    onEulaAcceptedChange={(accepted: boolean): boolean => accepted}
+                />
+            </SafeAreaProvider>
+        ).toJSON();
         expect(rendered).toBeTruthy();
     });
 
     it('renders HTML Eula content', () => {
-        const rendered = renderer
-            .create(
-                <SafeAreaProvider>
-                    <EulaScreenBase
-                        WorkflowCardHeaderProps={{ title: 'License Agreement' }}
-                        eulaContent={`<!DOCTYPE html>
+        const rendered = render(
+            <SafeAreaProvider>
+                <EulaScreenBase
+                    WorkflowCardHeaderProps={{ title: 'License Agreement' }}
+                    eulaContent={`<!DOCTYPE html>
                 <html lang="en">
                 <head>
                   <meta charset="UTF-8">
@@ -51,53 +47,50 @@ describe('Eula Screen Base', () => {
                   </p>
                 </body>
                 </html>`}
-                        html={true}
-                        checkboxLabel={'I have read and agree to the Terms & Conditions'}
-                        initialCheckboxValue={true}
-                        onEulaAcceptedChange={(accepted: boolean): boolean => accepted}
-                        WorkflowCardInstructionProps={{ instructions: 'Test Instructions' }}
-                        WorkflowCardActionsProps={{
-                            showNext: true,
-                            nextLabel: 'Next',
-                            canGoNext: true,
-                            showPrevious: true,
-                            previousLabel: 'Back',
-                            canGoPrevious: true,
-                            currentStep: 0,
-                            totalSteps: 6,
-                        }}
-                    />
-                </SafeAreaProvider>
-            )
-            .toJSON();
+                    html={true}
+                    checkboxLabel={'I have read and agree to the Terms & Conditions'}
+                    initialCheckboxValue={true}
+                    onEulaAcceptedChange={(accepted: boolean): boolean => accepted}
+                    WorkflowCardInstructionProps={{ instructions: 'Test Instructions' }}
+                    WorkflowCardActionsProps={{
+                        showNext: true,
+                        nextLabel: 'Next',
+                        canGoNext: true,
+                        showPrevious: true,
+                        previousLabel: 'Back',
+                        canGoPrevious: true,
+                        currentStep: 0,
+                        totalSteps: 6,
+                    }}
+                />
+            </SafeAreaProvider>
+        ).toJSON();
         expect(rendered).toBeTruthy();
     });
 
     it('renders Text Eula content', () => {
-        const rendered = renderer
-            .create(
-                <SafeAreaProvider>
-                    <EulaScreenBase
-                        WorkflowCardHeaderProps={{ title: 'License Agreement' }}
-                        eulaContent={SAMPLE_EULA}
-                        checkboxLabel={'I have read and agree to the Terms & Conditions'}
-                        checkboxProps={{ disabled: true }}
-                        initialCheckboxValue={false}
-                        onEulaAcceptedChange={(accepted: boolean): boolean => accepted}
-                        WorkflowCardActionsProps={{
-                            showNext: true,
-                            nextLabel: 'Next',
-                            canGoNext: true,
-                            showPrevious: true,
-                            previousLabel: 'Back',
-                            canGoPrevious: true,
-                            currentStep: 0,
-                            totalSteps: 6,
-                        }}
-                    />
-                </SafeAreaProvider>
-            )
-            .toJSON();
+        const rendered = render(
+            <SafeAreaProvider>
+                <EulaScreenBase
+                    WorkflowCardHeaderProps={{ title: 'License Agreement' }}
+                    eulaContent={SAMPLE_EULA}
+                    checkboxLabel={'I have read and agree to the Terms & Conditions'}
+                    checkboxProps={{ disabled: true }}
+                    initialCheckboxValue={false}
+                    onEulaAcceptedChange={(accepted: boolean): boolean => accepted}
+                    WorkflowCardActionsProps={{
+                        showNext: true,
+                        nextLabel: 'Next',
+                        canGoNext: true,
+                        showPrevious: true,
+                        previousLabel: 'Back',
+                        canGoPrevious: true,
+                        currentStep: 0,
+                        totalSteps: 6,
+                    }}
+                />
+            </SafeAreaProvider>
+        ).toJSON();
         expect(rendered).toBeTruthy();
     });
 

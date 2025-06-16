@@ -12,7 +12,12 @@ NC='\033[0m' # No Color
 # Remove previous build
 rm -rf ./dist
 
+echo -e "${BLUE}Building the auth workflow package${NC}"
 yarn tsc
+
+echo -e "${BLUE}Updating the package to ESM format${NC}"
+
+tsc-esm-fix dist
 
 echo -e "${BLUE}Copying Package Resources${NC}"
 # cp -r package.json ./dist/package.json

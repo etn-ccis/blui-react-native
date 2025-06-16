@@ -1,7 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`OktaRedirectLoginScreenBase renders the footer: Footer 1`] = `
-<Text>
-  Footer
-</Text>
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": "Footer",
+  },
+  "type": [Function],
+}
 `;
