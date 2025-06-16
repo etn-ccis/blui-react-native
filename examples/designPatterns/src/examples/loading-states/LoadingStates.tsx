@@ -17,11 +17,11 @@ import {
   getGradeIcon,
 } from './utilities/utilities';
 import {HeroPlaceholder} from './components/hero-placeholder';
-import {Card, useTheme} from 'react-native-paper';
+import {Card} from 'react-native-paper';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
-import * as Colors from '@brightlayer-ui/colors';
 import {ThemeProp} from 'react-native-paper/lib/typescript/types';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 export const getCardContent = (
   device: Device,
@@ -99,7 +99,7 @@ export const getCardContent = (
 export const LoadingStatesScreen: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const [data, setData] = useState(emptyData);
 
   const toggleMenu = (): void => {
@@ -120,13 +120,7 @@ export const LoadingStatesScreen: React.FC = () => {
       <Header
         testID="header"
         title={'Loading States'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -135,7 +129,7 @@ export const LoadingStatesScreen: React.FC = () => {
             icon: (
               <MatIcon
                 name="refresh"
-                color={theme.colors.onPrimary || Colors.white[50]}
+                color={theme.colors.onPrimary}
                 size={24}
               />
             ),

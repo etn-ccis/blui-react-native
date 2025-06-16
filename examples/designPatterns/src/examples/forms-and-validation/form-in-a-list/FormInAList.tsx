@@ -12,8 +12,8 @@ import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {TextInput} from '../shared/TextInput';
-import {Card, Switch, useTheme} from 'react-native-paper';
-import * as Colors from '@brightlayer-ui/colors';
+import {Card, Switch} from 'react-native-paper';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): StyleSheet.NamedStyles<{
   cardWrapper: ViewStyle;
@@ -48,7 +48,7 @@ export const FormInAListScreen: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
   const styles = makeStyles();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const [dimensions, setDimensions] = useState({
     window: Dimensions.get('window'),
   });
@@ -76,13 +76,7 @@ export const FormInAListScreen: React.FC = () => {
     <View style={{flex: 1}}>
       <Header
         title={'In A List'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -105,7 +99,7 @@ export const FormInAListScreen: React.FC = () => {
                   <MatIcon name="dns" size={24} color={theme.colors.primary} />
                 }
                 divider={'partial'}
-                backgroundColor={Colors.white[50]}
+                backgroundColor={theme.colors.background}
                 rightComponent={
                   <TextInput
                     value={ipAddress}
@@ -124,7 +118,7 @@ export const FormInAListScreen: React.FC = () => {
                     color={theme.colors.primary}
                   />
                 }
-                backgroundColor={Colors.white[50]}
+                backgroundColor={theme.colors.background}
                 rightComponent={
                   <Switch value={isSwitchOn} onValueChange={onSwitchToggle} />
                 }
