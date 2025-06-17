@@ -48,7 +48,7 @@ const { t } = useTranslation();
 
 ## Override in-built translations
 
-If you want to override just one or few labels (e.g, the License Agreeement title or an Email error message), you can define only those keys under the appropriate namespace (e.g, `bluiRegistration`, `bluiCommon`). Any other keys you do not specify will fall back to default translation.
+If you want to override just one or few labels (e.g, the License Agreement title or an Email error message), you can define only those keys under the appropriate namespace (e.g, `bluiRegistration`, `bluiCommon`). Any other keys you do not specify will fall back to default translation.
 
 ```tsx
 resources: {
@@ -62,7 +62,7 @@ resources: {
         },
         bluiCommon: {
             MESSAGES : {
-                 EMAIL_ENTRY_ERROR : 'Email not valid please enter a valid email.',
+                 EMAIL_ENTRY_ERROR : 'Invalid email. Please enter a valid email.',
             }
         },
     },
