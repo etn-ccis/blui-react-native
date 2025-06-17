@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Scroll View has too much padding when soft keyboard open [180](https://github.com/etn-ccis/blui-react-native/issues/180).
 
-- Can't toggle HTML eula when using default screen order [178](https://github.com/etn-ccis/blui-react-native/issues/178).
+- Can't toggle HTML EULA when using default screen order [178](https://github.com/etn-ccis/blui-react-native/issues/178).
 
 ### Fixed
 
