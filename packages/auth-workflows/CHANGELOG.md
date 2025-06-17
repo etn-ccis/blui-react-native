@@ -6,11 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## v7.0.2 (June 17, 2025)
 
+### Fixed
+
 - Scroll View has too much padding when soft keyboard open [180](https://github.com/etn-ccis/blui-react-native/issues/180).
 
 - Can't toggle HTML EULA when using default screen order [178](https://github.com/etn-ccis/blui-react-native/issues/178).
-
-### Fixed
 
 ## v7.0.1 (December 27, 2024)
 
