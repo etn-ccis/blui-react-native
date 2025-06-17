@@ -3,18 +3,18 @@ import Box from '@mui/material/Box';
 import { CodeBlock, CodeBlockActionButtonRow } from '../../../shared';
 import { IconSwitchExample } from './IconSwitchExample';
 
-const codeSnippet = `<View style={{flexDirection: 'column'}}>
-  <View style={{padding: 10}}>
-    <IconSwitch value={false} />
+const codeSnippet = `<View style={{ flexDirection: 'column' }}>
+  <View style={{ padding: 10 }}>
+    <IconSwitch value={switch1} onValueChange={setSwitch1} />
   </View>
-  <View style={{padding: 10}}>
-    <IconSwitch value={true} />
+  <View style={{ padding: 10 }}>
+    <IconSwitch value={switch2} onValueChange={setSwitch2} />
   </View>
-  <View style={{padding: 10}}>
-    <IconSwitch disabled />
+  <View style={{ padding: 10 }}>
+    <IconSwitch value={false} disabled onValueChange={() => {}} />
   </View>
-  <View style={{padding: 10}}>
-    <IconSwitch value disabled />
+  <View style={{ padding: 10 }}>
+    <IconSwitch value={true} disabled onValueChange={() => {}} />
   </View>
 </View>`;
 export const IconSwitch = (): JSX.Element => (
