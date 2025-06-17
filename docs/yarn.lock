@@ -1278,24 +1278,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@brightlayer-ui/react-native-components@npm:^8.0.4":
-  version: 8.0.4
-  resolution: "@brightlayer-ui/react-native-components@npm:8.0.4"
+"@brightlayer-ui/react-native-components@npm:^9.0.0-alpha.5":
+  version: 9.0.0-alpha.5
+  resolution: "@brightlayer-ui/react-native-components@npm:9.0.0-alpha.5"
   dependencies:
     "@brightlayer-ui/react-native-themes": "npm:7.0.1"
+    "@callstack/react-theme-provider": "npm:^3.0.9"
+    "@types/prop-types": "npm:^15.7.15"
+    "@types/react": "npm:^19.0.0"
+    "@types/react-dom": "npm:^19.0.0"
     color: "npm:^4.2.3"
-    react-native-collapsible: "npm:^1.6.0"
+    prop-types: "npm:^15.8.1"
+    react-native-collapsible: "npm:^1.6.2"
     react-native-keyboard-aware-scroll-view: "npm:^0.9.5"
-    react-native-modal: "npm:>=13.0.1"
-    react-native-reanimated: "npm:^3.6.1"
+    react-native-modal: "npm:^13.0.1"
+    react-native-reanimated: "npm:^3.18.0"
   peerDependencies:
-    "@brightlayer-ui/react-native-vector-icons": ^2.0.0
-    react: ^17.0.0 || ^18.0.0
-    react-native: 0.68.0 || 0.69.0 || ^0.70.0
-    react-native-paper: ^5.0.0
-    react-native-safe-area-context: ^4.0.0
-    react-native-vector-icons: ^9.0.0
-  checksum: 10c0/f3ad48983394f47353758135e436eca59a0e23b1ea2d3d7a3c31167cebefca9e005d3419c4937792fd66818aa491e85313cd6212014beca34359a3b863dbc1d2
+    "@brightlayer-ui/react-native-vector-icons": ^2.4.0
+    react: ^17.0.0 || ^18.0.0 || ^19.1.0
+    react-native: 0.68.0 || 0.69.0 || 0.76.7 || 0.79.3
+    react-native-paper: ^5.14.5
+    react-native-safe-area-context: ^5.4.1
+    react-native-vector-icons: ^10.2.0
+  checksum: 10c0/21733ba2525a9e5c843b7bd92457321ec10ada085f53ab9cb5fc847f380ace33f3f495d638f523090f706443aef8ac614b2f2eb725eed3aa2aa7632a5a87b21a
   languageName: node
   linkType: hard
 
@@ -4443,12 +4448,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prop-types@npm:^15.7.15":
+  version: 15.7.15
+  resolution: "@types/prop-types@npm:15.7.15"
+  checksum: 10c0/b59aad1ad19bf1733cf524fd4e618196c6c7690f48ee70a327eb450a42aab8e8a063fbe59ca0a5701aebe2d92d582292c0fb845ea57474f6a15f6994b0e260b2
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^18.0.0, @types/react-dom@npm:^18.3.5":
   version: 18.3.7
   resolution: "@types/react-dom@npm:18.3.7"
   peerDependencies:
     "@types/react": ^18.0.0
   checksum: 10c0/8bd309e2c3d1604a28a736a24f96cbadf6c05d5288cfef8883b74f4054c961b6b3a5e997fd5686e492be903c8f3380dba5ec017eff3906b1256529cd2d39603e
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^19.0.0":
+  version: 19.1.6
+  resolution: "@types/react-dom@npm:19.1.6"
+  peerDependencies:
+    "@types/react": ^19.0.0
+  checksum: 10c0/7ba74eee2919e3f225e898b65fdaa16e54952aaf9e3472a080ddc82ca54585e46e60b3c52018d21d4b7053f09d27b8293e9f468b85f9932ff452cd290cc131e8
   languageName: node
   linkType: hard
 
@@ -4468,6 +4489,15 @@ __metadata:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
   checksum: 10c0/49331800b76572eb2992a5c44801dbf8c612a5f99c8f4e4200f06c7de6f3a6e9455c661784a6c5469df96fa45622cb4a9d0982c44e6a0d5719be5f2ef1f545ed
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^19.0.0":
+  version: 19.1.8
+  resolution: "@types/react@npm:19.1.8"
+  dependencies:
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/4908772be6dc941df276931efeb0e781777fa76e4d5d12ff9f75eb2dcc2db3065e0100efde16fde562c5bafa310cc8f50c1ee40a22640459e066e72cd342143e
   languageName: node
   linkType: hard
 
@@ -6049,12 +6079,12 @@ __metadata:
   linkType: hard
 
 "brace-expansion@npm:^1.1.7":
-  version: 1.1.11
-  resolution: "brace-expansion@npm:1.1.11"
+  version: 1.1.12
+  resolution: "brace-expansion@npm:1.1.12"
   dependencies:
     balanced-match: "npm:^1.0.0"
     concat-map: "npm:0.0.1"
-  checksum: 10c0/695a56cd058096a7cb71fb09d9d6a7070113c7be516699ed361317aca2ec169f618e28b8af352e02ab4233fb54eb0168460a40dc320bab0034b36ab59aaad668
+  checksum: 10c0/975fecac2bb7758c062c20d0b3b6288c7cc895219ee25f0a64a9de662dbac981ff0b6e89909c3897c1f84fa353113a721923afdec5f8b2350255b097f12b1f73
   languageName: node
   linkType: hard
 
@@ -7739,7 +7769,7 @@ __metadata:
     "@brightlayer-ui/prettier-config": "npm:^1.0.3"
     "@brightlayer-ui/react-components": "npm:^6.3.0"
     "@brightlayer-ui/react-doc-components": "npm:^2.0.0"
-    "@brightlayer-ui/react-native-components": "npm:^8.0.4"
+    "@brightlayer-ui/react-native-components": "npm:^9.0.0-alpha.5"
     "@brightlayer-ui/react-native-themes": "npm:7.0.1"
     "@brightlayer-ui/react-native-vector-icons": "npm:^2.2.0"
     "@brightlayer-ui/react-themes": "npm:^8.0.0"
@@ -15810,7 +15840,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-collapsible@npm:^1.6.0":
+"react-native-collapsible@npm:^1.6.2":
   version: 1.6.2
   resolution: "react-native-collapsible@npm:1.6.2"
   peerDependencies:
@@ -15865,7 +15895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-modal@npm:>=13.0.1":
+"react-native-modal@npm:^13.0.1":
   version: 13.0.1
   resolution: "react-native-modal@npm:13.0.1"
   dependencies:
@@ -15893,7 +15923,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:^3.6.1":
+"react-native-reanimated@npm:^3.18.0":
   version: 3.18.0
   resolution: "react-native-reanimated@npm:3.18.0"
   dependencies:
