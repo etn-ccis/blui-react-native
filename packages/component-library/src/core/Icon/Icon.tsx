@@ -32,7 +32,7 @@ const isImageSource = (source: any): boolean =>
         typeof source === 'string' &&
         (source.startsWith('data:image') || /\.(bmp|jpg|jpeg|png|gif|svg)$/.test(source)));
 
-const isIconFamily = (source: JSX.Element | IconFamily | IconSourceBase): source is IconFamily =>
+const isIconFamily = (source: React.JSX.Element | IconFamily | IconSourceBase): source is IconFamily =>
     (source as IconFamily).name !== undefined;
 
 /**

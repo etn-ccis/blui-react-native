@@ -82,7 +82,7 @@ export type DrawerNavItemProps = AllSharedProps &
         /**
          * Custom content/component to display to the right
          */
-        rightComponent?: JSX.Element;
+        rightComponent?: React.JSX.Element;
 
         /**
          * Color used for the status stripe and icon
@@ -271,7 +271,7 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
         }
     }, [onItemSelect, onPress, itemID, items, expanded, setExpanded, children]);
 
-    const getActionComponent = useCallback((): JSX.Element | null => {
+    const getActionComponent = useCallback((): React.JSX.Element | null => {
         if (!items && !children) {
             return null;
         }
@@ -299,7 +299,7 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
     const actionComponent = getActionComponent();
 
     const getChildren = useCallback(
-        (): JSX.Element[] =>
+        (): React.JSX.Element[] =>
             findChildByType(children, ['DrawerNavItem'])
                 // .slice(0, 1)
                 .map((child) =>

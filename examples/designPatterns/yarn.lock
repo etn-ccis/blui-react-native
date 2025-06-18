@@ -1445,19 +1445,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@brightlayer-ui/colors@npm:4.0.0":
+"@brightlayer-ui/colors@npm:4.0.0, @brightlayer-ui/colors@npm:^4.0.0":
   version: 4.0.0
   resolution: "@brightlayer-ui/colors@npm:4.0.0"
   checksum: 10c0/6e4b05b3a6f01996d146f39c4cce843a8c120c9c72ddbe6faf069695c2bdc83b035a0a87739f3952f4516e193267ef4bab6cb43c0fcaec32fd185ec8fc4e266d
-  languageName: node
-  linkType: hard
-
-"@brightlayer-ui/colors@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@brightlayer-ui/colors@npm:3.1.1"
-  dependencies:
-    "@brightlayer-ui/types": "npm:^2.0.0"
-  checksum: 10c0/e4e7306aa04287d66310adf3cde9e101f5d916ccdf59dbfabf8aef2ff4451210a69f05c8a1630a83f26fcc752fd2b84abc9d0673654e026f82c596b74e908e79
   languageName: node
   linkType: hard
 
@@ -1509,13 +1500,6 @@ __metadata:
     react-native: ">=0.60.0-rc.0 <1.0.x"
     react-native-vector-icons: ^9.2.0
   checksum: 10c0/720439a409124bdb38ccdfaa32a2e3a8590658ebf9c7cd2dba95be855ab1d79543b6db6abdd1a5b185f42e84911613e76e4ae069f537fa95fdd87dab7697d916
-  languageName: node
-  linkType: hard
-
-"@brightlayer-ui/types@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@brightlayer-ui/types@npm:2.0.0"
-  checksum: 10c0/a3d4840538c1255444460704364571bcae2774e2bea44fd4a751f2c5c087af02e6cd8a5bdd9891f90a21d8af138343398989f12f6e28d05aea0428f766c18174
   languageName: node
   linkType: hard
 
@@ -4170,7 +4154,7 @@ __metadata:
     "@babel/core": "npm:^7.25.2"
     "@babel/preset-env": "npm:^7.25.3"
     "@babel/runtime": "npm:^7.25.0"
-    "@brightlayer-ui/colors": "npm:^3.1.1"
+    "@brightlayer-ui/colors": "npm:^4.0.0"
     "@brightlayer-ui/icons-svg": "npm:^1.15.0"
     "@brightlayer-ui/react-native-components": "npm:^8.0.4"
     "@brightlayer-ui/react-native-themes": "npm:^7.0.1"

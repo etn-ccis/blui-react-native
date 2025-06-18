@@ -10,11 +10,11 @@ import {
   passwordRequirements,
   PasswordRequirements,
 } from './PasswordRequirements';
-import {Button, Divider, Text, useTheme} from 'react-native-paper';
-import * as Colors from '@brightlayer-ui/colors';
+import {Button, Divider, Text} from 'react-native-paper';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {ThemeProp} from 'react-native-paper/lib/typescript/types';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (
   theme: ThemeProp,
@@ -94,7 +94,7 @@ const makeStyles = (
 export const PasswordValidationScreen: React.FC = () => {
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
   const insets = useSafeAreaInsets();
   const styles = makeStyles(theme, insets);
   const [currentPassword, setCurrentPassword] = useState('');
@@ -207,16 +207,10 @@ export const PasswordValidationScreen: React.FC = () => {
   );
 
   return (
-    <View style={{flex: 1, backgroundColor: Colors.white[50]}}>
+    <View style={{flex: 1, backgroundColor: theme.colors.background}}>
       <Header
         title={'Password Validation'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
@@ -252,7 +246,7 @@ export const PasswordValidationScreen: React.FC = () => {
                   name: !isCurrentPasswordVisible ? 'eye-off' : 'eye',
                   onPress: (): void =>
                     setIsCurrentPasswordVisible(!isCurrentPasswordVisible),
-                  color: theme.colors?.secondary || Colors.gray[500],
+                  color: theme.colors.outline,
                 }}
               />
             </View>
@@ -270,7 +264,7 @@ export const PasswordValidationScreen: React.FC = () => {
                   name: !isNewPasswordVisible ? 'eye-off' : 'eye',
                   onPress: (): void =>
                     setIsNewPasswordVisible(!isNewPasswordVisible),
-                  color: theme.colors?.secondary || Colors.gray[500],
+                  color: theme.colors.outline,
                 }}
               />
             </View>
@@ -300,7 +294,7 @@ export const PasswordValidationScreen: React.FC = () => {
                   name: !isConfirmPasswordVisible ? 'eye-off' : 'eye',
                   onPress: (): void =>
                     setIsConfirmPasswordVisible(!isConfirmPasswordVisible),
-                  color: theme.colors?.secondary || Colors.gray[500],
+                  color: theme.colors.outline,
                 }}
               />
             </View>

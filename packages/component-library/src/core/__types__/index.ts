@@ -29,7 +29,7 @@ export type IconFamily = {
     allowFontScaling?: boolean;
 };
 export type IconSourceBase = string | ImageSourcePropType;
-export type IconSource = IconFamily | IconSourceBase | JSX.Element | ComponentType<IconFunctionProps>;
+export type IconSource = IconFamily | IconSourceBase | React.JSX.Element | ComponentType<IconFunctionProps>;
 
 export type HeaderIcon = {
     /** Component to render for the icon */
@@ -40,7 +40,7 @@ export type HeaderIcon = {
 };
 
 export type HeaderActionComponent = {
-    component: JSX.Element;
+    component: React.JSX.Element;
     width?: number;
 };
 

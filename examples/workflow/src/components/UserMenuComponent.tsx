@@ -2,7 +2,6 @@ import { InfoListItemProps, UserMenu } from '@brightlayer-ui/react-native-compon
 import React from 'react';
 import { Avatar } from 'react-native-paper';
 import * as BLUIColors from '@brightlayer-ui/colors';
-import { IconFamily } from '@brightlayer-ui/react-native-components/core/__types__';
 import SelectDropdown from 'react-native-select-dropdown';
 import { useTranslation } from 'react-i18next';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
@@ -12,6 +11,7 @@ import { LocalStorage } from '../store/local-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { revokeAccessToken, clearTokens, signOut } from '@okta/okta-react-native';
+import { IconFamily } from '@brightlayer-ui/react-native-components/dist/core/__types__';
 
 const SwapIcon: IconFamily = {
     family: 'material',
@@ -96,7 +96,7 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
             rightComponent: (
                 <SelectDropdown
                     defaultValue={languageOptions.find((option) => option.value === i18n.language)}
-                    onSelect={(item): void => {
+                    onSelect={(item) => {
                         void handleLanguageChange(item.value);
                     }}
                     data={languageOptions}

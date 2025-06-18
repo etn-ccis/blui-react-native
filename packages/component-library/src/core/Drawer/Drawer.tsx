@@ -96,7 +96,7 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
     const defaultStyles = makeStyles(props, theme, insets);
 
     const getSectionByDisplayName = useCallback(
-        (displayName: string, inherit = false): JSX.Element[] =>
+        (displayName: string, inherit = false): React.JSX.Element[] =>
             findChildByType(props.children, [displayName])
                 .slice(0, 1)
                 .map((child) => {

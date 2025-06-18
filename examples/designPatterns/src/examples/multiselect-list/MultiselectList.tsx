@@ -7,49 +7,50 @@ import {
 import {View, StyleSheet, SafeAreaView, ScrollView, Text} from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
-import * as Colors from '@brightlayer-ui/colors';
 import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {ListItem, generateData, createRandomItem} from './utilities';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {SnackBar} from './components/SnackBar';
-import {IconButton, Button, useTheme} from 'react-native-paper';
+import {IconButton, Button} from 'react-native-paper';
+import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.white[50],
-  },
-  footer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 8,
-    backgroundColor: Colors.white[100],
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 5,
+const useStyles = (theme: any): any =>
+  StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: theme.colors.onPrimary,
     },
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    elevation: 10,
-  },
-  footerContent: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  footerTitleContainer: {
-    padding: 8,
-  },
-  footerTitle: {
-    fontSize: 16,
-  },
-  footerIcons: {
-    flex: 1,
-    flexDirection: 'row-reverse',
-  },
-});
+    footer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      padding: 8,
+      backgroundColor: theme.colors.onPrimary,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 5,
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 10,
+      elevation: 10,
+    },
+    footerContent: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    footerTitleContainer: {
+      padding: 8,
+    },
+    footerTitle: {
+      fontSize: 16,
+    },
+    footerIcons: {
+      flex: 1,
+      flexDirection: 'row-reverse',
+    },
+  });
 
 export type MultiselectListProps = {
   hardcodedData?: ListItem[];
@@ -59,7 +60,9 @@ export const MultiselectListScreen: React.FC<MultiselectListProps> = props => {
   const {hardcodedData} = props;
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
-  const theme = useTheme();
+  const theme = useExtendedTheme();
+  const styles = useStyles(theme);
+
   const [list, setList] = useState(
     hardcodedData ? hardcodedData : generateData(),
   );
@@ -111,24 +114,14 @@ export const MultiselectListScreen: React.FC<MultiselectListProps> = props => {
     <View style={styles.container}>
       <Header
         title={'Multiselect List'}
-        icon={
-          <MatIcon
-            name="menu"
-            color={theme.colors.onPrimary || Colors.white[50]}
-            size={24}
-          />
-        }
+        icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
         onIconPress={(): void => {
           toggleMenu();
         }}
         actionItems={[
           {
             icon: (
-              <MatIcon
-                name="add"
-                color={theme.colors.onPrimary || Colors.white[50]}
-                size={24}
-              />
+              <MatIcon name="add" color={theme.colors.onPrimary} size={24} />
             ),
             onPress: (): void => {
               addItem();
@@ -145,7 +138,7 @@ export const MultiselectListScreen: React.FC<MultiselectListProps> = props => {
                 title={item.name}
                 subtitle={item.details}
                 onPress={(): void => onSelect(item)}
-                backgroundColor={Colors.white[50]}
+                backgroundColor={theme.colors.onPrimary}
                 rightComponent={<></>}
                 icon={
                   isSelected(item) ? (
@@ -174,7 +167,11 @@ export const MultiselectListScreen: React.FC<MultiselectListProps> = props => {
             actions={
               <Button
                 icon={(): JSX.Element => (
-                  <MatIcon name="add" color={Colors.white[50]} size={24} />
+                  <MatIcon
+                    name="add"
+                    color={theme.colors.onPrimary}
+                    size={24}
+                  />
                 )}
                 onPress={addItem}
                 mode="contained">

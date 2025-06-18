@@ -1,77 +1,119 @@
 import React from 'react';
 import { MobileStepper } from '.';
-import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
-import { ProgressBar } from 'react-native-paper';
+import TestRenderer, { act } from 'react-test-renderer';
 import { View } from 'react-native';
-import { cleanup } from '@testing-library/react-native';
+
+// Mock ProgressBar from react-native-paper
+jest.mock('react-native-paper', () => {
+    const actual = jest.requireActual('react-native-paper');
+    return {
+        ...actual,
+        ProgressBar: (props: any): any => <View testID="mock-progress-bar" {...props} />,
+    };
+});
 
 describe('MobileStepper', () => {
-    afterEach(cleanup);
     it('should render typical number of steps', () => {
-        const stepper: ReactTestInstance = TestRenderer.create(<MobileStepper steps={5} activeStep={2} />).root;
-        const dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={5} activeStep={2} />);
+        });
+        const dots = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
         expect(dots).toHaveLength(5);
+        testRenderer!.unmount();
     });
 
     it('should render at least 1 step', () => {
-        // Edge cases for number of steps
-        let stepper = TestRenderer.create(<MobileStepper steps={0} activeStep={3} />).root;
-        let dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={0} activeStep={3} />);
+        });
+        let dots = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
         expect(dots).toHaveLength(1);
+        testRenderer!.unmount();
 
-        stepper = TestRenderer.create(<MobileStepper steps={-1} activeStep={3} />).root;
-        dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={-1} activeStep={3} />);
+        });
+        dots = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
         expect(dots).toHaveLength(1);
+        testRenderer!.unmount();
 
-        stepper = TestRenderer.create(<MobileStepper steps={-10} activeStep={3} />).root;
-        dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={-10} activeStep={3} />);
+        });
+        dots = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
         expect(dots).toHaveLength(1);
+        testRenderer!.unmount();
     });
 
     it('should render progress indicator', () => {
-        const instance: ReactTestInstance = TestRenderer.create(
-            <MobileStepper steps={5} activeStep={0} variant={'progress'} />
-        ).root;
-        expect(instance.findAllByType(ProgressBar)).toHaveLength(1);
+        const theme = { colors: { primary: '#007bc1' } };
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(
+                <MobileStepper steps={5} activeStep={0} variant={'progress'} theme={theme} />
+            );
+        });
+        expect(
+            testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'mock-progress-bar')
+        ).toHaveLength(1);
+        testRenderer!.unmount();
     });
 
     it('should render activeStep within available range', () => {
         const theme = { colors: { primary: '#007bc1' } };
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
 
         // typical use
-        let stepper = TestRenderer.create(<MobileStepper steps={5} activeStep={2} theme={theme} />).root;
-        let dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={5} activeStep={2} theme={theme} />);
+        });
+        const dots = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
         expect(dots[2].props.style[2]).toMatchObject({
             backgroundColor: '#007bc1',
         });
+        testRenderer!.unmount();
 
         // edge case beyond available steps
-        stepper = TestRenderer.create(<MobileStepper steps={5} activeStep={10} theme={theme} />).root;
-        dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
-        expect(dots[4].props.style[2]).toMatchObject({
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={5} activeStep={10} theme={theme} />);
+        });
+        const dots2 = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
+        expect(dots2[4].props.style[2]).toMatchObject({
             backgroundColor: '#007bc1',
         });
+        testRenderer!.unmount();
 
         // edge case zero
-        stepper = TestRenderer.create(<MobileStepper steps={5} activeStep={0} theme={theme} />).root;
-        dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
-        expect(dots[0].props.style[2]).toMatchObject({
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={5} activeStep={0} theme={theme} />);
+        });
+        const dots3 = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
+        expect(dots3[0].props.style[2]).toMatchObject({
             backgroundColor: '#007bc1',
         });
+        testRenderer!.unmount();
 
         // edge case negative
-        stepper = TestRenderer.create(<MobileStepper steps={5} activeStep={-1} theme={theme} />).root;
-        dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
-        expect(dots[0].props.style[2]).toMatchObject({
+        act(() => {
+            testRenderer = TestRenderer.create(<MobileStepper steps={5} activeStep={-1} theme={theme} />);
+        });
+        const dots4 = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
+        expect(dots4[0].props.style[2]).toMatchObject({
             backgroundColor: '#007bc1',
         });
+        testRenderer!.unmount();
     });
 
     it('should render steps with the correct color', () => {
-        const stepper = TestRenderer.create(
-            <MobileStepper steps={5} activeStep={0} activeColor={'#FF0000'} inactiveColor={'#DEADBEEF'} />
-        ).root;
-        const dots = stepper.findAllByType(View as any).filter((x) => x.props.testID === 'blui-dot');
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(
+                <MobileStepper steps={5} activeStep={0} activeColor={'#FF0000'} inactiveColor={'#DEADBEEF'} />
+            );
+        });
+        const dots = testRenderer!.root.findAllByType(View).filter((x) => x.props.testID === 'blui-dot');
 
         // test active item color
         expect(dots[0].props.style[2]).toMatchObject({
@@ -82,5 +124,6 @@ describe('MobileStepper', () => {
         expect(dots[1].props.style[0]).toMatchObject({
             backgroundColor: '#DEADBEEF',
         });
+        testRenderer!.unmount();
     });
 });

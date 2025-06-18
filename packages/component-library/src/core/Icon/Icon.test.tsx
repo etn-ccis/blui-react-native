@@ -31,7 +31,11 @@ describe('Icon Tests ', () => {
     });
     it('renders with function source', () => {
         const tree = TestRenderer.create(
-            <Icon source={({ size, color }): JSX.Element => <BLUIIcon name={'broccoli'} size={size} color={color} />} />
+            <Icon
+                source={({ size, color }): React.JSX.Element => (
+                    <BLUIIcon name={'broccoli'} size={size} color={color} />
+                )}
+            />
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });

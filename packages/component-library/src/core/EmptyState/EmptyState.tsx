@@ -59,7 +59,7 @@ export type EmptyStateProps = ViewProps & {
     iconColor?: string;
 
     /** Additional components to render below */
-    actions?: JSX.Element;
+    actions?: React.JSX.Element;
 
     /** Style overrides for the elements */
     styles?: {
@@ -102,7 +102,7 @@ export const EmptyState: React.FC<EmptyStateProps> = (props: EmptyStateProps) =>
 
     const getColor = useCallback((color: string | undefined): string => color || theme.colors.disabled, [theme]);
 
-    const getIcon = useCallback((): JSX.Element | undefined => {
+    const getIcon = useCallback((): React.JSX.Element | undefined => {
         if (icon) {
             return <Icon source={icon} size={normalizeIconSize()} color={getColor(iconColor)} />;
         }

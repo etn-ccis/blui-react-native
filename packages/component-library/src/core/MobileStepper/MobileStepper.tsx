@@ -69,13 +69,13 @@ export type MobileStepperProps = ViewProps & {
      *
      * Usually a Back or Previous button
      */
-    leftButton?: JSX.Element;
+    leftButton?: React.JSX.Element;
 
     /** Content to render to the right of the step indicators
      *
      * Usually a Next or Finish button
      */
-    rightButton?: JSX.Element;
+    rightButton?: React.JSX.Element;
 
     /** Total number of steps to display */
     steps: number;

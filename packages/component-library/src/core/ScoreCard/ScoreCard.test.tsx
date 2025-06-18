@@ -1,9 +1,9 @@
 import React from 'react';
-import TestRenderer, { ReactTestInstance } from 'react-test-renderer';
+import { ReactTestInstance } from 'react-test-renderer';
 import { View } from 'react-native';
 import { Hero } from '..';
 import { IconFamily } from '../__types__';
-import { cleanup } from '@testing-library/react-native';
+import { cleanup, render } from '@testing-library/react-native';
 import { ScoreCard } from './ScoreCard';
 
 const Line: IconFamily = { family: 'material-community', name: 'chart-line-variant' };
@@ -15,7 +15,7 @@ describe('ScoreCard', () => {
             afterEach(cleanup);
             let instance: ReactTestInstance;
             beforeEach(() => {
-                instance = TestRenderer.create(<ScoreCard headerTitle={'Hello'} />).root;
+                instance = render(<ScoreCard headerTitle={'Hello'} />).root;
             });
 
             it('finds a single header text element', () => {
@@ -28,7 +28,7 @@ describe('ScoreCard', () => {
         describe('when an array of three strings is passed', () => {
             let instance: ReactTestInstance;
             beforeEach(() => {
-                instance = TestRenderer.create(
+                instance = render(
                     <ScoreCard
                         headerTitle={'Portland Datacenter Long Name'}
                         headerSubtitle={'6 UPS Devices'}
@@ -49,9 +49,7 @@ describe('ScoreCard', () => {
         describe('when present', () => {
             let instance: ReactTestInstance;
             beforeEach(() => {
-                instance = TestRenderer.create(
-                    <ScoreCard headerTitle={'Hello'} actionRow={<View testID={'my-action'} />} />
-                ).root;
+                instance = render(<ScoreCard headerTitle={'Hello'} actionRow={<View testID={'my-action'} />} />).root;
             });
 
             it('is rendered', () => {
@@ -64,7 +62,7 @@ describe('ScoreCard', () => {
         describe('when present', () => {
             let instance: ReactTestInstance;
             beforeEach(() => {
-                instance = TestRenderer.create(
+                instance = render(
                     <ScoreCard headerTitle={'Hello'} badge={<Hero testID={'my-badge'} label={'...'} icon={Line} />} />
                 ).root;
             });
@@ -83,7 +81,7 @@ describe('ScoreCard', () => {
             beforeEach(() => {
                 firstCallback = jest.fn();
                 secondCallback = jest.fn();
-                instance = TestRenderer.create(
+                instance = render(
                     <ScoreCard
                         headerTitle={'Hello'}
                         actionItems={[
@@ -117,7 +115,7 @@ describe('ScoreCard', () => {
         describe('when more than 6 actionItems are passed in', () => {
             let instance: ReactTestInstance;
             beforeEach(() => {
-                instance = TestRenderer.create(
+                instance = render(
                     <ScoreCard
                         headerTitle={'Hello'}
                         actionItems={[

@@ -1,4 +1,4 @@
-import {red, yellow, green} from '@brightlayer-ui/colors';
+import {error, warning, success} from '@brightlayer-ui/colors';
 
 export const getIcon = (value: number): string => {
   if (value >= 90) return 'A';
@@ -7,18 +7,18 @@ export const getIcon = (value: number): string => {
 };
 export const getColor = (value: number): string => {
   if (value < 25) {
-    return red[500];
+    return error[50];
   }
   if (value < 75) {
-    return yellow[500];
+    return warning[50];
   }
-  return green[500];
+  return success[50];
 };
 
 export const getGradeColor = (value: number): string => {
-  if (value >= 90) return green[500];
-  else if (value >= 80) return yellow[500];
-  return red[500];
+  if (value >= 90) return success[50];
+  else if (value >= 80) return warning[50];
+  return error[50];
 };
 
 export const getGradeIcon = (letter: string): string => {
