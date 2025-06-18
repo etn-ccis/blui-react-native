@@ -9,6 +9,7 @@
     },
     "homepage": "https://github.com/etn-ccis/blui-react-native/blob/dev/packages/blui-react-native-progress-icons/README.md",
     "main": "./dist/index.js",
+    "type": "module",
     "publishConfig": {
         "main": "./index.js"
     },
@@ -78,6 +79,7 @@
         "react-native-vector-icons": "^10.2.0",
         "react-test-renderer": "^19.1.0",
         "ts-jest": "^29.4.0",
+        "tsc-esm-fix": "^3.1.2",
         "typescript": "^5.8.3"
     }
 }
