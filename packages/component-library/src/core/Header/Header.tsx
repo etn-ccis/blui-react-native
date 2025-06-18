@@ -320,7 +320,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
             components: { count: componentsCount, width: componentsWidth },
             icons: { count: actionItems.length - componentsCount },
         };
-    }, [actionItems, fontScale]);
+    }, [actionItems]);
 
     /* EVENT LISTENERS */
 
@@ -381,17 +381,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
                 }
             }
         }
-    }, [
-        variant,
-        inDynamicRange,
-        expanded,
-        updateScrollView,
-        collapsedHeight,
-        scrollPositionValue,
-        scrollableDistance,
-        expandedHeight,
-        staticHeaderHeight,
-    ]);
+    }, [variant]);
 
     // if either height property is changed (or orientation), make the necessary updates to sizing, margins, etc.
     useEffect(() => {
@@ -435,22 +425,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
                 });
             }
         }
-    }, [
-        expandedHeight,
-        collapsedHeight,
-        LANDSCAPE,
-        previousExpandedHeight,
-        previousCollapsedHeight,
-        staticHeaderHeightValue,
-        expand,
-        contract,
-        scrollableDistance,
-        previousScrollableDistance,
-        scrollPositionValue,
-        updateScrollView,
-        variant,
-        staticHeaderHeight,
-    ]);
+    }, [expandedHeight, collapsedHeight, LANDSCAPE]);
 
     // Track the current value of the Animated header height
     const onHeightChange = useCallback(({ value: newHeight }: { value: number }) => {
@@ -510,7 +485,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
             scrollPosition.removeListener(listen);
             staticHeaderHeight.removeListener(statics);
         };
-    }, [onScrollChange, onHeightChange, staticHeaderHeight, scrollPosition]);
+    }, [onScrollChange, onHeightChange]);
 
     /* STYLE FUNCTIONS */
 
@@ -558,6 +533,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
                   },
         ],
         [
+            subtitle,
             searching,
             dynamicHeaderHeight,
             defaultStyles,
@@ -640,7 +616,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
         setPreviousExpanded(expanded);
     }, [
         contract,
-
+        expandable,
         inDynamicRange,
         updateScrollView,
         variant,
@@ -648,6 +624,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
         scrollPositionValue,
         scrollableDistance,
         collapsedHeight,
+        staticHeaderHeightValue,
     ]);
 
     // Callback when the search bar content is cleared

@@ -24,12 +24,12 @@ echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
 
-cp ./packages/component-library/package.json ./examples/showcase/node_modules/@brightlayer-ui/react-native-components/package.json
-cp -r ./packages/component-library/dist/ ./examples/showcase/node_modules/@brightlayer-ui/react-native-components/dist
-cp ./packages/component-library/package.json ./examples/workflow/node_modules/@brightlayer-ui/react-native-components/package.json
-cp -r ./packages/component-library/dist/ ./examples/workflow/node_modules/@brightlayer-ui/react-native-components/dist
-cp ./packages/component-library/package.json ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/package.json
-cp -r ./packages/component-library/dist/ ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/dist
+# cp ./packages/component-library/package.json ./examples/showcase/node_modules/@brightlayer-ui/react-native-components/package.json
+cp -r ./packages/component-library/dist/* ./examples/showcase/node_modules/@brightlayer-ui/react-native-components/
+# cp ./packages/component-library/package.json ./examples/workflow/node_modules/@brightlayer-ui/react-native-components/package.json
+cp -r ./packages/component-library/dist/* ./examples/workflow/node_modules/@brightlayer-ui/react-native-components/
+# cp ./packages/component-library/package.json ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/package.json
+cp -r ./packages/component-library/dist/* ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BBLUE}Linking Components: ${NC}"
