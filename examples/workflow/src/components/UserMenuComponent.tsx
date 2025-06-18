@@ -96,7 +96,9 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
             rightComponent: (
                 <SelectDropdown
                     defaultValue={languageOptions.find((option) => option.value === i18n.language)}
-                    onSelect={(item) => handleLanguageChange(item.value)}
+                    onSelect={(item): void => {
+                        void handleLanguageChange(item.value);
+                    }}
                     data={languageOptions}
                     buttonStyle={{ backgroundColor: theme.colors.background }}
                     buttonTextStyle={{ color: theme.colors.primary }}
