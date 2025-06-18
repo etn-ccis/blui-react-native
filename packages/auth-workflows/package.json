@@ -21,9 +21,9 @@
         "Workflow"
     ],
     "prettier": "@brightlayer-ui/prettier-config",
-    "main": "./src/index.ts",
+    "main": "./index.js",
     "publishConfig": {
-        "main": "./src/index.ts"
+        "main": "./index.js"
     },
     "type": "module",
     "scripts": {
