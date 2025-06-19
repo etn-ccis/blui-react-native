@@ -8,7 +8,7 @@ export const ChipWithIconExample = (): JSX.Element => (
         <Chip icon={{ name: 'info' }} style={{ marginRight: 10 }}>
             Chip With Icon
         </Chip>
-        <Chip mode="elevated" avatar={<Avatar.Icon size={40} icon="account-circle" />}>
+        <Chip mode="elevated" avatar={<Avatar.Icon size={20} icon="account-circle" />}>
             Elevated Chip With Avatar
         </Chip>
     </ExampleShowcase>

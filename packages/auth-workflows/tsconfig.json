@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "declarationDir": "dist",
+        "jsx": "react",
+        "lib": ["es6"],
+        "module": "es6",
+        "moduleResolution": "node",
+        "noEmit": false,
+        "strict": true,
+        "skipLibCheck": true,
+        "target": "es6",
+        "paths": {
+            "react": ["../../node_modules/@types/react"]
+        }
+    },
+    "include": ["src"],
+    "exclude": [
+        "node_modules",
+        "babel.config.cjs",
+        "metro.config.cjs",
+        "tsconfig.json",
+        "jestSetupFile.js",
+        "lib/**/*",
+        "docs/**/*",
+        "example/**/*",
+        "setup-tests.js",
+        "coverage/**/*",
+        "dist/**/*"
+    ]
+}

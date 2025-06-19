@@ -17,32 +17,11 @@ permissions:
 
 jobs:
     prettier_lint:
+        name: Code Quality Check
         runs-on: ubuntu-latest
-
         strategy:
             matrix:
                 node-version: [20.x]
-
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v4
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'yarn'
-            - run: yarn
-            - run: yarn prettier:check
-            - run: yarn lint
-
-    build_rn_docs:
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [20.x]
-        env:
-            base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
 
         steps:
             - name: Checkout
@@ -53,40 +32,252 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn --immutable
-            - run: yarn docs-build --base=${{env.base-href}} && touch ./dist/docs/.nojekyll
-            - name: Save dist
-              uses: actions/upload-artifact@v3
-              with:
-                  name: docs
-                  if-no-files-found: error
-                  path: dist/docs
-
-    deploy_rn_docs_dev:
+            - run: yarn prettier:check
+            - run: yarn lint
+              
+    test_auth_workflow:
+        name: Test Auth Workflow
         runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
-        needs: build_rn_docs
-        env:
-            DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
+        strategy:
+            matrix:
+                node-version: [20.x]
+        
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+              working-directory: packages/auth-workflows
+            - run: yarn coverage
+              working-directory: packages/auth-workflows
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/auth-workflows/coverage/
+                  files: cobertura-coverage.xml
+                  flags: auth-tests
+                  name: codecov-report
+                  verbose: true
+    build_auth_workflow:
+        name: Build Workflow
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+              
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+              working-directory: packages/auth-workflows
+            - run: yarn build
+              working-directory: packages/auth-workflows
+            - name: Save build
+              uses: actions/upload-artifact@v4
+              with:
+                  name: auth-dist
+                  if-no-files-found: error
+                  path: packages/auth-workflows/dist
+
+    test_component_library:
+        name: Test Component Library
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+              
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Download build
-              uses: actions/download-artifact@v3
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
               with:
-                  name: docs
-                  path: dist/docs
-            - name: deploy
-              uses: JamesIves/github-pages-deploy-action@v4
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+              working-directory: packages/component-library
+            - run: yarn coverage
+              working-directory: packages/component-library
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
               with:
-                  folder: dist/docs
-                  token: ${{env.DEV_DEPLOY_TOKEN}}
-                  repository-name: brightlayer-ui-components/react-native-dev
-                  branch: master
-                  git-config-name: Brightlayer UI Agent
-                  git-config-email: brightlayer-ui@eaton.com
-                  commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/component-library/coverage/
+                  files: cobertura-coverage.xml
+                  flags: component-tests
+                  name: codecov-report
+                  verbose: true
 
+    build_component_library:
+        name: Build Component Library
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+              
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+              working-directory: packages/component-library
+            - run: yarn build
+              working-directory: packages/component-library
+            - name: Save build
+              uses: actions/upload-artifact@v4
+              with:
+                  name: lib-dist
+                  if-no-files-found: error
+                  path: packages/component-library/dist
+
+    test_progress_icons:
+        name: Test Progress Icons
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+                          
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+              working-directory: packages/progress-icons
+            - run: yarn coverage
+              working-directory: packages/progress-icons
+            - name: Upload to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  token: ${{ secrets.CODECOV_TOKEN }}
+                  directory: packages/progress-icons/coverage/
+                  files: cobertura-coverage.xml
+                  flags: progress-icons-tests
+                  name: codecov-report
+                  verbose: true
+    
+    build_progress_icons:
+        name: Build Progress Icons
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+                
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+            - run: yarn build
+              working-directory: packages/progress-icons
+            - name: Save progress icon build
+              uses: actions/upload-artifact@v4
+              with:
+                  name: progress-icon-dist
+                  if-no-files-found: error
+                  path: packages/progress-icons/dist
+
+    build_theme_verify_artifacts:
+        name: Build and Test Themes
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn --immutable
+              working-directory: packages/themes
+            - run: yarn build
+              working-directory: packages/themes
+            - name: Save dist
+              uses: actions/upload-artifact@v4
+              with:
+                  name: theme-dist
+                  if-no-files-found: error
+                  path: packages/themes/dist
+            - run: yarn test
+              working-directory: packages/themes
+
+    build_rn_docs:
+      name: Build React Native Docs
+      runs-on: ubuntu-latest
+      strategy:
+          matrix:
+              node-version: [20.x]
+      env:
+          base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
+        
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+          - name: Use Node.js ${{ matrix.node-version }}
+            uses: actions/setup-node@v4
+            with:
+                node-version: ${{ matrix.node-version }}
+                cache: 'yarn'
+          - run: yarn --immutable
+            working-directory: docs
+          - run: yarn build --base=${{env.base-href}} && touch ./dist/.nojekyll
+            working-directory: docs
+          - name: Save dist
+            uses: actions/upload-artifact@v4
+            with:
+                name: docs
+                if-no-files-found: error
+                path: docs/dist
+
+    deploy_rn_docs_dev:
+      name: Deploy React Native Docs (Dev)
+      runs-on: ubuntu-latest
+      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
+      needs: build_rn_docs
+      env:
+          DEV_DEPLOY_TOKEN: ${{secrets.DEV_DEPLOY_TOKEN}}
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+          - name: Download build
+            uses: actions/download-artifact@v4
+            with:
+                name: docs
+                path: docs/dist
+          - name: deploy
+            uses: JamesIves/github-pages-deploy-action@v4
+            with:
+                folder: docs/dist
+                token: ${{env.DEV_DEPLOY_TOKEN}}
+                repository-name: brightlayer-ui-components/react-native-dev
+                branch: master
+                git-config-name: Brightlayer UI Agent
+                git-config-email: brightlayer-ui@eaton.com
+                commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
+        
     deploy_rn_docs_prod:
+        name: Deploy React Native Docs (Prod)
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         needs: build_rn_docs
@@ -96,17 +287,63 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
             - name: Download build
-              uses: actions/download-artifact@v3
+              uses: actions/download-artifact@v4
               with:
                   name: docs
-                  path: dist/docs
+                  path: docs/dist
             - name: deploy
               uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  folder: dist/docs
+                  folder: docs/dist
                   token: ${{env.DEV_DEPLOY_TOKEN}}
                   repository-name: brightlayer-ui-components/react-native
                   branch: master
                   git-config-name: Brightlayer UI Agent
                   git-config-email: brightlayer-ui@eaton.com
                   commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
+
+    publish_theme:
+      name: Publish Theme
+      runs-on: ubuntu-latest
+      if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+      needs: build_theme_verify_artifacts
+      strategy:
+        matrix:
+          node-version: [20.x]
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+      steps:
+        - uses: actions/checkout@v4
+        - name: Download theme dist
+          uses: actions/download-artifact@v4
+          with:
+            name: theme-dist
+            path: packages/themes/dist
+        - uses: actions/setup-node@v4
+          with:
+            node-version: ${{ matrix.node-version }}
+            registry-url: 'https://registry.npmjs.org'
+        - run: yarn --immutable
+        - run: npm run publish:package -- -b ${{env.BRANCH}}
+          working-directory: packages/themes
+
+    publish-templates:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
+        secrets: inherit
+        needs: prettier_lint
+
+    publish-components:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
+        secrets: inherit
+        needs: build_component_library
+
+    publish-auth-workflow:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-auth-workflow.yml@dev
+        secrets: inherit
+        needs: build_auth_workflow
+
+    publish-progress-icons:
+        uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-progress-icons.yml@dev
+        secrets: inherit
+        needs: build_progress_icons

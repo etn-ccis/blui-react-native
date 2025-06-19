@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Icon Tests  renders in a component 1`] = `null`;
+
+exports[`Icon Tests  renders with blui object source 1`] = `null`;
+
+exports[`Icon Tests  renders with emoji source 1`] = `null`;
+
+exports[`Icon Tests  renders with function source 1`] = `null`;
+
+exports[`Icon Tests  renders with local image source 1`] = `null`;
+
+exports[`Icon Tests  renders with material community object source 1`] = `null`;
+
+exports[`Icon Tests  renders with material object source 1`] = `null`;
+
+exports[`Icon Tests  renders with material object source 2`] = `null`;
+
+exports[`Icon Tests  renders with remote image source 1`] = `null`;
+
+exports[`Icon Tests  renders with string source 1`] = `null`;

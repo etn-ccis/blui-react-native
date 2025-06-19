@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Hero renders correctly with ChannelValueProps 1`] = `null`;
+
+exports[`Hero renders correctly with custom icon size and color 1`] = `null`;
+
+exports[`Hero renders correctly with custom styles 1`] = `null`;
+
+exports[`Hero renders correctly with icon 1`] = `null`;
+
+exports[`Hero renders correctly with icon background color 1`] = `null`;
+
+exports[`Hero renders correctly with label 1`] = `null`;

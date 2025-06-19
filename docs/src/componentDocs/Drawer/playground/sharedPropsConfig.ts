@@ -120,8 +120,8 @@ export const sharedPropsConfig: InputConfig = [
         type: 'boolean',
         description: 'Whether to hide the paddings reserved for menu item icons',
         required: false,
-        initialValue: false,
-        defaultValue: false,
+        initialValue: true,
+        defaultValue: true,
         category: 'Shared Props',
     },
     {

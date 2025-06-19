@@ -39,8 +39,9 @@ function getTabNumber(location: string): number {
 }
 
 function togglePlaygroundTab(location: string): boolean {
-    const tabName = location.split('/').filter((e) => hidePlaygroundTabs.includes(e))[0];
-    return hidePlaygroundTabs.includes(tabName);
+    if (!location) return false;
+    const tabName = location.split('/').find((e) => hidePlaygroundTabs.includes(e));
+    return tabName ? hidePlaygroundTabs.includes(tabName) : false;
 }
 
 const tabStyles = {
@@ -94,6 +95,7 @@ export const ComponentPreviewTabs = (): JSX.Element => {
                 onChange={handleChange}
                 aria-label="component docs tabs"
                 centered
+                textColor="inherit"
                 sx={{
                     width: '100%',
                     display: 'flex',

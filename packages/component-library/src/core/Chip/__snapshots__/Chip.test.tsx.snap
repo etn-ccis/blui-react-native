@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Chip component renders correctly in elevated mode 1`] = `null`;
+
+exports[`Chip component renders correctly in outlined mode 1`] = `null`;
+
+exports[`Chip component renders correctly when disabled 1`] = `null`;
+
+exports[`Chip component renders correctly when selected 1`] = `null`;
+
+exports[`Chip component renders correctly with an avatar 1`] = `null`;
+
+exports[`Chip component renders correctly with an icon 1`] = `null`;
+
+exports[`Chip component renders correctly with default props 1`] = `null`;
+
+exports[`Chip component renders only the icon when both an icon and an avatar are provided 1`] = `null`;

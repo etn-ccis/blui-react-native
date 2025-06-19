@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero } from '@brightlayer-ui/react-native-components/core/Hero';
+import { Hero } from '@brightlayer-ui/react-native-components';
 import { ExampleShowcase } from '../../../shared';
 
 export const HeroWithSecondaryIconExample = (): JSX.Element => (

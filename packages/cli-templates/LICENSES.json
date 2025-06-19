@@ -1,0 +1,8 @@
+{
+    "react@16.13.1": {
+        "licenses": "MIT",
+        "repository": "https://github.com/facebook/react",
+        "licenseUrl": "https://github.com/facebook/react/raw/master/LICENSE",
+        "parents": "react-native-cli-templates"
+    }
+}

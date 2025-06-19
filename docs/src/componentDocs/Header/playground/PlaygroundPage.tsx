@@ -217,7 +217,7 @@ const HeaderPreview: PreviewComponent = ({ data }) => {
                 actionItems={getActionItems(actionItems as unknown as boolean)}
                 searchableConfig={getSearchConfig(searchableConfig as unknown as boolean)}
                 styles={{ backgroundImage: { width: DRAWER_WIDTH, margin: 'auto' } }}
-                backgroundImage={getImage(backgroundImage?.toString() ?? '')}
+                backgroundImage={typeof backgroundImage === 'string' ? getImage(backgroundImage) : undefined}
                 variant="static"
             />
             <Box
@@ -245,6 +245,17 @@ const getIconSnippet = (value: any): string | undefined => {
             return undefined;
     }
 };
+const getBackgroundImageSnippet = (value: any): string => {
+    switch (value) {
+        case 'farm':
+            return 'getImage("farm")';
+        case 'pattern':
+            return 'getImage("pattern")';
+        case 'undefined':
+        default:
+            return 'undefined';
+    }
+};
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Header
     ${getPropsToString(getPropsMapping(data, inputConfig), {
@@ -259,7 +270,11 @@ const generateSnippet: CodeSnippetFunction = (data) =>
     ]}`
             : ''
     }
-    ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
+    ${
+        data.backgroundImage !== 'undefined'
+            ? `backgroundImage={${getBackgroundImageSnippet(data.backgroundImage)}}`
+            : ''
+    }
     ${
         data.searchableConfig && data.searchableConfig !== 'undefined'
             ? `searchableConfig={{ onChangeText: () => {} }}`

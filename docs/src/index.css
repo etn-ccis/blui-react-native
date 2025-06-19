@@ -46,6 +46,9 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
     -moz-appearance: textfield;
 }
+:focus-visible {
+    outline: none;
+}
 @font-face {
     src: url(/Ionicons.ttf);
     font-family: 'Ionicons';

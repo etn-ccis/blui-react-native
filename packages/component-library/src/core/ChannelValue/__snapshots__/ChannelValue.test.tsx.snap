@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ChannelValue Accepts style override 1`] = `[Function]`;
+
+exports[`ChannelValue ChannelValue Renders 1`] = `null`;
+
+exports[`ChannelValue Renders the background color and font color correctly 1`] = `[Function]`;

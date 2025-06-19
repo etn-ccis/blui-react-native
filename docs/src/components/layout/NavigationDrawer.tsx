@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { useNavigate, useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup, NavItem } from '@brightlayer-ui/react-components';
 import {
     //   externalLinkDefinitions,
@@ -32,8 +32,7 @@ const convertNavItems = (
     dispatch: any
 ): NavItem[] => {
     const convertedItems: NavItem[] = [];
-    for (let i = 0; i < navData.length; i++) {
-        const item = navData[i];
+    for (const item of navData) {
         const fullURL = `${parentUrl}${item.path || ''}`;
         convertedItems.push({
             title: item.title,
@@ -82,8 +81,8 @@ export const NavigationDrawer: React.FC = () => {
             const tabName = tabs.includes(pathArray[4])
                 ? pathArray[4]
                 : tabs.includes(pathArray[3])
-                ? pathArray[3]
-                : '';
+                  ? pathArray[3]
+                  : '';
             navigate(`${id}${id.includes('/component-catalog') || !id.includes('/components/') ? '' : tabName || ''}`);
             dispatch(toggleDrawer());
         },

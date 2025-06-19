@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`EmptyState renders correctly with accessibility props 1`] = `null`;
+
+exports[`EmptyState renders correctly with custom icon size and color 1`] = `null`;
+
+exports[`EmptyState renders correctly with custom styles 1`] = `null`;
+
+exports[`EmptyState renders correctly with different icon sources 1`] = `null`;
+
+exports[`EmptyState renders correctly with different theme overrides 1`] = `null`;
+
+exports[`EmptyState renders correctly with edge case inputs 1`] = `null`;
+
+exports[`EmptyState renders correctly with empty props 1`] = `null`;
+
+exports[`EmptyState renders correctly with long title and description 1`] = `null`;
+
+exports[`EmptyState renders correctly with title and description 1`] = `null`;

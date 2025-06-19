@@ -303,8 +303,8 @@ export const getBodyFiller = (): JSX.Element => (
     </Box>
 );
 
-export const removeEmptyProps = (props: { [key: string]: any }): { [key: string]: any } => {
-    const newProps: { [key: string]: any } = {};
+export const removeEmptyProps = (props: Record<string, any>): Record<string, any> => {
+    const newProps: Record<string, any> = {};
     Object.keys(props)
         .filter((p: string) => !['', 'undefined', undefined, null].includes(props[p]))
         .forEach((p) => {

@@ -22,7 +22,8 @@ import { Text } from 'react-native-paper';
 import { View } from 'react-native';
 import { sharedPropsConfig } from './sharedPropsConfig';
 import 'prismjs/components/prism-jsx.min';
-import { DRAWER_WIDTH } from '../../../utils';
+import { DRAWER_WIDTH, removeEmptyProps } from '../../../utils';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const inputConfig: InputConfig = [
     // Optional Props
@@ -46,6 +47,7 @@ const inputConfig: InputConfig = [
 ];
 
 const DrawerPreview: PreviewComponent = ({ data }) => {
+    const theme = useExtendedTheme();
     const { collapseIcon, expandIcon, ...rest } = data as unknown as Omit<
         DrawerProps,
         'collapseIcon' | 'expandIcon'
@@ -80,13 +82,16 @@ const DrawerPreview: PreviewComponent = ({ data }) => {
             icon: { name: 'dashboard' },
             collapseIcon: getCollapseIcon(collapseIcon as unknown as string),
             expandIcon: getExpandIcon(expandIcon as unknown as string),
+            itemFontColor: theme.colors.onSurface,
             items: [
                 {
+                    itemFontColor: theme.colors.onSurface,
                     itemID: 'Monthly Report',
                     title: 'Monthly Report',
                     onPress: (): void => updateData('activeItem', 'Monthly Report'),
                 },
                 {
+                    itemFontColor: theme.colors.onSurface,
                     itemID: 'Annual Report',
                     title: 'Annual Report',
                     onPress: (): void => updateData('activeItem', 'Annual Report'),
@@ -94,12 +99,14 @@ const DrawerPreview: PreviewComponent = ({ data }) => {
             ],
         },
         {
+            itemFontColor: theme.colors.onSurface,
             itemID: 'Timeline',
             title: 'Timeline',
             onPress: (): void => updateData('activeItem', 'Timeline'),
             icon: { name: 'toc' },
         },
         {
+            itemFontColor: theme.colors.onSurface,
             title: 'Devices',
             itemID: 'Devices',
             subtitle: '5 new warnings',
@@ -107,6 +114,7 @@ const DrawerPreview: PreviewComponent = ({ data }) => {
             icon: { name: 'devices' },
         },
         {
+            itemFontColor: theme.colors.onSurface,
             itemID: 'Schedule',
             title: 'Schedule',
             onPress: (): void => updateData('activeItem', 'Schedule'),
@@ -124,7 +132,7 @@ const DrawerPreview: PreviewComponent = ({ data }) => {
             }}
             ref={containerRef}
         >
-            <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }} {...rest}>
+            <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }} {...removeEmptyProps(rest)}>
                 <DrawerHeader title="Header" />
                 <DrawerBody>
                     <DrawerNavGroup items={navGroupItems}></DrawerNavGroup>
@@ -158,7 +166,8 @@ const getExpandIcon = (value: any): any => {
 };
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<Drawer 
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon'] })}
+    hidePadding={${data.hidePadding}}
+    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['icon', 'hidePadding'] })}
     ${
         data.collapseIcon && data.collapseIcon !== 'undefined'
             ? `collapseIcon={${getCollapseIcon(data.collapseIcon)}}`

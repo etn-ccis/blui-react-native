@@ -22,6 +22,7 @@ import { getImage, removeEmptyProps, DRAWER_WIDTH } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
 import { View } from 'react-native';
 import { Text } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const inputConfig: InputConfig = [
     // Required Props
@@ -117,6 +118,7 @@ const inputConfig: InputConfig = [
 ];
 
 const DrawerHeaderPreview: PreviewComponent = ({ data }) => {
+    const theme = useExtendedTheme();
     const { icon, backgroundImage, titleContent, ...rest } = data as unknown as DrawerHeaderProps;
     const containerRef = useRef(null);
     const getIcon = (value: string): IconSource | undefined => {
@@ -165,23 +167,31 @@ const DrawerHeaderPreview: PreviewComponent = ({ data }) => {
                 <DrawerHeader
                     {...removeEmptyProps(rest)}
                     icon={getIcon(icon as unknown as string)}
-                    backgroundImage={getImage(backgroundImage?.toString() ?? '')}
+                    backgroundImage={typeof backgroundImage === 'string' ? getImage(backgroundImage) : undefined}
                     titleContent={getTitleContent(titleContent as unknown as boolean)}
                 ></DrawerHeader>
                 <DrawerBody>
                     <DrawerNavGroup>
                         <DrawerNavItem
+                            itemFontColor={theme.colors.onSurface}
                             icon={{ name: 'person' }}
                             itemID={'Identity Management'}
                             title={'Identity Management'}
                         />
-                        <DrawerNavItem icon={{ name: 'today' }} itemID={'Calendar'} title={'Calendar'} />
                         <DrawerNavItem
+                            itemFontColor={theme.colors.onSurface}
+                            icon={{ name: 'today' }}
+                            itemID={'Calendar'}
+                            title={'Calendar'}
+                        />
+                        <DrawerNavItem
+                            itemFontColor={theme.colors.onSurface}
                             icon={{ name: 'accessibility' }}
                             title={'Accessibility'}
                             itemID={'Accessibility'}
                         />
                         <DrawerNavItem
+                            itemFontColor={theme.colors.onSurface}
                             icon={{ name: 'notifications-active' }}
                             title={'Notifications'}
                             itemID={'Notifications'}
@@ -202,6 +212,18 @@ const getIconSnippet = (value: any): string | undefined => {
         case 'undefined':
         default:
             return undefined;
+    }
+};
+
+const getBackgroundImageSnippet = (value: any): string => {
+    switch (value) {
+        case 'farm':
+            return 'getImage("farm")';
+        case 'pattern':
+            return 'getImage("pattern")';
+        case 'undefined':
+        default:
+            return 'undefined';
     }
 };
 
@@ -228,7 +250,11 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         </View>}`
             : ''
     }
-    ${data.backgroundImage !== 'undefined' ? `backgroundImage={backgroundImage}` : ''}
+    ${
+        data.backgroundImage !== 'undefined'
+            ? `backgroundImage={${getBackgroundImageSnippet(data.backgroundImage)}}`
+            : ''
+    }
 />`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
         .replace(/(?:^|)( {4}|\t)/gm, '    ');

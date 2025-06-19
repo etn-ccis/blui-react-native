@@ -14,6 +14,7 @@ export const DrawerFooterExample = (): JSX.Element => {
             <Drawer style={{ width: DRAWER_WIDTH, margin: 'auto' }}>
                 <DrawerBody>
                     <DrawerNavItem
+                        itemFontColor={theme.colors.onSurface}
                         itemID={'account'}
                         title={'Account'}
                         icon={{
@@ -23,6 +24,7 @@ export const DrawerFooterExample = (): JSX.Element => {
                         }}
                     />
                     <DrawerNavItem
+                        itemFontColor={theme.colors.onSurface}
                         itemID={'notification'}
                         title={'Notification'}
                         icon={{
