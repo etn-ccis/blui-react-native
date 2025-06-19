@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 
 // Mocks for dependencies
-jest.mock('react-native-vector-icons/MaterialIcons', (): any => 'Icon');
+jest.mock('@react-native-vector-icons/material-icons', (): any => 'Icon');
 jest.mock('@brightlayer-ui/react-native-themes', (): any => ({
     useExtendedTheme: (): any => ({
         colors: {

@@ -17,7 +17,7 @@ import { HelperText, Text } from 'react-native-paper';
 import { $DeepPartial } from '@callstack/react-theme-provider';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 import { Chip, ChipProps as ChipPropsType } from '../Chip';
-import MatIcon from 'react-native-vector-icons/MaterialIcons';
+import MatIcon from '@react-native-vector-icons/material-icons';
 
 export type AutocompleteProps = ViewProps & {
     /** Text to display the Helper Text */

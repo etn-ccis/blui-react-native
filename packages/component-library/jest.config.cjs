@@ -3,6 +3,7 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     moduleNameMapper: {
         '\\.svg$': 'identity-obj-proxy',
+        '\\.(ttf|otf|woff|woff2|eot)$': '<rootDir>/__mocks__/fileMock.js',
     },
     testRegex: 'src/.*(test|spec)\\.[jt]sx?$',
     transform: {
