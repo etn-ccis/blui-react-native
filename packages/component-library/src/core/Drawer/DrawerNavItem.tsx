@@ -244,12 +244,11 @@ export const DrawerNavItem: React.FC<DrawerNavItemProps> = (props) => {
         depth > 0 ? (nestedDivider !== undefined ? nestedDivider : false) : divider !== undefined ? divider : false;
 
     // When the activeItem changes, update our expanded state
-    // Temporarily disabling this auto-expand behavior due to a bug in the react-native-collapsible with calculating the correct starting height
-    // useEffect(() => {
-    //     if (isInActiveTree && !expanded) {
-    //         setExpanded(true);
-    //     }
-    // }, [isInActiveTree]); // Only update if the active tree changes (not after manual expand/collapse action)
+    useEffect(() => {
+        if (isInActiveTree && !expanded) {
+            setExpanded(true);
+        }
+    }, [isInActiveTree]); // Only update if the active tree changes (not after manual expand/collapse action)
 
     // If the active item changes
     useEffect(() => {
