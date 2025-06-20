@@ -1,0 +1,51 @@
+# name: Black Duck Security Scan
+# on:
+#   push:
+#     branches: ['dev', 'master']
+#   pull_request:
+#     branches: ['dev', 'master']
+#   workflow_dispatch:
+
+# permissions:
+#     pull-requests: write
+#     contents: read
+#     security-events: write
+    
+# jobs:
+#   build:
+#     runs-on: [ ubuntu-latest ]
+#     steps:
+#       - name: Checkout Source
+#         uses: actions/checkout@v4
+#       - name: Black Duck SCA Scan
+#         id: black-duck-sca-scan
+#         uses: blackduck-inc/black-duck-security-scan@v2.1.1
+#         env:
+#           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
+#         with:
+          # ## SCANNING: Required fields and need more information once account is created and we have a token
+          # blackducksca_url: ${{ vars.BLACKDUCK_URL }}
+          # blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
+         
+          # ## SCANNING: Optional fields for serverities not sure if this is required
+          # blackducksca_scan_failure_severities: 'BLOCKER,CRITICAL'
+          
+          # ## FIX PR CREATION: If set as true, a separate fix PR will be created if vulnerability is found after scan
+          # blackducksca_fixpr_enabled: true
+          # github_token: ${{ secrets.GITHUB_TOKEN }} # Required when Fix PRs is enabled
+          
+          # ## PR COMMENTS: If set as true, pull request comments for new issues found in the Black Duck scan
+          # blackducksca_prcomment_enabled: true 
+          # github_token: ${{ secrets.GITHUB_TOKEN }} # Required when PR comments is enabled
+
+          # ## SARIF report generation and upload and need to figure out where Eaton requires this (if at all)
+          # blackducksca_reports_sarif_create: true # Create Black Duck SCA SARIF report and upload it as artifact
+          # blackducksca_upload_sarif_report: true  # Upload Black Duck SCA SARIF report in GitHub Advanced Security tab
+          # github_token: ${{ secrets.GITHUB_TOKEN }} # Required when blackducksca_upload_sarif_report is set as true
+          
+    ### Uncomment below configuration to add custom logic based on return status
+    # - name: cmdLine
+    #   id: cmdLine
+    #   run: |
+    #     EXIT_CODE=${{ steps.black-duck-security-scan.outputs.status }}
+    #     echo "Black Duck Security Scan exit status - $EXIT_CODE"
