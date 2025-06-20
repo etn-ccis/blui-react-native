@@ -19,11 +19,11 @@ echo -e "${BLUE}Updating the package to ESM format${NC}"
 
 tsc-esm-fix dist
 
-# echo -e "${BLUE}Copying Package Resources${NC}"
-# cp -r package.json ./dist/package.json
-# cp -r README.md ./dist/README.md
-# cp -r LICENSE ./dist/LICENSE
-# cp -r CHANGELOG.md ./dist/CHANGELOG.md
-# cp -r LICENSES.json ./dist/LICENSES.json
+echo -e "${BLUE}Copying Package Resources${NC}"
+cp -r package.json ./dist/package.json
+cp -r README.md ./dist/README.md
+cp -r LICENSE ./dist/LICENSE
+cp -r CHANGELOG.md ./dist/CHANGELOG.md
+cp -r LICENSES.json ./dist/LICENSES.json
 
 echo -e "${GRAY}Complete${NC}\r\n"
