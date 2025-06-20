@@ -45,7 +45,7 @@
         "react-native-safe-area-context": "5.4.1"
     },
     "peerDependencies": {
-        "react-native-paper": "^5.0.0"
+        "react-native-paper": "^5.14.5"
     },
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",
