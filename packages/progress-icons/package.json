@@ -8,17 +8,17 @@
         "url": "https://github.com/etn-ccis/blui-react-native/issues"
     },
     "homepage": "https://github.com/etn-ccis/blui-react-native/blob/dev/packages/blui-react-native-progress-icons/README.md",
-    "main": "./dist/index.js",
+    "main": "./index.js",
     "type": "module",
     "publishConfig": {
         "main": "./index.js"
     },
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "module": "./index.js",
+    "types": "./index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/index.js",
-            "require": "./dist/index.js"
+            "import": "./index.js",
+            "require": "./index.js"
         }
     },
     "scripts": {
