@@ -30,7 +30,7 @@ export const ErrorManager: React.FC<React.PropsWithChildren<ErrorManagerProps>> 
     } = props;
 
     const ErrorDialogWithProps = useCallback(
-        (): JSX.Element => (
+        (): React.JSX.Element => (
             <BasicDialog
                 testID="blui-error-manager-basic-dialog"
                 open={error.length > 0}
@@ -44,7 +44,7 @@ export const ErrorManager: React.FC<React.PropsWithChildren<ErrorManagerProps>> 
         [dialogConfig, title, error, onClose, errorOptions, titleOptions, t]
     );
 
-    const ErrorMessageBoxWithProps = useCallback((): JSX.Element => {
+    const ErrorMessageBoxWithProps = useCallback((): React.JSX.Element => {
         const { dismissible = true, fontColor, backgroundColor, style } = messageBoxConfig;
 
         return (

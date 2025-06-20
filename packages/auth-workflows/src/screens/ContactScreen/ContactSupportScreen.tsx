@@ -32,7 +32,7 @@ export const ContactSupportScreen: React.FC<ContactSupportScreenProps> = (props)
     const defaultStyles = makeStyles(theme);
     const { contactEmail = 'something@email.com', contactPhone = '1-800-123-4567' } = props;
 
-    const defaultEmailSupportContent = (): JSX.Element => (
+    const defaultEmailSupportContent = (): React.JSX.Element => (
         <Text variant="bodyLarge">
             {`${t('bluiAuth:CONTACT_SUPPORT.SUPPORT_MESSAGE')}`}
             <Text
@@ -46,7 +46,7 @@ export const ContactSupportScreen: React.FC<ContactSupportScreenProps> = (props)
         </Text>
     );
 
-    const defaultPhoneSupportContent = (): JSX.Element => (
+    const defaultPhoneSupportContent = (): React.JSX.Element => (
         <Text variant="bodyLarge">
             {`${t('bluiAuth:CONTACT_SUPPORT.TECHNICAL_ASSISTANCE')}`}
             <Text
