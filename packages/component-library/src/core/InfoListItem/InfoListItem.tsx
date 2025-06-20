@@ -9,7 +9,7 @@ import {
     TextStyle,
     I18nManager,
 } from 'react-native';
-import MatCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MatCommunityIcon from '@react-native-vector-icons/material-design-icons';
 import { Divider as PaperDivider, Text } from 'react-native-paper';
 import { renderableSubtitleComponent, renderableInfoComponent, withKeys, separate } from './utilities';
 import { $DeepPartial } from '@callstack/react-theme-provider';
