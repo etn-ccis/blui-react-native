@@ -5,16 +5,16 @@
         "esModuleInterop": true,
         "outDir": "dist",
         "declarationDir": "dist",
-        "jsx": "react",
+        "jsx": "react-jsx",
         "lib": ["es6"],
         "module": "es6",
         "moduleResolution": "node",
         "noEmit": false,
         "strict": true,
         "skipLibCheck": true,
-        "target": "es6",
+        "target": "esnext",
         "paths": {
-            "react": ["../../node_modules/@types/react"]
+            "react": ["./node_modules/@types/react"]
         }
     },
     "include": ["src"],

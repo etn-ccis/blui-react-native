@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, fireEvent, render, RenderResult, screen } from '@testing-library/react-native';
-import { BasicDialog, BasicDialogProps } from 'src/components';
+import { BasicDialog, BasicDialogProps } from '../../../components';
 import { Provider as PaperProvider } from 'react-native-paper';
 
 describe('BasicDialog Test', () => {
