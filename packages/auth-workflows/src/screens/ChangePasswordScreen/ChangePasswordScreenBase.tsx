@@ -45,8 +45,8 @@ export const ChangePasswordScreenBase: React.FC<ChangePasswordScreenProps> = (pr
     const getSuccessScreen = (
         _props: SuccessScreenProps,
         // eslint-disable-next-line
-        SuccessScreen?: (props: SuccessScreenProps) => JSX.Element
-    ): JSX.Element => (SuccessScreen ? SuccessScreen(_props) : <SuccessScreenBase {..._props} />);
+        SuccessScreen?: (props: SuccessScreenProps) => React.JSX.Element
+    ): React.JSX.Element => (SuccessScreen ? SuccessScreen(_props) : <SuccessScreenBase {..._props} />);
 
     const handleChange = (text: string): void => {
         currentPasswordChange?.(text);

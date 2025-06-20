@@ -14,7 +14,7 @@ import { SharedDictionaries } from '../SharedDictionaries';
 import { ErrorManagerProps } from '../../components/Error';
 
 const AuthContextProviderContent: React.FC<
-    React.PropsWithChildren<Omit<AuthContextProviderProps, 'i18n'> & { PasswordDialog?: JSX.Element }>
+    React.PropsWithChildren<Omit<AuthContextProviderProps, 'i18n'> & { PasswordDialog?: React.JSX.Element }>
 > = (props) => {
     const { t } = useTranslation();
     const { children, errorConfig, ...authContextProps } = props;
@@ -41,7 +41,7 @@ const AuthContextProviderContent: React.FC<
  * @param {AuthContextProviderProps} props - props for Auth Context Provider
  */
 export const AuthContextProvider: React.FC<
-    React.PropsWithChildren<AuthContextProviderProps & { PasswordDialog?: JSX.Element }>
+    React.PropsWithChildren<AuthContextProviderProps & { PasswordDialog?: React.JSX.Element }>
 > = (props) => {
     const i18nInstance = props.i18n ?? i18nAuthInstance;
     const { language, i18n = i18nInstance, children, ...other } = props;
