@@ -144,7 +144,7 @@ jobs:
               with:
                   name: lib-dist
                   if-no-files-found: error
-                  path: packages/component-library/dist
+                  path: packages/component-library/dist/**
 
     test_progress_icons:
         name: Test Progress Icons
@@ -254,6 +254,8 @@ jobs:
                 path: packages/component-library/dist      
           - run: yarn --immutable
             working-directory: docs
+          - name: Debug dist
+            run: ls -R packages/component-library/dist
           - name: Link Components
             run: bash linkComponents.sh
             working-directory: scripts  
