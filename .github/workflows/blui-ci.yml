@@ -250,8 +250,8 @@ jobs:
           - run: yarn --immutable
             working-directory: docs
           - name: Link Components
-            run: bash ../../scripts/linkComponents.sh
-            working-directory: docs  
+            run: bash linkComponents.sh
+            working-directory: scripts  
           - run: yarn build --base=${{env.base-href}} && touch ./dist/.nojekyll
             working-directory: docs
           - name: Save dist
