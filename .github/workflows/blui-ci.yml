@@ -247,6 +247,11 @@ jobs:
             with:
                 node-version: ${{ matrix.node-version }}
                 cache: 'yarn'
+          - name: Download component library build
+            uses: actions/download-artifact@v4
+            with:
+                name: lib-dist
+                path: packages/component-library/dist      
           - run: yarn --immutable
             working-directory: docs
           - name: Link Components
