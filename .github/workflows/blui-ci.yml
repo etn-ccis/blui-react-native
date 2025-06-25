@@ -232,7 +232,7 @@ jobs:
     build_rn_docs:
       name: Build React Native Docs
       runs-on: ubuntu-latest
-      needs: prettier_lint
+      needs: [prettier_lint, build_component_library]
       strategy:
           matrix:
               node-version: [20.x]
