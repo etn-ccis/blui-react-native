@@ -144,7 +144,7 @@ jobs:
               with:
                   name: lib-dist
                   if-no-files-found: error
-                  path: packages/component-library/dist/**
+                  path: packages/component-library/dist
 
     test_progress_icons:
         name: Test Progress Icons
