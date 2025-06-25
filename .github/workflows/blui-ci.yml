@@ -257,8 +257,7 @@ jobs:
           - name: Debug dist
             run: ls -R packages/component-library/dist
           - name: Link Components
-            run: bash linkComponents.sh
-            working-directory: scripts  
+            run: bash scripts/linkComponents.sh
           - run: yarn build --base=${{env.base-href}} && touch ./dist/.nojekyll
             working-directory: docs
           - name: Save dist
