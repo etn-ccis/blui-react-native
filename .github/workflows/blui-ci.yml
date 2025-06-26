@@ -254,8 +254,6 @@ jobs:
                 path: packages/component-library/dist      
           - run: yarn --immutable
             working-directory: docs
-          - name: Debug dist
-            run: ls -R packages/component-library/dist
           - name: Link Components
             run: bash scripts/linkComponents.sh
           - run: yarn build --base=${{env.base-href}} && touch ./dist/.nojekyll
