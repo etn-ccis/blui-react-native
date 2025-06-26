@@ -19,6 +19,8 @@ rm -rf "./examples/workflow/node_modules/@brightlayer-ui/react-native-components
 mkdir -p "./examples/workflow/node_modules/@brightlayer-ui/react-native-components"
 rm -rf "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components"
 mkdir -p "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components"
+rm -rf "./docs/node_modules/@brightlayer-ui/react-native-components"
+mkdir -p "./docs/node_modules/@brightlayer-ui/react-native-components"
 
 echo -e "${GREEN}Done${NC}"
 
@@ -30,6 +32,9 @@ cp -r ./packages/component-library/dist/* ./examples/showcase/node_modules/@brig
 cp -r ./packages/component-library/dist/* ./examples/workflow/node_modules/@brightlayer-ui/react-native-components/
 # cp ./packages/component-library/package.json ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/package.json
 cp -r ./packages/component-library/dist/* ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/
+# cp ./packages/component-library/package.json ./docs/node_modules/@brightlayer-ui/react-native-components/package.json
+cp -r ./packages/component-library/dist/* ./docs/node_modules/@brightlayer-ui/react-native-components/
+
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BBLUE}Linking Components: ${NC}"
