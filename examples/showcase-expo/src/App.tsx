@@ -50,7 +50,7 @@ export const App: React.FC<AppProps> = ({ navigation }) => {
                 actionItems: [
                     {
                         icon: { name: 'more' },
-                        onPress: () => {},
+                        onPress: (): void => {},
                         component: (
                             <UserMenuExample
                                 onToggleRTL={toggleRTL}

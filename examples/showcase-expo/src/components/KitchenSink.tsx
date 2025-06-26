@@ -1,5 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
-
 import React, { JSX, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import {
@@ -143,10 +141,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
 
     const [state, setState] = React.useState({ open: false });
     const [toggledIconValue, settoggledIconValue] = useState([true, true, false, false, true, true, false, false]);
-    const handleIconSwitchChange = (index: number) => {
+    const handleIconSwitchChange = (iconIndex: number): void => {
         settoggledIconValue((prevState) => {
             const newState = [...prevState];
-            newState[index] = !newState[index];
+            newState[iconIndex] = !newState[iconIndex];
             return newState;
         });
     };
@@ -199,9 +197,9 @@ export const KitchenSink: React.FC = (): JSX.Element => {
     const showModal = (): void => setVisible(true);
     const hideModal = (): void => setVisible(false);
 
-    const [text, setText] = useState('');
+    const [segmentedText, setSegmentedText] = useState('');
     const [icon, setIcon] = React.useState('');
-    const [value, setValue] = React.useState('');
+    const [segmentedValue, setSegmentedValue] = React.useState('');
 
     return (
         <>
@@ -213,8 +211,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 <Card.Title title="Segmented Buttons" />
                 <Card.Content>
                     <SegmentedButtons
-                        value={text}
-                        onValueChange={setText}
+                        value={segmentedText}
+                        onValueChange={setSegmentedText}
                         buttons={[
                             {
                                 value: 'walk',
@@ -248,8 +246,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                         style={{ marginBottom: 20 }}
                     />
                     <SegmentedButtons
-                        value={value}
-                        onValueChange={setValue}
+                        value={segmentedValue}
+                        onValueChange={setSegmentedValue}
                         buttons={[
                             {
                                 value: 'walk',
@@ -787,7 +785,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 actionItems={[
                     {
                         icon: { name: 'more-vert' },
-                        onPress: () => {},
+                        onPress: (): void => {},
                     },
                 ]}
                 variant="static"

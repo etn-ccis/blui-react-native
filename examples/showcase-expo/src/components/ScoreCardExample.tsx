@@ -11,7 +11,7 @@ export const ScoreCardExample: React.FC = () => {
             headerSubtitle={'Normal'}
             headerInfo={'42 Devices'}
             actionIconColor={BLUIColors.error[50]}
-            actionItems={[{ icon: { name: 'star-outline' } }, { icon: { name: 'more-vert' }, onPress: () => {} }]}
+            actionItems={[{ icon: { name: 'star-outline' } }, { icon: { name: 'more-vert' }, onPress: (): void => {} }]}
             badgeOffset={-55}
             badge={
                 // <HeroBanner style={{ flex: 0, minWidth: 80, justifyContent: 'flex-end' }}>
