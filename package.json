@@ -29,7 +29,7 @@
         "workflow-iOS": "yarn installWorklowDependencies && yarn link:all && cd ./examples/workflow && yarn ios",
         "designPatterns-Android": "yarn installDesignPatternsDependencies && yarn link:all && cd ./examples/designPatterns && yarn android",
         "designPatterns-iOS": "yarn installDesignPatternsDependencies && yarn link:all && cd ./examples/designPatterns && yarn ios",
-        "startDocs": "rm -rf ./node_modules/.vite/docs && yarn installDocsDependencies && cd ./docs && yarn start",
+        "startDocs": "yarn installDocsDependencies && cd ./docs && yarn start",
         "lint": "eslint \"**/**.{tsx,ts}\"",
         "lint:fix": "eslint \"**/**.{tsx,ts}\" --fix",
         "prepare": "husky",
