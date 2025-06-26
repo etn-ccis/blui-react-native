@@ -5,7 +5,7 @@ import { WorkflowCardProps } from '../../components/WorkflowCard';
 import { ErrorManagerProps } from '../../components/Error';
 
 export type ChangePasswordScreenSlots = {
-    SuccessScreen?: (props?: SuccessScreenProps) => JSX.Element;
+    SuccessScreen?: (props?: SuccessScreenProps) => React.JSX.Element;
 };
 
 export type ChangePasswordScreenSlotsProps = {

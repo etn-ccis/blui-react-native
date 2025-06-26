@@ -38,7 +38,7 @@ export const RegistrationSuccessScreen: React.FC<SuccessScreenProps> = (props) =
         resetScreenData,
     } = useRegistrationWorkflowContext();
     const CheckCircleIcon: IconFamily = { family: 'material-community', name: 'check-circle', direction: 'ltr' };
-    const Bold = ({ children }: { children: React.ReactNode }): JSX.Element => (
+    const Bold = ({ children }: { children: React.ReactNode }): React.JSX.Element => (
         <Text style={styles.boldText}>{children}</Text>
     );
 

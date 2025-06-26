@@ -69,11 +69,11 @@ export const ForgotPasswordScreen: React.FC<ForgotPasswordScreenProps> = (props)
     const [isLoading, setIsLoading] = useState(false);
     const [showSuccessScreen, setShowSuccessScreen] = useState(false);
 
-    const Bold = ({ children }: { children: React.ReactNode }): JSX.Element => (
+    const Bold = ({ children }: { children: React.ReactNode }): React.JSX.Element => (
         <Text style={styles.boldText}>{children}</Text>
     );
 
-    const Link = ({ children }: { children: React.ReactNode }): JSX.Element => (
+    const Link = ({ children }: { children: React.ReactNode }): React.JSX.Element => (
         <Text style={styles.textStyles} onPress={(): any => Linking.openURL(`tel:${contactPhone ?? ''}`)}>
             {children}
         </Text>

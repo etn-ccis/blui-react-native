@@ -3,9 +3,9 @@ import '@testing-library/jest-dom';
 
 import { cleanup, render, fireEvent, screen } from '@testing-library/react-native';
 import { CreateAccountScreen } from '../../screens/CreateAccountScreen';
-import { RegistrationWorkflow } from 'src/components';
-import { RegistrationContextProvider } from 'src/contexts';
-import { registrationContextProviderProps } from 'src/testUtils';
+import { RegistrationWorkflow } from '../../components';
+import { RegistrationContextProvider } from '../../contexts';
+import { registrationContextProviderProps } from '../../testUtils';
 import { PaperProvider } from 'react-native-paper';
 jest.useFakeTimers();
 
