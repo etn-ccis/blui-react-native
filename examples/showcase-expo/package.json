@@ -3,7 +3,7 @@
     "main": "expo-router/entry",
     "version": "1.0.0",
     "scripts": {
-        "start": "expo start",
+        "start": "expo start --clear",
         "reset-project": "node ./scripts/reset-project.js",
         "android": "expo run:android",
         "ios": "expo run:ios",
@@ -16,6 +16,8 @@
         "@brightlayer-ui/react-native-themes": "^7.0.1",
         "@brightlayer-ui/react-native-vector-icons": "^2.2.0",
         "@expo/vector-icons": "^14.1.0",
+        "@react-native-vector-icons/material-design-icons": "^12.0.1",
+        "@react-native-vector-icons/material-icons": "^12.0.1",
         "@react-navigation/bottom-tabs": "^7.3.10",
         "@react-navigation/drawer": "^7.4.2",
         "@react-navigation/elements": "^2.3.8",
@@ -58,7 +60,8 @@
         "typescript": "~5.8.3"
     },
     "resolutions": {
-        "react-native-reanimated": "3.17.4"
+        "react-native-reanimated": "3.17.4",
+        "react-native-modal": "^14.0.0-rc.1"
     },
     "jest": {
         "preset": "jest-expo"
