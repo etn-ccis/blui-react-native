@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react-native';
 import { useOktaAuthContext } from '../../contexts';
-import { OktaRedirectLoginScreen } from 'src/screens';
+import { OktaRedirectLoginScreen } from '../../screens';
 
 // Mock the useAuthContext hook
 jest.mock('../../contexts', () => ({

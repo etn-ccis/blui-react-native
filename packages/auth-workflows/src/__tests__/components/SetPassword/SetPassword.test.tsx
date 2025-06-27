@@ -1,10 +1,10 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import '@testing-library/jest-dom';
-import { SetPassword } from 'src/components';
-import PasswordRequirements from 'src/components/SetPassword/PasswordRequirements';
-import { PasswordRequirementsCheck } from 'src/components/SetPassword/PasswordRequirementsCheck';
-import { PasswordTextField } from 'src/components/SetPassword/PasswordTextField';
+import { SetPassword } from '../../../components';
+import PasswordRequirements from '../../../components/SetPassword/PasswordRequirements';
+import { PasswordRequirementsCheck } from '../../../components/SetPassword/PasswordRequirementsCheck';
+import { PasswordTextField } from '../../../components/SetPassword/PasswordTextField';
 
 describe('Set Password Test', () => {
     it('renders with initial props', () => {

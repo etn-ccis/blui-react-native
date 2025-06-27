@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { RenderResult, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
-import { RegistrationWorkflow } from 'src/components';
-import { RegistrationContextProvider } from 'src/contexts';
-import { VerifyCodeScreen, VerifyCodeScreenProps } from 'src/screens';
-import { registrationContextProviderProps } from 'src/testUtils';
+import { RegistrationWorkflow } from '../../components';
+import { RegistrationContextProvider } from '../../contexts';
+import { VerifyCodeScreen, VerifyCodeScreenProps } from '../../screens';
+import { registrationContextProviderProps } from '../../testUtils';
 import { PaperProvider } from 'react-native-paper';
 
 describe('Verify Code Full Screen Test cases', () => {

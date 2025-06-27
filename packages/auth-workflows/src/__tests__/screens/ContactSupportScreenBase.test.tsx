@@ -27,14 +27,14 @@ describe('ContactSupportScreenBase tests', () => {
                     contactEmail="something@email.com"
                     contactPhone="1-800-123-4567"
                     dismissButtonLabel="Okay"
-                    emailSupportContent={(contactEmail: string): JSX.Element => (
+                    emailSupportContent={(contactEmail: string): React.JSX.Element => (
                         <Text>
                             {'For questions, feedback, or support please email us at '}
                             <Text>{contactEmail}</Text>
                             {`.`}
                         </Text>
                     )}
-                    phoneSupportContent={(phone: string): JSX.Element => (
+                    phoneSupportContent={(phone: string): React.JSX.Element => (
                         <Text>
                             {'For technical support, please call '}
                             <Text>{phone}</Text>

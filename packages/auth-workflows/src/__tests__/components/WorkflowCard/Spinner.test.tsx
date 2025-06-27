@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react-native';
-import { Spinner } from 'src/components/Spinner';
+import { Spinner } from '../../../components/Spinner';
 
 describe('Spinner Test', () => {
     afterEach(cleanup);

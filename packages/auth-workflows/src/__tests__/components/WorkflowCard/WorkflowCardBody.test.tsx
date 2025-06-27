@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react-native';
-import { WorkflowCardBody } from 'src/components/WorkflowCard/WorkflowCardBody';
+import { WorkflowCardBody } from '../../../components/WorkflowCard/WorkflowCardBody';
 import { Text } from 'react-native-paper';
 
 describe('WorkflowCardBody Test', () => {

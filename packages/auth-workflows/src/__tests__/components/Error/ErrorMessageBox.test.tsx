@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, fireEvent, render, RenderResult, screen } from '@testing-library/react-native';
-import { ErrorMessageBox } from 'src/components';
+import { ErrorMessageBox } from '../../../components';
 import { Provider as PaperProvider } from 'react-native-paper';
 
 describe('ErrorMessageBox Test', () => {

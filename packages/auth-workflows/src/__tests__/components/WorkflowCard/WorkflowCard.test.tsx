@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react-native';
-import { WorkflowCard, WorkflowCardBody } from 'src/components';
+import { WorkflowCard, WorkflowCardBody } from '../../../components';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Text } from 'react-native-paper';
 

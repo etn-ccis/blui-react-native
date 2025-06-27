@@ -23,7 +23,7 @@ export type ForgotPasswordScreenProps = WorkflowCardProps & {
     /**
      * used to pass Success Screen component
      */
-    SuccessScreen?: (props: SuccessScreenProps) => JSX.Element;
+    SuccessScreen?: (props: SuccessScreenProps) => React.JSX.Element;
 
     /**
      * props applied to Success Screen

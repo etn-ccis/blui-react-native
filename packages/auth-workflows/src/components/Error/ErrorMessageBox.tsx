@@ -44,7 +44,7 @@ const makeStyles = (
  *
  * @category Component
  */
-export const ErrorMessageBox = (props: ErrorMessageBoxProps): JSX.Element => {
+export const ErrorMessageBox = (props: ErrorMessageBoxProps): React.JSX.Element => {
     const { title, errorMessage, dismissible = true, onClose = (): void => {}, style } = props;
     const theme = useExtendedTheme();
     const defaultStyles = makeStyles(theme, props, dismissible);
@@ -57,6 +57,7 @@ export const ErrorMessageBox = (props: ErrorMessageBoxProps): JSX.Element => {
                     testID="blui-error-message-box-close-icon"
                     name={'close'}
                     size={20}
+                    // @ts-ignore
                     style={[defaultStyles.icon]}
                     onPress={(): void => {
                         onClose();

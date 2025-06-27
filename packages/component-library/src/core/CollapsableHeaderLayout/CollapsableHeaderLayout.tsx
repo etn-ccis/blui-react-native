@@ -148,7 +148,7 @@ export const CollapsibleHeaderLayout: React.FC<CollapsibleLayoutProps> = (props)
             animatedScrollValue.removeListener(scroll);
             contentPadding.removeListener(padding);
         };
-    }, [onScrollChange, onPaddingChange, animatedScrollValue, contentPadding]);
+    }, [onScrollChange, onPaddingChange]);
 
     const updateScrollView = useUpdateScrollView(
         contentPaddingValue,

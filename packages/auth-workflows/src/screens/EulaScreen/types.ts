@@ -8,7 +8,7 @@ export type EulaScreenProps = WorkflowCardProps & {
     /**
      * The content to render for the EULA. Can be a plain string or HTML
      */
-    eulaContent?: string | JSX.Element;
+    eulaContent?: string | React.JSX.Element;
 
     /**
      * The label for the EULA checkbox

@@ -58,8 +58,8 @@ export const ForgotPasswordScreenBase: React.FC<React.PropsWithChildren<ForgotPa
 
     const getSuccessScreen = (
         _props: SuccessScreenProps,
-        _successScreen?: (props: SuccessScreenProps) => JSX.Element
-    ): JSX.Element => (_successScreen ? _successScreen(_props) : <SuccessScreenBase {..._props} />);
+        _successScreen?: (props: SuccessScreenProps) => React.JSX.Element
+    ): React.JSX.Element => (_successScreen ? _successScreen(_props) : <SuccessScreenBase {..._props} />);
 
     const clearScreenData = (): void => {
         setEmailInput('');
