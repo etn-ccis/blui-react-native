@@ -3,10 +3,10 @@ import { AppDictionaries } from './dictionary';
 import { initReactI18next } from 'react-i18next';
 import { NativeModules, Platform } from 'react-native';
 
-const locale =
-    Platform.OS === 'ios'
-        ? NativeModules.SettingsManager.settings.AppleLocale
-        : NativeModules.I18nManager.localeIdentifier;
+const locale = 'en';
+// Platform.OS === 'ios'
+//     ? NativeModules.SettingsManager.settings.AppleLocale
+//     : NativeModules.I18nManager.localeIdentifier;
 void i18next
     .use(initReactI18next) // passes i18n down to react-i18next
     .init(
