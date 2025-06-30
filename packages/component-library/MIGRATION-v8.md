@@ -8,6 +8,8 @@ First, update your `@brightlayer-ui/react-native-components` dependency to the l
 npm install --save @brightlayer-ui/react-native-components@^8.0.0
 // or
 yarn upgrade @brightlayer-ui/react-native-components@^8.0.0
+// or
+yarn expo install @brightlayer-ui/react-native-components@^8.0.0
 ```
 
 You also need to update `@brightlayer-ui/react-native-themes`, `react-native`, and `react-native-paper`.
@@ -18,8 +20,11 @@ npm install --save @brightlayer-ui/react-native-themes@^7.0.0 @brightlayer-ui/co
 // or
 
 yarn upgrade @brightlayer-ui/react-native-themes@^7.0.0 @brightlayer-ui/colors@^4.0.0 react-native@0.72.3 react-native-paper@^5.0.0
-```
 
+// or
+expo install @brightlayer-ui/react-native-themes@^7.0.0 @brightlayer-ui/colors@^4.0.0 react-native@0.72.3 react-native-paper@^5.0.0
+
+```
 ## Color Updates
 
 The Brightlayer UI color palette underwent major changes to reflect Material Design 3's new color structure. Please follow the [migration guide](https://github.com/etn-ccis/blui-colors/blob/master/README.md#migration-from-v3-to-v4) for more details.

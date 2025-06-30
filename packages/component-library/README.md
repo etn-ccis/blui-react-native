@@ -27,6 +27,11 @@ npm install --save react-native-paper@^5.0.0 react-native-safe-area-context@^4.0
 yarn add react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1  @react-native-vector-icons/material-icons@^12.0.1 
 ```
 
+## For Expo
+```shell
+yarn expo install react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1  @react-native-vector-icons/material-icons@^12.0.1
+```
+
 ## Building the Library
 
 To work with this library, first clone down the repository and install dependencies:
