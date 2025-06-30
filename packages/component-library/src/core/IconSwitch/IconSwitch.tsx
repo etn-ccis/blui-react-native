@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { StyleSheet, TouchableOpacity, ViewProps, I18nManager, StyleProp, ViewStyle, Animated } from 'react-native';
 import { Icon } from '../Icon/Icon';
 import { $DeepPartial } from '@callstack/react-theme-provider';
@@ -59,10 +59,10 @@ export const IconSwitch: React.FC<IconSwitchProps> = (props) => {
         onValueChange(newValue);
     };
 
-    useEffect(() => {
-        // Update the toggleStyles based on the current value
-        toggleStyles.transform = [{ translateX: value ? (showIcon ? (rtl ? -22 : 22) : rtl ? -18 : 18) : 0 }];
-    }, [value, rtl, showIcon, toggleStyles]);
+    // useEffect(() => {
+    //     // Update the toggleStyles based on the current value
+    //     toggleStyles.transform = [{ translateX: value ? (showIcon ? (rtl ? -22 : 22) : rtl ? -18 : 18) : 0 }];
+    // }, [value, rtl, showIcon, toggleStyles]);
 
     const defaultStyles = StyleSheet.create({
         track: {
