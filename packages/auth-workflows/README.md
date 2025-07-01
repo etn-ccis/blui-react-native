@@ -6,13 +6,13 @@ The React Native Auth Workflow package provides a consistent UI implementation o
 
 The package is intended to provide a standard, out-of-the-box experience for capabilities such as:
 
--   Okta Login
--   Login
--   Forgot / Reset Password
--   Change Password
--   Contact Support
--   Self Registration
--   Invitation-based Registration
+- Okta Login
+- Login
+- Forgot / Reset Password
+- Change Password
+- Contact Support
+- Self Registration
+- Invitation-based Registration
 
 This package is flexible, allowing you to use the Login and Registration flows independently or in combination (or simply use individual screen components), while also providing many opportunities to customize the flows if needed for your particular application.
 
@@ -23,31 +23,48 @@ These workflows are back-end agnostic, meaning you can use them with any back-en
 
 # Installation
 
+## React Native CLI
+
 To install the latest version of this package, run:
 
 ```shell
 npm install --save @brightlayer-ui/react-native-auth-workflow
-// or
+# or
 yarn add @brightlayer-ui/react-native-auth-workflow
-
 ```
-
-# Compatibility
-
-This package has a peer dependency on React Native Paper.
-
--   @brightlayer-ui/react-native-auth-workflow @1.x --> react-native-paper @3.x
--   @brightlayer-ui/react-native-auth-workflow @2.x --> react-native-paper @4.x
--   @brightlayer-ui/react-native-auth-workflow @4.x --> react-native-paper @5.x
 
 ### Peer Dependencies
 
-This package also has a number of peer dependency requirements that you will need to install in your project. To install the latest version of all of these peer dependencies, run the following command in your project root:
+This package requires several peer dependencies. Install them with:
 
-```
+```shell
 npm install --save @brightlayer-ui/react-native-components @brightlayer-ui/react-native-vector-icons @okta/okta-react-native i18next react react-i18next react-native react-native-gesture-handler react-native-keyboard-aware-scroll-view react-native-pager-view react-native-paper react-native-reanimated react-native-safe-area-context react-native-svg react-native-svg-transformer react-native-vector-icons react-native-webview
-// or
+# or
 yarn add @brightlayer-ui/react-native-components @brightlayer-ui/react-native-vector-icons @okta/okta-react-native i18next react react-i18next react-native react-native-gesture-handler react-native-keyboard-aware-scroll-view react-native-pager-view react-native-paper react-native-reanimated react-native-safe-area-context react-native-svg react-native-svg-transformer react-native-vector-icons react-native-webview
+```
+
+#### Compatibility
+
+- `@brightlayer-ui/react-native-auth-workflow@1.x` → `react-native-paper@3.x`
+- `@brightlayer-ui/react-native-auth-workflow@2.x` → `react-native-paper@4.x`
+- `@brightlayer-ui/react-native-auth-workflow@4.x` → `react-native-paper@5.x`
+
+---
+
+## Expo
+
+To install the latest version of this package, run:
+
+```shell
+yarn expo install @brightlayer-ui/react-native-auth-workflow
+```
+
+### Peer Dependencies
+
+Install all required peer dependencies with:
+
+```shell
+yarn expo install @brightlayer-ui/react-native-components @brightlayer-ui/react-native-vector-icons @okta/okta-react-native i18next react react-i18next react-native react-native-gesture-handler react-native-keyboard-aware-scroll-view react-native-pager-view react-native-paper react-native-reanimated react-native-safe-area-context react-native-svg react-native-svg-transformer react-native-vector-icons react-native-webview
 ```
 
 # Usage
@@ -56,24 +73,24 @@ To use the package, read our [Integration](https://github.com/etn-ccis/blui-reac
 
 In short, you will need to:
 
--   Add routes for each of the Login Workflow screens you wish to include
--   Define a mechanism for tracking the authenticated state of the current user
--   Add a registration route for the registration workflow component
--   Configure route guards / protected routes to ensure users only have access to specific routes when appropriate
--   Define actions files to integrate the workflow screens with your back-end API
+- Add routes for each of the Login Workflow screens you wish to include
+- Define a mechanism for tracking the authenticated state of the current user
+- Add a registration route for the registration workflow component
+- Configure route guards / protected routes to ensure users only have access to specific routes when appropriate
+- Define actions files to integrate the workflow screens with your back-end API
 
 > If you are starting a brand new project, the easiest way to get started with the React Native Auth Workflow is to use the [BLUI CLI](https://www.npmjs.com/package/@brightlayer-ui/cli) and select the Authentication template as your starting point. This will create a brand new project that exactly mirrors the example project from this repository.
 
 ## Learn More
 
--   [Setting Up Routing](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/routing.md)
--   [Language Support](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/language-support.md)
--   [Adding an Authentication/Login Workflow](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/authentication-workflow.md)
--   [Adding a Registration Workflow](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/registration-workflow.md)
--   [Handling Errors](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/error-management.md)
--   [Customizing Workflows](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/customization.md)
--   [Components & APIs](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/components/README.md)
--   [Screens](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/screens/README.md)
+- [Setting Up Routing](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/routing.md)
+- [Language Support](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/language-support.md)
+- [Adding an Authentication/Login Workflow](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/authentication-workflow.md)
+- [Adding a Registration Workflow](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/registration-workflow.md)
+- [Handling Errors](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/error-management.md)
+- [Customizing Workflows](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/customization.md)
+- [Components & APIs](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/components/README.md)
+- [Screens](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/screens/README.md)
 
 # Migrating from v5 => v6
 
@@ -81,14 +98,14 @@ We have listened to your feedback and version 5 of this library is a significant
 
 Some notable changes include:
 
--   Router independence — you now have full control over your routing library and its configuration
--   Allowing you to manage the authentication status / mechanism (separating UI from business logic)
--   Separation of Login and Registration workflows so they can be used independently
--   Allow for re-ordering or adding/removing screens from workflows (utility components available to help you match our styling in custom screens)
--   Exporting screens individually so you can build your own custom flows
--   Simpler approach to translations (separating our internal translations from your application-level translations)
--   Greater customization of screens through props (and moving customization properties to the screens they affect instead of handling all customizations through a monolithic wrapper component)
--   Improved error management mechanism (customizable)
+- Router independence — you now have full control over your routing library and its configuration
+- Allowing you to manage the authentication status / mechanism (separating UI from business logic)
+- Separation of Login and Registration workflows so they can be used independently
+- Allow for re-ordering or adding/removing screens from workflows (utility components available to help you match our styling in custom screens)
+- Exporting screens individually so you can build your own custom flows
+- Simpler approach to translations (separating our internal translations from your application-level translations)
+- Greater customization of screens through props (and moving customization properties to the screens they affect instead of handling all customizations through a monolithic wrapper component)
+- Improved error management mechanism (customizable)
 
 Learn more about upgrading your existing application by reading our [Migrating Guide](https://github.com/etn-ccis/blui-react-native/packages/auth-workflows/docs/migration-guide-5-6.md)
 
