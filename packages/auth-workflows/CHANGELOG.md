@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v8.0.0 (Unreleased)
+
+### Changed
+
+- Migrated package module format from CommonJS to ESM for modern compatibility and better tree-shaking support.
+- Upgraded the project to use the latest React Native package version.
+
+### Fixed
+
+- Update Language Support documentation for how to override in-built translations [248](https://github.com/etn-ccis/blui-react-native/issues/248)
+
 ## v7.0.2 (June 18, 2025)
 
 ### Fixed
