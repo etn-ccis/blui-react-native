@@ -5,7 +5,8 @@
 ### Added
 
 - Added `chevronColor` prop to InfoListItem
-- Changed build type to ESM build.
+- Migrated package module format from CommonJS to ESM for modern compatibility and better tree-shaking support.
+- Upgraded the project to use the latest React Native package version.
 
 ### Fixed
 

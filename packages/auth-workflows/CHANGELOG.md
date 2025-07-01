@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- Changed build type to ESM build.
+- Migrated package module format from CommonJS to ESM for modern compatibility and better tree-shaking support.
+- Upgraded the project to use the latest React Native package version.
 
 ### Fixed
 
