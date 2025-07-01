@@ -344,21 +344,25 @@ jobs:
           working-directory: packages/themes
 
     publish-templates:
+        name: Publish Templates
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-templates.yml@dev
         secrets: inherit
         needs: prettier_lint
 
     publish-components:
+        name: Publish Components Library
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-components.yml@dev
         secrets: inherit
         needs: build_component_library
 
     publish-auth-workflow:
+        name: Publish Auth Workflow
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-auth-workflow.yml@dev
         secrets: inherit
         needs: build_auth_workflow
 
     publish-progress-icons:
+        name: Publish Progress Icons
         uses: etn-ccis/blui-react-native/.github/workflows/blui-publish-progress-icons.yml@dev
         secrets: inherit
         needs: build_progress_icons
