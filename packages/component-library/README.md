@@ -50,8 +50,10 @@ yarn expo install @brightlayer-ui/react-native-components
 You will also need to install the required peer dependencies:
 
 ```sh
-yarn expo install react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0
+yarn expo install react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1  @react-native-vector-icons/material-icons@^12.0.1
 ```
+
+> **Note:** To install `@brightlayer-ui/react-native-vector-icons` for Expo, please follow the instructions in the [BLUI RN Vector Icons README](https://github.com/etn-ccis/blui-icons/blob/master/packages/rn-vector/README.md#installation-for-expo).
 
 ## Building the Library
 
