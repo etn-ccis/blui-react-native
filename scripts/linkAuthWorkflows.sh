@@ -18,6 +18,9 @@ mkdir -p "./examples/showcase/node_modules/@brightlayer-ui/react-native-auth-wor
 rm -rf "./examples/workflow/node_modules/@brightlayer-ui/react-native-auth-workflow"
 mkdir -p "./examples/workflow/node_modules/@brightlayer-ui/react-native-auth-workflow"
 
+rm -rf "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-auth-workflow"
+mkdir -p "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-auth-workflow"
+
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
@@ -26,6 +29,9 @@ echo -en "${BLUE}Copying build output into node_modules...${NC}";
 cp -r ./packages/auth-workflows/dist/ ./examples/showcase/node_modules/@brightlayer-ui/react-native-auth-workflow/
 # cp ./packages/auth-workflows/package.json ./examples/workflow/node_modules/@brightlayer-ui/react-native-auth-workflow/package.json
 cp -r ./packages/auth-workflows/dist/ ./examples/workflow/node_modules/@brightlayer-ui/react-native-auth-workflow/
+
+cp -r ./packages/auth-workflows/dist/ ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-auth-workflow/
+
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BBLUE}Linking Components: ${NC}"
@@ -43,4 +49,6 @@ if [ ! -f ./examples/workflow/node_modules/@brightlayer-ui/react-native-auth-wor
 #         then echo -e "${BRED}Auth Workflows Not Linked${NC}" && exit 1;
 #         fi;
 # fi
+if [ ! -f ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-auth-workflow/package.json ]; then echo -e "${BRED}Auth Worklow Not Linked${NC}" && exit 1; fi
+
 echo -e "${GRAY}Complete${NC}\r\n"

@@ -396,7 +396,7 @@ __metadata:
     tsc-esm-fix: "npm:^3.1.2"
     typescript: "npm:^5.8.3"
   peerDependencies:
-    react-native-paper: ^5.0.0
+    react-native-paper: ^5.14.5
   languageName: unknown
   linkType: soft
 

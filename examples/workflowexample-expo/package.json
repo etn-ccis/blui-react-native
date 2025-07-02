@@ -54,7 +54,7 @@
         "typescript": "~5.8.3"
     },
     "resolutions": {
-        "react-native-reanimated": "3.17.4",
+        "react-native-reanimated": "~3.17.4",
         "react-native-modal": "^14.0.0-rc.1"
     },
     "private": true

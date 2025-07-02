@@ -20,6 +20,9 @@ mkdir -p "./examples/workflow/node_modules/@brightlayer-ui/react-native-componen
 rm -rf "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components"
 mkdir -p "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components"
 
+
+rm -rf "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-components"
+mkdir -p "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-components"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
@@ -30,6 +33,8 @@ cp -r ./packages/component-library/dist/* ./examples/showcase/node_modules/@brig
 cp -r ./packages/component-library/dist/* ./examples/workflow/node_modules/@brightlayer-ui/react-native-components/
 # cp ./packages/component-library/package.json ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/package.json
 cp -r ./packages/component-library/dist/* ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/
+
+cp -r ./packages/component-library/dist/* ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-components/
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BBLUE}Linking Components: ${NC}"
@@ -54,4 +59,5 @@ if [ ! -f ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-co
 #         then echo -e "${BRED}Components Not Linked to Design Patterns${NC}" && exit 1;
 #         fi;
 # fi
+if [ ! -f ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-components/package.json ]; then echo -e "${BRED}Components Not Linked${NC}" && exit 1; fi
 echo -e "${GRAY}Complete${NC}\r\n"
