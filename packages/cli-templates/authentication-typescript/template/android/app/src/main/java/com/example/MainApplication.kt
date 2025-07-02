@@ -30,7 +30,7 @@ class MainApplication : Application(), ReactApplication {
 
   override val reactHost: ReactHost
     get() = getDefaultReactHost(applicationContext, reactNativeHost)
-
+ 
   override fun onCreate() {
     super.onCreate()
     loadReactNative(this)
