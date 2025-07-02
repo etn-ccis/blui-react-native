@@ -64,8 +64,10 @@ yarn expo install @brightlayer-ui/react-native-auth-workflow
 Install all required peer dependencies with:
 
 ```shell
-yarn expo install @brightlayer-ui/react-native-components @brightlayer-ui/react-native-vector-icons @okta/okta-react-native i18next react react-i18next react-native react-native-gesture-handler react-native-keyboard-aware-scroll-view react-native-pager-view react-native-paper react-native-reanimated react-native-safe-area-context react-native-svg react-native-svg-transformer react-native-vector-icons react-native-webview
+yarn expo install @brightlayer-ui/react-native-components @okta/okta-react-native i18next react react-i18next react-native react-native-gesture-handler react-native-keyboard-aware-scroll-view react-native-pager-view react-native-paper react-native-reanimated react-native-safe-area-context react-native-svg react-native-svg-transformer react-native-vector-icons react-native-webview
 ```
+
+> **Note:** To install `@brightlayer-ui/react-native-vector-icons` for Expo, please follow the instructions in the [BLUI RN Vector Icons README](https://github.com/etn-ccis/blui-icons/blob/master/packages/rn-vector/README.md#installation-for-expo).
 
 # Usage
 

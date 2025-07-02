@@ -15,24 +15,42 @@ To add Brightlayer UI React Native components to your project, follow the instru
 
 Install the package and all required peer dependencies:
 
-```sh
-yarn add @brightlayer-ui/react-native-components react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0
+```shell
+npm install @brightlayer-ui/react-native-components
+
+// or
+
+yarn add @brightlayer-ui/react-native-components
 ```
 
-Or with npm:
+> **NOTE**: This install command will install the package from NPM. If you are a Brightlayer UI developer working with components locally, you will want to follow the manual linking instructions - see below.
 
-```sh
-npm install @brightlayer-ui/react-native-components react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0
+### Peer Dependencies
+
+This library has a few dependencies that you will need to install in your project in order to work correctly. To install them, you can run the following command in your project root:
+
+```shell
+npm install --save react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1 @react-native-vector-icons/material-icons@^12.0.1
+// or
+yarn add react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1  @react-native-vector-icons/material-icons@^12.0.1
 ```
 
 > **Note:** If you use additional icon sets, install them as needed (e.g., `@react-native-vector-icons/material-icons`).
 
 ### Expo
 
-Install the package and all required peer dependencies using Expo's package manager:
+Install the package using Expo's package manager:
 
 ```sh
-yarn expo install @brightlayer-ui/react-native-components react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0
+yarn expo install @brightlayer-ui/react-native-components
+```
+
+### Peer Dependencies
+
+You will also need to install the required peer dependencies:
+
+```sh
+yarn expo install react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0
 ```
 
 ## Building the Library

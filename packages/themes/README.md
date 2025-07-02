@@ -7,8 +7,8 @@ This package provides [theming](https://brightlayer-ui.github.io/style/themes) s
 
 For other frameworks, check out our related packages:
 
--   [@brightlayer-ui/angular-themes](https://www.npmjs.com/package/@brightlayer-ui/angular-themes)
--   [@brightlayer-ui/react-themes](https://www.npmjs.com/package/@brightlayer-ui/react-themes)
+- [@brightlayer-ui/angular-themes](https://www.npmjs.com/package/@brightlayer-ui/angular-themes)
+- [@brightlayer-ui/react-themes](https://www.npmjs.com/package/@brightlayer-ui/react-themes)
 
 ## Installation
 
@@ -22,6 +22,12 @@ or yarn
 
 ```shell
 yarn add @brightlayer-ui/react-native-themes
+```
+
+or expo
+
+```shell
+yarn expo install @brightlayer-ui/react-native-themes
 ```
 
 # Usage
