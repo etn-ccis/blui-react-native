@@ -1,0 +1,61 @@
+{
+    "name": "workflowexample-expo",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "scripts": {
+        "start": "expo start",
+        "android": "expo run:android",
+        "ios": "expo run:ios",
+        "web": "expo start --web"
+    },
+    "dependencies": {
+        "@brightlayer-ui/colors": "^4.0.0",
+        "@brightlayer-ui/icons-svg": "^1.15.0",
+        "@brightlayer-ui/react-native-auth-workflow": "^7.0.2",
+        "@brightlayer-ui/react-native-components": "^8.0.4",
+        "@brightlayer-ui/react-native-progress-icons": "^1.0.2",
+        "@brightlayer-ui/react-native-themes": "^7.0.1",
+        "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
+        "@okta/okta-react-native": "^2.17.0",
+        "@react-native-async-storage/async-storage": "2.1.2",
+        "@react-native-vector-icons/material-design-icons": "^12.0.1",
+        "@react-native-vector-icons/material-icons": "^12.0.1",
+        "@react-navigation/drawer": "6.6.6",
+        "@react-navigation/elements": "^2.3.8",
+        "@react-navigation/native": "^6.1.9",
+        "@react-navigation/native-stack": "^6.11.0",
+        "@react-navigation/stack": "^6.3.20",
+        "expo": "~53.0.13",
+        "expo-status-bar": "~2.2.3",
+        "i18next": "^25.2.1",
+        "intl-pluralrules": "^2.0.1",
+        "lodash": "^4.17.21",
+        "react": "19.0.0",
+        "react-i18next": "^15.5.3",
+        "react-native": "0.79.4",
+        "react-native-gesture-handler": "~2.24.0",
+        "react-native-keyboard-aware-scroll-view": "^0.9.5",
+        "react-native-pager-view": "6.7.1",
+        "react-native-paper": "^5.14.5",
+        "react-native-reanimated": "~3.17.4",
+        "react-native-restart": "^0.0.27",
+        "react-native-safe-area-context": "5.4.0",
+        "react-native-screens": "~4.11.1",
+        "react-native-select-dropdown": "^4.0.1",
+        "react-native-svg": "15.11.2",
+        "react-native-svg-transformer": "^1.5.1",
+        "react-native-vector-icons": "^10.2.0",
+        "react-native-webview": "13.13.5"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.25.2",
+        "@types/lodash": "^4",
+        "@types/react": "~19.0.10",
+        "typescript": "~5.8.3"
+    },
+    "resolutions": {
+        "react-native-reanimated": "3.17.4",
+        "react-native-modal": "^14.0.0-rc.1"
+    },
+    "private": true
+}
