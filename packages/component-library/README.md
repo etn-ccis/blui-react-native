@@ -9,9 +9,17 @@ Refer to the [Component Library API documentation](https://brightlayer-ui-compon
 
 ## Installation
 
-To install the Brightlayer UI react native components from NPM as a dependency for your project, you can run the following command in your project root:
+To add Brightlayer UI React Native components to your project, follow the instructions for your project type below.
 
-```
+### React Native CLI
+
+Install the package and all required peer dependencies:
+
+```shell
+npm install @brightlayer-ui/react-native-components
+
+// or
+
 yarn add @brightlayer-ui/react-native-components
 ```
 
@@ -22,10 +30,30 @@ yarn add @brightlayer-ui/react-native-components
 This library has a few dependencies that you will need to install in your project in order to work correctly. To install them, you can run the following command in your project root:
 
 ```shell
-npm install --save react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1 @react-native-vector-icons/material-icons@^12.0.1 
+npm install --save react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1 @react-native-vector-icons/material-icons@^12.0.1
 // or
-yarn add react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1  @react-native-vector-icons/material-icons@^12.0.1 
+yarn add react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1  @react-native-vector-icons/material-icons@^12.0.1
 ```
+
+> **Note:** If you use additional icon sets, install them as needed (e.g., `@react-native-vector-icons/material-icons`).
+
+### Expo
+
+Install the package using Expo's package manager:
+
+```sh
+yarn expo install @brightlayer-ui/react-native-components
+```
+
+### Peer Dependencies
+
+You will also need to install the required peer dependencies:
+
+```sh
+yarn expo install react-native-paper@^5.0.0 react-native-safe-area-context@^4.0.0 react-native-vector-icons@^9.0.0 @brightlayer-ui/react-native-vector-icons@^2.2.0 @react-native-vector-icons/material-design-icons@^12.0.1  @react-native-vector-icons/material-icons@^12.0.1
+```
+
+> **Note:** To install `@brightlayer-ui/react-native-vector-icons` for Expo, please follow the instructions in the [BLUI RN Vector Icons README](https://github.com/etn-ccis/blui-icons/blob/master/packages/rn-vector/README.md#installation-for-expo).
 
 ## Building the Library
 
@@ -73,7 +101,7 @@ See the [documentation](https://brightlayer-ui-components.github.io/react-native
 
 ### Upgrading to version 8
 
-Version 8 utilizes [React Native Paper v5](https://callstack.github.io/react-native-paper/) with [Material Design v3](https://m3.material.io/) and is a major update with several changes. Most particularly, the `Typography` and `IconWrapper` components have been removed and we added 5 new components. In previous versions we exported themed components, which have been removed in this version. Please follow the [migration guide](./MIGRATION-v8.md) for more details. 
+Version 8 utilizes [React Native Paper v5](https://callstack.github.io/react-native-paper/) with [Material Design v3](https://m3.material.io/) and is a major update with several changes. Most particularly, the `Typography` and `IconWrapper` components have been removed and we added 5 new components. In previous versions we exported themed components, which have been removed in this version. Please follow the [migration guide](./MIGRATION-v8.md) for more details.
 
 ### Upgrading to version 9
 

@@ -29,6 +29,18 @@ In order to use this library, you must also have `react-native-svg` installed in
 yarn add react-native-svg
 ```
 
+### Installation with Expo
+
+If you are using Expo, the Expo client app already includes the necessary native code for `react-native-svg`.
+
+Install the JavaScript dependency with:
+
+```sh
+npx expo install react-native-svg
+```
+
+See the [Expo docs](https://docs.expo.dev/versions/latest/sdk/svg/) for more information.
+
 ## Using the progress icons in your application
 
 The progress icon components can be imported and used like you would use any other component.
