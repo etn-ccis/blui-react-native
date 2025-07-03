@@ -20,8 +20,8 @@ mkdir -p "./examples/workflow/node_modules/@brightlayer-ui/react-native-componen
 rm -rf "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components"
 mkdir -p "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components"
 
-rm -rf "./examples/showcase-expo/node_modules/@brightlayer-ui/react-native-components"
-mkdir -p "./examples/showcase-expo/node_modules/@brightlayer-ui/react-native-components/dist"
+rm -rf "./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-components"
+mkdir -p "./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-components"
 
 echo -e "${GREEN}Done${NC}"
 
@@ -33,7 +33,7 @@ cp -r ./packages/component-library/dist/* ./examples/showcase/node_modules/@brig
 cp -r ./packages/component-library/dist/* ./examples/workflow/node_modules/@brightlayer-ui/react-native-components/
 # cp ./packages/component-library/package.json ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/package.json
 cp -r ./packages/component-library/dist/* ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-components/
-cp -r ./packages/component-library/dist/* ./examples/showcase-expo/node_modules/@brightlayer-ui/react-native-components/
+cp -r ./packages/component-library/dist/* ./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-components/
 
 echo -e "${GREEN}Done${NC}"
 
@@ -59,7 +59,7 @@ if [ ! -f ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-co
 #         then echo -e "${BRED}Components Not Linked to Design Patterns${NC}" && exit 1;
 #         fi;
 # fi
-if [ ! -f ./examples/showcase-expo/node_modules/@brightlayer-ui/react-native-components/package.json ]; then echo -e "${BRED}Components Not Linked to expo showcase${NC}" && exit 1; fi
-if [ ! -f ./examples/showcase-expo/node_modules/@brightlayer-ui/react-native-components/index.js ]; then echo -e "${BRED}Components Not Linked to expo showcase${NC}" && exit 1; fi
+if [ ! -f ./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-components/package.json ]; then echo -e "${BRED}Components Not Linked to expo showcase${NC}" && exit 1; fi
+if [ ! -f ./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-components/index.js ]; then echo -e "${BRED}Components Not Linked to expo showcase${NC}" && exit 1; fi
 
 echo -e "${GRAY}Complete${NC}\r\n"
