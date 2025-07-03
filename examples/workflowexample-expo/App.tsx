@@ -19,6 +19,7 @@ import { Spinner } from '@brightlayer-ui/react-native-auth-workflow';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeModules, Platform } from 'react-native';
 import { isAuthenticated as isOktaAuthenticated, EventEmitter, getAccessToken } from '@okta/okta-react-native';
+import { getLocales } from 'expo-localization';
 
 export const App = (): JSX.Element => {
     const [theme, setTheme] = useState<ThemeType>('light');
@@ -37,21 +38,12 @@ export const App = (): JSX.Element => {
                 setLanguage(storedLanguage);
                 void i18n.changeLanguage(storedLanguage);
             } else {
-                let locale = 'en';
-                locale =
-                    Platform.OS === 'ios'
-                        ? NativeModules.SettingsManager.settings.AppleLocale ||
-                          NativeModules.SettingsManager.settings.AppleLocale[0]
-                        : NativeModules.I18nManager.localeIdentifier;
+                const locale = getLocales()[0].languageCode||'en';
+
                 setLanguage(locale?.substring(0, 2) || 'en');
             }
         } catch (error) {
-            let locale = 'en';
-            locale =
-                Platform.OS === 'ios'
-                    ? NativeModules.SettingsManager.settings.AppleLocale ||
-                      NativeModules.SettingsManager.settings.AppleLocale[0]
-                    : NativeModules.I18nManager.localeIdentifier;
+           const locale = getLocales()[0].languageCode||'en';
             setLanguage(locale?.substring(0, 2) || 'en');
             console.error('Error getting language from Async Storage:', error);
         }

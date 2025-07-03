@@ -4059,6 +4059,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-localization@npm:~16.1.6":
+  version: 16.1.6
+  resolution: "expo-localization@npm:16.1.6"
+  dependencies:
+    rtl-detect: "npm:^1.0.2"
+  peerDependencies:
+    expo: "*"
+    react: "*"
+  checksum: 10c0/7a3e32e2a3f43054422d6509aa7cb290af93522b2e3e6cf0c4643766eef31233c0d2939ef3c77d9d5d95a7fde67aad7ec92b945af8411c38e6ffc1f5f7a0886f
+  languageName: node
+  linkType: hard
+
 "expo-modules-autolinking@npm:2.1.12":
   version: 2.1.12
   resolution: "expo-modules-autolinking@npm:2.1.12"
@@ -7254,6 +7266,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rtl-detect@npm:^1.0.2":
+  version: 1.1.2
+  resolution: "rtl-detect@npm:1.1.2"
+  checksum: 10c0/1b92888aafca1593314f837e83fdf02eb208faae3e713ab87c176804728efd3b1980d53b64f65f1fa593348087e852c5cd729b7b9372950f6e9b7be489afc0ca
+  languageName: node
+  linkType: hard
+
 "safe-buffer@npm:5.2.1, safe-buffer@npm:~5.2.0":
   version: 5.2.1
   resolution: "safe-buffer@npm:5.2.1"
@@ -8299,6 +8318,7 @@ __metadata:
     "@types/lodash": "npm:^4"
     "@types/react": "npm:~19.0.10"
     expo: "npm:~53.0.13"
+    expo-localization: "npm:~16.1.6"
     expo-status-bar: "npm:~2.2.3"
     i18next: "npm:^25.2.1"
     intl-pluralrules: "npm:^2.0.1"
