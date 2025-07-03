@@ -18,7 +18,7 @@ import { AppContext, AppContextType } from './src/contexts/AppContextProvider';
 import { LocalStorage } from './src/store/local-storage';
 import { Spinner } from '@brightlayer-ui/react-native-auth-workflow';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NativeModules, Platform } from 'react-native';
+// import { NativeModules, Platform } from 'react-native';
 
 export const App = (): JSX.Element => {
     const [theme, setTheme] = useState<ThemeType>('light');
