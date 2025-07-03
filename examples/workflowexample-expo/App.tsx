@@ -17,7 +17,6 @@ import { I18nextProvider, useTranslation } from 'react-i18next';
 import { AppContext, AppContextType } from './src/contexts/AppContextProvider';
 import { Spinner } from '@brightlayer-ui/react-native-auth-workflow';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NativeModules, Platform } from 'react-native';
 import { isAuthenticated as isOktaAuthenticated, EventEmitter, getAccessToken } from '@okta/okta-react-native';
 import { getLocales } from 'expo-localization';
 
@@ -38,12 +37,12 @@ export const App = (): JSX.Element => {
                 setLanguage(storedLanguage);
                 void i18n.changeLanguage(storedLanguage);
             } else {
-                const locale = getLocales()[0].languageCode||'en';
+                const locale = getLocales()[0].languageCode || 'en';
 
                 setLanguage(locale?.substring(0, 2) || 'en');
             }
         } catch (error) {
-           const locale = getLocales()[0].languageCode||'en';
+            const locale = getLocales()[0].languageCode || 'en';
             setLanguage(locale?.substring(0, 2) || 'en');
             console.error('Error getting language from Async Storage:', error);
         }

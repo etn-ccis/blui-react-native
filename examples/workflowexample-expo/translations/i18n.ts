@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import 'intl-pluralrules';
 import { getLocales } from 'expo-localization';
 
-const locale = getLocales()[0].languageCode||'en';
+const locale = getLocales()[0].languageCode || 'en';
 // Platform.OS === 'ios'
 //     ? NativeModules.SettingsManager.settings.AppleLocale
 //     : NativeModules.I18nManager.localeIdentifier;
