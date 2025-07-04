@@ -1,4 +1,4 @@
-name: blui-pr-actions
+name: PR Actions
 on:
     pull_request_target:
         types:
@@ -10,9 +10,11 @@ permissions:
 
 jobs:
     pr-labels:
+        name: PR Labels
         uses: etn-ccis/blui-automation/.github/workflows/blui-labels.yml@dev
         secrets: inherit
 
     pr-comment:
+        name: PR Comment
         uses: etn-ccis/blui-automation/.github/workflows/blui-comment.yml@dev
         secrets: inherit

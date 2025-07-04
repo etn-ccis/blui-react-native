@@ -1,7 +1,7 @@
 import React from 'react';
 import { cleanup, render, screen, renderHook } from '@testing-library/react-native';
 import { Text } from 'react-native-paper';
-import { ErrorContextProvider, ErrorContextProviderProps, useErrorContext, useErrorManager } from 'src/contexts';
+import { ErrorContextProvider, ErrorContextProviderProps, useErrorContext, useErrorManager } from '../../contexts';
 
 afterEach(cleanup);
 
@@ -22,7 +22,7 @@ describe('ErrorContextProvider', () => {
     });
 
     it('should read values from the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <ErrorContextProvider {...errorContextProviderProps}>{children}</ErrorContextProvider>
         );
         const { result } = renderHook(() => useErrorContext(), { wrapper });
@@ -31,7 +31,7 @@ describe('ErrorContextProvider', () => {
     });
 
     it('should set values in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <ErrorContextProvider {...errorContextProviderProps} mode="message-box">
                 {children}
             </ErrorContextProvider>
@@ -59,7 +59,7 @@ describe('ErrorContextProvider', () => {
     });
 
     it('should set values in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <ErrorContextProvider {...errorContextProviderProps} mode="message-box">
                 {children}
             </ErrorContextProvider>
@@ -71,7 +71,7 @@ describe('ErrorContextProvider', () => {
     });
 
     it('should set the prop values in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <ErrorContextProvider {...errorContextProviderProps} mode="dialog">
                 {children}
             </ErrorContextProvider>
@@ -83,7 +83,7 @@ describe('ErrorContextProvider', () => {
     });
 
     it('should set the custom values in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <ErrorContextProvider {...errorContextProviderProps} title="Custom Title">
                 {children}
             </ErrorContextProvider>
@@ -94,7 +94,7 @@ describe('ErrorContextProvider', () => {
     });
 
     it('should set values for trigger error in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <ErrorContextProvider {...errorContextProviderProps} mode="dialog">
                 {children}
             </ErrorContextProvider>

@@ -1,34 +1,29 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react-native';
-import { WorkflowCardHeader } from 'src/components/WorkflowCard';
-import renderer from 'react-test-renderer';
+import { WorkflowCardHeader } from '../../../components/WorkflowCard';
 import { SafeAreaProvider } from 'react-native-safe-area-context'; // Or the appropriate library
 
 describe('WorkflowCardHeader', () => {
     afterEach(cleanup);
     it('WorkflowCardHeader renders correctly', () => {
-        const rendered = renderer
-            .create(
-                <SafeAreaProvider>
-                    <WorkflowCardHeader title={'title'} onIconPress={jest.fn()} />
-                </SafeAreaProvider>
-            )
-            .toJSON();
+        const rendered = render(
+            <SafeAreaProvider>
+                <WorkflowCardHeader title={'title'} onIconPress={jest.fn()} />
+            </SafeAreaProvider>
+        ).toJSON();
         expect(rendered).toBeTruthy();
     });
     it('WorkflowCardHeader renders correctly with custom icon', () => {
-        const rendered = renderer
-            .create(
-                <SafeAreaProvider>
-                    <WorkflowCardHeader
-                        title={'title'}
-                        backgroundColor="#fff"
-                        onIconPress={jest.fn()}
-                        icon={{ name: 'close' }}
-                    />
-                </SafeAreaProvider>
-            )
-            .toJSON();
+        const rendered = render(
+            <SafeAreaProvider>
+                <WorkflowCardHeader
+                    title={'title'}
+                    backgroundColor="#fff"
+                    onIconPress={jest.fn()}
+                    icon={{ name: 'close' }}
+                />
+            </SafeAreaProvider>
+        ).toJSON();
         expect(rendered).toBeTruthy();
     });
 

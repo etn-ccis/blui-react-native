@@ -39,7 +39,7 @@ const makeStyles = ({
     });
 
 function hasWorkflowCardHeaderRecursive(children: any): boolean {
-    return React.Children.toArray(children).some((child) => (child as JSX.Element).type === WorkflowCardHeader);
+    return React.Children.toArray(children).some((child) => (child as React.JSX.Element).type === WorkflowCardHeader);
 }
 
 /**

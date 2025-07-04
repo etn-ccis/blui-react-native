@@ -13,12 +13,12 @@ export type SharedRegistrationWorkflowProps = {
     /**
      * The success screen to display upon successful registration
      */
-    successScreen?: JSX.Element;
+    successScreen?: React.JSX.Element;
 
     /**
      * Component to display for the success screen if the account already exists.
      */
-    existingAccountSuccessScreen?: JSX.Element;
+    existingAccountSuccessScreen?: React.JSX.Element;
 
     /**
      * The configuration for customizing how errors are displayed

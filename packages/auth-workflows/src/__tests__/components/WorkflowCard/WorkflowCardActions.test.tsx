@@ -1,12 +1,11 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react-native';
-import renderer from 'react-test-renderer';
-import { WorkflowCardActions } from 'src/components/WorkflowCard/WorkflowCardActions';
+import { WorkflowCardActions } from '../../../components/WorkflowCard/WorkflowCardActions';
 
 describe('WorkflowCardActions Test', () => {
     afterEach(cleanup);
     it('WorkflowCardActions renders correctly', () => {
-        const rendered = renderer.create(<WorkflowCardActions nextLabel="Next" previousLabel="Previous" />).toJSON();
+        const rendered = render(<WorkflowCardActions nextLabel="Next" previousLabel="Previous" />).toJSON();
         expect(rendered).toBeTruthy();
     });
 

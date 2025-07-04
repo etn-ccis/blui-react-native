@@ -83,12 +83,12 @@ export type OktaLoginScreenProps = WorkflowCardBaseProps & {
     /**
      * The header to display at the top of the screen
      */
-    header?: JSX.Element;
+    header?: React.JSX.Element;
 
     /**
      * The footer to display at the bottom of the screen
      */
-    footer?: JSX.Element;
+    footer?: React.JSX.Element;
 
     /**
      * The size of the cyber security image

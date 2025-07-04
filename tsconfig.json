@@ -12,5 +12,5 @@
         "skipLibCheck": true,
         "target": "esnext"
     },
-    "include": ["**/*.tsx", "**/*.ts", "docs/vite.config.ts"]
+    "include": ["**/*.tsx", "**/*.ts", "docs/vite.config.ts", "examples/showcase-expo/app/index.js"]
 }

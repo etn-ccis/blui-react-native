@@ -58,7 +58,7 @@ export const WorkflowCardHeader: React.FC<WorkflowCardHeaderProps> = (props) => 
     const defaultStyles = makeStyles(theme, isTablet, backgroundColor, textColor);
     const insets = useSafeAreaInsets();
     const statusBarHeight = insets.top;
-    const getIcon = (): JSX.Element | undefined => {
+    const getIcon = (): React.JSX.Element | undefined => {
         if (icon) {
             return <Icon source={icon} color={iconColor ?? theme.colors.onSurface} size={24} />;
         }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { OktaRedirectLoginScreenBase } from 'src/screens';
+import { OktaRedirectLoginScreenBase } from '../../screens';
 import { Image, Text } from 'react-native';
 
 describe('OktaRedirectLoginScreenBase', () => {

@@ -4,7 +4,7 @@ import { cleanup, render, screen, RenderResult, fireEvent } from '@testing-libra
 import { AuthContextProvider } from '../../contexts';
 import { authContextProviderProps } from '../../testUtils';
 import { ContactSupportScreen } from '../../screens/ContactScreen';
-import { ContactSupportScreenProps } from 'src/screens';
+import { ContactSupportScreenProps } from '../../screens';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 afterEach(cleanup);
 

@@ -92,7 +92,7 @@ describe('RegistrationWorkflow', () => {
     });
 
     it('should set screen data for default registration workflow in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <PaperProvider>
                 <RegistrationContextProvider {...registrationContextProviderProps}>
                     <RegistrationWorkflow
@@ -117,7 +117,7 @@ describe('RegistrationWorkflow', () => {
     });
 
     it('should set screen data for custom registration workflow in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <PaperProvider>
                 <RegistrationContextProvider {...registrationContextProviderProps}>
                     <RegistrationWorkflow {...defaultProps}>{children}</RegistrationWorkflow>
@@ -180,7 +180,7 @@ describe('RegistrationWorkflow', () => {
                 <Text>Account Exists!!!</Text>
             </View>
         );
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <PaperProvider>
                 <RegistrationContextProvider {...registrationContextProviderProps}>
                     <RegistrationWorkflow {...defaultProps}>{children}</RegistrationWorkflow>
@@ -213,7 +213,7 @@ describe('RegistrationWorkflow', () => {
                 <Text>Account Exists!!!</Text>
             </View>
         );
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <PaperProvider>
                 <RegistrationContextProvider {...registrationContextProviderProps}>
                     <RegistrationWorkflow {...defaultProps}>{children}</RegistrationWorkflow>

@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, StyleSheet, StyleProp, ViewStyle, I18nManager, TextStyle } from 'react-native';
 import { ICON_SIZE } from './constants';
 import { IconSource } from '../__types__';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from '@react-native-vector-icons/material-icons';
 import { HeaderIcon } from './HeaderIcon';
 import { useSearch } from './contexts/SearchContextProvider';
 import { useColor } from './contexts/ColorContextProvider';

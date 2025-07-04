@@ -2,7 +2,6 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-native/extend-expect';
 import { cleanup, render, fireEvent, screen, waitFor } from '@testing-library/react-native';
-import renderer from 'react-test-renderer';
 import { EulaScreen } from '../../screens/EulaScreen';
 import { RegistrationWorkflow } from '../../components';
 import { RegistrationContextProvider, i18nRegistrationInstance } from '../../contexts';
@@ -13,17 +12,15 @@ afterEach(cleanup);
 
 describe('Eula Screen', () => {
     it('Eula Screen renders correctly', () => {
-        const rendered = renderer
-            .create(
-                <PaperProvider>
-                    <RegistrationContextProvider {...registrationContextProviderProps}>
-                        <RegistrationWorkflow initialScreenIndex={0}>
-                            <EulaScreen />
-                        </RegistrationWorkflow>
-                    </RegistrationContextProvider>
-                </PaperProvider>
-            )
-            .toJSON();
+        const rendered = render(
+            <PaperProvider>
+                <RegistrationContextProvider {...registrationContextProviderProps}>
+                    <RegistrationWorkflow initialScreenIndex={0}>
+                        <EulaScreen />
+                    </RegistrationWorkflow>
+                </RegistrationContextProvider>
+            </PaperProvider>
+        ).toJSON();
         expect(rendered).toBeTruthy();
     });
 

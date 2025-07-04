@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Image, I18nManager, Platform, ImageSourcePropType } from 'react-native';
 import { IconComponentProps, IconFamily, IconSource, IconSourceBase } from '../__types__';
-import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import MatCommunity from 'react-native-vector-icons/MaterialCommunityIcons';
+import MatIcon from '@react-native-vector-icons/material-icons';
+import MatCommunity from '@react-native-vector-icons/material-design-icons';
 import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
 import { Text } from 'react-native-paper';
 import { useFontScaleSettings } from '../__contexts__/font-scale-context';
@@ -75,7 +75,7 @@ export const Icon: React.FC<IconProps> = (props) => {
             case 'material-community':
                 return (
                     <MatCommunity
-                        name={source.name}
+                        name={source.name as React.ComponentProps<typeof MatCommunity>['name']}
                         size={size}
                         allowFontScaling={scale}
                         color={color}
@@ -98,7 +98,7 @@ export const Icon: React.FC<IconProps> = (props) => {
             default:
                 return (
                     <MatIcon
-                        name={source.name}
+                        name={source.name as React.ComponentProps<typeof MatIcon>['name']}
                         size={size}
                         allowFontScaling={scale}
                         color={color}

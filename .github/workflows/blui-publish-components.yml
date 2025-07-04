@@ -1,4 +1,4 @@
-name: Publish Components
+name: Publish Components Library
 
 on:
   push:

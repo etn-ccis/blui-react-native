@@ -20,7 +20,7 @@ describe('RegistrationContextProvider', () => {
     });
 
     it('should read values from the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <RegistrationContextProvider {...registrationContextProviderProps}>{children}</RegistrationContextProvider>
         );
         const { result } = renderHook(() => useRegistrationContext(), { wrapper });
@@ -29,7 +29,7 @@ describe('RegistrationContextProvider', () => {
     });
 
     it('should set values in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <RegistrationContextProvider {...registrationContextProviderProps} language="es">
                 {children}
             </RegistrationContextProvider>

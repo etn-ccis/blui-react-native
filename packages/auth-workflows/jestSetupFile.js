@@ -4,7 +4,7 @@ jest.mock('react-i18next', () => ({
     ...jest.requireActual('react-i18next'),
 }));
 jest.mock('react-native-reanimated', () => require('react-native-reanimated/mock'));
-
+jest.mock('react-native/Libraries/Components/RefreshControl/RefreshControl', () => 'RefreshControl');
 jest.mock('react-native-safe-area-context', () => mockSafeAreaContext);
 jest.mock('react-native-webview', () => {
     const { View } = require('react-native');
