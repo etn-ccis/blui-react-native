@@ -7,8 +7,8 @@ This package provides [theming](https://brightlayer-ui.github.io/style/themes) s
 
 For other frameworks, check out our related packages:
 
--   [@brightlayer-ui/angular-themes](https://www.npmjs.com/package/@brightlayer-ui/angular-themes)
--   [@brightlayer-ui/react-themes](https://www.npmjs.com/package/@brightlayer-ui/react-themes)
+- [@brightlayer-ui/angular-themes](https://www.npmjs.com/package/@brightlayer-ui/angular-themes)
+- [@brightlayer-ui/react-themes](https://www.npmjs.com/package/@brightlayer-ui/react-themes)
 
 ## Installation
 
@@ -24,9 +24,15 @@ or yarn
 yarn add @brightlayer-ui/react-native-themes
 ```
 
+or expo
+
+```shell
+yarn expo install @brightlayer-ui/react-native-themes
+```
+
 # Usage
 
-> **NOTE:** Using the Brightlayer UI React Native theme requires that you add the Open Sans font to your application. You can learn how to do this by reading the instructions for [Vanilla React Native](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e) or [Expo](https://docs.expo.io/versions/latest/guides/using-custom-fonts/). This will be added automatically if you start your project with the [@brightlayer-ui/cli](https://www.npmjs.com/package/@brightlayer-ui/cli).
+> **NOTE:** Using the Brightlayer UI React Native theme requires that you add the Open Sans font to your application. You can learn how to do this by reading the instructions for [Vanilla React Native](https://medium.com/react-native-training/react-native-custom-fonts-ccc9aacf9e5e) or [Expo](https://docs.expo.dev/develop/user-interface/fonts/#add-a-custom-font). This will be added automatically if you start your project with the [@brightlayer-ui/cli](https://www.npmjs.com/package/@brightlayer-ui/cli).
 
 > When using Expo, you will need to specify the name for each font weight you load using the format `OpenSans-<Weight>`, e.g., OpenSans-SemiBold. Refer to one of our React Native demos for reference.
 
