@@ -18,6 +18,8 @@ mkdir -p "./examples/showcase/node_modules/@brightlayer-ui/react-native-progress
 rm -rf "./examples/workflow/node_modules/@brightlayer-ui/react-native-progress-icons"
 mkdir -p "./examples/workflow/node_modules/@brightlayer-ui/react-native-progress-icons/dist"
 
+rm -rf "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-progress-icons"
+mkdir -p "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-progress-icons/dist"
 echo -e "${GREEN}Done${NC}"
 
 echo -en "${BLUE}Copying build output into node_modules...${NC}";
@@ -26,6 +28,9 @@ cp ./packages/progress-icons/package.json ./examples/showcase/node_modules/@brig
 cp -r ./packages/progress-icons/dist/ ./examples/showcase/node_modules/@brightlayer-ui/react-native-progress-icons/dist
 cp ./packages/progress-icons/package.json ./examples/workflow/node_modules/@brightlayer-ui/react-native-progress-icons/package.json
 cp -r ./packages/progress-icons/dist/ ./examples/workflow/node_modules/@brightlayer-ui/react-native-progress-icons/dist
+
+cp ./packages/progress-icons/package.json ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-progress-icons/package.json
+cp -r ./packages/progress-icons/dist/ ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-progress-icons/dist
 echo -e "${GREEN}Done${NC}"
 
 echo -en "\r\n${BBLUE}Linking Components: ${NC}"
@@ -40,6 +45,14 @@ if [ ! -f ./examples/workflow/node_modules/@brightlayer-ui/react-native-progress
 if [ ! -s ./examples/workflow/node_modules/@brightlayer-ui/react-native-progress-icons/dist ];
     then
         if [ ! -f ./examples/workflow/node_modules/@brightlayer-ui/react-native-progress-icons/dist/index.js ];
+        then echo -e "${BRED}Progress Icons Not Linked${NC}" && exit 1;
+        fi;
+fi
+
+if [ ! -f ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-progress-icons/package.json ]; then echo -e "${BRED}Progress Icons Not Linked${NC}" && exit 1; fi
+if [ ! -s ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-progress-icons/dist ];
+    then
+        if [ ! -f ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-progress-icons/dist/index.js ];
         then echo -e "${BRED}Progress Icons Not Linked${NC}" && exit 1;
         fi;
 fi
