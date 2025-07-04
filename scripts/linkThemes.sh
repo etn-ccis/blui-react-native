@@ -20,6 +20,8 @@ mkdir -p "./examples/workflow/node_modules/@brightlayer-ui/react-native-themes"
 rm -rf "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-themes"
 mkdir -p "./examples/designPatterns/node_modules/@brightlayer-ui/react-native-themes"
 
+rm -rf "./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-themes"
+mkdir -p "./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-themes/dist"
 rm -rf "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-themes"
 mkdir -p "./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-themes"
 
@@ -33,6 +35,8 @@ cp -r ./packages/themes/dist/ ./examples/showcase/node_modules/@brightlayer-ui/r
 cp -r ./packages/themes/dist/ ./examples/workflow/node_modules/@brightlayer-ui/react-native-themes/
 # cp ./packages/themes/package.json ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-themes/package.json
 cp -r ./packages/themes/dist/ ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-themes/
+cp -r ./packages/themes/dist/ ./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-themes/
+
 
 cp -r ./packages/themes/dist/ ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-themes/
 echo -e "${GREEN}Done${NC}"
@@ -62,6 +66,8 @@ if [ ! -f ./examples/designPatterns/node_modules/@brightlayer-ui/react-native-th
 #         then echo -e "${BRED}Themes Not Linked to Design Patterns${NC}" && exit 1;
 #         fi;
 # fi
+if [ ! -f ./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-themes/package.json ]; then echo -e "${BRED}Themes Not Linked to expo showcase${NC}" && exit 1; fi
+if [ ! -f ./examples/expoShowcase/node_modules/@brightlayer-ui/react-native-themes/index.js ]; then echo -e "${BRED}Themes Not Linked to expo showcase${NC}" && exit 1; fi
 if [ ! -f ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-themes/package.json ]; then echo -e "${BRED}Themes Not Linked${NC}" && exit 1; fi
 if [ ! -f ./examples/workflowexample-expo/node_modules/@brightlayer-ui/react-native-themes/index.js ]; then echo -e "${BRED}Themes Not Linked${NC}" && exit 1; fi
 
