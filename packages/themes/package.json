@@ -2,7 +2,7 @@
     "name": "@brightlayer-ui/react-native-themes",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "8.0.0-alpha.0",
+    "version": "8.0.0-alpha.1",
     "description": "React Native themes for Brightlayer UI applications",
     "main": "./index.js",
     "type": "module",
@@ -53,7 +53,7 @@
         "npm-license-crawler": "^0.2.1",
         "prettier": "^3.5.3",
         "react": "^19.1.0",
-        "react-native": "0.79.3",
+        "react-native": "~0.80.0",
         "react-native-paper": "^5.14.5",
         "tsc-esm-fix": "^3.1.2",
         "typescript": "^5.8.3"
