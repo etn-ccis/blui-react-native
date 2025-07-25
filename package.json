@@ -47,7 +47,10 @@
         "test:themes": "cd ./packages/themes && yarn test",
         "test:showcase": "cd ./examples/showcase && yarn test",
         "test:workflow": "cd ./examples/workflow && yarn test",
-        "test:all": "yarn test:authWorkflows && yarn test:componentLibrary && yarn test:progressIcons && yarn test:themes"
+        "test:all": "yarn test:authWorkflows && yarn test:componentLibrary && yarn test:progressIcons && yarn test:themes",
+        "watch:components": "node ./scripts/watch-components.js",
+        "watch:themes": "node ./scripts/watch-themes.js",
+        "watch:workflow": "node ./scripts/watch-workflow.js"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
@@ -55,6 +58,7 @@
         "@eslint/compat": "^1.2.6",
         "@eslint/eslintrc": "^3.2.0",
         "@eslint/js": "^9.8.0",
+        "chokidar": "^4.0.1",
         "eslint": "^9.8.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-import": "2.31.0",

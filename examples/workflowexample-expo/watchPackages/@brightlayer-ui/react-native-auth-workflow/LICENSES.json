@@ -1,0 +1,14 @@
+{
+    "color@4.2.3": {
+        "licenses": "MIT",
+        "repository": "https://github.com/Qix-/color",
+        "licenseUrl": "https://github.com/Qix-/color/raw/master/LICENSE",
+        "parents": "@brightlayer-ui/react-native-auth-workflow"
+    },
+    "lodash.clonedeep@4.5.0": {
+        "licenses": "MIT",
+        "repository": "https://github.com/lodash/lodash",
+        "licenseUrl": "https://github.com/lodash/lodash/raw/master/LICENSE",
+        "parents": "@brightlayer-ui/react-native-auth-workflow"
+    }
+}
