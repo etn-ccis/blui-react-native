@@ -1,13 +1,23 @@
 # Change Log
 
-## v9.0.0 (Unreleased)
+## v9.0.0 (July 25, 2025)
+
+### Changed 
+
+- Support React Native 0.80.0 and Updated the peer dependencies.
 
 ### Added
 
--   Added `chevronColor` prop to InfoListItem
+- Added `chevronColor` prop to InfoListItem
+- Migrated package module format from CommonJS to ESM for modern compatibility and better tree-shaking support.
+- Upgraded the project to use the latest React Native package version.
 
 ### Fixed
 
+- CollapsableHeaderLayout component's content scroll issue ([297](https://github.com/etn-ccis/blui-react-native/issues/297))
+- Drawer does not auto-expand parents of active item ([175](https://github.com/etn-ccis/blui-react-native/issues/175))
+- Icon Switch Component is not updating Value in Value Prop ([171](https://github.com/etn-ccis/blui-react-native/issues/171))
+- in `<AutoComplete>`, chipProps should be named ChipProps (title case) to be consistent ([200](https://github.com/etn-ccis/blui-react-native/issues/200)).
 - Chip and Scorecard playground crashes page. ([#164](https://github.com/etn-ccis/blui-react-native/issues/164)).
 - Async Stepper playground dots and button. ([#163](https://github.com/etn-ccis/blui-react-native/issues/163)).
 - search bar back arrow misaligned. ([#162](https://github.com/etn-ccis/blui-react-native/issues/162))

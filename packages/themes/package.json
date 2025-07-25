@@ -2,18 +2,19 @@
     "name": "@brightlayer-ui/react-native-themes",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "7.0.3-alpha.1",
+    "version": "8.0.0-alpha.1",
     "description": "React Native themes for Brightlayer UI applications",
-    "main": "./dist/index.js",
+    "main": "./index.js",
+    "type": "module",
     "publishConfig": {
         "main": "./index.js"
     },
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "module": "./index.js",
+    "types": "./index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/index.js",
-            "require": "./dist/index.js"
+            "import": "./index.js",
+            "require": "./index.js"
         }
     },
     "scripts": {
@@ -41,20 +42,21 @@
         "@brightlayer-ui/colors": "4.0.0",
         "@callstack/react-theme-provider": "^3.0.9",
         "color": "^4.2.3",
-        "react-native-safe-area-context": "4.14.1"
+        "react-native-safe-area-context": "5.4.1"
     },
     "peerDependencies": {
-        "react-native-paper": "^5.0.0"
+        "react-native-paper": "^5.14.5"
     },
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@types/color": "^4.2.0",
         "npm-license-crawler": "^0.2.1",
-        "prettier": "^3.0.0",
-        "react": "^18.2.0",
-        "react-native": "0.76.7",
-        "react-native-paper": "^5.0.0",
-        "typescript": "^5.0.4"
+        "prettier": "^3.5.3",
+        "react": "^19.1.0",
+        "react-native": "~0.80.0",
+        "react-native-paper": "^5.14.5",
+        "tsc-esm-fix": "^3.1.2",
+        "typescript": "^5.8.3"
     },
     "prettier": "@brightlayer-ui/prettier-config"
 }

@@ -20,7 +20,7 @@ describe('AuthContextProvider', () => {
     });
 
     it('should read values from the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <AuthContextProvider {...authContextProviderProps}>{children}</AuthContextProvider>
         );
         const { result } = renderHook(() => useAuthContext(), { wrapper });
@@ -29,7 +29,7 @@ describe('AuthContextProvider', () => {
     });
 
     it('should set values in the context', () => {
-        const wrapper = ({ children }: any): JSX.Element => (
+        const wrapper = ({ children }: any): React.JSX.Element => (
             <AuthContextProvider {...authContextProviderProps} language="es">
                 {children}
             </AuthContextProvider>

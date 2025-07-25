@@ -70,7 +70,7 @@ export type WorkflowCardInstructionProps = Omit<TextProps<'bodyLarge'>, 'childre
      *
      * The text to display as instructions
      */
-    instructions?: string | JSX.Element;
+    instructions?: string | React.JSX.Element;
     /**
      * Whether or not to show a divider below the instructions
      * @default true

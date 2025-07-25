@@ -1,6 +1,6 @@
 import React from 'react';
 import { cleanup, render, RenderResult, screen } from '@testing-library/react-native';
-import { ErrorManager, ErrorManagerProps } from 'src/components';
+import { ErrorManager, ErrorManagerProps } from '../../../components';
 import { Provider as PaperProvider } from 'react-native-paper';
 
 describe('ErrorManager Test', () => {
