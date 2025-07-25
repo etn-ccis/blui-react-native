@@ -1,6 +1,10 @@
 # Change Log
 
-## v9.0.0 (Unreleased)
+## v9.0.0 (July 25, 2025)
+
+### Changed 
+
+- Support React Native 0.80.0 and Updated the peer dependencies.
 
 ### Added
 

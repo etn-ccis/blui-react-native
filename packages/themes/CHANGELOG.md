@@ -1,11 +1,12 @@
 # Changelog
 
-## v2.0.0 (Unreleased)
+## v2.0.0 (July 25, 2025)
 
 ### Changed
 
 - Migrated package module format from CommonJS to ESM for modern compatibility and better tree-shaking support.
 - Upgraded the project to use the latest React Native package version.
+- Support React Native 0.80.0 and Updated the peer dependencies.
 
 ## v7.0.1 (May 9, 2024)
 
