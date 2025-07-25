@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, render, screen } from '@testing-library/react-native';
 import { ErrorManager } from '../../../components/index.js';
 import { Provider as PaperProvider } from 'react-native-paper';
@@ -10,8 +10,7 @@ describe('ErrorManager Test', () => {
         error: 'Error Manager Message',
         onClose,
     };
-    const renderer = (props = defaultProps) =>
-        render(_jsx(PaperProvider, { children: _jsx(ErrorManager, { ...props }) }));
+    const renderer = (props = defaultProps) => render(_jsx(PaperProvider, { children: _jsx(ErrorManager, { ...props }) }));
     afterEach(cleanup);
     it('renders correctly', () => {
         renderer();

@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { render, fireEvent } from '@testing-library/react-native';
 import { OktaRedirectLoginScreenBase } from '../../screens/index.js';
 import { Image, Text } from 'react-native';
@@ -20,8 +20,8 @@ describe('OktaRedirectLoginScreenBase', () => {
         showCyberSecurityBadge: true,
         cyberSecurityBadgeSize: { width: 50, height: 50 },
         projectImage: _jsx(Image, { source: { uri: require('../assets/images/eaton_stacked_logo.png') } }),
-        header: _jsx(Text, { children: 'Header' }),
-        footer: _jsx(Text, { children: 'Footer' }),
+        header: _jsx(Text, { children: "Header" }),
+        footer: _jsx(Text, { children: "Footer" }),
     };
     it('renders the WorkflowCard', () => {
         const { getByTestId } = render(_jsx(OktaRedirectLoginScreenBase, { ...defaultProps }));
@@ -63,9 +63,7 @@ describe('OktaRedirectLoginScreenBase', () => {
     });
     test('calls handleContactSupport when contact support label is pressed', () => {
         const handleContactSupport = jest.fn();
-        const { getByTestId } = render(
-            _jsx(OktaRedirectLoginScreenBase, { showContactSupport: true, onContactSupport: handleContactSupport })
-        );
+        const { getByTestId } = render(_jsx(OktaRedirectLoginScreenBase, { showContactSupport: true, onContactSupport: handleContactSupport }));
         const contactSupportLabel = getByTestId('blui-okta-login-contact-support-label');
         fireEvent.press(contactSupportLabel);
         expect(handleContactSupport).toHaveBeenCalled();

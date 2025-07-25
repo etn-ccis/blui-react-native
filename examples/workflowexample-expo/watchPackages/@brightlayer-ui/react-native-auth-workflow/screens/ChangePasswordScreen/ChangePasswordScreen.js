@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { defaultPasswordRequirements } from '../../constants/index.js';
@@ -8,19 +8,7 @@ export const ChangePasswordScreen = (props) => {
     const { t } = useTranslation();
     const passwordRef = useRef(null);
     const confirmRef = useRef(null);
-    const {
-        currentPasswordLabel = t('bluiCommon:LABELS.CURRENT_PASSWORD'),
-        PasswordProps,
-        WorkflowCardBaseProps,
-        WorkflowCardHeaderProps,
-        WorkflowCardInstructionProps,
-        WorkflowCardBodyProps,
-        WorkflowCardActionsProps,
-        currentPasswordTextInputProps,
-        onFinish,
-        slots = {},
-        slotProps = {},
-    } = props;
+    const { currentPasswordLabel = t('bluiCommon:LABELS.CURRENT_PASSWORD'), PasswordProps, WorkflowCardBaseProps, WorkflowCardHeaderProps, WorkflowCardInstructionProps, WorkflowCardBodyProps, WorkflowCardActionsProps, currentPasswordTextInputProps, onFinish, slots = {}, slotProps = {}, } = props;
     const [currentInput, setCurrentInput] = useState('');
     const [passwordInput, setPasswordInput] = useState('');
     const [confirmInput, setConfirmInput] = useState('');
@@ -32,29 +20,28 @@ export const ChangePasswordScreen = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: () => {
-            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (props.errorDisplayConfig?.onClose)
+                props.errorDisplayConfig.onClose();
+            if (errorManagerConfig.onClose)
+                errorManagerConfig?.onClose();
         },
     };
     const passwordRequirements = defaultPasswordRequirements(t);
-    const updateFields = useCallback(
-        (fields) => {
-            setPasswordInput(fields.password);
-            setConfirmInput(fields.confirm);
-        },
-        [setPasswordInput, setConfirmInput]
-    );
+    const updateFields = useCallback((fields) => {
+        setPasswordInput(fields.password);
+        setConfirmInput(fields.confirm);
+    }, [setPasswordInput, setConfirmInput]);
     const areValidMatchingPasswords = useCallback(() => {
         if (PasswordProps?.passwordRequirements?.length === 0) {
             return confirmInput === passwordInput;
         }
         for (const req of passwordRequirements) {
-            if (!new RegExp(req.regex).test(passwordInput)) return false;
+            if (!new RegExp(req.regex).test(passwordInput))
+                return false;
         }
         return confirmInput === passwordInput;
     }, [PasswordProps?.passwordRequirements?.length, passwordRequirements, passwordInput, confirmInput]);
-    const checkPasswords =
-        currentInput !== '' && passwordInput !== '' && confirmInput !== '' && areValidMatchingPasswords();
+    const checkPasswords = currentInput !== '' && passwordInput !== '' && confirmInput !== '' && areValidMatchingPasswords();
     const changePasswordSubmit = useCallback(async () => {
         if (checkPasswords) {
             try {
@@ -62,12 +49,15 @@ export const ChangePasswordScreen = (props) => {
                 await actions.changePassword(currentInput, passwordInput);
                 if (props.showSuccessScreen === false) {
                     onFinish?.();
-                } else {
+                }
+                else {
                     setShowSuccessScreen(true);
                 }
-            } catch (_error) {
+            }
+            catch (_error) {
                 triggerError(_error);
-            } finally {
+            }
+            finally {
                 setIsLoading(false);
             }
         }
@@ -140,21 +130,10 @@ export const ChangePasswordScreen = (props) => {
             WorkflowCardActionsProps?.onNext?.();
         },
     };
-    return _jsx(ChangePasswordScreenBase, {
-        WorkflowCardBaseProps: workflowCardBaseProps,
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        WorkflowCardBodyProps: workflowCardBodyProps,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        currentPasswordLabel: currentPasswordLabel,
-        currentPasswordChange: (currentPwd) => {
+    return (_jsx(ChangePasswordScreenBase, { WorkflowCardBaseProps: workflowCardBaseProps, WorkflowCardHeaderProps: workflowCardHeaderProps, WorkflowCardBodyProps: workflowCardBodyProps, WorkflowCardActionsProps: workflowCardActionsProps, currentPasswordLabel: currentPasswordLabel, currentPasswordChange: (currentPwd) => {
             setCurrentInput(currentPwd);
             props?.currentPasswordChange?.(currentPwd);
-        },
-        enableButton: checkPasswords,
-        PasswordProps: passwordProps,
-        currentPasswordTextInputProps: { ...currentPasswordTextInputProps, value: currentInput },
-        slots: slots,
-        slotProps: {
+        }, enableButton: checkPasswords, PasswordProps: passwordProps, currentPasswordTextInputProps: { ...currentPasswordTextInputProps, value: currentInput }, slots: slots, slotProps: {
             SuccessScreen: {
                 EmptyStateProps: {
                     icon: { family: 'material', name: 'check-circle' },
@@ -177,8 +156,5 @@ export const ChangePasswordScreen = (props) => {
                 },
                 ...slotProps.SuccessScreen,
             },
-        },
-        showSuccessScreen: showSuccessScreen,
-        errorDisplayConfig: errorDisplayConfig,
-    });
+        }, showSuccessScreen: showSuccessScreen, errorDisplayConfig: errorDisplayConfig }));
 };

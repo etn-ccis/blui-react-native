@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useEffect } from 'react';
 import { OktaAuthContext } from './context.js';
 import { I18nextProvider, useTranslation } from 'react-i18next';
@@ -19,10 +19,7 @@ const OktaAuthContextProviderContent = (props) => {
             ...(errorConfig?.dialogConfig ?? {}),
         },
     };
-    return _jsx(OktaAuthContext.Provider, {
-        value: { ...oktaAuthContextProps },
-        children: _jsx(ErrorContext.Provider, { value: mergedErrorConfig, children: children }),
-    });
+    return (_jsx(OktaAuthContext.Provider, { value: { ...oktaAuthContextProps }, children: _jsx(ErrorContext.Provider, { value: mergedErrorConfig, children: children }) }));
 };
 export const OktaAuthContextProvider = (props) => {
     const i18nInstance = props.i18n ?? i18nAuthInstance;
@@ -42,8 +39,5 @@ export const OktaAuthContextProvider = (props) => {
     useEffect(() => {
         void i18n.changeLanguage(language);
     }, [i18n, language]);
-    return _jsx(I18nextProvider, {
-        i18n: i18n,
-        children: _jsx(OktaAuthContextProviderContent, { ...other, language: language, children: children }),
-    });
+    return (_jsx(I18nextProvider, { i18n: i18n, children: _jsx(OktaAuthContextProviderContent, { ...other, language: language, children: children }) }));
 };

@@ -147,45 +147,17 @@ function copyFileToExamples(distFilePath) {
                 // Copy the file
                 fs.copyFileSync(filePath, targetPath);
                 
+                // Force file modification time update to trigger Metro reload
+                const now = new Date();
+                fs.utimesSync(targetPath, now, now);
+                
                 logSuccess(`Updated: ${path.relative(path.resolve(__dirname, '..'), targetPath)}`);
             });
-            
-            // Trigger gentle Metro reload for themes to avoid hard refresh
-            triggerGentleMetroReload();
             
         } catch (error) {
             logError(`Failed to copy files to ${appPath}: ${error.message}`);
         }
     });
-}
-
-// Gentle Metro reload function for themes to avoid hard refresh
-function triggerGentleMetroReload() {
-    try {
-        // For themes, we use a more gentle approach to avoid hard refresh
-        const showcaseThemesDir = path.resolve(__dirname, '../examples/showcase/watchPackages/@brightlayer-ui/react-native-themes');
-        
-        // Create a temporary signal file that gets quickly removed
-        const signalFile = path.join(showcaseThemesDir, '.metro-reload-signal');
-        
-        // Just touch a temporary file briefly
-        fs.writeFileSync(signalFile, '// Metro reload signal');
-        
-        // Remove it immediately to minimize impact
-        setImmediate(() => {
-            try {
-                if (fs.existsSync(signalFile)) {
-                    fs.unlinkSync(signalFile);
-                }
-            } catch (error) {
-                // Ignore cleanup errors
-            }
-        });
-        
-        console.log('✨ Gentle Metro reload signal sent for themes');
-    } catch (error) {
-        console.error('Error triggering gentle Metro reload:', error);
-    }
 }
 
 // Copy all built files to example apps (for initial setup)
@@ -205,12 +177,12 @@ function copyAllFilesToExamples() {
             // Copy the entire dist directory
             copyDirectory(DIST_PATH, appNodeModulesPath);
             
-            // Also copy package.json, README, etc. from the themes library
+            // Also copy package.json, README, etc. from the theme library
             const filesToCopy = ['package.json', 'README.md', 'LICENSE', 'CHANGELOG.md'];
-            const themesLibraryRoot = THEMES_LIBRARY_PATH;
+            const themeLibraryRoot = THEMES_LIBRARY_PATH;
             
             filesToCopy.forEach(fileName => {
-                const sourcePath = path.join(themesLibraryRoot, fileName);
+                const sourcePath = path.join(themeLibraryRoot, fileName);
                 const targetPath = path.join(appNodeModulesPath, fileName);
                 
                 if (fs.existsSync(sourcePath)) {
@@ -219,7 +191,7 @@ function copyAllFilesToExamples() {
                 }
             });
             
-            logSuccess(`All theme files copied to ${appPath}/${NODE_MODULES_PATH}`);
+            logSuccess(`All files copied to ${appPath}/${NODE_MODULES_PATH}`);
             
         } catch (error) {
             logError(`Failed to copy all files to ${appPath}: ${error.message}`);
@@ -252,7 +224,7 @@ function copyDirectory(source, target) {
 async function processChangedFile(filePath) {
     try {
         const startTime = Date.now();
-        log(`\n${colors.bold}📝 Theme file changed: ${path.relative(THEMES_LIBRARY_PATH, filePath)}${colors.reset}`);
+        log(`\n${colors.bold}📝 File changed: ${path.relative(THEMES_LIBRARY_PATH, filePath)}${colors.reset}`);
         
         // Build the file
         await buildSingleFile(filePath);
@@ -267,7 +239,7 @@ async function processChangedFile(filePath) {
         copyFileToExamples(distFilePath);
         
         const elapsed = Date.now() - startTime;
-        logSuccess(`✨ Theme update complete in ${elapsed}ms\n`);
+        logSuccess(`✨ Update complete in ${elapsed}ms\n`);
         
     } catch (error) {
         logError(`Failed to process ${filePath}: ${error.message}`);
@@ -277,7 +249,7 @@ async function processChangedFile(filePath) {
 // Initial build to ensure dist folder exists
 function performInitialBuild() {
     return new Promise((resolve, reject) => {
-        logInfo('🔨 Performing initial theme build...');
+        logInfo('🔨 Performing initial build...');
         
         try {
             const tscCommand = `npx tsc --project "${TSCONFIG_PATH}"`;
@@ -296,7 +268,7 @@ function performInitialBuild() {
                 logWarning('ESM fix failed during initial build, but continuing...');
             }
             
-            logSuccess('Initial theme build completed');
+            logSuccess('Initial build completed');
             resolve();
         } catch (error) {
             logError(`Initial build failed: ${error.message}`);
@@ -307,7 +279,7 @@ function performInitialBuild() {
 
 // Initialize watcher
 function startWatcher() {
-    logInfo('🚀 Starting BLUI Themes Library File Watcher...');
+    logInfo('🚀 Starting BLUI Component Library File Watcher...');
     logInfo(`📂 Watching: ${SRC_PATH}`);
     logInfo(`🎯 Target apps: ${EXAMPLE_APPS.join(', ')}`);
     
@@ -336,9 +308,9 @@ function startWatcher() {
     watcher.on('add', processChangedFile);
     
     watcher.on('ready', () => {
-        logSuccess('👀 Theme file watcher is ready! Watching for changes...');
+        logSuccess('👀 File watcher is ready! Watching for changes...');
         log(`${colors.yellow}Press Ctrl+C to stop watching${colors.reset}`);
-        log(`${colors.blue}💡 Tip: Save any file in themes/src/ to trigger auto-build and sync to example apps${colors.reset}`);
+        log(`${colors.blue}💡 Tip: Save any file in src/ to trigger auto-build and sync to example apps${colors.reset}`);
     });
     
     watcher.on('error', error => {

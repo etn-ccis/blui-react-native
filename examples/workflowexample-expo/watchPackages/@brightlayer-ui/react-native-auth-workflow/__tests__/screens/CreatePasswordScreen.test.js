@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import '@testing-library/jest-dom';
 import '@testing-library/jest-native/extend-expect.js';
 import { cleanup, render, screen, fireEvent, waitFor } from '@testing-library/react-native';
@@ -28,18 +28,7 @@ describe('Create Password Screen', () => {
         mockOnNext = jest.fn();
         mockOnPrevious = jest.fn();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(PaperProvider, {
-                children: _jsx(RegistrationContextProvider, {
-                    ...registrationContextProviderProps,
-                    children: _jsx(RegistrationWorkflow, {
-                        initialScreenIndex: 0,
-                        children: _jsx(CreatePasswordScreen, { ...props }),
-                    }),
-                }),
-            })
-        );
+    const renderer = (props) => render(_jsx(PaperProvider, { children: _jsx(RegistrationContextProvider, { ...registrationContextProviderProps, children: _jsx(RegistrationWorkflow, { initialScreenIndex: 0, children: _jsx(CreatePasswordScreen, { ...props }) }) }) }));
     it('renders without crashing', () => {
         renderer();
         expect(screen.getByText('Create Password')).toBeOnTheScreen();

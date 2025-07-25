@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useEffect, useState } from 'react';
 import { EulaScreenBase } from './EulaScreenBase.js';
 import { useRegistrationContext, useRegistrationWorkflowContext } from '../../contexts/index.js';
@@ -20,31 +20,15 @@ export const EulaScreen = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: () => {
-            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (props.errorDisplayConfig?.onClose)
+                props.errorDisplayConfig.onClose();
+            if (errorManagerConfig.onClose)
+                errorManagerConfig?.onClose();
         },
     };
     const regWorkflow = useRegistrationWorkflowContext();
-    const {
-        nextScreen,
-        previousScreen,
-        screenData,
-        currentScreen,
-        totalScreens,
-        isInviteRegistration,
-        updateScreenData,
-        resetScreenData,
-    } = regWorkflow;
-    const {
-        WorkflowCardBaseProps,
-        WorkflowCardHeaderProps,
-        WorkflowCardActionsProps,
-        eulaContent,
-        checkboxLabel = t('bluiRegistration:REGISTRATION.EULA.AGREE_TERMS'),
-        html: htmlProp,
-        initialCheckboxValue,
-        ...otherEulaScreenProps
-    } = props;
+    const { nextScreen, previousScreen, screenData, currentScreen, totalScreens, isInviteRegistration, updateScreenData, resetScreenData, } = regWorkflow;
+    const { WorkflowCardBaseProps, WorkflowCardHeaderProps, WorkflowCardActionsProps, eulaContent, checkboxLabel = t('bluiRegistration:REGISTRATION.EULA.AGREE_TERMS'), html: htmlProp, initialCheckboxValue, ...otherEulaScreenProps } = props;
     const html = htmlProp !== undefined ? htmlProp : regWorkflow?.eulaIsHtml;
     const eulaAccepted = initialCheckboxValue ?? screenData.Eula.accepted;
     const [isLoading, setIsLoading] = useState(true);
@@ -58,14 +42,17 @@ export const EulaScreen = (props) => {
                 const eulaText = await actions?.loadEula?.(language);
                 setEulaData(eulaText);
                 setIsLoading(false);
-            } catch (_error) {
+            }
+            catch (_error) {
                 triggerError(_error);
                 setEulaFetchError(true);
                 setIsLoading(false);
-            } finally {
+            }
+            finally {
                 setIsLoading(false);
             }
-        } else {
+        }
+        else {
             setIsLoading(false);
             setEulaData(eulaContent);
         }
@@ -78,11 +65,7 @@ export const EulaScreen = (props) => {
             }
             let isAccExist;
             if (isInviteRegistration) {
-                const { codeValid, accountExists } =
-                    (await actions?.validateUserRegistrationRequest?.(
-                        screenData.VerifyCode.code,
-                        screenData.CreateAccount.emailAddress
-                    )) ?? {};
+                const { codeValid, accountExists } = (await actions?.validateUserRegistrationRequest?.(screenData.VerifyCode.code, screenData.CreateAccount.emailAddress)) ?? {};
                 isAccExist = accountExists;
                 if (isAccExist) {
                     updateScreenData({
@@ -90,7 +73,8 @@ export const EulaScreen = (props) => {
                         values: { accepted: screenData.Eula.accepted },
                         isAccountExist: accountExists,
                     });
-                } else {
+                }
+                else {
                     if (typeof codeValid === 'boolean') {
                         if (codeValid)
                             void nextScreen({
@@ -99,24 +83,26 @@ export const EulaScreen = (props) => {
                                 isAccountExist: accountExists,
                             });
                         else {
-                            triggerError(
-                                new Error(t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.CODE_VALIDATOR_ERROR'))
-                            );
+                            triggerError(new Error(t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.CODE_VALIDATOR_ERROR')));
                         }
-                    } else {
+                    }
+                    else {
                         triggerError(new Error(codeValid));
                     }
                 }
-            } else {
+            }
+            else {
                 void nextScreen({
                     screenId: 'Eula',
                     values: { accepted: screenData.Eula.accepted },
                     isAccountExist: isAccExist,
                 });
             }
-        } catch (_error) {
+        }
+        catch (_error) {
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setTimeout(() => {
                 setIsLoading(false);
             }, timeOutDelay);
@@ -129,31 +115,28 @@ export const EulaScreen = (props) => {
                 screenId: 'Eula',
                 values: { accepted: eulaAccepted },
             });
-        } catch (_error) {
+        }
+        catch (_error) {
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setIsLoading(false);
         }
     }, [previousScreen, triggerError, eulaAccepted]);
-    const updateEulaAcceptedStatus = useCallback(
-        (accepted) => {
-            screenData.Eula = { ...screenData, accepted };
-            props?.onEulaAcceptedChange?.(accepted);
-        },
-        [screenData]
-    );
+    const updateEulaAcceptedStatus = useCallback((accepted) => {
+        screenData.Eula = { ...screenData, accepted };
+        props?.onEulaAcceptedChange?.(accepted);
+    }, [screenData]);
     useEffect(() => {
         void loadAndCacheEula();
     }, [language]);
-    const {
-        refreshConfig = {
-            showRefreshButton: eulaFetchError,
-            onRefresh: () => {
-                setEulaFetchError(false);
-                void loadAndCacheEula();
-            },
+    const { refreshConfig = {
+        showRefreshButton: eulaFetchError,
+        onRefresh: () => {
+            setEulaFetchError(false);
+            void loadAndCacheEula();
         },
-    } = props;
+    }, } = props;
     const workflowCardHeaderProps = {
         title: t('bluiRegistration:REGISTRATION.STEPS.LICENSE'),
         onIconPress: () => {
@@ -181,20 +164,8 @@ export const EulaScreen = (props) => {
             WorkflowCardActionsProps?.onPrevious?.();
         },
     };
-    return _jsx(EulaScreenBase, {
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        eulaContent: eulaData,
-        WorkflowCardBaseProps: {
+    return (_jsx(EulaScreenBase, { WorkflowCardHeaderProps: workflowCardHeaderProps, eulaContent: eulaData, WorkflowCardBaseProps: {
             loading: isLoading,
             ...WorkflowCardBaseProps,
-        },
-        checkboxLabel: checkboxLabel,
-        html: html,
-        initialCheckboxValue: eulaAccepted,
-        onEulaAcceptedChange: updateEulaAcceptedStatus,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        errorDisplayConfig: errorDisplayConfig,
-        refreshConfig: refreshConfig,
-        ...otherEulaScreenProps,
-    });
+        }, checkboxLabel: checkboxLabel, html: html, initialCheckboxValue: eulaAccepted, onEulaAcceptedChange: updateEulaAcceptedStatus, WorkflowCardActionsProps: workflowCardActionsProps, errorDisplayConfig: errorDisplayConfig, refreshConfig: refreshConfig, ...otherEulaScreenProps }));
 };

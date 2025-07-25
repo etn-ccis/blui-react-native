@@ -15,19 +15,13 @@ const resources = {
             },
             INSTRUCTIONS: {
                 ACCOUNT_DETAILS: 'Ingrese sus datos en seguida para completar la creación de la cuenta',
-                PASSWORD_INFO:
-                    'Por favor, seleccione una contraseña. Asegúrese de que su contraseña cumple con los requisitos de complejidad necesarios que se describen a continuación. ',
+                PASSWORD_INFO: 'Por favor, seleccione una contraseña. Asegúrese de que su contraseña cumple con los requisitos de complejidad necesarios que se describen a continuación. ',
             },
-            SUCCESS_MESSAGE:
-                'Su cuenta se ha creado correctamente con el correo electrónico <boldTag>{{email}}</boldTag>.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
-            SUCCESS_MESSAGE_ALT:
-                'Su cuenta se ha creado correctamente con el correo electrónico <boldTag>{{email}}</boldTag>.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
-            SUCCESS_MESSAGE_WITHOUT_EMAIL_PROVIDED:
-                'Su cuenta ha sido creada satisfactoriamente.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
-            SUCCESS_MESSAGE_ALT_WITHOUT_EMAIL_PROVIDED:
-                'Su cuenta ha sido creada satisfactoriamente.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
-            SUCCESS_EXISTING:
-                'Tu cuenta ha sido creada con éxito. Inicie sesión con el correo electrónico y la contraseña de su cuenta Eaton. ',
+            SUCCESS_MESSAGE: 'Su cuenta se ha creado correctamente con el correo electrónico <boldTag>{{email}}</boldTag>.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
+            SUCCESS_MESSAGE_ALT: 'Su cuenta se ha creado correctamente con el correo electrónico <boldTag>{{email}}</boldTag>.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
+            SUCCESS_MESSAGE_WITHOUT_EMAIL_PROVIDED: 'Su cuenta ha sido creada satisfactoriamente.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
+            SUCCESS_MESSAGE_ALT_WITHOUT_EMAIL_PROVIDED: 'Su cuenta ha sido creada satisfactoriamente.\n\nTu cuenta ya se ha agregado a la organización <boldTag>{{organization}}</boldTag>.',
+            SUCCESS_EXISTING: 'Tu cuenta ha sido creada con éxito. Inicie sesión con el correo electrónico y la contraseña de su cuenta Eaton. ',
             FAILURE_MESSAGE: 'No pudimos completar su registro. ',
             UNKNOWN_EMAIL: 'Correo electrónico desconocido',
             UNKNOWN_ORGANIZATION: 'Organización desconocida',

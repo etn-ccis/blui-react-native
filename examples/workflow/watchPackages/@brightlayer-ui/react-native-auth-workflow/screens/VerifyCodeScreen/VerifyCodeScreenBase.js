@@ -1,12 +1,6 @@
-import { jsx as _jsx, jsxs as _jsxs } from 'react/jsx-runtime';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useCallback, useEffect } from 'react';
-import {
-    ErrorManager,
-    WorkflowCard,
-    WorkflowCardActions,
-    WorkflowCardBody,
-    WorkflowCardHeader,
-} from '../../components/index.js';
+import { ErrorManager, WorkflowCard, WorkflowCardActions, WorkflowCardBody, WorkflowCardHeader, } from '../../components/index.js';
 import { HelperText, Text, TextInput } from 'react-native-paper';
 import { Text as RNText, View } from 'react-native';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
@@ -19,16 +13,7 @@ import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
  * @category Component
  */
 export const VerifyCodeScreenBase = (props) => {
-    const {
-        codeValidator,
-        onResend,
-        resendInstructions,
-        resendLabel,
-        verifyCodeInputLabel,
-        initialValue,
-        errorDisplayConfig,
-        verifyCodeTextInputProps,
-    } = props;
+    const { codeValidator, onResend, resendInstructions, resendLabel, verifyCodeInputLabel, initialValue, errorDisplayConfig, verifyCodeTextInputProps, } = props;
     const cardBaseProps = props.WorkflowCardBaseProps ?? {};
     const headerProps = props.WorkflowCardHeaderProps ?? {};
     const cardBodyProps = props.WorkflowCardBodyProps ?? {};
@@ -38,17 +23,14 @@ export const VerifyCodeScreenBase = (props) => {
     const [isCodeValid, setIsCodeValid] = React.useState(codeValidator ? codeValidator(initialValue ?? '') : false);
     const [codeError, setCodeError] = React.useState('');
     const theme = useExtendedTheme();
-    const handleVerifyCodeInputChange = useCallback(
-        (code) => {
-            setVerifyCode(code);
-            if (codeValidator) {
-                const validatorResponse = codeValidator(code);
-                setIsCodeValid(typeof validatorResponse === 'boolean' ? validatorResponse : false);
-                setCodeError(typeof validatorResponse === 'string' ? validatorResponse : '');
-            }
-        },
-        [codeValidator]
-    );
+    const handleVerifyCodeInputChange = useCallback((code) => {
+        setVerifyCode(code);
+        if (codeValidator) {
+            const validatorResponse = codeValidator(code);
+            setIsCodeValid(typeof validatorResponse === 'boolean' ? validatorResponse : false);
+            setCodeError(typeof validatorResponse === 'string' ? validatorResponse : '');
+        }
+    }, [codeValidator]);
     useEffect(() => {
         if (verifyCode.length > 0) {
             setShouldValidateCode(true);
@@ -57,74 +39,25 @@ export const VerifyCodeScreenBase = (props) => {
     }, []);
     const handleOnNext = () => {
         const { onNext } = actionsProps;
-        if (onNext) onNext({ code: verifyCode });
+        if (onNext)
+            onNext({ code: verifyCode });
     };
     const handleOnPrevious = () => {
         const { onPrevious } = actionsProps;
-        if (onPrevious) onPrevious({ code: verifyCode });
+        if (onPrevious)
+            onPrevious({ code: verifyCode });
     };
-    return _jsxs(WorkflowCard, {
-        ...cardBaseProps,
-        children: [
-            _jsx(WorkflowCardHeader, { ...headerProps }),
-            _jsx(WorkflowCardBody, {
-                ...cardBodyProps,
-                children: _jsxs(ErrorManager, {
-                    ...errorDisplayConfig,
-                    children: [
-                        _jsx(TextInput, {
-                            label: verifyCodeInputLabel,
-                            mode: 'flat',
-                            testID: 'blui-verify-code-text-input',
-                            value: verifyCode,
-                            onChangeText: handleVerifyCodeInputChange,
-                            error: shouldValidateCode && !isCodeValid,
-                            autoCapitalize: 'none',
-                            ...verifyCodeTextInputProps,
-                            onSubmitEditing: () => {
-                                if (verifyCode.length > 0 && isCodeValid && actionsProps.canGoNext) handleOnNext();
-                            },
-                            onBlur: (e) => {
+    return (_jsxs(WorkflowCard, { ...cardBaseProps, children: [_jsx(WorkflowCardHeader, { ...headerProps }), _jsx(WorkflowCardBody, { ...cardBodyProps, children: _jsxs(ErrorManager, { ...errorDisplayConfig, children: [_jsx(TextInput, { label: verifyCodeInputLabel, mode: "flat", testID: "blui-verify-code-text-input", value: verifyCode, onChangeText: handleVerifyCodeInputChange, error: shouldValidateCode && !isCodeValid, autoCapitalize: "none", ...verifyCodeTextInputProps, onSubmitEditing: () => {
+                                if (verifyCode.length > 0 && isCodeValid && actionsProps.canGoNext)
+                                    handleOnNext();
+                            }, onBlur: (e) => {
                                 if (verifyCodeTextInputProps?.onBlur) {
                                     verifyCodeTextInputProps.onBlur(e);
                                 }
                                 setShouldValidateCode(true);
-                            },
-                        }),
-                        _jsx(HelperText, {
-                            type: 'error',
-                            visible: shouldValidateCode,
-                            style: { height: 30 },
-                            children: codeError,
-                        }),
-                        _jsx(View, {
-                            children: _jsxs(Text, {
-                                variant: 'bodyMedium',
-                                children: [
-                                    resendInstructions,
-                                    ' ',
-                                    _jsx(RNText, {
-                                        style: {
+                            } }), _jsx(HelperText, { type: "error", visible: shouldValidateCode, style: { height: 30 }, children: codeError }), _jsx(View, { children: _jsxs(Text, { variant: "bodyMedium", children: [resendInstructions, ' ', _jsx(RNText, { style: {
                                             color: theme.colors.primary,
                                             fontWeight: 'bold',
                                             textDecorationLine: 'underline',
-                                        },
-                                        testID: 'blui-verify-code-resend-code-button',
-                                        onPress: onResend,
-                                        children: resendLabel,
-                                    }),
-                                ],
-                            }),
-                        }),
-                    ],
-                }),
-            }),
-            _jsx(WorkflowCardActions, {
-                ...actionsProps,
-                canGoNext: verifyCode.length > 0 && isCodeValid && actionsProps.canGoNext,
-                onNext: handleOnNext,
-                onPrevious: handleOnPrevious,
-            }),
-        ],
-    });
+                                        }, testID: "blui-verify-code-resend-code-button", onPress: onResend, children: resendLabel })] }) })] }) }), _jsx(WorkflowCardActions, { ...actionsProps, canGoNext: (verifyCode.length > 0 && isCodeValid && actionsProps.canGoNext), onNext: handleOnNext, onPrevious: handleOnPrevious })] }));
 };

@@ -35,7 +35,8 @@ export const useErrorManager = () => {
                     titleOptions: err.cause.titleOptions,
                 },
             });
-        } else {
+        }
+        else {
             setError(err);
         }
     };

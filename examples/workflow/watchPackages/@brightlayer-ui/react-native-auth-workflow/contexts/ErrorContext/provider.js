@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { ErrorContext } from './context.js';
 /**
  * ErrorContextProvider is used to configure error handling within the workflow

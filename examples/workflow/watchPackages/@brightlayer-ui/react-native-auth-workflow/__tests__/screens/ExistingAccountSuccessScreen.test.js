@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import { ExistingAccountSuccessScreen } from '../../screens/index.js';
 import { registrationContextProviderProps } from '../../testUtils/index.js';
@@ -28,18 +28,7 @@ describe('ExistingAccountSuccessScreen', () => {
     beforeEach(() => {
         mockOnDismiss = jest.fn();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(SafeAreaProvider, {
-                children: _jsx(RegistrationContextProvider, {
-                    ...registrationContextProviderProps,
-                    children: _jsx(RegistrationWorkflowContextProvider, {
-                        ...registrationWorkflowContextProps,
-                        children: _jsx(ExistingAccountSuccessScreen, { ...props }),
-                    }),
-                }),
-            })
-        );
+    const renderer = (props) => render(_jsx(SafeAreaProvider, { children: _jsx(RegistrationContextProvider, { ...registrationContextProviderProps, children: _jsx(RegistrationWorkflowContextProvider, { ...registrationWorkflowContextProps, children: _jsx(ExistingAccountSuccessScreen, { ...props }) }) }) }));
     it('renders without crashing', () => {
         renderer();
         expect(screen.getByText('Account Created!')).toBeOnTheScreen();

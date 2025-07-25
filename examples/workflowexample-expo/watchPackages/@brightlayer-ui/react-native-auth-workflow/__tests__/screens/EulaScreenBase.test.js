@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import '@testing-library/jest-dom';
 import { cleanup, render, fireEvent } from '@testing-library/react-native';
 import { SAMPLE_EULA } from '../../constants/index.js';
@@ -7,23 +7,11 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 afterEach(cleanup);
 describe('Eula Screen Base', () => {
     it('renders Text Eula content', () => {
-        const rendered = render(
-            _jsx(SafeAreaProvider, {
-                children: _jsx(EulaScreenBase, {
-                    eulaContent: SAMPLE_EULA,
-                    checkboxLabel: 'I have read and agree to the Terms & Conditions',
-                    onEulaAcceptedChange: (accepted) => accepted,
-                }),
-            })
-        ).toJSON();
+        const rendered = render(_jsx(SafeAreaProvider, { children: _jsx(EulaScreenBase, { eulaContent: SAMPLE_EULA, checkboxLabel: 'I have read and agree to the Terms & Conditions', onEulaAcceptedChange: (accepted) => accepted }) })).toJSON();
         expect(rendered).toBeTruthy();
     });
     it('renders HTML Eula content', () => {
-        const rendered = render(
-            _jsx(SafeAreaProvider, {
-                children: _jsx(EulaScreenBase, {
-                    WorkflowCardHeaderProps: { title: 'License Agreement' },
-                    eulaContent: `<!DOCTYPE html>
+        const rendered = render(_jsx(SafeAreaProvider, { children: _jsx(EulaScreenBase, { WorkflowCardHeaderProps: { title: 'License Agreement' }, eulaContent: `<!DOCTYPE html>
                 <html lang="en">
                 <head>
                   <meta charset="UTF-8">
@@ -43,75 +31,43 @@ describe('Eula Screen Base', () => {
                     Mauris viverra diam vitae est. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Proin gravida nibh vel velit auctor aliquam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante blandit, a tincidunt tellus faucibus. Sed posuere consectetur est at lobortis. Pellentesque ornare sem lacinia quam venenatis vestibulum. Suspendisse potenti. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam.
                   </p>
                 </body>
-                </html>`,
-                    html: true,
-                    checkboxLabel: 'I have read and agree to the Terms & Conditions',
-                    initialCheckboxValue: true,
-                    onEulaAcceptedChange: (accepted) => accepted,
-                    WorkflowCardInstructionProps: { instructions: 'Test Instructions' },
-                    WorkflowCardActionsProps: {
-                        showNext: true,
-                        nextLabel: 'Next',
-                        canGoNext: true,
-                        showPrevious: true,
-                        previousLabel: 'Back',
-                        canGoPrevious: true,
-                        currentStep: 0,
-                        totalSteps: 6,
-                    },
-                }),
-            })
-        ).toJSON();
+                </html>`, html: true, checkboxLabel: 'I have read and agree to the Terms & Conditions', initialCheckboxValue: true, onEulaAcceptedChange: (accepted) => accepted, WorkflowCardInstructionProps: { instructions: 'Test Instructions' }, WorkflowCardActionsProps: {
+                    showNext: true,
+                    nextLabel: 'Next',
+                    canGoNext: true,
+                    showPrevious: true,
+                    previousLabel: 'Back',
+                    canGoPrevious: true,
+                    currentStep: 0,
+                    totalSteps: 6,
+                } }) })).toJSON();
         expect(rendered).toBeTruthy();
     });
     it('renders Text Eula content', () => {
-        const rendered = render(
-            _jsx(SafeAreaProvider, {
-                children: _jsx(EulaScreenBase, {
-                    WorkflowCardHeaderProps: { title: 'License Agreement' },
-                    eulaContent: SAMPLE_EULA,
-                    checkboxLabel: 'I have read and agree to the Terms & Conditions',
-                    checkboxProps: { disabled: true },
-                    initialCheckboxValue: false,
-                    onEulaAcceptedChange: (accepted) => accepted,
-                    WorkflowCardActionsProps: {
-                        showNext: true,
-                        nextLabel: 'Next',
-                        canGoNext: true,
-                        showPrevious: true,
-                        previousLabel: 'Back',
-                        canGoPrevious: true,
-                        currentStep: 0,
-                        totalSteps: 6,
-                    },
-                }),
-            })
-        ).toJSON();
+        const rendered = render(_jsx(SafeAreaProvider, { children: _jsx(EulaScreenBase, { WorkflowCardHeaderProps: { title: 'License Agreement' }, eulaContent: SAMPLE_EULA, checkboxLabel: 'I have read and agree to the Terms & Conditions', checkboxProps: { disabled: true }, initialCheckboxValue: false, onEulaAcceptedChange: (accepted) => accepted, WorkflowCardActionsProps: {
+                    showNext: true,
+                    nextLabel: 'Next',
+                    canGoNext: true,
+                    showPrevious: true,
+                    previousLabel: 'Back',
+                    canGoPrevious: true,
+                    currentStep: 0,
+                    totalSteps: 6,
+                } }) })).toJSON();
         expect(rendered).toBeTruthy();
     });
     it('check checkbox click with text eula content', () => {
         const checkboxfunction = jest.fn();
-        const { getByTestId } = render(
-            _jsx(SafeAreaProvider, {
-                children: _jsx(EulaScreenBase, {
-                    WorkflowCardHeaderProps: { title: 'License Agreement' },
-                    eulaContent: 'Hello',
-                    checkboxLabel: 'I have read and agree to the Terms & Conditions',
-                    initialCheckboxValue: false,
-                    onEulaAcceptedChange: checkboxfunction,
-                    WorkflowCardActionsProps: {
-                        showNext: true,
-                        nextLabel: 'Next',
-                        canGoNext: true,
-                        showPrevious: true,
-                        previousLabel: 'Back',
-                        canGoPrevious: true,
-                        currentStep: 0,
-                        totalSteps: 6,
-                    },
-                }),
-            })
-        );
+        const { getByTestId } = render(_jsx(SafeAreaProvider, { children: _jsx(EulaScreenBase, { WorkflowCardHeaderProps: { title: 'License Agreement' }, eulaContent: 'Hello', checkboxLabel: 'I have read and agree to the Terms & Conditions', initialCheckboxValue: false, onEulaAcceptedChange: checkboxfunction, WorkflowCardActionsProps: {
+                    showNext: true,
+                    nextLabel: 'Next',
+                    canGoNext: true,
+                    showPrevious: true,
+                    previousLabel: 'Back',
+                    canGoPrevious: true,
+                    currentStep: 0,
+                    totalSteps: 6,
+                } }) }));
         const scrollView = getByTestId('blui-eula-scroll-view');
         fireEvent.scroll(scrollView, {
             nativeEvent: {
@@ -126,11 +82,7 @@ describe('Eula Screen Base', () => {
     });
     it('check checkbox click with html eula content', () => {
         const checkboxfunction = jest.fn();
-        const { getByTestId } = render(
-            _jsx(SafeAreaProvider, {
-                children: _jsx(EulaScreenBase, {
-                    WorkflowCardHeaderProps: { title: 'License Agreement' },
-                    eulaContent: `<!DOCTYPE html>
+        const { getByTestId } = render(_jsx(SafeAreaProvider, { children: _jsx(EulaScreenBase, { WorkflowCardHeaderProps: { title: 'License Agreement' }, eulaContent: `<!DOCTYPE html>
                 <html lang="en">
                 <head>
                   <meta charset="UTF-8">
@@ -150,24 +102,16 @@ describe('Eula Screen Base', () => {
                     Mauris viverra diam vitae est. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Proin gravida nibh vel velit auctor aliquam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante blandit, a tincidunt tellus faucibus. Sed posuere consectetur est at lobortis. Pellentesque ornare sem lacinia quam venenatis vestibulum. Suspendisse potenti. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam.
                   </p>
                 </body>
-                </html>`,
-                    html: true,
-                    checkboxLabel: 'I have read and agree to the Terms & Conditions',
-                    initialCheckboxValue: false,
-                    onEulaAcceptedChange: checkboxfunction,
-                    WorkflowCardActionsProps: {
-                        showNext: true,
-                        nextLabel: 'Next',
-                        canGoNext: true,
-                        showPrevious: true,
-                        previousLabel: 'Back',
-                        canGoPrevious: true,
-                        currentStep: 0,
-                        totalSteps: 6,
-                    },
-                }),
-            })
-        );
+                </html>`, html: true, checkboxLabel: 'I have read and agree to the Terms & Conditions', initialCheckboxValue: false, onEulaAcceptedChange: checkboxfunction, WorkflowCardActionsProps: {
+                    showNext: true,
+                    nextLabel: 'Next',
+                    canGoNext: true,
+                    showPrevious: true,
+                    previousLabel: 'Back',
+                    canGoPrevious: true,
+                    currentStep: 0,
+                    totalSteps: 6,
+                } }) }));
         const scrollView = getByTestId('blui-eula-web-view');
         fireEvent.scroll(scrollView, {
             nativeEvent: {

@@ -2,12 +2,10 @@ const resources = {
     translation: {
         FORGOT_PASSWORD: {
             ERROR: '目前无法重置您的密码。',
-            INSTRUCTIONS:
-                '请输入账户邮箱地址。\n\n' +
+            INSTRUCTIONS: '请输入账户邮箱地址。\n\n' +
                 '如果伊顿系统中存在此邮箱地址注册的账号的话，您会在<boldTag>{{time}}</boldTag>内收到我们的回复。\n\n' +
                 '如遇紧急账户问题，请拨打联系电话 <tel>{{phone}}</tel>。',
-            INSTRUCTIONS_ALT:
-                '请输入账户邮箱地址。<br/><br/>' +
+            INSTRUCTIONS_ALT: '请输入账户邮箱地址。<br/><br/>' +
                 '如果伊顿系统中存在此邮箱地址注册的账号的话，您会在<1>{{time}}</1>内收到我们的回复。<br/><br/>' +
                 '如遇紧急账户问题，请拨打联系电话<4>{{phone}}</4>。',
             RESET_CODE_ERROR: '您的密码重置链接无效。',
@@ -42,8 +40,8 @@ const resources = {
             FORGOT_PASSWORD: '忘记密码',
         },
         ERROR_MESSAGES: {
-            2002: '此邀请注册链接已被使用。',
-            9003: '无法完成请求。请联系您的系统管理员。',
+            '2002': '此邀请注册链接已被使用。',
+            '9003': '无法完成请求。请联系您的系统管理员。',
         },
         CHANGE_PASSWORD: {
             PASSWORD_CHANGED: '密码已修改',

@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import '@testing-library/jest-dom';
 import { CreatePasswordScreenBase } from '../../screens/index.js';
 import { render, screen } from '@testing-library/react-native';

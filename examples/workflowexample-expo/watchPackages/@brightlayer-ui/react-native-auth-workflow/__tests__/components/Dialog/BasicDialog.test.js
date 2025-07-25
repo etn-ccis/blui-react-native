@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import { BasicDialog } from '../../../components/index.js';
 import { Provider as PaperProvider } from 'react-native-paper';

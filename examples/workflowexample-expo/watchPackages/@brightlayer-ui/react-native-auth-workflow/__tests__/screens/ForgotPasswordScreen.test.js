@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { ForgotPasswordScreen } from '../../screens/index.js';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { AuthContextProvider } from '../../contexts/index.js';
@@ -14,13 +14,7 @@ describe('Forgot Password Screen Tests', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                children: _jsx(SafeAreaProvider, { children: _jsx(ForgotPasswordScreen, { ...props }) }),
-            })
-        );
+    const renderer = (props) => render(_jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(SafeAreaProvider, { children: _jsx(ForgotPasswordScreen, { ...props }) }) }));
     it('renders correctly', () => {
         renderer({
             description: (time) => _jsx(View, { children: time }),

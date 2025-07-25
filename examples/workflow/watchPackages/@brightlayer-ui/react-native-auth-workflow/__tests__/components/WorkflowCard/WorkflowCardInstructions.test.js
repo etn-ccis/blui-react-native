@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, render, screen } from '@testing-library/react-native';
 import { WorkflowCardInstructions } from '../../../components/WorkflowCard/WorkflowCardInstructions.js';
 describe('WorkflowCardInstructions Test', () => {

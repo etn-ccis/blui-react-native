@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import '@testing-library/jest-dom';
 import '@testing-library/jest-native/extend-expect.js';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
@@ -25,38 +25,22 @@ describe('VerifyCodeScreenBase  Tests', () => {
     });
     it('should call onNext callBack function', () => {
         const mockOnNext = jest.fn();
-        render(
-            _jsx(PaperProvider, {
-                children: _jsx(VerifyCodeScreenBase, {
-                    codeValidator: () => true,
-                    initialValue: '456789',
-                    WorkflowCardActionsProps: {
-                        showNext: true,
-                        nextLabel: 'Next',
-                        onNext: mockOnNext,
-                    },
-                }),
-            })
-        );
+        render(_jsx(PaperProvider, { children: _jsx(VerifyCodeScreenBase, { codeValidator: () => true, initialValue: "456789", WorkflowCardActionsProps: {
+                    showNext: true,
+                    nextLabel: 'Next',
+                    onNext: mockOnNext,
+                } }) }));
         const nextButton = screen.getByText('Next');
         expect(nextButton).toBeEnabled();
         fireEvent.press(nextButton);
         expect(mockOnNext).toHaveBeenCalled();
     });
     it('should call onPrevious callBack function', () => {
-        render(
-            _jsx(PaperProvider, {
-                children: _jsx(VerifyCodeScreenBase, {
-                    codeValidator: () => true,
-                    initialValue: '456789',
-                    WorkflowCardActionsProps: {
-                        showPrevious: true,
-                        previousLabel: 'Back',
-                        onPrevious: mockOnPrevious(),
-                    },
-                }),
-            })
-        );
+        render(_jsx(PaperProvider, { children: _jsx(VerifyCodeScreenBase, { codeValidator: () => true, initialValue: "456789", WorkflowCardActionsProps: {
+                    showPrevious: true,
+                    previousLabel: 'Back',
+                    onPrevious: mockOnPrevious(),
+                } }) }));
         const prevButton = screen.getByText('Back');
         fireEvent.press(prevButton);
         expect(mockOnPrevious).toHaveBeenCalled();

@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, render, screen, fireEvent } from '@testing-library/react-native';
 import { AuthContextProvider } from '../../contexts/index.js';
 import { authContextProviderProps } from '../../testUtils/index.js';
@@ -13,13 +13,7 @@ describe('Contact Support Screen', () => {
     beforeEach(() => {
         mockOnNext = jest.fn();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                children: _jsx(SafeAreaProvider, { children: _jsx(ContactSupportScreen, { ...props }) }),
-            })
-        );
+    const renderer = (props) => render(_jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(SafeAreaProvider, { children: _jsx(ContactSupportScreen, { ...props }) }) }));
     it('rendering the screen without any props', () => {
         renderer();
         expect(screen.getByText('Contact Us')).toBeOnTheScreen();

@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useRegistrationContext, useRegistrationWorkflowContext } from '../../contexts/index.js';
 import { SuccessScreenBase } from '../SuccessScreen/index.js';
 import { useTranslation } from 'react-i18next';
@@ -13,15 +13,7 @@ export const ExistingAccountSuccessScreen = (props) => {
     const { t } = useTranslation();
     const { navigate, routeConfig } = useRegistrationContext();
     const { resetScreenData } = useRegistrationWorkflowContext();
-    const {
-        canDismiss = true,
-        onDismiss = () => navigate(routeConfig.LOGIN),
-        WorkflowCardHeaderProps,
-        WorkflowCardActionsProps,
-        WorkflowCardBodyProps,
-        EmptyStateProps,
-        ...otherExistingAccountSuccessScreenProps
-    } = props;
+    const { canDismiss = true, onDismiss = () => navigate(routeConfig.LOGIN), WorkflowCardHeaderProps, WorkflowCardActionsProps, WorkflowCardBodyProps, EmptyStateProps, ...otherExistingAccountSuccessScreenProps } = props;
     const workflowCardHeaderProps = {
         title: t('bluiRegistration:REGISTRATION.STEPS.COMPLETE'),
         ...WorkflowCardHeaderProps,
@@ -53,11 +45,5 @@ export const ExistingAccountSuccessScreen = (props) => {
         description: t('bluiRegistration:REGISTRATION.SUCCESS_EXISTING'),
         ...EmptyStateProps,
     };
-    return _jsx(SuccessScreenBase, {
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        WorkflowCardBodyProps: workflowCardBodyProps,
-        EmptyStateProps: emptyStatesProps,
-        ...otherExistingAccountSuccessScreenProps,
-    });
+    return (_jsx(SuccessScreenBase, { WorkflowCardHeaderProps: workflowCardHeaderProps, WorkflowCardActionsProps: workflowCardActionsProps, WorkflowCardBodyProps: workflowCardBodyProps, EmptyStateProps: emptyStatesProps, ...otherExistingAccountSuccessScreenProps }));
 };

@@ -30,10 +30,7 @@ export type RegistrationUIActions = {
      * @param {string} validationEmail - the provided email address
      * @returns Promise<boolean>
      */
-    validateUserRegistrationRequest?: (
-        validationCode: string,
-        validationEmail?: string
-    ) => Promise<{
+    validateUserRegistrationRequest?: (validationCode: string, validationEmail?: string) => Promise<{
         codeValid: boolean | string;
         accountExists?: boolean;
     }>;

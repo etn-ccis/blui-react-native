@@ -2,12 +2,10 @@ const resources = {
     translation: {
         FORGOT_PASSWORD: {
             ERROR: 'No se pudo restablecer su contraseña en este momento.',
-            INSTRUCTIONS:
-                'Por favor ingrese el correo electrónico de la cuenta asociado con la cuenta.\n\n' +
+            INSTRUCTIONS: 'Por favor ingrese el correo electrónico de la cuenta asociado con la cuenta.\n\n' +
                 'Si este correo electrónico tiene una cuenta con Eaton, recibirá una respuesta dentro de <boldTag>{{time}}</boldTag>.\n\n' +
                 'Para problemas urgentes con la cuenta, llame al <tel>{{phone}}</tel>.',
-            INSTRUCTIONS_ALT:
-                'Por favor ingrese el correo electrónico de la cuenta asociado con la cuenta. <br/> <br/>' +
+            INSTRUCTIONS_ALT: 'Por favor ingrese el correo electrónico de la cuenta asociado con la cuenta. <br/> <br/>' +
                 'Si este correo electrónico tiene una cuenta con Eaton, recibirá una respuesta dentro de <1> {{time}} </1>. <br/> <br/>' +
                 'Para problemas urgentes con la cuenta, llame al <4> {{phone}} </4>.',
             RESET_CODE_ERROR: 'Hubo un error con su código de reinicio. ',
@@ -42,17 +40,15 @@ const resources = {
             FORGOT_PASSWORD: 'Olvidé mi contraseña',
         },
         ERROR_MESSAGES: {
-            2002: 'El enlace de registro de usuario ya está canjeado.',
-            9003: 'No se puede realizar la operación solicitada, por favor contacte su administrador',
+            '2002': 'El enlace de registro de usuario ya está canjeado.',
+            '9003': 'No se puede realizar la operación solicitada, por favor contacte su administrador',
         },
         CHANGE_PASSWORD: {
             PASSWORD_CHANGED: 'Contraseña cambiada',
             PASSWORD: 'Cambiar contraseña',
-            SUCCESS_MESSAGE:
-                '¡Su contraseña se actualizó correctamente! Para garantizar la seguridad de su cuenta, deberá iniciar sesión en la aplicación con sus credenciales actualizadas.',
+            SUCCESS_MESSAGE: '¡Su contraseña se actualizó correctamente! Para garantizar la seguridad de su cuenta, deberá iniciar sesión en la aplicación con sus credenciales actualizadas.',
             EMAIL_CONFIRM_MESSAGE: 'Hemos enviado un correo electrónico de confirmación a <b> {{email}} </b>',
-            PASSWORD_INFO:
-                'Por favor, seleccione una contraseña. Asegúrese de que su contraseña cumple con los requisitos de complejidad necesarios que se describen a continuación. ',
+            PASSWORD_INFO: 'Por favor, seleccione una contraseña. Asegúrese de que su contraseña cumple con los requisitos de complejidad necesarios que se describen a continuación. ',
             OLD_PASSWORD: 'Contraseña anterior',
             ERROR_MESSAGE: `Su información no coincide con nuestros registros. Vuelva a ingresar su información para volver a intentarlo.`,
             PROBLEM_OCCURRED: 'Ocurrió un problema:',

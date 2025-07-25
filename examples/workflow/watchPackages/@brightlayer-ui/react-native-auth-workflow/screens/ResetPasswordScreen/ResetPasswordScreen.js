@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuthContext, useErrorManager } from '../../contexts/index.js';
@@ -20,21 +20,13 @@ export const ResetPasswordScreen = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: () => {
-            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (props.errorDisplayConfig?.onClose)
+                props.errorDisplayConfig.onClose();
+            if (errorManagerConfig.onClose)
+                errorManagerConfig?.onClose();
         },
     };
-    const {
-        WorkflowCardBaseProps,
-        WorkflowCardHeaderProps,
-        WorkflowCardInstructionProps,
-        WorkflowCardBodyProps,
-        WorkflowCardActionsProps,
-        PasswordProps,
-        SuccessScreen,
-        SuccessScreenProps,
-        accountParams,
-    } = props;
+    const { WorkflowCardBaseProps, WorkflowCardHeaderProps, WorkflowCardInstructionProps, WorkflowCardBodyProps, WorkflowCardActionsProps, PasswordProps, SuccessScreen, SuccessScreenProps, accountParams, } = props;
     const [passwordInput, setPasswordInput] = useState(PasswordProps?.initialNewPasswordValue ?? '');
     const [confirmInput, setConfirmInput] = useState(PasswordProps?.initialConfirmPasswordValue ?? '');
     const [hasVerifyCodeError, setHasVerifyCodeError] = useState(false);
@@ -49,10 +41,12 @@ export const ResetPasswordScreen = (props) => {
         try {
             setIsLoading(true);
             await actions.verifyResetCode(code, email);
-        } catch (_error) {
+        }
+        catch (_error) {
             setHasVerifyCodeError(true);
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setIsLoading(false);
         }
     }, []);
@@ -62,12 +56,15 @@ export const ResetPasswordScreen = (props) => {
             await actions.setPassword(code, passwordInput, email);
             if (props.showSuccessScreen === false) {
                 navigate(routeConfig.LOGIN);
-            } else {
+            }
+            else {
                 setShowSuccessScreen(true);
             }
-        } catch (_error) {
+        }
+        catch (_error) {
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setIsLoading(false);
         }
     }, [actions, code, passwordInput, email, triggerError, props.showSuccessScreen, navigate, routeConfig]);
@@ -76,17 +73,15 @@ export const ResetPasswordScreen = (props) => {
             return confirmInput === passwordInput;
         }
         for (const req of passwordReqs) {
-            if (!new RegExp(req.regex).test(passwordInput)) return false;
+            if (!new RegExp(req.regex).test(passwordInput))
+                return false;
         }
         return confirmInput === passwordInput;
     }, [passwordReqs, passwordInput, confirmInput]);
-    const updateFields = useCallback(
-        (fields) => {
-            setPasswordInput(fields.password);
-            setConfirmInput(fields.confirm);
-        },
-        [setPasswordInput, setConfirmInput]
-    );
+    const updateFields = useCallback((fields) => {
+        setPasswordInput(fields.password);
+        setConfirmInput(fields.confirm);
+    }, [setPasswordInput, setConfirmInput]);
     useEffect(() => {
         void verifyResetCode();
     }, []);
@@ -154,15 +149,7 @@ export const ResetPasswordScreen = (props) => {
             }
         },
     };
-    return _jsx(ResetPasswordScreenBase, {
-        WorkflowCardBaseProps: workflowCardBaseProps,
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        WorkflowCardBodyProps: workflowCardBodyProps,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        PasswordProps: passwordProps,
-        showSuccessScreen: showSuccessScreen,
-        SuccessScreen: SuccessScreen,
-        SuccessScreenProps: {
+    return (_jsx(ResetPasswordScreenBase, { WorkflowCardBaseProps: workflowCardBaseProps, WorkflowCardHeaderProps: workflowCardHeaderProps, WorkflowCardBodyProps: workflowCardBodyProps, WorkflowCardActionsProps: workflowCardActionsProps, PasswordProps: passwordProps, showSuccessScreen: showSuccessScreen, SuccessScreen: SuccessScreen, SuccessScreenProps: {
             EmptyStateProps: {
                 icon: { name: 'check-circle' },
                 title: t('bluiAuth:PASSWORD_RESET.SUCCESS_MESSAGE'),
@@ -180,15 +167,13 @@ export const ResetPasswordScreen = (props) => {
                 },
             },
             ...SuccessScreenProps,
-        },
-        errorDisplayConfig: {
+        }, errorDisplayConfig: {
             ...errorDisplayConfig,
             onClose: hasVerifyCodeError
                 ? () => {
-                      navigate(routeConfig.LOGIN);
-                      errorDisplayConfig.onClose?.();
-                  }
+                    navigate(routeConfig.LOGIN);
+                    errorDisplayConfig.onClose?.();
+                }
                 : errorDisplayConfig.onClose,
-        },
-    });
+        } }));
 };

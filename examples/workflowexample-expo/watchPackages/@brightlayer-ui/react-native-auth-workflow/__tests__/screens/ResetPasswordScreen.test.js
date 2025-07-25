@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { ResetPasswordScreen } from '../../screens/ResetPasswordScreen/index.js';
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { AuthContextProvider } from '../../contexts/index.js';
@@ -13,15 +13,7 @@ describe('Reset Password Screen Tests', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(PaperProvider, {
-                children: _jsx(AuthContextProvider, {
-                    ...authContextProviderProps,
-                    children: _jsx(ResetPasswordScreen, { ...props }),
-                }),
-            })
-        );
+    const renderer = (props) => render(_jsx(PaperProvider, { children: _jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(ResetPasswordScreen, { ...props }) }) }));
     it('renders correctly', () => {
         renderer();
         expect(screen.getByText('Reset Password')).toBeOnTheScreen();

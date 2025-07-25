@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { RegistrationWorkflow } from '../../components/index.js';
 import { RegistrationContextProvider } from '../../contexts/index.js';
@@ -17,18 +17,7 @@ describe('Verify Code Full Screen Test cases', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(PaperProvider, {
-                children: _jsx(RegistrationContextProvider, {
-                    ...registrationContextProviderProps,
-                    children: _jsx(RegistrationWorkflow, {
-                        initialScreenIndex: 0,
-                        children: _jsx(VerifyCodeScreen, { ...props }),
-                    }),
-                }),
-            })
-        );
+    const renderer = (props) => render(_jsx(PaperProvider, { children: _jsx(RegistrationContextProvider, { ...registrationContextProviderProps, children: _jsx(RegistrationWorkflow, { initialScreenIndex: 0, children: _jsx(VerifyCodeScreen, { ...props }) }) }) }));
     it('Should render correctly', () => {
         renderer();
         expect(screen.getByText('Verify Email')).toBeOnTheScreen();

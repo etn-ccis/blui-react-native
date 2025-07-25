@@ -2,97 +2,97 @@ import { MD3Theme } from 'react-native-paper';
 export declare const fontConfig: {
     displaySmall: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     displayMedium: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     displayLarge: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
         letterSpacing: number;
     };
     headlineSmall: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     headlineMedium: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     headlineLarge: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     titleSmall: {
         fontFamily: string;
-        fontWeight: '600';
+        fontWeight: "600";
         fontSize: number;
         lineHeight: number;
         letterSpacing: number;
     };
     titleMedium: {
         fontFamily: string;
-        fontWeight: '600';
+        fontWeight: "600";
         fontSize: number;
         lineHeight: number;
         letterSpacing: number;
     };
     titleLarge: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     labelSmall: {
         fontFamily: string;
-        fontWeight: '600';
+        fontWeight: "600";
         fontSize: number;
         lineHeight: number;
         letterSpacing: number;
     };
     labelMedium: {
         fontFamily: string;
-        fontWeight: '600';
+        fontWeight: "600";
         fontSize: number;
         lineHeight: number;
         letterSpacing: number;
     };
     labelLarge: {
         fontFamily: string;
-        fontWeight: '600';
+        fontWeight: "600";
         fontSize: number;
         lineHeight: number;
         letterSpacing: number;
     };
     bodySmall: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     bodyMedium: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
     };
     bodyLarge: {
         fontFamily: string;
-        fontWeight: '400';
+        fontWeight: "400";
         fontSize: number;
         lineHeight: number;
         letterSpacing: number;
@@ -219,9 +219,7 @@ export type ExtendedTheme = Omit<MD3Theme, 'colors'> & {
         mapTextOutline: string;
     };
 };
-export declare const useExtendedTheme: (
-    overrides?: import('@callstack/react-theme-provider').$DeepPartial<ExtendedTheme>
-) => ExtendedTheme;
+export declare const useExtendedTheme: (overrides?: import("@callstack/react-theme-provider").$DeepPartial<ExtendedTheme> | undefined) => ExtendedTheme;
 export type BluiFontWeight = '300' | '400' | '600' | '700' | '800' | undefined;
 export type FontStyle = {
     fontFamily: string;

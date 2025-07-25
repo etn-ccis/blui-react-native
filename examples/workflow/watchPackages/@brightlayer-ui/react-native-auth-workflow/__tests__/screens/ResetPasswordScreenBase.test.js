@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, render, screen } from '@testing-library/react-native';
 import { Provider as PaperProvider, Text } from 'react-native-paper';
 import { ResetPasswordScreenBase } from '../../screens/index.js';
@@ -47,7 +47,7 @@ describe('ResetPasswordScreenBase tests', () => {
     it('should render success screen', () => {
         renderer({
             showSuccessScreen: true,
-            SuccessScreen: () => _jsx(Text, { children: 'Test' }),
+            SuccessScreen: () => _jsx(Text, { children: "Test" }),
         });
         expect(screen.getByText('Test')).toBeOnTheScreen();
     });

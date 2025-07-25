@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { render, cleanup, fireEvent } from '@testing-library/react-native';
 import '@testing-library/jest-dom';
 import { AuthContextProvider } from '../../contexts/index.js';
@@ -9,12 +9,7 @@ import '@testing-library/jest-native/extend-expect.js';
 afterEach(cleanup);
 describe('LoginScreen', () => {
     test('renders all input fields with correct labels', () => {
-        const { getByTestId } = render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }),
-            })
-        );
+        const { getByTestId } = render(_jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }) }));
         expect(getByTestId('blui-login-username-text-field')).toBeTruthy();
         expect(getByTestId('blui-login-password-text-field')).toBeTruthy();
         expect(getByTestId('blui-login-remember-me-checkbox')).toBeTruthy();
@@ -25,47 +20,24 @@ describe('LoginScreen', () => {
     });
     test('triggers forgot password function when forgot password label is pressed', () => {
         const mockNavigate = jest.fn();
-        const { getByTestId } = render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                navigate: mockNavigate,
-                children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }),
-            })
-        );
+        const { getByTestId } = render(_jsx(AuthContextProvider, { ...authContextProviderProps, navigate: mockNavigate, children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }) }));
         fireEvent.press(getByTestId('blui-login-forgot-password-label'));
         expect(mockNavigate).toHaveBeenCalled();
     });
     test('triggers self register function when self register label is pressed', () => {
         const mockNavigate = jest.fn();
-        const { getByTestId } = render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                navigate: mockNavigate,
-                children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }),
-            })
-        );
+        const { getByTestId } = render(_jsx(AuthContextProvider, { ...authContextProviderProps, navigate: mockNavigate, children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }) }));
         fireEvent.press(getByTestId('blui-login-self-register-label'));
         expect(mockNavigate).toHaveBeenCalled();
     });
     test('triggers contact support function when contact support label is pressed', () => {
         const mockNavigate = jest.fn();
-        const { getByTestId } = render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                navigate: mockNavigate,
-                children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }),
-            })
-        );
+        const { getByTestId } = render(_jsx(AuthContextProvider, { ...authContextProviderProps, navigate: mockNavigate, children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }) }));
         fireEvent.press(getByTestId('blui-login-contact-support-label'));
         expect(mockNavigate).toHaveBeenCalled();
     });
     test('checks if remember me checkbox is selected', () => {
-        const { getByTestId } = render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }),
-            })
-        );
+        const { getByTestId } = render(_jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(PaperProvider, { children: _jsx(LoginScreen, {}) }) }));
         const checkbox = getByTestId('blui-login-remember-me-checkbox');
         expect(checkbox.props.accessibilityState.checked).toBe(false);
         fireEvent.press(checkbox);
@@ -73,14 +45,7 @@ describe('LoginScreen', () => {
     });
     test('triggers onSubmitEditing when pressing enter key on username field', () => {
         const mockSubmitEditing = jest.fn();
-        const { getByTestId } = render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                children: _jsx(PaperProvider, {
-                    children: _jsx(LoginScreen, { usernameTextFieldProps: { onSubmitEditing: mockSubmitEditing } }),
-                }),
-            })
-        );
+        const { getByTestId } = render(_jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(PaperProvider, { children: _jsx(LoginScreen, { usernameTextFieldProps: { onSubmitEditing: mockSubmitEditing } }) }) }));
         const usernameInput = getByTestId('blui-login-username-text-field');
         fireEvent.changeText(getByTestId('blui-login-username-text-field'), 'email@email.com');
         fireEvent(usernameInput, 'submitEditing');
@@ -88,14 +53,7 @@ describe('LoginScreen', () => {
     });
     test('triggers onSubmitEditing when pressing enter key on password field', () => {
         const mockSubmitEditing = jest.fn();
-        const { getByTestId } = render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                children: _jsx(PaperProvider, {
-                    children: _jsx(LoginScreen, { passwordTextFieldProps: { onSubmitEditing: mockSubmitEditing } }),
-                }),
-            })
-        );
+        const { getByTestId } = render(_jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(PaperProvider, { children: _jsx(LoginScreen, { passwordTextFieldProps: { onSubmitEditing: mockSubmitEditing } }) }) }));
         const passwordInput = getByTestId('blui-login-password-text-field');
         fireEvent.changeText(getByTestId('blui-login-password-text-field'), 'testpassword');
         fireEvent(passwordInput, 'submitEditing');

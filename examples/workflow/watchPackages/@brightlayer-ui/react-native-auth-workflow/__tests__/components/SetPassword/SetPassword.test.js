@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { fireEvent, render } from '@testing-library/react-native';
 import '@testing-library/jest-dom';
 import { SetPassword } from '../../../components/index.js';
@@ -12,19 +12,9 @@ describe('Set Password Test', () => {
     });
     it('renders with custom props', () => {
         const onSubmitMock = jest.fn();
-        const { getByTestId } = render(
-            _jsx(SetPassword, {
-                passwordTextFieldProps: { onChangeText: jest.fn() },
-                confirmPasswordTextFieldProps: { onChangeText: jest.fn() },
-                initialNewPasswordValue: 'password123',
-                initialConfirmPasswordValue: 'password123',
-                passwordRequirements: [
-                    { regex: /^.{8,}$/, description: 'Password must be at least 8 characters long' },
-                ],
-                onSubmit: onSubmitMock,
-                passwordNotMatchError: 'Passwords do not match',
-            })
-        );
+        const { getByTestId } = render(_jsx(SetPassword, { passwordTextFieldProps: { onChangeText: jest.fn() }, confirmPasswordTextFieldProps: { onChangeText: jest.fn() }, initialNewPasswordValue: "password123", initialConfirmPasswordValue: "password123", passwordRequirements: [
+                { regex: /^.{8,}$/, description: 'Password must be at least 8 characters long' },
+            ], onSubmit: onSubmitMock, passwordNotMatchError: "Passwords do not match" }));
         const passwordInput = getByTestId('blui-set-password-password-text-field');
         const confirmInput = getByTestId('blui-set-password-confirm-password-text-field');
         fireEvent.changeText(passwordInput, 'Password@123');
@@ -35,17 +25,7 @@ describe('Set Password Test', () => {
         const onSubmitMock = jest.fn();
         const passwordRef = { current: null };
         const confirmRef = { current: null };
-        const { getByTestId } = render(
-            _jsx(SetPassword, {
-                passwordRef: passwordRef,
-                confirmRef: confirmRef,
-                initialNewPasswordValue: 'password123',
-                initialConfirmPasswordValue: 'password123',
-                passwordRequirements: [{ regex: /^.{8,}$/, description: 'check1' }],
-                onSubmit: onSubmitMock,
-                passwordNotMatchError: 'Passwords do not match',
-            })
-        );
+        const { getByTestId } = render(_jsx(SetPassword, { passwordRef: passwordRef, confirmRef: confirmRef, initialNewPasswordValue: "password123", initialConfirmPasswordValue: "password123", passwordRequirements: [{ regex: /^.{8,}$/, description: 'check1' }], onSubmit: onSubmitMock, passwordNotMatchError: "Passwords do not match" }));
         const passwordInput = getByTestId('blui-set-password-password-text-field');
         const confirmInput = getByTestId('blui-set-password-confirm-password-text-field');
         fireEvent.changeText(passwordInput, 'Pass');

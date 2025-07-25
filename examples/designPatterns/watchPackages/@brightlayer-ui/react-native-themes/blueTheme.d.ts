@@ -6,7 +6,7 @@ All rights reserved.
 This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
 **/
 export declare const MD3BluiLightTheme: {
-    fonts: import('react-native-paper/lib/typescript/types').MD3Typescale;
+    fonts: import("react-native-paper/lib/typescript/types").MD3Typescale;
     colors: {
         primary: string;
         onPrimary: string;
@@ -127,7 +127,7 @@ export declare const MD3BluiLightTheme: {
         mapTextOutline: string;
     };
     dark: boolean;
-    mode?: 'adaptive' | 'exact';
+    mode?: "adaptive" | "exact";
     roundness: number;
     animation: {
         scale: number;

@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
 import { ErrorMessageBox } from '../../../components/index.js';
 import { Provider as PaperProvider } from 'react-native-paper';
@@ -9,8 +9,7 @@ describe('ErrorMessageBox Test', () => {
         errorMessage: 'Error Message',
         onClose,
     };
-    const renderer = (props = defaultProps) =>
-        render(_jsx(PaperProvider, { children: _jsx(ErrorMessageBox, { ...props }) }));
+    const renderer = (props = defaultProps) => render(_jsx(PaperProvider, { children: _jsx(ErrorMessageBox, { ...props }) }));
     afterEach(cleanup);
     it('renders correctly', () => {
         renderer();

@@ -6,17 +6,18 @@ const { spawn, execSync } = require('child_process');
 const chokidar = require('chokidar');
 
 // Configuration
-const workflow_LIBRARY_PATH = path.resolve(__dirname, '../packages/auth-workflows');
-const SRC_PATH = path.join(workflow_LIBRARY_PATH, 'src');
-const DIST_PATH = path.join(workflow_LIBRARY_PATH, 'dist');
-const TSCONFIG_PATH = path.join(workflow_LIBRARY_PATH, 'tsconfig.json');
+const PROGRESS_ICONS_LIBRARY_PATH = path.resolve(__dirname, '../packages/progress-icons');
+const SRC_PATH = path.join(PROGRESS_ICONS_LIBRARY_PATH, 'src');
+const DIST_PATH = path.join(PROGRESS_ICONS_LIBRARY_PATH, 'dist');
+const TSCONFIG_PATH = path.join(PROGRESS_ICONS_LIBRARY_PATH, 'tsconfig.lib.json');
 
 // Example apps that need to be updated
 const EXAMPLE_APPS = [
-    'examples/workflowexample-expo',
+    'examples/showcase',
+    'examples/designPatterns'
 ];
 
-const NODE_MODULES_PATH = 'watchPackages/@brightlayer-ui/react-native-auth-workflow';
+const NODE_MODULES_PATH = 'watchPackages/@brightlayer-ui/react-native-progress-icons';
 
 // Colors for console output
 const colors = {
@@ -84,24 +85,24 @@ function getRelatedFiles(basePath) {
 // Build a specific file using TypeScript compiler
 function buildSingleFile(srcFilePath) {
     return new Promise((resolve, reject) => {
-        logInfo(`Building file: ${path.relative(workflow_LIBRARY_PATH, srcFilePath)}`);
+        logInfo(`Building file: ${path.relative(PROGRESS_ICONS_LIBRARY_PATH, srcFilePath)}`);
         
         try {
             // Get the relative path for the TypeScript compiler
-            const relativeSrcPath = path.relative(workflow_LIBRARY_PATH, srcFilePath);
+            const relativeSrcPath = path.relative(PROGRESS_ICONS_LIBRARY_PATH, srcFilePath);
             
             // Use incremental build approach - build the entire project but focus on changed file
             const tscCommand = `npx tsc --project "${TSCONFIG_PATH}" --incremental`;
             
             execSync(tscCommand, { 
-                cwd: workflow_LIBRARY_PATH,
+                cwd: PROGRESS_ICONS_LIBRARY_PATH,
                 stdio: 'pipe'
             });
             
             // Also run tsc-esm-fix to ensure ESM compatibility
             try {
                 execSync('npx tsc-esm-fix dist', {
-                    cwd: workflow_LIBRARY_PATH,
+                    cwd: PROGRESS_ICONS_LIBRARY_PATH,
                     stdio: 'pipe'
                 });
             } catch (esmError) {
@@ -176,12 +177,12 @@ function copyAllFilesToExamples() {
             // Copy the entire dist directory
             copyDirectory(DIST_PATH, appNodeModulesPath);
             
-            // Also copy package.json, README, etc. from the workflow library
+            // Also copy package.json, README, etc. from the progressIcons library
             const filesToCopy = ['package.json', 'README.md', 'LICENSE', 'CHANGELOG.md'];
-            const workflowLibraryRoot = workflow_LIBRARY_PATH;
+            const progressIconsLibraryRoot = PROGRESS_ICONS_LIBRARY_PATH;
             
             filesToCopy.forEach(fileName => {
-                const sourcePath = path.join(workflowLibraryRoot, fileName);
+                const sourcePath = path.join(progressIconsLibraryRoot, fileName);
                 const targetPath = path.join(appNodeModulesPath, fileName);
                 
                 if (fs.existsSync(sourcePath)) {
@@ -223,7 +224,7 @@ function copyDirectory(source, target) {
 async function processChangedFile(filePath) {
     try {
         const startTime = Date.now();
-        log(`\n${colors.bold}📝 File changed: ${path.relative(workflow_LIBRARY_PATH, filePath)}${colors.reset}`);
+        log(`\n${colors.bold}📝 File changed: ${path.relative(PROGRESS_ICONS_LIBRARY_PATH, filePath)}${colors.reset}`);
         
         // Build the file
         await buildSingleFile(filePath);
@@ -253,14 +254,14 @@ function performInitialBuild() {
         try {
             const tscCommand = `npx tsc --project "${TSCONFIG_PATH}"`;
             execSync(tscCommand, { 
-                cwd: workflow_LIBRARY_PATH,
+                cwd: PROGRESS_ICONS_LIBRARY_PATH,
                 stdio: 'pipe'
             });
             
             // Run tsc-esm-fix
             try {
                 execSync('npx tsc-esm-fix dist', {
-                    cwd: workflow_LIBRARY_PATH,
+                    cwd: PROGRESS_ICONS_LIBRARY_PATH,
                     stdio: 'pipe'
                 });
             } catch (esmError) {

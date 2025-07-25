@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useState } from 'react';
 import { VerifyCodeScreenBase } from './VerifyCodeScreenBase.js';
 import { useTranslation } from 'react-i18next';
@@ -16,8 +16,7 @@ export const VerifyCodeScreen = (props) => {
     const { t } = useTranslation();
     const regWorkflow = useRegistrationWorkflowContext();
     const { actions, navigate } = useRegistrationContext();
-    const { nextScreen, previousScreen, screenData, currentScreen, totalScreens, updateScreenData, resetScreenData } =
-        regWorkflow;
+    const { nextScreen, previousScreen, screenData, currentScreen, totalScreens, updateScreenData, resetScreenData } = regWorkflow;
     const { emailAddress } = screenData.CreateAccount;
     const { triggerError, errorManagerConfig } = useErrorManager();
     const errorDisplayConfig = {
@@ -34,74 +33,60 @@ export const VerifyCodeScreen = (props) => {
         try {
             setIsLoading(true);
             await actions?.requestRegistrationCode?.(emailAddress ? emailAddress : '');
-        } catch (_error) {
+        }
+        catch (_error) {
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setIsLoading(false);
         }
     }, [actions, emailAddress, triggerError]);
-    const {
-        codeValidator = (code) =>
-            code?.length > 0 ? true : t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.CODE_VALIDATOR_ERROR'),
-        onResend = () => {
-            void requestResendCode();
-        },
-        resendInstructions = t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.VERIFICATION_CODE_PROMPT'),
-        resendLabel = t('bluiCommon:ACTIONS.RESEND'),
-        verifyCodeInputLabel = t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.VERIFICATION'),
-        initialValue = screenData.VerifyCode.code,
-        verifyCodeTextInputProps,
-    } = props;
-    const handleOnNext = useCallback(
-        async (code, email) => {
-            try {
-                setIsLoading(true);
-                if (actions?.validateUserRegistrationRequest) {
-                    // eslint-disable-next-line no-unsafe-optional-chaining
-                    const { codeValid, accountExists } = await actions?.validateUserRegistrationRequest(code, email);
-                    if (accountExists) {
-                        updateScreenData({ screenId: 'VerifyCode', values: { code }, isAccountExist: accountExists });
-                    } else {
-                        if (typeof codeValid === 'boolean') {
-                            if (codeValid)
-                                void nextScreen({
-                                    screenId: 'VerifyCode',
-                                    values: { code },
-                                    isAccountExist: accountExists,
-                                });
-                            else {
-                                triggerError(
-                                    new Error(t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.CODE_VALIDATOR_ERROR'))
-                                );
-                            }
-                        } else {
-                            triggerError(new Error(codeValid));
+    const { codeValidator = (code) => code?.length > 0 ? true : t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.CODE_VALIDATOR_ERROR'), onResend = () => {
+        void requestResendCode();
+    }, resendInstructions = t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.VERIFICATION_CODE_PROMPT'), resendLabel = t('bluiCommon:ACTIONS.RESEND'), verifyCodeInputLabel = t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.VERIFICATION'), initialValue = screenData.VerifyCode.code, verifyCodeTextInputProps, } = props;
+    const handleOnNext = useCallback(async (code, email) => {
+        try {
+            setIsLoading(true);
+            if (actions?.validateUserRegistrationRequest) {
+                // eslint-disable-next-line no-unsafe-optional-chaining
+                const { codeValid, accountExists } = await actions?.validateUserRegistrationRequest(code, email);
+                if (accountExists) {
+                    updateScreenData({ screenId: 'VerifyCode', values: { code }, isAccountExist: accountExists });
+                }
+                else {
+                    if (typeof codeValid === 'boolean') {
+                        if (codeValid)
+                            void nextScreen({
+                                screenId: 'VerifyCode',
+                                values: { code },
+                                isAccountExist: accountExists,
+                            });
+                        else {
+                            triggerError(new Error(t('bluiRegistration:SELF_REGISTRATION.VERIFY_EMAIL.CODE_VALIDATOR_ERROR')));
                         }
                     }
+                    else {
+                        triggerError(new Error(codeValid));
+                    }
                 }
-            } catch (_error) {
-                triggerError(_error);
-            } finally {
-                setTimeout(() => {
-                    setIsLoading(false);
-                }, timeOutDelay);
             }
-        },
-        [t, actions, nextScreen, triggerError, updateScreenData]
-    );
+        }
+        catch (_error) {
+            triggerError(_error);
+        }
+        finally {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, timeOutDelay);
+        }
+    }, [t, actions, nextScreen, triggerError, updateScreenData]);
     const onPrevious = (code) => {
         previousScreen({
             screenId: 'VerifyCode',
             values: { code },
         });
     };
-    const {
-        WorkflowCardBaseProps,
-        WorkflowCardHeaderProps,
-        WorkflowCardInstructionProps,
-        WorkflowCardBodyProps,
-        WorkflowCardActionsProps,
-    } = props;
+    const { WorkflowCardBaseProps, WorkflowCardHeaderProps, WorkflowCardInstructionProps, WorkflowCardBodyProps, WorkflowCardActionsProps, } = props;
     const workflowCardBaseProps = {
         loading: isLoading,
         ...WorkflowCardBaseProps,
@@ -142,18 +127,5 @@ export const VerifyCodeScreen = (props) => {
             WorkflowCardActionsProps?.onPrevious?.();
         },
     };
-    return _jsx(VerifyCodeScreenBase, {
-        WorkflowCardBaseProps: workflowCardBaseProps,
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        WorkflowCardBodyProps: workflowCardBodyProps,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        resendInstructions: resendInstructions,
-        resendLabel: resendLabel,
-        verifyCodeInputLabel: verifyCodeInputLabel,
-        initialValue: verifyCode.length > 0 ? verifyCode : initialValue,
-        onResend: onResend,
-        codeValidator: codeValidator,
-        errorDisplayConfig: errorDisplayConfig,
-        verifyCodeTextInputProps: verifyCodeTextInputProps,
-    });
+    return (_jsx(VerifyCodeScreenBase, { WorkflowCardBaseProps: workflowCardBaseProps, WorkflowCardHeaderProps: workflowCardHeaderProps, WorkflowCardBodyProps: workflowCardBodyProps, WorkflowCardActionsProps: workflowCardActionsProps, resendInstructions: resendInstructions, resendLabel: resendLabel, verifyCodeInputLabel: verifyCodeInputLabel, initialValue: verifyCode.length > 0 ? verifyCode : initialValue, onResend: onResend, codeValidator: codeValidator, errorDisplayConfig: errorDisplayConfig, verifyCodeTextInputProps: verifyCodeTextInputProps }));
 };

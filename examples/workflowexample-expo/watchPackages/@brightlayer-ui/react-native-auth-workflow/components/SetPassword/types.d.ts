@@ -52,7 +52,10 @@ export type SetPasswordProps = {
      * @param {string} confirm - confirm password value
      * @returns {void}
      */
-    onPasswordChange?: (passwords: { password: string; confirm: string }) => void;
+    onPasswordChange?: (passwords: {
+        password: string;
+        confirm: string;
+    }) => void;
     /**
      * The label for the new password field
      */

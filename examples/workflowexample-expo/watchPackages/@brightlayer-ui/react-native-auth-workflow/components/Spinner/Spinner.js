@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { View } from 'react-native';
 import { ActivityIndicator } from 'react-native-paper';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
@@ -12,8 +12,7 @@ import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 export const Spinner = (props) => {
     const { visible, ...otherProps } = props;
     const theme = useExtendedTheme();
-    return _jsx(View, {
-        style: {
+    return (_jsx(View, { style: {
             top: 0,
             left: 0,
             height: '100%',
@@ -23,9 +22,5 @@ export const Spinner = (props) => {
             alignItems: 'center',
             position: 'absolute',
             backgroundColor: `rgba(255,255,255,${theme.dark ? 0.15 : 0.75})`,
-        },
-        testID: 'blui-spinner',
-        ...otherProps,
-        children: _jsx(ActivityIndicator, { animating: visible, size: 'large', color: theme.colors.primary }),
-    });
+        }, testID: "blui-spinner", ...otherProps, children: _jsx(ActivityIndicator, { animating: visible, size: "large", color: theme.colors.primary }) }));
 };

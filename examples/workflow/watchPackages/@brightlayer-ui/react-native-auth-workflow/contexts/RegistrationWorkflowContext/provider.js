@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 /**
  * @packageDocumentation
  * @module RegistrationWorkflowContextProvider
@@ -14,16 +14,7 @@ export const RegistrationWorkflowContextProvider = (props) => {
     // Context value will not change unless a sub function is changed
     // NOTE: When adding new props to RegistrationWorkflowContextProps be sure
     // to also add them here so the parameters are copied.
-    const {
-        currentScreen,
-        totalScreens,
-        nextScreen,
-        previousScreen,
-        screenData,
-        updateScreenData,
-        resetScreenData,
-        isInviteRegistration,
-    } = props;
+    const { currentScreen, totalScreens, nextScreen, previousScreen, screenData, updateScreenData, resetScreenData, isInviteRegistration, } = props;
     const memoizedProps = useMemo(() => {
         const propsForContext = {
             currentScreen,
@@ -46,5 +37,5 @@ export const RegistrationWorkflowContextProvider = (props) => {
         resetScreenData,
         isInviteRegistration,
     ]);
-    return _jsx(RegistrationWorkflowContext.Provider, { value: memoizedProps, children: props.children });
+    return (_jsx(RegistrationWorkflowContext.Provider, { value: memoizedProps, children: props.children }));
 };

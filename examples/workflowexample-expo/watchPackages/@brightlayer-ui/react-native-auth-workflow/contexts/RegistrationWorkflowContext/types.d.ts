@@ -47,37 +47,31 @@ export type ScreenData = {
      */
     Other?: Record<string, Record<string, boolean | string | number>>;
 };
-export type IndividualScreenData =
-    | {
-          screenId: 'Eula';
-          values: ScreenData['Eula'];
-          isAccountExist?: boolean;
-      }
-    | {
-          screenId: 'CreateAccount';
-          values: ScreenData['CreateAccount'];
-          isAccountExist?: boolean;
-      }
-    | {
-          screenId: 'VerifyCode';
-          values: ScreenData['VerifyCode'];
-          isAccountExist?: boolean;
-      }
-    | {
-          screenId: 'CreatePassword';
-          values: ScreenData['CreatePassword'];
-          isAccountExist?: boolean;
-      }
-    | {
-          screenId: 'AccountDetails';
-          values: ScreenData['AccountDetails'];
-          isAccountExist?: boolean;
-      }
-    | {
-          screenId: string;
-          values: Record<string, boolean | string | number>;
-          isAccountExist?: boolean;
-      };
+export type IndividualScreenData = {
+    screenId: 'Eula';
+    values: ScreenData['Eula'];
+    isAccountExist?: boolean;
+} | {
+    screenId: 'CreateAccount';
+    values: ScreenData['CreateAccount'];
+    isAccountExist?: boolean;
+} | {
+    screenId: 'VerifyCode';
+    values: ScreenData['VerifyCode'];
+    isAccountExist?: boolean;
+} | {
+    screenId: 'CreatePassword';
+    values: ScreenData['CreatePassword'];
+    isAccountExist?: boolean;
+} | {
+    screenId: 'AccountDetails';
+    values: ScreenData['AccountDetails'];
+    isAccountExist?: boolean;
+} | {
+    screenId: string;
+    values: Record<string, boolean | string | number>;
+    isAccountExist?: boolean;
+};
 export type RegistrationWorkflowContextProps = {
     /**
      * @param {number} currentScreen - The current screen in the registration workflow.

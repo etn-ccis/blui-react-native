@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import '@testing-library/jest-dom';
 import '@testing-library/jest-native/extend-expect.js';
 import { cleanup, fireEvent, render, screen } from '@testing-library/react-native';
@@ -54,7 +54,7 @@ describe('ForgotPasswordScreenBase Tests', () => {
                 nextLabel: 'Next',
                 onNext: mockFunction(),
             },
-            SuccessScreen: () => _jsx(Text, { children: 'Success' }),
+            SuccessScreen: () => _jsx(Text, { children: "Success" }),
         });
         expect(screen.getAllByText('Email ID')).toBeTruthy();
         expect(screen.getByTestId('blui-forgot-password-textinput').props.value).toBe('test@eaton.com');

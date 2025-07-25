@@ -1,4 +1,4 @@
-import { jsx as _jsx, jsxs as _jsxs } from 'react/jsx-runtime';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
 import { Card } from 'react-native-paper';
@@ -10,21 +10,20 @@ import { WorkflowCardHeader } from './WorkflowCardHeader.js';
 const defaultImage = require('../../assets/images/background.png');
 const MAX_CARD_HEIGHT = 730;
 const MAX_CARD_WIDTH = 450;
-const makeStyles = ({ insets, theme }) =>
-    StyleSheet.create({
-        mobile: {
-            paddingBottom: insets.bottom,
-            height: '100%',
-            width: '100%',
-            borderRadius: 0,
-        },
-        tablet: {
-            height: MAX_CARD_HEIGHT,
-            width: MAX_CARD_WIDTH,
-            borderRadius: theme.roundness * 6,
-            overflow: 'hidden',
-        },
-    });
+const makeStyles = ({ insets, theme, }) => StyleSheet.create({
+    mobile: {
+        paddingBottom: insets.bottom,
+        height: '100%',
+        width: '100%',
+        borderRadius: 0,
+    },
+    tablet: {
+        height: MAX_CARD_HEIGHT,
+        width: MAX_CARD_WIDTH,
+        borderRadius: theme.roundness * 6,
+        overflow: 'hidden',
+    },
+});
 function hasWorkflowCardHeaderRecursive(children) {
     return React.Children.toArray(children).some((child) => child.type === WorkflowCardHeader);
 }
@@ -42,10 +41,7 @@ export const WorkflowCard = (props) => {
     const hasWorkflowCardHeader = hasWorkflowCardHeaderRecursive(children);
     const insets = useSafeAreaInsets();
     const styles = makeStyles({ insets, theme });
-    return _jsx(ImageBackground, {
-        source: backgroundImage ?? defaultImage,
-        resizeMode: 'repeat',
-        style: [
+    return (_jsx(ImageBackground, { source: backgroundImage ?? defaultImage, resizeMode: "repeat", style: [
             {
                 flex: 1,
                 height: '100%',
@@ -55,23 +51,16 @@ export const WorkflowCard = (props) => {
                 backgroundColor: theme.colors.primary,
             },
             ...(Array.isArray(style) ? style : [style]),
-        ],
-        ...otherImageProps,
-        children: _jsxs(Card, {
-            style: {
+        ], ...otherImageProps, children: _jsxs(Card, { style: {
                 maxHeight: height,
                 maxWidth: width,
                 borderRadius: isTablet ? theme.roundness * 6 : 0,
-            },
-            contentStyle: [
+            }, contentStyle: [
                 isTablet ? styles.tablet : styles.mobile,
                 {
                     backgroundColor: theme.colors.surfaceContainer,
                     paddingTop: !isTablet && !hasWorkflowCardHeader ? insets.top : 0,
                     position: 'relative',
                 },
-            ],
-            children: [children, loading && _jsx(Spinner, { visible: loading })],
-        }),
-    });
+            ], children: [children, loading && _jsx(Spinner, { visible: loading })] }) }));
 };

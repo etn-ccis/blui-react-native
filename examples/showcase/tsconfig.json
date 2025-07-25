@@ -7,6 +7,9 @@
       ],
       "@brightlayer-ui/react-native-themes": [
         "./watchPackages/@brightlayer-ui/react-native-themes"
+      ],
+      "@brightlayer-ui/react-native-progress-icons": [
+        "./watchPackages/@brightlayer-ui/react-native-progress-icons"
       ]
     }
   }

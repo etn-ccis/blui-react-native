@@ -98,7 +98,7 @@ export const fontConfig = {
         letterSpacing: 0.15,
     },
 };
-export const useExtendedTheme = useTheme;
+export const useExtendedTheme = (useTheme);
 export const useFontWeight = (weight) => {
     switch (weight) {
         case '300':

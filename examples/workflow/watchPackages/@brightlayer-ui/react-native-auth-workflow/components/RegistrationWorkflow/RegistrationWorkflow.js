@@ -1,18 +1,10 @@
-import { jsx as _jsx, jsxs as _jsxs } from 'react/jsx-runtime';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useEffect, useRef, useState } from 'react';
-import { RegistrationWorkflowContextProvider, useErrorManager, useRegistrationContext } from '../../contexts/index.js';
+import { RegistrationWorkflowContextProvider, useErrorManager, useRegistrationContext, } from '../../contexts/index.js';
 import PagerView from 'react-native-pager-view';
 import { View, StyleSheet } from 'react-native';
 import { ErrorManager } from '../Error/ErrorManager.js';
-import {
-    EulaScreen,
-    CreateAccountScreen,
-    VerifyCodeScreen,
-    CreatePasswordScreen,
-    AccountDetailsScreen,
-    RegistrationSuccessScreen,
-    ExistingAccountSuccessScreen,
-} from '../../screens/index.js';
+import { EulaScreen, CreateAccountScreen, VerifyCodeScreen, CreatePasswordScreen, AccountDetailsScreen, RegistrationSuccessScreen, ExistingAccountSuccessScreen, } from '../../screens/index.js';
 import { Spinner } from '../Spinner/index.js';
 import { timeOutDelay } from '../../constants/index.js';
 const styles = StyleSheet.create({
@@ -33,18 +25,8 @@ export const RegistrationWorkflow = (props) => {
     const { triggerError, errorManagerConfig: globalErrorManagerConfig } = useErrorManager();
     const { actions, navigate, routeConfig } = useRegistrationContext();
     const viewPagerRef = useRef(null);
-    const {
-        messageBoxConfig: workflowMessageBoxConfig,
-        dialogConfig: workflowDialogConfig,
-        onClose: workflowOnClose,
-        ...otherWorkflowErrorConfig
-    } = registrationWorkflowErrorConfig ?? {};
-    const {
-        messageBoxConfig: globalMessageBoxConfig,
-        dialogConfig: globalDialogConfig,
-        onClose: globalOnClose,
-        ...otherGlobalErrorConfig
-    } = globalErrorManagerConfig;
+    const { messageBoxConfig: workflowMessageBoxConfig, dialogConfig: workflowDialogConfig, onClose: workflowOnClose, ...otherWorkflowErrorConfig } = registrationWorkflowErrorConfig ?? {};
+    const { messageBoxConfig: globalMessageBoxConfig, dialogConfig: globalDialogConfig, onClose: globalOnClose, ...otherGlobalErrorConfig } = globalErrorManagerConfig;
     const errorDisplayConfig = {
         messageBoxConfig: { ...globalMessageBoxConfig, ...workflowMessageBoxConfig },
         dialogConfig: { ...globalDialogConfig, ...workflowDialogConfig },
@@ -55,30 +37,22 @@ export const RegistrationWorkflow = (props) => {
         ...otherGlobalErrorConfig,
         ...otherWorkflowErrorConfig,
     };
-    const {
-        initialScreenIndex = 0,
-        successScreen = _jsx(RegistrationSuccessScreen, {}),
-        existingAccountSuccessScreen = _jsx(ExistingAccountSuccessScreen, {}),
-        isInviteRegistration,
-        children = isInviteRegistration
-            ? [
-                  _jsx(EulaScreen, { html: eulaIsHtml }, 'EulaScreen'),
-                  _jsx(CreatePasswordScreen, {}, 'CreatePasswordScreen'),
-                  _jsx(AccountDetailsScreen, {}, 'AccountDetailsScreen'),
-              ]
-            : [
-                  _jsx(EulaScreen, { html: eulaIsHtml }, 'EulaScreen'),
-                  _jsx(CreateAccountScreen, {}, 'CreateAccountScreen'),
-                  _jsx(VerifyCodeScreen, {}, 'VerifyCodeScreen'),
-                  _jsx(CreatePasswordScreen, {}, 'CreatePasswordScreen'),
-                  _jsx(AccountDetailsScreen, {}, 'AccountDetailsScreen'),
-              ],
-    } = props;
+    const { initialScreenIndex = 0, successScreen = _jsx(RegistrationSuccessScreen, {}), existingAccountSuccessScreen = _jsx(ExistingAccountSuccessScreen, {}), isInviteRegistration, children = isInviteRegistration
+        ? [
+            _jsx(EulaScreen, { html: eulaIsHtml }, "EulaScreen"),
+            _jsx(CreatePasswordScreen, {}, "CreatePasswordScreen"),
+            _jsx(AccountDetailsScreen, {}, "AccountDetailsScreen"),
+        ]
+        : [
+            _jsx(EulaScreen, { html: eulaIsHtml }, "EulaScreen"),
+            _jsx(CreateAccountScreen, {}, "CreateAccountScreen"),
+            _jsx(VerifyCodeScreen, {}, "VerifyCodeScreen"),
+            _jsx(CreatePasswordScreen, {}, "CreatePasswordScreen"),
+            _jsx(AccountDetailsScreen, {}, "AccountDetailsScreen"),
+        ], } = props;
     const screens = [...(Array.isArray(children) ? children : [children])];
     const totalScreens = screens.length;
-    const [currentScreen, setCurrentScreen] = useState(
-        initialScreenIndex < 0 ? 0 : initialScreenIndex > totalScreens - 1 ? totalScreens - 1 : initialScreenIndex
-    );
+    const [currentScreen, setCurrentScreen] = useState(initialScreenIndex < 0 ? 0 : initialScreenIndex > totalScreens - 1 ? totalScreens - 1 : initialScreenIndex);
     const [showSuccessScreen, setShowSuccessScreen] = useState(false);
     const initialRegistrationWorkflowScreenData = {
         Eula: {
@@ -116,12 +90,14 @@ export const RegistrationWorkflow = (props) => {
                 ...oldData,
                 Other: { ...oldData.Other, [screenId]: values },
             }));
-        } else if (Object.keys(Other).includes(screenId)) {
+        }
+        else if (Object.keys(Other).includes(screenId)) {
             setScreenData((oldData) => ({
                 ...oldData,
                 Other: { ...Other, [screenId]: { ...Other[screenId], ...values } },
             }));
-        } else {
+        }
+        else {
             setScreenData((oldData) => ({
                 ...oldData,
                 [screenId]: values,
@@ -156,19 +132,21 @@ export const RegistrationWorkflow = (props) => {
                 return await actions
                     .completeRegistration(userInfo)
                     .then(({ email, organizationName }) => {
-                        updateScreenData({
-                            screenId: 'RegistrationSuccessScreen',
-                            values: { email, organizationName },
-                        });
-                        setShowSuccessScreen(true);
-                    })
-                    .catch((_error) => {
-                        triggerError(_error);
+                    updateScreenData({
+                        screenId: 'RegistrationSuccessScreen',
+                        values: { email, organizationName },
                     });
+                    setShowSuccessScreen(true);
+                })
+                    .catch((_error) => {
+                    triggerError(_error);
+                });
             }
-        } catch (err) {
+        }
+        catch (err) {
             console.error(err);
-        } finally {
+        }
+        finally {
             setTimeout(() => {
                 setLoading(false);
             }, timeOutDelay);
@@ -176,78 +154,42 @@ export const RegistrationWorkflow = (props) => {
     };
     useEffect(() => {
         if (isInviteRegistration === true) {
-            const {
-                initialRegistrationParams: { email, code },
-            } = props;
+            const { initialRegistrationParams: { email, code }, } = props;
             updateScreenData({ screenId: 'CreateAccount', values: { emailAddress: email } });
             updateScreenData({ screenId: 'VerifyCode', values: { code } });
         }
     }, []);
-    return _jsx(RegistrationWorkflowContextProvider, {
-        currentScreen: currentScreen,
-        totalScreens: totalScreens,
-        nextScreen: (data) => {
+    return (_jsx(RegistrationWorkflowContextProvider, { currentScreen: currentScreen, totalScreens: totalScreens, nextScreen: (data) => {
             try {
                 updateScreenData(data);
                 if (data.isAccountExist) {
                     setIsAccountExist(true);
                     setShowSuccessScreen(true);
                 }
-                if (currentScreen === totalScreens - 1) return finishRegistration(data);
+                if (currentScreen === totalScreens - 1)
+                    return finishRegistration(data);
                 setCurrentScreen((i) => i + 1);
                 viewPagerRef.current?.setPage(currentScreen + 1);
-            } catch (_error) {
+            }
+            catch (_error) {
                 triggerError(_error);
             }
-        },
-        previousScreen: (data) => {
+        }, previousScreen: (data) => {
             updateScreenData(data);
             if (currentScreen === 0) {
                 resetScreenData();
                 navigate(routeConfig.LOGIN);
-            } else {
+            }
+            else {
                 setCurrentScreen((i) => i - 1);
                 viewPagerRef.current?.setPage(currentScreen - 1);
             }
-        },
-        screenData: screenData,
-        updateScreenData: updateScreenData,
-        resetScreenData: resetScreenData,
-        isInviteRegistration: isInviteRegistration,
-        eulaIsHtml: eulaIsHtml,
-        children: _jsxs(ErrorManager, {
-            ...errorDisplayConfig,
-            mode: 'dialog',
-            children: [
-                showSuccessScreen
-                    ? isAccountExist
-                        ? existingAccountSuccessScreen
-                        : successScreen
-                    : _jsx(
-                          PagerView,
-                          {
-                              style: styles.pagerView,
-                              initialPage: currentScreen ?? initialScreenIndex,
-                              ref: viewPagerRef,
-                              scrollEnabled: false,
-                              collapsable: false,
-                              onPageSelected: (e) => {
-                                  selectedPage.current = e.nativeEvent.position;
-                              },
-                              onPageScrollStateChanged: (e) => {
-                                  if (e.nativeEvent.pageScrollState === 'idle') {
-                                      viewPagerRef.current?.setPageWithoutAnimation(0);
-                                      viewPagerRef.current?.setPageWithoutAnimation(selectedPage.current);
-                                  }
-                              },
-                              children: screens.map((screen, index) =>
-                                  _jsx(View, { style: { flex: 1 }, children: screen }, index + 1)
-                              ),
-                          },
-                          viewPagerIndex
-                      ),
-                loading ? _jsx(Spinner, { visible: loading }) : null,
-            ],
-        }),
-    });
+        }, screenData: screenData, updateScreenData: updateScreenData, resetScreenData: resetScreenData, isInviteRegistration: isInviteRegistration, eulaIsHtml: eulaIsHtml, children: _jsxs(ErrorManager, { ...errorDisplayConfig, mode: "dialog", children: [showSuccessScreen ? (isAccountExist ? (existingAccountSuccessScreen) : (successScreen)) : (_jsx(PagerView, { style: styles.pagerView, initialPage: currentScreen ?? initialScreenIndex, ref: viewPagerRef, scrollEnabled: false, collapsable: false, onPageSelected: (e) => {
+                        selectedPage.current = e.nativeEvent.position;
+                    }, onPageScrollStateChanged: (e) => {
+                        if (e.nativeEvent.pageScrollState === 'idle') {
+                            viewPagerRef.current?.setPageWithoutAnimation(0);
+                            viewPagerRef.current?.setPageWithoutAnimation(selectedPage.current);
+                        }
+                    }, children: screens.map((screen, index) => (_jsx(View, { style: { flex: 1 }, children: screen }, index + 1))) }, viewPagerIndex)), loading ? _jsx(Spinner, { visible: loading }) : null] }) }));
 };

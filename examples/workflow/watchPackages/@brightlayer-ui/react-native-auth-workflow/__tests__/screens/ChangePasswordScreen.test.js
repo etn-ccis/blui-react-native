@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthContextProvider } from '../../contexts/index.js';
@@ -25,13 +25,7 @@ describe('Change Password tests', () => {
         mockOnNext = jest.fn();
         updateFields = jest.fn();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(AuthContextProvider, {
-                ...authContextProviderProps,
-                children: _jsx(SafeAreaProvider, { children: _jsx(ChangePasswordScreen, { ...props }) }),
-            })
-        );
+    const renderer = (props) => render(_jsx(AuthContextProvider, { ...authContextProviderProps, children: _jsx(SafeAreaProvider, { children: _jsx(ChangePasswordScreen, { ...props }) }) }));
     it('renders without crashing', () => {
         renderer({
             currentPasswordLabel: 'Current Password',

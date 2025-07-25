@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { render, screen, fireEvent } from '@testing-library/react-native';
 import { useOktaAuthContext } from '../../contexts/index.js';
 import { OktaRedirectLoginScreen } from '../../screens/index.js';

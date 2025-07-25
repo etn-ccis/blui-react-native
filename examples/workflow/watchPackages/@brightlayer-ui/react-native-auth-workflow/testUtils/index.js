@@ -1,9 +1,9 @@
 import { i18nAuthInstance } from '../contexts/AuthContext/i18nAuthInstance.js';
-import { i18nRegistrationInstance } from '../contexts/index.js';
+import { i18nRegistrationInstance, } from '../contexts/index.js';
 export const authContextProviderProps = {
     language: 'en',
     i18n: i18nAuthInstance,
-    navigate: () => {},
+    navigate: () => { },
     routeConfig: {},
     actions: {
         initiateSecurity: jest.fn(),
@@ -17,7 +17,7 @@ export const authContextProviderProps = {
 export const registrationContextProviderProps = {
     language: 'en',
     i18n: i18nRegistrationInstance,
-    navigate: () => {},
+    navigate: () => { },
     routeConfig: {},
     actions: {
         loadEula: jest.fn(),
@@ -32,7 +32,7 @@ export const registrationContextProviderProps = {
 export const registrationWorkflowContextProps = {
     currentScreen: 0,
     totalScreens: 5,
-    previousScreen: () => {},
+    previousScreen: () => { },
     screenData: {
         Eula: { accepted: true },
         CreateAccount: { emailAddress: 'emailAddress@emailAddress.emailAddress' },

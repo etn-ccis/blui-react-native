@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { render, cleanup, screen, fireEvent } from '@testing-library/react-native';
 import { ChangePasswordScreenBase } from '../../screens/ChangePasswordScreen/index.js';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -6,29 +6,19 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 afterEach(cleanup);
 describe('Change Password Screen Base', () => {
     const currentPasswordChange = jest.fn();
-    const renderer = () =>
-        render(
-            _jsx(SafeAreaProvider, {
-                children: _jsx(ChangePasswordScreenBase, {
-                    WorkflowCardHeaderProps: { title: 'Change Password' },
-                    currentPasswordLabel: 'Current Password',
-                    currentPasswordChange: currentPasswordChange,
-                    PasswordProps: {
-                        onPasswordChange: () => {},
-                        newPasswordLabel: 'New Password',
-                        initialNewPasswordValue: '',
-                        confirmPasswordLabel: 'Confirm Password',
-                        initialConfirmPasswordValue: '',
-                        passwordRequirements: [],
-                        passwordRef: undefined,
-                        confirmRef: undefined,
-                        onSubmit: function () {
-                            throw new Error('Function not implemented.');
-                        },
-                    },
-                }),
-            })
-        );
+    const renderer = () => render(_jsx(SafeAreaProvider, { children: _jsx(ChangePasswordScreenBase, { WorkflowCardHeaderProps: { title: 'Change Password' }, currentPasswordLabel: "Current Password", currentPasswordChange: currentPasswordChange, PasswordProps: {
+                onPasswordChange: () => { },
+                newPasswordLabel: 'New Password',
+                initialNewPasswordValue: '',
+                confirmPasswordLabel: 'Confirm Password',
+                initialConfirmPasswordValue: '',
+                passwordRequirements: [],
+                passwordRef: undefined,
+                confirmRef: undefined,
+                onSubmit: function () {
+                    throw new Error('Function not implemented.');
+                },
+            } }) }));
     it('renders without crashing', () => {
         expect(renderer).toBeTruthy();
     });

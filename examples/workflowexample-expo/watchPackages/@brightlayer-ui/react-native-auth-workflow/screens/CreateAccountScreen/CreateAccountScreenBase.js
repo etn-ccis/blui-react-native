@@ -1,12 +1,6 @@
-import { jsx as _jsx, jsxs as _jsxs } from 'react/jsx-runtime';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useCallback, useEffect } from 'react';
-import {
-    ErrorManager,
-    WorkflowCard,
-    WorkflowCardActions,
-    WorkflowCardBody,
-    WorkflowCardHeader,
-} from '../../components/index.js';
+import { ErrorManager, WorkflowCard, WorkflowCardActions, WorkflowCardBody, WorkflowCardHeader, } from '../../components/index.js';
 import { HelperText, TextInput } from 'react-native-paper';
 /**
  * Base Component that renders a screen for the user to enter their email address to start the
@@ -17,15 +11,9 @@ import { HelperText, TextInput } from 'react-native-paper';
  * @category Component
  */
 export const CreateAccountScreenBase = (props) => {
-    const {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        emailValidator = (email) => true,
-        emailLabel,
-        initialValue,
-        emailTextFieldProps,
-        inputRef,
-        errorDisplayConfig,
-    } = props;
+    const { 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    emailValidator = (email) => true, emailLabel, initialValue, emailTextFieldProps, inputRef, errorDisplayConfig, } = props;
     const cardBaseProps = props.WorkflowCardBaseProps ?? {};
     const headerProps = props.WorkflowCardHeaderProps ?? {};
     const cardBodyProps = props.WorkflowCardBodyProps ?? {};
@@ -34,66 +22,30 @@ export const CreateAccountScreenBase = (props) => {
     const [isEmailValid, setIsEmailValid] = React.useState(emailValidator(initialValue ?? '') ?? false);
     const [emailError, setEmailError] = React.useState('');
     const [shouldValidateEmail, setShouldValidateEmail] = React.useState(false);
-    const handleEmailInputChange = useCallback(
-        (email) => {
-            setEmailInput(email);
-            const emailValidatorResponse = emailValidator(email);
-            setIsEmailValid(typeof emailValidatorResponse === 'boolean' ? emailValidatorResponse : false);
-            setEmailError(typeof emailValidatorResponse === 'string' ? emailValidatorResponse : '');
-        },
-        [emailValidator]
-    );
+    const handleEmailInputChange = useCallback((email) => {
+        setEmailInput(email);
+        const emailValidatorResponse = emailValidator(email);
+        setIsEmailValid(typeof emailValidatorResponse === 'boolean' ? emailValidatorResponse : false);
+        setEmailError(typeof emailValidatorResponse === 'string' ? emailValidatorResponse : '');
+    }, [emailValidator]);
     useEffect(() => {
         if (emailInput.length > 0) {
             setShouldValidateEmail(true);
             handleEmailInputChange(emailInput);
         }
     }, []);
-    return _jsxs(WorkflowCard, {
-        ...cardBaseProps,
-        children: [
-            _jsx(WorkflowCardHeader, { ...headerProps }),
-            _jsx(WorkflowCardBody, {
-                ...cardBodyProps,
-                children: _jsxs(ErrorManager, {
-                    ...errorDisplayConfig,
-                    children: [
-                        _jsx(TextInput, {
-                            ref: inputRef,
-                            testID: 'blui-create-account-email-text-input',
-                            mode: 'flat',
-                            keyboardType: 'email-address',
-                            label: emailLabel,
-                            value: emailInput,
-                            error: shouldValidateEmail && !isEmailValid,
-                            autoCapitalize: 'none',
-                            ...emailTextFieldProps,
-                            onChangeText: (text) => {
+    return (_jsxs(WorkflowCard, { ...cardBaseProps, children: [_jsx(WorkflowCardHeader, { ...headerProps }), _jsx(WorkflowCardBody, { ...cardBodyProps, children: _jsxs(ErrorManager, { ...errorDisplayConfig, children: [_jsx(TextInput, { ref: inputRef, testID: "blui-create-account-email-text-input", mode: "flat", keyboardType: "email-address", label: emailLabel, value: emailInput, error: shouldValidateEmail && !isEmailValid, autoCapitalize: "none", ...emailTextFieldProps, onChangeText: (text) => {
                                 if (emailTextFieldProps?.onChangeText) {
                                     emailTextFieldProps.onChangeText(text);
                                 }
                                 handleEmailInputChange(text);
-                            },
-                            onBlur: (e) => {
+                            }, onBlur: (e) => {
                                 if (emailTextFieldProps?.onBlur) {
                                     emailTextFieldProps.onBlur(e);
                                 }
                                 setShouldValidateEmail(true);
-                            },
-                            onSubmitEditing: () => {
+                            }, onSubmitEditing: () => {
                                 if (emailInput.length > 0 && isEmailValid && actionsProps.canGoNext)
                                     actionsProps.onNext?.();
-                            },
-                            returnKeyType: 'next',
-                        }),
-                        _jsx(HelperText, { type: 'error', children: emailError }),
-                    ],
-                }),
-            }),
-            _jsx(WorkflowCardActions, {
-                ...actionsProps,
-                canGoNext: emailInput.length > 0 && isEmailValid && actionsProps.canGoNext,
-            }),
-        ],
-    });
+                            }, returnKeyType: "next" }), _jsx(HelperText, { type: "error", children: emailError })] }) }), _jsx(WorkflowCardActions, { ...actionsProps, canGoNext: (emailInput.length > 0 && isEmailValid && actionsProps.canGoNext) })] }));
 };

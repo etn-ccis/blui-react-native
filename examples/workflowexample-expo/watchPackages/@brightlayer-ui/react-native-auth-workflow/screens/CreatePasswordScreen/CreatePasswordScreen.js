@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useRef, useState } from 'react';
 import { CreatePasswordScreenBase } from './CreatePasswordScreenBase.js';
 import { defaultPasswordRequirements, timeOutDelay } from '../../constants/index.js';
@@ -16,32 +16,12 @@ export const CreatePasswordScreen = (props) => {
     const { t } = useTranslation();
     const { actions, navigate } = useRegistrationContext();
     const regWorkflow = useRegistrationWorkflowContext();
-    const {
-        nextScreen,
-        previousScreen,
-        screenData: {
-            CreatePassword: { password, confirmPassword },
-        },
-        currentScreen,
-        totalScreens,
-        resetScreenData,
-    } = regWorkflow;
-    const {
-        WorkflowCardBaseProps,
-        WorkflowCardHeaderProps,
-        WorkflowCardInstructionProps,
-        WorkflowCardBodyProps,
-        WorkflowCardActionsProps,
-        PasswordProps,
-    } = props;
+    const { nextScreen, previousScreen, screenData: { CreatePassword: { password, confirmPassword }, }, currentScreen, totalScreens, resetScreenData, } = regWorkflow;
+    const { WorkflowCardBaseProps, WorkflowCardHeaderProps, WorkflowCardInstructionProps, WorkflowCardBodyProps, WorkflowCardActionsProps, PasswordProps, } = props;
     const passwordRef = useRef(null);
     const confirmRef = useRef(null);
-    const [passwordInput, setPasswordInput] = useState(
-        password !== '' ? password : (PasswordProps?.initialNewPasswordValue ?? '')
-    );
-    const [confirmInput, setConfirmInput] = useState(
-        confirmPassword !== '' ? confirmPassword : (PasswordProps?.initialConfirmPasswordValue ?? '')
-    );
+    const [passwordInput, setPasswordInput] = useState(password !== '' ? password : (PasswordProps?.initialNewPasswordValue ?? ''));
+    const [confirmInput, setConfirmInput] = useState(confirmPassword !== '' ? confirmPassword : (PasswordProps?.initialConfirmPasswordValue ?? ''));
     const [isLoading, setIsLoading] = useState(false);
     const passwordReqs = PasswordProps?.passwordRequirements ?? defaultPasswordRequirements(t);
     const { triggerError, errorManagerConfig } = useErrorManager();
@@ -49,8 +29,10 @@ export const CreatePasswordScreen = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: () => {
-            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (props.errorDisplayConfig?.onClose)
+                props.errorDisplayConfig.onClose();
+            if (errorManagerConfig.onClose)
+                errorManagerConfig?.onClose();
         },
     };
     const onNext = useCallback(async () => {
@@ -61,9 +43,11 @@ export const CreatePasswordScreen = (props) => {
                 screenId: 'CreatePassword',
                 values: { password: passwordInput, confirmPassword: confirmInput },
             });
-        } catch (_error) {
+        }
+        catch (_error) {
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setTimeout(() => {
                 setIsLoading(false);
             }, timeOutDelay);
@@ -75,19 +59,17 @@ export const CreatePasswordScreen = (props) => {
             values: { password: passwordInput, confirmPassword: confirmInput },
         });
     }, [confirmInput, passwordInput, previousScreen]);
-    const updateFields = useCallback(
-        (fields) => {
-            setPasswordInput(fields.password);
-            setConfirmInput(fields.confirm);
-        },
-        [setPasswordInput, setConfirmInput]
-    );
+    const updateFields = useCallback((fields) => {
+        setPasswordInput(fields.password);
+        setConfirmInput(fields.confirm);
+    }, [setPasswordInput, setConfirmInput]);
     const areValidMatchingPasswords = useCallback(() => {
         if (passwordReqs?.length === 0) {
             return confirmInput === passwordInput;
         }
         for (const req of passwordReqs) {
-            if (!new RegExp(req.regex).test(passwordInput)) return false;
+            if (!new RegExp(req.regex).test(passwordInput))
+                return false;
         }
         return confirmInput === passwordInput;
     }, [passwordReqs, passwordInput, confirmInput]);
@@ -152,12 +134,5 @@ export const CreatePasswordScreen = (props) => {
             WorkflowCardActionsProps?.onPrevious?.();
         },
     };
-    return _jsx(CreatePasswordScreenBase, {
-        WorkflowCardBaseProps: workflowCardBaseProps,
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        WorkflowCardBodyProps: workflowCardBodyProps,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        PasswordProps: passwordProps,
-        errorDisplayConfig: errorDisplayConfig,
-    });
+    return (_jsx(CreatePasswordScreenBase, { WorkflowCardBaseProps: workflowCardBaseProps, WorkflowCardHeaderProps: workflowCardHeaderProps, WorkflowCardBodyProps: workflowCardBodyProps, WorkflowCardActionsProps: workflowCardActionsProps, PasswordProps: passwordProps, errorDisplayConfig: errorDisplayConfig }));
 };

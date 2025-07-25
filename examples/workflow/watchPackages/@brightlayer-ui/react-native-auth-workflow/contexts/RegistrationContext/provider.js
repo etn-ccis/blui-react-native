@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 /**
  * @packageDocumentation
  * @module RegistrationContextProvider
@@ -22,10 +22,7 @@ const RegistrationContextProviderContent = (props) => {
             ...(errorConfig?.dialogConfig ?? {}),
         },
     };
-    return _jsx(RegistrationContext.Provider, {
-        value: { ...registrationContextProps },
-        children: _jsx(ErrorContext.Provider, { value: mergedErrorConfig, children: children }),
-    });
+    return (_jsx(RegistrationContext.Provider, { value: { ...registrationContextProps }, children: _jsx(ErrorContext.Provider, { value: mergedErrorConfig, children: children }) }));
 };
 /**
  * RegistrationContextProvider allow you to access shared data / configuration / API definition for registration workflow
@@ -49,8 +46,5 @@ export const RegistrationContextProvider = (props) => {
     useEffect(() => {
         void i18n.changeLanguage(language);
     }, [i18n, language]);
-    return _jsx(I18nextProvider, {
-        i18n: i18n,
-        children: _jsx(RegistrationContextProviderContent, { ...other, language: language, children: children }),
-    });
+    return (_jsx(I18nextProvider, { i18n: i18n, children: _jsx(RegistrationContextProviderContent, { ...other, language: language, children: children }) }));
 };

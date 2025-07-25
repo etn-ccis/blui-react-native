@@ -5,63 +5,62 @@ const locale = 'en';
 // Platform.OS === 'ios'
 //     ? NativeModules.SettingsManager.settings.AppleLocale
 //     : NativeModules.I18nManager.localeIdentifier;
-export const i18nRegistrationInstance = i18next.createInstance(
-    {
-        lng: locale?.substring(0, 2) ?? 'en',
-        fallbackLng: 'en',
-        ns: ['bluiRegistration', 'bluiCommon'],
-        defaultNS: 'bluiRegistration',
-        load: 'languageOnly',
-        react: { useSuspense: false },
-        interpolation: { escapeValue: false },
-        resources: {
-            en: {
-                bluiRegistration: {
-                    ...RegistrationDictionaries.english.translation,
-                },
-                bluiCommon: {
-                    ...SharedDictionaries.english.translation,
-                },
+export const i18nRegistrationInstance = i18next.createInstance({
+    lng: locale?.substring(0, 2) ?? 'en',
+    fallbackLng: 'en',
+    ns: ['bluiRegistration', 'bluiCommon'],
+    defaultNS: 'bluiRegistration',
+    load: 'languageOnly',
+    react: { useSuspense: false },
+    interpolation: { escapeValue: false },
+    resources: {
+        en: {
+            bluiRegistration: {
+                ...RegistrationDictionaries.english.translation,
             },
-            fr: {
-                bluiRegistration: {
-                    ...RegistrationDictionaries.french.translation,
-                },
-                bluiCommon: {
-                    ...SharedDictionaries.french.translation,
-                },
+            bluiCommon: {
+                ...SharedDictionaries.english.translation,
             },
-            es: {
-                bluiRegistration: {
-                    ...RegistrationDictionaries.spanish.translation,
-                },
-                bluiCommon: {
-                    ...SharedDictionaries.spanish.translation,
-                },
+        },
+        fr: {
+            bluiRegistration: {
+                ...RegistrationDictionaries.french.translation,
             },
-            zh: {
-                bluiRegistration: {
-                    ...RegistrationDictionaries.chinese.translation,
-                },
-                bluiCommon: {
-                    ...SharedDictionaries.chinese.translation,
-                },
+            bluiCommon: {
+                ...SharedDictionaries.french.translation,
             },
-            pt: {
-                bluiRegistration: {
-                    ...RegistrationDictionaries.portuguese.translation,
-                },
-                bluiCommon: {
-                    ...SharedDictionaries.portuguese.translation,
-                },
+        },
+        es: {
+            bluiRegistration: {
+                ...RegistrationDictionaries.spanish.translation,
+            },
+            bluiCommon: {
+                ...SharedDictionaries.spanish.translation,
+            },
+        },
+        zh: {
+            bluiRegistration: {
+                ...RegistrationDictionaries.chinese.translation,
+            },
+            bluiCommon: {
+                ...SharedDictionaries.chinese.translation,
+            },
+        },
+        pt: {
+            bluiRegistration: {
+                ...RegistrationDictionaries.portuguese.translation,
+            },
+            bluiCommon: {
+                ...SharedDictionaries.portuguese.translation,
             },
         },
     },
-    // We must provide a function as second parameter, otherwise i18next errors
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    (err, _t) => {
-        // eslint-disable-next-line no-console
-        if (err) return console.log(err);
-    }
-);
+}, 
+// We must provide a function as second parameter, otherwise i18next errors
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+(err, _t) => {
+    // eslint-disable-next-line no-console
+    if (err)
+        return console.log(err);
+});
 export default i18nRegistrationInstance;

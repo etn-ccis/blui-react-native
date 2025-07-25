@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { cleanup, render, screen, fireEvent, waitFor } from '@testing-library/react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { RegistrationContextProvider } from '../../contexts/index.js';
@@ -16,18 +16,7 @@ describe('Account Details Screen', () => {
         mockOnNext = jest.fn();
         mockOnPrevious = jest.fn();
     });
-    const renderer = (props) =>
-        render(
-            _jsx(PaperProvider, {
-                children: _jsx(RegistrationContextProvider, {
-                    ...registrationContextProviderProps,
-                    children: _jsx(RegistrationWorkflow, {
-                        initialScreenIndex: 0,
-                        children: _jsx(AccountDetailsScreen, { ...props }),
-                    }),
-                }),
-            })
-        );
+    const renderer = (props) => render(_jsx(PaperProvider, { children: _jsx(RegistrationContextProvider, { ...registrationContextProviderProps, children: _jsx(RegistrationWorkflow, { initialScreenIndex: 0, children: _jsx(AccountDetailsScreen, { ...props }) }) }) }));
     it('renders without crashing', () => {
         renderer();
         expect(screen.getByText('Account Details')).toBeOnTheScreen();

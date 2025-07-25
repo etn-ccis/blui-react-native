@@ -1,15 +1,3 @@
-// const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
-
-// /**
-//  * Metro configuration
-//  * https://reactnative.dev/docs/metro
-//  *
-//  * @type {import('metro-config').MetroConfig}
-//  */
-// const config = {};
-
-// module.exports = mergeConfig(getDefaultConfig(__dirname), config);
-
 const {getDefaultConfig} = require('@react-native/metro-config');
 const path = require('path');
 
@@ -23,6 +11,10 @@ config.watchFolders = [
     __dirname,
     './watchPackages/@brightlayer-ui/react-native-components',
   ),
+  require('node:path').resolve(
+    __dirname,
+    './watchPackages/@brightlayer-ui/react-native-progress-icons',
+  ),
 ];
 
 config.resolver = {
@@ -35,6 +27,10 @@ config.resolver = {
     '@brightlayer-ui/react-native-themes': path.resolve(
       __dirname,
       './watchPackages/@brightlayer-ui/react-native-themes',
+    ),
+    '@brightlayer-ui/react-native-progress-icons': path.resolve(
+      __dirname,
+      './watchPackages/@brightlayer-ui/react-native-progress-icons',
     ),
   },
   nodeModulesPaths: [

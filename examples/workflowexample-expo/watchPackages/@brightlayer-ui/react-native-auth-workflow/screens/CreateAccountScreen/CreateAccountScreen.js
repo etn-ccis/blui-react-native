@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useState } from 'react';
 import { CreateAccountScreenBase } from './CreateAccountScreenBase.js';
 import { useRegistrationWorkflowContext, useRegistrationContext } from '../../contexts/index.js';
@@ -25,8 +25,10 @@ export const CreateAccountScreen = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: () => {
-            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (props.errorDisplayConfig?.onClose)
+                props.errorDisplayConfig.onClose();
+            if (errorManagerConfig.onClose)
+                errorManagerConfig?.onClose();
         },
     };
     const onNext = useCallback(async () => {
@@ -37,9 +39,11 @@ export const CreateAccountScreen = (props) => {
                 screenId: 'CreateAccount',
                 values: { emailAddress: emailInputValue },
             });
-        } catch (_error) {
+        }
+        catch (_error) {
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setTimeout(() => {
                 setIsLoading(false);
             }, timeOutDelay);
@@ -51,22 +55,12 @@ export const CreateAccountScreen = (props) => {
             values: { emailAddress: emailInputValue },
         });
     };
-    const {
-        WorkflowCardBaseProps,
-        WorkflowCardHeaderProps,
-        WorkflowCardInstructionProps,
-        WorkflowCardBodyProps,
-        WorkflowCardActionsProps,
-        emailLabel = t('bluiCommon:LABELS.EMAIL'),
-        initialValue = screenData.CreateAccount.emailAddress,
-        emailValidator = (email) => {
-            if (!EMAIL_REGEX.test(email)) {
-                return t('bluiCommon:MESSAGES.EMAIL_ENTRY_ERROR');
-            }
-            return true;
-        },
-        emailTextFieldProps,
-    } = props;
+    const { WorkflowCardBaseProps, WorkflowCardHeaderProps, WorkflowCardInstructionProps, WorkflowCardBodyProps, WorkflowCardActionsProps, emailLabel = t('bluiCommon:LABELS.EMAIL'), initialValue = screenData.CreateAccount.emailAddress, emailValidator = (email) => {
+        if (!EMAIL_REGEX.test(email)) {
+            return t('bluiCommon:MESSAGES.EMAIL_ENTRY_ERROR');
+        }
+        return true;
+    }, emailTextFieldProps, } = props;
     const workflowCardBaseProps = {
         loading: isLoading,
         ...WorkflowCardBaseProps,
@@ -114,16 +108,5 @@ export const CreateAccountScreen = (props) => {
             setEmailInputValue(email);
         },
     };
-    return _jsx(CreateAccountScreenBase, {
-        WorkflowCardBaseProps: workflowCardBaseProps,
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        WorkflowCardBodyProps: workflowCardBodyProps,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        emailLabel: emailLabel,
-        initialValue:
-            screenData.CreateAccount.emailAddress.length > 0 ? screenData.CreateAccount.emailAddress : initialValue,
-        emailTextFieldProps: emailInputProps,
-        emailValidator: emailValidator,
-        errorDisplayConfig: errorDisplayConfig,
-    });
+    return (_jsx(CreateAccountScreenBase, { WorkflowCardBaseProps: workflowCardBaseProps, WorkflowCardHeaderProps: workflowCardHeaderProps, WorkflowCardBodyProps: workflowCardBodyProps, WorkflowCardActionsProps: workflowCardActionsProps, emailLabel: emailLabel, initialValue: screenData.CreateAccount.emailAddress.length > 0 ? screenData.CreateAccount.emailAddress : initialValue, emailTextFieldProps: emailInputProps, emailValidator: emailValidator, errorDisplayConfig: errorDisplayConfig }));
 };

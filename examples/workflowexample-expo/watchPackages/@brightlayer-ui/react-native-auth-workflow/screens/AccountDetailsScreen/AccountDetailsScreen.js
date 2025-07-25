@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRegistrationWorkflowContext } from '../../contexts/RegistrationWorkflowContext/index.js';
@@ -27,8 +27,10 @@ export const AccountDetailsScreen = (props) => {
         ...errorManagerConfig,
         ...props.errorDisplayConfig,
         onClose: () => {
-            if (props.errorDisplayConfig?.onClose) props.errorDisplayConfig.onClose();
-            if (errorManagerConfig.onClose) errorManagerConfig?.onClose();
+            if (props.errorDisplayConfig?.onClose)
+                props.errorDisplayConfig.onClose();
+            if (errorManagerConfig.onClose)
+                errorManagerConfig?.onClose();
         },
     };
     const onNext = useCallback(async () => {
@@ -39,9 +41,11 @@ export const AccountDetailsScreen = (props) => {
                 screenId: 'AccountDetails',
                 values: { firstName, lastName },
             });
-        } catch (_error) {
+        }
+        catch (_error) {
             triggerError(_error);
-        } finally {
+        }
+        finally {
             setTimeout(() => {
                 setIsLoading(false);
             }, timeOutDelay);
@@ -53,31 +57,17 @@ export const AccountDetailsScreen = (props) => {
             values: { firstName, lastName },
         });
     }, [firstName, lastName, previousScreen]);
-    const {
-        WorkflowCardBaseProps,
-        WorkflowCardHeaderProps,
-        WorkflowCardInstructionProps,
-        WorkflowCardBodyProps,
-        WorkflowCardActionsProps,
-        firstNameLabel = t('bluiCommon:FORMS.FIRST_NAME'),
-        lastNameLabel = t('bluiCommon:FORMS.LAST_NAME'),
-        firstNameValidator = (name) => {
-            if (name?.length > 0) {
-                return true;
-            }
-            return t('bluiCommon:FORMS.FIRST_NAME_LENGTH_ERROR');
-        },
-        lastNameValidator = (name) => {
-            if (name?.length > 0) {
-                return true;
-            }
-            return t('bluiCommon:FORMS.LAST_NAME_LENGTH_ERROR');
-        },
-        firstNameTextInputProps,
-        lastNameTextInputProps,
-        initialFirstName = screenData.AccountDetails.firstName,
-        initialLastName = screenData.AccountDetails.lastName,
-    } = props;
+    const { WorkflowCardBaseProps, WorkflowCardHeaderProps, WorkflowCardInstructionProps, WorkflowCardBodyProps, WorkflowCardActionsProps, firstNameLabel = t('bluiCommon:FORMS.FIRST_NAME'), lastNameLabel = t('bluiCommon:FORMS.LAST_NAME'), firstNameValidator = (name) => {
+        if (name?.length > 0) {
+            return true;
+        }
+        return t('bluiCommon:FORMS.FIRST_NAME_LENGTH_ERROR');
+    }, lastNameValidator = (name) => {
+        if (name?.length > 0) {
+            return true;
+        }
+        return t('bluiCommon:FORMS.LAST_NAME_LENGTH_ERROR');
+    }, firstNameTextInputProps, lastNameTextInputProps, initialFirstName = screenData.AccountDetails.firstName, initialLastName = screenData.AccountDetails.lastName, } = props;
     const workflowCardBaseProps = {
         loading: isLoading,
         ...WorkflowCardBaseProps,
@@ -122,19 +112,5 @@ export const AccountDetailsScreen = (props) => {
     const onLastNameInputChange = (text) => {
         setLastName(text);
     };
-    return _jsx(AccountDetailsScreenBase, {
-        WorkflowCardBaseProps: workflowCardBaseProps,
-        WorkflowCardHeaderProps: workflowCardHeaderProps,
-        WorkflowCardBodyProps: workflowCardBodyProps,
-        WorkflowCardActionsProps: workflowCardActionsProps,
-        initialFirstName: firstName.length > 0 ? firstName : initialFirstName,
-        initialLastName: lastName.length > 0 ? lastName : initialLastName,
-        firstNameLabel: firstNameLabel,
-        firstNameTextInputProps: { ...firstNameTextInputProps, onChangeText: onFirstNameInputChange },
-        firstNameValidator: firstNameValidator,
-        lastNameLabel: lastNameLabel,
-        lastNameTextInputProps: { ...lastNameTextInputProps, onChangeText: onLastNameInputChange },
-        lastNameValidator: lastNameValidator,
-        errorDisplayConfig: errorDisplayConfig,
-    });
+    return (_jsx(AccountDetailsScreenBase, { WorkflowCardBaseProps: workflowCardBaseProps, WorkflowCardHeaderProps: workflowCardHeaderProps, WorkflowCardBodyProps: workflowCardBodyProps, WorkflowCardActionsProps: workflowCardActionsProps, initialFirstName: firstName.length > 0 ? firstName : initialFirstName, initialLastName: lastName.length > 0 ? lastName : initialLastName, firstNameLabel: firstNameLabel, firstNameTextInputProps: { ...firstNameTextInputProps, onChangeText: onFirstNameInputChange }, firstNameValidator: firstNameValidator, lastNameLabel: lastNameLabel, lastNameTextInputProps: { ...lastNameTextInputProps, onChangeText: onLastNameInputChange }, lastNameValidator: lastNameValidator, errorDisplayConfig: errorDisplayConfig }));
 };

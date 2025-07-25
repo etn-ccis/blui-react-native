@@ -50,7 +50,8 @@
         "test:all": "yarn test:authWorkflows && yarn test:componentLibrary && yarn test:progressIcons && yarn test:themes",
         "watch:components": "node ./scripts/watch-components.js",
         "watch:themes": "node ./scripts/watch-themes.js",
-        "watch:workflow": "node ./scripts/watch-workflow.js"
+        "watch:workflow": "node ./scripts/watch-workflow.js",
+        "watch:progressIcons": "node ./scripts/watch-progressIcon.js"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",

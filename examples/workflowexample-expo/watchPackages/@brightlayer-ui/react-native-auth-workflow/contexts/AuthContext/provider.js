@@ -1,4 +1,4 @@
-import { jsx as _jsx } from 'react/jsx-runtime';
+import { jsx as _jsx } from "react/jsx-runtime";
 /**
  * @packageDocumentation
  * @module AuthContextProvider
@@ -23,10 +23,7 @@ const AuthContextProviderContent = (props) => {
             ...(errorConfig?.dialogConfig ?? {}),
         },
     };
-    return _jsx(AuthContext.Provider, {
-        value: { ...authContextProps },
-        children: _jsx(ErrorContext.Provider, { value: mergedErrorConfig, children: children }),
-    });
+    return (_jsx(AuthContext.Provider, { value: { ...authContextProps }, children: _jsx(ErrorContext.Provider, { value: mergedErrorConfig, children: children }) }));
 };
 /**
  * AuthContextProvider allow you to access shared data / configuration / API definition for authentication screens
@@ -50,8 +47,5 @@ export const AuthContextProvider = (props) => {
     useEffect(() => {
         void i18n.changeLanguage(language);
     }, [i18n, language]);
-    return _jsx(I18nextProvider, {
-        i18n: i18n,
-        children: _jsx(AuthContextProviderContent, { ...other, language: language, children: children }),
-    });
+    return (_jsx(I18nextProvider, { i18n: i18n, children: _jsx(AuthContextProviderContent, { ...other, language: language, children: children }) }));
 };

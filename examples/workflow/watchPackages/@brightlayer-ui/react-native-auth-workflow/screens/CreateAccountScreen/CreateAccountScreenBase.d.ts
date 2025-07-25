@@ -8,8 +8,6 @@ import { CreateAccountScreenProps } from './types.js';
  *
  * @category Component
  */
-export declare const CreateAccountScreenBase: React.FC<
-    CreateAccountScreenProps & {
-        inputRef?: any;
-    }
->;
+export declare const CreateAccountScreenBase: React.FC<CreateAccountScreenProps & {
+    inputRef?: any;
+}>;
