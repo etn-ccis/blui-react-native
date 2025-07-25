@@ -1,5 +1,0 @@
-/**
- * @packageDocumentation
- * @module AuthContext
- */
-export {};

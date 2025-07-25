@@ -1,5 +1,0 @@
-/**
- * @packageDocumentation
- * @module ErrorContext
- */
-export {};
