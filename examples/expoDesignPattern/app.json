@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "expoDesignPattern",
+    "slug": "expoDesignPattern",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.expoDesignPattern"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.expoDesignPattern"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./node_modules/@brightlayer-ui/react-native-vector-icons/Fonts/BrightlayerUIIcons.ttf",
+            "./assets/fonts/OpenSans-Regular.ttf",
+            "./assets/fonts/OpenSans-SemiBold.ttf",
+            "./assets/fonts/OpenSans-Bold.ttf",
+            "./assets/fonts/OpenSans-ExtraBold.ttf",
+            "./assets/fonts/OpenSans-Light.ttf"
+          ]
+        }
+      ]
+    ]
+  }
+}
