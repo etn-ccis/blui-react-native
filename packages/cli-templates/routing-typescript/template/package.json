@@ -12,9 +12,9 @@
         "test": "jest"
     },
     "dependencies": {
-        "@brightlayer-ui/react-native-components": "^8.0.4",
-        "@brightlayer-ui/react-native-themes": "^7.0.1",
-        "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
+        "@brightlayer-ui/react-native-components": "^9.0.0",
+        "@brightlayer-ui/react-native-themes": "^8.0.0",
+        "@brightlayer-ui/react-native-vector-icons": "^3.0.0",
         "@react-navigation/drawer": "^7.5.2",
         "@react-navigation/native": "^7.1.14",
         "@react-navigation/stack": "^7.4.2",
@@ -29,7 +29,7 @@
         "@react-native/new-app-screen": "0.80.1"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^4.0.0",
+        "@brightlayer-ui/eslint-config": "^4.0.1-alpha.0",
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@eslint/js": "^9.30.0",
         "@typescript-eslint/eslint-plugin": "^8.35.1",
