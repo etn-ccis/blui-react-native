@@ -1070,10 +1070,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/colors/-/colors-4.0.0.tgz#5bb3706eca98e849d1e80ca4c9f9ca731380d227"
   integrity sha512-fF7Ne7cz4yFCzR96HrP1RVBw55s+cWbqYkPallnpmmtYnPwNS/DyAbbHFEnl2bxziq3CvAR2S+D6AnjIeluOZA==
 
-"@brightlayer-ui/eslint-config@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/eslint-config/-/eslint-config-4.0.0.tgz#81dd1c6960a43c6df772ce4658c488fa7c6be7e8"
-  integrity sha512-J6/yyxejgU6OY3/aeCR8BkUJATP4q9RaZY0GikX4JxoOH/hYD3TYs2jIUQ2fFchhD/4gVVm7dKk47RyCHizTEg==
+"@brightlayer-ui/eslint-config@^4.0.1-alpha.0":
+  version "4.0.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/eslint-config/-/eslint-config-4.0.1-alpha.0.tgz#69165036512a40651fec8fbcab2a2f3ed1a124e0"
+  integrity sha512-jK7GSzL+1UHfWSROa2gjfTJv4ZSNqZLRKnBd3ofUBE2CnJlbIw6UgwegnTZg3ngMGe35vTv9ZpDpxIR8tUoRJA==
   dependencies:
     "@eslint/js" "^9.13.0"
     "@typescript-eslint/parser" "^8.10.0"
@@ -1950,7 +1950,7 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.11.tgz#2f4c6e10bee0786abff4604e39a37ded6f3980ce"
   integrity sha512-rQfMIGSR/1r/SyN87+VD8xHHzDYeHaJq6elOSCAD+0iLagXkSI2pfA0LmSXP21uw5i3em7GkkRjfJ8wpqWXZNw==
 
-"@react-native-vector-icons/common@^12.0.0":
+"@react-native-vector-icons/common@^12.0.0", "@react-native-vector-icons/common@^12.2.0":
   version "12.2.0"
   resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.2.0.tgz#9d42cddd6dc87ba1f7daf7386150034b0ed8caa7"
   integrity sha512-FGVwBwuio2A9N9sJckXeTwp/oe20hCMe/Zul+b1ql3WkhUJpdJWVbpWKp8ikpHLRRstwuUqkeM5eY74f0zNn1A==
@@ -1958,6 +1958,20 @@
     "@react-native-community/cli-tools" "^17.0.0"
     picocolors "^1.1.1"
     plist "^3.1.0"
+
+"@react-native-vector-icons/material-design-icons@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/material-design-icons/-/material-design-icons-12.2.0.tgz#e606320ae031c56cee231f515d3b1f0334a06b42"
+  integrity sha512-XFGkuTLATGMH5RtcbuiJ18mMFKsge5PZjiS+cs+/KwFCWMMznRiQkZlycIVOx52V1WFE+L6oBv3Z6r+L6HHekA==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.2.0"
+
+"@react-native-vector-icons/material-icons@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/material-icons/-/material-icons-12.2.0.tgz#53838fe85fc45f139ae7eaf352c184e6d8fddc10"
+  integrity sha512-ZOG1sryGmbZ0s/TBHQ28dMpdTKZ/RR/rhkuXgvMRjiX+vlvV91FmySH5P7NM0zcvqK6BEgONLRtRDaL7zz4xRw==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.2.0"
 
 "@react-native/assets-registry@0.80.1":
   version "0.80.1"
@@ -3989,6 +4003,11 @@ dot-case@^3.0.4:
   dependencies:
     no-case "^3.0.4"
     tslib "^2.0.3"
+
+dotenv@^16.4.5:
+  version "16.6.1"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.6.1.tgz#773f0e69527a8315c7285d5ee73c4459d20a8020"
+  integrity sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==
 
 dunder-proto@^1.0.0, dunder-proto@^1.0.1:
   version "1.0.1"
@@ -7073,6 +7092,13 @@ react-native-collapsible@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-1.6.2.tgz#3b67fa402a6ba3c291022f5db8f345083862c3d8"
   integrity sha512-MCOBVJWqHNjnDaGkvxX997VONmJeebh6wyJxnHEgg0L1PrlcXU1e/bo6eK+CDVFuMrCafw8Qh4DOv/C4V/+Iew==
+
+react-native-dotenv@^3.4.11:
+  version "3.4.11"
+  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-3.4.11.tgz#2e6c4eabd55d5f1bf109b3dd9141dadf9c55cdd4"
+  integrity sha512-6vnIE+WHABSeHCaYP6l3O1BOEhWxKH6nHAdV7n/wKn/sciZ64zPPp2NUdEUf1m7g4uuzlLbjgr+6uDt89q2DOg==
+  dependencies:
+    dotenv "^16.4.5"
 
 react-native-gesture-handler@^2.26.0:
   version "2.27.1"
