@@ -51,7 +51,8 @@
         "watch:components": "node ./scripts/watch-components.js",
         "watch:themes": "node ./scripts/watch-themes.js",
         "watch:workflow": "node ./scripts/watch-workflow.js",
-        "watch:progressIcons": "node ./scripts/watch-progressIcon.js"
+        "watch:progressIcons": "node ./scripts/watch-progressIcon.js",
+        "watch:all": "node ./scripts/watch-all.js"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
