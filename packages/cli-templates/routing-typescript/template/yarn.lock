@@ -1048,19 +1048,24 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
   integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
 
-"@brightlayer-ui/react-native-components@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-8.0.4.tgz#96a1932289b9111b3c23777673530c01a1bcd2b6"
-  integrity sha512-1dZ0E6IMWNYPA2sRVrMP6WLkJJ4r58aTP1snrTLZPrhOgXJNZRIXBGHPZw5Kahl7HjFeNnytZLYUNVVfNBY2Jw==
+"@brightlayer-ui/react-native-components@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.0.0.tgz#eb5412be3f9237e9ea92e21d25c9fe1d3ead74a2"
+  integrity sha512-xQfpubAUgMDjOxKVIRjVgC0H20og2Ntx59xK84Zx1qO6P6PasECvXYl+CyqTCWlXptJ0rcBeWZzEWhjqGw7izQ==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
+    "@callstack/react-theme-provider" "^3.0.9"
+    "@types/prop-types" "^15.7.15"
+    "@types/react" "^19.0.0"
+    "@types/react-dom" "^19.0.0"
     color "^4.2.3"
-    react-native-collapsible "^1.6.0"
+    prop-types "^15.8.1"
+    react-native-collapsible "^1.6.2"
     react-native-keyboard-aware-scroll-view "^0.9.5"
-    react-native-modal ">=13.0.1"
-    react-native-reanimated "^3.6.1"
+    react-native-modal "^13.0.1"
+    react-native-reanimated "^3.18.0"
 
-"@brightlayer-ui/react-native-themes@7.0.1", "@brightlayer-ui/react-native-themes@^7.0.1":
+"@brightlayer-ui/react-native-themes@7.0.1":
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-themes/-/react-native-themes-7.0.1.tgz#0276c5264c9d00f86fd8bcac51dfddaeb912f8d5"
   integrity sha512-KQTT5q1Ekq/aIoGNYyEZ3pmtTfZNiWBXw5uvvIJPGL2xVvxs3lGCZjZKC/XS+sXNH2C6s5wnzF8sjNLPCYtMLQ==
@@ -1068,10 +1073,22 @@
     "@brightlayer-ui/colors" "4.0.0"
     color "^4.2.3"
 
-"@brightlayer-ui/react-native-vector-icons@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-2.4.0.tgz#99236f898e423346350db1a90c731ad5644b562c"
-  integrity sha512-USFMjyoDGybaVux7wfeN1Kmo8h8rM3PooNEv+YTV84XkH1K+M3ASf6dQ/PSWaoCvRFb/xv0Du9FQ744wN4keog==
+"@brightlayer-ui/react-native-themes@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-themes/-/react-native-themes-8.0.0.tgz#93b36733b5d31c780574a5340b637c8f57c1e7ba"
+  integrity sha512-87j5m7/eUkSvDyF89HMxGQHtvaVNgtUdPRzLtPzDD0AkyQ4uFdCMgzHydZdGOemMw/bGdyrdcwUn46tFrWVL7w==
+  dependencies:
+    "@brightlayer-ui/colors" "4.0.0"
+    "@callstack/react-theme-provider" "^3.0.9"
+    color "^4.2.3"
+    react-native-safe-area-context "5.4.1"
+
+"@brightlayer-ui/react-native-vector-icons@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-3.0.0.tgz#599f404caa7777bf8c403e99858e05a106a86725"
+  integrity sha512-lJC81d6sn13W0rhjennuZcoHpEEDfn/EEzNuQ1z0u1hZCzlzYs2gH7moN2vrTNczyjsOBYIq1aeLKdvpceQGlg==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.0.0"
 
 "@callstack/react-theme-provider@^3.0.9":
   version "3.0.9"
@@ -1761,6 +1778,22 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
+"@react-native-community/cli-tools@^17.0.0":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cli-tools/-/cli-tools-17.0.0.tgz#c46bae5e5ffeee7067d0e55d2ee1de128e310ac3"
+  integrity sha512-mVXH7U/uXd7yizqm2iE+W4SSVc4FGYYEafAu29HihA+FHttonqdg35zVAnIX2FKbyla+TotR1ACNSgo7KFDq+w==
+  dependencies:
+    "@vscode/sudo-prompt" "^9.0.0"
+    appdirsjs "^1.2.4"
+    chalk "^4.1.2"
+    execa "^5.0.0"
+    find-up "^5.0.0"
+    launch-editor "^2.9.1"
+    mime "^2.4.1"
+    ora "^5.4.1"
+    prompts "^2.4.2"
+    semver "^7.5.2"
+
 "@react-native-community/cli-types@19.0.0":
   version "19.0.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-types/-/cli-types-19.0.0.tgz#fe4266eac8ce8ea58bee1a253af9a4ff3543241a"
@@ -1788,6 +1821,29 @@
     graceful-fs "^4.1.3"
     prompts "^2.4.2"
     semver "^7.5.2"
+
+"@react-native-vector-icons/common@^12.0.0", "@react-native-vector-icons/common@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.2.0.tgz#9d42cddd6dc87ba1f7daf7386150034b0ed8caa7"
+  integrity sha512-FGVwBwuio2A9N9sJckXeTwp/oe20hCMe/Zul+b1ql3WkhUJpdJWVbpWKp8ikpHLRRstwuUqkeM5eY74f0zNn1A==
+  dependencies:
+    "@react-native-community/cli-tools" "^17.0.0"
+    picocolors "^1.1.1"
+    plist "^3.1.0"
+
+"@react-native-vector-icons/material-design-icons@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/material-design-icons/-/material-design-icons-12.2.0.tgz#e606320ae031c56cee231f515d3b1f0334a06b42"
+  integrity sha512-XFGkuTLATGMH5RtcbuiJ18mMFKsge5PZjiS+cs+/KwFCWMMznRiQkZlycIVOx52V1WFE+L6oBv3Z6r+L6HHekA==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.2.0"
+
+"@react-native-vector-icons/material-icons@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/material-icons/-/material-icons-12.2.0.tgz#53838fe85fc45f139ae7eaf352c184e6d8fddc10"
+  integrity sha512-ZOG1sryGmbZ0s/TBHQ28dMpdTKZ/RR/rhkuXgvMRjiX+vlvV91FmySH5P7NM0zcvqK6BEgONLRtRDaL7zz4xRw==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.2.0"
 
 "@react-native/assets-registry@0.80.1":
   version "0.80.1"
@@ -2178,6 +2234,16 @@
   dependencies:
     undici-types "~7.8.0"
 
+"@types/prop-types@^15.7.15":
+  version "15.7.15"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.15.tgz#e6e5a86d602beaca71ce5163fadf5f95d70931c7"
+  integrity sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==
+
+"@types/react-dom@^19.0.0":
+  version "19.1.6"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-19.1.6.tgz#4af629da0e9f9c0f506fc4d1caa610399c595d64"
+  integrity sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==
+
 "@types/react-test-renderer@^19.1.0":
   version "19.1.0"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-19.1.0.tgz#1d0af8f2e1b5931e245b8b5b234d1502b854dc10"
@@ -2185,7 +2251,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^19.1.8":
+"@types/react@*", "@types/react@^19.0.0", "@types/react@^19.1.8":
   version "19.1.8"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-19.1.8.tgz#ff8395f2afb764597265ced15f8dddb0720ae1c3"
   integrity sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==
@@ -2553,6 +2619,11 @@
   version "9.3.1"
   resolved "https://registry.yarnpkg.com/@vscode/sudo-prompt/-/sudo-prompt-9.3.1.tgz#c562334bc6647733649fd42afc96c0eea8de3b65"
   integrity sha512-9ORTwwS74VaTn38tNbQhsA5U44zkJfcb0BdTSyyG6frP4e8KMtHuTXYmwefe5dpL8XB1aGSIVTaLjD3BbWb5iA==
+
+"@xmldom/xmldom@^0.8.8":
+  version "0.8.10"
+  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.8.10.tgz#a1337ca426aa61cef9fe15b5b28e340a72f6fa99"
+  integrity sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==
 
 abort-controller@^3.0.0:
   version "3.0.0"
@@ -6112,6 +6183,15 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+plist@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/plist/-/plist-3.1.0.tgz#797a516a93e62f5bde55e0b9cc9c967f860893c9"
+  integrity sha512-uysumyrvkUX0rX/dEVqt8gC3sTBzd4zoWfLeS29nb53imdaXVvLINYXTI2GNqzaMuvacNx4uJQ8+b3zXR0pkgQ==
+  dependencies:
+    "@xmldom/xmldom" "^0.8.8"
+    base64-js "^1.5.1"
+    xmlbuilder "^15.1.1"
+
 possible-typed-array-names@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/possible-typed-array-names/-/possible-typed-array-names-1.1.0.tgz#93e3582bc0e5426586d9d07b79ee40fc841de4ae"
@@ -6280,7 +6360,7 @@ react-native-animatable@1.4.0:
   dependencies:
     prop-types "^15.8.1"
 
-react-native-collapsible@^1.6.0:
+react-native-collapsible@^1.6.2:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-1.6.2.tgz#3b67fa402a6ba3c291022f5db8f345083862c3d8"
   integrity sha512-MCOBVJWqHNjnDaGkvxX997VONmJeebh6wyJxnHEgg0L1PrlcXU1e/bo6eK+CDVFuMrCafw8Qh4DOv/C4V/+Iew==
@@ -6319,7 +6399,7 @@ react-native-keyboard-aware-scroll-view@^0.9.5:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
-react-native-modal@>=13.0.1:
+react-native-modal@^13.0.1:
   version "13.0.2"
   resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-13.0.2.tgz#4e4d777fdb0f5af5a50003a53eebc4de9ead5695"
   integrity sha512-jCUR2DAskuZtVIbnt2ZssX70DCbTLydkL1Glv1Fc/fqVIhq1LpwBK2hKgSf9VIINXFnDjjGIMIC9HhDXnW7Enw==
@@ -6335,7 +6415,7 @@ react-native-paper@^5.14.5:
     color "^3.1.2"
     use-latest-callback "^0.2.3"
 
-react-native-reanimated@^3.18.0, react-native-reanimated@^3.6.1:
+react-native-reanimated@^3.18.0:
   version "3.18.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.18.0.tgz#0a246eab38a9e807887fe561a2868cfe85351f3c"
   integrity sha512-eVcNcqeOkMW+BUWAHdtvN3FKgC8J8wiEJkX6bNGGQaLS7m7e4amTfjIcqf/Ta+lerZLurmDaQ0lICI1CKPrb1Q==
@@ -6352,6 +6432,11 @@ react-native-reanimated@^3.18.0, react-native-reanimated@^3.6.1:
     convert-source-map "^2.0.0"
     invariant "^2.2.4"
     react-native-is-edge-to-edge "1.1.7"
+
+react-native-safe-area-context@5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.4.1.tgz#6d04eac20f99622fa13895fa7ae96199f1ecf800"
+  integrity sha512-x+g3NblZ9jof8y+XkVvaGlpMrSlixhrJJ33BRzhTAKUKctQVecO1heSXmzxc5UdjvGYBKS6kPZVUw2b8NxHcPg==
 
 react-native-safe-area-context@^5.5.0:
   version "5.5.0"
@@ -7514,6 +7599,11 @@ ws@^7, ws@^7.5.10:
   version "7.5.10"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.10.tgz#58b5c20dc281633f6c19113f39b349bd8bd558d9"
   integrity sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==
+
+xmlbuilder@^15.1.1:
+  version "15.1.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-15.1.1.tgz#9dcdce49eea66d8d10b42cae94a79c3c8d0c2ec5"
+  integrity sha512-yMqGBqtXyeN1e3TGYvgNgDVZ3j84W4cwkOXQswghol6APgZWaff9lnbvN7MHYJOiXsvGPXtjTYJEiC9J2wv9Eg==
 
 y18n@^4.0.0:
   version "4.0.3"
