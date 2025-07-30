@@ -1,0 +1,77 @@
+name: Publish Templates
+
+on:
+  push:
+    branches: ['dev', 'master']
+  workflow_call:
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  publish_blank_template:
+    name: Publish Blank Template
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+    strategy:
+      matrix:
+        node-version: [20.x]
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn --immutable
+        working-directory: packages/cli-templates/blank-typescript
+      - run: npm run publish:package -- -b ${{env.BRANCH}}
+        working-directory: packages/cli-templates/blank-typescript
+
+  publish_routing_template:
+    name: Publish Routing Template
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+    strategy:
+      matrix:
+        node-version: [20.x]
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn --immutable
+        working-directory: packages/cli-templates/routing-typescript
+      - run: npm run publish:package -- -b ${{env.BRANCH}}
+        working-directory: packages/cli-templates/routing-typescript
+
+  publish_auth_template:
+    name: Publish Auth Template
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+    strategy:
+      matrix:
+        node-version: [20.x]
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - run: yarn --immutable
+        working-directory: packages/cli-templates/authentication-typescript
+      - run: npm run publish:package -- -b ${{env.BRANCH}}
+        working-directory: packages/cli-templates/authentication-typescript
