@@ -2,7 +2,6 @@ import { InfoListItemProps, UserMenu } from '@brightlayer-ui/react-native-compon
 import React from 'react';
 import { Avatar } from 'react-native-paper';
 import * as BLUIColors from '@brightlayer-ui/colors';
-import { IconFamily } from '@brightlayer-ui/react-native-components/core/__types__';
 import SelectDropdown from 'react-native-select-dropdown';
 import { useTranslation } from 'react-i18next';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
@@ -11,6 +10,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LocalStorage } from '../store/local-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { revokeAccessToken, clearTokens, signOut } from '@okta/okta-react-native';
+import { IconFamily } from '@brightlayer-ui/react-native-components/core/__types__';
 
 const SwapIcon: IconFamily = {
     family: 'material',
@@ -53,9 +54,42 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
             console.error('Error setting new language:', error);
         }
     };
-    const logout = (): void => {
+    const logout = async (): Promise<void> => {
+        // Clear local credentials first
         LocalStorage.clearAuthCredentials();
+
+        // Try to sign out from Okta, but continue with local logout even if it fails
+        try {
+            await signOut();
+        } catch (signOutError) {
+            // eslint-disable-next-line no-console
+            console.error('Sign out from Okta failed:', signOutError);
+        }
+
+        try {
+            await revokeAccessToken();
+        } catch (revokeError) {
+            // eslint-disable-next-line no-console
+            console.error('Token revocation failed:', revokeError);
+        }
+
+        try {
+            await clearTokens();
+        } catch (clearError) {
+            // eslint-disable-next-line no-console
+            console.error('Clear tokens failed:', clearError);
+        }
+
+        // Always proceed with local logout regardless of Okta errors
         app.onUserNotAuthenticated();
+    };
+    const handleLogout = (): void => {
+        logout().catch((error) => {
+            // Handle any errors here if needed
+            console.error('Logout process failed:', error);
+            // Even if logout fails, ensure user is logged out locally
+            app.onUserNotAuthenticated();
+        });
     };
     const changePassword = (): void => {
         navigation.navigate('ChangePassword');
@@ -81,7 +115,9 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
             rightComponent: (
                 <SelectDropdown
                     defaultValue={languageOptions.find((option) => option.value === i18n.language)}
-                    onSelect={(item: any) => void handleLanguageChange(item.value)}
+                    onSelect={(item) => {
+                        void handleLanguageChange(item.value);
+                    }}
                     data={languageOptions}
                     buttonStyle={{ backgroundColor: theme.colors.background }}
                     buttonTextStyle={{ color: theme.colors.primary }}
@@ -94,7 +130,7 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
             ),
         },
         { title: t('USER_MENU.CHANGE_PASSWORD'), icon: LockIcon, onPress: (): void => changePassword() },
-        { title: t('USER_MENU.LOG_OUT'), icon: ExitToAppIcon, onPress: (): void => logout() },
+        { title: t('USER_MENU.LOG_OUT'), icon: ExitToAppIcon, onPress: handleLogout },
     ];
 
     return (

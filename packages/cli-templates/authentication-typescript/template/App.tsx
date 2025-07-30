@@ -15,12 +15,12 @@ import { blue, blueDark } from '@brightlayer-ui/react-native-themes';
 import i18nAppInstance from './translations/i18n';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 import { AppContext, AppContextType } from './src/contexts/AppContextProvider';
-import { LocalStorage } from './src/store/local-storage';
 import { Spinner } from '@brightlayer-ui/react-native-auth-workflow';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-// import { NativeModules, Platform } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
+import { isAuthenticated as isOktaAuthenticated, EventEmitter, getAccessToken } from '@okta/okta-react-native';
 
-export const App = (): JSX.Element => {
+export const App = (): React.JSX.Element => {
     const [theme, setTheme] = useState<ThemeType>('light');
     const [language, setLanguage] = useState('en');
     const [isAuthenticated, setAuthenticated] = useState<AppContextType['isAuthenticated']>(false);
@@ -37,25 +37,54 @@ export const App = (): JSX.Element => {
                 setLanguage(storedLanguage);
                 void i18n.changeLanguage(storedLanguage);
             } else {
-                const locale = 'en';
-                // Platform.OS === 'ios'
-                //     ? NativeModules.SettingsManager.settings.AppleLocale
-                //     : NativeModules.I18nManager.localeIdentifier;
+                let locale = 'en';
+                locale =
+                    Platform.OS === 'ios'
+                        ? NativeModules.SettingsManager.settings.AppleLocale ||
+                          NativeModules.SettingsManager.settings.AppleLocale[0]
+                        : NativeModules.I18nManager.localeIdentifier;
                 setLanguage(locale?.substring(0, 2) || 'en');
             }
         } catch (error) {
+            let locale = 'en';
+            locale =
+                Platform.OS === 'ios'
+                    ? NativeModules.SettingsManager.settings.AppleLocale ||
+                      NativeModules.SettingsManager.settings.AppleLocale[0]
+                    : NativeModules.I18nManager.localeIdentifier;
+            setLanguage(locale?.substring(0, 2) || 'en');
             console.error('Error getting language from Async Storage:', error);
         }
     };
+
+    const handleSignInSuccess = (): any => {
+        setAuthenticated(true);
+        try {
+            getAccessToken() // eslint-disable-next-line
+                .then((res) => console.log(res.access_token)) // eslint-disable-next-line
+                .catch((err) => console.log(err));
+        } catch (error) {
+            console.error('Okta error for access token', error);
+        }
+    };
+
+    useEffect(() => {
+        EventEmitter.addListener('signInSuccess', handleSignInSuccess);
+
+        return (): any => {
+            EventEmitter.removeAllListeners('signInSuccess');
+        };
+    }, []);
+
     // handle initialization of auth data on first load
     useEffect(() => {
         const initialize = async (): Promise<void> => {
             try {
-                const userData = await LocalStorage.readAuthData();
-                setLoginData({ email: userData.rememberMeData.user, rememberMe: userData.rememberMeData.rememberMe });
-                setAuthenticated(Boolean(userData.userId));
+                const authState = await isOktaAuthenticated();
+                setAuthenticated(Boolean(authState?.authenticated));
                 await getLanguage();
-            } catch {
+            } catch (error) {
+                console.error('Error initializing authentication state:', error);
                 // handle any error state, rejected promises, etc..
             } finally {
                 setIsLoading(false);
@@ -64,7 +93,6 @@ export const App = (): JSX.Element => {
         // eslint-disable-next-line
         initialize();
     }, []);
-
     return isLoading ? (
         <Spinner visible={isLoading} />
     ) : (

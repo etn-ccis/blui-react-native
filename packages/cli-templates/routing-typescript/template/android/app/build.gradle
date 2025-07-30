@@ -119,4 +119,3 @@ dependencies {
 }
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
-apply from: "../../node_modules/@brightlayer-ui/react-native-vector-icons/fonts.gradle"
