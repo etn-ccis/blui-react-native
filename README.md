@@ -69,18 +69,6 @@ This single command will:
 - Sync built files to relevant example applications
 - Provide color-coded logs for easy debugging
 
-### 🔧 Individual Package Watchers
-
-You can also watch specific packages individually:
-
-```shell
-# Watch specific packages
-yarn watch:components      # Components library only
-yarn watch:themes         # Themes library only
-yarn watch:workflow       # Auth workflows only
-yarn watch:progressIcons  # Progress icons only
-```
-
 ### 🚀 Development Tips
 
 1. **Start watcher first**: Run `yarn watch:all` before starting example apps for best experience

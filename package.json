@@ -48,10 +48,6 @@
         "test:showcase": "cd ./examples/showcase && yarn test",
         "test:workflow": "cd ./examples/workflow && yarn test",
         "test:all": "yarn test:authWorkflows && yarn test:componentLibrary && yarn test:progressIcons && yarn test:themes",
-        "watch:components": "node ./scripts/watch-components.js",
-        "watch:themes": "node ./scripts/watch-themes.js",
-        "watch:workflow": "node ./scripts/watch-workflow.js",
-        "watch:progressIcons": "node ./scripts/watch-progressIcon.js",
         "watch:all": "node ./scripts/watch-all.js"
     },
     "devDependencies": {
