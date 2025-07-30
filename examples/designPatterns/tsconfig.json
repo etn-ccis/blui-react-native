@@ -1,3 +1,13 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@brightlayer-ui/react-native-components": [
+        "./watchPackages/@brightlayer-ui/react-native-components"
+      ],
+      "@brightlayer-ui/react-native-themes": [
+        "./watchPackages/@brightlayer-ui/react-native-themes"
+      ]
+    }
+  }
 }

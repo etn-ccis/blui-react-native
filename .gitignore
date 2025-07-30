@@ -115,3 +115,7 @@ node_modules
 
 **/.env
 **/.yarn/*
+
+# ignore watch package 
+
+/examples/**/watchPackages/

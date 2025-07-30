@@ -3,7 +3,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
     ...bluiRecommended,
-    { ignores: ['dist', 'docs/dist/**/**', 'packages/**/dist/**', "examples/showcase-expo/app/**", "examples/showcase-expo/.expo/**"] },
+    { ignores: ['dist', 'docs/dist/**/**', 'packages/**/dist/**', "examples/showcase-expo/app/**", "examples/showcase-expo/.expo/**", "examples/**/watchPackages/**"] },
     {
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
