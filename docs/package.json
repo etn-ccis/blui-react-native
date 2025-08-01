@@ -13,7 +13,7 @@
         "@brightlayer-ui/colors": "^3.1.1",
         "@brightlayer-ui/icons": "^2.3.0",
         "@brightlayer-ui/icons-mui": "^3.6.0",
-        "@brightlayer-ui/react-components": "^6.3.0",
+        "@brightlayer-ui/react-components": "^8.0.0",
         "@brightlayer-ui/react-doc-components": "^2.0.0",
         "@brightlayer-ui/react-native-components": "^9.0.0-alpha.5",
         "@brightlayer-ui/react-native-themes": "7.0.1",
