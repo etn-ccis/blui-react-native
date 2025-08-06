@@ -80,12 +80,12 @@ This single command will:
 
 Each package syncs to specific example applications:
 
-| Package            | Example Apps                                 | Watch Command              |
-| ------------------ | -------------------------------------------- | -------------------------- |
-| **Components**     | `showcase`, `designPatterns`, `expoShowcase` | `yarn watch:components`    |
-| **Themes**         | `showcase`, `designPatterns`, `expoShowcase` | `yarn watch:themes`        |
-| **Progress Icons** | `showcase`, `designPatterns`, `expoShowcase` | `yarn watch:progressIcons` |
-| **Auth Workflows** | `workflowexample-expo`, `workflow`           | `yarn watch:workflow`      |
+| Package            | Example Apps                                 
+| ------------------ | -------------------------------------------- 
+| **Components**     | `showcase`, `designPatterns`, `expoShowcase` 
+| **Themes**         | `showcase`, `designPatterns`, `expoShowcase`
+| **Progress Icons** | `showcase`, `designPatterns`, `expoShowcase`
+| **Auth Workflows** | `workflowexample-expo`, `workflow`          
 
 ### 🛠️ How Hot Reloading Works
 
