@@ -311,6 +311,9 @@ class PackageWatcher {
     copyAllFilesToExamples() {
         this.config.exampleApps.forEach((appPath) => {
             const appNodeModulesPath = path.resolve(__dirname, '..', appPath, this.config.nodeModulesPath);
+            
+            // Clean up existing packages from regular node_modules to avoid conflicts
+            this.cleanupNodeModulesPackage(appPath);
 
             try {
                 // Ensure the directory exists
@@ -340,6 +343,45 @@ class PackageWatcher {
         });
 
         this.logSuccess(`Initial setup complete - synced to ${this.config.exampleApps.length} apps`);
+    }
+
+    // Clean up existing package from regular node_modules to avoid conflicts
+    cleanupNodeModulesPackage(appPath) {
+        // Extract package name from nodeModulesPath (e.g., '@brightlayer-ui/react-native-components')
+        const packageName = this.config.nodeModulesPath.split('/').slice(-2).join('/');
+        const regularNodeModulesPath = path.resolve(__dirname, '..', appPath, 'node_modules', packageName);
+
+        try {
+            if (fs.existsSync(regularNodeModulesPath)) {
+                // Remove the entire package directory
+                this.removeDirectory(regularNodeModulesPath);
+                this.logSuccess(`Cleaned up conflicting package: ${packageName} from ${appPath}/node_modules`);
+            }
+        } catch (error) {
+            this.logError(`Failed to cleanup ${packageName} from ${appPath}/node_modules: ${error.message}`);
+        }
+    }
+
+    // Helper function to recursively remove directory
+    removeDirectory(dirPath) {
+        if (!fs.existsSync(dirPath)) {
+            return;
+        }
+
+        const files = fs.readdirSync(dirPath);
+        
+        files.forEach((file) => {
+            const filePath = path.join(dirPath, file);
+            const stat = fs.lstatSync(filePath);
+
+            if (stat.isDirectory()) {
+                this.removeDirectory(filePath);
+            } else {
+                fs.unlinkSync(filePath);
+            }
+        });
+
+        fs.rmdirSync(dirPath);
     }
 
     // Helper function to recursively copy directory
