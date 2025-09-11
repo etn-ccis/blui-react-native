@@ -7928,7 +7928,7 @@ __metadata:
     typescript: ~5.6.2
     typescript-eslint: ^8.18.2
     typewriter-effect: ^2.21.0
-    vite: ^6.2.7
+    vite: ^6.3.6
     vite-plugin-dts: ^4.5.3
     vite-plugin-prismjs: ^0.0.11
     vite-plugin-react-native-web: ^1.0.2
@@ -9808,7 +9808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@npm%3A^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.3#~builtin<compat/fsevents>":
+"fsevents@patch:fsevents@npm%3A^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.3#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.3#~builtin<compat/fsevents>":
   version: 2.3.3
   resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
   dependencies:
@@ -19226,17 +19226,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.2.7":
-  version: 6.3.5
-  resolution: "vite@npm:6.3.5"
+"vite@npm:^6.3.6":
+  version: 6.3.6
+  resolution: "vite@npm:6.3.6"
   dependencies:
-    esbuild: "npm:^0.25.0"
-    fdir: "npm:^6.4.4"
-    fsevents: "npm:~2.3.3"
-    picomatch: "npm:^4.0.2"
-    postcss: "npm:^8.5.3"
-    rollup: "npm:^4.34.9"
-    tinyglobby: "npm:^0.2.13"
+    esbuild: ^0.25.0
+    fdir: ^6.4.4
+    fsevents: ~2.3.3
+    picomatch: ^4.0.2
+    postcss: ^8.5.3
+    rollup: ^4.34.9
+    tinyglobby: ^0.2.13
   peerDependencies:
     "@types/node": ^18.0.0 || ^20.0.0 || >=22.0.0
     jiti: ">=1.21.0"
@@ -19277,7 +19277,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: df70201659085133abffc6b88dcdb8a57ef35f742a01311fc56a4cfcda6a404202860729cc65a2c401a724f6e25f9ab40ce4339ed4946f550541531ced6fe41c
+  checksum: 8/bf1e90cb31ea0bb8b13dd046fe9584cb6108dac59332cf56e3ea7a4a77fd4e795c0486957d3cc56a6179608d990110ec9569ed973d53f7adff1590401ebb8f55
   languageName: node
   linkType: hard
 
