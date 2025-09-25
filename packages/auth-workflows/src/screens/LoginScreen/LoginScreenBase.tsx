@@ -262,6 +262,7 @@ export const LoginScreenBase: React.FC<React.PropsWithChildren<LoginScreenProps>
                             <PasswordTextField
                                 testID={'blui-login-password-text-field'}
                                 ref={passwordField}
+                                {...passwordTextFieldProps}
                                 onChangeText={(e: any): void => {
                                     passwordTextFieldProps?.onChange?.(e);
                                     handlePasswordInputChange(e);
