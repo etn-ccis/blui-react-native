@@ -3,7 +3,16 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export default [
     ...bluiRecommended,
-    { ignores: ['dist', 'docs/dist/**/**', 'packages/**/dist/**', "examples/showcase-expo/app/**", "examples/showcase-expo/.expo/**"] },
+    {
+        ignores: [
+            'dist',
+            'docs/dist/**/**',
+            'packages/**/dist/**',
+            'examples/showcase-expo/app/**',
+            'examples/showcase-expo/.expo/**',
+            'examples/**/watchPackages/**',
+        ],
+    },
     {
         files: ['**/*.{ts,tsx}'],
         languageOptions: {
@@ -132,7 +141,7 @@ export default [
             'react-hooks/exhaustive-deps': 'warn',
             '@typescript-eslint/no-redundant-type-constituents': 'warn',
             'arrow-parens': 'off',
-            'no-console': 'off'
+            'no-console': 'off',
         },
     },
     {
@@ -142,8 +151,7 @@ export default [
             'react-hooks/exhaustive-deps': 'warn',
             '@typescript-eslint/no-redundant-type-constituents': 'warn',
             'arrow-parens': 'off',
-            'no-console': 'off'
+            'no-console': 'off',
         },
     },
-    
 ];
