@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.0.0 (July 25, 2025)
+## v8.0.0 (July 25, 2025)
 
 ### Changed
 
