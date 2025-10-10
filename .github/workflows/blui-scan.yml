@@ -1,0 +1,80 @@
+
+name: CI-BlackDuck-SCA-Basic
+
+on:
+  push:
+    branches: [main, master, dev, feature/*]
+    paths:
+      - 'examples/designPatterns/**'
+      - 'examples/expoShowcase/**'
+      - 'examples/showcase/**'
+      - 'examples/workflow/**'
+      - 'examples/workflowexample-expo/**'
+      - 'packages/cli-templates/**'
+      - 'packages/component-library/**'
+      - 'packages/auth-workflows/**'
+      - 'packages/progress-icons/**'
+      - 'packages/themes/**'
+  pull_request:
+    branches: [main, master, dev]
+    paths:
+      - 'examples/designPatterns/**'
+      - 'examples/expoShowcase/**'
+      - 'examples/showcase/**'
+      - 'examples/workflow/**'
+      - 'examples/workflowexample-expo/**'
+      - 'packages/cli-templates/**'
+      - 'packages/component-library/**'
+      - 'packages/auth-workflows/**'
+      - 'packages/progress-icons/**'
+      - 'packages/themes/**'
+  workflow_dispatch:
+
+jobs:
+  blackduck-scan:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        app:
+          - examples/designPatterns
+          - examples/expoShowcase
+          - examples/showcase
+          - examples/workflow
+          - examples/workflowexample-expo
+          - packages/cli-templates
+          - packages/component-library
+          - packages/auth-workflows
+          - packages/progress-icons
+          - packages/themes
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.app }}
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for changes in app directory
+        id: check_changes
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q "^${{ matrix.app }}/"; then
+              echo "changes=true" >> $GITHUB_OUTPUT
+            else
+              echo "changes=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+      - name: Black Duck Scan
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: blackduck-inc/black-duck-security-scan@v2.3.0
+        env:
+          DETECT_PROJECT_NAME: ${{ vars.PROJECT_NAME }}
+          DETECT_PROJECT_VERSION_NAME: react-${{ matrix.app }}
+        with:
+          blackducksca_url: ${{ vars.BLACKDUCKSCA_URL }}
+          blackducksca_token: ${{ secrets.BLACKDUCKSCA_TOKEN }}
