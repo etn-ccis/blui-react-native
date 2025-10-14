@@ -1,5 +1,11 @@
 # Change Log
 
+## v9.0.1 (Unreleased)
+
+### Fixed
+
+- CollapsibleHeaderLayout crashes with "TypeError: cannot add a new property" in React Native 0.79.5 ([352](https://github.com/etn-ccis/blui-react-native/issues/352))
+
 ## v9.0.0 (July 25, 2025)
 
 ### Changed 
