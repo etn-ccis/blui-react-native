@@ -32,7 +32,6 @@ config.resolver = {
             './watchPackages/@brightlayer-ui/react-native-progress-icons'
         ),
     },
-    nodeModulesPaths: [path.resolve(__dirname, './watchPackages'), path.resolve(projectRoot, 'node_modules')],
 };
 // 2. Let Metro know where to resolve packages and in what order
 config.resolver.nodeModulesPaths = [

@@ -18,7 +18,7 @@ config.resolver = {
             __dirname,
             './watchPackages/@brightlayer-ui/react-native-components'
         ),
-        '@brightlayer-ui/react-native-themes': path.resolve(
+        '@brightlayer-ui/react-native-auth-workflow': path.resolve(
             __dirname,
             './watchPackages/@brightlayer-ui/react-native-auth-workflow'
         ),
