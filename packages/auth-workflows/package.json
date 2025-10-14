@@ -1,7 +1,7 @@
 {
     "name": "@brightlayer-ui/react-native-auth-workflow",
     "description": "Re-usable workflow components for Authentication and Registration within Eaton applications.",
-    "version": "8.0.1",
+    "version": "8.1.0-alpha.0",
     "license": "BSD-3-Clause",
     "author": {
         "name": "Brightlayer UI",
@@ -44,7 +44,7 @@
     },
     "peerDependencies": {
         "@brightlayer-ui/react-native-components": "^8.0.4",
-        "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
+        "@brightlayer-ui/react-native-vector-icons": "^3.0.0",
         "@okta/okta-react-native": "^2.17.0",
         "i18next": "^25.2.1",
         "react": "^19.1.0",
@@ -70,7 +70,7 @@
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@brightlayer-ui/react-native-auth-workflow": "7.0.1",
         "@brightlayer-ui/react-native-components": "^8.0.4",
-        "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
+        "@brightlayer-ui/react-native-vector-icons": "^3.0.0",
         "@okta/okta-react-native": "^2.17.0",
         "@react-native-async-storage/async-storage": "^2.2.0",
         "@react-native-community/bob": "^0.17.1",
