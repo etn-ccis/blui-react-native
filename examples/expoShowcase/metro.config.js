@@ -21,7 +21,7 @@ config.resolver = {
     alias: {
         '@brightlayer-ui/react-native-auth-workflow': path.resolve(
             __dirname,
-            './watchPackages/@brightlayer-ui/react-native-components'
+            './watchPackages/@brightlayer-ui/react-native-auth-workflow'
         ),
         '@brightlayer-ui/react-native-themes': path.resolve(
             __dirname,
