@@ -1,10 +1,14 @@
 # Change Log
 
-## v9.0.1 (Unreleased)
+## v9.1.0 (Unreleased)
+
+### Changed
+- Updated `@brightlayer-ui/react-native-vector-icons` peer dependency from ^2.4.0 to ^3.0.0
 
 ### Fixed
 
 - CollapsibleHeaderLayout crashes with "TypeError: cannot add a new property" in React Native 0.79.5 ([352](https://github.com/etn-ccis/blui-react-native/issues/352))
+
 
 ## v9.0.0 (July 25, 2025)
 
