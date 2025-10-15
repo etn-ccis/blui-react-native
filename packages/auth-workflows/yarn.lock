@@ -1214,17 +1214,22 @@
     color "^4.2.3"
     lodash.clonedeep "^4.5.0"
 
-"@brightlayer-ui/react-native-components@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.npmjs.org/@brightlayer-ui/react-native-components/-/react-native-components-8.0.4.tgz#96a1932289b9111b3c23777673530c01a1bcd2b6"
-  integrity sha512-1dZ0E6IMWNYPA2sRVrMP6WLkJJ4r58aTP1snrTLZPrhOgXJNZRIXBGHPZw5Kahl7HjFeNnytZLYUNVVfNBY2Jw==
+"@brightlayer-ui/react-native-components@9.1.0-alpha.0":
+  version "9.1.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.0-alpha.0.tgz#d34d2c638d3b7adef32753932291f0435d1cff18"
+  integrity sha512-xlmpTjWPITPBt6XrDg4pZPKuvOW0DmOigUG96PvikM5QWCDS57lY+HBzypsye5ZQZtIUk9sEeeiOR6RGwAsYBw==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
+    "@callstack/react-theme-provider" "^3.0.9"
+    "@types/prop-types" "^15.7.15"
+    "@types/react" "^19.0.0"
+    "@types/react-dom" "^19.0.0"
     color "^4.2.3"
-    react-native-collapsible "^1.6.0"
+    prop-types "^15.8.1"
+    react-native-collapsible "^1.6.2"
     react-native-keyboard-aware-scroll-view "^0.9.5"
-    react-native-modal ">=13.0.1"
-    react-native-reanimated "^3.6.1"
+    react-native-modal "^13.0.1"
+    react-native-reanimated "^3.18.0"
 
 "@brightlayer-ui/react-native-themes@7.0.1", "@brightlayer-ui/react-native-themes@^7.0.1":
   version "7.0.1"
@@ -1924,7 +1929,7 @@
   resolved "https://registry.npmjs.org/@react-native-community/masked-view/-/masked-view-0.1.11.tgz#2f4c6e10bee0786abff4604e39a37ded6f3980ce"
   integrity sha512-rQfMIGSR/1r/SyN87+VD8xHHzDYeHaJq6elOSCAD+0iLagXkSI2pfA0LmSXP21uw5i3em7GkkRjfJ8wpqWXZNw==
 
-"@react-native-vector-icons/common@^12.0.0":
+"@react-native-vector-icons/common@^12.0.0", "@react-native-vector-icons/common@^12.3.0":
   version "12.3.0"
   resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.3.0.tgz#8a3cb778fd197e971da0fa69a35fa4fc8b030f1a"
   integrity sha512-5GMBcLBkA0MuciweYcrSyvi9fYGanfVnE2J+pwHx1QiaVgTaoCm4rylJgSS77MVI5qUiGh7aJpqq5afSz2U4bw==
@@ -1932,6 +1937,20 @@
     find-up "^7.0.0"
     picocolors "^1.1.1"
     plist "^3.1.0"
+
+"@react-native-vector-icons/material-design-icons@^12.0.1":
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/material-design-icons/-/material-design-icons-12.3.0.tgz#2cad45c0a12afb0d05f7620eb8b81b4470f15f42"
+  integrity sha512-0fut9zjUJtGWwjGQ0lbirmPnjMkou9vkBY3d3ZsaHqXCBgV3fGeOWuRZ17eDpsGy/9BTRtBRI85RYdFGhdcB4Q==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.3.0"
+
+"@react-native-vector-icons/material-icons@^12.3.0":
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/material-icons/-/material-icons-12.3.0.tgz#e93aeffef628d651273d2c2707c2e51f372f2f93"
+  integrity sha512-W9rhgfc8zKKXhZa/099un/RSNFgO6aHhJR2r6rodvTlO+ZRXq2GbU38CMBwhomJxyErcfmlR7En6wSdtLykYVQ==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.3.0"
 
 "@react-native/assets-registry@0.80.1":
   version "0.80.1"
@@ -2575,6 +2594,11 @@
   version "4.0.2"
   resolved "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.2.tgz#5950e50960793055845e956c427fc2b0d70c5239"
   integrity sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==
+
+"@types/prop-types@^15.7.15":
+  version "15.7.15"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.15.tgz#e6e5a86d602beaca71ce5163fadf5f95d70931c7"
+  integrity sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==
 
 "@types/react-dom@^19.0.0":
   version "19.1.6"
@@ -7663,9 +7687,9 @@ react-native-animatable@1.4.0:
   dependencies:
     prop-types "^15.8.1"
 
-react-native-collapsible@^1.6.0:
+react-native-collapsible@^1.6.2:
   version "1.6.2"
-  resolved "https://registry.npmjs.org/react-native-collapsible/-/react-native-collapsible-1.6.2.tgz#3b67fa402a6ba3c291022f5db8f345083862c3d8"
+  resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-1.6.2.tgz#3b67fa402a6ba3c291022f5db8f345083862c3d8"
   integrity sha512-MCOBVJWqHNjnDaGkvxX997VONmJeebh6wyJxnHEgg0L1PrlcXU1e/bo6eK+CDVFuMrCafw8Qh4DOv/C4V/+Iew==
 
 react-native-dotenv@^3.4.11:
@@ -7714,13 +7738,6 @@ react-native-keyboard-aware-scroll-view@^0.9.5:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
-react-native-modal@>=13.0.1:
-  version "13.0.2"
-  resolved "https://registry.npmjs.org/react-native-modal/-/react-native-modal-13.0.2.tgz#4e4d777fdb0f5af5a50003a53eebc4de9ead5695"
-  integrity sha512-jCUR2DAskuZtVIbnt2ZssX70DCbTLydkL1Glv1Fc/fqVIhq1LpwBK2hKgSf9VIINXFnDjjGIMIC9HhDXnW7Enw==
-  dependencies:
-    react-native-animatable "1.4.0"
-
 react-native-modal@^12.0.2:
   version "12.1.0"
   resolved "https://registry.npmjs.org/react-native-modal/-/react-native-modal-12.1.0.tgz#5949c9c7d4de4e99df83cc777ad26b84ad7002a0"
@@ -7728,6 +7745,13 @@ react-native-modal@^12.0.2:
   dependencies:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
+
+react-native-modal@^13.0.1:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-13.0.2.tgz#4e4d777fdb0f5af5a50003a53eebc4de9ead5695"
+  integrity sha512-jCUR2DAskuZtVIbnt2ZssX70DCbTLydkL1Glv1Fc/fqVIhq1LpwBK2hKgSf9VIINXFnDjjGIMIC9HhDXnW7Enw==
+  dependencies:
+    react-native-animatable "1.4.0"
 
 react-native-pager-view@^6.8.1:
   version "6.8.1"
@@ -7743,7 +7767,7 @@ react-native-paper@^5.14.5:
     color "^3.1.2"
     use-latest-callback "^0.2.3"
 
-react-native-reanimated@^3.18.0, react-native-reanimated@^3.6.1:
+react-native-reanimated@^3.18.0:
   version "3.18.0"
   resolved "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-3.18.0.tgz#0a246eab38a9e807887fe561a2868cfe85351f3c"
   integrity sha512-eVcNcqeOkMW+BUWAHdtvN3FKgC8J8wiEJkX6bNGGQaLS7m7e4amTfjIcqf/Ta+lerZLurmDaQ0lICI1CKPrb1Q==
