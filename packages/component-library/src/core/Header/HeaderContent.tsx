@@ -68,21 +68,35 @@ const HeaderTitle: React.FC<HeaderTitleProps> = (props) => {
         () => ({
             color: textColor,
             ...fontStyleSemiBold,
-            fontSize: headerHeight.interpolate({
-                inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
-                outputRange: [20, 30],
-                extrapolate: 'clamp',
-            }),
             writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
             textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
         }),
-        [textColor, headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontStyleSemiBold]
+        [textColor, fontStyleSemiBold]
     );
+    const getTitleAnimatedStyle = useCallback(() => {
+        // Get user styles to check if fontSize is overridden
+        const userStyles = StyleSheet.flatten(style);
+        const hasUserFontSize = userStyles && typeof userStyles === 'object' && 'fontSize' in userStyles;
+
+        return {
+            fontSize: hasUserFontSize
+                ? userStyles.fontSize // Use user's fontSize if provided
+                : headerHeight.interpolate({
+                      inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
+                      outputRange: [20, 30],
+                      extrapolate: 'clamp',
+                  }),
+        };
+    }, [headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, style]);
+
+    // Flatten user styles to avoid conflicts with animated values
+    const flattenedStyle = StyleSheet.flatten(style);
+    const staticStyles = StyleSheet.flatten([getTitleStyle(), flattenedStyle]);
 
     return typeof title === 'string' ? (
         <Animated.Text
             testID={'header-title'}
-            style={[getTitleStyle(), style]}
+            style={[staticStyles, getTitleAnimatedStyle()]}
             numberOfLines={1}
             ellipsizeMode={'tail'}
             allowFontScaling={!disableScaling}
@@ -124,22 +138,37 @@ const HeaderSubtitle: React.FC<HeaderSubtitleProps> = (props) => {
         () => ({
             color: textColor,
             ...fontStyleRegular,
-            fontSize: headerHeight.interpolate({
-                inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
-                outputRange: [14, 16],
-                extrapolate: 'clamp',
-            }),
             writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
             textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
         }),
-        [textColor, headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontStyleRegular]
+        [textColor, fontStyleRegular]
     );
 
+    const getSubtitleAnimatedStyle = useCallback(() => {
+        // Get user styles to check if fontSize is overridden
+        const userStyles = StyleSheet.flatten(style);
+        const hasUserFontSize = userStyles && typeof userStyles === 'object' && 'fontSize' in userStyles;
+
+        return {
+            fontSize: hasUserFontSize
+                ? userStyles.fontSize // Use user's fontSize if provided
+                : headerHeight.interpolate({
+                      inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
+                      outputRange: [14, 16],
+                      extrapolate: 'clamp',
+                  }),
+        };
+    }, [headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, style]);
+
     if (subtitle) {
+        // Flatten user styles to avoid conflicts with animated values
+        const flattenedStyle = StyleSheet.flatten(style);
+        const staticStyles = StyleSheet.flatten([getSubtitleStyle(), flattenedStyle]);
+
         return typeof subtitle === 'string' ? (
             <Animated.Text
                 testID={'header-subtitle'}
-                style={[getSubtitleStyle(), style]}
+                style={[staticStyles, getSubtitleAnimatedStyle()]}
                 numberOfLines={1}
                 ellipsizeMode={'tail'}
                 allowFontScaling={!disableScaling}
@@ -183,6 +212,19 @@ const HeaderInfo: React.FC<HeaderInfoProps> = (props) => {
     const getInfoStyle = useCallback(
         () => ({
             color: textColor,
+            ...fontStyleRegular,
+            writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
+            textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
+        }),
+        [textColor, fontStyleRegular]
+    );
+
+    const getInfoAnimatedStyle = useCallback(() => {
+        // Get user styles to check if fontSize is overridden
+        const userStyles = StyleSheet.flatten(style);
+        const hasUserFontSize = userStyles && typeof userStyles === 'object' && 'fontSize' in userStyles;
+
+        return {
             marginTop: headerHeight.interpolate({
                 inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
                 outputRange: [-2 * fontScale, 0],
@@ -193,23 +235,25 @@ const HeaderInfo: React.FC<HeaderInfoProps> = (props) => {
                 outputRange: [0, 1],
                 extrapolate: 'clamp',
             }),
-            ...fontStyleRegular,
-            fontSize: headerHeight.interpolate({
-                inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
-                outputRange: [0.1, 14],
-                extrapolate: 'clamp',
-            }),
-            writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
-            textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
-        }),
-        [textColor, headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontScale, fontStyleRegular]
-    );
+            fontSize: hasUserFontSize
+                ? userStyles.fontSize // Use user's fontSize if provided
+                : headerHeight.interpolate({
+                      inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
+                      outputRange: [0.1, 14],
+                      extrapolate: 'clamp',
+                  }),
+        };
+    }, [headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, fontScale, style]);
 
     if (info) {
+        // Flatten user styles to avoid conflicts with animated values
+        const flattenedStyle = StyleSheet.flatten(style);
+        const staticStyles = StyleSheet.flatten([getInfoStyle(), flattenedStyle]);
+
         return typeof info === 'string' ? (
             <Animated.Text
                 testID={'header-info'}
-                style={[getInfoStyle(), style]}
+                style={[staticStyles, getInfoAnimatedStyle()]}
                 numberOfLines={1}
                 ellipsizeMode={'tail'}
                 allowFontScaling={!disableScaling}
@@ -338,9 +382,9 @@ export const HeaderContent: React.FC<HeaderContentProps> = (props) => {
         content = [<SearchContent key={'search-content'} theme={theme} style={styles.search} />];
     } else {
         content = [
-            <HeaderTitle title={title} key="title_key" theme={theme} style={[styles.title]} />,
-            <HeaderSubtitle subtitle={subtitle} key="subtitle_key" theme={theme} style={[styles.subtitle]} />,
-            <HeaderInfo info={info} key="info_key" theme={theme} style={[styles.info]} />,
+            <HeaderTitle title={title} key="title_key" theme={theme} style={styles.title} />,
+            <HeaderSubtitle subtitle={subtitle} key="subtitle_key" theme={theme} style={styles.subtitle} />,
+            <HeaderInfo info={info} key="info_key" theme={theme} style={styles.info} />,
         ];
     }
 
@@ -356,6 +400,19 @@ export const HeaderContent: React.FC<HeaderContentProps> = (props) => {
         return iconLength * (ICON_SIZE * fontScale + ICON_SPACING) + componentsWidth;
     }, [actions, searchConfig, fontScale]);
 
+    const getContainerAnimatedStyle = useCallback(
+        () => ({
+            marginRight: searching
+                ? 0
+                : headerHeight.interpolate({
+                      inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
+                      outputRange: [getActionPanelWidth(), 0],
+                      extrapolate: 'clamp',
+                  }),
+        }),
+        [headerHeight, REGULAR_HEIGHT, EXTENDED_HEIGHT, getActionPanelWidth, searching]
+    );
+
     return (
         <Animated.View
             style={[
@@ -363,13 +420,9 @@ export const HeaderContent: React.FC<HeaderContentProps> = (props) => {
                 searching
                     ? {}
                     : {
-                          marginRight: headerHeight.interpolate({
-                              inputRange: [REGULAR_HEIGHT, EXTENDED_HEIGHT],
-                              outputRange: [getActionPanelWidth(), 0],
-                              extrapolate: 'clamp',
-                          }),
                           marginBottom: subtitle && title ? 5 * fontScale : 15 * fontScale,
                       },
+                !searching && getContainerAnimatedStyle(),
                 styles.root,
             ]}
         >
