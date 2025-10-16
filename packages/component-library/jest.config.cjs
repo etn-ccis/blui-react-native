@@ -17,6 +17,6 @@ module.exports = {
       },
     coverageReporters: ['text', 'cobertura'],
     transformIgnorePatterns: [
-        'node_modules/(?!(react-native|@react-native/*|react-native-vector-icons|react-native-animatable|react-native-reanimated|react-native-iphone-x-helper|react-native-modal|react-native-collapsible|@react-native/polyfills)/)',
+        'node_modules/(?!(react-native|@react-native/*|@brightlayer-ui/react-native-vector-icons|@react-native-vector-icons/*|react-native-vector-icons|react-native-animatable|react-native-reanimated|react-native-iphone-x-helper|react-native-modal|react-native-collapsible|@react-native/polyfills)/)',
     ],
 };

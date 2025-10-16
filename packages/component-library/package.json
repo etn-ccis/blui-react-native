@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/react-native-components",
-    "version": "9.0.0",
+    "version": "9.1.0",
     "author": "brightlayer-ui <brightlayer-ui@eaton.com>",
     "description": "Reusable React Native components for Brightlayer UI applications",
     "repository": {
@@ -53,7 +53,7 @@
         "react-native-reanimated": "^3.18.0"
     },
     "peerDependencies": {
-        "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
+        "@brightlayer-ui/react-native-vector-icons": "^3.0.0",
         "@react-native-vector-icons/material-design-icons": "^12.0.1",
         "@react-native-vector-icons/material-icons": "^12.0.1",
         "react": "^19.1.0",
@@ -66,7 +66,7 @@
         "@brightlayer-ui/eslint-config": "^4.0.0",
         "@brightlayer-ui/icons-svg": "^1.15.0",
         "@brightlayer-ui/prettier-config": "^1.0.3",
-        "@brightlayer-ui/react-native-vector-icons": "^2.4.0",
+        "@brightlayer-ui/react-native-vector-icons": "^3.0.0",
         "@faker-js/faker": "^9.8.0",
         "@react-native-vector-icons/material-design-icons": "^12.0.1",
         "@react-native-vector-icons/material-icons": "^12.0.1",
