@@ -1,6 +1,6 @@
 # Change Log
 
-## v9.1.0 (Unreleased)
+## v9.1.0 (October 16, 2025)
 
 ### Changed
 - Updated `@brightlayer-ui/react-native-vector-icons` peer dependency from ^2.4.0 to ^3.0.0
