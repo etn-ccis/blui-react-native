@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "AuthExample.app"
-               BlueprintName = "AuthExample"
-               ReferencedContainer = "container:AuthExample.xcodeproj">
+               BuildableName = "workflow.app"
+               BlueprintName = "workflow"
+               ReferencedContainer = "container:workflow.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AuthExampleTests.xctest"
-               BlueprintName = "AuthExampleTests"
-               ReferencedContainer = "container:AuthExample.xcodeproj">
+               BuildableName = "workflowTests.xctest"
+               BlueprintName = "workflowTests"
+               ReferencedContainer = "container:workflow.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AuthExample.app"
-            BlueprintName = "AuthExample"
-            ReferencedContainer = "container:AuthExample.xcodeproj">
+            BuildableName = "workflow.app"
+            BlueprintName = "workflow"
+            ReferencedContainer = "container:workflow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AuthExample.app"
-            BlueprintName = "AuthExample"
-            ReferencedContainer = "container:AuthExample.xcodeproj">
+            BuildableName = "workflow.app"
+            BlueprintName = "workflow"
+            ReferencedContainer = "container:workflow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

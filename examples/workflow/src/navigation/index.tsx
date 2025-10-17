@@ -199,7 +199,7 @@ const RegistrationRouter = (): any => {
 export const MainRouter = (): any => {
     const { height, width } = Dimensions.get('screen');
     return (
-        <NavigationContainer ref={navigationRef}>
+        <NavigationContainer ref={navigationRef} navigationInChildEnabled>
             <Stack.Navigator
                 initialRouteName={'AuthProviderExample'}
                 screenOptions={{

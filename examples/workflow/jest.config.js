@@ -3,6 +3,7 @@ module.exports = {
     transformIgnorePatterns: [
         'node_modules/(?!(|react-native|@react-native/*|@brightlayer-ui/react-native-components|react-native-animatable|react-native-reanimated|react-native-iphone-x-helper|react-native-collapsible|@react-native/polyfills|react-native-status-bar-height/*)/)',
     ],
+    testPathIgnorePatterns: ['<rootDir>/watchPackages/'],
     setupFiles: ['./jestSetupFile.js', './node_modules/react-native-gesture-handler/jestSetup.js'],
     moduleNameMapper: {
         '\\.svg': '<rootDir>/__mocks__/svgMock.js',
