@@ -1067,10 +1067,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.15.0.tgz#01bef4562ce4da57db408bffc5487762c3166bab"
   integrity sha512-ul5ReQtzXP8RCmx4sclDxK9ruo92nzivzZyCTe0/0QIWC1NmxZ4C5dxNVyJ3RNPkdGpozeZ3okEb5e58cTs7Gg==
 
-"@brightlayer-ui/react-native-auth-workflow@^8.0.1":
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.0.1.tgz#0174d68adb961e2803b02d4efc82d1ca7f84d937"
-  integrity sha512-iUuC0F0VGruQpAai2LZ8GImAyonJ2pfCwadLJ+t1UvfyupROSZCAvk57f/+f2Jmbfxz12kvAUzRqt/G9Wf5Idw==
+"@brightlayer-ui/react-native-auth-workflow@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.1.0.tgz#3b7643d0edc1cd32e02d308ea7243b7f80a93c57"
+  integrity sha512-5g59xspAPebRncd0Q2p6cFPnRY0cnjFOYUx26lhodEXRvlYIPUp1DzTJrbq9aSGq9L7zMDyf+U3K66uTOSIDaA==
   dependencies:
     "@brightlayer-ui/react-native-themes" "^7.0.1"
     "@types/react" "^19.0.0"
@@ -1078,10 +1078,10 @@
     color "^4.2.3"
     lodash.clonedeep "^4.5.0"
 
-"@brightlayer-ui/react-native-components@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.0.0.tgz#eb5412be3f9237e9ea92e21d25c9fe1d3ead74a2"
-  integrity sha512-xQfpubAUgMDjOxKVIRjVgC0H20og2Ntx59xK84Zx1qO6P6PasECvXYl+CyqTCWlXptJ0rcBeWZzEWhjqGw7izQ==
+"@brightlayer-ui/react-native-components@^9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.0.tgz#4fedbf11bf69881db2e08b949364b62eaf0ff14f"
+  integrity sha512-JmdR9+7wUHXi6kmvGmXfhxIBi9r7fZ/sLBOR/bNj1hFl3h//3S7VHsq4M5JmYZq/IfzGYOjVoPeB5KrKkhMFCg==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
     "@callstack/react-theme-provider" "^3.0.9"

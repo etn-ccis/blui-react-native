@@ -12,8 +12,8 @@
     "dependencies": {
         "@brightlayer-ui/colors": "^4.0.0",
         "@brightlayer-ui/icons-svg": "^1.14.0",
-        "@brightlayer-ui/react-native-auth-workflow": "^8.0.1",
-        "@brightlayer-ui/react-native-components": "^9.0.0",
+        "@brightlayer-ui/react-native-auth-workflow": "^8.1.0",
+        "@brightlayer-ui/react-native-components": "^9.1.0",
         "@brightlayer-ui/react-native-progress-icons": "^2.0.0",
         "@brightlayer-ui/react-native-themes": "^8.0.0",
         "@brightlayer-ui/react-native-vector-icons": "^3.0.0",

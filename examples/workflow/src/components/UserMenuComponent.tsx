@@ -1,5 +1,6 @@
 import { InfoListItemProps, UserMenu } from '@brightlayer-ui/react-native-components';
 import React from 'react';
+import { View, Text } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import * as BLUIColors from '@brightlayer-ui/colors';
 import SelectDropdown from 'react-native-select-dropdown';
@@ -11,7 +12,7 @@ import { LocalStorage } from '../store/local-storage';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { revokeAccessToken, clearTokens, signOut } from '@okta/okta-react-native';
-import { IconFamily } from '@brightlayer-ui/react-native-components/dist/core/__types__';
+import { IconFamily } from '@brightlayer-ui/react-native-components/core/__types__';
 
 const SwapIcon: IconFamily = {
     family: 'material',
@@ -100,12 +101,40 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
                         void handleLanguageChange(item.value);
                     }}
                     data={languageOptions}
-                    buttonStyle={{ backgroundColor: theme.colors.background }}
-                    buttonTextStyle={{ color: theme.colors.primary }}
-                    rowTextForSelection={(item) => item.label}
-                    buttonTextAfterSelection={() => {
-                        const selectedLabel = languageOptions.find((option) => option.value === i18n.language)?.label;
-                        return selectedLabel || 'Select Language';
+                    renderButton={(selectedItem) => {
+                        const selectedLabel = selectedItem?.label || 'Select Language';
+                        return (
+                            <View
+                                style={{
+                                    backgroundColor: theme.colors.background,
+                                    paddingHorizontal: 8,
+                                    paddingVertical: 4,
+                                    borderRadius: 4,
+                                    minWidth: 120,
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <Text style={{ color: theme.colors.primary }}>{selectedLabel}</Text>
+                            </View>
+                        );
+                    }}
+                    renderItem={(item, index, isSelected) => (
+                        <View
+                            style={{
+                                padding: 12,
+                                backgroundColor: isSelected ? theme.colors.primaryContainer : 'transparent',
+                                minWidth: 120,
+                            }}
+                        >
+                            <Text style={{ color: theme.colors.onSurface }}>{item.label}</Text>
+                        </View>
+                    )}
+                    dropdownStyle={{
+                        backgroundColor: theme.colors.surface,
+                        borderRadius: 8,
+                        minWidth: 120,
+                        maxWidth: 150,
+                        marginTop: 4,
                     }}
                 />
             ),
