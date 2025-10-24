@@ -338,6 +338,7 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
                         {filterOptions.map((item, index) => (
                             <TouchableOpacity
                                 key={index}
+                                testID={`option-${item}`}
                                 style={[defaultStyles.dropDownItem, styles?.dropdownItem]}
                                 onPress={(): void => onTagsSelected(item)}
                             >
