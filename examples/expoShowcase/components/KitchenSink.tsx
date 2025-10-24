@@ -49,7 +49,7 @@ import {
     DrawerNavGroup,
     DrawerNavItem,
     Grade,
-    // IconSwitch,
+    IconSwitch,
     Chip,
     Icon,
 } from '@brightlayer-ui/react-native-components';
@@ -141,14 +141,14 @@ export const KitchenSink: React.FC = (): JSX.Element => {
     });
 
     const [state, setState] = React.useState({ open: false });
-    // const [toggledIconValue, settoggledIconValue] = useState([true, true, false, false, true, true, false, false]);
-    // const handleIconSwitchChange = (indexNumber: number): void => {
-    //     settoggledIconValue((prevState) => {
-    //         const newState = [...prevState];
-    //         newState[indexNumber] = !newState[indexNumber];
-    //         return newState;
-    //     });
-    // };
+    const [toggledIconValue, settoggledIconValue] = useState([true, true, false, false, true, true, false, false]);
+    const handleIconSwitchChange = (indexNumber: number): void => {
+        settoggledIconValue((prevState) => {
+            const newState = [...prevState];
+            newState[indexNumber] = !newState[indexNumber];
+            return newState;
+        });
+    };
 
     const onStateChange = ({ open }: { open: boolean }): void => setState({ open });
 
@@ -278,80 +278,80 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             </Card>
             <Card style={styles.card}>
                 <Card.Title title="Icon Switch" />
-                {/* <Card.Content>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              value={toggledIconValue[0]}
-              onValueChange={() => {
-                handleIconSwitchChange(0);
-              }}
-            />
-          </View>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              value={toggledIconValue[1]}
-              onValueChange={() => {
-                handleIconSwitchChange(1);
-              }}
-              showIcon
-            />
-          </View>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              value={toggledIconValue[2]}
-              onValueChange={() => {
-                handleIconSwitchChange(2);
-              }}
-            />
-          </View>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              showIcon
-              value={toggledIconValue[3]}
-              onValueChange={() => {
-                handleIconSwitchChange(3);
-              }}
-            />
-          </View>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              value={toggledIconValue[4]}
-              onValueChange={() => {
-                handleIconSwitchChange(4);
-              }}
-              disabled
-            />
-          </View>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              value={toggledIconValue[5]}
-              onValueChange={() => {
-                handleIconSwitchChange(5);
-              }}
-              showIcon
-              disabled
-            />
-          </View>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              value={toggledIconValue[6]}
-              onValueChange={() => {
-                handleIconSwitchChange(6);
-              }}
-              disabled
-            />
-          </View>
-          <View style={{padding: 10}}>
-            <IconSwitch
-              value={toggledIconValue[7]}
-              onValueChange={() => {
-                handleIconSwitchChange(7);
-              }}
-              showIcon
-              disabled
-            />
-          </View>
-        </Card.Content> */}
+                <Card.Content>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            value={toggledIconValue[0]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(0);
+                            }}
+                        />
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            value={toggledIconValue[1]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(1);
+                            }}
+                            showIcon
+                        />
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            value={toggledIconValue[2]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(2);
+                            }}
+                        />
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            showIcon
+                            value={toggledIconValue[3]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(3);
+                            }}
+                        />
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            value={toggledIconValue[4]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(4);
+                            }}
+                            disabled
+                        />
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            value={toggledIconValue[5]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(5);
+                            }}
+                            showIcon
+                            disabled
+                        />
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            value={toggledIconValue[6]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(6);
+                            }}
+                            disabled
+                        />
+                    </View>
+                    <View style={{ padding: 10 }}>
+                        <IconSwitch
+                            value={toggledIconValue[7]}
+                            onValueChange={() => {
+                                handleIconSwitchChange(7);
+                            }}
+                            showIcon
+                            disabled
+                        />
+                    </View>
+                </Card.Content>
             </Card>
             <Card style={styles.card}>
                 <Card.Title title="Chip" />
