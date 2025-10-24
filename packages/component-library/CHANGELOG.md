@@ -1,5 +1,11 @@
 # Change Log
 
+## v9.1.1 (Unreleased)
+
+### Fixed
+
+- Auto complete component suggestion menu always opened ([169](https://github.com/etn-ccis/blui-react-native/issues/169))
+
 ## v9.1.0 (October 16, 2025)
 
 ### Changed
