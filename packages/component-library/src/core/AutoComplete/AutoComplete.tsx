@@ -204,16 +204,27 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
     const [filterOptions, setFilterOptions] = useState(filterChips(options, value));
     const [hideDropDownTags, setHideDropDownTags] = useState(true);
     const [textInput, setTextInput] = useState('');
+    const [isFocused, setIsFocused] = useState(false);
     const tagInputRef = useRef(null as unknown as RNTextInput);
     const defaultStyles = AutocompleteStyles(theme, filterOptions, hideDropDownTags);
 
     const handleTextInputPress = (): void => {
-        tagInputRef.current?.focus();
+        if (isFocused) {
+            // If already focused, blur the input
+            tagInputRef.current?.blur();
+        } else {
+            // If not focused, focus the input
+            setTimeout(() => {
+                tagInputRef.current?.focus();
+            }, 100);
+        }
     };
     const handleTextInputFocus = (): void => {
+        setIsFocused(true);
         setHideDropDownTags(false);
     };
     const handleOnBlurTags = (): void => {
+        setIsFocused(false);
         setHideDropDownTags(true);
     };
     const handleOnChangeText = (text: string): void => {
