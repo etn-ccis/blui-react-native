@@ -210,10 +210,9 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
 
     const handleTextInputPress = (): void => {
         if (isFocused) {
-            // If already focused, blur the input
             tagInputRef.current?.blur();
         } else {
-            // If not focused, focus the input
+            // Adding delay to focus the input post TouchableHighlight uses the focus
             setTimeout(() => {
                 tagInputRef.current?.focus();
             }, 100);
