@@ -153,7 +153,12 @@ export const Chip: React.FC<ChipProps> = (props) => {
     const chipStyle = isElevated
         ? {}
         : selected
-          ? {}
+          ? disabled
+              ? {
+                    borderWidth: 1,
+                    borderColor: theme.colors.disabled,
+                }
+              : {}
           : {
                 borderWidth: 1,
                 borderColor: borderColor ? borderColor : disabled ? theme.colors.disabled : theme.colors.outline,
