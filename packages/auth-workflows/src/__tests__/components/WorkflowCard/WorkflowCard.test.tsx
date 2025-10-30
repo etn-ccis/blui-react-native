@@ -66,7 +66,7 @@ describe('WorkflowCard Test', () => {
 
         // Verify the component renders
         expect(render).toBeTruthy();
-        
+
         // Restore mock
         jest.restoreAllMocks();
     });
