@@ -1,0 +1,142 @@
+name: Tagging
+
+env:
+    GH_TOKEN: ${{ github.token }}
+    CURRENT_BRANCH: ${{ github.ref_name }}
+
+permissions:
+    contents: write
+    actions: read
+    releases: write  
+
+on:
+    # Only trigger on workflow completion for master branch
+    workflow_run:
+        workflows: ["Build"]
+        types:
+            - completed
+        branches: [master]
+
+jobs:
+    tag-packages:
+        runs-on: ubuntu-latest
+        # Only run if workflow completed successfully
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  ref: ${{ github.event.workflow_run.head_branch }}
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 8
+            - run: pnpm install --frozen-lockfile
+            
+            # Smart detection: check which packages have new versions that need tagging
+            - name: Detect packages to tag
+              id: detect_packages
+              run: |
+                # Function to check if a package needs tagging
+                check_package_needs_tag() {
+                    local package_dir=$1
+                    local package_name=$2
+                    local npm_package_name=$3
+                    
+                    if [ ! -f "$package_dir/package.json" ]; then
+                        echo "false"
+                        return
+                    fi
+                    
+                    # Get current version from package.json
+                    local current_version=$(node -p "require('./$package_dir/package.json').version")
+                    
+                    # Check if version is a major version (x.0.0)
+                    if [[ ! "$current_version" =~ ^[0-9]+\.0\.0$ ]]; then
+                        echo "false"
+                        return
+                    fi
+                    
+                    # Check if tag already exists for this version
+                    local tag_exists=$(git tag -l "*$current_version*" | grep -q . && echo "true" || echo "false")
+                    if [ "$tag_exists" = "true" ]; then
+                        echo "false"
+                        return
+                    fi
+                    
+                    # Package meets criteria for tagging
+                    echo "✅ Package $npm_package_name@$current_version ready for tagging"
+                    echo "true"
+                }
+                
+                # Check each package with their NPM package names
+                auth_workflows_needs_tag=$(check_package_needs_tag "packages/auth-workflows" "auth-workflows" "@brightlayer-ui/react-native-auth-workflow")
+                themes_needs_tag=$(check_package_needs_tag "packages/themes" "themes" "@brightlayer-ui/react-native-themes")
+                component_library_needs_tag=$(check_package_needs_tag "packages/component-library" "component-library" "@brightlayer-ui/react-native-components")
+                progress_icons_needs_tag=$(check_package_needs_tag "packages/progress-icons" "progress-icons" "@brightlayer-ui/react-native-progress-icons")
+                cli_templates_needs_tag=$(check_package_needs_tag "packages/cli-templates" "cli-templates" "@brightlayer-ui/cli-templates-react-native")
+                
+                echo "auth_workflows_needs_tag=$auth_workflows_needs_tag" >> $GITHUB_OUTPUT
+                echo "themes_needs_tag=$themes_needs_tag" >> $GITHUB_OUTPUT
+                echo "component_library_needs_tag=$component_library_needs_tag" >> $GITHUB_OUTPUT
+                echo "progress_icons_needs_tag=$progress_icons_needs_tag" >> $GITHUB_OUTPUT
+                echo "cli_templates_needs_tag=$cli_templates_needs_tag" >> $GITHUB_OUTPUT
+                
+                echo "Tagging analysis for major versions only:"
+                echo "- Auth Workflows: $auth_workflows_needs_tag"
+                echo "- Themes: $themes_needs_tag" 
+                echo "- Component Library: $component_library_needs_tag"
+                echo "- Progress Icons: $progress_icons_needs_tag"
+                echo "- CLI Templates: $cli_templates_needs_tag"
+            
+            # Build only packages that need tagging
+            - name: Build themes
+              if: steps.detect_packages.outputs.themes_needs_tag == 'true'
+              run: pnpm build
+              working-directory: packages/themes
+              continue-on-error: true
+            - name: Build component library  
+              if: steps.detect_packages.outputs.component_library_needs_tag == 'true'
+              run: pnpm build
+              working-directory: packages/component-library
+              continue-on-error: true
+            - name: Build auth workflows
+              if: steps.detect_packages.outputs.auth_workflows_needs_tag == 'true'
+              run: pnpm build
+              working-directory: packages/auth-workflows
+              continue-on-error: true
+            - name: Build progress icons
+              if: steps.detect_packages.outputs.progress_icons_needs_tag == 'true'
+              run: pnpm build
+              working-directory: packages/progress-icons
+              continue-on-error: true
+            
+            # Tag only packages that need tagging
+            - name: Tag auth workflows
+              if: steps.detect_packages.outputs.auth_workflows_needs_tag == 'true'
+              run: pnpm tag:package -b ${CURRENT_BRANCH}
+              working-directory: packages/auth-workflows
+              continue-on-error: true
+            - name: Tag themes
+              if: steps.detect_packages.outputs.themes_needs_tag == 'true'
+              run: pnpm tag:package -b ${CURRENT_BRANCH}
+              working-directory: packages/themes  
+              continue-on-error: true
+            - name: Tag component library
+              if: steps.detect_packages.outputs.component_library_needs_tag == 'true'
+              run: pnpm tag:package -b ${CURRENT_BRANCH}
+              working-directory: packages/component-library
+              continue-on-error: true
+            - name: Tag progress icons
+              if: steps.detect_packages.outputs.progress_icons_needs_tag == 'true'
+              run: pnpm tag:package -b ${CURRENT_BRANCH}
+              working-directory: packages/progress-icons
+              continue-on-error: true
+            - name: Tag CLI templates
+              if: steps.detect_packages.outputs.cli_templates_needs_tag == 'true'
+              run: pnpm tag:package -b ${CURRENT_BRANCH}
+              working-directory: packages/cli-templates
+              continue-on-error: true
