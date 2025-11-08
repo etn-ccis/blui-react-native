@@ -10,15 +10,16 @@ import { WorkflowCardHeader } from './WorkflowCardHeader';
 
 const defaultImage = require('../../assets/images/background.png');
 
-const MAX_CARD_HEIGHT = 730;
-const MAX_CARD_WIDTH = 450;
-
 const makeStyles = ({
     insets,
     theme,
+    width,
+    height,
 }: {
     insets: EdgeInsets;
     theme: ExtendedTheme;
+    width: number;
+    height: number;
 }): StyleSheet.NamedStyles<{
     mobile: CardProps['style'];
     tablet: CardProps['style'];
@@ -31,8 +32,8 @@ const makeStyles = ({
             borderRadius: 0,
         },
         tablet: {
-            height: MAX_CARD_HEIGHT,
-            width: MAX_CARD_WIDTH,
+            height: height * 0.95,
+            width: width * 0.9,
             borderRadius: theme.roundness * 6,
             overflow: 'hidden',
         },
@@ -56,7 +57,7 @@ export const WorkflowCard: React.FC<WorkflowCardBaseProps> = (props) => {
 
     const hasWorkflowCardHeader = hasWorkflowCardHeaderRecursive(children);
     const insets = useSafeAreaInsets();
-    const styles = makeStyles({ insets, theme });
+    const styles = makeStyles({ insets, theme, width, height });
 
     return (
         <ImageBackground
