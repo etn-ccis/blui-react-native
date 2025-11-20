@@ -29,6 +29,34 @@ const makeStyles = (
         },
     });
 
+export { makeStyles };
+
+export const getDefaultProps = (): Partial<DrawerProps> => ({
+    activeItemBackgroundShape: 'square',
+    chevron: false,
+    divider: false,
+    hidePadding: true,
+    styles: {},
+});
+
+export const processSectionChildren = (
+    children: React.ReactNode,
+    displayName: string,
+    inherit: boolean,
+    defaultProps: Partial<DrawerProps>,
+    props: DrawerProps,
+    theme: ExtendedTheme
+): React.JSX.Element[] =>
+    findChildByType(children, [displayName])
+        .slice(0, 1)
+        .map((child) => {
+            let inheritableProps = {};
+            if (inherit) {
+                inheritableProps = inheritSharedProps({ ...defaultProps, ...props, theme }, child.props);
+            }
+            return React.cloneElement(child, inheritableProps);
+        });
+
 export type DrawerProps = ViewProps &
     AllSharedProps & {
         /** The itemID of the currently active / selected item */
@@ -82,30 +110,13 @@ export const Drawer: React.FC<DrawerProps> = (props) => {
     const theme = useExtendedTheme(themeOverride);
     const insets = useSafeAreaInsets();
 
-    const defaultProps: Partial<DrawerProps> = useMemo(
-        () => ({
-            activeItemBackgroundShape: 'square',
-            chevron: false,
-            divider: false,
-            hidePadding: true,
-            styles: {},
-        }),
-        []
-    );
+    const defaultProps = useMemo(getDefaultProps, []);
 
     const defaultStyles = makeStyles(props, theme, insets);
 
     const getSectionByDisplayName = useCallback(
         (displayName: string, inherit = false): React.JSX.Element[] =>
-            findChildByType(props.children, [displayName])
-                .slice(0, 1)
-                .map((child) => {
-                    let inheritableProps = {};
-                    if (inherit) {
-                        inheritableProps = inheritSharedProps({ ...defaultProps, ...props, theme }, child.props);
-                    }
-                    return React.cloneElement(child, inheritableProps);
-                }),
+            processSectionChildren(props.children, displayName, inherit, defaultProps, props, theme),
         [props, theme, defaultProps]
     );
 
