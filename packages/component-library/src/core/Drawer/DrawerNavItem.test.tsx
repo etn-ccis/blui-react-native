@@ -1,7 +1,6 @@
 import React from 'react';
 import { cleanup } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
-import { View, Text } from 'react-native';
 import { DrawerContext } from './context/drawer-context';
 import { NavGroupContext } from './context';
 
