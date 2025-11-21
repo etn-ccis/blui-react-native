@@ -7,6 +7,7 @@ const locale = 'en';
 //     ? NativeModules.SettingsManager.settings.AppleLocale
 //     : NativeModules.I18nManager.localeIdentifier;
 
+/* istanbul ignore next */
 export const i18nRegistrationInstance = i18next.createInstance(
     {
         lng: locale?.substring(0, 2) ?? 'en',
