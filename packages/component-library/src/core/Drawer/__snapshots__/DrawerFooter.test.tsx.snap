@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DrawerFooter renders correctly when divider prop changes 1`] = `null`;
+
+exports[`DrawerFooter renders correctly when divider prop changes 2`] = `null`;
+
+exports[`DrawerFooter renders correctly with children 1`] = `null`;
+
+exports[`DrawerFooter renders correctly with minimal props 1`] = `null`;
+
+exports[`DrawerFooter renders with JSX expression as children 1`] = `null`;
+
+exports[`DrawerFooter renders with complex children 1`] = `null`;
+
+exports[`DrawerFooter renders with conditional children 1`] = `null`;
+
+exports[`DrawerFooter renders with divider by default 1`] = `null`;
+
+exports[`DrawerFooter renders with divider when divider is true 1`] = `null`;
+
+exports[`DrawerFooter renders with divider=false and children 1`] = `null`;
+
+exports[`DrawerFooter renders with multiple child elements 1`] = `null`;
+
+exports[`DrawerFooter renders with nested components 1`] = `null`;
+
+exports[`DrawerFooter renders with null children 1`] = `null`;
+
+exports[`DrawerFooter renders with styled children 1`] = `null`;
+
+exports[`DrawerFooter renders with undefined children 1`] = `null`;
+
+exports[`DrawerFooter renders without children prop 1`] = `null`;
+
+exports[`DrawerFooter renders without divider when divider is false 1`] = `null`;

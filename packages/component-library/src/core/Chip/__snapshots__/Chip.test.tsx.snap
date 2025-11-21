@@ -1,8 +1,34 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
+exports[`Chip component applies custom styles 1`] = `null`;
+
+exports[`Chip component renders avatar with close icon when onClose is provided 1`] = `null`;
+
 exports[`Chip component renders correctly in elevated mode 1`] = `null`;
 
+exports[`Chip component renders correctly in elevated mode when disabled 1`] = `null`;
+
+exports[`Chip component renders correctly in elevated mode when disabled without elevated prop 1`] = `null`;
+
+exports[`Chip component renders correctly in elevated mode when not disabled with elevated prop 1`] = `null`;
+
+exports[`Chip component renders correctly in elevated mode when selected 1`] = `null`;
+
+exports[`Chip component renders correctly in elevated mode when selected and disabled 1`] = `null`;
+
 exports[`Chip component renders correctly in outlined mode 1`] = `null`;
+
+exports[`Chip component renders correctly in outlined mode when disabled 1`] = `null`;
+
+exports[`Chip component renders correctly in outlined mode when not selected 1`] = `null`;
+
+exports[`Chip component renders correctly in outlined mode when selected and disabled 1`] = `null`;
+
+exports[`Chip component renders correctly in outlined mode when selected and disabled with border 1`] = `null`;
+
+exports[`Chip component renders correctly in outlined mode when selected and not disabled 1`] = `null`;
+
+exports[`Chip component renders correctly in outlined mode when selected and not disabled without border 1`] = `null`;
 
 exports[`Chip component renders correctly when disabled 1`] = `null`;
 
@@ -12,6 +38,36 @@ exports[`Chip component renders correctly with an avatar 1`] = `null`;
 
 exports[`Chip component renders correctly with an icon 1`] = `null`;
 
+exports[`Chip component renders correctly with avatar having size equal to or less than 24 1`] = `null`;
+
+exports[`Chip component renders correctly with avatar having size larger than 24 1`] = `null`;
+
+exports[`Chip component renders correctly with avatar having size prop 1`] = `null`;
+
+exports[`Chip component renders correctly with borderColor and disabled in outlined mode 1`] = `null`;
+
+exports[`Chip component renders correctly with borderColor and not disabled in outlined mode 1`] = `null`;
+
+exports[`Chip component renders correctly with custom borderColor 1`] = `null`;
+
+exports[`Chip component renders correctly with custom chipColor 1`] = `null`;
+
+exports[`Chip component renders correctly with custom iconColor 1`] = `null`;
+
+exports[`Chip component renders correctly with custom textColor 1`] = `null`;
+
 exports[`Chip component renders correctly with default props 1`] = `null`;
 
+exports[`Chip component renders icon with DefaultTextColor when neither iconColor nor textColor is provided 1`] = `null`;
+
+exports[`Chip component renders icon with close icon when onClose is provided 1`] = `null`;
+
+exports[`Chip component renders icon with textColor when iconColor is not provided 1`] = `null`;
+
 exports[`Chip component renders only the icon when both an icon and an avatar are provided 1`] = `null`;
+
+exports[`Chip component renders with all color props together 1`] = `null`;
+
+exports[`Chip component renders with onClose callback and shows close icon 1`] = `null`;
+
+exports[`Chip component renders without icon and without avatar 1`] = `null`;

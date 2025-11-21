@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DrawerBody applies props to DrawerNavGroup when child has partial props 1`] = `null`;
+
+exports[`DrawerBody child props override inherited props 1`] = `null`;
+
+exports[`DrawerBody handles conditional children 1`] = `null`;
+
+exports[`DrawerBody handles false children 1`] = `null`;
+
+exports[`DrawerBody handles null children 1`] = `null`;
+
+exports[`DrawerBody handles undefined children 1`] = `null`;
+
+exports[`DrawerBody inherits activeChevronColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits activeItemBackgroundColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits activeItemBackgroundShape prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits activeItemFontColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits activeItemIconColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits backgroundColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits chevron prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits chevronColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits collapseIcon prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits disableActiveItemParentStyles prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits divider prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits expandIcon prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits hidePadding prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits itemFontColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits itemIconColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits nestedBackgroundColor prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody inherits nestedDivider prop to DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody renders children array with key prop 1`] = `null`;
+
+exports[`DrawerBody renders correctly with children 1`] = `null`;
+
+exports[`DrawerBody renders correctly with combined styles and style props 1`] = `null`;
+
+exports[`DrawerBody renders correctly with custom styles 1`] = `null`;
+
+exports[`DrawerBody renders correctly with minimal props 1`] = `null`;
+
+exports[`DrawerBody renders correctly with multiple DrawerNavGroup children 1`] = `null`;
+
+exports[`DrawerBody renders correctly with style prop 1`] = `null`;
+
+exports[`DrawerBody renders mixed children (DrawerNavGroup and other elements) 1`] = `null`;
+
+exports[`DrawerBody renders non-DrawerNavGroup children without modification 1`] = `null`;
+
+exports[`DrawerBody renders with ScrollView props 1`] = `null`;
+
+exports[`DrawerBody renders with accessibility props 1`] = `null`;
+
+exports[`DrawerBody renders with all inheritable props 1`] = `null`;
+
+exports[`DrawerBody renders with empty children array 1`] = `null`;
+
+exports[`DrawerBody renders with multiple DrawerNavGroups and inherits props correctly 1`] = `null`;
+
+exports[`DrawerBody renders with theme override 1`] = `null`;

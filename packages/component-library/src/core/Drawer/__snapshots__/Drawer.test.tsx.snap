@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Drawer applies combined styles from styles prop and style prop 1`] = `null`;
+
+exports[`Drawer applies theme override correctly 1`] = `null`;
+
+exports[`Drawer handles DrawerBody with inherited props from parent Drawer 1`] = `null`;
+
+exports[`Drawer handles complex children array with mixed section types 1`] = `null`;
+
+exports[`Drawer handles complex nested structure 1`] = `null`;
+
+exports[`Drawer handles mixed valid and invalid children 1`] = `null`;
+
+exports[`Drawer handles null/undefined/false children 1`] = `null`;
+
+exports[`Drawer handles theme override properly 1`] = `null`;
+
+exports[`Drawer inherits all shared props to DrawerBody when specified 1`] = `null`;
+
+exports[`Drawer inherits shared props to DrawerBody 1`] = `null`;
+
+exports[`Drawer passes DrawerContext values correctly 1`] = `null`;
+
+exports[`Drawer passes context values through DrawerContext 1`] = `null`;
+
+exports[`Drawer processes sections with inherit flag variations 1`] = `null`;
+
+exports[`Drawer processes sections without crashing when children is an empty array 1`] = `null`;
+
+exports[`Drawer re-renders with different children to trigger useCallback dependencies 1`] = `null`;
+
+exports[`Drawer renders DrawerBody with child props overriding parent props 1`] = `null`;
+
+exports[`Drawer renders all four section types correctly 1`] = `null`;
+
+exports[`Drawer renders and invokes getSectionByDisplayName for all section types 1`] = `null`;
+
+exports[`Drawer renders correctly when only first of each section type is used 1`] = `null`;
+
+exports[`Drawer renders correctly with DrawerBody 1`] = `null`;
+
+exports[`Drawer renders correctly with DrawerFooter 1`] = `null`;
+
+exports[`Drawer renders correctly with DrawerHeader 1`] = `null`;
+
+exports[`Drawer renders correctly with DrawerSubheader 1`] = `null`;
+
+exports[`Drawer renders correctly with activeChevronColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with activeItem prop 1`] = `null`;
+
+exports[`Drawer renders correctly with activeItemBackgroundColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with activeItemBackgroundShape prop 1`] = `null`;
+
+exports[`Drawer renders correctly with activeItemFontColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with activeItemIconColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with additional ViewProps 1`] = `null`;
+
+exports[`Drawer renders correctly with all sections 1`] = `null`;
+
+exports[`Drawer renders correctly with chevron prop 1`] = `null`;
+
+exports[`Drawer renders correctly with chevronColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with collapseIcon prop 1`] = `null`;
+
+exports[`Drawer renders correctly with custom backgroundColor 1`] = `null`;
+
+exports[`Drawer renders correctly with custom style prop 1`] = `null`;
+
+exports[`Drawer renders correctly with custom styles 1`] = `null`;
+
+exports[`Drawer renders correctly with disableActiveItemParentStyles prop 1`] = `null`;
+
+exports[`Drawer renders correctly with divider prop 1`] = `null`;
+
+exports[`Drawer renders correctly with expandIcon prop 1`] = `null`;
+
+exports[`Drawer renders correctly with hidePadding prop set to false 1`] = `null`;
+
+exports[`Drawer renders correctly with itemFontColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with itemIconColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with minimal props 1`] = `null`;
+
+exports[`Drawer renders correctly with multiple DrawerBodies (only renders first) 1`] = `null`;
+
+exports[`Drawer renders correctly with multiple DrawerFooters (only renders first) 1`] = `null`;
+
+exports[`Drawer renders correctly with multiple DrawerHeaders (only renders first) 1`] = `null`;
+
+exports[`Drawer renders correctly with multiple DrawerSubheaders (only renders first) 1`] = `null`;
+
+exports[`Drawer renders correctly with nestedBackgroundColor prop 1`] = `null`;
+
+exports[`Drawer renders correctly with nestedDivider prop 1`] = `null`;
+
+exports[`Drawer renders correctly with non-drawer children (should be ignored) 1`] = `null`;
+
+exports[`Drawer renders correctly with onItemSelect callback 1`] = `null`;
+
+exports[`Drawer renders correctly with theme override 1`] = `null`;
+
+exports[`Drawer renders multiple sections and only shows first of each type 1`] = `null`;
+
+exports[`Drawer renders with all default props explicitly set 1`] = `null`;
+
+exports[`Drawer renders with all possible view props 1`] = `null`;
+
+exports[`Drawer renders with conditional children 1`] = `null`;
+
+exports[`Drawer renders with different theme values to trigger makeStyles 1`] = `null`;
+
+exports[`Drawer renders with empty children 1`] = `null`;
+
+exports[`Drawer renders with explicit backgroundColor value provided 1`] = `null`;
+
+exports[`Drawer renders with multiple getSectionByDisplayName calls through different section types 1`] = `null`;
+
+exports[`Drawer renders with undefined backgroundColor to use theme default 1`] = `null`;
+
+exports[`Drawer renders with undefined children 1`] = `null`;
+
+exports[`Drawer renders without backgroundColor to use default theme color 1`] = `null`;
+
+exports[`Drawer updates props to trigger dependency array changes 1`] = `null`;
+
+exports[`Drawer updates when children change to trigger useCallback dependencies 1`] = `null`;
+
+exports[`Drawer uses provided backgroundColor over theme default 1`] = `null`;
+
+exports[`Drawer uses theme default color when backgroundColor is not provided 1`] = `null`;
+
+exports[`Drawer verifies child prop override scenario 1`] = `null`;
+
+exports[`Drawer verifies complete prop inheritance scenario 1`] = `null`;
+
+exports[`Drawer verifies theme passing scenario 1`] = `null`;

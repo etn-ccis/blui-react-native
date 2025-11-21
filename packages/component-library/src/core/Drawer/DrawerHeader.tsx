@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback } from 'react';
+import React, { ReactNode } from 'react';
 import {
     StyleSheet,
     View,
@@ -22,7 +22,77 @@ import { useFontScale, useFontScaleSettings } from '../__contexts__/font-scale-c
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 import { useFontStyles } from '../Utility/shared';
 
-const makeStyles = (
+export const getIcon = (
+    icon: IconSource | undefined,
+    defaultStyles: any,
+    styles: any,
+    fontColor: string | undefined,
+    onIconPress: (() => void) | undefined,
+    disableScaling: boolean | undefined,
+    themeOnSurface: string
+): React.JSX.Element | undefined => {
+    if (icon) {
+        return (
+            <View style={[defaultStyles.icon, styles.icon]}>
+                <TouchableOpacity
+                    testID={'drawer-header-navigation'}
+                    onPress={onIconPress}
+                    style={{ padding: 8, marginLeft: -8 }}
+                    disabled={!onIconPress}
+                >
+                    <Icon
+                        source={icon}
+                        size={24}
+                        color={fontColor || themeOnSurface}
+                        allowFontScaling={!disableScaling}
+                    />
+                </TouchableOpacity>
+            </View>
+        );
+    }
+};
+
+export const getHeaderContent = (
+    title: string | undefined,
+    subtitle: string | undefined,
+    titleContent: ReactNode | undefined,
+    defaultStyles: any,
+    styles: any
+): ReactNode =>
+    titleContent || (
+        <View style={[defaultStyles.textContent, styles.textContent]}>
+            {title && (
+                <Text variant={'headlineSmall'} style={[defaultStyles.title, styles.title]} numberOfLines={1}>
+                    {title}
+                </Text>
+            )}
+            {subtitle && (
+                <Text variant={'bodyMedium'} style={[defaultStyles.subtitle, styles.subtitle]} numberOfLines={1}>
+                    {subtitle}
+                </Text>
+            )}
+        </View>
+    );
+
+export const getBackgroundImage = (
+    backgroundImage: ImageSourcePropType | undefined,
+    defaultStyles: any,
+    styles: any
+): ReactNode | undefined => {
+    if (backgroundImage) {
+        return (
+            <View style={[defaultStyles.backgroundImageWrapper, styles.backgroundImageWrapper]}>
+                <Image
+                    source={backgroundImage}
+                    resizeMethod={'resize'}
+                    style={[defaultStyles.backgroundImage as ImageStyle, styles.backgroundImage]}
+                />
+            </View>
+        );
+    }
+};
+
+export const DrawerHeaderMakeStyles = (
     props: DrawerHeaderProps,
     theme: ExtendedTheme,
     insets: EdgeInsets,
@@ -190,7 +260,7 @@ export const DrawerHeader: React.FC<DrawerHeaderProps> = (props) => {
     const { disableScaling } = useFontScaleSettings();
     const fontScale = useFontScale();
     const { fontStyleSemiBold, fontStyleRegular } = useFontStyles();
-    const defaultStyles = makeStyles(
+    const defaultStyles = DrawerHeaderMakeStyles(
         props,
         theme,
         insets,
@@ -200,72 +270,25 @@ export const DrawerHeader: React.FC<DrawerHeaderProps> = (props) => {
         fontStyleRegular
     );
 
-    const getIcon = useCallback((): React.JSX.Element | undefined => {
-        if (icon) {
-            return (
-                <View style={[defaultStyles.icon, styles.icon]}>
-                    <TouchableOpacity
-                        testID={'drawer-header-navigation'}
-                        onPress={onIconPress}
-                        style={{ padding: 8, marginLeft: -8 }}
-                        disabled={!onIconPress}
-                    >
-                        <Icon
-                            source={icon}
-                            size={24}
-                            color={fontColor || theme.colors.onSurface}
-                            allowFontScaling={!disableScaling}
-                        />
-                    </TouchableOpacity>
-                </View>
-            );
-        }
-    }, [defaultStyles, styles, icon, fontColor, onIconPress, disableScaling, theme.colors.onSurface]);
-
-    const getHeaderContent = useCallback(
-        (): ReactNode =>
-            titleContent || (
-                <View style={[defaultStyles.textContent, styles.textContent]}>
-                    {title && (
-                        <Text variant={'headlineSmall'} style={[defaultStyles.title, styles.title]} numberOfLines={1}>
-                            {title}
-                        </Text>
-                    )}
-                    {subtitle && (
-                        <Text
-                            variant={'bodyMedium'}
-                            style={[defaultStyles.subtitle, styles.subtitle]}
-                            numberOfLines={1}
-                        >
-                            {subtitle}
-                        </Text>
-                    )}
-                </View>
-            ),
-        [title, subtitle, titleContent, defaultStyles, styles]
+    const iconElement = getIcon(
+        icon,
+        defaultStyles,
+        styles,
+        fontColor,
+        onIconPress,
+        disableScaling,
+        theme.colors.onSurface
     );
-
-    const getBackgroundImage = useCallback((): ReactNode | undefined => {
-        if (backgroundImage) {
-            return (
-                <View style={[defaultStyles.backgroundImageWrapper, styles.backgroundImageWrapper]}>
-                    <Image
-                        source={backgroundImage}
-                        resizeMethod={'resize'}
-                        style={[defaultStyles.backgroundImage as ImageStyle, styles.backgroundImage]}
-                    />
-                </View>
-            );
-        }
-    }, [backgroundImage, defaultStyles, styles]);
+    const headerContent = getHeaderContent(title, subtitle, titleContent, defaultStyles, styles);
+    const backgroundImageElement = getBackgroundImage(backgroundImage, defaultStyles, styles);
 
     return (
         <TouchableWithoutFeedback onPress={onPress}>
             <View style={[defaultStyles.root, styles.root, style]} {...viewProps}>
-                {getBackgroundImage()}
+                {backgroundImageElement}
                 <View style={[defaultStyles.content, styles.content, { paddingLeft: icon ? 0 : 16 }]}>
-                    {icon && getIcon()}
-                    {getHeaderContent()}
+                    {icon && iconElement}
+                    {headerContent}
                 </View>
                 <Divider />
             </View>
