@@ -1,7 +1,7 @@
 import React, { createRef } from 'react';
 import { cleanup } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
-import { TextInput, Text } from 'react-native';
+import { TextInput } from 'react-native';
 import { FontScaleProvider } from '../__contexts__/font-scale-context';
 
 // Mock react-native's I18nManager FIRST before any other imports

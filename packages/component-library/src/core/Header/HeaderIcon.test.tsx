@@ -14,6 +14,7 @@ jest.mock('../__contexts__/font-scale-context', () => ({
 
 // Mock the Icon component
 jest.mock('../Icon', () => {
+    // eslint-disable-next-line @typescript-eslint/no-shadow
     const { Text } = jest.requireActual('react-native');
     return {
         Icon: ({ source, size, color, allowFontScaling }: any): React.ReactElement => {
