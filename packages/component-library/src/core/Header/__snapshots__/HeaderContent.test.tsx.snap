@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HeaderContent HeaderContent - Actions calculates action panel width with search icon 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Actions renders with both icon and component actions 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Actions renders with component actions 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Actions renders with icon actions 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Actions renders without actions 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Basic Rendering renders with custom theme 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Basic Rendering renders with title and subtitle 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Basic Rendering renders with title as custom component 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Basic Rendering renders with title as string 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Basic Rendering renders with title only 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Basic Rendering renders with title, subtitle, and info 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Basic Rendering renders without subtitle or info 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Color Context renders with custom text color 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Color Context renders with dark text color 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Complex Scenarios calculates marginBottom correctly with title and subtitle 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Complex Scenarios calculates marginBottom correctly with title only 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Complex Scenarios renders in search mode with actions 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Complex Scenarios renders with all props combined 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Complex Scenarios renders with title and info but no subtitle 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Complex Scenarios renders with title and subtitle but no info 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles applies custom fontSize to info 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles applies custom fontSize to subtitle 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles applies custom fontSize to title 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles renders with all custom styles 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles renders with custom info style 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles renders with custom root style 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles renders with custom search style 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles renders with custom subtitle style 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Custom Styles renders with custom title style 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Edge Cases renders with empty string info 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Edge Cases renders with empty string subtitle 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Edge Cases renders with empty string title 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Edge Cases renders with empty styles object 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Edge Cases renders with no actions specified (default) 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Header Heights renders with collapsed height 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Header Heights renders with custom height 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Header Heights renders with extended height 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Header Heights renders with regular height 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Info Variations renders with all text content (title, subtitle, info) 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Info Variations renders with info as custom component 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Info Variations renders with info as string 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Info Variations renders without info when undefined 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Search Mode renders search input when searching is true 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Search Mode renders search with autoCorrect enabled 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Search Mode renders search with autoFocus enabled 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Search Mode renders search with custom autoCapitalize 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Search Mode renders search with custom placeholder 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Search Mode renders title when searching is false 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Subtitle Variations renders with subtitle as custom component 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Subtitle Variations renders with subtitle as string 1`] = `null`;
+
+exports[`HeaderContent HeaderContent - Subtitle Variations renders without subtitle when undefined 1`] = `null`;

@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HeaderNavigationIcon Basic Rendering renders with icon as object 1`] = `null`;
+
+exports[`HeaderNavigationIcon Basic Rendering renders with icon as string 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios handles font scaling with maxScale in search mode 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios prioritizes search mode over navigation icon 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders in RTL mode when not searching with icon 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders in search mode with onClose as falsy value 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders normal mode with font scaling disabled 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders normal mode with icon and onPress 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders normal mode with varying font scale values 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders search mode with RTL disabled and disableScaling true 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders search mode with RTL enabled and disableScaling false 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders search mode with RTL enabled and disableScaling true 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders search mode with all props and onClose callback 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders search mode with varying font scale and custom color 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders with icon but without onPress callback 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders with onClose callback and icon prop in search mode 1`] = `null`;
+
+exports[`HeaderNavigationIcon Complex Scenarios renders with onPress callback in search mode 1`] = `null`;
+
+exports[`HeaderNavigationIcon Custom Styles applies custom style during search mode 1`] = `null`;
+
+exports[`HeaderNavigationIcon Custom Styles renders with custom style 1`] = `null`;
+
+exports[`HeaderNavigationIcon Custom Styles renders with multiple custom styles 1`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases handles multiple renders with different icons 1`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases handles multiple renders with different icons 2`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases handles transition from normal to search mode 1`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases handles transition from normal to search mode 2`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases handles transition from search mode to normal 1`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases handles transition from search mode to normal 2`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases renders with all props combined 1`] = `null`;
+
+exports[`HeaderNavigationIcon Edge Cases renders with empty string icon 1`] = `null`;
+
+exports[`HeaderNavigationIcon Font Scaling applies font scaling to search back arrow 1`] = `null`;
+
+exports[`HeaderNavigationIcon Font Scaling disables font scaling when disableScaling is true 1`] = `null`;
+
+exports[`HeaderNavigationIcon Font Scaling respects FontScaleProvider settings 1`] = `null`;
+
+exports[`HeaderNavigationIcon Navigation Icon Color renders with custom navigationIconColor 1`] = `null`;
+
+exports[`HeaderNavigationIcon Navigation Icon Color renders with navigationIconColor as rgba 1`] = `null`;
+
+exports[`HeaderNavigationIcon Navigation Icon Color renders without navigationIconColor 1`] = `null`;
+
+exports[`HeaderNavigationIcon Navigation Icon Press calls onPress when navigation icon is pressed 1`] = `null`;
+
+exports[`HeaderNavigationIcon Navigation Icon Press disables TouchableOpacity when onPress is not provided 1`] = `null`;
+
+exports[`HeaderNavigationIcon Navigation Icon Press does not crash when onPress is undefined 1`] = `null`;
+
+exports[`HeaderNavigationIcon Navigation Icon Press enables TouchableOpacity when onPress is provided 1`] = `null`;
+
+exports[`HeaderNavigationIcon RTL Support flips back arrow icon in RTL mode during search 1`] = `null`;
+
+exports[`HeaderNavigationIcon RTL Support renders navigation icon normally in RTL mode when not searching 1`] = `null`;
+
+exports[`HeaderNavigationIcon Search Mode calls onClose when back arrow is pressed during search 1`] = `null`;
+
+exports[`HeaderNavigationIcon Search Mode does not crash when onClose is undefined during search 1`] = `null`;
+
+exports[`HeaderNavigationIcon Search Mode renders back arrow when searching even if icon is provided 1`] = `null`;
+
+exports[`HeaderNavigationIcon Search Mode renders back arrow when searching is true 1`] = `null`;
+
+exports[`HeaderNavigationIcon Search Mode uses color from ColorContext for back arrow 1`] = `null`;

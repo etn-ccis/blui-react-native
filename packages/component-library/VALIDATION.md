@@ -3,9 +3,11 @@
 ### Manual Steps
 
 #### Showcase
+
 1. Beta package integrates into showcase without errors.
 
 #### Sandbox
+
 1. Verify the ChannelValue component renders correctly in the sandbox environment, using available knobs.
 2. Verify the Drawer component renders correctly in the sandbox environment, using available knobs.
 3. Verify the Empty State component renders correctly in the sandbox environment, using available knobs.
@@ -20,4 +22,5 @@
 12. Verify the UserMenu component renders correctly in the sandbox environment, using available knobs.
 
 ### Unit Test Count
+
 72

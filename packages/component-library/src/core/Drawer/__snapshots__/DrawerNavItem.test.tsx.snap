@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DrawerNavItem Active Hierarchy Changes expands when isInActiveTree changes to true 1`] = `null`;
+
+exports[`DrawerNavItem Active Hierarchy Changes handles activeItem becoming active 1`] = `null`;
+
+exports[`DrawerNavItem Active State applies active styles when isInActiveTree is true 1`] = `null`;
+
+exports[`DrawerNavItem Active State applies active styles when isInActiveTree is true and disableActiveItemParentStyles is false 1`] = `null`;
+
+exports[`DrawerNavItem Active State does not apply active parent styles when disableActiveItemParentStyles is true 1`] = `null`;
+
+exports[`DrawerNavItem Active State renders correctly when active 1`] = `null`;
+
+exports[`DrawerNavItem Active State renders correctly when not active 1`] = `null`;
+
+exports[`DrawerNavItem ActiveItemBackgroundShape renders correctly with round shape 1`] = `null`;
+
+exports[`DrawerNavItem ActiveItemBackgroundShape renders correctly with square shape 1`] = `null`;
+
+exports[`DrawerNavItem Basic Rendering renders correctly with icon 1`] = `null`;
+
+exports[`DrawerNavItem Basic Rendering renders correctly with minimal props 1`] = `null`;
+
+exports[`DrawerNavItem Basic Rendering renders correctly with rightComponent 1`] = `null`;
+
+exports[`DrawerNavItem Basic Rendering renders correctly with statusColor 1`] = `null`;
+
+exports[`DrawerNavItem Basic Rendering renders correctly with title and subtitle 1`] = `null`;
+
+exports[`DrawerNavItem Callback Props renders correctly with notifyActiveParent 1`] = `null`;
+
+exports[`DrawerNavItem Callback Props renders correctly with onPress 1`] = `null`;
+
+exports[`DrawerNavItem Chevron Prop does not show chevron when item has children 1`] = `null`;
+
+exports[`DrawerNavItem Chevron Prop renders correctly with chevron disabled 1`] = `null`;
+
+exports[`DrawerNavItem Chevron Prop renders correctly with chevron enabled 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom activeChevronColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom activeItemBackgroundColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom activeItemFontColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom activeItemIconColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom backgroundColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom chevronColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom itemFontColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom itemIconColor 1`] = `null`;
+
+exports[`DrawerNavItem Color Props renders correctly with custom nestedBackgroundColor 1`] = `null`;
+
+exports[`DrawerNavItem Divider Handling renders correctly with divider at depth 0 1`] = `null`;
+
+exports[`DrawerNavItem Divider Handling renders correctly with nestedDivider at depth 1 1`] = `null`;
+
+exports[`DrawerNavItem Divider Handling renders correctly without divider at depth 0 1`] = `null`;
+
+exports[`DrawerNavItem Divider Handling renders correctly without nestedDivider at depth 1 1`] = `null`;
+
+exports[`DrawerNavItem Divider Handling uses nestedDivider when depth > 0 and nestedDivider is undefined 1`] = `null`;
+
+exports[`DrawerNavItem Edge Cases renders correctly with all props combined 1`] = `null`;
+
+exports[`DrawerNavItem Edge Cases renders correctly with empty items array 1`] = `null`;
+
+exports[`DrawerNavItem Edge Cases renders correctly without any optional props 1`] = `null`;
+
+exports[`DrawerNavItem Expand/Collapse renders collapse icon when expanded 1`] = `null`;
+
+exports[`DrawerNavItem Expand/Collapse renders custom collapseIcon 1`] = `null`;
+
+exports[`DrawerNavItem Expand/Collapse renders custom expandIcon 1`] = `null`;
+
+exports[`DrawerNavItem Expand/Collapse renders expand icon when collapsed 1`] = `null`;
+
+exports[`DrawerNavItem Hidden Prop renders when hidden is false 1`] = `null`;
+
+exports[`DrawerNavItem Hidden Prop renders when hidden is undefined 1`] = `null`;
+
+exports[`DrawerNavItem HidePadding Prop renders correctly with hidePadding disabled 1`] = `null`;
+
+exports[`DrawerNavItem HidePadding Prop renders correctly with hidePadding enabled 1`] = `null`;
+
+exports[`DrawerNavItem InfoListItemProps renders correctly with InfoListItemProps 1`] = `null`;
+
+exports[`DrawerNavItem Nested Children with notifyActiveParent handles multiple levels of nested children 1`] = `null`;
+
+exports[`DrawerNavItem Nested Children with notifyActiveParent passes notifyActiveParent callback to cloned children 1`] = `null`;
+
+exports[`DrawerNavItem Nested Items does not show icon when depth > 0 1`] = `null`;
+
+exports[`DrawerNavItem Nested Items renders correctly at depth 1 1`] = `null`;
+
+exports[`DrawerNavItem Nested Items renders correctly at depth 2 1`] = `null`;
+
+exports[`DrawerNavItem Nested Items renders correctly at different depths 1`] = `null`;
+
+exports[`DrawerNavItem Nested Items renders correctly with children 1`] = `null`;
+
+exports[`DrawerNavItem Nested Items renders correctly with deeply nested items 1`] = `null`;
+
+exports[`DrawerNavItem Nested Items renders correctly with items prop 1`] = `null`;
+
+exports[`DrawerNavItem Style Props renders correctly with custom styles 1`] = `null`;
+
+exports[`DrawerNavItem Theme Override renders correctly with theme override 1`] = `null`;
+
+exports[`DrawerNavItem User Interactions passes onPress callback to InfoListItem when item has children 1`] = `null`;
+
+exports[`DrawerNavItem User Interactions passes onPress callback to InfoListItem when item has nested items 1`] = `null`;
+
+exports[`DrawerNavItem User Interactions passes onPress callback to InfoListItem when onPress prop is provided 1`] = `null`;

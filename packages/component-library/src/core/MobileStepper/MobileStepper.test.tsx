@@ -5,6 +5,7 @@ import { View } from 'react-native';
 
 // Mock ProgressBar from react-native-paper
 jest.mock('react-native-paper', () => {
+    const { View } = jest.requireActual('react-native');
     const actual = jest.requireActual('react-native-paper');
     return {
         ...actual,
