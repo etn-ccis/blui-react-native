@@ -64,6 +64,7 @@ jest.mock('react-native-collapsible', (): any => {
 });
 
 import { DrawerNavItem } from './DrawerNavItem';
+import { Text } from 'react-native';
 
 describe('DrawerNavItem', () => {
     afterEach(cleanup);
