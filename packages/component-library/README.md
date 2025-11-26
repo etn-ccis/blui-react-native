@@ -1,7 +1,5 @@
 # Brightlayer UI React Native Components
 
-test
-
 [![Build](https://github.com/etn-ccis/blui-react-native-component-library/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-react-native-component-library/actions/workflows/blui-ci.yml)
 ![npm](https://img.shields.io/npm/v/@brightlayer-ui/react-native-components?label=%40brightlayer-ui%2Freact-native-components) [![codecov](https://codecov.io/gh/etn-ccis/blui-react-native-component-library/branch/master/graph/badge.svg?token=HQ7P6R23KZ)](https://codecov.io/gh/etn-ccis/blui-react-native-component-library)
 

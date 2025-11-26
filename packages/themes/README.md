@@ -1,7 +1,5 @@
 # Brightlayer UI themes for React Native applications
 
-test
-
 [![Build](https://github.com/etn-ccis/blui-react-native-themes/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-react-native-themes/actions/workflows/blui-ci.yml)
 [![](https://img.shields.io/npm/v/@brightlayer-ui/react-native-themes.svg?label=@brightlayer-ui/react-native-themes&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/react-native-themes)
 
