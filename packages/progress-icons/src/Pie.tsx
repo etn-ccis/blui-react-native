@@ -104,7 +104,7 @@ Z
                 )}
                 <Path
                     clipPath={`url(#blui-donut-clip-${stroke})`}
-                    fill={percent >= 100 ? color : ((!outlined && backgroundColor) || color)}
+                    fill={percent >= 100 ? color : (!outlined && backgroundColor) || color}
                     fillOpacity={outlined || percent >= 100 || (!outlined && backgroundColor) ? 1 : 0.3}
                     d={outlined ? outlineBase : twoToneBase}
                 />
