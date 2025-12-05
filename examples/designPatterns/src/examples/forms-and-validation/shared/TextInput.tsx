@@ -1,4 +1,4 @@
-import React, {MutableRefObject} from 'react';
+import React, { MutableRefObject } from 'react';
 import {
   View,
   StyleSheet,
@@ -13,9 +13,9 @@ import {
   Text,
   TextInputProps,
 } from 'react-native-paper';
-import {Spacer} from '@brightlayer-ui/react-native-components';
-import {ThemeProp} from 'react-native-paper/lib/typescript/types';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { Spacer } from '@brightlayer-ui/react-native-components';
+import { ThemeProp } from 'react-native-paper/lib/typescript/types';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (
   theme: any,
@@ -133,7 +133,7 @@ const TextInputRender: React.ForwardRefRenderFunction<
         {...inputProps}
       />
       {helperText && !error && (
-        <View style={{flexDirection: 'row'}}>
+        <View style={{ flexDirection: 'row' }}>
           <HelperText type="info">
             <Text variant="bodySmall" style={styles.helperText}>
               {helperText}

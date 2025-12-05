@@ -1,25 +1,25 @@
-import React, {ReactNode} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {View} from 'react-native';
-import {NavDrawerProps, NavigationDrawer} from './navigation-drawer';
+import React, { ReactNode } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View } from 'react-native';
+import { NavDrawerProps, NavigationDrawer } from './navigation-drawer';
 // import {createStackNavigator} from '@react-navigation/stack';
-import {Home, Placeholder} from '../screens';
-import {ROUTES} from './routes';
-import {ActionListScreen} from '../examples/action-list/ActionList';
-import {BottomSheetAlarmsScreen} from '../examples/bottom-sheet/BottomSheet';
-import {CollapsibleAppbarScreen} from '../examples/collapsible-appbar/CollapsibleAppbar';
-import {ComplexBottomSheetAlarmsScreen} from '../examples/complex-bottomsheet/ComplexBottomSheet';
-import {DataListScreen} from '../examples/data-list/DataList';
-import {FixedLengthPasscodeScreen} from '../examples/forms-and-validation/fixed-length-passcode/FixedLengthPasscode';
-import {FormInAListScreen} from '../examples/forms-and-validation/form-in-a-list/FormInAList';
-import {PasswordValidationScreen} from '../examples/forms-and-validation/password-validation/PasswordValidation';
-import {VerifyOnSubmitScreen} from '../examples/forms-and-validation/verify-on-submit/VerifyOnSubmit';
-import {LoadingStatesScreen} from '../examples/loading-states/LoadingStates';
-import {MultiselectListScreen} from '../examples/multiselect-list/MultiselectList';
-import {SearchbarScreen} from '../examples/searchbar/Searchbar';
-import {SortableListScreen} from '../examples/sortable-list/SortableList';
-import {StatusListScreen} from '../examples/status-list/StatusList';
+import { Home, Placeholder } from '../screens';
+import { ROUTES } from './routes';
+import { ActionListScreen } from '../examples/action-list/ActionList';
+import { BottomSheetAlarmsScreen } from '../examples/bottom-sheet/BottomSheet';
+import { CollapsibleAppbarScreen } from '../examples/collapsible-appbar/CollapsibleAppbar';
+import { ComplexBottomSheetAlarmsScreen } from '../examples/complex-bottomsheet/ComplexBottomSheet';
+import { DataListScreen } from '../examples/data-list/DataList';
+import { FixedLengthPasscodeScreen } from '../examples/forms-and-validation/fixed-length-passcode/FixedLengthPasscode';
+import { FormInAListScreen } from '../examples/forms-and-validation/form-in-a-list/FormInAList';
+import { PasswordValidationScreen } from '../examples/forms-and-validation/password-validation/PasswordValidation';
+import { VerifyOnSubmitScreen } from '../examples/forms-and-validation/verify-on-submit/VerifyOnSubmit';
+import { LoadingStatesScreen } from '../examples/loading-states/LoadingStates';
+import { MultiselectListScreen } from '../examples/multiselect-list/MultiselectList';
+import { SearchbarScreen } from '../examples/searchbar/Searchbar';
+import { SortableListScreen } from '../examples/sortable-list/SortableList';
+import { StatusListScreen } from '../examples/status-list/StatusList';
 
 const Drawer = createDrawerNavigator();
 
@@ -48,7 +48,7 @@ export type RootStackParamList = {
 // const RootStack = createStackNavigator<RootStackParamList>();
 
 const CustomDrawerContent = (props: any): any => (
-  <View style={{height: '100%'}}>
+  <View style={{ height: '100%' }}>
     <NavigationDrawer {...props} />
   </View>
 );
@@ -58,12 +58,13 @@ export const MainRouter = (): any => (
     <Drawer.Navigator
       initialRouteName="home"
       screenOptions={{
-        drawerStyle: {backgroundColor: 'transparent', width: '80%'},
+        drawerStyle: { backgroundColor: 'transparent', width: '80%' },
         headerShown: false,
       }}
       drawerContent={(props: NavDrawerProps): ReactNode => (
         <CustomDrawerContent {...props} />
-      )}>
+      )}
+    >
       <Drawer.Screen name="home" component={Home} />
       <Drawer.Screen
         name="collapsible-appbar"

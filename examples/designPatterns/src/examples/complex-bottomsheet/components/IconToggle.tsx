@@ -1,7 +1,7 @@
-import React, {JSX} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Hero} from '@brightlayer-ui/react-native-components';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import React, { JSX } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Hero } from '@brightlayer-ui/react-native-components';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 type IconToggleProps = {
   icon: JSX.Element;
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
 });
 
 export const IconToggle: React.FC<IconToggleProps> = props => {
-  const {icon, label, active, onPress} = props;
-  const {iconContainer} = styles;
+  const { icon, label, active, onPress } = props;
+  const { iconContainer } = styles;
   const theme = useExtendedTheme();
   const color = active
     ? theme.colors.primaryNonText
@@ -32,10 +32,11 @@ export const IconToggle: React.FC<IconToggleProps> = props => {
     <View style={iconContainer}>
       <Hero
         icon={icon}
-        style={{maxWidth: 96}}
+        style={{ maxWidth: 96 }}
         label={label}
         iconColor={color}
-        onPress={onPress}></Hero>
+        onPress={onPress}
+      ></Hero>
     </View>
   );
 };

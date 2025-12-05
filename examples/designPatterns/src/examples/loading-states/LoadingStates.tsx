@@ -1,4 +1,4 @@
-import React, {useState, useEffect, JSX} from 'react';
+import React, { useState, useEffect, JSX } from 'react';
 import {
   Header,
   HeroBanner,
@@ -6,22 +6,22 @@ import {
   ChannelValue,
   InfoListItem,
 } from '@brightlayer-ui/react-native-components';
-import {ScrollView} from 'react-native';
+import { ScrollView } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {cardData, emptyData, Device, ChannelItem} from './data/cardData';
+import { useNavigation } from '@react-navigation/native';
+import { cardData, emptyData, Device, ChannelItem } from './data/cardData';
 import {
   getIcon,
   getColor,
   getGradeColor,
   getGradeIcon,
 } from './utilities/utilities';
-import {HeroPlaceholder} from './components/hero-placeholder';
-import {Card} from 'react-native-paper';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
+import { HeroPlaceholder } from './components/hero-placeholder';
+import { Card } from 'react-native-paper';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
-import {ThemeProp} from 'react-native-paper/lib/typescript/types';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { ThemeProp } from 'react-native-paper/lib/typescript/types';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 export const getCardContent = (
   device: Device,
@@ -137,10 +137,10 @@ export const LoadingStatesScreen: React.FC = () => {
           },
         ]}
       />
-      <ScrollView contentContainerStyle={{padding: 16}}>
+      <ScrollView contentContainerStyle={{ padding: 16 }}>
         {data.map((device: Device, dind: number) => (
           // @ts-ignore new version of react-native-paper should have these type issues fixed
-          <Card key={`device${dind}`} style={{marginBottom: 16}}>
+          <Card key={`device${dind}`} style={{ marginBottom: 16 }}>
             {getCardContent(device, theme)}
           </Card>
         ))}

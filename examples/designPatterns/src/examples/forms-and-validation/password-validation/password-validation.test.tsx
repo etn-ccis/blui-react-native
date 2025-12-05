@@ -1,18 +1,18 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {PasswordValidationScreen} from './PasswordValidation';
+import { PasswordValidationScreen } from './PasswordValidation';
 import {
   LOWER_CASE_REGEX,
   NUMBERS_REGEX,
   SPECIAL_CHAR_REGEX,
   UPPER_CASE_REGEX,
 } from './PasswordRequirements';
-import {Provider as ThemeProvider} from 'react-native-paper';
+import { Provider as ThemeProvider } from 'react-native-paper';
 import * as BLUIThemes from '@brightlayer-ui/react-native-themes';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 jest.mock('@react-navigation/native', () => ({
-  useNavigation: (): any => ({openDrawer: jest.fn(() => true)}),
+  useNavigation: (): any => ({ openDrawer: jest.fn(() => true) }),
 }));
 
 describe('Password Validation Tests', () => {

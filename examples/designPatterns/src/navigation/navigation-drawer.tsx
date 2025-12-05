@@ -5,10 +5,10 @@ import {
   DrawerNavGroup,
   NavItem,
 } from '@brightlayer-ui/react-native-components';
-import React, {useState, useCallback} from 'react';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from './index';
-import {ROUTES} from './routes';
+import React, { useState, useCallback } from 'react';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './index';
+import { ROUTES } from './routes';
 
 export const navGroupItems: NavItem[] = [
   {
@@ -121,7 +121,7 @@ const idsWithoutRoutes = [
   'overlays',
 ];
 
-export const NavigationDrawer: React.FC<NavDrawerProps> = ({navigation}) => {
+export const NavigationDrawer: React.FC<NavDrawerProps> = ({ navigation }) => {
   const [selected, setSelected] = useState('Home');
 
   const selectItem = useCallback(
@@ -138,11 +138,12 @@ export const NavigationDrawer: React.FC<NavDrawerProps> = ({navigation}) => {
   return (
     <Drawer
       activeItem={selected}
-      onItemSelect={(id: string): void => selectItem(id)}>
+      onItemSelect={(id: string): void => selectItem(id)}
+    >
       <DrawerHeader
         title={'Brightlayer UI'}
         subtitle={'React Native Project'}
-        icon={{name: 'menu'}}
+        icon={{ name: 'menu' }}
         onIconPress={(): void => {
           navigation.closeDrawer();
         }}

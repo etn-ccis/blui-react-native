@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, StyleProp, ViewStyle} from 'react-native';
-import {RequirementCheck} from './RequirementCheck';
+import { View, StyleProp, ViewStyle } from 'react-native';
+import { RequirementCheck } from './RequirementCheck';
 
 type PasswordRequirementsProps = {
   passwordText: string;
@@ -44,7 +44,7 @@ export const passwordRequirements: PasswordRequirement[] = [
 export const PasswordRequirements: React.FC<
   PasswordRequirementsProps
 > = props => {
-  const {passwordText, style} = props;
+  const { passwordText, style } = props;
 
   return (
     <View style={style}>

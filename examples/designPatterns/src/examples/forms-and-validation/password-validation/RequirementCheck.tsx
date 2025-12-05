@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {Text} from 'react-native-paper';
+import { View, StyleSheet } from 'react-native';
+import { Text } from 'react-native-paper';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {ThemeProp} from 'react-native-paper/lib/typescript/types';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { ThemeProp } from 'react-native-paper/lib/typescript/types';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): Record<string, any> =>
   StyleSheet.create({
@@ -24,7 +24,7 @@ type RequirementCheckProps = {
 };
 
 export const RequirementCheck: React.FC<RequirementCheckProps> = props => {
-  const {isChecked, text} = props;
+  const { isChecked, text } = props;
   const theme = useExtendedTheme();
   const styles = makeStyles();
 
@@ -41,7 +41,8 @@ export const RequirementCheck: React.FC<RequirementCheckProps> = props => {
       <MatIcon name={'check'} size={24} color={iconColorIfValid(isChecked)} />
       <Text
         variant="headlineMedium"
-        style={[styles.text, {color: textColorIfValid(isChecked)}]}>
+        style={[styles.text, { color: textColorIfValid(isChecked) }]}
+      >
         {text}
       </Text>
     </View>

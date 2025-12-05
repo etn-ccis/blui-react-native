@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 import {
   Placeholder,
   PlaceholderMedia,
@@ -14,8 +14,9 @@ export const HeroPlaceholder: React.FC = () => (
         flexDirection: 'row',
         marginHorizontal: 8,
         marginVertical: 24,
-      }}>
-      <View style={{flex: 1, marginHorizontal: 8}}>
+      }}
+    >
+      <View style={{ flex: 1, marginHorizontal: 8 }}>
         <Placeholder Animation={Fade}>
           <PlaceholderMedia
             style={{
@@ -27,7 +28,7 @@ export const HeroPlaceholder: React.FC = () => (
           <PlaceholderLine height={24} />
         </Placeholder>
       </View>
-      <View style={{flex: 1, marginHorizontal: 8}}>
+      <View style={{ flex: 1, marginHorizontal: 8 }}>
         <Placeholder Animation={Fade}>
           <PlaceholderMedia
             style={{
@@ -39,7 +40,7 @@ export const HeroPlaceholder: React.FC = () => (
           <PlaceholderLine height={24} />
         </Placeholder>
       </View>
-      <View style={{flex: 1, marginHorizontal: 8}}>
+      <View style={{ flex: 1, marginHorizontal: 8 }}>
         <Placeholder Animation={Fade}>
           <PlaceholderMedia
             style={{
@@ -52,17 +53,17 @@ export const HeroPlaceholder: React.FC = () => (
         </Placeholder>
       </View>
     </View>
-    <View style={{margin: 16}}>
+    <View style={{ margin: 16 }}>
       <Placeholder Animation={Fade}>
         <PlaceholderLine height={16} />
       </Placeholder>
     </View>
-    <View style={{margin: 16}}>
+    <View style={{ margin: 16 }}>
       <Placeholder Animation={Fade}>
         <PlaceholderLine height={16} />
       </Placeholder>
     </View>
-    <View style={{margin: 16}}>
+    <View style={{ margin: 16 }}>
       <Placeholder Animation={Fade}>
         <PlaceholderLine height={16} />
       </Placeholder>

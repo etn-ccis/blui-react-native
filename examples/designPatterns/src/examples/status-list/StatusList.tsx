@@ -1,6 +1,6 @@
-import React, {JSX, useCallback} from 'react';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {View, FlatList, StyleSheet, ViewStyle} from 'react-native';
+import React, { JSX, useCallback } from 'react';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { View, FlatList, StyleSheet, ViewStyle } from 'react-native';
 import {
   Header,
   InfoListItem,
@@ -9,7 +9,7 @@ import {
   InfoListItemProps,
 } from '@brightlayer-ui/react-native-components';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 export type ActionListProps = {
   hardcodedData?: InfoListItemProps[];
@@ -17,7 +17,7 @@ export type ActionListProps = {
 };
 const useStyles = (
   theme: any,
-): StyleSheet.NamedStyles<{container: ViewStyle}> =>
+): StyleSheet.NamedStyles<{ container: ViewStyle }> =>
   StyleSheet.create({
     container: {
       flex: 1,
@@ -91,11 +91,11 @@ const createRandomItem = (theme: any): InfoListItemProps => {
 // }
 
 export const StatusListScreen: React.FC<ActionListProps> = props => {
-  const {hardcodedData, navigation} = props;
+  const { hardcodedData, navigation } = props;
   const theme = useExtendedTheme();
   const styles = useStyles(theme);
   const data =
-    hardcodedData ?? Array.from({length: 20}, () => createRandomItem(theme));
+    hardcodedData ?? Array.from({ length: 20 }, () => createRandomItem(theme));
 
   const toggleMenu = useCallback((): void => {
     navigation.openDrawer();
@@ -116,7 +116,7 @@ export const StatusListScreen: React.FC<ActionListProps> = props => {
           data={data}
           testID={'list'}
           keyExtractor={(_item, index): string => `${index}`}
-          renderItem={({item}): JSX.Element => (
+          renderItem={({ item }): JSX.Element => (
             <InfoListItem
               hidePadding
               iconColor={theme.colors.onPrimary}

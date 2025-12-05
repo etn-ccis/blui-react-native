@@ -1,11 +1,11 @@
-import React, {useRef, useEffect} from 'react';
-import {Header} from '@brightlayer-ui/react-native-components';
+import React, { useRef, useEffect } from 'react';
+import { Header } from '@brightlayer-ui/react-native-components';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {View, Linking, StyleSheet, ScrollView, Animated} from 'react-native';
-import {Button, Divider, Text} from 'react-native-paper';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import { View, Linking, StyleSheet, ScrollView, Animated } from 'react-native';
+import { Button, Divider, Text } from 'react-native-paper';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const useStyles = (theme: any): any =>
   StyleSheet.create({
@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
   }, []);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <Header
         title={'Brightlayer UI Design Patterns'}
         icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
@@ -92,20 +92,21 @@ export const Home: React.FC = () => {
           toggleMenu();
         }}
       />
-      <ScrollView contentContainerStyle={styles.container} style={{flex: 1}}>
-        <Animated.View style={{opacity: fadeAnimTitle}}>
+      <ScrollView contentContainerStyle={styles.container} style={{ flex: 1 }}>
+        <Animated.View style={{ opacity: fadeAnimTitle }}>
           <Text variant="headlineMedium" style={styles.header}>
             The{' '}
             <Text
               variant="headlineMedium"
-              style={{color: theme.colors.primary}}>
+              style={{ color: theme.colors.primary }}
+            >
               Patterns
             </Text>
             .
           </Text>
         </Animated.View>
 
-        <Animated.View style={{opacity: fadeAnimContent}}>
+        <Animated.View style={{ opacity: fadeAnimContent }}>
           <Text variant="bodyMedium" style={styles.paragraph}>
             A <Text variant="bodyMedium">design pattern</Text> is a common
             interaction or behavior that should be consistent across
@@ -130,12 +131,13 @@ export const Home: React.FC = () => {
             color={theme.colors.primaryNonText}
             onPress={(): void => {
               toggleMenu();
-            }}>
+            }}
+          >
             Explore Design Patterns
           </Button>
         </Animated.View>
 
-        <Animated.View style={{opacity: fadeAnimLinks, paddingBottom: 16}}>
+        <Animated.View style={{ opacity: fadeAnimLinks, paddingBottom: 16 }}>
           <Divider style={styles.divider} />
 
           <Button
@@ -145,7 +147,8 @@ export const Home: React.FC = () => {
               void Linking.openURL(
                 'https://brightlayer-ui.github.io/development/frameworks-mobile/react-native',
               );
-            }}>
+            }}
+          >
             React Native Getting Started Guide
           </Button>
           <Button
@@ -153,7 +156,8 @@ export const Home: React.FC = () => {
             labelStyle={styles.linkContent}
             onPress={(): void => {
               void Linking.openURL('https://brightlayer-ui.github.io/patterns');
-            }}>
+            }}
+          >
             Design Pattern Descriptions
           </Button>
           <Button
@@ -163,7 +167,8 @@ export const Home: React.FC = () => {
               void Linking.openURL(
                 'https://brightlayer-ui-components.github.io/react-native/',
               );
-            }}>
+            }}
+          >
             Brightlayer UI React Native Component Library
           </Button>
           <Button
@@ -171,7 +176,8 @@ export const Home: React.FC = () => {
             labelStyle={styles.linkContent}
             onPress={(): void => {
               void Linking.openURL('https://github.com/etn-ccis?q=blui');
-            }}>
+            }}
+          >
             Visit Us on GitHub
           </Button>
           <Button
@@ -181,7 +187,8 @@ export const Home: React.FC = () => {
               void Linking.openURL(
                 'https://github.com/etn-ccis/blui-react-design-patterns',
               );
-            }}>
+            }}
+          >
             Design Pattern Source on GitHub
           </Button>
           <Button
@@ -189,7 +196,8 @@ export const Home: React.FC = () => {
             labelStyle={styles.linkContent}
             onPress={(): void => {
               void Linking.openURL('https://brightlayer-ui.github.io/roadmap');
-            }}>
+            }}
+          >
             Release Roadmap
           </Button>
           <Button
@@ -199,7 +207,8 @@ export const Home: React.FC = () => {
               void Linking.openURL(
                 'https://brightlayer-ui.github.io/community/contactus',
               );
-            }}>
+            }}
+          >
             Send Feedback or Suggestions
           </Button>
         </Animated.View>

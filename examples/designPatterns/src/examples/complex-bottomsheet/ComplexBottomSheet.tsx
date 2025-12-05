@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
-import {StyleSheet, ScrollView, View, SafeAreaView} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, ScrollView, View, SafeAreaView } from 'react-native';
 import {
   Header,
   InfoListItem,
   EmptyState,
 } from '@brightlayer-ui/react-native-components';
-import {ComplexBottomSheetScreen} from './components/BottomSheet';
+import { ComplexBottomSheetScreen } from './components/BottomSheet';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {IconToggle} from './components/IconToggle';
-import {getAlarmList, formatDate, AlarmDataObject} from './data/alarmData';
-import {useNavigation} from '@react-navigation/native';
-import {Divider, Text} from 'react-native-paper';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { IconToggle } from './components/IconToggle';
+import { getAlarmList, formatDate, AlarmDataObject } from './data/alarmData';
+import { useNavigation } from '@react-navigation/native';
+import { Divider, Text } from 'react-native-paper';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const FILTERS = {
   TIME: 'time',
@@ -231,7 +231,8 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
       <ComplexBottomSheetScreen
         show={showBottomSheet}
         dismissBottomSheet={(): void => setShowBottomSheet(false)}
-        style={styles.footer}>
+        style={styles.footer}
+      >
         <SafeAreaView>
           <View style={styles.rowHeader}>
             <Text variant="titleSmall">Sort By: </Text>
@@ -266,7 +267,8 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
                 }
                 active={currentSort === FILTERS.TYPE}
                 label={'Type'}
-                onPress={(): void => setCurrentSort(FILTERS.TYPE)}></IconToggle>
+                onPress={(): void => setCurrentSort(FILTERS.TYPE)}
+              ></IconToggle>
             </View>
           </View>
           <Divider />
@@ -287,9 +289,8 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
                 }
                 active={showActiveAlarms}
                 label={'Active Alarms'}
-                onPress={(): void =>
-                  setShowActiveAlarms(!showActiveAlarms)
-                }></IconToggle>
+                onPress={(): void => setShowActiveAlarms(!showActiveAlarms)}
+              ></IconToggle>
               <IconToggle
                 icon={
                   <MatIcon
@@ -304,7 +305,8 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
                 }
                 active={showAlarms}
                 label={'Alarms'}
-                onPress={(): void => setShowAlarms(!showAlarms)}></IconToggle>
+                onPress={(): void => setShowAlarms(!showAlarms)}
+              ></IconToggle>
               <IconToggle
                 icon={
                   <MatIcon
@@ -319,7 +321,8 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
                 }
                 active={showEvents}
                 label={'Settings'}
-                onPress={(): void => setShowEvents(!showEvents)}></IconToggle>
+                onPress={(): void => setShowEvents(!showEvents)}
+              ></IconToggle>
               <IconToggle
                 icon={
                   <MatIcon
@@ -334,9 +337,8 @@ export const ComplexBottomSheetAlarmsScreen: React.FC = () => {
                 }
                 active={showSessions}
                 label={'Sessions'}
-                onPress={(): void =>
-                  setShowSessions(!showSessions)
-                }></IconToggle>
+                onPress={(): void => setShowSessions(!showSessions)}
+              ></IconToggle>
             </View>
           </View>
           <Divider />

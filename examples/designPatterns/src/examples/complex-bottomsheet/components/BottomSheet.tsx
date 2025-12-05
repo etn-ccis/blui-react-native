@@ -1,6 +1,6 @@
-import React, {ReactNode} from 'react';
+import React, { ReactNode } from 'react';
 import Modal from 'react-native-modal';
-import {ViewStyle} from 'react-native';
+import { ViewStyle } from 'react-native';
 
 type BottomSheetProps = {
   show: boolean;
@@ -10,14 +10,15 @@ type BottomSheetProps = {
 };
 
 export const ComplexBottomSheetScreen: React.FC<BottomSheetProps> = props => {
-  const {show, dismissBottomSheet, style, children} = props;
+  const { show, dismissBottomSheet, style, children } = props;
 
   return (
     <Modal
       isVisible={show}
       onBackdropPress={dismissBottomSheet}
       onBackButtonPress={dismissBottomSheet}
-      style={style}>
+      style={style}
+    >
       {children}
     </Modal>
   );
