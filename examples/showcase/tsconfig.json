@@ -1,5 +1,16 @@
 {
-  "extends": "@react-native/typescript-config",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@brightlayer-ui/react-native-components": [
+        "./watchPackages/@brightlayer-ui/react-native-components"
+      ],
+      "@brightlayer-ui/react-native-themes": [
+        "./watchPackages/@brightlayer-ui/react-native-themes"
+      ],
+      "@brightlayer-ui/react-native-progress-icons": [
+        "./watchPackages/@brightlayer-ui/react-native-progress-icons"
+      ]
+    }
+  }
 }
