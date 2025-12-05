@@ -1,5 +1,5 @@
-import React, {JSX, useCallback, useEffect, useState} from 'react';
-import {EmptyState, Header} from '@brightlayer-ui/react-native-components';
+import React, { JSX, useCallback, useEffect, useState } from 'react';
+import { EmptyState, Header } from '@brightlayer-ui/react-native-components';
 import {
   View,
   StyleSheet,
@@ -9,11 +9,11 @@ import {
   Dimensions,
 } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {TextInput} from '../shared/TextInput';
-import {Button, Text} from 'react-native-paper';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { TextInput } from '../shared/TextInput';
+import { Button, Text } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): StyleSheet.NamedStyles<{
   section: ViewStyle;
@@ -64,8 +64,8 @@ export const VerifyOnSubmitScreen: React.FC = () => {
   const [deviceAdded, setDeviceAdded] = useState(false);
 
   useEffect(() => {
-    const subscription = Dimensions.addEventListener('change', ({window}) => {
-      setDimensions({window});
+    const subscription = Dimensions.addEventListener('change', ({ window }) => {
+      setDimensions({ window });
     });
     // @ts-ignore
     return (): void => subscription?.remove();
@@ -108,11 +108,12 @@ export const VerifyOnSubmitScreen: React.FC = () => {
       style={[
         styles.section,
         dimensions.window.width < 600 ? {} : styles.sectionTablet,
-      ]}>
-      <Text variant="headlineSmall" style={{marginBottom: 24}}>
+      ]}
+    >
+      <Text variant="headlineSmall" style={{ marginBottom: 24 }}>
         Find Device
       </Text>
-      <Text variant="bodySmall" style={{marginBottom: 24}}>
+      <Text variant="bodySmall" style={{ marginBottom: 24 }}>
         For the purpose of this demonstration, serial number{' '}
         <Text variant="bodyMedium">123</Text> will yield a successful device
         search.
@@ -122,7 +123,8 @@ export const VerifyOnSubmitScreen: React.FC = () => {
           serialNumberErrorText !== ''
             ? styles.serialNumberErrorFormFieldWrapper
             : styles.serialNumberFormFieldWrapper
-        }>
+        }
+      >
         <TextInput
           label="Serial Number *"
           value={serialNumber}
@@ -140,8 +142,8 @@ export const VerifyOnSubmitScreen: React.FC = () => {
       <Button
         mode="contained"
         style={styles.findDeviceButton}
-        labelStyle={isLoading ? {marginHorizontal: 0, fontSize: 24} : {}}
-        contentStyle={{height: 36}}
+        labelStyle={isLoading ? { marginHorizontal: 0, fontSize: 24 } : {}}
+        contentStyle={{ height: 36 }}
         onPress={(): void => searchDevice(serialNumber)}
         icon={(): JSX.Element =>
           !isLoading ? (
@@ -157,7 +159,8 @@ export const VerifyOnSubmitScreen: React.FC = () => {
           )
         }
         disabled={!serialNumber}
-        loading={isLoading}>
+        loading={isLoading}
+      >
         {isLoading ? undefined : 'Find Device'}
       </Button>
     </View>
@@ -181,7 +184,8 @@ export const VerifyOnSubmitScreen: React.FC = () => {
               <MatIcon name="add" color={theme.colors.primary} size={24} />
             )}
             onPress={resetForm}
-            mode="outlined">
+            mode="outlined"
+          >
             Add Another Device
           </Button>
         }
@@ -190,7 +194,7 @@ export const VerifyOnSubmitScreen: React.FC = () => {
   );
 
   return (
-    <View style={{flex: 1, backgroundColor: theme.colors.background}}>
+    <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <Header
         title={'Verify On Submit'}
         icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
@@ -199,7 +203,7 @@ export const VerifyOnSubmitScreen: React.FC = () => {
         }}
       />
       <SafeAreaView>
-        <ScrollView style={{height: '100%'}}>
+        <ScrollView style={{ height: '100%' }}>
           {deviceAdded ? getDeviceAddedView() : getVerifyOnSubmitView()}
         </ScrollView>
       </SafeAreaView>

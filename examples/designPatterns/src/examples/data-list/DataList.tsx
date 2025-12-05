@@ -1,10 +1,10 @@
-import React, {ReactElement} from 'react';
-import {Header, InfoListItem} from '@brightlayer-ui/react-native-components';
-import {View, FlatList, Text} from 'react-native';
+import React, { ReactElement } from 'react';
+import { Header, InfoListItem } from '@brightlayer-ui/react-native-components';
+import { View, FlatList, Text } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 export const DataListScreen: React.FC = () => {
   const navigation =
@@ -50,7 +50,7 @@ export const DataListScreen: React.FC = () => {
       <FlatList
         data={data}
         keyExtractor={(item, index): string => `${index}`}
-        renderItem={({item}): ReactElement => (
+        renderItem={({ item }): ReactElement => (
           <InfoListItem
             title={item.name}
             hidePadding={true}

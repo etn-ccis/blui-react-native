@@ -1,10 +1,10 @@
 import React from 'react';
-import {Header} from '@brightlayer-ui/react-native-components';
+import { Header } from '@brightlayer-ui/react-native-components';
 import bg from '../../../assets/images/farm.jpg';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {useTheme} from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { useTheme } from 'react-native-paper';
 
 export const CollapsibleAppbarScreen: React.FC = () => {
   const navigation =

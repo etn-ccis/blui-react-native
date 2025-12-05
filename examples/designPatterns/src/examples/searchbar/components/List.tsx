@@ -1,15 +1,15 @@
-import React, {useState, useCallback, useEffect, JSX} from 'react';
-import {StyleSheet, View, FlatList} from 'react-native';
+import React, { useState, useCallback, useEffect, JSX } from 'react';
+import { StyleSheet, View, FlatList } from 'react-native';
 import {
   Header,
   InfoListItem,
   EmptyState,
 } from '@brightlayer-ui/react-native-components';
-import {sampleData, Data} from '../data/data';
+import { sampleData, Data } from '../data/data';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const useStyles = (theme: any): any =>
   StyleSheet.create({
@@ -82,7 +82,7 @@ export const List: React.FC = () => {
         <FlatList
           data={results}
           keyExtractor={(_, index): string => `${index}`}
-          renderItem={({item}): JSX.Element => (
+          renderItem={({ item }): JSX.Element => (
             <InfoListItem
               title={item.president}
               subtitle={item.party}

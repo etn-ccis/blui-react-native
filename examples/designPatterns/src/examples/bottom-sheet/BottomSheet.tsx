@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import {StyleSheet, ScrollView, View, ViewStyle} from 'react-native';
-import {Header, InfoListItem} from '@brightlayer-ui/react-native-components';
+import React, { useState } from 'react';
+import { StyleSheet, ScrollView, View, ViewStyle } from 'react-native';
+import { Header, InfoListItem } from '@brightlayer-ui/react-native-components';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import alarms, {formatDate} from './data/alarmData';
-import {BottomSheetScreen} from './components/BottomSheet';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {ThemeProp} from 'react-native-paper/lib/typescript/types';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import alarms, { formatDate } from './data/alarmData';
+import { BottomSheetScreen } from './components/BottomSheet';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { ThemeProp } from 'react-native-paper/lib/typescript/types';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const useStyles = (
   theme: ThemeProp,
@@ -91,7 +91,8 @@ export const BottomSheetAlarmsScreen: React.FC = () => {
       </ScrollView>
       <BottomSheetScreen
         show={showBottomSheet}
-        dismissBottomSheet={(): void => setShowBottomSheet(false)}>
+        dismissBottomSheet={(): void => setShowBottomSheet(false)}
+      >
         <InfoListItem
           title={'Acknowledge All'}
           icon={<MatIcon name="done" size={24} color={theme.colors.primary} />}

@@ -1,4 +1,4 @@
-import {error, warning, success} from '@brightlayer-ui/colors';
+import { error, warning, success } from '@brightlayer-ui/colors';
 
 export const getIcon = (value: number): string => {
   if (value >= 90) return 'A';

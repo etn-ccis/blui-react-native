@@ -1,5 +1,5 @@
-import React, {useCallback, useEffect, useState} from 'react';
-import {Header, InfoListItem} from '@brightlayer-ui/react-native-components';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Header, InfoListItem } from '@brightlayer-ui/react-native-components';
 import {
   View,
   StyleSheet,
@@ -9,11 +9,11 @@ import {
   ScrollView,
 } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {TextInput} from '../shared/TextInput';
-import {Card, Switch} from 'react-native-paper';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { TextInput } from '../shared/TextInput';
+import { Card, Switch } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): StyleSheet.NamedStyles<{
   cardWrapper: ViewStyle;
@@ -56,8 +56,8 @@ export const FormInAListScreen: React.FC = () => {
   const [isSwitchOn, setIsSwitchOn] = useState(true);
 
   useEffect(() => {
-    const subscription = Dimensions.addEventListener('change', ({window}) => {
-      setDimensions({window});
+    const subscription = Dimensions.addEventListener('change', ({ window }) => {
+      setDimensions({ window });
     });
     return (): void => subscription?.remove();
   });
@@ -73,7 +73,7 @@ export const FormInAListScreen: React.FC = () => {
   const onSwitchToggle = (): void => setIsSwitchOn(!isSwitchOn);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <Header
         title={'In A List'}
         icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
@@ -87,12 +87,14 @@ export const FormInAListScreen: React.FC = () => {
             style={[
               styles.cardWrapper,
               dimensions.window.width < 600 ? {} : styles.cardWrapperTablet,
-            ]}>
+            ]}
+          >
             <Card
               style={[
                 styles.card,
                 dimensions.window.width < 600 ? {} : styles.cardTablet,
-              ]}>
+              ]}
+            >
               <InfoListItem
                 title={'IP Address'}
                 icon={
