@@ -1,16 +1,16 @@
-import React, {JSX, useState} from 'react';
+import React, { JSX, useState } from 'react';
 import {
   Header,
   InfoListItem,
   EmptyState,
 } from '@brightlayer-ui/react-native-components';
-import {View, FlatList, SafeAreaView, StyleSheet} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {Button} from 'react-native-paper';
+import { View, FlatList, SafeAreaView, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Button } from 'react-native-paper';
 import Modal from 'react-native-modal';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 export type ListItem = {
   id?: number;
@@ -41,7 +41,7 @@ const prepareData = (): ListItem[] => {
 
 export const ActionListScreen: React.FC<ActionListProps> = props => {
   const theme = useExtendedTheme();
-  const {hardcodedData} = props;
+  const { hardcodedData } = props;
 
   const styles = StyleSheet.create({
     container: {
@@ -116,7 +116,7 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
           data={data}
           testID={'list'}
           keyExtractor={(_item, index): string => `${index}`}
-          renderItem={({item, index}): JSX.Element => (
+          renderItem={({ item, index }): JSX.Element => (
             <InfoListItem
               title={item.name || ''}
               hidePadding={true}
@@ -142,7 +142,8 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
                 <MatIcon name="add" color={theme.colors.onPrimary} size={24} />
               )}
               onPress={addItem}
-              mode="contained">
+              mode="contained"
+            >
               Add An Item
             </Button>
           }
@@ -154,8 +155,9 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
           backdropOpacity={0.5}
           onBackdropPress={hideActionsPanel}
           supportedOrientations={['portrait', 'landscape']}
-          style={{justifyContent: 'flex-end', margin: 0}}>
-          <View style={{backgroundColor: theme.colors.background}}>
+          style={{ justifyContent: 'flex-end', margin: 0 }}
+        >
+          <View style={{ backgroundColor: theme.colors.background }}>
             <InfoListItem
               title={'Remove'}
               icon={

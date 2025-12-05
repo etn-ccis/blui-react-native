@@ -1,20 +1,20 @@
-import React, {useCallback, useState} from 'react';
-import {Header} from '@brightlayer-ui/react-native-components';
-import {View, StyleSheet, ViewStyle, SafeAreaView} from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { Header } from '@brightlayer-ui/react-native-components';
+import { View, StyleSheet, ViewStyle, SafeAreaView } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {TextInput} from '../shared/TextInput';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { TextInput } from '../shared/TextInput';
 import {
   PasswordRequirement,
   passwordRequirements,
   PasswordRequirements,
 } from './PasswordRequirements';
-import {Button, Divider, Text} from 'react-native-paper';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {ThemeProp} from 'react-native-paper/lib/typescript/types';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { Button, Divider, Text } from 'react-native-paper';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { ThemeProp } from 'react-native-paper/lib/typescript/types';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (
   theme: ThemeProp,
@@ -207,7 +207,7 @@ export const PasswordValidationScreen: React.FC = () => {
   );
 
   return (
-    <View style={{flex: 1, backgroundColor: theme.colors.background}}>
+    <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <Header
         title={'Password Validation'}
         icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
@@ -218,7 +218,8 @@ export const PasswordValidationScreen: React.FC = () => {
       <SafeAreaView style={styles.safeContainer}>
         <KeyboardAwareScrollView
           style={styles.scrollContainer}
-          contentContainerStyle={[styles.scrollContentContainer]}>
+          contentContainerStyle={[styles.scrollContentContainer]}
+        >
           <View style={styles.section}>
             <Text variant="bodyMedium">
               Password must be at least 8 characters long, contain at least one
@@ -231,7 +232,8 @@ export const PasswordValidationScreen: React.FC = () => {
                 currentPasswordErrorText !== ''
                   ? styles.currentPasswordErrorFormFieldWrapper
                   : styles.currentPasswordFormFieldWrapper
-              }>
+              }
+            >
               <TextInput
                 label="Current Password *"
                 value={currentPassword}
@@ -279,7 +281,8 @@ export const PasswordValidationScreen: React.FC = () => {
                 confirmPasswordErrorText !== ''
                   ? styles.confirmPasswordErrorFormFieldWrapper
                   : styles.confirmPasswordFormFieldWrapper
-              }>
+              }
+            >
               <TextInput
                 label="Confirm Password *"
                 value={confirmPassword}
@@ -306,7 +309,8 @@ export const PasswordValidationScreen: React.FC = () => {
             mode="contained"
             style={styles.submitButton}
             onPress={(): void => {}}
-            disabled={canSubmit()}>
+            disabled={canSubmit()}
+          >
             Submit
           </Button>
         </View>

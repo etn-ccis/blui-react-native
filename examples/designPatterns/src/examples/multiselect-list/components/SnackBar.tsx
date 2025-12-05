@@ -1,12 +1,12 @@
-import React, {useEffect, useRef} from 'react';
-import {Animated, ViewProps} from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { Animated, ViewProps } from 'react-native';
 
 export type SnackBarProps = ViewProps & {
   show: boolean;
 };
 
 export const SnackBar: React.FC<SnackBarProps> = props => {
-  const {show} = props;
+  const { show } = props;
   const slideAnim = useRef(new Animated.Value(0)).current;
 
   const transformStyle = {

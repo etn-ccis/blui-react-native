@@ -1,18 +1,18 @@
-import React, {useState, useCallback, JSX} from 'react';
+import React, { useState, useCallback, JSX } from 'react';
 import {
   Header,
   InfoListItem,
   EmptyState,
 } from '@brightlayer-ui/react-native-components';
-import {View, StyleSheet, SafeAreaView, ScrollView, Text} from 'react-native';
+import { View, StyleSheet, SafeAreaView, ScrollView, Text } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {ListItem, generateData, createRandomItem} from './utilities';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {SnackBar} from './components/SnackBar';
-import {IconButton, Button} from 'react-native-paper';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { ListItem, generateData, createRandomItem } from './utilities';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SnackBar } from './components/SnackBar';
+import { IconButton, Button } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const useStyles = (theme: any): any =>
   StyleSheet.create({
@@ -57,7 +57,7 @@ export type MultiselectListProps = {
 };
 
 export const MultiselectListScreen: React.FC<MultiselectListProps> = props => {
-  const {hardcodedData} = props;
+  const { hardcodedData } = props;
   const navigation =
     useNavigation<DrawerNavigationProp<Record<string, undefined>>>();
   const theme = useExtendedTheme();
@@ -174,7 +174,8 @@ export const MultiselectListScreen: React.FC<MultiselectListProps> = props => {
                   />
                 )}
                 onPress={addItem}
-                mode="contained">
+                mode="contained"
+              >
                 Add Item
               </Button>
             }
@@ -182,7 +183,7 @@ export const MultiselectListScreen: React.FC<MultiselectListProps> = props => {
         )}
       </SafeAreaView>
       <SnackBar style={styles.footer} show={selectedItems.length}>
-        <View style={[styles.footerContent, {paddingBottom: insets.bottom}]}>
+        <View style={[styles.footerContent, { paddingBottom: insets.bottom }]}>
           <View style={styles.footerTitleContainer}>
             <Text style={styles.footerTitle}>
               {' '}

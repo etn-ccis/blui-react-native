@@ -1,14 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {ActionListScreen, ListItem} from './ActionList';
+import { ActionListScreen, ListItem } from './ActionList';
 // import { InfoListItem } from '@brightlayer-ui/react-native-components';
 // import { FlatList } from 'react-native';
-import {Provider as ThemeProvider} from 'react-native-paper';
+import { Provider as ThemeProvider } from 'react-native-paper';
 import * as BLUIThemes from '@brightlayer-ui/react-native-themes';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 jest.mock('@react-navigation/native', () => ({
-  useNavigation: (): any => ({openDrawer: jest.fn(() => true)}),
+  useNavigation: (): any => ({ openDrawer: jest.fn(() => true) }),
 }));
 
 const hardcodedData: ListItem[] = [

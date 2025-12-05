@@ -1,5 +1,5 @@
-import React, {JSX, useCallback, useEffect, useState} from 'react';
-import {Header} from '@brightlayer-ui/react-native-components';
+import React, { JSX, useCallback, useEffect, useState } from 'react';
+import { Header } from '@brightlayer-ui/react-native-components';
 import {
   View,
   StyleSheet,
@@ -9,11 +9,11 @@ import {
   Dimensions,
 } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
-import {TextInput} from '../shared/TextInput';
-import {Button, Divider, Text} from 'react-native-paper';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
+import { TextInput } from '../shared/TextInput';
+import { Button, Divider, Text } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 const makeStyles = (): StyleSheet.NamedStyles<{
   section: ViewStyle;
@@ -66,8 +66,8 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
   const [shouldValidate, setShouldValidate] = useState(false);
 
   useEffect(() => {
-    const subscription = Dimensions.addEventListener('change', ({window}) => {
-      setDimensions({window});
+    const subscription = Dimensions.addEventListener('change', ({ window }) => {
+      setDimensions({ window });
     });
     return (): void => subscription?.remove();
   });
@@ -124,7 +124,7 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: theme.colors.background}}>
+    <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <Header
         title={'Fixed Length Passcode'}
         icon={<MatIcon name="menu" color={theme.colors.onPrimary} size={24} />}
@@ -138,13 +138,14 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
             style={[
               styles.section,
               dimensions.window.width < 600 ? {} : styles.sectionTablet,
-            ]}>
+            ]}
+          >
             <Text variant="bodySmall">
               Please enter the{' '}
               <Text variant="bodyMedium">six-digit passcode</Text> we just send
               to you. The passcode is valid for 15 minutes.
             </Text>
-            <Text variant="bodySmall" style={{marginTop: 8}}>
+            <Text variant="bodySmall" style={{ marginTop: 8 }}>
               For the purpose of this demonstration, passcode{' '}
               <Text variant="bodyMedium">123456</Text> will pass. Any other 6
               digit passcode will fail.
@@ -155,7 +156,8 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
                 passcodeErrorText !== ''
                   ? styles.passcodeErrorFormFieldWrapper
                   : styles.passcodeFormFieldWrapper
-              }>
+              }
+            >
               <TextInput
                 label="Passcode *"
                 value={passcode}
@@ -176,7 +178,7 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
                 }}
                 rightText={{
                   text: isLoading ? 'verifying...' : '',
-                  style: {color: isLoading ? theme.colors.outline : ''},
+                  style: { color: isLoading ? theme.colors.outline : '' },
                 }}
                 maxLength={6}
                 disabled={isLoading || (passcodeSubmitted && passcodeSuccess)}
@@ -192,7 +194,8 @@ export const FixedLengthPasscodeScreen: React.FC = () => {
                   color={theme.colors.primaryNonText}
                   size={24}
                 />
-              )}>
+              )}
+            >
               Reset Form
             </Button>
           </View>

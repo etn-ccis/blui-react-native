@@ -1,12 +1,12 @@
-import React, {JSX, useState} from 'react';
-import {Header, InfoListItem} from '@brightlayer-ui/react-native-components';
-import {View, StyleSheet, TouchableOpacity, FlatList} from 'react-native';
+import React, { JSX, useState } from 'react';
+import { Header, InfoListItem } from '@brightlayer-ui/react-native-components';
+import { View, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons';
-import {useNavigation} from '@react-navigation/native';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
+import { useNavigation } from '@react-navigation/native';
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 import DraggableFlatList from 'react-native-draggable-flatlist';
-import {Surface, Text} from 'react-native-paper';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { Surface, Text } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 type ListItem = {
   name: string;
@@ -73,7 +73,7 @@ export const SortableListScreen: React.FC = () => {
     isActive,
   }: DraggableItemProps): JSX.Element => (
     <TouchableOpacity onLongPress={drag}>
-      <Surface style={{elevation: isActive ? 4 : 0}}>
+      <Surface style={{ elevation: isActive ? 4 : 0 }}>
         <InfoListItem
           title={item.name}
           rightComponent={<Text variant="headlineMedium">{item.value}</Text>}
@@ -90,7 +90,7 @@ export const SortableListScreen: React.FC = () => {
     </TouchableOpacity>
   );
 
-  const renderItem = ({item}: ItemProps): JSX.Element => (
+  const renderItem = ({ item }: ItemProps): JSX.Element => (
     <InfoListItem
       title={item.name}
       rightComponent={<Text variant="headlineMedium">{item.value}</Text>}
@@ -132,7 +132,7 @@ export const SortableListScreen: React.FC = () => {
           data={sortableData}
           renderItem={renderDragableItem}
           keyExtractor={(item: ListItem, index: number): string => `${index}`}
-          onDragEnd={({data}: DataProps): void => setSortableData(data)}
+          onDragEnd={({ data }: DataProps): void => setSortableData(data)}
         />
       ) : (
         <FlatList

@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {ComplexBottomSheetScreen} from './components/BottomSheet';
-import {sortEvents, filterEvents} from './ComplexBottomSheet';
+import { ComplexBottomSheetScreen } from './components/BottomSheet';
+import { sortEvents, filterEvents } from './ComplexBottomSheet';
 
 jest.mock('@react-navigation/native', () => ({
-  useNavigation: (): any => ({openDrawer: jest.fn(() => true)}),
+  useNavigation: (): any => ({ openDrawer: jest.fn(() => true) }),
 }));
 
 describe('Complex Bottom Sheet Tests', () => {

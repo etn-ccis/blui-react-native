@@ -1,7 +1,7 @@
-import React, {ReactNode, useState, useEffect} from 'react';
-import {SafeAreaView} from 'react-native';
+import React, { ReactNode, useState, useEffect } from 'react';
+import { SafeAreaView } from 'react-native';
 import Modal from 'react-native-modal';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 type BottomSheetProps = {
   show?: boolean;
@@ -10,7 +10,7 @@ type BottomSheetProps = {
 };
 
 export const BottomSheetScreen: React.FC<BottomSheetProps> = props => {
-  const {show, children, dismissBottomSheet} = props;
+  const { show, children, dismissBottomSheet } = props;
   const [isBottomSheetVisible, setIsBottomSheetVisible] = useState(
     show ? true : false,
   );
@@ -25,8 +25,9 @@ export const BottomSheetScreen: React.FC<BottomSheetProps> = props => {
       backdropOpacity={0.5}
       onBackdropPress={dismissBottomSheet}
       supportedOrientations={['portrait', 'landscape']}
-      style={{justifyContent: 'flex-end', margin: 0}}>
-      <SafeAreaView style={{backgroundColor: theme.colors.background}}>
+      style={{ justifyContent: 'flex-end', margin: 0 }}
+    >
+      <SafeAreaView style={{ backgroundColor: theme.colors.background }}>
         {children}
       </SafeAreaView>
     </Modal>
