@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.1 (Unreleased)
+
+### Fixed
+
+- Issue with `Pie` color when value is 100 percent ([#402](https://github.com/etn-ccis/blui-react-native/issues/402)).
+
 ## v2.0.0 (July 25, 2025)
 
 ### Changed
