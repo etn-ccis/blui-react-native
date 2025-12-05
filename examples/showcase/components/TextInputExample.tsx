@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {TextInput, HelperText, Text} from 'react-native-paper';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
+import { View, StyleSheet } from 'react-native';
+import { TextInput, HelperText, Text } from 'react-native-paper';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 export const TextFieldExample: React.FC = () => {
   const theme = useExtendedTheme();

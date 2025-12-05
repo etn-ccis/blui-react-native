@@ -3,9 +3,9 @@ import {
   UserMenu,
 } from '@brightlayer-ui/react-native-components';
 import React from 'react';
-import {Avatar} from 'react-native-paper';
+import { Avatar } from 'react-native-paper';
 import * as BLUIColors from '@brightlayer-ui/colors';
-import {IconFamily} from '@brightlayer-ui/react-native-components/md3/__types__';
+import { IconFamily } from '@brightlayer-ui/react-native-components/md3/__types__';
 
 const SwapIcon: IconFamily = {
   family: 'material',
@@ -29,16 +29,16 @@ type UserMenuExampleProps = {
 };
 
 export const UserMenuExample: React.FC<UserMenuExampleProps> = props => {
-  const {onToggleRTL, onToggleTheme} = props;
+  const { onToggleRTL, onToggleTheme } = props;
 
   const menuItems: InfoListItemProps[] = [
-    {title: 'Toggle RTL', icon: SwapIcon, onPress: (): void => onToggleRTL()},
+    { title: 'Toggle RTL', icon: SwapIcon, onPress: (): void => onToggleRTL() },
     {
       title: 'Toggle Theme',
       icon: InvertColorsIcon,
       onPress: (): void => onToggleTheme(),
     },
-    {title: 'Cancel', icon: CancelIcon},
+    { title: 'Cancel', icon: CancelIcon },
   ];
 
   return (
@@ -51,7 +51,7 @@ export const UserMenuExample: React.FC<UserMenuExampleProps> = props => {
           icon="account-circle"
           size={40}
           color={BLUIColors.primary[50]}
-          style={{backgroundColor: BLUIColors.primary[80]}}
+          style={{ backgroundColor: BLUIColors.primary[80] }}
         />
       }
     />

@@ -1,11 +1,11 @@
 import 'react-native-gesture-handler';
-import React, {ReactNode} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {View} from 'react-native';
-import {NavDrawerProps, NavigationDrawer} from './NavigationDrawer';
-import {App} from '../App';
-import {createStackNavigator} from '@react-navigation/stack';
+import React, { ReactNode } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View } from 'react-native';
+import { NavDrawerProps, NavigationDrawer } from './NavigationDrawer';
+import { App } from '../App';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Drawer = createDrawerNavigator();
 
@@ -17,7 +17,7 @@ export type RootStackParamList = {
 const RootStack = createStackNavigator<RootStackParamList>();
 
 const CustomDrawerContent = (props: any): any => (
-  <View style={{height: '100%'}}>
+  <View style={{ height: '100%' }}>
     <NavigationDrawer {...props} />
   </View>
 );
@@ -26,15 +26,16 @@ export const MainRouter = (): any => (
   <NavigationContainer>
     <Drawer.Navigator
       initialRouteName="App"
-      drawerStyle={{backgroundColor: 'transparent', width: '80%'}}
+      drawerStyle={{ backgroundColor: 'transparent', width: '80%' }}
       screenOptions={{
         headerShown: false,
         drawerType: 'front',
-        drawerStyle: {backgroundColor: 'transparent'},
+        drawerStyle: { backgroundColor: 'transparent' },
       }}
       drawerContent={(props: NavDrawerProps): ReactNode => (
         <CustomDrawerContent {...props} />
-      )}>
+      )}
+    >
       <RootStack.Screen name="App" component={App} />
     </Drawer.Navigator>
   </NavigationContainer>

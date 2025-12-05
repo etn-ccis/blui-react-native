@@ -1,10 +1,10 @@
-import React, {useCallback, useState} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { StyleSheet, Text } from 'react-native';
 import {
   MobileStepper,
   DotStepperVariant,
 } from '@brightlayer-ui/react-native-components';
-import {Button, Card, Divider, useTheme} from 'react-native-paper';
+import { Button, Card, Divider, useTheme } from 'react-native-paper';
 
 export const MobileStepperExample: React.FC = () => {
   const theme = useTheme();
@@ -71,7 +71,8 @@ export const MobileStepperExample: React.FC = () => {
             style={[styles.button, styles.leftButton]}
             disabled={currentStep === 0}
             onPress={(): void => updateStep(-1)}
-            mode="outlined">
+            mode="outlined"
+          >
             Back
           </Button>
         }
@@ -80,7 +81,8 @@ export const MobileStepperExample: React.FC = () => {
             style={[styles.button, styles.rightButton]}
             disabled={currentStep === totalSteps - 1}
             onPress={(): void => updateStep(1)}
-            mode="contained">
+            mode="contained"
+          >
             Next
           </Button>
         }

@@ -1,4 +1,4 @@
-import {LOCAL_USER_DATA, REMEMBER_ME_DATA} from '../constants';
+import { LOCAL_USER_DATA, REMEMBER_ME_DATA } from '../constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // For cross compatibility pretend AsyncStorage is just window local storage
@@ -14,7 +14,7 @@ const window = {
 type AuthData = {
   userId: string | undefined;
   email: string | undefined;
-  rememberMeData: {user: string; rememberMe: boolean};
+  rememberMeData: { user: string; rememberMe: boolean };
 };
 
 async function readAuthData(): Promise<AuthData> {
