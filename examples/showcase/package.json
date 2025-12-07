@@ -47,7 +47,7 @@
     "@babel/runtime": "^7.25.0",
     "@brightlayer-ui/eslint-config": "^3.0.1",
     "@brightlayer-ui/prettier-config": "^1.0.3",
-    "@react-native-community/cli": "15.0.1",
+    "@react-native-community/cli": "17.0.1",
     "@react-native-community/cli-platform-android": "15.0.1",
     "@react-native-community/cli-platform-ios": "15.0.1",
     "@react-native/babel-preset": "0.76.7",
