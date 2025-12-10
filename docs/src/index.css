@@ -61,9 +61,13 @@ input[type='number'] {
 
 @font-face {
     src: url(/MaterialIcons.ttf);
-    font-family: 'MaterialIcons';
+    font-family: 'MaterialIcons-Regular';
 }
 
+@font-face {
+    src: url(/MaterialIcons.ttf);
+    font-family: 'MaterialIcons';
+}
 @font-face {
     src: url(/Feather.ttf);
     font-family: 'Feather';
