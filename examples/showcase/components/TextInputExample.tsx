@@ -19,7 +19,7 @@ export const TextFieldExample: React.FC = () => {
     },
     flatInput: {
       marginTop: 8,
-      marginHorizontal: 8,
+      marginHorizontal: 7,
     },
     flatTextInputBackgroundColor: {
       backgroundColor: theme.colors.textFieldContainer,
