@@ -1,16 +1,16 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 import {
   Battery,
   Heart,
   Pie,
   Ups,
 } from '@brightlayer-ui/react-native-progress-icons';
-import {Text} from 'react-native-paper';
+import { Text } from 'react-native-paper';
 
 const ProgessIconExample: React.FC = () => (
-  <View style={{marginTop: 20}}>
-    <Text variant="titleMedium" style={{color: 'black'}}>
+  <View style={{ marginTop: 20 }}>
+    <Text variant="titleMedium" style={{ color: 'black' }}>
       React Native Progres icon
     </Text>
     <View
@@ -18,7 +18,8 @@ const ProgessIconExample: React.FC = () => (
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-      }}>
+      }}
+    >
       <Battery
         percent={50}
         size={50}

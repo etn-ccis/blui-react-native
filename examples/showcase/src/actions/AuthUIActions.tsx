@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import {AuthUIActions} from '@brightlayer-ui/react-native-auth-workflow';
-import {AppContextType} from '../contexts/AppContextProvider';
-import {LocalStorage} from '../store/local-storage';
+import { AuthUIActions } from '@brightlayer-ui/react-native-auth-workflow';
+import { AppContextType } from '../contexts/AppContextProvider';
+import { LocalStorage } from '../store/local-storage';
 import Config from 'react-native-config';
 
 // prettier-ignore

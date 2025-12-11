@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import React, { JSX, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import {
   Appbar,
   Avatar,
@@ -30,7 +30,7 @@ import {
   ActivityIndicator,
   SegmentedButtons,
 } from 'react-native-paper';
-import {DISABLE_FONT_SCALE, MAX_FONT_SCALE} from '../constants';
+import { DISABLE_FONT_SCALE, MAX_FONT_SCALE } from '../constants';
 import {
   ChannelValue,
   ListItemTag,
@@ -53,12 +53,12 @@ import {
   Icon,
 } from '@brightlayer-ui/react-native-components';
 import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
-import {ScoreCardExample} from './ScoreCardExample';
-import {MobileStepperExample} from './MobileStepperExample';
+import { ScoreCardExample } from './ScoreCardExample';
+import { MobileStepperExample } from './MobileStepperExample';
 import * as BLUIColors from '@brightlayer-ui/colors';
-import {TextFieldExample} from './TextInputExample';
-import {useExtendedTheme} from '@brightlayer-ui/react-native-themes';
-import {AutoCompleteExample} from './AutocompleteExample';
+import { TextFieldExample } from './TextInputExample';
+import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
+import { AutoCompleteExample } from './AutocompleteExample';
 
 const PublicDomainAlice = require('../assets/images/public-domain-alice.png');
 
@@ -130,14 +130,14 @@ export const KitchenSink: React.FC = (): JSX.Element => {
     !helperTextInputText.includes('@');
 
   const [routes] = React.useState([
-    {key: 'music', title: 'Music', focusedIcon: 'music', badge: true},
+    { key: 'music', title: 'Music', focusedIcon: 'music', badge: true },
     {
       key: 'albums',
       title: 'Albums',
       focusedIcon: 'album',
       badge: '1',
     },
-    {key: 'recents', title: 'Recents', focusedIcon: 'history'},
+    { key: 'recents', title: 'Recents', focusedIcon: 'history' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
@@ -146,7 +146,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
     recents: RecentsRoute,
   });
 
-  const [state, setState] = React.useState({open: false});
+  const [state, setState] = React.useState({ open: false });
   const [toggledIconValue, settoggledIconValue] = useState([
     true,
     true,
@@ -165,9 +165,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
     });
   };
 
-  const onStateChange = ({open}: {open: boolean}): void => setState({open});
+  const onStateChange = ({ open }: { open: boolean }): void =>
+    setState({ open });
 
-  const {open} = state;
+  const { open } = state;
 
   const [page, setPage] = React.useState<number>(0);
   const [numberOfItemsPerPageList] = React.useState([2, 3, 4]);
@@ -221,7 +222,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
 
   return (
     <>
-      <Text variant="titleLarge" style={{marginVertical: 48}}>
+      <Text variant="titleLarge" style={{ marginVertical: 48 }}>
         MD3 BLUI Components
       </Text>
       <AutoCompleteExample />
@@ -240,9 +241,9 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 value: 'train',
                 label: 'Transit',
               },
-              {value: 'drive', label: 'Driving'},
+              { value: 'drive', label: 'Driving' },
             ]}
-            style={{marginBottom: 20}}
+            style={{ marginBottom: 20 }}
           />
           <SegmentedButtons
             value={icon}
@@ -261,7 +262,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 icon: 'car',
               },
             ]}
-            style={{marginBottom: 20}}
+            style={{ marginBottom: 20 }}
           />
           <SegmentedButtons
             value={value}
@@ -283,20 +284,20 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 icon: 'car',
               },
             ]}
-            style={{marginBottom: 10}}
+            style={{ marginBottom: 10 }}
           />
         </Card.Content>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="Icon" />
         <Card.Content>
-          <Icon source={{family: 'brightlayer-ui', name: 'device'}} />
+          <Icon source={{ family: 'brightlayer-ui', name: 'device' }} />
         </Card.Content>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="Icon Switch" />
         <Card.Content>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               value={toggledIconValue[0]}
               onValueChange={() => {
@@ -304,7 +305,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               }}
             />
           </View>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               value={toggledIconValue[1]}
               onValueChange={() => {
@@ -313,7 +314,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               showIcon
             />
           </View>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               value={toggledIconValue[2]}
               onValueChange={() => {
@@ -321,7 +322,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               }}
             />
           </View>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               showIcon
               value={toggledIconValue[3]}
@@ -330,7 +331,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               }}
             />
           </View>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               value={toggledIconValue[4]}
               onValueChange={() => {
@@ -339,7 +340,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               disabled
             />
           </View>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               value={toggledIconValue[5]}
               onValueChange={() => {
@@ -349,7 +350,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               disabled
             />
           </View>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               value={toggledIconValue[6]}
               onValueChange={() => {
@@ -358,7 +359,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               disabled
             />
           </View>
-          <View style={{padding: 10}}>
+          <View style={{ padding: 10 }}>
             <IconSwitch
               value={toggledIconValue[7]}
               onValueChange={() => {
@@ -372,20 +373,22 @@ export const KitchenSink: React.FC = (): JSX.Element => {
       </Card>
       <Card style={styles.card}>
         <Card.Title title="Chip" />
-        <Card.Content style={{alignItems: 'flex-start'}}>
-          <Chip style={{marginTop: 10}}>Outlined Chip</Chip>
+        <Card.Content style={{ alignItems: 'flex-start' }}>
+          <Chip style={{ marginTop: 10 }}>Outlined Chip</Chip>
           <Chip
-            icon={{name: 'info'}}
+            icon={{ name: 'info' }}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Icon
           </Chip>
           <Chip
             avatar={<Avatar.Icon size={40} icon="account-circle" />}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Avatar
           </Chip>
           <Chip
@@ -393,10 +396,11 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             style={{
               marginTop: 10,
             }}
-            onClose={() => {}}>
+            onClose={() => {}}
+          >
             Outlined Chip With Close Icon
           </Chip>
-          <Chip selected style={{marginTop: 10}}>
+          <Chip selected style={{ marginTop: 10 }}>
             Selected Outlined Chip
           </Chip>
           <Chip
@@ -404,7 +408,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             showSelectedOverlay
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Selected Outlined Chip With Overlay
           </Chip>
           <Chip
@@ -412,7 +417,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             showSelectedCheck
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Selected Outlined Chip With Check
           </Chip>
           <Chip
@@ -420,38 +426,44 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             onPress={() => console.log('ripple effect')}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Ripple Color
           </Chip>
-          <Chip disabled style={{marginTop: 10}}>
+          <Chip disabled style={{ marginTop: 10 }}>
             Disabled Outlined Chip
           </Chip>
           <Chip
             onPress={() => console.log('outlined chip pressed')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Outlined Chip On Press
           </Chip>
           <Chip
             onPress={() => console.log('outlined chip pressed')}
             onLongPress={() => console.log('outlined chip long pressed')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Outlined Chip On Long Press
           </Chip>
           <Chip
             onPressIn={() => console.log('outlined chip on press in')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Outlined Chip On Press In
           </Chip>
           <Chip
             onPressOut={() => console.log('outlined chip on press out')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Outlined Chip On Press Out
           </Chip>
           <Chip
             onClose={(): void => {
               console.log('outlined chip on close');
             }}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Outlined Chip On Close
           </Chip>
           <Chip
@@ -460,67 +472,76 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             onLongPress={() =>
               console.log('outlined chip long pressed for 3 seconds')
             }
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Outlined Chip Delay Long Press
           </Chip>
           <Chip
             compact
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Compact Outlined Chip
           </Chip>
           <Chip
-            textStyle={{color: BLUIColors.neutralVariant[50]}}
+            textStyle={{ color: BLUIColors.neutralVariant[50] }}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Text Style
           </Chip>
           <Chip
             style={{
               marginTop: 10,
               backgroundColor: BLUIColors.neutralVariant[50],
-            }}>
+            }}
+          >
             Outlined Chip With Style
           </Chip>
           <Chip
             ellipsizeMode="middle"
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Ellipsize Mode Outlined Chip With Ellipsize Mode
           </Chip>
           <Chip
-            icon={{name: 'info'}}
+            icon={{ name: 'info' }}
             iconColor={BLUIColors.error[50]}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Icon Color
           </Chip>
           <Chip
             chipColor={BLUIColors.primary[50]}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Chip Color
           </Chip>
           <Chip
             borderColor={BLUIColors.primary[50]}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Outlined Chip With Border Color
           </Chip>
-          <Divider style={{marginVertical: 10}} />
+          <Divider style={{ marginVertical: 10 }} />
           <Chip mode="elevated">Elevated Chip</Chip>
           <Chip
             mode="elevated"
-            icon={{name: 'info'}}
+            icon={{ name: 'info' }}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Icon
           </Chip>
           <Chip
@@ -528,7 +549,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             avatar={<Avatar.Icon size={40} icon="account-circle" />}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Avatar
           </Chip>
           <Chip
@@ -537,7 +559,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             style={{
               marginTop: 10,
             }}
-            onClose={() => {}}>
+            onClose={() => {}}
+          >
             Elevated Chip With Close Icon
           </Chip>
           <Chip
@@ -545,7 +568,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             mode="elevated"
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Selected Elevated Chip
           </Chip>
           <Chip
@@ -554,7 +578,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             showSelectedOverlay
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Selected Elevated Chip With Overlay
           </Chip>
           <Chip
@@ -563,7 +588,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             showSelectedCheck
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Selected Elevated Chip With Check
           </Chip>
           <Chip
@@ -572,35 +598,40 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             onPress={() => console.log('ripple effect')}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Ripple Color
           </Chip>
-          <Chip mode="elevated" disabled style={{marginTop: 10}}>
+          <Chip mode="elevated" disabled style={{ marginTop: 10 }}>
             Disabled Elevated Chip
           </Chip>
           <Chip
             mode="elevated"
             onPress={() => console.log('elevated chip pressed')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Elevated Chip On Press
           </Chip>
           <Chip
             mode="elevated"
             onPress={() => console.log('elevated chip pressed')}
             onLongPress={() => console.log('elevated chip long pressed')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Elevated Chip On Long Press
           </Chip>
           <Chip
             mode="elevated"
             onPressIn={() => console.log('elevated chip on press in')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Elevated Chip On Press In
           </Chip>
           <Chip
             mode="elevated"
             onPressOut={() => console.log('elevated chip on press out')}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Elevated Chip On Press Out
           </Chip>
           <Chip
@@ -608,7 +639,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             onClose={(): void => {
               console.log('elevated chip on close');
             }}
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Elevated Chip On Close
           </Chip>
           <Chip
@@ -618,7 +650,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             onLongPress={() =>
               console.log('elevated chip long pressed for 3 seconds')
             }
-            style={{marginTop: 10}}>
+            style={{ marginTop: 10 }}
+          >
             Elevated Chip Delay Long Press
           </Chip>
           <Chip
@@ -626,15 +659,17 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             compact
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Compact Elevated Chip
           </Chip>
           <Chip
             mode="elevated"
-            textStyle={{color: BLUIColors.neutralVariant[50]}}
+            textStyle={{ color: BLUIColors.neutralVariant[50] }}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Text Style
           </Chip>
           <Chip
@@ -642,7 +677,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             style={{
               marginTop: 10,
               backgroundColor: BLUIColors.neutralVariant[50],
-            }}>
+            }}
+          >
             Elevated Chip With Style
           </Chip>
           <Chip
@@ -650,16 +686,18 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             ellipsizeMode="middle"
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Ellipsize Mode Elevated Chip With Ellipsize Mode
           </Chip>
           <Chip
             mode="elevated"
-            icon={{name: 'info'}}
+            icon={{ name: 'info' }}
             iconColor={BLUIColors.error[50]}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Icon Color
           </Chip>
           <Chip
@@ -667,7 +705,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             chipColor={BLUIColors.primary[50]}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Chip Color
           </Chip>
           <Chip
@@ -675,7 +714,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             borderColor={BLUIColors.primary[50]}
             style={{
               marginTop: 10,
-            }}>
+            }}
+          >
             Elevated Chip With Border Color
           </Chip>
         </Card.Content>
@@ -683,30 +723,30 @@ export const KitchenSink: React.FC = (): JSX.Element => {
       <Card style={styles.card}>
         <Card.Title title="Grades" />
         <Card.Content>
-          <Grade.APlus style={{marginBottom: 10}} />
-          <Grade.A style={{marginBottom: 10}} />
-          <Grade.AMinus style={{marginBottom: 10}} />
-          <Grade.BPlus style={{marginBottom: 10}} />
-          <Grade.B style={{marginBottom: 10}} />
-          <Grade.BMinus style={{marginBottom: 10}} />
-          <Grade.CPlus style={{marginBottom: 10}} />
-          <Grade.C style={{marginBottom: 10}} />
-          <Grade.CMinus style={{marginBottom: 10}} />
-          <Grade.DPlus style={{marginBottom: 10}} />
-          <Grade.D style={{marginBottom: 10}} />
-          <Grade.DMinus style={{marginBottom: 10}} />
-          <Grade.F style={{marginBottom: 10}} />
+          <Grade.APlus style={{ marginBottom: 10 }} />
+          <Grade.A style={{ marginBottom: 10 }} />
+          <Grade.AMinus style={{ marginBottom: 10 }} />
+          <Grade.BPlus style={{ marginBottom: 10 }} />
+          <Grade.B style={{ marginBottom: 10 }} />
+          <Grade.BMinus style={{ marginBottom: 10 }} />
+          <Grade.CPlus style={{ marginBottom: 10 }} />
+          <Grade.C style={{ marginBottom: 10 }} />
+          <Grade.CMinus style={{ marginBottom: 10 }} />
+          <Grade.DPlus style={{ marginBottom: 10 }} />
+          <Grade.D style={{ marginBottom: 10 }} />
+          <Grade.DMinus style={{ marginBottom: 10 }} />
+          <Grade.F style={{ marginBottom: 10 }} />
           <Grade label="Cg" size={40} />
         </Card.Content>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="Drawer" />
         <Card.Content>
-          <Drawer activeItem="item1" style={{margin: 10}}>
+          <Drawer activeItem="item1" style={{ margin: 10 }}>
             <DrawerHeader
               title={'Drawer Title'}
               subtitle={'Drawer Subtitle'}
-              icon={{name: 'menu', direction: 'auto'}}
+              icon={{ name: 'menu', direction: 'auto' }}
             />
             <DrawerBody>
               {/* Using children */}
@@ -735,7 +775,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   activeItemBackgroundShape={'round'}
                   InfoListItemProps={{
                     iconAlign: 'center',
-                  }}>
+                  }}
+                >
                   <DrawerNavItem itemID={'item3'} title={'item3'}>
                     <DrawerNavItem itemID={'item31'} title={'Item31'} />
                     <DrawerNavItem itemID={'item32'} title={'Item32'} />
@@ -783,62 +824,68 @@ export const KitchenSink: React.FC = (): JSX.Element => {
       <Header
         title={'Valley Forge'}
         subtitle={'The Last Stand'}
-        icon={{name: 'menu'}}
+        icon={{ name: 'menu' }}
         onIconPress={() => {}}
         actionItems={[
           {
-            icon: {name: 'more-vert'},
+            icon: { name: 'more-vert' },
             onPress: (): void => {},
           },
         ]}
         variant="static"
         backgroundImage={require('../assets/images/farm.jpg')}
-        searchableConfig={{onChangeText: () => {}}}
+        searchableConfig={{ onChangeText: () => {} }}
         expandable={true}
         collapsedHeight={56}
       />
       <Card style={styles.card}>
         <Card.Title title="Spacer" />
-        <View style={{marginLeft: 20, marginRight: 20, marginBottom: 20}}>
+        <View style={{ marginLeft: 20, marginRight: 20, marginBottom: 20 }}>
           <Text>Horizontal</Text>
           <View
             style={{
               display: 'flex',
               flexDirection: 'row',
-            }}>
-            <View style={{height: 50, width: 70, backgroundColor: '#4682B4'}} />
-            <Spacer flex={0} height={10} width={10} />
+            }}
+          >
             <View
-              style={{height: 50, width: 155, backgroundColor: '#FFD700'}}
+              style={{ height: 50, width: 70, backgroundColor: '#4682B4' }}
             />
             <Spacer flex={0} height={10} width={10} />
-            <View style={{height: 50, width: 70, backgroundColor: '#FF6347'}} />
+            <View
+              style={{ height: 50, width: 155, backgroundColor: '#FFD700' }}
+            />
+            <Spacer flex={0} height={10} width={10} />
+            <View
+              style={{ height: 50, width: 70, backgroundColor: '#FF6347' }}
+            />
           </View>
         </View>
-        <View style={{marginLeft: 20, marginRight: 20, marginBottom: 20}}>
+        <View style={{ marginLeft: 20, marginRight: 20, marginBottom: 20 }}>
           <Text>Vertical</Text>
           <View
             style={{
               display: 'flex',
-            }}>
+            }}
+          >
             <View
-              style={{height: 50, width: 315, backgroundColor: '#4682B4'}}
+              style={{ height: 50, width: 315, backgroundColor: '#4682B4' }}
             />
             <Spacer flex={0} height={10} width={10} />
             <View
-              style={{height: 50, width: 315, backgroundColor: '#FFD700'}}
+              style={{ height: 50, width: 315, backgroundColor: '#FFD700' }}
             />
             <Spacer flex={0} height={10} width={10} />
             <View
-              style={{height: 50, width: 315, backgroundColor: '#FF6347'}}
+              style={{ height: 50, width: 315, backgroundColor: '#FF6347' }}
             />
           </View>
         </View>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="User Menu Examples" />
-        <View style={{display: 'flex'}}>
-          <View style={{alignItems: 'center', marginBottom: 8}}>
+        <View style={{ display: 'flex' }}>
+          <View style={{ alignItems: 'center', marginBottom: 8 }}>
             <Card.Title title="User Menu With Text Avatar" />
             <UserMenu
               menuTitle={'John Smith'}
@@ -856,12 +903,12 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                     name: 'settings',
                   },
                 },
-                {title: 'Log Out', icon: {name: 'exit-to-app'}},
+                { title: 'Log Out', icon: { name: 'exit-to-app' } },
               ]}
               avatar={<Avatar.Text label="JS" size={40} />}
             />
           </View>
-          <View style={{alignItems: 'center', marginBottom: 8}}>
+          <View style={{ alignItems: 'center', marginBottom: 8 }}>
             <Card.Title title="User Menu With Icon" />
             <UserMenu
               menuTitle={'John Smith'}
@@ -879,19 +926,19 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                     name: 'settings',
                   },
                 },
-                {title: 'Log Out', icon: {name: 'exit-to-app'}},
+                { title: 'Log Out', icon: { name: 'exit-to-app' } },
               ]}
               avatar={
                 <Avatar.Icon
                   size={40}
                   icon="account-circle"
                   color={theme.colors.primaryNonText}
-                  style={{backgroundColor: theme.colors.primaryContainer}}
+                  style={{ backgroundColor: theme.colors.primaryContainer }}
                 />
               }
             />
           </View>
-          <View style={{alignItems: 'center', marginBottom: 8}}>
+          <View style={{ alignItems: 'center', marginBottom: 8 }}>
             <Card.Title title="User Menu With Image Avatar" />
             <UserMenu
               menuTitle={'John Smith'}
@@ -900,7 +947,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 {
                   title: 'My Account',
                 },
-                {title: 'Log Out'},
+                { title: 'Log Out' },
               ]}
               avatar={<Avatar.Image source={PublicDomainAlice} size={40} />}
             />
@@ -911,7 +958,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
         style={{
           justifyContent: 'center',
           margin: 10,
-        }}>
+        }}
+      >
         <ScoreCardExample />
       </View>
       <MobileStepperExample />
@@ -939,38 +987,38 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             value="2"
             units="tb"
             fontSize={12}
-            icon={{family: 'brightlayer-ui', name: 'device'}}
+            icon={{ family: 'brightlayer-ui', name: 'device' }}
             iconColor="green"
           />
           {/* Font size : 14px */}
           <ChannelValue
             value="2.5:1"
-            icon={{name: 'settings'}}
+            icon={{ name: 'settings' }}
             fontSize={14}
-            style={{marginTop: 12}}
+            style={{ marginTop: 12 }}
           />
           {/* Font size : 16px */}
           <ChannelValue
             value="Concord"
             icon={'🍇'}
             fontSize={16}
-            style={{marginTop: 12}}
+            style={{ marginTop: 12 }}
           />
           {/* Font size : 22px */}
           <ChannelValue
             value="100"
             units="%"
             fontSize={22}
-            icon={{family: 'brightlayer-ui', name: 'battery'}}
-            style={{marginTop: 12}}
+            icon={{ family: 'brightlayer-ui', name: 'battery' }}
+            style={{ marginTop: 12 }}
           />
           {/* Font size : 32px */}
           <ChannelValue
             value="50.2.1"
             fontSize={32}
-            icon={{name: 'settings'}}
+            icon={{ name: 'settings' }}
             iconColor="red"
-            style={{marginTop: 12}}
+            style={{ marginTop: 12 }}
           />
           {/* Font size : 32px */}
           <ChannelValue
@@ -978,18 +1026,18 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             icon={'A'}
             iconColor="blue"
             fontSize={32}
-            style={{marginTop: 12}}
+            style={{ marginTop: 12 }}
           />
           <ChannelValue
             value="1"
             icon={PublicDomainAlice}
-            style={{marginTop: 12}}
+            style={{ marginTop: 12 }}
           />
         </Card.Content>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="ListItemTag" />
-        <Card.Content style={{alignItems: 'center'}}>
+        <Card.Content style={{ alignItems: 'center' }}>
           {/* Font size : 10px */}
           <ListItemTag label={'IN PROGRESS'} />
           {/* Font size : 14px */}
@@ -997,11 +1045,11 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             label={'Foo Bar'}
             backgroundColor={'red'}
             fontColor={'black'}
-            style={{marginTop: 12}}
+            style={{ marginTop: 12 }}
             fontSize={14}
           />
           {/* Font size : 22px */}
-          <Text style={{marginTop: 12}}>Font size : 22px</Text>
+          <Text style={{ marginTop: 12 }}>Font size : 22px</Text>
           <ListItemTag
             label={'Foo Bar'}
             backgroundColor={'red'}
@@ -1012,60 +1060,60 @@ export const KitchenSink: React.FC = (): JSX.Element => {
       </Card>
       <Card style={styles.card}>
         <Card.Title title="Hero" />
-        <Card.Content style={{alignItems: 'center'}}>
+        <Card.Content style={{ alignItems: 'center' }}>
           <Hero
             label={'Charged'}
-            icon={{family: 'brightlayer-ui', name: 'battery'}}
-            ChannelValueProps={{value: 100, units: '%'}}
+            icon={{ family: 'brightlayer-ui', name: 'battery' }}
+            ChannelValueProps={{ value: 100, units: '%' }}
           />
           <Hero
             label={'Chart'}
-            icon={{family: 'material-community', name: 'chart-pie'}}
+            icon={{ family: 'material-community', name: 'chart-pie' }}
           />
           <Hero
             label={'Setting'}
-            icon={{name: 'settings'}}
+            icon={{ name: 'settings' }}
             iconColor="red"
-            ChannelValueProps={{value: '50.2.1', units: ''}}
+            ChannelValueProps={{ value: '50.2.1', units: '' }}
           />
         </Card.Content>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="Hero Banner" />
-        <Card.Content style={{alignItems: 'center'}}>
+        <Card.Content style={{ alignItems: 'center' }}>
           <HeroBanner divider>
             <Hero
               label={'Charged'}
-              icon={{family: 'brightlayer-ui', name: 'battery'}}
-              ChannelValueProps={{value: 100, units: '%'}}
+              icon={{ family: 'brightlayer-ui', name: 'battery' }}
+              ChannelValueProps={{ value: 100, units: '%' }}
             />
             <Hero
               label={'Charged'}
-              icon={{family: 'brightlayer-ui', name: 'ups_outline'}}
-              ChannelValueProps={{value: 100, units: '%'}}
+              icon={{ family: 'brightlayer-ui', name: 'ups_outline' }}
+              ChannelValueProps={{ value: 100, units: '%' }}
             />
             <Hero
               label={'Setting'}
-              icon={{name: 'settings'}}
+              icon={{ name: 'settings' }}
               iconColor="red"
-              ChannelValueProps={{value: '50.2.1', units: ''}}
+              ChannelValueProps={{ value: '50.2.1', units: '' }}
             />
           </HeroBanner>
         </Card.Content>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="Empty State" />
-        <Card.Content style={{alignItems: 'center'}}>
+        <Card.Content style={{ alignItems: 'center' }}>
           <EmptyState
             title={'Nothing Found'}
             description={'Not a single thing'}
-            icon={{family: 'brightlayer-ui', name: 'battery'}}
+            icon={{ family: 'brightlayer-ui', name: 'battery' }}
           />
         </Card.Content>
       </Card>
       <Card style={styles.card}>
         <Card.Title title="InfoListItem" />
-        <Card.Content style={{alignItems: 'center'}}>
+        <Card.Content style={{ alignItems: 'center' }}>
           {/* With Info prop */}
           <InfoListItem
             title={'Title'}
@@ -1076,20 +1124,20 @@ export const KitchenSink: React.FC = (): JSX.Element => {
           {/* Indicating Status with Avatar */}
           <InfoListItem
             title={'Title'}
-            icon={{family: 'brightlayer-ui', name: 'leaf'}}
+            icon={{ family: 'brightlayer-ui', name: 'leaf' }}
             subtitle={'Subtitle'}
             statusColor={BLUIColors.error[50]}
             backgroundColor={BLUIColors.primary[50]}
             avatar
             divider={'partial'}
             chevron
-            style={{marginBottom: 20}}
+            style={{ marginBottom: 20 }}
           />
           {/* with Icon */}
           <InfoListItem
             title="Info List Item Title"
             subtitle="Info List Item Subtitle"
-            icon={{name: 'settings'}}
+            icon={{ name: 'settings' }}
             avatar
             divider={'full'}
           />
@@ -1103,7 +1151,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
           <InfoListItem
             title="Battery Fully Charged"
             subtitle="Your device is ready to use"
-            icon={{name: 'settings'}}
+            icon={{ name: 'settings' }}
             iconAlign="center"
             leftComponent={
               <View>
@@ -1116,7 +1164,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
           />
         </Card.Content>
       </Card>
-      <Text variant="titleLarge" style={{marginVertical: 48}}>
+      <Text variant="titleLarge" style={{ marginVertical: 48 }}>
         RN V5 Components
       </Text>
       <Card style={styles.card}>
@@ -1128,9 +1176,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Banner</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <Banner
               visible={bannerVisible}
               actions={[
@@ -1149,7 +1198,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   icon="account-circle"
                   color={theme.colors.onPrimary}
                 />
-              )}>
+              )}
+            >
               There was a problem processing a transaction on your credit card.
             </Banner>
             {!bannerVisible && (
@@ -1157,7 +1207,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 mode={'contained'}
                 onPress={(): void => {
                   setBannerVisible(true);
-                }}>
+                }}
+              >
                 Show Banner
               </Button>
             )}
@@ -1170,9 +1221,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Card</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <Card>
               <Card.Title
                 title="Card Title"
@@ -1183,7 +1235,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 <Text variant="titleLarge">Card title</Text>
                 <Text variant="bodyMedium">Card conteent</Text>
               </Card.Content>
-              <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+              <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
               <Card.Actions>
                 <Button>Cancel</Button>
                 <Button>Ok</Button>
@@ -1198,16 +1250,18 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Data Table</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <DataTable>
               <DataTable.Header>
                 <DataTable.Title
                   textStyle={{
                     color: theme.colors.onSurface,
                     ...theme.fonts.labelLarge,
-                  }}>
+                  }}
+                >
                   Dessert
                 </DataTable.Title>
                 <DataTable.Title
@@ -1215,7 +1269,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   textStyle={{
                     color: theme.colors.onSurface,
                     ...theme.fonts.labelLarge,
-                  }}>
+                  }}
+                >
                   Calories
                 </DataTable.Title>
                 <DataTable.Title
@@ -1223,24 +1278,27 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   textStyle={{
                     color: theme.colors.onSurface,
                     ...theme.fonts.labelLarge,
-                  }}>
+                  }}
+                >
                   Fat
                 </DataTable.Title>
               </DataTable.Header>
 
               {items.slice(from, to).map(item => (
                 <DataTable.Row key={item.key}>
-                  <DataTable.Cell textStyle={{...theme.fonts.bodyMedium}}>
+                  <DataTable.Cell textStyle={{ ...theme.fonts.bodyMedium }}>
                     {item.name}
                   </DataTable.Cell>
                   <DataTable.Cell
-                    textStyle={{...theme.fonts.bodyMedium}}
-                    numeric>
+                    textStyle={{ ...theme.fonts.bodyMedium }}
+                    numeric
+                  >
                     {item.calories}
                   </DataTable.Cell>
                   <DataTable.Cell
-                    textStyle={{...theme.fonts.bodyMedium}}
-                    numeric>
+                    textStyle={{ ...theme.fonts.bodyMedium }}
+                    numeric
+                  >
                     {item.fat}
                   </DataTable.Cell>
                 </DataTable.Row>
@@ -1255,14 +1313,17 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   <Text
                     style={{
                       ...theme.fonts.bodyMedium,
-                    }}>{`${from + 1}-${to} of ${items.length}`}</Text>
+                    }}
+                  >{`${from + 1}-${to} of ${items.length}`}</Text>
                 }
                 numberOfItemsPerPageList={numberOfItemsPerPageList}
                 numberOfItemsPerPage={itemsPerPage}
                 onItemsPerPageChange={onItemsPerPageChange}
                 showFastPaginationControls
                 selectPageDropdownLabel={
-                  <Text style={{...theme.fonts.bodyMedium}}>Rows per page</Text>
+                  <Text style={{ ...theme.fonts.bodyMedium }}>
+                    Rows per page
+                  </Text>
                 }
               />
             </DataTable>
@@ -1275,9 +1336,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Dialog</Text>
-          <View style={{marginTop: 36}}>
+          <View style={{ marginTop: 36 }}>
             <Button mode={'contained'} onPress={showDialog}>
               Show Dialog
             </Button>
@@ -1301,9 +1363,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Helper Text</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <TextInput
               label="Email"
               value={helperTextInputText}
@@ -1322,7 +1385,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Icon Button</Text>
           <View
             style={{
@@ -1330,7 +1394,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               justifyContent: 'center',
               alignItems: 'center',
               marginTop: 24,
-            }}>
+            }}
+          >
             <IconButton
               icon="fire"
               size={24}
@@ -1360,9 +1425,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>List</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <View>
               <List.Item
                 title="Item 1"
@@ -1408,7 +1474,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   expanded={accordionOneExpanded}
                   onPress={(): void =>
                     setAccordionOneExpanded(!accordionOneExpanded)
-                  }>
+                  }
+                >
                   <List.Item title="Item 1" description="Item 1 Description" />
                   <List.Item title="Item 2" description="Item 2 Description" />
                 </List.Accordion>
@@ -1423,7 +1490,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   expanded={accordionTwoExpanded}
                   onPress={(): void =>
                     setAccordionTwoExpanded(!accordionTwoExpanded)
-                  }>
+                  }
+                >
                   <List.Item title="Item 1" description="Item 1 Description" />
                   <List.Item title="Item 2" description="Item 2 Description" />
                 </List.Accordion>
@@ -1438,19 +1506,22 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Menu</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <Menu
               visible={menuVisible}
               onDismiss={(): void => setMenuVisible(false)}
               anchor={
                 <Button
                   mode={'contained'}
-                  onPress={(): void => setMenuVisible(true)}>
+                  onPress={(): void => setMenuVisible(true)}
+                >
                   Show menu
                 </Button>
-              }>
+              }
+            >
               <Menu.Item
                 onPress={(): void => setMenuVisible(false)}
                 title="Item 1"
@@ -1478,9 +1549,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Modal</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <Portal>
               <Modal
                 visible={visible}
@@ -1490,14 +1562,16 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   padding: 24,
                   height: 300,
                   marginHorizontal: 24,
-                }}>
+                }}
+              >
                 <Text>Example Modal. Click outside this area to dismiss.</Text>
               </Modal>
             </Portal>
             <Button
               mode={'contained'}
-              style={{marginTop: 30}}
-              onPress={showModal}>
+              style={{ marginTop: 30 }}
+              onPress={showModal}
+            >
               Show Modal
             </Button>
           </View>
@@ -1509,11 +1583,13 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Surface</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <View
-              style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+              style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}
+            >
               <Surface elevation={1} style={[styles.surface]}>
                 <Text>Surface 1</Text>
               </Surface>
@@ -1526,7 +1602,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
                 marginTop: 24,
-              }}>
+              }}
+            >
               <Surface elevation={3} style={[styles.surface]}>
                 <Text>Surface 3</Text>
               </Surface>
@@ -1539,7 +1616,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 flexDirection: 'row',
                 justifyContent: 'space-evenly',
                 marginTop: 24,
-              }}>
+              }}
+            >
               <Surface elevation={5} style={[styles.surface]}>
                 <Text>Surface 5</Text>
               </Surface>
@@ -1550,7 +1628,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
       {/**
        * BEGIN  WRAPPER COMPONENT SECTION
        *  */}
-      <Text variant="titleLarge" style={{marginVertical: 48}}>
+      <Text variant="titleLarge" style={{ marginVertical: 48 }}>
         {' '}
         (Wrapper) Components
       </Text>
@@ -1560,7 +1638,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Activity Indicator</Text>
           <View
             style={{
@@ -1568,7 +1647,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               justifyContent: 'space-evenly',
               alignItems: 'center',
               marginTop: 24,
-            }}>
+            }}
+          >
             <ActivityIndicator animating={true} size={'small'} />
             <ActivityIndicator animating={true} size={'large'} />
             <ActivityIndicator animating={true} size={'small'} />
@@ -1582,10 +1662,11 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Appbar</Text>
-          <View style={{marginTop: 24}}>
-            <Appbar.Header style={{marginBottom: 16}}>
+          <View style={{ marginTop: 24 }}>
+            <Appbar.Header style={{ marginBottom: 16 }}>
               <Appbar.BackAction
                 onPress={(): void => console.log('Went Back')}
               />
@@ -1599,12 +1680,12 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 onPress={(): void => console.log('Shown more')}
               />
             </Appbar.Header>
-            <Appbar style={{marginBottom: 16, marginTop: 16}}>
+            <Appbar style={{ marginBottom: 16, marginTop: 16 }}>
               <Appbar.Content title="Title" />
               <Appbar.Action icon="magnify" />
               <Appbar.Action icon="dots-vertical" />
             </Appbar>
-            <Appbar style={{marginBottom: 16}}>
+            <Appbar style={{ marginBottom: 16 }}>
               <Appbar.BackAction />
               <Appbar.Content title="Title" />
               <Appbar.Action icon="magnify" />
@@ -1619,7 +1700,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Avatar</Text>
           <View
             style={{
@@ -1627,7 +1709,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               justifyContent: 'space-evenly',
               alignItems: 'center',
               marginTop: 24,
-            }}>
+            }}
+          >
             <Avatar.Icon size={40} icon="account-circle" />
             <Avatar.Image size={40} source={PublicDomainAlice} />
             <Avatar.Text size={40} label="PX" />
@@ -1643,7 +1726,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Badge</Text>
           <View
             style={{
@@ -1651,7 +1735,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               justifyContent: 'space-evenly',
               alignItems: 'center',
               marginTop: 24,
-            }}>
+            }}
+          >
             <Badge
               size={24}
               visible
@@ -1662,14 +1747,16 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               size={24}
               visible
               allowFontScaling={!DISABLE_FONT_SCALE}
-              maxFontSizeMultiplier={MAX_FONT_SCALE}>
+              maxFontSizeMultiplier={MAX_FONT_SCALE}
+            >
               3
             </Badge>
             <Badge
               size={40}
               visible
               allowFontScaling={!DISABLE_FONT_SCALE}
-              maxFontSizeMultiplier={MAX_FONT_SCALE}>
+              maxFontSizeMultiplier={MAX_FONT_SCALE}
+            >
               8
             </Badge>
             <Badge size={24} visible />
@@ -1688,53 +1775,58 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>BottomNavigation</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <BottomNavigation
-              style={{marginBottom: 16}}
-              navigationState={{index, routes}}
+              style={{ marginBottom: 16 }}
+              navigationState={{ index, routes }}
               onIndexChange={setIndex}
               renderScene={renderScene}
               labelMaxFontSizeMultiplier={MAX_FONT_SCALE}
             />
             <BottomNavigation
-              navigationState={{index, routes}}
+              navigationState={{ index, routes }}
               onIndexChange={setIndex}
               renderScene={renderScene}
             />
           </View>
         </View>
       </Card>
-      <Card style={{padding: 20, margin: 10}}>
+      <Card style={{ padding: 20, margin: 10 }}>
         <Text>Contained Button</Text>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="contained"
-            onPress={(): void => console.log('Pressed Contained Button')}>
+            onPress={(): void => console.log('Pressed Contained Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="contained"
-            onPress={(): void => console.log('Pressed Contained Button')}>
+            onPress={(): void => console.log('Pressed Contained Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="contained"
-            contentStyle={{flexDirection: 'row-reverse'}}
-            onPress={(): void => console.log('Pressed Contained Button')}>
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            onPress={(): void => console.log('Pressed Contained Button')}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="contained"
             buttonColor={theme.colors.error}
             textColor={theme.colors.onError}
             onPress={(): void => console.log('Pressed Contained Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
@@ -1743,7 +1835,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             buttonColor={theme.colors.error}
             textColor={theme.colors.onError}
             onPress={(): void => console.log('Pressed Contained Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
@@ -1751,57 +1844,68 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             mode="contained"
             buttonColor={theme.colors.error}
             textColor={theme.colors.onError}
-            contentStyle={{flexDirection: 'row-reverse'}}
+            contentStyle={{ flexDirection: 'row-reverse' }}
             onPress={(): void => console.log('Pressed Contained Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Button mode="contained" disabled style={{marginTop: 24}}>
-            Label
-          </Button>
-          <Button icon="plus" mode="contained" disabled style={{marginTop: 24}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Button mode="contained" disabled style={{ marginTop: 24 }}>
             Label
           </Button>
           <Button
             icon="plus"
             mode="contained"
             disabled
-            contentStyle={{flexDirection: 'row-reverse'}}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
+            Label
+          </Button>
+          <Button
+            icon="plus"
+            mode="contained"
+            disabled
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
       </Card>
-      <Card style={{padding: 20, margin: 10}}>
+      <Card style={{ padding: 20, margin: 10 }}>
         <Text>Outlined Button</Text>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="outlined"
-            onPress={(): void => console.log('Pressed Outlined Button')}>
+            onPress={(): void => console.log('Pressed Outlined Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="outlined"
-            onPress={(): void => console.log('Pressed Outlined Button')}>
+            onPress={(): void => console.log('Pressed Outlined Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="outlined"
-            contentStyle={{flexDirection: 'row-reverse'}}
-            onPress={(): void => console.log('Pressed Outlined Button')}>
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            onPress={(): void => console.log('Pressed Outlined Button')}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="outlined"
             textColor={theme.colors.error}
             onPress={(): void => console.log('Pressed Outlined Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
@@ -1809,64 +1913,76 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             mode="outlined"
             textColor={theme.colors.error}
             onPress={(): void => console.log('Pressed Outlined Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="outlined"
             textColor={theme.colors.error}
-            contentStyle={{flexDirection: 'row-reverse'}}
+            contentStyle={{ flexDirection: 'row-reverse' }}
             onPress={(): void => console.log('Pressed Outlined Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Button mode="outlined" disabled style={{marginTop: 24}}>
-            Label
-          </Button>
-          <Button icon="plus" mode="outlined" disabled style={{marginTop: 24}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Button mode="outlined" disabled style={{ marginTop: 24 }}>
             Label
           </Button>
           <Button
             icon="plus"
             mode="outlined"
             disabled
-            contentStyle={{flexDirection: 'row-reverse'}}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
+            Label
+          </Button>
+          <Button
+            icon="plus"
+            mode="outlined"
+            disabled
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
       </Card>
-      <Card style={{padding: 20, margin: 10}}>
+      <Card style={{ padding: 20, margin: 10 }}>
         <Text>Text Button</Text>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="text"
-            onPress={(): void => console.log('Pressed Text Button')}>
+            onPress={(): void => console.log('Pressed Text Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="text"
-            onPress={(): void => console.log('Pressed Text Button')}>
+            onPress={(): void => console.log('Pressed Text Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="text"
-            contentStyle={{flexDirection: 'row-reverse'}}
-            onPress={(): void => console.log('Pressed Text Button')}>
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            onPress={(): void => console.log('Pressed Text Button')}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="text"
             textColor={theme.colors.error}
             onPress={(): void => console.log('Pressed Text Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
@@ -1874,73 +1990,81 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             mode="text"
             textColor={theme.colors.error}
             onPress={(): void => console.log('Pressed Text Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="text"
             textColor={theme.colors.error}
-            contentStyle={{flexDirection: 'row-reverse'}}
+            contentStyle={{ flexDirection: 'row-reverse' }}
             onPress={(): void => console.log('Pressed Text Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Button mode="text" disabled style={{marginTop: 24}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Button mode="text" disabled style={{ marginTop: 24 }}>
             Label
           </Button>
-          <Button icon="plus" mode="text" disabled style={{marginTop: 24}}>
+          <Button icon="plus" mode="text" disabled style={{ marginTop: 24 }}>
             Label
           </Button>
           <Button
             icon="plus"
             mode="text"
             disabled
-            contentStyle={{flexDirection: 'row-reverse'}}
-            style={{marginTop: 24}}>
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
       </Card>
-      <Card style={{padding: 20, margin: 10}}>
+      <Card style={{ padding: 20, margin: 10 }}>
         <Text>Elevated Button</Text>
         <View
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
             marginTop: 10,
-          }}>
+          }}
+        >
           <Button
             mode="elevated"
             onPress={(): void => console.log('Pressed Elevated Button')}
-            buttonColor={theme.colors.surfaceContainerLow}>
+            buttonColor={theme.colors.surfaceContainerLow}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="elevated"
             onPress={(): void => console.log('Pressed Elevated Button')}
-            buttonColor={theme.colors.surfaceContainerLow}>
+            buttonColor={theme.colors.surfaceContainerLow}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="elevated"
-            contentStyle={{flexDirection: 'row-reverse'}}
+            contentStyle={{ flexDirection: 'row-reverse' }}
             onPress={(): void => console.log('Pressed Elevated Button')}
-            buttonColor={theme.colors.surfaceContainerLow}>
+            buttonColor={theme.colors.surfaceContainerLow}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="elevated"
             textColor={theme.colors.error}
             onPress={(): void => console.log('Pressed Elevated Button')}
             buttonColor={theme.colors.surfaceContainerLow}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
@@ -1949,76 +2073,85 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             textColor={theme.colors.error}
             onPress={(): void => console.log('Pressed Elevated Button')}
             buttonColor={theme.colors.surfaceContainerLow}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="elevated"
             textColor={theme.colors.error}
-            contentStyle={{flexDirection: 'row-reverse'}}
+            contentStyle={{ flexDirection: 'row-reverse' }}
             onPress={(): void => console.log('Pressed Elevated Button')}
             buttonColor={theme.colors.surfaceContainerLow}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="elevated"
             disabled
-            style={{marginTop: 24}}
-            buttonColor={theme.colors.surfaceContainerLow}>
+            style={{ marginTop: 24 }}
+            buttonColor={theme.colors.surfaceContainerLow}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="elevated"
             disabled
-            style={{marginTop: 24}}
-            buttonColor={theme.colors.surfaceContainerLow}>
+            style={{ marginTop: 24 }}
+            buttonColor={theme.colors.surfaceContainerLow}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="elevated"
             disabled
-            contentStyle={{flexDirection: 'row-reverse'}}
-            style={{marginTop: 24}}
-            buttonColor={theme.colors.surfaceContainerLow}>
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            style={{ marginTop: 24 }}
+            buttonColor={theme.colors.surfaceContainerLow}
+          >
             Label
           </Button>
         </View>
       </Card>
-      <Card style={{padding: 20, margin: 10}}>
+      <Card style={{ padding: 20, margin: 10 }}>
         <Text>Contained-Tonal Button</Text>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="contained-tonal"
-            onPress={(): void => console.log('Pressed Contained-tonal Button')}>
+            onPress={(): void => console.log('Pressed Contained-tonal Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="contained-tonal"
-            onPress={(): void => console.log('Pressed Contained-tonal Button')}>
+            onPress={(): void => console.log('Pressed Contained-tonal Button')}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="contained-tonal"
-            contentStyle={{flexDirection: 'row-reverse'}}
-            onPress={(): void => console.log('Pressed Contained-tonal Button')}>
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            onPress={(): void => console.log('Pressed Contained-tonal Button')}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             mode="contained-tonal"
             buttonColor={theme.colors.errorContainer}
             textColor={theme.colors.onErrorContainer}
             onPress={(): void => console.log('Pressed Contained-tonal Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
@@ -2027,7 +2160,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             buttonColor={theme.colors.errorContainer}
             textColor={theme.colors.onErrorContainer}
             onPress={(): void => console.log('Pressed Contained-tonal Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
@@ -2035,29 +2169,32 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             mode="contained-tonal"
             buttonColor={theme.colors.errorContainer}
             textColor={theme.colors.onErrorContainer}
-            contentStyle={{flexDirection: 'row-reverse'}}
+            contentStyle={{ flexDirection: 'row-reverse' }}
             onPress={(): void => console.log('Pressed Contained-tonal Button')}
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Button mode="contained-tonal" disabled style={{marginTop: 24}}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Button mode="contained-tonal" disabled style={{ marginTop: 24 }}>
             Label
           </Button>
           <Button
             icon="plus"
             mode="contained-tonal"
             disabled
-            style={{marginTop: 24}}>
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
           <Button
             icon="plus"
             mode="contained-tonal"
             disabled
-            contentStyle={{flexDirection: 'row-reverse'}}
-            style={{marginTop: 24}}>
+            contentStyle={{ flexDirection: 'row-reverse' }}
+            style={{ marginTop: 24 }}
+          >
             Label
           </Button>
         </View>
@@ -2068,11 +2205,12 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Checkbox (Android)</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Init Unchecked</Text>
+              <Text style={{ flex: 1 }}>Init Unchecked</Text>
               <Checkbox.Android
                 status={checkboxAndroidOne}
                 onPress={(): void =>
@@ -2083,7 +2221,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Init Checked</Text>
+              <Text style={{ flex: 1 }}>Init Checked</Text>
               <Checkbox.Android
                 status={checkboxAndroidTwo}
                 onPress={(): void =>
@@ -2094,15 +2232,15 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Indeterminate</Text>
+              <Text style={{ flex: 1 }}>Indeterminate</Text>
               <Checkbox.Android status={'indeterminate'} />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Disabled Checked</Text>
+              <Text style={{ flex: 1 }}>Disabled Checked</Text>
               <Checkbox.Android status={'checked'} disabled={true} />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Disabled Unchecked</Text>
+              <Text style={{ flex: 1 }}>Disabled Unchecked</Text>
               <Checkbox.Android status={'unchecked'} disabled={true} />
             </View>
           </View>
@@ -2114,11 +2252,12 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Checkbox (iOS)</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Init Unchecked</Text>
+              <Text style={{ flex: 1 }}>Init Unchecked</Text>
               <Checkbox.IOS
                 status={checkboxIOSOne}
                 onPress={(): void =>
@@ -2129,7 +2268,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Init Checked</Text>
+              <Text style={{ flex: 1 }}>Init Checked</Text>
               <Checkbox.IOS
                 status={checkboxIOSTwo}
                 onPress={(): void =>
@@ -2140,15 +2279,15 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Indeterminate</Text>
+              <Text style={{ flex: 1 }}>Indeterminate</Text>
               <Checkbox.IOS status={'indeterminate'} />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Disabled Checked</Text>
+              <Text style={{ flex: 1 }}>Disabled Checked</Text>
               <Checkbox.IOS status={'checked'} disabled={true} />
             </View>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Disabled Unchecked</Text>
+              <Text style={{ flex: 1 }}>Disabled Unchecked</Text>
               <Checkbox.IOS status={'unchecked'} disabled={true} />
             </View>
           </View>
@@ -2160,9 +2299,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Divider</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <Text>Item 1</Text>
             <Divider />
             <Text>Item 2</Text>
@@ -2184,22 +2324,23 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Fab</Text>
-          <View style={{marginTop: 24, alignItems: 'center'}}>
+          <View style={{ marginTop: 24, alignItems: 'center' }}>
             <FAB
-              style={{margin: 16, width: 40}}
+              style={{ margin: 16, width: 40 }}
               size="small"
               icon="plus"
               onPress={(): void => console.log('Pressed Small Fab')}
             />
             <FAB
-              style={{margin: 16, width: 56}}
+              style={{ margin: 16, width: 56 }}
               icon="plus"
               onPress={(): void => console.log('Pressed Default Fab')}
             />
             <FAB
-              style={{margin: 16}}
+              style={{ margin: 16 }}
               label={'Extended Fab'}
               icon="check"
               onPress={(): void => console.log('Pressed Extended Fab')}
@@ -2212,7 +2353,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             open={open}
             icon={open ? 'calendar-today' : 'plus'}
             actions={[
-              {icon: 'plus', onPress: (): void => console.log('Pressed add')},
+              { icon: 'plus', onPress: (): void => console.log('Pressed add') },
               {
                 icon: 'star',
                 label: 'Star',
@@ -2244,13 +2385,14 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Progress Bar</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <ProgressBar
               progress={0}
               // @ts-ignore
-              style={{backgroundColor: theme.colors.surfaceContainerHighest}}
+              style={{ backgroundColor: theme.colors.surfaceContainerHighest }}
             />
             <ProgressBar
               progress={0.5}
@@ -2285,24 +2427,26 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Radio Button (Android)</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <RadioButton.Group
               onValueChange={(val: string): void =>
                 setRadioButtonAndroidValue(val)
               }
-              value={radioButtonAndroidValue}>
+              value={radioButtonAndroidValue}
+            >
               <View style={styles.row}>
-                <Text style={{flex: 1}}>First Item</Text>
+                <Text style={{ flex: 1 }}>First Item</Text>
                 <RadioButton.Android value="first" />
               </View>
               <View style={styles.row}>
-                <Text style={{flex: 1}}>Second Item</Text>
+                <Text style={{ flex: 1 }}>Second Item</Text>
                 <RadioButton.Android value="second" />
               </View>
               <View style={styles.row}>
-                <Text style={{flex: 1}}>Third Item</Text>
+                <Text style={{ flex: 1 }}>Third Item</Text>
                 <RadioButton.Android value="third" />
               </View>
             </RadioButton.Group>
@@ -2315,22 +2459,24 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Radio Button (iOS)</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <RadioButton.Group
               onValueChange={(val: string): void => setRadioButtonIOSValue(val)}
-              value={radioButtonIOSValue}>
+              value={radioButtonIOSValue}
+            >
               <View style={styles.row}>
-                <Text style={{flex: 1}}>First Item</Text>
+                <Text style={{ flex: 1 }}>First Item</Text>
                 <RadioButton.IOS value="first" />
               </View>
               <View style={styles.row}>
-                <Text style={{flex: 1}}>Second Item</Text>
+                <Text style={{ flex: 1 }}>Second Item</Text>
                 <RadioButton.IOS value="second" />
               </View>
               <View style={styles.row}>
-                <Text style={{flex: 1}}>Third Item</Text>
+                <Text style={{ flex: 1 }}>Third Item</Text>
                 <RadioButton.IOS value="third" />
               </View>
             </RadioButton.Group>
@@ -2343,9 +2489,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Snackbar</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <Portal>
               <Snackbar
                 visible={snackbarVisible}
@@ -2355,13 +2502,15 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   onPress: (): void => {
                     setSnackbarVisible(false);
                   },
-                }}>
+                }}
+              >
                 Hey there! I&apos;m a Snackbar.
               </Snackbar>
             </Portal>
             <Button
               mode={'contained'}
-              onPress={(): void => setSnackbarVisible(!snackbarVisible)}>
+              onPress={(): void => setSnackbarVisible(!snackbarVisible)}
+            >
               {snackbarVisible ? 'Hide Snackbar' : 'Show Snackbar'}
             </Button>
           </View>
@@ -2373,9 +2522,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Snackbar</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <Portal>
               <Snackbar
                 visible={snackbarTwoVisible}
@@ -2386,13 +2536,15 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                     setSnackbarTwoVisible(false);
                   },
                 }}
-                style={{backgroundColor: theme.colors.inverseSurface}}>
+                style={{ backgroundColor: theme.colors.inverseSurface }}
+              >
                 Im a Snackbar.
               </Snackbar>
             </Portal>
             <Button
               mode={'contained'}
-              onPress={(): void => setSnackbarTwoVisible(!snackbarTwoVisible)}>
+              onPress={(): void => setSnackbarTwoVisible(!snackbarTwoVisible)}
+            >
               {snackbarTwoVisible ? 'Hide Snackbar' : 'Show Snackbar'}
             </Button>
           </View>
@@ -2404,11 +2556,12 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Switch</Text>
-          <View style={{marginTop: 24, alignItems: 'center'}}>
+          <View style={{ marginTop: 24, alignItems: 'center' }}>
             <View style={styles.row}>
-              <Text style={{flex: 1}}>Enabled - On</Text>
+              <Text style={{ flex: 1 }}>Enabled - On</Text>
               <Switch
                 value={true}
                 onValueChange={(): void => {
@@ -2420,11 +2573,11 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 onValueChange={(): void => {
                   setIsSwitchOn(!isSwitchOn);
                 }}
-                style={{marginLeft: 8}}
+                style={{ marginLeft: 8 }}
               />
             </View>
-            <View style={[styles.row, {marginTop: 24}]}>
-              <Text style={{flex: 1}}>Enabled - Off</Text>
+            <View style={[styles.row, { marginTop: 24 }]}>
+              <Text style={{ flex: 1 }}>Enabled - Off</Text>
               <Switch
                 value={false}
                 onValueChange={(): void => {
@@ -2436,11 +2589,11 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                 onValueChange={(): void => {
                   setIsSwitchOn(!isSwitchOn);
                 }}
-                style={{marginLeft: 8}}
+                style={{ marginLeft: 8 }}
               />
             </View>
-            <View style={[styles.row, {marginTop: 24}]}>
-              <Text style={{flex: 1}}>Disabled - On</Text>
+            <View style={[styles.row, { marginTop: 24 }]}>
+              <Text style={{ flex: 1 }}>Disabled - On</Text>
               <Switch disabled value={true} />
               <Switch
                 value={true}
@@ -2448,11 +2601,11 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   setIsSwitchOn(!isSwitchOn);
                 }}
                 disabled
-                style={{marginLeft: 8}}
+                style={{ marginLeft: 8 }}
               />
             </View>
-            <View style={[styles.row, {marginTop: 24}]}>
-              <Text style={{flex: 1}}>Disabled - Off</Text>
+            <View style={[styles.row, { marginTop: 24 }]}>
+              <Text style={{ flex: 1 }}>Disabled - Off</Text>
               <Switch disabled value={false} />
               <Switch
                 value={false}
@@ -2460,7 +2613,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
                   setIsSwitchOn(!isSwitchOn);
                 }}
                 disabled
-                style={{marginLeft: 8}}
+                style={{ marginLeft: 8 }}
               />
             </View>
           </View>
@@ -2472,9 +2625,10 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Text Input</Text>
-          <View style={{marginTop: 24}}>
+          <View style={{ marginTop: 24 }}>
             <TextInput
               label="Name"
               underlineColor={theme.colors.onSurfaceVariant}
@@ -2489,7 +2643,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               label="Email"
               mode="outlined"
               outlineColor={theme.colors.outline}
-              style={{marginTop: 24, backgroundColor: 'transparent'}}
+              style={{ marginTop: 24, backgroundColor: 'transparent' }}
               value={emailInputText}
               onChangeText={(inputText: string): void =>
                 setEmailInputText(inputText)
@@ -2500,7 +2654,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             <TextInput
               label="Name Error"
               underlineColor={theme.colors.onSurfaceVariant}
-              style={{marginTop: 24}}
+              style={{ marginTop: 24 }}
               value={errorNameInputText}
               onChangeText={(inputText: string): void =>
                 setErrorNameInputText(inputText)
@@ -2513,7 +2667,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               label="Email Error"
               mode="outlined"
               outlineColor={theme.colors.outline}
-              style={{marginTop: 24, backgroundColor: 'transparent'}}
+              style={{ marginTop: 24, backgroundColor: 'transparent' }}
               value={errorEmailInputText}
               onChangeText={(inputText: string): void =>
                 setErrorEmailInputText(inputText)
@@ -2526,7 +2680,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               label="Name Disabled"
               value="John Smith"
               underlineColor={theme.colors.onSurfaceVariant}
-              style={{marginTop: 24}}
+              style={{ marginTop: 24 }}
               disabled
               allowFontScaling={!DISABLE_FONT_SCALE}
               maxFontSizeMultiplier={MAX_FONT_SCALE}
@@ -2536,7 +2690,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               mode="outlined"
               outlineColor={theme.colors.outline}
               value="j.smith@email.com"
-              style={{marginTop: 24, backgroundColor: 'transparent'}}
+              style={{ marginTop: 24, backgroundColor: 'transparent' }}
               disabled
               allowFontScaling={!DISABLE_FONT_SCALE}
               maxFontSizeMultiplier={MAX_FONT_SCALE}
@@ -2551,7 +2705,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             <TextInput
               label="Name"
               underlineColor={theme.colors.onSurfaceVariant}
-              style={{marginTop: 24}}
+              style={{ marginTop: 24 }}
               value={nameInputText}
               onChangeText={(inputText: string): void =>
                 setNameInputText(inputText)
@@ -2561,7 +2715,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               label="Email"
               mode="outlined"
               outlineColor={theme.colors.outline}
-              style={{marginTop: 24, backgroundColor: 'transparent'}}
+              style={{ marginTop: 24, backgroundColor: 'transparent' }}
               value={emailInputText}
               onChangeText={(inputText: string): void =>
                 setEmailInputText(inputText)
@@ -2570,7 +2724,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             <TextInput
               label="Name Error"
               underlineColor={theme.colors.onSurfaceVariant}
-              style={{marginTop: 24}}
+              style={{ marginTop: 24 }}
               value={errorNameInputText}
               onChangeText={(inputText: string): void =>
                 setErrorNameInputText(inputText)
@@ -2581,7 +2735,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               label="Email Error"
               mode="outlined"
               outlineColor={theme.colors.outline}
-              style={{marginTop: 24, backgroundColor: 'transparent'}}
+              style={{ marginTop: 24, backgroundColor: 'transparent' }}
               value={errorEmailInputText}
               onChangeText={(inputText: string): void =>
                 setErrorEmailInputText(inputText)
@@ -2592,7 +2746,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               label="Name Disabled"
               underlineColor={theme.colors.onSurfaceVariant}
               value="John Smith"
-              style={{marginTop: 24}}
+              style={{ marginTop: 24 }}
               disabled
             />
             <TextInput
@@ -2600,7 +2754,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               mode="outlined"
               outlineColor={theme.colors.outline}
               value="j.smith@email.com"
-              style={{marginTop: 24, backgroundColor: 'transparent'}}
+              style={{ marginTop: 24, backgroundColor: 'transparent' }}
               disabled
             />
           </View>
@@ -2612,12 +2766,14 @@ export const KitchenSink: React.FC = (): JSX.Element => {
             justifyContent: 'center',
             marginHorizontal: 24,
             marginVertical: 24,
-          }}>
+          }}
+        >
           <Text>Toggle Button</Text>
-          <View style={{marginTop: 24, alignItems: 'center'}}>
+          <View style={{ marginTop: 24, alignItems: 'center' }}>
             <ToggleButton.Row
               onValueChange={(val: string): void => setToggleButtonValue(val)}
-              value={toggleButtonValue}>
+              value={toggleButtonValue}
+            >
               <ToggleButton
                 icon="format-align-left"
                 value="left"
@@ -2678,7 +2834,8 @@ export const KitchenSink: React.FC = (): JSX.Element => {
               value={toggleButtonFontValue}
               style={{
                 marginTop: 10,
-              }}>
+              }}
+            >
               <ToggleButton
                 icon="format-bold"
                 value="bold"

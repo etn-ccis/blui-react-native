@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {AutoComplete} from '@brightlayer-ui/react-native-components';
-import {Card, TextInput} from 'react-native-paper';
+import React, { useState } from 'react';
+import { AutoComplete } from '@brightlayer-ui/react-native-components';
+import { Card, TextInput } from 'react-native-paper';
 
 export const AutoCompleteExample: React.FC = () => {
   const [chipValue, setChipValue] = useState(['Tag1']);
   return (
-    <Card style={{marginTop: 20}}>
+    <Card style={{ marginTop: 20 }}>
       <Card.Title title="AutoComplete" />
       <Card.Content>
         <TextInput label={'label'} />

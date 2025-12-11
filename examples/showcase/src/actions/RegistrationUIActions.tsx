@@ -137,7 +137,7 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
     validateUserRegistrationRequest: async (
       validationCode: string,
       validationEmail?: string,
-    ): Promise<{codeValid: boolean | string; accountExists?: boolean}> => {
+    ): Promise<{ codeValid: boolean | string; accountExists?: boolean }> => {
       if (validateCodeRetries >= 10) {
         await sleep(800);
         throw new Error(
@@ -178,10 +178,10 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions =
 
     completeRegistration: async (
       userData: any,
-    ): Promise<{email: string; organizationName: string}> => {
+    ): Promise<{ email: string; organizationName: string }> => {
       const email = userData.email;
       const organizationName = 'Acme Co.';
-      const userInfo = {email: email, organizationName};
+      const userInfo = { email: email, organizationName };
 
       // Example API call commented out
       // const body = {

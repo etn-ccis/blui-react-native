@@ -6,14 +6,14 @@ import {
   NavItem,
   DrawerFooter,
 } from '@brightlayer-ui/react-native-components';
-import React, {useState, useCallback} from 'react';
-import {Image, View} from 'react-native';
-import {Divider, Text, useTheme} from 'react-native-paper';
+import React, { useState, useCallback } from 'react';
+import { Image, View } from 'react-native';
+import { Divider, Text, useTheme } from 'react-native-paper';
 import * as Colors from '@brightlayer-ui/colors';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from './index';
-import {DrawerActions} from '@react-navigation/native';
-import {IconFamily} from '@brightlayer-ui/react-native-components/core/__types__';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './index';
+import { DrawerActions } from '@react-navigation/native';
+import { IconFamily } from '@brightlayer-ui/react-native-components/core/__types__';
 
 const headerBgImage = require('../assets/images/topology_40.png');
 const eatonLogo = require('../assets/images/eatonLogo.png');
@@ -146,7 +146,7 @@ export type NavDrawerProps = {
   navigation: StackNavigationProp<RootStackParamList, 'NavigationDrawer'>;
 };
 
-export const NavigationDrawer: React.FC<NavDrawerProps> = ({navigation}) => {
+export const NavigationDrawer: React.FC<NavDrawerProps> = ({ navigation }) => {
   const theme = useTheme();
   const [selected, setSelected] = useState('');
   const selectItem = useCallback(
@@ -169,7 +169,8 @@ export const NavigationDrawer: React.FC<NavDrawerProps> = ({navigation}) => {
   return (
     <Drawer
       activeItem={selected}
-      onItemSelect={(id: string): void => selectItem(id)}>
+      onItemSelect={(id: string): void => selectItem(id)}
+    >
       <DrawerHeader
         title={'Drawer Title'}
         subtitle={'Drawer Subtitle'}
@@ -190,7 +191,7 @@ export const NavigationDrawer: React.FC<NavDrawerProps> = ({navigation}) => {
           nestedDivider={true}
           titleContent={
             <View>
-              <Text variant="labelLarge" style={{padding: 16}}>
+              <Text variant="labelLarge" style={{ padding: 16 }}>
                 Custom Navgroup Content
               </Text>
               <Divider />
@@ -205,10 +206,11 @@ export const NavigationDrawer: React.FC<NavDrawerProps> = ({navigation}) => {
             padding: 16,
             backgroundColor: theme.dark ? Colors.primary[20] : 'white',
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Image
             source={theme.dark ? eatonLogoWhite : eatonLogo}
-            style={{height: 60, width: '80%'}}
+            style={{ height: 60, width: '80%' }}
           />
         </View>
       </DrawerFooter>
