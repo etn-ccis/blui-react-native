@@ -1,0 +1,205 @@
+name: Coverity Pull Request Scan
+
+on:
+  pull_request:
+    branches: ['dev', 'master']
+      
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  coverity-pr-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout the code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Get-repo-name-and-tag-for-building-image
+      run: |
+          echo "REPO_NAME=$(basename ${{ github.repository }})" >> $GITHUB_ENV
+        
+    - uses: Azure/login@v2
+      with:
+        creds: ${{ secrets.CCIS_BLUI_AZ_CRED }}  # Azure credentials for user service principal
+
+    - uses: Azure/get-keyvault-secrets@v1
+      with:
+        keyvault: 'kv-etnblc-ado-eus-tst'  # Key Vault - user has been granted read permissions
+        secrets: 'secret-etnblc-ado-pat-token, secret-etnblc-github-username, secret-etnblc-github-pat-token, secret-etnblc-blackduck-cloud-url, secret-etnblc-blackduck-api-token, secret-etnblc-cov-authkey-bash64, secret-etnblc-cov-license-bash64, secret-etnblc-coverity-pass, secret-etnblc-coverity-user'  # Specify the secret(s) you want to retrieve
+      id: mySecrets  # The secret will be available in steps.mySecrets.outputs.GitHubSecret
+
+    - name: Download artifact from ADO
+      shell: bash
+      run: |
+        echo ${{ steps.mySecrets.outputs.secret-etnblc-ado-pat-token }} | az devops login
+        az artifacts universal download \
+        --organization "https://dev.azure.com/etn-ccis/" \
+        --project "154adee8-6030-4d66-ba8a-a18c42fb28e8" \
+        --scope project --feed "cloud" \
+        --name "cov-analysis-linux64" --version "2023.12.0" --path .
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: License file
+      shell: bash
+      run: |
+        COV_LICENSE_PATH=$RUNNER_TEMP/license.dat
+        echo -n "${{ steps.mySecrets.outputs.secret-etnblc-cov-license-bash64 }}" | base64 --decode > $COV_LICENSE_PATH
+
+    - name: Create Authfile and Certs
+      shell: bash
+      run: |
+        # create variable
+        AUTH_KEYFILE=$RUNNER_TEMP/auth-key.txt
+        # import file
+        echo -n "${{ steps.mySecrets.outputs.secret-etnblc-cov-authkey-bash64 }}" | base64 --decode > $AUTH_KEYFILE
+        chmod 400 $AUTH_KEYFILE
+
+    - name: Install Coverity
+      shell: bash
+      run: |
+        chmod +x cov-*.sh
+        ./cov-analysis-linux64-2023.12.0.sh -q --installation.dir=/opt/coverity/analysis/2023.12.0 \
+        --license.agreement=agree --license.region=0 --license.type.choice=0 --license.cov.path=$RUNNER_TEMP/license.dat \
+        --component.sdk=false --component.skip.documentation=true && \
+        rm cov-analysis-linux64-*.sh $RUNNER_TEMP/license.dat
+
+    - name: Get Pull Request Changeset
+      if: ${{ github.event_name == 'pull_request' }}
+      id: changeset
+      run: |
+        # Get the base and head refs
+        BASE_SHA=${{ github.event.pull_request.base.sha }}
+        HEAD_SHA=${{ github.event.pull_request.head.sha }}
+        
+        # Get changed files
+        ADDED_FILES=$(git diff --name-only --diff-filter=A $BASE_SHA $HEAD_SHA | tr '\n' ' ')
+        MODIFIED_FILES=$(git diff --name-only --diff-filter=M $BASE_SHA $HEAD_SHA | tr '\n' ' ')
+        DELETED_FILES=$(git diff --name-only --diff-filter=D $BASE_SHA $HEAD_SHA | tr '\n' ' ')
+        ADDED_MODIFIED=$(git diff --name-only --diff-filter=AM $BASE_SHA $HEAD_SHA | tr '\n' ' ')
+        
+        echo "added_files=$ADDED_FILES" >> $GITHUB_OUTPUT
+        echo "modified_files=$MODIFIED_FILES" >> $GITHUB_OUTPUT
+        echo "deleted_files=$DELETED_FILES" >> $GITHUB_OUTPUT
+        echo "added_modified=$ADDED_MODIFIED" >> $GITHUB_OUTPUT
+
+    - name: Coverity Scan (Incremental analysis)
+      id: coverity-scan
+      continue-on-error: true
+      if: ${{github.event_name == 'pull_request'}}
+      run: |
+          export PATH="/opt/coverity/analysis/2023.12.0/bin:$PATH"
+          
+          # Get changed files from previous step
+          added_files="${{ steps.changeset.outputs.added_files }}"
+          modified_files="${{ steps.changeset.outputs.modified_files }}"
+          deleted_files="${{ steps.changeset.outputs.deleted_files }}"
+          
+          echo "=== Changed files ==="
+          echo "Added: $added_files"
+          echo "Modified: $modified_files"
+          echo "Deleted: $deleted_files"
+    
+          # Process added and modified files
+          for file in $added_files $modified_files; do
+            if [ -n "$file" ]; then
+              echo ${file} >> coverity-files-to-scan.txt
+              echo "Scan changed file ${file}."
+            fi
+          done
+    
+          # Process deleted files
+          for file in $deleted_files; do
+            if [ -n "$file" ]; then
+              echo "File deleted: ${file}"
+            fi
+          done
+          
+          # Only run cov-capture if there are files to scan
+          if [ -f coverity-files-to-scan.txt ]; then
+            echo "=== Running cov-capture ==="
+            cov-capture --dir idir --source-list coverity-files-to-scan.txt
+          else
+            echo "No files to scan, creating empty results"
+            echo '{"issues":[]}' > coverity-results.json
+            exit 0
+          fi
+          
+          echo "=== Running cov-analyze (local analysis) ==="
+          cov-analyze --dir idir \
+            --all --webapp-security --aggressiveness-level high \
+            -en HARDCODED_CREDENTIALS -en UNENCRYPTED_SENSITIVE_DATA -en USER_POINTER -en WEAK_GUARD -en WEAK_PASSWORD_HASH \
+            --strip-path `pwd`
+          
+          echo "=== Running cov-format-errors ==="
+          cov-format-errors --dir idir --json-output-v7 coverity-results.json
+          echo "Coverity scan completed"
+
+    - name: Ensure results file exists
+      if: ${{ github.event_name == 'pull_request' }}
+      run: |
+        if [ ! -f coverity-results.json ]; then
+          echo "Creating empty coverity-results.json (scan may have failed or found no issues)"
+          echo '{"issues":[]}' > coverity-results.json
+        fi
+          
+    - name: Upload build output
+      uses: actions/upload-artifact@v4
+      with:
+        name: Coverity Report
+        path: coverity-results.json
+                    
+    - name: Check the Coverity Result for Dead Code
+      run: |
+        if [ ! -f coverity-results.json ]; then
+          echo "coverity-results.json file not found. Skipping the check."
+          exit 0
+        fi
+        dead_code=$(jq '.issues[] | select(.type == "deadcode")' coverity-results.json)
+        if [ -n "$dead_code" ]; then
+          echo "Dead Code Found!"
+          exit 1
+        else
+          echo "No Dead Code found."
+        fi
+                 
+    - name: Check the Coverity Result for High Issues
+      run: |
+        if [ ! -f coverity-results.json ]; then
+          echo "coverity-results.json file not found. Skipping the check."
+          exit 0
+        fi
+        high_issues=$(jq '.issues[] | select(.checkerProperties.impact == "High")' coverity-results.json)
+        if [ -n "$high_issues" ]; then
+          echo "High issues found!"
+          exit 1
+        else
+          echo "No High issues found."
+        fi
+
+    - name: Commit Coverity Defects
+      if: ${{ github.event_name == 'pull_request' }}
+      run: |
+        export PATH="/opt/coverity/analysis/2023.12.0/bin:$PATH"
+        export AUTH_KEYFILE=$RUNNER_TEMP/auth-key.txt
+        echo "Committing Coverity defects..."
+        cov-commit-defects --dir idir \
+          --url https://coverity.eaton.com/ \
+          --target "blui-react-native" \
+          --stream "blui-react-native" \
+          --auth-key-file $AUTH_KEYFILE
