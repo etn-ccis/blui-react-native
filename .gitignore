@@ -118,4 +118,5 @@ node_modules
 
 # ignore watch package 
 
-/examples/**/watchPackages/
+/examples/**/watchPackages/cov-int/
+cov-int/
