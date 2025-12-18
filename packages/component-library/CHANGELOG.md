@@ -1,6 +1,6 @@
 # Change Log
 
-## v9.1.1 (Unreleased)
+## v9.1.1 (December 18, 2025)
 
 ### Fixed
 
