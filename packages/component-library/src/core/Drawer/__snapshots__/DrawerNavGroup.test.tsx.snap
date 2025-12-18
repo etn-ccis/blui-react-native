@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function finds active item at root level 1`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function finds active item in deeply nested items 1`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function finds active item in nested items 1`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem change when item not in tree 1`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem change when item not in tree 2`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem with children prop using DrawerNavItem 1`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem with nested children in DrawerNavItem 1`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function renders without crashing when activeItem is undefined 1`] = `null`;
+
+exports[`DrawerNavGroup Active Hierarchy and FindID Function renders without crashing when items prop has no itemID 1`] = `null`;
+
+exports[`DrawerNavGroup Active Item Handling renders correctly when active item is not in group 1`] = `null`;
+
+exports[`DrawerNavGroup Active Item Handling renders correctly when activeItem is undefined 1`] = `null`;
+
+exports[`DrawerNavGroup Active Item Handling renders correctly with active item in items prop 1`] = `null`;
+
+exports[`DrawerNavGroup Active Item Handling renders correctly with active nested item 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly with minimal props 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly with title 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly with title and titleColor 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly with titleContent 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly with titleContent overriding title 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly with titleContent set to null 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly with titleDivider enabled 1`] = `null`;
+
+exports[`DrawerNavGroup Basic Rendering renders correctly without titleDivider 1`] = `null`;
+
+exports[`DrawerNavGroup Children Prop renders correctly with children 1`] = `null`;
+
+exports[`DrawerNavGroup Children Prop renders correctly with mixed items and children 1`] = `null`;
+
+exports[`DrawerNavGroup Children Prop renders correctly with title and children 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases for Branch Coverage handles complex activeItem hierarchy updates 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases for Branch Coverage handles empty children 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases for Branch Coverage handles false children 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases for Branch Coverage handles items with parent matching activeItem 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases for Branch Coverage handles undefined children 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases renders correctly with active deeply nested item 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases renders correctly with all props combined 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases renders correctly with deeply nested items 1`] = `null`;
+
+exports[`DrawerNavGroup Edge Cases renders correctly with multiple groups of items 1`] = `null`;
+
+exports[`DrawerNavGroup GetChildren Function Coverage calls getChildren with DrawerNavItem children 1`] = `null`;
+
+exports[`DrawerNavGroup GetChildren Function Coverage handles children with isInActiveTree changes 1`] = `null`;
+
+exports[`DrawerNavGroup GetChildren Function Coverage handles items prop with isInActiveTree changes 1`] = `null`;
+
+exports[`DrawerNavGroup GetChildren Function Coverage triggers notifyActiveParent callback via children update 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with activeItemBackgroundColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with activeItemBackgroundShape round 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with activeItemBackgroundShape square 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with backgroundColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with chevron enabled 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom activeChevronColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom activeItemFontColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom activeItemIconColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom chevronColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom collapseIcon 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom expandIcon 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom itemFontColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with custom itemIconColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with disableActiveItemParentStyles 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with divider enabled 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with hidePadding enabled 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with nestedBackgroundColor 1`] = `null`;
+
+exports[`DrawerNavGroup Inherited Props renders correctly with nestedDivider enabled 1`] = `null`;
+
+exports[`DrawerNavGroup Items Prop renders correctly with empty items array 1`] = `null`;
+
+exports[`DrawerNavGroup Items Prop renders correctly with items containing nested items 1`] = `null`;
+
+exports[`DrawerNavGroup Items Prop renders correctly with items prop 1`] = `null`;
+
+exports[`DrawerNavGroup Items Prop renders correctly with items prop and title 1`] = `null`;
+
+exports[`DrawerNavGroup Items Prop renders correctly with single item 1`] = `null`;
+
+exports[`DrawerNavGroup Mixed Children Types finds active item in DrawerNavItem children 1`] = `null`;
+
+exports[`DrawerNavGroup Mixed Children Types finds active item in deeply nested DrawerNavItem children 1`] = `null`;
+
+exports[`DrawerNavGroup Mixed Children Types handles activeItem change between children 1`] = `null`;
+
+exports[`DrawerNavGroup Mixed Children Types handles children prop change with active item 1`] = `null`;
+
+exports[`DrawerNavGroup Mixed Children Types handles children with nested DrawerNavItems 1`] = `null`;
+
+exports[`DrawerNavGroup Mixed Children Types handles mix of DrawerNavItem children and other children 1`] = `null`;
+
+exports[`DrawerNavGroup State Updates and Callbacks clears active hierarchy when activeItem removed from tree 1`] = `null`;
+
+exports[`DrawerNavGroup State Updates and Callbacks handles multiple activeItem changes 1`] = `null`;
+
+exports[`DrawerNavGroup State Updates and Callbacks handles notifyActiveParent callback from items 1`] = `null`;
+
+exports[`DrawerNavGroup Style Props renders correctly with both styles and style props 1`] = `null`;
+
+exports[`DrawerNavGroup Style Props renders correctly with custom styles 1`] = `null`;
+
+exports[`DrawerNavGroup Style Props renders correctly with style prop 1`] = `null`;
+
+exports[`DrawerNavGroup Theme Override renders correctly with theme override 1`] = `null`;
+
+exports[`DrawerNavGroup ViewProps renders correctly with accessibilityLabel 1`] = `null`;
+
+exports[`DrawerNavGroup ViewProps renders correctly with accessible 1`] = `null`;
+
+exports[`DrawerNavGroup ViewProps renders correctly with testID 1`] = `null`;

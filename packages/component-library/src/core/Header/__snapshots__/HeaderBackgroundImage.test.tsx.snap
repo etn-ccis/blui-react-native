@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HeaderBackgroundImage Basic Rendering renders with backgroundImage as URI 1`] = `null`;
+
+exports[`HeaderBackgroundImage Basic Rendering renders with backgroundImage as array of sources 1`] = `null`;
+
+exports[`HeaderBackgroundImage Basic Rendering renders with backgroundImage as require 1`] = `null`;
+
+exports[`HeaderBackgroundImage Combined States renders with all props combined 1`] = `null`;
+
+exports[`HeaderBackgroundImage Combined States renders with backgroundImage, custom style, and default height 1`] = `null`;
+
+exports[`HeaderBackgroundImage Component Instantiation (for coverage) exercises the conditional branch when backgroundImage is provided and not searching 1`] = `null`;
+
+exports[`HeaderBackgroundImage Component Instantiation (for coverage) instantiates component when searching is false 1`] = `null`;
+
+exports[`HeaderBackgroundImage Component Instantiation (for coverage) instantiates component with custom styles 1`] = `null`;
+
+exports[`HeaderBackgroundImage Component Instantiation (for coverage) instantiates component with different header heights 1`] = `null`;
+
+exports[`HeaderBackgroundImage Component Instantiation (for coverage) instantiates component with image and default search state 1`] = `null`;
+
+exports[`HeaderBackgroundImage Edge Cases handles multiple style objects 1`] = `null`;
+
+exports[`HeaderBackgroundImage Edge Cases renders with different header heights 1`] = `null`;
+
+exports[`HeaderBackgroundImage Edge Cases renders with empty style object 1`] = `null`;
+
+exports[`HeaderBackgroundImage Header Height Animation renders with default header height 1`] = `null`;
+
+exports[`HeaderBackgroundImage Header Height Animation renders with maximum header height 1`] = `null`;
+
+exports[`HeaderBackgroundImage Header Height Animation renders with minimum header height 1`] = `null`;
+
+exports[`HeaderBackgroundImage Image Props renders with accessibility props 1`] = `null`;
+
+exports[`HeaderBackgroundImage Image Props renders with blurRadius 1`] = `null`;
+
+exports[`HeaderBackgroundImage Image Props renders with custom resizeMode via style 1`] = `null`;
+
+exports[`HeaderBackgroundImage Image Props renders with custom style 1`] = `null`;
+
+exports[`HeaderBackgroundImage Image Props renders with loadingIndicatorSource 1`] = `null`;
+
+exports[`HeaderBackgroundImage Image Props renders with onError callback 1`] = `null`;
+
+exports[`HeaderBackgroundImage Image Props renders with onLoad callback 1`] = `null`;
+
+exports[`HeaderBackgroundImage Search State renders when searching is false 1`] = `null`;
+
+exports[`HeaderBackgroundImage Search State validates conditional: backgroundImage exists and searching is false renders image 1`] = `null`;

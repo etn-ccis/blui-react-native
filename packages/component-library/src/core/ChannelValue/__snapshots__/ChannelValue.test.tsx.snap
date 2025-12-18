@@ -5,3 +5,47 @@ exports[`ChannelValue Accepts style override 1`] = `[Function]`;
 exports[`ChannelValue ChannelValue Renders 1`] = `null`;
 
 exports[`ChannelValue Renders the background color and font color correctly 1`] = `[Function]`;
+
+exports[`ChannelValue renders prefix units from whitelist without space 1`] = `null`;
+
+exports[`ChannelValue renders with custom color 1`] = `null`;
+
+exports[`ChannelValue renders with custom fontSize 1`] = `null`;
+
+exports[`ChannelValue renders with custom iconSize 1`] = `null`;
+
+exports[`ChannelValue renders with custom root style 1`] = `null`;
+
+exports[`ChannelValue renders with custom styles for value and units 1`] = `null`;
+
+exports[`ChannelValue renders with icon and no iconColor (uses default color) 1`] = `null`;
+
+exports[`ChannelValue renders with numeric value 1`] = `null`;
+
+exports[`ChannelValue renders with prefix in RTL mode 1`] = `null`;
+
+exports[`ChannelValue renders with prefix units (currency symbol) 1`] = `null`;
+
+exports[`ChannelValue renders with prefix units and unitSpace show 1`] = `null`;
+
+exports[`ChannelValue renders with suffix units from whitelist (Celsius) 1`] = `null`;
+
+exports[`ChannelValue renders with suffix units from whitelist (Fahrenheit) 1`] = `null`;
+
+exports[`ChannelValue renders with suffix units from whitelist (degree) 1`] = `null`;
+
+exports[`ChannelValue renders with suffix units from whitelist (percentage) 1`] = `null`;
+
+exports[`ChannelValue renders with suffix units from whitelist (°C) 1`] = `null`;
+
+exports[`ChannelValue renders with suffix units from whitelist (°F) 1`] = `null`;
+
+exports[`ChannelValue renders with unitSpace set to hide 1`] = `null`;
+
+exports[`ChannelValue renders with unitSpace set to show 1`] = `null`;
+
+exports[`ChannelValue renders without icon 1`] = `null`;
+
+exports[`ChannelValue renders without prefix in RTL mode 1`] = `null`;
+
+exports[`ChannelValue renders without units 1`] = `null`;

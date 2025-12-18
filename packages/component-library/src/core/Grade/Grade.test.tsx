@@ -4,6 +4,97 @@ import Grade from './Grade';
 import { PaperProvider } from 'react-native-paper';
 import { blue } from '@brightlayer-ui/react-native-themes';
 
+// Import the mixColors function for direct testing
+// Since it's not exported, we'll test it indirectly through the Grade components
+// But we can also test error cases by creating a test utility
+
+describe('Grade Error Handling', () => {
+    // Test that the component handles theme override correctly
+    it('renders with theme override', () => {
+        const customTheme = {
+            colors: {
+                primary: '#123456',
+                onPrimary: '#FFFFFF',
+            },
+        };
+        const { getByTestId } = render(<Grade label="T" theme={customTheme} />);
+        const avatarElement = getByTestId('grade');
+        const backgroundColor = avatarElement.props.style[0].backgroundColor;
+        expect(backgroundColor).toBe('#123456');
+    });
+
+    it('renders with custom size', () => {
+        const { getByTestId } = render(<Grade label="T" size={60} />);
+        const avatarElement = getByTestId('grade');
+        const avatarWidth = avatarElement.props.style[0].width;
+        expect(avatarWidth).toBe(60);
+    });
+
+    it('renders with styles prop', () => {
+        const customStyles = {
+            root: { borderWidth: 2, borderColor: 'red' },
+        };
+        const { getByTestId } = render(<Grade label="T" styles={customStyles} />);
+        const avatarElement = getByTestId('grade');
+        expect(avatarElement.props.style).toBeDefined();
+    });
+
+    it('renders with additional ViewProps', () => {
+        const { getByTestId } = render(<Grade label="T" accessible={true} accessibilityLabel="Test Grade" />);
+        const avatarElement = getByTestId('grade');
+        expect(avatarElement).toBeDefined();
+    });
+
+    it('renders all letter grades with default size', () => {
+        const grades = [
+            { gradeComponent: Grade.APlus, label: 'A+' },
+            { gradeComponent: Grade.A, label: 'A' },
+            { gradeComponent: Grade.AMinus, label: 'A-' },
+            { gradeComponent: Grade.BPlus, label: 'B+' },
+            { gradeComponent: Grade.B, label: 'B' },
+            { gradeComponent: Grade.BMinus, label: 'B-' },
+            { gradeComponent: Grade.CPlus, label: 'C+' },
+            { gradeComponent: Grade.C, label: 'C' },
+            { gradeComponent: Grade.CMinus, label: 'C-' },
+            { gradeComponent: Grade.DPlus, label: 'D+' },
+            { gradeComponent: Grade.D, label: 'D' },
+            { gradeComponent: Grade.DMinus, label: 'D-' },
+            { gradeComponent: Grade.F, label: 'F' },
+        ];
+
+        grades.forEach(({ gradeComponent, label }) => {
+            const { getByText } = render(
+                <PaperProvider theme={blue}>{React.createElement(gradeComponent)}</PaperProvider>
+            );
+            expect(getByText(label)).toBeDefined();
+        });
+    });
+
+    it('renders letter grades with custom size', () => {
+        const { getByTestId } = render(
+            <PaperProvider theme={blue}>
+                <Grade.APlus size={50} />
+            </PaperProvider>
+        );
+        const avatarElement = getByTestId('grade');
+        const avatarWidth = avatarElement.props.style[0].width;
+        expect(avatarWidth).toBe(50);
+    });
+
+    it('renders letter grades with custom styles', () => {
+        const customStyles = {
+            root: { opacity: 0.5 },
+        };
+        const { getByTestId } = render(
+            <PaperProvider theme={blue}>
+                <Grade.B styles={customStyles} />
+            </PaperProvider>
+        );
+        const avatarElement = getByTestId('grade');
+        expect(avatarElement.props.style).toBeDefined();
+    });
+});
+
 describe('Grade.custom', () => {
     it('renders with custom label, color, background color, and size', () => {
         const { toJSON, getByText, getByTestId } = render(

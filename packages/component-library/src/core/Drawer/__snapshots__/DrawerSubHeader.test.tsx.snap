@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DrawerSubheader Basic Rendering renders correctly with complex children 1`] = `null`;
+
+exports[`DrawerSubheader Basic Rendering renders correctly with minimal props 1`] = `null`;
+
+exports[`DrawerSubheader Basic Rendering renders correctly with text children 1`] = `null`;
+
+exports[`DrawerSubheader Basic Rendering renders correctly with view children 1`] = `null`;
+
+exports[`DrawerSubheader Children Variations renders with conditional children 1`] = `null`;
+
+exports[`DrawerSubheader Children Variations renders with multiple child elements in a container 1`] = `null`;
+
+exports[`DrawerSubheader Children Variations renders with nested views 1`] = `null`;
+
+exports[`DrawerSubheader Children Variations renders with styled children 1`] = `null`;
+
+exports[`DrawerSubheader Component Properties renders with all props combined 1`] = `null`;
+
+exports[`DrawerSubheader Divider Prop renders with divider by default 1`] = `null`;
+
+exports[`DrawerSubheader Divider Prop renders with divider explicitly set to undefined 1`] = `null`;
+
+exports[`DrawerSubheader Divider Prop renders with divider when divider is true 1`] = `null`;
+
+exports[`DrawerSubheader Divider Prop renders without divider when divider is false 1`] = `null`;
+
+exports[`DrawerSubheader Edge Cases renders with empty view 1`] = `null`;
+
+exports[`DrawerSubheader Edge Cases renders with false children and divider false 1`] = `null`;
+
+exports[`DrawerSubheader Edge Cases renders with null children 1`] = `null`;
+
+exports[`DrawerSubheader Edge Cases renders with undefined children 1`] = `null`;
+
+exports[`DrawerSubheader Snapshot Tests matches snapshot with complex content 1`] = `null`;
+
+exports[`DrawerSubheader Snapshot Tests matches snapshot with minimal configuration 1`] = `null`;
+
+exports[`DrawerSubheader Snapshot Tests matches snapshot without divider 1`] = `null`;

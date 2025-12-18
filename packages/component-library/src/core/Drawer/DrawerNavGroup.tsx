@@ -41,7 +41,7 @@ export type DrawerNavGroupProps = AllSharedProps &
         styles?: DrawerNavGroupStyles;
     };
 
-const makeStyles = (
+export const DrawerNavGroupMakeStyles = (
     props: DrawerNavGroupProps,
     theme: ExtendedTheme,
     insets: EdgeInsets,
@@ -88,7 +88,10 @@ const makeStyles = (
  * @param activeItem The id to search for
  * @returns true if the ID is found in the tree, false otherwise
  */
-const findID = (item: DrawerNavItemProps | NestedDrawerNavItemProps, activeItem: string | undefined): boolean => {
+export const findID = (
+    item: DrawerNavItemProps | NestedDrawerNavItemProps,
+    activeItem: string | undefined
+): boolean => {
     if (!activeItem) return false;
 
     // if leaf node, return
@@ -164,7 +167,7 @@ export const DrawerNavGroup: React.FC<DrawerNavGroupProps> = (props) => {
     const { fontStyleSemiBold } = useFontStyles();
     const insets = useSafeAreaInsets();
     const fontScale = useFontScale();
-    const defaultStyles = makeStyles(props, theme, insets, fontScale, fontStyleSemiBold);
+    const defaultStyles = DrawerNavGroupMakeStyles(props, theme, insets, fontScale, fontStyleSemiBold);
     const { activeItem } = useDrawerContext();
 
     const defaultProps: Partial<DrawerNavGroupProps> = {

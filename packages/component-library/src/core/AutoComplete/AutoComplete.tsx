@@ -204,16 +204,26 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
     const [filterOptions, setFilterOptions] = useState(filterChips(options, value));
     const [hideDropDownTags, setHideDropDownTags] = useState(true);
     const [textInput, setTextInput] = useState('');
+    const [isFocused, setIsFocused] = useState(false);
     const tagInputRef = useRef(null as unknown as RNTextInput);
     const defaultStyles = AutocompleteStyles(theme, filterOptions, hideDropDownTags);
 
     const handleTextInputPress = (): void => {
-        tagInputRef.current?.focus();
+        if (isFocused) {
+            tagInputRef.current?.blur();
+        } else {
+            // Adding delay to focus the input post TouchableHighlight uses the focus
+            setTimeout(() => {
+                tagInputRef.current?.focus();
+            }, 100);
+        }
     };
     const handleTextInputFocus = (): void => {
+        setIsFocused(true);
         setHideDropDownTags(false);
     };
     const handleOnBlurTags = (): void => {
+        setIsFocused(false);
         setHideDropDownTags(true);
     };
     const handleOnChangeText = (text: string): void => {
@@ -328,6 +338,7 @@ export const AutoComplete: React.FC<AutocompleteProps> = (props) => {
                         {filterOptions.map((item, index) => (
                             <TouchableOpacity
                                 key={index}
+                                testID={`option-${item}`}
                                 style={[defaultStyles.dropDownItem, styles?.dropdownItem]}
                                 onPress={(): void => onTagsSelected(item)}
                             >

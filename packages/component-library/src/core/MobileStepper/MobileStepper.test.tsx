@@ -5,6 +5,8 @@ import { View } from 'react-native';
 
 // Mock ProgressBar from react-native-paper
 jest.mock('react-native-paper', () => {
+    // eslint-disable-next-line @typescript-eslint/no-shadow
+    const { View } = jest.requireActual('react-native');
     const actual = jest.requireActual('react-native-paper');
     return {
         ...actual,

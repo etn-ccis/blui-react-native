@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`DrawerHeader renders backgroundImage with various opacity values 1`] = `null`;
+
+exports[`DrawerHeader renders backgroundImage with various opacity values 2`] = `null`;
+
+exports[`DrawerHeader renders backgroundImage with various opacity values 3`] = `null`;
+
+exports[`DrawerHeader renders correctly when backgroundImage is undefined 1`] = `null`;
+
+exports[`DrawerHeader renders correctly when both style and styles.root are provided 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with accessibility props 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with all props 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with all style overrides 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with backgroundColor 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with backgroundImage 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with backgroundImage and backgroundOpacity 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with custom style prop 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with custom styles 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with default backgroundOpacity 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with fontColor 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with icon 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with icon and onIconPress 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with icon but no onIconPress 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with icon using IconFamily 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with minimal props 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with onPress 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with subtitle only 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with theme override 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with title 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with title and subtitle 1`] = `null`;
+
+exports[`DrawerHeader renders correctly with titleContent 1`] = `null`;
+
+exports[`DrawerHeader renders icon with padding when icon prop is provided 1`] = `null`;
+
+exports[`DrawerHeader renders icon without padding when no icon prop 1`] = `null`;
+
+exports[`DrawerHeader renders titleContent instead of title and subtitle when provided 1`] = `null`;
+
+exports[`DrawerHeader renders with all hook dependencies changed 1`] = `null`;
+
+exports[`DrawerHeader renders with backgroundImage and custom backgroundImage styles 1`] = `null`;
+
+exports[`DrawerHeader renders with backgroundImage and custom backgroundImageWrapper styles 1`] = `null`;
+
+exports[`DrawerHeader renders with backgroundImage using number source 1`] = `null`;
+
+exports[`DrawerHeader renders with backgroundOpacity of 0 1`] = `null`;
+
+exports[`DrawerHeader renders with backgroundOpacity of 1 1`] = `null`;
+
+exports[`DrawerHeader renders with complex titleContent 1`] = `null`;
+
+exports[`DrawerHeader renders with custom content styles 1`] = `null`;
+
+exports[`DrawerHeader renders with custom textContent styles 1`] = `null`;
+
+exports[`DrawerHeader renders with different fontColor values for icon and text 1`] = `null`;
+
+exports[`DrawerHeader renders with empty strings for title and subtitle 1`] = `null`;
+
+exports[`DrawerHeader renders with icon and all color props 1`] = `null`;
+
+exports[`DrawerHeader renders with icon and custom icon styles 1`] = `null`;
+
+exports[`DrawerHeader renders with icon and with onIconPress callback 1`] = `null`;
+
+exports[`DrawerHeader renders with icon but without onIconPress callback 1`] = `null`;
+
+exports[`DrawerHeader renders with icon to test padding adjustment 1`] = `null`;
+
+exports[`DrawerHeader renders with icon to test padding left calculation 1`] = `null`;
+
+exports[`DrawerHeader renders with icon using different icon source formats 1`] = `null`;
+
+exports[`DrawerHeader renders with only backgroundColor and no other props 1`] = `null`;
+
+exports[`DrawerHeader renders with only fontColor and no other props 1`] = `null`;
+
+exports[`DrawerHeader renders with subtitle and custom subtitle styles 1`] = `null`;
+
+exports[`DrawerHeader renders with title and custom title styles 1`] = `null`;
+
+exports[`DrawerHeader renders with various combinations of title, subtitle, and titleContent 1`] = `null`;
+
+exports[`DrawerHeader renders with various combinations of title, subtitle, and titleContent 2`] = `null`;
+
+exports[`DrawerHeader renders with various combinations of title, subtitle, and titleContent 3`] = `null`;
+
+exports[`DrawerHeader renders with very long title and subtitle text 1`] = `null`;
+
+exports[`DrawerHeader renders without icon to test padding adjustment 1`] = `null`;
+
+exports[`DrawerHeader renders without icon to test padding left calculation 1`] = `null`;
+
+exports[`DrawerHeader uses default theme backgroundColor when not provided 1`] = `null`;
+
+exports[`DrawerHeader uses provided backgroundColor 1`] = `null`;
