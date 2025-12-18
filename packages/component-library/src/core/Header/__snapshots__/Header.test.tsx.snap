@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Header Action Items renders with action component 1`] = `null`;
+
+exports[`Header Action Items renders with action item onPress callback 1`] = `null`;
+
+exports[`Header Action Items renders with custom actionItemColor 1`] = `null`;
+
+exports[`Header Action Items renders with mixed icon and component action items 1`] = `null`;
+
+exports[`Header Action Items renders with multiple action items 1`] = `null`;
+
+exports[`Header Action Items renders with single action item 1`] = `null`;
+
+exports[`Header Additional Coverage renders dynamic expandable with searchableConfig 1`] = `null`;
+
+exports[`Header Additional Coverage renders dynamic variant with startExpanded 1`] = `null`;
+
+exports[`Header Additional Coverage renders dynamic with custom heights and scrollPosition 1`] = `null`;
+
+exports[`Header Additional Coverage renders dynamic with scrollPosition at different values 1`] = `null`;
+
+exports[`Header Additional Coverage renders expandable with all heights specified 1`] = `null`;
+
+exports[`Header Additional Coverage renders expandable with icon and actions 1`] = `null`;
+
+exports[`Header Additional Coverage renders expandable with searchableConfig 1`] = `null`;
+
+exports[`Header Additional Coverage renders expandable without startExpanded 1`] = `null`;
+
+exports[`Header Additional Coverage renders static variant with startExpanded 1`] = `null`;
+
+exports[`Header Additional Coverage renders with accessible props 1`] = `null`;
+
+exports[`Header Additional Coverage renders with action component without width specified 1`] = `null`;
+
+exports[`Header Additional Coverage renders with actionItems having onPress handlers 1`] = `null`;
+
+exports[`Header Additional Coverage renders with all color props 1`] = `null`;
+
+exports[`Header Additional Coverage renders with all searchableConfig props 1`] = `null`;
+
+exports[`Header Additional Coverage renders with all style props 1`] = `null`;
+
+exports[`Header Additional Coverage renders with backgroundImage and backgroundColor together 1`] = `null`;
+
+exports[`Header Additional Coverage renders with complex ReactNode content 1`] = `null`;
+
+exports[`Header Additional Coverage renders with different icon sources 1`] = `null`;
+
+exports[`Header Additional Coverage renders with everything combined 1`] = `null`;
+
+exports[`Header Additional Coverage renders with icon and no onIconPress 1`] = `null`;
+
+exports[`Header Additional Coverage renders with multiple action components 1`] = `null`;
+
+exports[`Header Additional Coverage renders with searchableConfig minimal 1`] = `null`;
+
+exports[`Header Additional Coverage renders with subtitle and info together 1`] = `null`;
+
+exports[`Header Additional Coverage renders with testID 1`] = `null`;
+
+exports[`Header Additional Coverage renders with theme having custom colors 1`] = `null`;
+
+exports[`Header Additional Coverage renders with updateScrollView callback 1`] = `null`;
+
+exports[`Header Background Image renders with backgroundImage 1`] = `null`;
+
+exports[`Header Background Image renders with backgroundImage and backgroundColor 1`] = `null`;
+
+exports[`Header Basic Rendering renders correctly with minimal props 1`] = `null`;
+
+exports[`Header Basic Rendering renders with info as ReactNode 1`] = `null`;
+
+exports[`Header Basic Rendering renders with info text 1`] = `null`;
+
+exports[`Header Basic Rendering renders with subtitle 1`] = `null`;
+
+exports[`Header Basic Rendering renders with subtitle as ReactNode 1`] = `null`;
+
+exports[`Header Basic Rendering renders with title as ReactNode 1`] = `null`;
+
+exports[`Header Basic Rendering renders with title as string 1`] = `null`;
+
+exports[`Header Color Props renders with both backgroundColor and fontColor 1`] = `null`;
+
+exports[`Header Color Props renders with custom backgroundColor 1`] = `null`;
+
+exports[`Header Color Props renders with custom fontColor 1`] = `null`;
+
+exports[`Header Complex Scenarios renders dynamic with searchable 1`] = `null`;
+
+exports[`Header Complex Scenarios renders expandable with searchable 1`] = `null`;
+
+exports[`Header Complex Scenarios renders with all main props combined 1`] = `null`;
+
+exports[`Header Complex Scenarios renders with background image and all content 1`] = `null`;
+
+exports[`Header Dynamic Variant renders with dynamic variant 1`] = `null`;
+
+exports[`Header Dynamic Variant renders with dynamic variant and custom heights 1`] = `null`;
+
+exports[`Header Dynamic Variant renders with dynamic variant and updateScrollView 1`] = `null`;
+
+exports[`Header Edge Cases renders with children 1`] = `null`;
+
+exports[`Header Edge Cases renders with empty actionItems array 1`] = `null`;
+
+exports[`Header Edge Cases renders with expandable false explicitly 1`] = `null`;
+
+exports[`Header Edge Cases renders with variant static explicitly 1`] = `null`;
+
+exports[`Header Edge Cases renders with very large expandedHeight 1`] = `null`;
+
+exports[`Header Edge Cases renders with zero collapsedHeight 1`] = `null`;
+
+exports[`Header Expandable Header renders as expandable 1`] = `null`;
+
+exports[`Header Expandable Header renders as expandable with startExpanded 1`] = `null`;
+
+exports[`Header Expandable Header renders with both custom heights 1`] = `null`;
+
+exports[`Header Expandable Header renders with custom collapsedHeight 1`] = `null`;
+
+exports[`Header Expandable Header renders with custom expandedHeight 1`] = `null`;
+
+exports[`Header Navigation Icon renders with custom navigationIconColor 1`] = `null`;
+
+exports[`Header Navigation Icon renders with icon and onIconPress 1`] = `null`;
+
+exports[`Header Navigation Icon renders with icon prop 1`] = `null`;
+
+exports[`Header Searchable Header renders with all searchableConfig options 1`] = `null`;
+
+exports[`Header Searchable Header renders with searchableConfig 1`] = `null`;
+
+exports[`Header Searchable Header renders with searchableConfig autoCapitalize 1`] = `null`;
+
+exports[`Header Searchable Header renders with searchableConfig autoCorrect 1`] = `null`;
+
+exports[`Header Searchable Header renders with searchableConfig autoFocus 1`] = `null`;
+
+exports[`Header Searchable Header renders with searchableConfig custom icon 1`] = `null`;
+
+exports[`Header Searchable Header renders with searchableConfig onChangeText 1`] = `null`;
+
+exports[`Header Style Props renders with custom actionPanel style 1`] = `null`;
+
+exports[`Header Style Props renders with custom backgroundImage style 1`] = `null`;
+
+exports[`Header Style Props renders with custom info style 1`] = `null`;
+
+exports[`Header Style Props renders with custom root style 1`] = `null`;
+
+exports[`Header Style Props renders with custom subtitle style 1`] = `null`;
+
+exports[`Header Style Props renders with custom title style 1`] = `null`;
+
+exports[`Header Style Props renders with multiple custom styles 1`] = `null`;
+
+exports[`Header Theme Override renders with theme override 1`] = `null`;
+
+exports[`Header ViewProps renders with additional ViewProps 1`] = `null`;
+
+exports[`Header ViewProps renders with custom style prop 1`] = `null`;

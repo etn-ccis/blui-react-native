@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HeaderActionItems Basic Rendering renders with a single icon action item 1`] = `null`;
+
+exports[`HeaderActionItems Basic Rendering renders with actionItemColor 1`] = `null`;
+
+exports[`HeaderActionItems Basic Rendering renders with component action items 1`] = `null`;
+
+exports[`HeaderActionItems Basic Rendering renders with custom width for component action item 1`] = `null`;
+
+exports[`HeaderActionItems Basic Rendering renders with mixed icon and component action items 1`] = `null`;
+
+exports[`HeaderActionItems Basic Rendering renders with multiple icon action items 1`] = `null`;
+
+exports[`HeaderActionItems Edge Cases handles action items with no onPress 1`] = `null`;
+
+exports[`HeaderActionItems Edge Cases handles complex component in action item 1`] = `null`;
+
+exports[`HeaderActionItems Edge Cases handles different icon types 1`] = `null`;
+
+exports[`HeaderActionItems Search Functionality combines search icon with action items when searchConfig is provided 1`] = `null`;
+
+exports[`HeaderActionItems Search Functionality hides regular action items when searching 1`] = `null`;
+
+exports[`HeaderActionItems Search Functionality renders clear icon when searching with query 1`] = `null`;
+
+exports[`HeaderActionItems Search Functionality renders search icon when searchConfig is provided 1`] = `null`;
+
+exports[`HeaderActionItems Style Overrides renders with all custom styles 1`] = `null`;
+
+exports[`HeaderActionItems Style Overrides renders with custom actionItem styles 1`] = `null`;
+
+exports[`HeaderActionItems Style Overrides renders with custom component styles 1`] = `null`;
+
+exports[`HeaderActionItems Style Overrides renders with custom root styles 1`] = `null`;

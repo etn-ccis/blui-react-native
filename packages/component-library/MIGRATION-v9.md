@@ -8,9 +8,8 @@ Version 9 introduces support for ECMAScript Module (ESM) format. Ensure your pro
 
 - Renamed `AutoComplete` props to follow the naming conventions:
 
-| Old Prop Name             | New Prop Name       |
-|---------------------------|---------------------|
-| `allowCustomtag`          | `allowCustomTag`    |
-| `limitCharacterCountTag`  | `tagCharacterLimit` |
-| `chipProps`               | `ChipProps`         |
-
+| Old Prop Name            | New Prop Name       |
+| ------------------------ | ------------------- |
+| `allowCustomtag`         | `allowCustomTag`    |
+| `limitCharacterCountTag` | `tagCharacterLimit` |
+| `chipProps`              | `ChipProps`         |

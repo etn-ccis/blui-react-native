@@ -1,5 +1,7 @@
 module.exports = {
     preset: 'react-native',
+    setupFiles: ['./jestSetupFile.js'],
+    coverageProvider: 'v8',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     moduleNameMapper: {
         '\\.svg$': 'identity-obj-proxy',
@@ -11,10 +13,13 @@ module.exports = {
     },
     collectCoverage: true,
     coverageThreshold: {
-        "global": {
-          "lines": 75
-        }
-      },
+        global: {
+            lines: 80,
+            statements: 80,
+            branches: 80,
+            functions: 80,
+        },
+    },
     coverageReporters: ['text', 'cobertura'],
     transformIgnorePatterns: [
         'node_modules/(?!(react-native|@react-native/*|@brightlayer-ui/react-native-vector-icons|@react-native-vector-icons/*|react-native-vector-icons|react-native-animatable|react-native-reanimated|react-native-iphone-x-helper|react-native-modal|react-native-collapsible|@react-native/polyfills)/)',

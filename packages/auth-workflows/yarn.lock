@@ -1839,10 +1839,10 @@
     webcrypto-shim "^0.1.5"
     xhr2 "0.1.3"
 
-"@okta/okta-react-native@^2.17.0":
-  version "2.17.0"
-  resolved "https://registry.npmjs.org/@okta/okta-react-native/-/okta-react-native-2.17.0.tgz#ded7ac3bd063f290e7b3299814ce16ce4e796be6"
-  integrity sha512-HngBUyYqGENtn9uh0KUafseoHsBuF0/s7+QwY8Fu5FOf4qZltw2jVT8Ped9fINvVTU2wPMvRi45Fe+AAS7E9tg==
+"@okta/okta-react-native@^2.17.1":
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/@okta/okta-react-native/-/okta-react-native-2.17.1.tgz#22f4989067e8cea76eac5e2309b45ad31879836e"
+  integrity sha512-SChZ3lqGJ5x6N5VNESRg61p8wO4IcDk7cLmQTKLnQYpbL94PHvASHpVuRLdkMReTQSJKqhHP2juemRLmAFikTw==
   dependencies:
     "@babel/plugin-transform-async-to-generator" "^7.24.7"
     "@okta/okta-auth-js" "7.8.1"

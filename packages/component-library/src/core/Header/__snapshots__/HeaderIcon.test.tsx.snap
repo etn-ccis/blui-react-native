@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`HeaderIcon Basic Rendering renders with icon as component 1`] = `null`;
+
+exports[`HeaderIcon Basic Rendering renders with icon as object 1`] = `null`;
+
+exports[`HeaderIcon Basic Rendering renders with icon as string 1`] = `null`;
+
+exports[`HeaderIcon Color Prop renders with color as named color 1`] = `null`;
+
+exports[`HeaderIcon Color Prop renders with color as rgba 1`] = `null`;
+
+exports[`HeaderIcon Color Prop renders with custom color 1`] = `null`;
+
+exports[`HeaderIcon Color Prop renders without color prop 1`] = `null`;
+
+exports[`HeaderIcon Complex Scenarios renders with all props when disableScaling is false 1`] = `null`;
+
+exports[`HeaderIcon Complex Scenarios renders with all props when disableScaling is true 1`] = `null`;
+
+exports[`HeaderIcon Complex Scenarios renders with custom icon component and color 1`] = `null`;
+
+exports[`HeaderIcon Edge Cases handles changing from icon to no icon 1`] = `null`;
+
+exports[`HeaderIcon Edge Cases handles multiple renders with different colors 1`] = `null`;
+
+exports[`HeaderIcon Edge Cases handles multiple renders with different colors 2`] = `null`;
+
+exports[`HeaderIcon Edge Cases handles multiple renders with different icons 1`] = `null`;
+
+exports[`HeaderIcon Edge Cases handles multiple renders with different icons 2`] = `null`;
+
+exports[`HeaderIcon Edge Cases renders with empty string as icon 1`] = `null`;
+
+exports[`HeaderIcon Edge Cases renders with icon but color undefined 1`] = `null`;
+
+exports[`HeaderIcon Font Scaling allows font scaling when disableScaling is false 1`] = `null`;
+
+exports[`HeaderIcon Font Scaling disables font scaling when disableScaling is true 1`] = `null`;
+
+exports[`HeaderIcon Font Scaling passes allowFontScaling as false when disableScaling is true 1`] = `null`;
+
+exports[`HeaderIcon Font Scaling passes allowFontScaling as true when disableScaling is false 1`] = `null`;
+
+exports[`HeaderIcon Icon Component Integration passes correct props to Icon component 1`] = `null`;
+
+exports[`HeaderIcon Icon Component Integration uses ICON_SIZE constant for size prop 1`] = `null`;
