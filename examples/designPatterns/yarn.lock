@@ -1040,10 +1040,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.16.0.tgz#56c692fb2bff7b53a36eefaffdfd1682ddf73272"
   integrity sha512-ENJMl+8sVwCwNRgK9JDWWNJ4ZLyNVjuLKtk5I6i+GRhuTV5YeonRSH+h+TkK8uOfbK7SRQJZMJAr2VGAn9Rw8w==
 
-"@brightlayer-ui/react-native-components@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.0.tgz#4fedbf11bf69881db2e08b949364b62eaf0ff14f"
-  integrity sha512-JmdR9+7wUHXi6kmvGmXfhxIBi9r7fZ/sLBOR/bNj1hFl3h//3S7VHsq4M5JmYZq/IfzGYOjVoPeB5KrKkhMFCg==
+"@brightlayer-ui/react-native-components@^9.1.1":
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.1.tgz#86643c371a00e5f9b28207be13229cfa02cbfd09"
+  integrity sha512-0bYUGOeB/fsLiRzkikki0NBBwoxnuS9M5UgOrmHMDNmoeosdHYVkmhPf3sVZT1LWajrN4sPLRhhC3017VUvuCQ==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
     "@callstack/react-theme-provider" "^3.0.9"
@@ -5728,11 +5728,6 @@ react-native-safe-area-context@5.4.1:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.4.1.tgz#6d04eac20f99622fa13895fa7ae96199f1ecf800"
   integrity sha512-x+g3NblZ9jof8y+XkVvaGlpMrSlixhrJJ33BRzhTAKUKctQVecO1heSXmzxc5UdjvGYBKS6kPZVUw2b8NxHcPg==
-
-react-native-safe-area-context@^5.5.2:
-  version "5.6.2"
-  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.6.2.tgz#283e006f5b434fb247fcb4be0971ad7473d5c560"
-  integrity sha512-4XGqMNj5qjUTYywJqpdWZ9IG8jgkS3h06sfVjfw5yZQZfWnRFXczi0GnYyFyCc2EBps/qFmoCH8fez//WumdVg==
 
 react-native-screens@^4.18.0:
   version "4.18.0"
