@@ -780,10 +780,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/colors/-/colors-4.0.0.tgz#5bb3706eca98e849d1e80ca4c9f9ca731380d227"
   integrity sha512-fF7Ne7cz4yFCzR96HrP1RVBw55s+cWbqYkPallnpmmtYnPwNS/DyAbbHFEnl2bxziq3CvAR2S+D6AnjIeluOZA==
 
-"@brightlayer-ui/react-native-components@9.1.0":
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.0.tgz#4fedbf11bf69881db2e08b949364b62eaf0ff14f"
-  integrity sha512-JmdR9+7wUHXi6kmvGmXfhxIBi9r7fZ/sLBOR/bNj1hFl3h//3S7VHsq4M5JmYZq/IfzGYOjVoPeB5KrKkhMFCg==
+"@brightlayer-ui/react-native-components@9.1.1":
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.1.tgz#86643c371a00e5f9b28207be13229cfa02cbfd09"
+  integrity sha512-0bYUGOeB/fsLiRzkikki0NBBwoxnuS9M5UgOrmHMDNmoeosdHYVkmhPf3sVZT1LWajrN4sPLRhhC3017VUvuCQ==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
     "@callstack/react-theme-provider" "^3.0.9"
@@ -815,10 +815,12 @@
     color "^4.2.3"
     react-native-safe-area-context "5.4.1"
 
-"@brightlayer-ui/react-native-vector-icons@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-2.4.0.tgz#99236f898e423346350db1a90c731ad5644b562c"
-  integrity sha512-USFMjyoDGybaVux7wfeN1Kmo8h8rM3PooNEv+YTV84XkH1K+M3ASf6dQ/PSWaoCvRFb/xv0Du9FQ744wN4keog==
+"@brightlayer-ui/react-native-vector-icons@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-3.1.0.tgz#a5e9aeea41dd09b86915679bc93feb5017b252f6"
+  integrity sha512-UXIrRlG1HF/cOxTAQSKTpcqsie/e0pM2Vs1V2NJJuUuJxVlJP77/sDw1exVHqbDd2Ayk9S+58KO1L66AVX4bRg==
+  dependencies:
+    "@react-native-vector-icons/common" "^12.0.0"
 
 "@callstack/react-theme-provider@^3.0.9":
   version "3.0.9"
@@ -1466,6 +1468,15 @@
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
+
+"@react-native-vector-icons/common@^12.0.0":
+  version "12.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.4.0.tgz#60fc6f4d9a0e7e7b06f7c3a996e320c72c588a15"
+  integrity sha512-t9W0q+AW7WH1Oj5aEg7wGNXDLZJb5sIVkAWo5qtad3PcbBADqoCdikRK/ToLK+xlB0TxjcuL0T74ogudMkYGeA==
+  dependencies:
+    find-up "^7.0.0"
+    picocolors "^1.1.1"
+    plist "^3.1.0"
 
 "@react-native-vector-icons/common@^12.3.0":
   version "12.3.1"
