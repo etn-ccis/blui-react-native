@@ -4,7 +4,8 @@ import {
   InfoListItem,
   EmptyState,
 } from '@brightlayer-ui/react-native-components';
-import { View, FlatList, SafeAreaView, StyleSheet } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from 'react-native-paper';
 import Modal from 'react-native-modal';
@@ -149,7 +150,7 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
           }
         />
       )}
-      <SafeAreaView>
+      <SafeAreaProvider>
         <Modal
           isVisible={isActionsPanelVisible}
           backdropOpacity={0.5}
@@ -176,7 +177,7 @@ export const ActionListScreen: React.FC<ActionListProps> = props => {
             />
           </View>
         </Modal>
-      </SafeAreaView>
+      </SafeAreaProvider>
     </View>
   );
 };
