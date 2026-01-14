@@ -5,7 +5,7 @@ import {
   EmptyState,
 } from '@brightlayer-ui/react-native-components';
 import { View, FlatList, StyleSheet } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from 'react-native-paper';
 import Modal from 'react-native-modal';
