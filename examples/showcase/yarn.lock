@@ -1164,10 +1164,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
   integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
 
-"@brightlayer-ui/react-native-auth-workflow@^8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.1.0.tgz#3b7643d0edc1cd32e02d308ea7243b7f80a93c57"
-  integrity sha512-5g59xspAPebRncd0Q2p6cFPnRY0cnjFOYUx26lhodEXRvlYIPUp1DzTJrbq9aSGq9L7zMDyf+U3K66uTOSIDaA==
+"@brightlayer-ui/react-native-auth-workflow@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.1.1.tgz#f92945a15e1fde04202e94b3caa71ee50cc36ffb"
+  integrity sha512-VGeXWJbTqNL5A0n50e4gCtmb9U7+nGAabTGnyL81N2guR2dEHRc8THvctixsZh1p9f/NlY/mbd8ukEkt4nlzjw==
   dependencies:
     "@brightlayer-ui/react-native-themes" "^7.0.1"
     "@types/react" "^19.0.0"
@@ -1175,10 +1175,10 @@
     color "^4.2.3"
     lodash.clonedeep "^4.5.0"
 
-"@brightlayer-ui/react-native-components@^9.1.0":
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.0.tgz#4fedbf11bf69881db2e08b949364b62eaf0ff14f"
-  integrity sha512-JmdR9+7wUHXi6kmvGmXfhxIBi9r7fZ/sLBOR/bNj1hFl3h//3S7VHsq4M5JmYZq/IfzGYOjVoPeB5KrKkhMFCg==
+"@brightlayer-ui/react-native-components@^9.1.1":
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.1.tgz#86643c371a00e5f9b28207be13229cfa02cbfd09"
+  integrity sha512-0bYUGOeB/fsLiRzkikki0NBBwoxnuS9M5UgOrmHMDNmoeosdHYVkmhPf3sVZT1LWajrN4sPLRhhC3017VUvuCQ==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
     "@callstack/react-theme-provider" "^3.0.9"
@@ -1192,10 +1192,10 @@
     react-native-modal "^13.0.1"
     react-native-reanimated "^3.18.0"
 
-"@brightlayer-ui/react-native-progress-icons@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.0.0.tgz#0239e6809de9b0d69ebe4ca5bebd73c26aec979f"
-  integrity sha512-idge1VGUmOhKGt8F5kffDNQrtEsklj/MBbjLXeTzqD8MX5eqGCADHk/Z+yjKjp055Dqzz125jbVOgolofKJjjA==
+"@brightlayer-ui/react-native-progress-icons@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.0.1.tgz#8b6203f7cd0e751ad605b0be4c13e4739b22ebbe"
+  integrity sha512-twSIr1O7MWnLNcvW6prZoQnz4GxWRJoJrTWZ4zC8IyvYKR8/CGpHyYYykDMlnmJXSXsjE8fRgXlEJ4qmbZKozQ==
   dependencies:
     color "^5.0.0"
 
