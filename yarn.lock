@@ -17,7 +17,7 @@
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.28.4.tgz#a70226016fabe25c5783b2f22d3e1c9bc5ca3326"
   integrity sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==
 
-"@brightlayer-ui/eslint-config@^4.0.0-alpha.0":
+"@brightlayer-ui/eslint-config@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/eslint-config/-/eslint-config-4.0.1.tgz#21141d48c077de2abf869be9575c81b0d908e9f4"
   integrity sha512-yVRd04BEzgLM/vTvUEVtcKoybeziMCD+f0z5L8IOIQ/dZ4IQ6EDvnSZG9ly8RywG3hONubKblPAY0fTV2mU55w==
@@ -4517,9 +4517,9 @@ pupa@^2.1.1:
     escape-goat "^2.0.0"
 
 qs@^6.6.0, qs@^6.7.0, qs@~6.14.0:
-  version "6.14.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.0.tgz#c63fa40680d2c5c941412a0e899c89af60c0a930"
-  integrity sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==
+  version "6.14.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.1.tgz#a41d85b9d3902f31d27861790506294881871159"
+  integrity sha512-4EK3+xJl8Ts67nLYNwqw/dsFVnCf+qR7RgXSK9jEEm9unao3njwMDdmsdvoKBKHzxd7tCYz5e5M+SnMjdtXGQQ==
   dependencies:
     side-channel "^1.1.0"
 
