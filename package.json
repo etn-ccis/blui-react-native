@@ -51,7 +51,7 @@
         "watch:all": "node ./scripts/watch-all.js"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
+        "@brightlayer-ui/eslint-config": "^4.0.1",
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@eslint/compat": "^1.2.6",
         "@eslint/eslintrc": "^3.2.0",
