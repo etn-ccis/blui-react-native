@@ -1094,10 +1094,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
   integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
 
-"@brightlayer-ui/react-native-auth-workflow@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.0.0.tgz#1f6aaedf72ea74433e5e993c5bc82ddb928fe1aa"
-  integrity sha512-xJ670a1jf7V5HtQ0NnFmUw3X/zypWxANoTFDxyLsBJNhJ6ro/4M1pBovK596mastwsS9g6ReO4gwcNz4+1FtJQ==
+"@brightlayer-ui/react-native-auth-workflow@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.1.1.tgz#f92945a15e1fde04202e94b3caa71ee50cc36ffb"
+  integrity sha512-VGeXWJbTqNL5A0n50e4gCtmb9U7+nGAabTGnyL81N2guR2dEHRc8THvctixsZh1p9f/NlY/mbd8ukEkt4nlzjw==
   dependencies:
     "@brightlayer-ui/react-native-themes" "^7.0.1"
     "@types/react" "^19.0.0"
@@ -1105,10 +1105,10 @@
     color "^4.2.3"
     lodash.clonedeep "^4.5.0"
 
-"@brightlayer-ui/react-native-components@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.0.0.tgz#eb5412be3f9237e9ea92e21d25c9fe1d3ead74a2"
-  integrity sha512-xQfpubAUgMDjOxKVIRjVgC0H20og2Ntx59xK84Zx1qO6P6PasECvXYl+CyqTCWlXptJ0rcBeWZzEWhjqGw7izQ==
+"@brightlayer-ui/react-native-components@^9.1.1":
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.1.1.tgz#86643c371a00e5f9b28207be13229cfa02cbfd09"
+  integrity sha512-0bYUGOeB/fsLiRzkikki0NBBwoxnuS9M5UgOrmHMDNmoeosdHYVkmhPf3sVZT1LWajrN4sPLRhhC3017VUvuCQ==
   dependencies:
     "@brightlayer-ui/react-native-themes" "7.0.1"
     "@callstack/react-theme-provider" "^3.0.9"
