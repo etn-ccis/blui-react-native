@@ -17,9 +17,9 @@
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.28.4.tgz#a70226016fabe25c5783b2f22d3e1c9bc5ca3326"
   integrity sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ==
 
-"@brightlayer-ui/eslint-config@^4.0.0-alpha.0":
+"@brightlayer-ui/eslint-config@^4.0.1":
   version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/eslint-config/-/eslint-config-4.0.1.tgz#21141d48c077de2abf869be9575c81b0d908e9f4"
+  resolved "https://registry.npmjs.org/@brightlayer-ui/eslint-config/-/eslint-config-4.0.1.tgz#21141d48c077de2abf869be9575c81b0d908e9f4"
   integrity sha512-yVRd04BEzgLM/vTvUEVtcKoybeziMCD+f0z5L8IOIQ/dZ4IQ6EDvnSZG9ly8RywG3hONubKblPAY0fTV2mU55w==
   dependencies:
     "@eslint/js" "^9.13.0"
