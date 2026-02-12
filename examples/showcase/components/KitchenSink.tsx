@@ -59,6 +59,7 @@ import * as BLUIColors from '@brightlayer-ui/colors';
 import { TextFieldExample } from './TextInputExample';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
 import { AutoCompleteExample } from './AutocompleteExample';
+import SignalIconExample from './SignalIconExample';
 
 const PublicDomainAlice = require('../assets/images/public-domain-alice.png');
 
@@ -288,6 +289,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
           />
         </Card.Content>
       </Card>
+      <SignalIconExample />
       <Card style={styles.card}>
         <Card.Title title="Icon" />
         <Card.Content>
