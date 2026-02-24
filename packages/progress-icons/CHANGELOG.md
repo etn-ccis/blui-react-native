@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.0 (february 24, 2026)
+
+### Added
+
+- Signal strength progress icon (`<Progress.Signal>`).
+
 ## v2.0.1 (December 18, 2025)
 
 ### Fixed
@@ -18,7 +24,7 @@
 
 ### Changed
 
--   Changed package namespace from `@pxblue` to `@brightlayer-ui`.
+- Changed package namespace from `@pxblue` to `@brightlayer-ui`.
 
 ## Package Migration Notice
 
@@ -30,11 +36,11 @@ Previous versions listed after this indicator refer to our deprecated `@pxblue` 
 
 ### Fixed
 
--   Issue with undefined flexDirection causing crash on Android ([#15](https://github.com/etn-ccis/blui-progress-icons/issues/15)).
--   Incorrect fill alignment and color for UPS icon ([#16](https://github.com/etn-ccis/blui-progress-icons/issues/16)).
+- Issue with undefined flexDirection causing crash on Android ([#15](https://github.com/etn-ccis/blui-progress-icons/issues/15)).
+- Incorrect fill alignment and color for UPS icon ([#16](https://github.com/etn-ccis/blui-progress-icons/issues/16)).
 
 ## v1.0.1 (July 15, 2021)
 
 ### Added
 
--   Initial release including battery, heart, pie, and ups icons.
+- Initial release including battery, heart, pie, and ups icons.
