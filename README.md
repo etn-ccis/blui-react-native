@@ -6,15 +6,15 @@ This blui-react-native is the one stop repository for all of the Brightlayer UI 
 
 ## Included Packages
 
-- [auth-workflow](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-workflows)
+- [auth-workflow](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/auth-workflows)
 
-- [cli-templates](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-cli-templates)
+- [cli-templates](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/cli-templates)
 
-- [components](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-component-library)
+- [components](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/component-library)
 
-- [progress-icons](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-progress-icons)
+- [progress-icons](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/progress-icons)
 
-- [themes](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/blui-react-native-themes)
+- [themes](https://github.com/etn-ccis/blui-react-native/tree/dev/packages/themes)
 
 ## Contributing
 
@@ -33,12 +33,15 @@ Install Dependencies:
 ```shell
 cd blui-react-native
 yarn install
+cd packages/<package-name> 
+yarn install
 ```
 
 Run docs project:
 
 ```shell
 cd docs
+yarn install
 yarn dev
 ```
 
@@ -46,6 +49,7 @@ Run example projects:
 
 ```shell
 cd examples/showcase
+yarn install
 yarn start
 ```
 
