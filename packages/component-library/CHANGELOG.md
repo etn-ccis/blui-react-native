@@ -1,6 +1,6 @@
 # Change Log
 
-## v9.0.0 (February 26, 2025)
+## v9.2.1 (March 06, 2025)
 
 ### Changed
 
