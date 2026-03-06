@@ -1,11 +1,10 @@
 # Changelog
 
-## v8.1.0 (February 26, 2025)
+## v8.1.0 (February 26, 2026)
 
 ### Changed
 
 - Added support for React Native 0.84.0 and updated peer dependencies.
-- Renamed the CLI template applications.
 
 ## v8.0.0 (July 25, 2025)
 
