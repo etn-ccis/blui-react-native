@@ -113,6 +113,8 @@ export const IconSwitch: React.FC<IconSwitchProps> = (props) => {
             onPress={onPressSwitch}
             activeOpacity={1}
             style={[defaultStyles.track, styles.root, style]}
+            onBlur={onBlur || undefined}
+            onFocus={onFocus || undefined}
             {...viewProps}
         >
             <Animated.View style={[defaultStyles.handle, toggleStyles, styles.handle]}>
