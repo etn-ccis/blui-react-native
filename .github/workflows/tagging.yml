@@ -11,7 +11,6 @@ on:
 permissions:
     contents: write
     actions: read
-    releases: write
 
 env:
     GH_TOKEN: ${{ github.token }}
