@@ -251,6 +251,8 @@ export const Header: React.FC<HeaderProps> = (props) => {
         title,
         variant = 'static',
         updateScrollView = (): void => {},
+        onBlur,
+        onFocus,
         ...viewProps
     } = props;
 

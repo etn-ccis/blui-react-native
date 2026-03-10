@@ -352,6 +352,8 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
         hidePadding,
         styles = {},
         style,
+        onBlur,
+        onFocus,
         ...viewProps
     } = otherProps;
 

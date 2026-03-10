@@ -41,7 +41,17 @@ export type IconSwitchProps = ViewProps & {
  * This is a Switch component which allow us to show the check icon on ToggleOn and Close icon on ToggleOff Switch's handle.
  */
 export const IconSwitch: React.FC<IconSwitchProps> = (props) => {
-    const { showIcon = false, disabled = false, value, onValueChange, styles = {}, style, ...viewProps } = props;
+    const {
+        showIcon = false,
+        disabled = false,
+        value,
+        onValueChange,
+        styles = {},
+        style,
+        onBlur,
+        onFocus,
+        ...viewProps
+    } = props;
     const theme = useExtendedTheme(props.theme);
 
     const rtl = I18nManager.isRTL;
