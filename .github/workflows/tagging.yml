@@ -1,12 +1,12 @@
 name: Tagging
 
 on:
-    # Only trigger on workflow completion for master branch
+    # Trigger on workflow completion for dev branch (testing alpha packages)
     workflow_run:
         workflows: ["Build"]
         types:
             - completed
-        branches: [master]
+        branches: [dev]
 
 permissions:
     contents: write
