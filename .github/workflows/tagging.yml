@@ -51,12 +51,6 @@ jobs:
                     # Get current version from package.json
                     local current_version=$(node -p "require('./$package_dir/package.json').version")
 
-                    # Check if version is a major version (x.0.0)
-                    if [[ ! "$current_version" =~ ^[0-9]+\.0\.0$ ]]; then
-                        echo "false"
-                        return
-                    fi
-
                     # Check if tag already exists for this version
                     local tag_exists=$(git tag -l "*$current_version*" | grep -q . && echo "true" || echo "false")
                     if [ "$tag_exists" = "true" ]; then
@@ -80,7 +74,7 @@ jobs:
                 echo "component_library_needs_tag=$component_library_needs_tag" >> $GITHUB_OUTPUT
                 echo "progress_icons_needs_tag=$progress_icons_needs_tag" >> $GITHUB_OUTPUT
 
-                echo "Tagging analysis for major versions only:"
+                echo "Tagging analysis for version changes:"
                 echo "- Auth Workflows: $auth_workflows_needs_tag"
                 echo "- Themes: $themes_needs_tag"
                 echo "- Component Library: $component_library_needs_tag"
