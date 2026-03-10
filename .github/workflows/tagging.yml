@@ -58,7 +58,7 @@ jobs:
                     fi
 
                     # Package meets criteria for tagging
-                    echo "✅ Package $npm_package_name@$current_version ready for tagging"
+                    echo "✅ Package $npm_package_name@$current_version ready for tagging" >&2
                     echo "true"
                 }
 
