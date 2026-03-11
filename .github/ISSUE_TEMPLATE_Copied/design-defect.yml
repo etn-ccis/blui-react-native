@@ -22,7 +22,9 @@ body:
               - '@brightlayer-ui/react-native-themes'
               - '@brightlayer-ui/react-native-auth-workflow'
               - '@brightlayer-ui/react-native-progress-icons'
-              - 'CLI Templates'
+              - '@brightlayer-ui/react-native-template-blank-typescript'
+              - '@brightlayer-ui/react-native-template-routing-typescript'
+              - '@brightlayer-ui/react-native-template-authentication-typescript'
       validations:
           required: true
     - type: dropdown
