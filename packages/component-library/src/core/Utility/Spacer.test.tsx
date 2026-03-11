@@ -1,10 +1,9 @@
 import React from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
-import { cleanup, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import { Spacer } from './Spacer';
 
 describe('spacer', () => {
-    afterEach(cleanup);
     it('renders the correct default style', () => {
         const instance = render(<Spacer />).root;
         const spacer = instance.find((x) => x.props.testID === 'spacer-root');

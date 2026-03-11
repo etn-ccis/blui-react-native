@@ -5,7 +5,7 @@ import { CollapsibleHeaderLayout } from './CollapsableHeaderLayout';
 import { Header } from '../Header';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { EdgeInsets } from '../__types__';
-import { cleanup, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
 jest.mock('react-native-safe-area-context', () => ({
     useSafeAreaInsets: (): EdgeInsets => ({
@@ -19,7 +19,6 @@ jest.mock('react-native-safe-area-context', () => ({
 const useInsets = (): EdgeInsets => useSafeAreaInsets();
 
 describe('CollapsibleHeaderLayout', () => {
-    afterEach(cleanup);
     let instance: ReactTestInstance;
     let insets: EdgeInsets;
     let fontScale: number;

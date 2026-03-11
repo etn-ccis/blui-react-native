@@ -1,5 +1,4 @@
 import React, { JSX } from 'react';
-import { cleanup } from '@testing-library/react-native';
 import TestRenderer from 'react-test-renderer';
 import { Text, View } from 'react-native';
 import { DrawerContext } from './context/drawer-context';
@@ -27,6 +26,7 @@ jest.mock('react-native-safe-area-context', (): any => ({
 
 jest.mock('../__contexts__/font-scale-context', (): any => ({
     useFontScale: (): any => 1,
+    useFontScaleSettings: (): any => ({ maxScale: 100, disableScaling: false }),
 }));
 
 jest.mock('../Utility/shared', (): any => ({
@@ -42,7 +42,9 @@ import { DrawerNavGroup, findID, DrawerNavGroupMakeStyles } from './DrawerNavGro
 import { DrawerNavItem } from './DrawerNavItem';
 
 describe('DrawerNavGroup', () => {
-    afterEach(cleanup);
+    afterEach(async () => {
+        await TestRenderer.act(() => {});
+    });
 
     const mockDrawerContext = {
         activeItem: undefined,
@@ -677,7 +679,7 @@ describe('DrawerNavGroup', () => {
             expect(tree).toMatchSnapshot();
         });
 
-        it('handles activeItem change when item not in tree', () => {
+        it('handles activeItem change when item not in tree', async () => {
             const items = [
                 { itemID: 'item1', title: 'Item 1' },
                 { itemID: 'item2', title: 'Item 2' },
@@ -687,11 +689,13 @@ describe('DrawerNavGroup', () => {
             expect(tree1).toMatchSnapshot();
 
             // Update with activeItem not in tree
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item999' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item999' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
             const tree2 = renderer.toJSON();
             expect(tree2).toMatchSnapshot();
         });
@@ -734,7 +738,7 @@ describe('DrawerNavGroup', () => {
     });
 
     describe('State Updates and Callbacks', () => {
-        it('handles notifyActiveParent callback from items', () => {
+        it('handles notifyActiveParent callback from items', async () => {
             const items = [
                 {
                     itemID: 'parent1',
@@ -746,16 +750,18 @@ describe('DrawerNavGroup', () => {
 
             // The notifyActiveParent callback should be called when an item becomes active
             // This is tested implicitly through activeItem changes
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'child1' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'child1' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
         });
 
-        it('handles multiple activeItem changes', () => {
+        it('handles multiple activeItem changes', async () => {
             const items = [
                 { itemID: 'item1', title: 'Item 1' },
                 { itemID: 'item2', title: 'Item 2' },
@@ -764,24 +770,28 @@ describe('DrawerNavGroup', () => {
             const renderer = renderWithContext(<DrawerNavGroup items={items} />, 'item1');
 
             // Change to item2
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             // Change to item3
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item3' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item3' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
         });
 
-        it('clears active hierarchy when activeItem removed from tree', () => {
+        it('clears active hierarchy when activeItem removed from tree', async () => {
             const items1 = [
                 { itemID: 'item1', title: 'Item 1' },
                 { itemID: 'item2', title: 'Item 2' },
@@ -791,11 +801,13 @@ describe('DrawerNavGroup', () => {
             const renderer = renderWithContext(<DrawerNavGroup items={items1} />, 'item1');
 
             // Update items but keep same activeItem (which is no longer in tree)
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
-                    <DrawerNavGroup items={items2} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
+                        <DrawerNavGroup items={items2} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
@@ -854,7 +866,7 @@ describe('DrawerNavGroup', () => {
             expect(tree).toMatchSnapshot();
         });
 
-        it('handles children prop change with active item', () => {
+        it('handles children prop change with active item', async () => {
             const renderer = renderWithContext(
                 <DrawerNavGroup>
                     <DrawerNavItem itemID="item1" title="Item 1" />
@@ -862,20 +874,22 @@ describe('DrawerNavGroup', () => {
                 'item1'
             );
 
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
-                    <DrawerNavGroup>
-                        <DrawerNavItem itemID="item1" title="Item 1" />
-                        <DrawerNavItem itemID="item2" title="Item 2" />
-                    </DrawerNavGroup>
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
+                        <DrawerNavGroup>
+                            <DrawerNavItem itemID="item1" title="Item 1" />
+                            <DrawerNavItem itemID="item2" title="Item 2" />
+                        </DrawerNavGroup>
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
         });
 
-        it('handles activeItem change between children', () => {
+        it('handles activeItem change between children', async () => {
             const renderer = renderWithContext(
                 <DrawerNavGroup>
                     <DrawerNavItem itemID="item1" title="Item 1" />
@@ -884,14 +898,16 @@ describe('DrawerNavGroup', () => {
                 'item1'
             );
 
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
-                    <DrawerNavGroup>
-                        <DrawerNavItem itemID="item1" title="Item 1" />
-                        <DrawerNavItem itemID="item2" title="Item 2" />
-                    </DrawerNavGroup>
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
+                        <DrawerNavGroup>
+                            <DrawerNavItem itemID="item1" title="Item 1" />
+                            <DrawerNavItem itemID="item2" title="Item 2" />
+                        </DrawerNavGroup>
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
@@ -910,7 +926,7 @@ describe('DrawerNavGroup', () => {
             expect(tree).toMatchSnapshot();
         });
 
-        it('triggers notifyActiveParent callback via children update', () => {
+        it('triggers notifyActiveParent callback via children update', async () => {
             const items = [
                 { itemID: 'item1', title: 'Item 1' },
                 { itemID: 'item2', title: 'Item 2' },
@@ -918,24 +934,28 @@ describe('DrawerNavGroup', () => {
             const renderer = renderWithContext(<DrawerNavGroup items={items} />, 'item1');
 
             // Trigger the notifyActiveParent by changing activeItem
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             // Change back to trigger the callback again
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
         });
 
-        it('handles children with isInActiveTree changes', () => {
+        it('handles children with isInActiveTree changes', async () => {
             const renderer = renderWithContext(
                 <DrawerNavGroup>
                     <DrawerNavItem itemID="item1" title="Item 1" />
@@ -944,30 +964,34 @@ describe('DrawerNavGroup', () => {
             );
 
             // Set item1 as active
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
-                    <DrawerNavGroup>
-                        <DrawerNavItem itemID="item1" title="Item 1" />
-                        <DrawerNavItem itemID="item2" title="Item 2" />
-                    </DrawerNavGroup>
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item1' }}>
+                        <DrawerNavGroup>
+                            <DrawerNavItem itemID="item1" title="Item 1" />
+                            <DrawerNavItem itemID="item2" title="Item 2" />
+                        </DrawerNavGroup>
+                    </DrawerContext.Provider>
+                );
+            });
 
             // Change to item2
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
-                    <DrawerNavGroup>
-                        <DrawerNavItem itemID="item1" title="Item 1" />
-                        <DrawerNavItem itemID="item2" title="Item 2" />
-                    </DrawerNavGroup>
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'item2' }}>
+                        <DrawerNavGroup>
+                            <DrawerNavItem itemID="item1" title="Item 1" />
+                            <DrawerNavItem itemID="item2" title="Item 2" />
+                        </DrawerNavGroup>
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
         });
 
-        it('handles items prop with isInActiveTree changes', () => {
+        it('handles items prop with isInActiveTree changes', async () => {
             const items = [
                 {
                     itemID: 'parent1',
@@ -982,18 +1006,22 @@ describe('DrawerNavGroup', () => {
             const renderer = renderWithContext(<DrawerNavGroup items={items} />);
 
             // Set child1 as active
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'child1' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'child1' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             // Change to child2
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'child2' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'child2' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
@@ -1028,7 +1056,7 @@ describe('DrawerNavGroup', () => {
             expect(tree).toMatchSnapshot();
         });
 
-        it('handles complex activeItem hierarchy updates', () => {
+        it('handles complex activeItem hierarchy updates', async () => {
             const items = [
                 {
                     itemID: 'parent1',
@@ -1049,11 +1077,13 @@ describe('DrawerNavGroup', () => {
             const renderer = renderWithContext(<DrawerNavGroup items={items} />, 'grandchild1');
 
             // Change active item to different grandchild
-            renderer.update(
-                <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'grandchild2' }}>
-                    <DrawerNavGroup items={items} />
-                </DrawerContext.Provider>
-            );
+            await TestRenderer.act(() => {
+                renderer.update(
+                    <DrawerContext.Provider value={{ ...mockDrawerContext, activeItem: 'grandchild2' }}>
+                        <DrawerNavGroup items={items} />
+                    </DrawerContext.Provider>
+                );
+            });
 
             const tree = renderer.toJSON();
             expect(tree).toMatchSnapshot();
