@@ -8,7 +8,339 @@ exports[`DrawerNavGroup Active Hierarchy and FindID Function finds active item i
 
 exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem change when item not in tree 1`] = `null`;
 
-exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem change when item not in tree 2`] = `null`;
+exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem change when item not in tree 2`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-2"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-2"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 2
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
 exports[`DrawerNavGroup Active Hierarchy and FindID Function handles activeItem with children prop using DrawerNavItem 1`] = `null`;
 
@@ -48,7 +380,803 @@ exports[`DrawerNavGroup Children Prop renders correctly with mixed items and chi
 
 exports[`DrawerNavGroup Children Prop renders correctly with title and children 1`] = `null`;
 
-exports[`DrawerNavGroup Edge Cases for Branch Coverage handles complex activeItem hierarchy updates 1`] = `null`;
+exports[`DrawerNavGroup Edge Cases for Branch Coverage handles complex activeItem hierarchy updates 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-parent-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-parent-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Parent 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "display": "flex",
+                "marginLeft": 16,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            maxFontSizeMultiplier={100}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "#424242",
+                  "fontSize": 24,
+                },
+                {},
+                {
+                  "fontFamily": "MaterialIcons-Regular",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    collapsable={false}
+    pointerEvents="auto"
+    style={
+      {
+        "height": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onLayout={[Function]}
+      style={
+        {
+          "opacity": 0,
+          "position": "absolute",
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          accessibilityLabel="list-item-child-1"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "height": 56,
+              "minHeight": "auto",
+              "opacity": 1,
+              "paddingBottom": 8,
+              "paddingLeft": 56,
+              "paddingRight": 16,
+              "paddingTop": 8,
+            }
+          }
+          testID="list-item-child-1"
+        >
+          <View
+            style={
+              [
+                {
+                  "backgroundColor": undefined,
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 6,
+                },
+                {
+                  "left": 0,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "justifyContent": "center",
+                  "width": 40,
+                },
+                undefined,
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "flex": 1,
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "writingDirection": "ltr",
+                  },
+                  [
+                    {
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.15,
+                      "lineHeight": 24,
+                    },
+                    [
+                      {
+                        "color": "#000000",
+                        "fontWeight": "600",
+                      },
+                      {
+                        "color": undefined,
+                        "fontWeight": "600",
+                      },
+                    ],
+                  ],
+                ]
+              }
+            >
+              Child 1
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "overflow": "hidden",
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "marginLeft": 16,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                maxFontSizeMultiplier={100}
+                selectable={false}
+                style={
+                  [
+                    {
+                      "color": "#424242",
+                      "fontSize": 24,
+                    },
+                    {},
+                    {
+                      "fontFamily": "MaterialIcons-Regular",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        collapsable={false}
+        pointerEvents="auto"
+        style={
+          {
+            "height": 0,
+            "overflow": "hidden",
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          onLayout={[Function]}
+          style={
+            {
+              "opacity": 0,
+              "position": "absolute",
+            }
+          }
+        >
+          <View
+            style={
+              [
+                {
+                  "backgroundColor": undefined,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              accessibilityLabel="list-item-grandchild-1"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": false,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "flexDirection": "row",
+                  "height": 56,
+                  "minHeight": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 8,
+                  "paddingLeft": 96,
+                  "paddingRight": 16,
+                  "paddingTop": 8,
+                }
+              }
+              testID="list-item-grandchild-1"
+            >
+              <View
+                style={
+                  [
+                    {
+                      "backgroundColor": undefined,
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 6,
+                    },
+                    {
+                      "left": 0,
+                    },
+                  ]
+                }
+              />
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "flex-start",
+                      "justifyContent": "center",
+                      "width": 40,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+              <View
+                style={
+                  [
+                    {
+                      "flex": 1,
+                      "paddingHorizontal": 16,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "System",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
+                        },
+                        [
+                          {
+                            "color": "#000000",
+                            "fontWeight": "600",
+                          },
+                          {
+                            "color": "#000000",
+                            "fontWeight": "400",
+                          },
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  Grandchild 1
+                </Text>
+                <View
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "overflow": "hidden",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "backgroundColor": undefined,
+                },
+                undefined,
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "backgroundColor": undefined,
+                    "borderBottomRightRadius": 0,
+                    "borderTopRightRadius": 0,
+                    "height": "100%",
+                    "left": 0,
+                    "position": "absolute",
+                    "top": 0,
+                    "width": "100%",
+                    "zIndex": 0,
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <View
+              accessibilityLabel="list-item-grandchild-2"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": false,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "transparent",
+                  "flexDirection": "row",
+                  "height": 56,
+                  "minHeight": "auto",
+                  "opacity": 1,
+                  "paddingBottom": 8,
+                  "paddingLeft": 96,
+                  "paddingRight": 16,
+                  "paddingTop": 8,
+                }
+              }
+              testID="list-item-grandchild-2"
+            >
+              <View
+                style={
+                  [
+                    {
+                      "backgroundColor": undefined,
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": 6,
+                    },
+                    {
+                      "left": 0,
+                    },
+                  ]
+                }
+              />
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "flex-start",
+                      "justifyContent": "center",
+                      "width": 40,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+              <View
+                style={
+                  [
+                    {
+                      "flex": 1,
+                      "paddingHorizontal": 16,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <Text
+                  ellipsizeMode="tail"
+                  numberOfLines={1}
+                  style={
+                    [
+                      {
+                        "textAlign": "left",
+                      },
+                      {
+                        "color": "rgba(28, 27, 31, 1)",
+                        "writingDirection": "ltr",
+                      },
+                      [
+                        {
+                          "fontFamily": "System",
+                          "fontSize": 16,
+                          "fontWeight": "500",
+                          "letterSpacing": 0.15,
+                          "lineHeight": 24,
+                        },
+                        [
+                          {
+                            "color": "#000000",
+                            "fontWeight": "600",
+                          },
+                          {
+                            "color": undefined,
+                            "fontWeight": "600",
+                          },
+                        ],
+                      ],
+                    ]
+                  }
+                >
+                  Grandchild 2
+                </Text>
+                <View
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                        "overflow": "hidden",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+                <View
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "flexDirection": "row",
+                      },
+                      undefined,
+                    ]
+                  }
+                />
+              </View>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
 exports[`DrawerNavGroup Edge Cases for Branch Coverage handles empty children 1`] = `null`;
 
@@ -68,11 +1196,1284 @@ exports[`DrawerNavGroup Edge Cases renders correctly with multiple groups of ite
 
 exports[`DrawerNavGroup GetChildren Function Coverage calls getChildren with DrawerNavItem children 1`] = `null`;
 
-exports[`DrawerNavGroup GetChildren Function Coverage handles children with isInActiveTree changes 1`] = `null`;
+exports[`DrawerNavGroup GetChildren Function Coverage handles children with isInActiveTree changes 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": undefined,
+            "borderBottomRightRadius": 0,
+            "borderTopRightRadius": 0,
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      accessibilityLabel="list-item-item-2"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-2"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 2
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
-exports[`DrawerNavGroup GetChildren Function Coverage handles items prop with isInActiveTree changes 1`] = `null`;
+exports[`DrawerNavGroup GetChildren Function Coverage handles items prop with isInActiveTree changes 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-parent-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-parent-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Parent 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "display": "flex",
+                "marginLeft": 16,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            maxFontSizeMultiplier={100}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "#424242",
+                  "fontSize": 24,
+                },
+                {},
+                {
+                  "fontFamily": "MaterialIcons-Regular",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    collapsable={false}
+    pointerEvents="auto"
+    style={
+      {
+        "height": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onLayout={[Function]}
+      style={
+        {
+          "opacity": 0,
+          "position": "absolute",
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          accessibilityLabel="list-item-child-1"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "height": 56,
+              "minHeight": "auto",
+              "opacity": 1,
+              "paddingBottom": 8,
+              "paddingLeft": 56,
+              "paddingRight": 16,
+              "paddingTop": 8,
+            }
+          }
+          testID="list-item-child-1"
+        >
+          <View
+            style={
+              [
+                {
+                  "backgroundColor": undefined,
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 6,
+                },
+                {
+                  "left": 0,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "justifyContent": "center",
+                  "width": 40,
+                },
+                undefined,
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "flex": 1,
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "writingDirection": "ltr",
+                  },
+                  [
+                    {
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.15,
+                      "lineHeight": 24,
+                    },
+                    [
+                      {
+                        "color": "#000000",
+                        "fontWeight": "600",
+                      },
+                      {
+                        "color": "#000000",
+                        "fontWeight": "400",
+                      },
+                    ],
+                  ],
+                ]
+              }
+            >
+              Child 1
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "overflow": "hidden",
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "backgroundColor": undefined,
+                "borderBottomRightRadius": 0,
+                "borderTopRightRadius": 0,
+                "height": "100%",
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%",
+                "zIndex": 0,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          accessibilityLabel="list-item-child-2"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "height": 56,
+              "minHeight": "auto",
+              "opacity": 1,
+              "paddingBottom": 8,
+              "paddingLeft": 56,
+              "paddingRight": 16,
+              "paddingTop": 8,
+            }
+          }
+          testID="list-item-child-2"
+        >
+          <View
+            style={
+              [
+                {
+                  "backgroundColor": undefined,
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 6,
+                },
+                {
+                  "left": 0,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "justifyContent": "center",
+                  "width": 40,
+                },
+                undefined,
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "flex": 1,
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "writingDirection": "ltr",
+                  },
+                  [
+                    {
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.15,
+                      "lineHeight": 24,
+                    },
+                    [
+                      {
+                        "color": "#000000",
+                        "fontWeight": "600",
+                      },
+                      {
+                        "color": undefined,
+                        "fontWeight": "600",
+                      },
+                    ],
+                  ],
+                ]
+              }
+            >
+              Child 2
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "overflow": "hidden",
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
-exports[`DrawerNavGroup GetChildren Function Coverage triggers notifyActiveParent callback via children update 1`] = `null`;
+exports[`DrawerNavGroup GetChildren Function Coverage triggers notifyActiveParent callback via children update 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": undefined,
+            "borderBottomRightRadius": 0,
+            "borderTopRightRadius": 0,
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      accessibilityLabel="list-item-item-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-2"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-2"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 2
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
 exports[`DrawerNavGroup Inherited Props renders correctly with activeItemBackgroundColor 1`] = `null`;
 
@@ -124,19 +2525,1817 @@ exports[`DrawerNavGroup Mixed Children Types finds active item in DrawerNavItem 
 
 exports[`DrawerNavGroup Mixed Children Types finds active item in deeply nested DrawerNavItem children 1`] = `null`;
 
-exports[`DrawerNavGroup Mixed Children Types handles activeItem change between children 1`] = `null`;
+exports[`DrawerNavGroup Mixed Children Types handles activeItem change between children 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": undefined,
+            "borderBottomRightRadius": 0,
+            "borderTopRightRadius": 0,
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      accessibilityLabel="list-item-item-2"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-2"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 2
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
-exports[`DrawerNavGroup Mixed Children Types handles children prop change with active item 1`] = `null`;
+exports[`DrawerNavGroup Mixed Children Types handles children prop change with active item 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": undefined,
+            "borderBottomRightRadius": 0,
+            "borderTopRightRadius": 0,
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      accessibilityLabel="list-item-item-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-2"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-2"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 2
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
 exports[`DrawerNavGroup Mixed Children Types handles children with nested DrawerNavItems 1`] = `null`;
 
 exports[`DrawerNavGroup Mixed Children Types handles mix of DrawerNavItem children and other children 1`] = `null`;
 
-exports[`DrawerNavGroup State Updates and Callbacks clears active hierarchy when activeItem removed from tree 1`] = `null`;
+exports[`DrawerNavGroup State Updates and Callbacks clears active hierarchy when activeItem removed from tree 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-3"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-3"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 3
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
-exports[`DrawerNavGroup State Updates and Callbacks handles multiple activeItem changes 1`] = `null`;
+exports[`DrawerNavGroup State Updates and Callbacks handles multiple activeItem changes 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-item-2"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-2"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": "#000000",
+                    "fontWeight": "400",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 2
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "backgroundColor": undefined,
+            "borderBottomRightRadius": 0,
+            "borderTopRightRadius": 0,
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+            "zIndex": 0,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      accessibilityLabel="list-item-item-3"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-item-3"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Item 3
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
-exports[`DrawerNavGroup State Updates and Callbacks handles notifyActiveParent callback from items 1`] = `null`;
+exports[`DrawerNavGroup State Updates and Callbacks handles notifyActiveParent callback from items 1`] = `
+<View
+  style={
+    [
+      {},
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      {
+        "paddingLeft": 0,
+      }
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      accessibilityLabel="list-item-parent-1"
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": false,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "flexDirection": "row",
+          "height": 56,
+          "minHeight": "auto",
+          "opacity": 1,
+          "paddingBottom": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 8,
+        }
+      }
+      testID="list-item-parent-1"
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": 6,
+            },
+            {
+              "left": 0,
+            },
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "alignItems": "flex-start",
+              "justifyContent": "center",
+              "width": 40,
+            },
+            undefined,
+          ]
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "flex": 1,
+              "paddingHorizontal": 16,
+            },
+            undefined,
+          ]
+        }
+      >
+        <Text
+          ellipsizeMode="tail"
+          numberOfLines={1}
+          style={
+            [
+              {
+                "textAlign": "left",
+              },
+              {
+                "color": "rgba(28, 27, 31, 1)",
+                "writingDirection": "ltr",
+              },
+              [
+                {
+                  "fontFamily": "System",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "letterSpacing": 0.15,
+                  "lineHeight": 24,
+                },
+                [
+                  {
+                    "color": "#000000",
+                    "fontWeight": "600",
+                  },
+                  {
+                    "color": undefined,
+                    "fontWeight": "600",
+                  },
+                ],
+              ],
+            ]
+          }
+        >
+          Parent 1
+        </Text>
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "alignItems": "center",
+                "display": "flex",
+                "marginLeft": 16,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            maxFontSizeMultiplier={100}
+            selectable={false}
+            style={
+              [
+                {
+                  "color": "#424242",
+                  "fontSize": 24,
+                },
+                {},
+                {
+                  "fontFamily": "MaterialIcons-Regular",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    collapsable={false}
+    pointerEvents="auto"
+    style={
+      {
+        "height": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      onLayout={[Function]}
+      style={
+        {
+          "opacity": 0,
+          "position": "absolute",
+        }
+      }
+    >
+      <View
+        style={
+          [
+            {
+              "backgroundColor": undefined,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            [
+              {
+                "backgroundColor": undefined,
+                "borderBottomRightRadius": 0,
+                "borderTopRightRadius": 0,
+                "height": "100%",
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "100%",
+                "zIndex": 0,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          accessibilityLabel="list-item-child-1"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "flexDirection": "row",
+              "height": 56,
+              "minHeight": "auto",
+              "opacity": 1,
+              "paddingBottom": 8,
+              "paddingLeft": 56,
+              "paddingRight": 16,
+              "paddingTop": 8,
+            }
+          }
+          testID="list-item-child-1"
+        >
+          <View
+            style={
+              [
+                {
+                  "backgroundColor": undefined,
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "absolute",
+                  "top": 0,
+                  "width": 6,
+                },
+                {
+                  "left": 0,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "alignItems": "flex-start",
+                  "justifyContent": "center",
+                  "width": 40,
+                },
+                undefined,
+              ]
+            }
+          />
+          <View
+            style={
+              [
+                {
+                  "flex": 1,
+                  "paddingHorizontal": 16,
+                },
+                undefined,
+              ]
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                [
+                  {
+                    "textAlign": "left",
+                  },
+                  {
+                    "color": "rgba(28, 27, 31, 1)",
+                    "writingDirection": "ltr",
+                  },
+                  [
+                    {
+                      "fontFamily": "System",
+                      "fontSize": 16,
+                      "fontWeight": "500",
+                      "letterSpacing": 0.15,
+                      "lineHeight": 24,
+                    },
+                    [
+                      {
+                        "color": "#000000",
+                        "fontWeight": "600",
+                      },
+                      {
+                        "color": undefined,
+                        "fontWeight": "600",
+                      },
+                    ],
+                  ],
+                ]
+              }
+            >
+              Child 1
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "overflow": "hidden",
+                  },
+                  undefined,
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
 
 exports[`DrawerNavGroup Style Props renders correctly with both styles and style props 1`] = `null`;
 
