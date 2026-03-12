@@ -1,0 +1,62 @@
+name: "🧩 Component Addition Request" 
+description: "Request a new UI component to be added to Brightlayer UI" 
+title: "[Component]: " 
+labels: ['status: needs-review', 'components🧩', 'brightlayer-ui', 'type: enhancement 🚀']
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: '## Welcome!'
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time for requesting a new component.
+  - type: input
+    id: component-name
+    attributes:
+      label: Component Name
+      description: 'What should this component be called?'
+    validations:
+      required: true
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Problem / Need
+      description: "Explain how the component behaves: - Variants - States (pressed, active, disabled, etc.) - Interactions (touch, swipe, gesture) - Responsiveness"
+    validations:
+      required: true
+  - type: textarea
+    id: detailed-description
+    attributes:
+      label: Detailed Description
+      description: "Describe the user need or product requirement this component solves"
+      placeholder: What is the need of this component?
+    validations:
+      required: true
+  - type: textarea
+    id: look-and-feel
+    attributes:
+      label: Where Have You Seen This Before?
+      description: "Provide references: - URLs (React Native Paper, NativeBase, etc.) - Product screenshots - Figma samples"
+    validations:
+      required: false
+  - type: textarea
+    id: visual-references
+    attributes:
+      label: Visual References
+      description: "Upload sketches, mockups, or screenshots"
+    validations:
+      required: false
+  - type: textarea
+    id: props
+    attributes:
+      label: Proposed API / Props For developers
+      description: "Describe expected props - Events - Slots / children structure "
+    validations:
+      required: false
+  - type: input
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: 'Anything else the reviewers should know?'
+    validations:
+      required: false
