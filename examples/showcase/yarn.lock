@@ -1362,15 +1362,15 @@
     "@brightlayer-ui/colors" "4.0.0"
     color "^4.2.3"
 
-"@brightlayer-ui/react-native-themes@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.npmjs.org/@brightlayer-ui/react-native-themes/-/react-native-themes-8.0.0.tgz"
-  integrity sha512-87j5m7/eUkSvDyF89HMxGQHtvaVNgtUdPRzLtPzDD0AkyQ4uFdCMgzHydZdGOemMw/bGdyrdcwUn46tFrWVL7w==
+"@brightlayer-ui/react-native-themes@^8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-themes/-/react-native-themes-8.1.0.tgz#2c7c1fbee0f262a0de33f9dcb9f4162511130574"
+  integrity sha512-v1C/B9ZYs0vqD6sW5JM0uFUDfODwlrIQU0mHYyXeM+4zmji+G8n1eMv8qAk0SDFfJvNanfbtjjN0OdR/uK5ugQ==
   dependencies:
     "@brightlayer-ui/colors" "4.0.0"
     "@callstack/react-theme-provider" "^3.0.9"
-    color "^4.2.3"
-    react-native-safe-area-context "5.4.1"
+    color "^5.0.3"
+    react-native-safe-area-context "5.6.2"
 
 "@brightlayer-ui/react-native-vector-icons@^3.1.0":
   version "3.1.0"
@@ -4676,11 +4676,11 @@ fast-levenshtein@^2.0.6:
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
 
 fast-xml-parser@^4.4.1:
-  version "4.5.3"
-  resolved "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-4.5.3.tgz"
-  integrity sha512-RKihhV+SHsIUGXObeVy9AXiBbFwkVk7Syp8XgwN5U3JV416+Gwp/GO9i0JYKmikykgz/UHRrrV4ROuZEo/T0ig==
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.5.4.tgz#64e52ddf1308001893bd225d5b1768840511c797"
+  integrity sha512-jE8ugADnYOBsu1uaoayVl1tVKAMNOXyjwvv2U6udEA2ORBhDooJDWoGxTkhd4Qn4yh59JVVt/pKXtjPwx9OguQ==
   dependencies:
-    strnum "^1.1.1"
+    strnum "^1.0.5"
 
 fastq@^1.6.0:
   version "1.19.1"
@@ -7390,14 +7390,9 @@ react-native-restart@^0.0.27:
   resolved "https://registry.npmjs.org/react-native-restart/-/react-native-restart-0.0.27.tgz"
   integrity sha512-8KScVICrXwcTSJ1rjWkqVTHyEKQIttm5AIMGSK1QG1+RS5owYlE4z/1DykOTdWfVl9l16FIk0w9Xzk9ZO6jxlA==
 
-react-native-safe-area-context@5.4.1:
-  version "5.4.1"
-  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.4.1.tgz"
-  integrity sha512-x+g3NblZ9jof8y+XkVvaGlpMrSlixhrJJ33BRzhTAKUKctQVecO1heSXmzxc5UdjvGYBKS6kPZVUw2b8NxHcPg==
-
-react-native-safe-area-context@^5.5.2:
+react-native-safe-area-context@5.6.2, react-native-safe-area-context@^5.5.2:
   version "5.6.2"
-  resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-5.6.2.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.6.2.tgz#283e006f5b434fb247fcb4be0971ad7473d5c560"
   integrity sha512-4XGqMNj5qjUTYywJqpdWZ9IG8jgkS3h06sfVjfw5yZQZfWnRFXczi0GnYyFyCc2EBps/qFmoCH8fez//WumdVg==
 
 react-native-screens@^4.18.0:
@@ -8277,9 +8272,9 @@ strip-json-comments@^3.1.1:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-strnum@^1.1.1:
+strnum@^1.0.5:
   version "1.1.2"
-  resolved "https://registry.npmjs.org/strnum/-/strnum-1.1.2.tgz"
+  resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.1.2.tgz#57bca4fbaa6f271081715dbc9ed7cee5493e28e4"
   integrity sha512-vrN+B7DBIoTTZjnPNewwhx6cBA/H+IS7rfW68n7XxC1y7uoiGQBxaKzqucGUgavX15dJgiGztLJ8vxuEzwqBdA==
 
 sucrase@~3.35.1:

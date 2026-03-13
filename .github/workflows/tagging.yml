@@ -14,7 +14,6 @@ permissions:
 
 env:
     GH_TOKEN: ${{ github.token }}
-    CURRENT_BRANCH: ${{ github.ref_name }}
 
 jobs:
     tag-packages:
@@ -25,6 +24,7 @@ jobs:
             - uses: actions/checkout@v4
               with:
                   ref: ${{ github.event.workflow_run.head_branch }}
+                  fetch-depth: 0
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
@@ -79,46 +79,35 @@ jobs:
                 echo "- Component Library: $component_library_needs_tag"
                 echo "- Progress Icons: $progress_icons_needs_tag"
 
-            # Build only packages that need tagging
-            - name: Build themes
+            # Build and tag packages that need tagging
+            - name: Build and tag themes
               if: steps.detect_packages.outputs.themes_needs_tag == 'true'
-              run: yarn build
               working-directory: packages/themes
-              continue-on-error: true
-            - name: Build component library
-              if: steps.detect_packages.outputs.component_library_needs_tag == 'true'
-              run: yarn build
-              working-directory: packages/component-library
-              continue-on-error: true
-            - name: Build auth workflows
-              if: steps.detect_packages.outputs.auth_workflows_needs_tag == 'true'
-              run: yarn build
-              working-directory: packages/auth-workflows
-              continue-on-error: true
-            - name: Build progress icons
-              if: steps.detect_packages.outputs.progress_icons_needs_tag == 'true'
-              run: yarn build
-              working-directory: packages/progress-icons
-              continue-on-error: true
+              run: |
+                yarn install
+                yarn build
+                yarn tag:package -b master
 
-            # Tag only packages that need tagging
-            - name: Tag auth workflows
-              if: steps.detect_packages.outputs.auth_workflows_needs_tag == 'true'
-              run: yarn tag:package -b ${CURRENT_BRANCH}
-              working-directory: packages/auth-workflows
-              continue-on-error: true
-            - name: Tag themes
-              if: steps.detect_packages.outputs.themes_needs_tag == 'true'
-              run: yarn tag:package -b ${CURRENT_BRANCH}
-              working-directory: packages/themes
-              continue-on-error: true
-            - name: Tag component library
+            - name: Build and tag component library
               if: steps.detect_packages.outputs.component_library_needs_tag == 'true'
-              run: yarn tag:package -b ${CURRENT_BRANCH}
               working-directory: packages/component-library
-              continue-on-error: true
-            - name: Tag progress icons
+              run: |
+                yarn install
+                yarn build
+                yarn tag:package -b master
+
+            - name: Build and tag auth workflows
+              if: steps.detect_packages.outputs.auth_workflows_needs_tag == 'true'
+              working-directory: packages/auth-workflows
+              run: |
+                yarn install
+                yarn build
+                yarn tag:package -b master
+
+            - name: Build and tag progress icons
               if: steps.detect_packages.outputs.progress_icons_needs_tag == 'true'
-              run: yarn tag:package -b ${CURRENT_BRANCH}
               working-directory: packages/progress-icons
-              continue-on-error: true
+              run: |
+                yarn install
+                yarn build
+                yarn tag:package -b master
