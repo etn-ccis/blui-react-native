@@ -1191,10 +1191,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.15.0.tgz#01bef4562ce4da57db408bffc5487762c3166bab"
   integrity sha512-ul5ReQtzXP8RCmx4sclDxK9ruo92nzivzZyCTe0/0QIWC1NmxZ4C5dxNVyJ3RNPkdGpozeZ3okEb5e58cTs7Gg==
 
-"@brightlayer-ui/react-native-auth-workflow@^8.1.1":
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.1.1.tgz#f92945a15e1fde04202e94b3caa71ee50cc36ffb"
-  integrity sha512-VGeXWJbTqNL5A0n50e4gCtmb9U7+nGAabTGnyL81N2guR2dEHRc8THvctixsZh1p9f/NlY/mbd8ukEkt4nlzjw==
+"@brightlayer-ui/react-native-auth-workflow@^8.3.0":
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.2.0.tgz#1cfab4ec0d991ae49cea795e8cb96f35b977feab"
+  integrity sha512-Zbb3R4dhbLLD38qlutevSeecECAnceStNPqTEuF53Lbos8UHGFl/FEdDlmdFNNwyV8hGdaPlPLYhCHJZvbgutg==
   dependencies:
     "@brightlayer-ui/react-native-themes" "^7.0.1"
     "@types/react" "^19.0.0"
@@ -1797,7 +1797,7 @@
     wcwidth "^1.0.1"
     yaml "^2.2.1"
 
-"@react-native-community/cli-platform-android@20.1.2", "@react-native-community/cli-platform-android@21.0.0":
+"@react-native-community/cli-platform-android@20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-platform-android/-/cli-platform-android-20.1.2.tgz#ebd5668c9c729b38c2f18d058842eb254eef9f2f"
   integrity sha512-1iHB8cTTJpMyEKhxWTRYsxhBBsiOq3tVguGX/HtBdHRzhlCeDpanE6U+aKxWfMFetMcFL+HLe5nQPcJXf9EtKg==
@@ -1819,7 +1819,7 @@
     fast-xml-parser "^5.3.6"
     picocolors "^1.1.1"
 
-"@react-native-community/cli-platform-ios@20.1.2", "@react-native-community/cli-platform-ios@21.0.0":
+"@react-native-community/cli-platform-ios@20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-platform-ios/-/cli-platform-ios-20.1.2.tgz#64d519e89894c8d40151e5eb3d63dd49bb140984"
   integrity sha512-ZzdLwJMt7ehjO0iy/rQGPgH6uZqMYXeS5uXzSi1DeLYwurV1wOqFc0SLm4TAz5FKYQmHpwBXlMiI12rUmkZxcg==
@@ -1866,7 +1866,7 @@
   dependencies:
     joi "^17.2.1"
 
-"@react-native-community/cli@21.0.0":
+"@react-native-community/cli@20.1.2":
   version "20.1.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-20.1.2.tgz#bf029e077850ea72740f0352259d7682425b00d1"
   integrity sha512-48GRnGfm1+4ueV8ESNJmKAKW01QdbB8H6qrVxCqpHYvuRkeFBaPpwRY2bEjSwqruw3Pn9ppzGfpAxYQDiUWQxQ==
