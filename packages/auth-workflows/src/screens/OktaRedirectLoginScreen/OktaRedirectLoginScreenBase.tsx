@@ -108,6 +108,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
         projectImage,
         header,
         footer,
+        loading,
         ...otherProps
     } = props;
 
@@ -140,7 +141,7 @@ export const OktaRedirectLoginScreenBase: React.FC<React.PropsWithChildren<OktaL
     };
 
     return (
-        <WorkflowCard testID="blui-okta-login-workflow-card" {...otherProps}>
+        <WorkflowCard testID="blui-okta-login-workflow-card" loading={loading} {...otherProps}>
             <WorkflowCardBody>
                 {header}
                 <View style={defaultStyles.projectImageWrapper} testID="blui-okta-login-project-image-wrapper">
