@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- Updated all the dependencies to support the latest stable versions [446](https://github.com/etn-ccis/blui-react-native/issues/446)
+- Updated dependencies to the latest compatible versions, including some prerelease versions [446](https://github.com/etn-ccis/blui-react-native/issues/446)
 
 ## v8.2.0 (Unpublished)
 
