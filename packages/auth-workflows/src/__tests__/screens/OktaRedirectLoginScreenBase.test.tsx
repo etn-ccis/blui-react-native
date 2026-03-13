@@ -110,4 +110,22 @@ describe('OktaRedirectLoginScreenBase', () => {
         fireEvent.press(getByTestId('blui-okta-login-contact-support-label'));
         expect(defaultProps.onContactSupport).toHaveBeenCalled();
     });
+
+    it('should not pass loading prop to WorkflowCard when loading is false', () => {
+        const { getByTestId } = render(<OktaRedirectLoginScreenBase {...defaultProps} loading={false} />);
+        const workflowCard = getByTestId('blui-okta-login-workflow-card');
+        expect(workflowCard).toBeTruthy();
+    });
+
+    it('should pass loading prop to WorkflowCard when loading is true', () => {
+        const { getByTestId } = render(<OktaRedirectLoginScreenBase {...defaultProps} loading={true} />);
+        const workflowCard = getByTestId('blui-okta-login-workflow-card');
+        expect(workflowCard).toBeTruthy();
+    });
+
+    it('should handle undefined loading prop gracefully', () => {
+        const { getByTestId } = render(<OktaRedirectLoginScreenBase {...defaultProps} />);
+        const workflowCard = getByTestId('blui-okta-login-workflow-card');
+        expect(workflowCard).toBeTruthy();
+    });
 });

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { OktaLoginScreenProps } from './types';
 import { OktaRedirectLoginScreenBase } from './OktaRedirectLoginScreenBase';
 import { useOktaAuthContext } from '../../contexts';
@@ -15,6 +15,7 @@ import { createConfig, EventEmitter, signInWithBrowser } from '@okta/okta-react-
 export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLoginScreenProps>> = (props) => {
     const { t } = useTranslation();
     const { navigate, routeConfig } = useOktaAuthContext();
+    const [loading, setLoading] = useState(false);
 
     const {
         loginButtonLabel = t('bluiCommon:ACTIONS.OKTA_SIGN_IN'),
@@ -38,11 +39,14 @@ export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLogin
 
     const onLogin = async (): Promise<void> => {
         try {
+            setLoading(true);
             await signInWithBrowser();
             EventEmitter.emit('signInSuccess');
         } catch (_error) {
             // eslint-disable-next-line no-console
             console.log(_error as Error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -77,6 +81,7 @@ export const OktaRedirectLoginScreen: React.FC<React.PropsWithChildren<OktaLogin
             header={header}
             footer={footer}
             cyberSecurityBadgeSize={cyberSecurityBadgeSize}
+            loading={loading}
         />
     );
 };
