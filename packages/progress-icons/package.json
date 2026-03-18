@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/react-native-progress-icons",
-    "version": "2.1.0",
+    "version": "2.2.0-alpha.0",
     "description": "React Native progress icons for Brightlayer UI applications",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
@@ -47,39 +47,38 @@
     ],
     "prettier": "@brightlayer-ui/prettier-config",
     "dependencies": {
-        "color": "^5.0.0"
+        "color": "^5.0.3"
     },
     "peerDependencies": {
         "react": "^19.1.0",
-        "react-native": "~0.80.0",
-        "react-native-svg": "^15.12.0"
+        "react-native": "~0.84.0",
+        "react-native-svg": "^15.15.0"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^4.0.0",
+        "@brightlayer-ui/eslint-config": "^4.0.1",
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@types/color": "^4.2.0",
         "@types/faker": "^4.1.5",
         "@types/jest": "^30.0.0",
-        "@types/node": "^24.0.2",
+        "@types/node": "^25.0.0",
         "@types/react": "^19.1.8",
-        "@types/react-native": "^0.73.0",
         "@types/react-test-renderer": "^19.1.0",
-        "@typescript-eslint/eslint-plugin": "^8.34.0",
-        "@typescript-eslint/parser": "^8.34.0",
+        "@typescript-eslint/eslint-plugin": "^8.57.0",
+        "@typescript-eslint/parser": "^8.57.0",
         "eslint": "^9.29.0",
-        "eslint-config-prettier": "^10.1.5",
+        "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-react": "^7.37.5",
         "faker": "^6.6.6",
         "identity-obj-proxy": "^3.0.0",
-        "jest": "^30.0.0",
-        "prettier": "^3.5.3",
+        "jest": "^30.3.0",
+        "prettier": "^3.8.0",
         "react": "^19.1.0",
-        "react-native": "~0.80.0",
-        "react-native-svg": "^15.12.0",
-        "react-native-vector-icons": "^10.2.0",
+        "react-native": "~0.84.0",
+        "react-native-svg": "^15.15.0",
+        "react-native-vector-icons": "^10.3.0",
         "react-test-renderer": "^19.1.0",
-        "ts-jest": "^29.4.0",
+        "ts-jest": "^29.4.6",
         "tsc-esm-fix": "^3.1.2",
-        "typescript": "^5.8.3"
+        "typescript": "^5.9.0"
     }
 }
