@@ -140,6 +140,31 @@ export const CollapsibleHeaderLayout: React.FC<CollapsibleLayoutProps> = (props)
         setContentPaddingValue(newPadding);
     }, []);
 
+    // Handle scroll momentum end to snap to nearest state
+    const handleScrollMomentumEnd = useCallback(
+        (e: any) => {
+            const currentScrollY = e.nativeEvent.contentOffset.y;
+            const midpoint = scrollableDistance / 2;
+
+            // Determine target position: if we're past the midpoint, collapse; otherwise, expand
+            const targetScrollY = currentScrollY > midpoint ? scrollableDistance : 0;
+
+            // Animate to the target position
+            if (scrollRef?.current && currentScrollY !== targetScrollY) {
+                // @ts-ignore
+                scrollRef.current.scrollTo({
+                    x: 0,
+                    y: targetScrollY,
+                    animated: true,
+                });
+            }
+
+            // Also call the user's onMomentumScrollEnd if provided
+            ScrollViewProps.onMomentumScrollEnd?.(e);
+        },
+        [scrollableDistance, ScrollViewProps]
+    );
+
     // Set up listeners
     useEffect(() => {
         const scroll = animatedScrollValue.addListener(onScrollChange);
@@ -202,6 +227,7 @@ export const CollapsibleHeaderLayout: React.FC<CollapsibleLayoutProps> = (props)
                     {...ScrollViewProps}
                     ref={scrollRef}
                     contentOffset={contentOffset}
+                    onMomentumScrollEnd={handleScrollMomentumEnd}
                     // Bind the scroll position directly to our animated value
                     onScroll={Animated.event(
                         [

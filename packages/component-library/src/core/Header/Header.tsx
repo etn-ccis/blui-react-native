@@ -251,6 +251,8 @@ export const Header: React.FC<HeaderProps> = (props) => {
         title,
         variant = 'static',
         updateScrollView = (): void => {},
+        onBlur,
+        onFocus,
         ...viewProps
     } = props;
 
@@ -681,6 +683,8 @@ export const Header: React.FC<HeaderProps> = (props) => {
                 accessible={false}
                 onPress={(): void => onPress()}
                 disabled={!expandable || searching}
+                onBlur={onBlur || undefined}
+                onFocus={onFocus || undefined}
                 {...viewProps}
             >
                 <AnimatedSafeAreaView
