@@ -4,7 +4,7 @@ import { SharedAppBar } from '../layout';
 
 export type MarkdownPageProps = HTMLAttributes<HTMLDivElement> & {
     title: string;
-    markdown: React.FC;
+    markdown: React.ComponentType<Record<string, unknown>>;
     noPadding?: boolean;
     background?: string;
     wideLayout?: boolean;

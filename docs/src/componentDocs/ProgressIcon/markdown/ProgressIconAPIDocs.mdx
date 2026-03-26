@@ -1,0 +1,64 @@
+import Box from '@mui/material/Box';
+
+# Progress Icons
+
+The `@brightlayer-ui/react-native-progress-icons` package includes a set of configurable icons for displaying progress and status values in React Native.
+
+All progress icons share a common base prop type, `ProgressIconProps`.
+
+### Progress Icon API
+
+<Box>
+
+| Prop Name        | Description                                                                    | Type                                      | Required | Default  |
+| :--------------- | :----------------------------------------------------------------------------- | :---------------------------------------- | :------- | :------- |
+| backgroundColor  | Background fill color behind the icon                                          | `string`                                  | no       |          |
+| styles           | Style overrides for icon container and labels                                  | `{ progressIcon?: ViewStyle; progressIconLabel?: TextStyle; centered?: TextStyle }` | no       |          |
+| color            | Primary icon color                                                             | `string`                                  | yes      |          |
+| labelColor       | Color applied to the percent label text                                        | `string`                                  | no       |          |
+| labelPosition    | Position of the percent label relative to the icon                             | `'top' \| 'bottom' \| 'left' \| 'right' \| 'center'` | no       | `'center'` |
+| labelSize        | Font size of the percent label                                                 | `number`                                  | no       |          |
+| outlined         | Renders an outlined visual style (when supported by the icon)                 | `boolean`                                 | no       | `false`  |
+| percent          | Progress value represented by the icon                                         | `number`                                  | no       |          |
+| showPercentLabel | Controls whether the numeric percent label is displayed                        | `boolean`                                 | no       | `false`  |
+| size             | Width and height of the icon in pixels                                         | `number`                                  | no       |          |
+| ...svgProps      | Any valid SVG props passed through to the root SVG element                     | `SvgProps`                                | no       |          |
+
+</Box>
+
+### Icon-Specific APIs
+
+<Box>
+
+| Icon     | Additional Prop | Description                                  | Type      | Required | Default |
+| :------- | :-------------- | :------------------------------------------- | :-------- | :------- | :------ |
+| `Pie`    | `ring`          | Thickness of the ring for the pie indicator  | `number`  | no       | `10`    |
+| `Battery`| `charging`      | Displays charging state styling              | `boolean` | no       | `false` |
+| `Heart`  | -               | No additional props; uses `ProgressIconProps`| -         | -        | -       |
+| `Ups`    | -               | No additional props; uses `ProgressIconProps`| -         | -        | -       |
+| `Signal` | -               | No additional props; uses `ProgressIconProps`| -         | -        | -       |
+
+</Box>
+
+### Style Overrides
+
+You can override Progress Icon styles by:
+
+- passing a `styles` prop
+- using inline `style` props
+- passing SVG attributes on the root element
+
+<Box>
+
+| Name              | styles Key          | Description                                   |
+| :---------------- | :------------------ | :-------------------------------------------- |
+| Icon Container    | `progressIcon`      | Styles applied to the icon wrapper container  |
+| Percent Label     | `progressIconLabel` | Styles applied to the percent label element   |
+| Centered Label    | `centered`          | Styles applied when label is centered         |
+
+</Box>
+
+### Notes
+
+- `percent`, `size`, and `outlined` are optional and default to `100`, `24`, and `false` in each icon component.
+- The icon set exports: `Battery`, `Heart`, `Ups`, `Pie`, and `Signal`.

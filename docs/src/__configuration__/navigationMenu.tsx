@@ -72,6 +72,8 @@ import OverlineExamples from '../componentDocs/Overline/markdown/OverlineExample
 import ScoreCardExamples from '../componentDocs/ScoreCard/markdown/ScoreCardExamples.mdx';
 import SpacerExamples from '../componentDocs/Spacer/markdown/SpacerExamples.mdx';
 import UserMenuExamples from '../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
+import ProgressIconExamples from '../componentDocs/ProgressIcon/markdown/ProgressIconExamples.mdx';
+import ProgressIconAPIDocs from '../componentDocs/ProgressIcon/markdown/ProgressIconAPIDocs.mdx';
 
 // API Docs markdown
 import AutoCompleteAPIDocs from '../componentDocs/AutoComplete/markdown/AutoCompleteAPIDocs.mdx';
@@ -117,6 +119,7 @@ import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playg
 import { UserMenuPlaygroundComponent } from '../componentDocs/UserMenu/playground';
 import { HeaderPlaygroundComponent } from '../componentDocs/Header/playground';
 import { CollapsibleHeaderLayoutPlaygroundComponent } from '../componentDocs/CollapsibleHeaderLayout/playground';
+import { ProgressIconPlaygroundComponent } from '../componentDocs/ProgressIcon/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
     title: string;
@@ -842,6 +845,48 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'Verify Code',
                         path: 'verify-code/',
                         element: <MarkdownPage title={'Verify Code'} markdown={VerifyCode} />,
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        title: 'COMMUNITY',
+        path: '/community/',
+        element: <Outlet />,
+        pages: [
+            {
+                title: 'Resource & Assets',
+                path: 'resource-assets/',
+                pages: [
+                    {
+                        title: 'Icons',
+                        path: 'icons/',
+                        element: <Outlet />,
+                        pages: [
+                            {
+                                title: 'Progress Icons',
+                                path: 'progress-icons/',
+                                element: <ComponentPreviewPage title={'Progress Icons'} />,
+                                children: [
+                                    {
+                                        title: 'examples',
+                                        path: 'examples',
+                                        element: <ProgressIconExamples />,
+                                    },
+                                    {
+                                        title: 'API Docs',
+                                        path: 'api-docs',
+                                        element: <ProgressIconAPIDocs />,
+                                    },
+                                    {
+                                        title: 'playground',
+                                        path: 'playground',
+                                        element: <ProgressIconPlaygroundComponent />,
+                                    },
+                                ],
+                            },
+                        ],
                     },
                 ],
             },
