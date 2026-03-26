@@ -352,6 +352,8 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
         hidePadding,
         styles = {},
         style,
+        onBlur,
+        onFocus,
         ...viewProps
     } = otherProps;
 
@@ -430,6 +432,8 @@ export const InfoListItem: React.FC<InfoListItemProps> = (props) => {
             style={[defaultStyles.root, styles.root, style]}
             disabled={!onPress}
             activeOpacity={0.7}
+            onBlur={onBlur || undefined}
+            onFocus={onFocus || undefined}
             {...viewProps}
         >
             <View style={[defaultStyles.statusStripe, styles.statusStripe]} />

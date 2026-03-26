@@ -1,5 +1,11 @@
 # Change Log
 
+## v9.2.1 (March 25, 2026)
+
+### Changed
+
+- Support React Native 0.84.0 and Updated the peer dependencies.
+
 ## v9.1.1 (December 18, 2025)
 
 ### Fixed

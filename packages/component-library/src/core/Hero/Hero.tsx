@@ -109,6 +109,8 @@ export const Hero: React.FC<HeroProps> = (props) => {
         styles = {},
         style,
         theme: themeOverride,
+        onBlur,
+        onFocus,
         ...viewProps
     } = props;
 
@@ -137,6 +139,8 @@ export const Hero: React.FC<HeroProps> = (props) => {
             onPress={onPress}
             disabled={!onPress}
             style={[defaultStyles.root, styles.root, style]}
+            onBlur={onBlur || undefined}
+            onFocus={onFocus || undefined}
             {...viewProps}
         >
             <View
