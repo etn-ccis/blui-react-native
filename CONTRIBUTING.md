@@ -89,7 +89,7 @@ yarn install
 yarn start
 ```
 
-Once the development server is running, you can edit the source code. The system automatically bundles your changes and reloads the browser.
+Once the development server is running, you can edit the source code. The Metro bundler automatically rebuilds your changes and reloads the app on your simulator, emulator, or connected device.
 
 #### Test
 
