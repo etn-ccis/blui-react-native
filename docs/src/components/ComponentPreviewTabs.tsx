@@ -40,8 +40,10 @@ function getTabNumber(location: string): number {
 
 function togglePlaygroundTab(location: string): boolean {
     if (!location) return false;
-    const tabName = location.split('/').find((e) => hidePlaygroundTabs.includes(e));
-    return tabName ? hidePlaygroundTabs.includes(tabName) : false;
+    const segments = location.split('/').filter(Boolean);
+    const nonTabSegments = segments.filter((segment) => !['examples', 'api-docs', 'playground'].includes(segment));
+    const currentComponentSegment = nonTabSegments[nonTabSegments.length - 1];
+    return currentComponentSegment ? hidePlaygroundTabs.includes(currentComponentSegment) : false;
 }
 
 const tabStyles = {
