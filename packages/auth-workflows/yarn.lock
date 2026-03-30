@@ -1381,10 +1381,10 @@
   resolved "https://registry.npmjs.org/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
   integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
 
-"@brightlayer-ui/react-native-components@9.2.1-alpha.0":
-  version "9.2.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.2.1-alpha.0.tgz#0bcb2e6842c6409ad7b62ce10ec749579ce4d508"
-  integrity sha512-/lKW7XuH3lFjI6cX/eAdd2pIL7YbjO5wcfnqTczxjs77ELdlZ/focWhm0BHaB8Ra7XsjyEq/ss532iB+CQUHZA==
+"@brightlayer-ui/react-native-components@9.2.1":
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.2.1.tgz#2e5b983ac875cdd9e2425ced8adf94b18470a47b"
+  integrity sha512-AK8IUGNd1UvqJ1iVxIGg3KSiz20YD+ADpdVWrFf86GBfwuEjQEK0LK4P2XVE0cfF5RYmyI1WVNpPRBnyiCFF5Q==
   dependencies:
     "@brightlayer-ui/react-native-themes" "8.1.0"
     "@callstack/react-theme-provider" "^3.0.9"
@@ -1409,10 +1409,10 @@
     color "^5.0.3"
     react-native-safe-area-context "5.6.2"
 
-"@brightlayer-ui/react-native-vector-icons@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-3.0.0.tgz#599f404caa7777bf8c403e99858e05a106a86725"
-  integrity sha512-lJC81d6sn13W0rhjennuZcoHpEEDfn/EEzNuQ1z0u1hZCzlzYs2gH7moN2vrTNczyjsOBYIq1aeLKdvpceQGlg==
+"@brightlayer-ui/react-native-vector-icons@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-3.1.0.tgz#a5e9aeea41dd09b86915679bc93feb5017b252f6"
+  integrity sha512-UXIrRlG1HF/cOxTAQSKTpcqsie/e0pM2Vs1V2NJJuUuJxVlJP77/sDw1exVHqbDd2Ayk9S+58KO1L66AVX4bRg==
   dependencies:
     "@react-native-vector-icons/common" "^12.0.0"
 
