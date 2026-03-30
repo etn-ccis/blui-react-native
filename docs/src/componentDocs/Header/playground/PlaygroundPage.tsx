@@ -30,7 +30,7 @@ const inputConfig: InputConfig = [
         type: 'string',
         typeLabel: 'string',
         description: 'The text to display on the second line',
-        required: true,
+        required: false,
         initialValue: 'The Last Stand',
         category: 'Optional Props',
     },

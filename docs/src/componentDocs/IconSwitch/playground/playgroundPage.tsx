@@ -56,7 +56,10 @@ const IconSwitchPreivew: PreviewComponent = ({ data }) => {
 
 const generateSnippet: CodeSnippetFunction = (data) =>
     `<IconSwitch
-    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t' })}
+    ${getPropsToString(getPropsMapping(data, inputConfig), { join: '\n\t', skip: ['value', 'showIcon', 'disabled'] })}
+    ${data.showIcon ? 'showIcon={true}' : ''}
+    ${data.disabled ? 'disabled={true}' : ''}
+    ${data.value ? 'value={true}' : ''}
 ></IconSwitch>`.replace(/^\s*$(?:\r\n?|\n)/gm, '');
 
 export const IconSwitchPlaygroundComponent = (): JSX.Element => (

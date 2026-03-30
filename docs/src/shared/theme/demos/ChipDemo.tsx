@@ -31,14 +31,15 @@ export const ChipDemo: JSX.Element = (
                         </Chip>
 
                         <Chip
-                            mode="elevated"
+                            selected
+                            showSelectedCheck
                             disabled
                             style={{
                                 marginTop: 10,
                                 width: 200,
                             }}
                         >
-                            Elevated Chip disabled
+                            Selected Chip disabled
                         </Chip>
                     </TableCell>
 
@@ -55,7 +56,7 @@ export const ChipDemo: JSX.Element = (
                         <Chip selected showSelectedCheck mode="elevated" style={{ marginTop: 10, width: 200 }}>
                             Selected Chip
                         </Chip>
-                        <Chip selected showSelectedCheck disabled style={{ marginTop: 10 }}>
+                        <Chip selected showSelectedCheck mode="elevated" disabled style={{ marginTop: 10, width: 200 }}>
                             Selected Chip disabled
                         </Chip>
                     </TableCell>

@@ -11,16 +11,16 @@ export const IconSwitchWithIconExample = (): JSX.Element => {
         <ExampleShowcase sx={{ display: 'flex', justifyContent: 'center' }}>
             <View style={{ flexDirection: 'column' }}>
                 <View style={{ padding: 10 }}>
-                    <IconSwitch value={switch1} showIcon onValueChange={setSwitch1} />
+                    <IconSwitch value={switch1} showIcon={true} onValueChange={setSwitch1} />
                 </View>
                 <View style={{ padding: 10 }}>
-                    <IconSwitch value={switch2} showIcon onValueChange={setSwitch2} />
+                    <IconSwitch value={switch2} showIcon={true} onValueChange={setSwitch2} />
                 </View>
                 <View style={{ padding: 10 }}>
-                    <IconSwitch value={false} disabled showIcon onValueChange={() => {}} />
+                    <IconSwitch value={false} disabled={true} showIcon={true} onValueChange={() => {}} />
                 </View>
                 <View style={{ padding: 10 }}>
-                    <IconSwitch value={true} disabled showIcon onValueChange={() => {}} />
+                    <IconSwitch value={true} disabled={true} showIcon={true} onValueChange={() => {}} />
                 </View>
             </View>
         </ExampleShowcase>
