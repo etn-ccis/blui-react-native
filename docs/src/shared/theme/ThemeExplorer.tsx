@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Spacer } from '@brightlayer-ui/react-components';
 import { theme } from '@brightlayer-ui/react-themes';
-import { ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
     Card,
     Divider,
@@ -17,6 +17,69 @@ import {
 } from '@mui/material';
 import { componentNameList, componentList } from './componentList';
 import { SystemStyleObject } from '@mui/system';
+import { Provider as RNThemeProvider } from 'react-native-paper';
+import * as RNBLUIThemes from '@brightlayer-ui/react-native-themes';
+import * as BLUIColors from '@brightlayer-ui/colors';
+
+const darkTheme = createTheme({
+    cssVariables: { colorSchemeSelector: 'class' },
+    components: theme.components,
+    defaultColorScheme: 'dark',
+    spacing: theme.spacing,
+    typography: theme.typography,
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: BLUIColors.blue[500],
+            dark: BLUIColors.blue[700],
+            light: BLUIColors.blue[50],
+        },
+        secondary: {
+            main: BLUIColors.lightBlue[500],
+            dark: BLUIColors.lightBlue[700],
+            light: BLUIColors.lightBlue[50],
+            contrastText: BLUIColors.black[50],
+        },
+        background: {
+            default: BLUIColors.darkBlack[800],
+            paper: BLUIColors.black[900],
+        },
+        text: {
+            primary: BLUIColors.black[50],
+            secondary: BLUIColors.black[200],
+            disabled: BLUIColors.black[300],
+        },
+    },
+});
+const lightTheme = createTheme({
+    cssVariables: { colorSchemeSelector: 'class' },
+    components: theme.components,
+    defaultColorScheme: 'light',
+    spacing: theme.spacing,
+    typography: theme.typography,
+    palette: {
+        mode: 'light',
+        primary: {
+            main: BLUIColors.blue[500],
+            dark: BLUIColors.blue[700],
+            light: BLUIColors.blue[50],
+        },
+        secondary: {
+            main: BLUIColors.lightBlue[500],
+            dark: BLUIColors.lightBlue[700],
+            light: BLUIColors.lightBlue[50],
+            contrastText: BLUIColors.white[50],
+        },
+        background: {
+            default: BLUIColors.white[200],
+            paper: BLUIColors.white[50],
+        },
+        text: {
+            primary: BLUIColors.black[500],
+            secondary: BLUIColors.gray[500],
+        },
+    },
+});
 
 export const ThemeExplorer: React.FC = () => {
     const colorScheme = useColorScheme();
@@ -24,10 +87,11 @@ export const ThemeExplorer: React.FC = () => {
     const [selectedComponent, setSelectedComponent] = useState(0);
 
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={localThemeDark ? darkTheme : lightTheme}>
             <Card
                 sx={{ mb: 4, boxSizing: 'border-box', '&:hover': { boxShadow: 6 } }}
-                variant={colorScheme.mode === 'dark' ? 'outlined' : undefined}
+                variant={localThemeDark ? 'outlined' : undefined}
+                className={localThemeDark ? 'dark' : 'light'}
             >
                 <Toolbar
                     sx={[
@@ -83,9 +147,15 @@ export const ThemeExplorer: React.FC = () => {
                     />
                 </Toolbar>
                 <Divider />
-                <Stack alignItems={'center'} justifyContent={'center'} sx={{ backgroundColor: 'background.default' }}>
-                    {componentList[selectedComponent]}
-                </Stack>
+                <RNThemeProvider theme={localThemeDark ? RNBLUIThemes.blueDark : RNBLUIThemes.blue}>
+                    <Stack
+                        alignItems={'center'}
+                        justifyContent={'center'}
+                        sx={{ backgroundColor: 'background.default' }}
+                    >
+                        {componentList[selectedComponent]}
+                    </Stack>
+                </RNThemeProvider>
                 <Divider sx={{ display: { xs: 'block', sm: 'none' } }} />
                 <Box sx={{ py: 1, px: 2, display: { xs: 'block', sm: 'none' }, backgroundColor: 'background.paper' }}>
                     <Typography variant={'caption'}>

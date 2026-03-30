@@ -17,10 +17,10 @@ export const IconSwitchExample = (): JSX.Element => {
                     <IconSwitch value={switch2} onValueChange={setSwitch2} />
                 </View>
                 <View style={{ padding: 10 }}>
-                    <IconSwitch value={false} disabled onValueChange={() => {}} />
+                    <IconSwitch value={false} disabled={true} onValueChange={() => {}} />
                 </View>
                 <View style={{ padding: 10 }}>
-                    <IconSwitch value={true} disabled onValueChange={() => {}} />
+                    <IconSwitch value={true} disabled={true} onValueChange={() => {}} />
                 </View>
             </View>
         </ExampleShowcase>
