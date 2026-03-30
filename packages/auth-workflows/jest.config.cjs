@@ -26,6 +26,6 @@ module.exports = {
     modulePaths: ['<rootDir>'],
     modulePathIgnorePatterns: ['<rootDir>/example/node_modules', '<rootDir>/lib/', '<rootDir>/dist/'],
     transformIgnorePatterns: [
-        'node_modules/(?!(|react-native|@react-native/*|@brightlayer-ui/react-native-components|@brightlayer-ui/react-native-vector-icons|@react-native-vector-icons/*|react-native-vector-icons|react-native-reanimated|react-native-animatable|react-native-iphone-x-helper|react-native-modal|react-native-safe-area-context|react-native-collapsible|@react-native/polyfills|react-native-status-bar-height|react-native-webview|react-native-webview|@okta/okta-react-native/*)/)',
+        'node_modules/(?!(|react-native|@react-native/*|@brightlayer-ui/react-native-components|@brightlayer-ui/react-native-themes|@brightlayer-ui/react-native-vector-icons|@react-native-vector-icons/*|react-native-vector-icons|react-native-reanimated|react-native-animatable|react-native-iphone-x-helper|react-native-modal|react-native-safe-area-context|react-native-collapsible|@react-native/polyfills|react-native-status-bar-height|react-native-webview|react-native-pager-view|@okta/okta-react-native/*|color|color-string|color-name|color-convert)/)',
     ],
 };
