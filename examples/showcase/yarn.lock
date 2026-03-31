@@ -1190,10 +1190,10 @@
     react-native-reanimated "^4.2.2"
     react-native-worklets "^0.7.4"
 
-"@brightlayer-ui/react-native-progress-icons@^2.2.0-alpha.0":
-  version "2.2.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.2.0-alpha.0.tgz#5601010d77e67ddba1222c6a9e957c86e915722f"
-  integrity sha512-GPrz71Pdg2TJr9rFEPW3I6zxGCtpj8vkRttAwuevf3yLTaOB11ldJOlek7E1bbgVFvK4kJjo1j2P2upjVIbO/Q==
+"@brightlayer-ui/react-native-progress-icons@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.2.0.tgz#cb97435bc2b0c1fb17218c3a33f719bac557d6af"
+  integrity sha512-XBaUizjSkWcLCJwnVYp28dan2wNMEN6yPGyzC1i76hFMiRwFuFswXFGqA08+2Tco6jiOUGDPaXHQAJZNTz76RA==
   dependencies:
     color "^5.0.3"
 
@@ -1207,10 +1207,10 @@
     color "^5.0.3"
     react-native-safe-area-context "5.6.2"
 
-"@brightlayer-ui/react-native-vector-icons@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-3.1.0.tgz#a5e9aeea41dd09b86915679bc93feb5017b252f6"
-  integrity sha512-UXIrRlG1HF/cOxTAQSKTpcqsie/e0pM2Vs1V2NJJuUuJxVlJP77/sDw1exVHqbDd2Ayk9S+58KO1L66AVX4bRg==
+"@brightlayer-ui/react-native-vector-icons@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-3.2.0.tgz#4b896ef46e8bccbbdd0f496b81be2c6e61cb7ec9"
+  integrity sha512-RRwuCBaVTCXsYiwmvbdUpHdSdYZI+ILdvB/7EY8wqU3uFm9qYWkuMBGne63g2L+xyTv3rN9rBZFTR7VF1EfN+A==
   dependencies:
     "@react-native-vector-icons/common" "^12.0.0"
 
