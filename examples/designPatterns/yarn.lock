@@ -1941,7 +1941,7 @@
     metro-config "^0.83.1"
     metro-runtime "^0.83.1"
 
-"@react-native/new-app-screen@0.84.1":
+"@react-native/new-app-screen@~0.84.0":
   version "0.84.1"
   resolved "https://registry.npmjs.org/@react-native/new-app-screen/-/new-app-screen-0.84.1.tgz#62ef64f28a40679dcd13902f4b6232c5d0fbe823"
   integrity sha512-O4DEXWwiXqTBVVUfbWYOjOAxzTm5wv5K/DDDz1HkuJIaVDbzeE8+hPb6kob4oig58XQS3ANZSc9KxBqbuQi/iA==
@@ -5942,7 +5942,7 @@ react-native-worklets@^0.8.1:
     convert-source-map "^2.0.0"
     semver "^7.7.3"
 
-react-native@0.84.1:
+react-native@~0.84.0:
   version "0.84.1"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.84.1.tgz#bc5e8278485c5c6b0116dccaf6623479ed1f3b88"
   integrity sha512-0PjxOyXRu3tZ8EobabxSukvhKje2HJbsZikR0U+pvS0pYZza2hXKjcSBiBdFN4h9D0S3v6a8kkrDK6WTRKMwzg==
