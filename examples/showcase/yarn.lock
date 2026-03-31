@@ -1161,10 +1161,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
   integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
 
-"@brightlayer-ui/react-native-auth-workflow@^8.3.0-alpha.0":
-  version "8.3.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.3.0-alpha.0.tgz#60b7909796ccede1627c9f5eaa12f64f123b17a2"
-  integrity sha512-hADnJjE2e8cBYzLNvIA877zogLVef03QQoDkkFiEhW6Bqh8BCPtJQx4RVj2M6Dfw+6QhVt4S3yvGR8In2YQtNQ==
+"@brightlayer-ui/react-native-auth-workflow@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.3.0.tgz#61d4f00bf6a9bda0028f8b58a128640183e38df0"
+  integrity sha512-ZwTBtojvRISlWmrBXONQWm2Fp9FkvFc0UcM9sR+iGs9qvs/MeFho1REuYH6cWqA3u6NiAWCQ6ztvQTR6Pn0ujA==
   dependencies:
     "@brightlayer-ui/react-native-themes" "^8.1.0"
     "@types/react" "^19.0.0"
