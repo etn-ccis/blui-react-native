@@ -16,6 +16,7 @@
         "@brightlayer-ui/react-components": "^8.0.2",
         "@brightlayer-ui/react-doc-components": "^3.0.0-alpha.0",
         "@brightlayer-ui/react-native-components": "^9.0.0-alpha.5",
+        "@brightlayer-ui/react-native-progress-icons": "^2.1.0",
         "@brightlayer-ui/react-native-themes": "7.0.1",
         "@brightlayer-ui/react-native-vector-icons": "^2.2.0",
         "@brightlayer-ui/react-themes": "^9.0.1",

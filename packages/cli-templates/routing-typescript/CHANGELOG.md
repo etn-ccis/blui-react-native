@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.0 (Unreleased)
+
+### Changed
+
+- Updated all the dependencies to the latest stable versions ([#448](https://github.com/etn-ccis/blui-react-native/issues/448)).
+
 ## v4.0.0 (July 30, 2025)
 
 ### Changed
