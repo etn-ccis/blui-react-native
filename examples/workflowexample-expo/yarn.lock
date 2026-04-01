@@ -834,23 +834,23 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/colors/-/colors-4.0.0.tgz#5bb3706eca98e849d1e80ca4c9f9ca731380d227"
   integrity sha512-fF7Ne7cz4yFCzR96HrP1RVBw55s+cWbqYkPallnpmmtYnPwNS/DyAbbHFEnl2bxziq3CvAR2S+D6AnjIeluOZA==
 
-"@brightlayer-ui/icons-svg@^1.15.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.16.0.tgz#56c692fb2bff7b53a36eefaffdfd1682ddf73272"
-  integrity sha512-ENJMl+8sVwCwNRgK9JDWWNJ4ZLyNVjuLKtk5I6i+GRhuTV5YeonRSH+h+TkK8uOfbK7SRQJZMJAr2VGAn9Rw8w==
+"@brightlayer-ui/icons-svg@^1.17.0":
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/icons-svg/-/icons-svg-1.17.0.tgz#cc7854072268b3bb406b2685278be113f667e5b8"
+  integrity sha512-9OKjkbYxJSW3CXHkKeOnlqMmf4c3Ubk+IJ9Cp0KN+y0BYMT8BngG6t/u26Ld0sE8TfPh56muBLCtQfp88wDPZg==
 
-"@brightlayer-ui/react-native-auth-workflow@^8.1.1":
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.2.0.tgz#1cfab4ec0d991ae49cea795e8cb96f35b977feab"
-  integrity sha512-Zbb3R4dhbLLD38qlutevSeecECAnceStNPqTEuF53Lbos8UHGFl/FEdDlmdFNNwyV8hGdaPlPLYhCHJZvbgutg==
+"@brightlayer-ui/react-native-auth-workflow@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-auth-workflow/-/react-native-auth-workflow-8.3.0.tgz#61d4f00bf6a9bda0028f8b58a128640183e38df0"
+  integrity sha512-ZwTBtojvRISlWmrBXONQWm2Fp9FkvFc0UcM9sR+iGs9qvs/MeFho1REuYH6cWqA3u6NiAWCQ6ztvQTR6Pn0ujA==
   dependencies:
-    "@brightlayer-ui/react-native-themes" "^7.0.1"
+    "@brightlayer-ui/react-native-themes" "^8.1.0"
     "@types/react" "^19.0.0"
     "@types/react-dom" "^19.0.0"
-    color "^4.2.3"
+    color "^5.0.3"
     lodash.clonedeep "^4.5.0"
 
-"@brightlayer-ui/react-native-components@^9.2.1-alpha.0":
+"@brightlayer-ui/react-native-components@^9.2.1":
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.2.1.tgz#2e5b983ac875cdd9e2425ced8adf94b18470a47b"
   integrity sha512-AK8IUGNd1UvqJ1iVxIGg3KSiz20YD+ADpdVWrFf86GBfwuEjQEK0LK4P2XVE0cfF5RYmyI1WVNpPRBnyiCFF5Q==
@@ -868,12 +868,12 @@
     react-native-reanimated "^4.2.2"
     react-native-worklets "^0.7.4"
 
-"@brightlayer-ui/react-native-progress-icons@^2.0.1":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.1.0.tgz#714f9e36cc8f2cd3b8d3ccb9a837bc0924197485"
-  integrity sha512-GbMz0qLyKmVzeW9GPC+TPyady/lAr3VdInzdyHB2mjSlUtPKTRdyKLKQeWfAOTgoNl6Vl4C8pZieOSFyk8da7A==
+"@brightlayer-ui/react-native-progress-icons@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.2.0.tgz#cb97435bc2b0c1fb17218c3a33f719bac557d6af"
+  integrity sha512-XBaUizjSkWcLCJwnVYp28dan2wNMEN6yPGyzC1i76hFMiRwFuFswXFGqA08+2Tco6jiOUGDPaXHQAJZNTz76RA==
   dependencies:
-    color "^5.0.0"
+    color "^5.0.3"
 
 "@brightlayer-ui/react-native-themes@8.1.0", "@brightlayer-ui/react-native-themes@^8.1.0":
   version "8.1.0"
@@ -885,18 +885,12 @@
     color "^5.0.3"
     react-native-safe-area-context "5.6.2"
 
-"@brightlayer-ui/react-native-themes@^7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-themes/-/react-native-themes-7.0.1.tgz#0276c5264c9d00f86fd8bcac51dfddaeb912f8d5"
-  integrity sha512-KQTT5q1Ekq/aIoGNYyEZ3pmtTfZNiWBXw5uvvIJPGL2xVvxs3lGCZjZKC/XS+sXNH2C6s5wnzF8sjNLPCYtMLQ==
+"@brightlayer-ui/react-native-vector-icons@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-3.2.0.tgz#4b896ef46e8bccbbdd0f496b81be2c6e61cb7ec9"
+  integrity sha512-RRwuCBaVTCXsYiwmvbdUpHdSdYZI+ILdvB/7EY8wqU3uFm9qYWkuMBGne63g2L+xyTv3rN9rBZFTR7VF1EfN+A==
   dependencies:
-    "@brightlayer-ui/colors" "4.0.0"
-    color "^4.2.3"
-
-"@brightlayer-ui/react-native-vector-icons@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-vector-icons/-/react-native-vector-icons-2.4.0.tgz#99236f898e423346350db1a90c731ad5644b562c"
-  integrity sha512-USFMjyoDGybaVux7wfeN1Kmo8h8rM3PooNEv+YTV84XkH1K+M3ASf6dQ/PSWaoCvRFb/xv0Du9FQ744wN4keog==
+    "@react-native-vector-icons/common" "^12.0.0"
 
 "@callstack/react-theme-provider@^3.0.9":
   version "3.0.9"
@@ -1452,7 +1446,7 @@
   dependencies:
     merge-options "^3.0.4"
 
-"@react-native-vector-icons/common@^12.4.2":
+"@react-native-vector-icons/common@^12.0.0", "@react-native-vector-icons/common@^12.4.2":
   version "12.4.2"
   resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.4.2.tgz#1116c37ffa9bd665c32a364aa5181475d106915f"
   integrity sha512-15ViuwfYdkQ79VE6PiQjsGyQcEvhv4lgguhIeQU4pXLXRAFhl89Q8FdKDrGZh7+a/8WMqT1v2+JtghdoGKDE6Q==
@@ -2530,7 +2524,7 @@ color@^4.2.3:
     color-convert "^2.0.1"
     color-string "^1.9.0"
 
-color@^5.0.0, color@^5.0.3:
+color@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/color/-/color-5.0.3.tgz#f79390b1b778e222ffbb54304d3dbeaef633f97f"
   integrity sha512-ezmVcLR3xAVp8kYOm4GS45ZLLgIE6SPAFoduLr6hTDajwb3KZ2F46gulK3XpcwRFb5KKGCSezCBAY4Dw4HsyXA==
