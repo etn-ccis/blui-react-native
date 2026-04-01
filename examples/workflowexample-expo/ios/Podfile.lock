@@ -30,7 +30,7 @@ PODS:
     - ExpoModulesCore
   - ExpoDomWebView (55.0.3):
     - ExpoModulesCore
-  - ExpoFileSystem (55.0.11):
+  - ExpoFileSystem (55.0.12):
     - ExpoModulesCore
   - ExpoFont (55.0.4):
     - ExpoModulesCore
@@ -2002,7 +2002,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNGestureHandler (2.30.0):
+  - RNGestureHandler (2.30.1):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2599,7 +2599,7 @@ SPEC CHECKSUMS:
   Expo: d425652228e12e472b46f0eca1032fcdebe55701
   ExpoAsset: 4efd0227e808dfa84d286aa3663ded641ef73479
   ExpoDomWebView: f101fb3db4b6eec4163fca51f7507189b7e48661
-  ExpoFileSystem: ccbe192dde132e6e97bedcd51018a1642f4fa01c
+  ExpoFileSystem: 4ed8ccc90671813c861f212fba3668fe133b7e68
   ExpoFont: 1aa465cf9f8ac6b670405becba8b15473581b2dd
   ExpoKeepAwake: 7f3b28c361c37389b18841bb52a58003b39fcb33
   ExpoLocalization: 59339ee12069a7cca674cd8082912a3b16735863
@@ -2688,7 +2688,7 @@ SPEC CHECKSUMS:
   ReactNativeDependencies: 0c358ddcb30e9081c950f9363ef52d0d6e68349e
   RNBLUIVectorIcons: c45655a90c6b6d2777bb6443c7088a63149c4b52
   RNCAsyncStorage: 3a4f5e2777dae1688b781a487923a08569e27fe4
-  RNGestureHandler: 5494787ce29288a8941fa825663f2b1fa0a5aaf1
+  RNGestureHandler: 0ea8153746a92b3744d4eaadade647debedf646e
   RNReanimated: 86e5991396f1aa514db90d6c79d4c3e37a37bb10
   RNScreens: 14243fa0d9842ffa7f8bb2d00b6c3cfd3ca817e8
   RNSVG: 0bd149b873018bc6e0e3321e2f6435bdba294460
