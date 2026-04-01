@@ -1978,7 +1978,7 @@ PODS:
     - React-utils (= 0.83.2)
     - ReactNativeDependencies
   - ReactNativeDependencies (0.83.2)
-  - RNBLUIVectorIcons (2.4.0):
+  - RNBLUIVectorIcons (3.2.0):
     - React
   - RNCAsyncStorage (2.2.0):
     - hermes-engine
@@ -2686,7 +2686,7 @@ SPEC CHECKSUMS:
   ReactCodegen: e67cb698a2107da1da9efa55174861d724666a3e
   ReactCommon: 8868269b67561136a7970be188b40738135af077
   ReactNativeDependencies: 0c358ddcb30e9081c950f9363ef52d0d6e68349e
-  RNBLUIVectorIcons: c45655a90c6b6d2777bb6443c7088a63149c4b52
+  RNBLUIVectorIcons: d6857530e2ab2565206d9d49ef4a64ad6ac5bbae
   RNCAsyncStorage: 3a4f5e2777dae1688b781a487923a08569e27fe4
   RNGestureHandler: 0ea8153746a92b3744d4eaadade647debedf646e
   RNReanimated: 86e5991396f1aa514db90d6c79d4c3e37a37bb10
