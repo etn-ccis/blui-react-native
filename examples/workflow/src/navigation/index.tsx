@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback } from 'react';
+import React, { ReactNode, useCallback, useRef } from 'react';
 import { NavigationContainer, createNavigationContainerRef, useNavigation } from '@react-navigation/native';
 import { useApp } from '../contexts/AppContextProvider';
 import {
@@ -30,6 +30,14 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 const LoginStack = createNativeStackNavigator();
 const navigationRef = createNavigationContainerRef();
+const registrationRoutes = new Set(['SelfRegister', 'RegisterInvite']);
+const loginStackRoutes = new Set(['Login', 'ForgotPassword', 'ResetPassword']);
+const authBackTransitions = new Set(['Login', 'ForgotPassword']);
+
+const getCurrentRouteName = (navigation: NativeStackNavigationProp<any>): string | undefined => {
+    const state = navigation.getState();
+    return state.routes[state.index]?.name;
+};
 
 export type RootStackParamList = {
     Homepage: undefined;
@@ -44,14 +52,106 @@ const CustomDrawerContent = (props: any): any => (
     </View>
 );
 
+const navigateWithinWorkflow = (
+    navigation: NativeStackNavigationProp<any>,
+    destination: -1 | string,
+    isAuthenticated: boolean,
+    loginNavigation?: { canGoBack?: () => boolean; goBack?: () => void; navigate?: (name: string) => void } | null,
+    registrationNavigation?: {
+        canGoBack?: () => boolean;
+        goBack?: () => void;
+        navigate?: (name: string) => void;
+    } | null
+): void => {
+    const currentRouteName = getCurrentRouteName(navigation);
+
+    if (destination === -1) {
+        if (currentRouteName === 'AuthProviderExample' && loginNavigation?.canGoBack?.()) {
+            loginNavigation.goBack?.();
+            return;
+        }
+
+        if (currentRouteName === 'RegistrationProviderExample' && registrationNavigation?.canGoBack?.()) {
+            registrationNavigation.goBack?.();
+            return;
+        }
+
+        navigation.goBack();
+        return;
+    }
+
+    if (registrationRoutes.has(destination)) {
+        if (currentRouteName === 'RegistrationProviderExample' && registrationNavigation?.navigate) {
+            registrationNavigation.navigate(destination);
+            return;
+        }
+
+        navigation.navigate('RegistrationProviderExample', { screen: destination });
+        return;
+    }
+
+    if (loginStackRoutes.has(destination)) {
+        if (currentRouteName === 'AuthProviderExample') {
+            if (authBackTransitions.has(destination) && loginNavigation?.canGoBack?.()) {
+                loginNavigation.goBack?.();
+                return;
+            }
+
+            if (loginNavigation?.navigate) {
+                loginNavigation.navigate(destination);
+                return;
+            }
+        }
+
+        if (currentRouteName === 'RegistrationProviderExample') {
+            if (authBackTransitions.has(destination) && registrationNavigation?.canGoBack?.()) {
+                registrationNavigation.goBack?.();
+                return;
+            }
+        }
+
+        navigation.navigate('AuthProviderExample', {
+            screen: 'LoginScreen',
+            params: { screen: destination },
+        });
+        return;
+    }
+
+    if (destination === 'ContactSupport') {
+        if (isAuthenticated) {
+            navigation.navigate('AuthProviderExample', { screen: destination });
+        } else {
+            if (currentRouteName === 'AuthProviderExample' && loginNavigation?.navigate) {
+                loginNavigation.navigate(destination);
+                return;
+            }
+
+            navigation.navigate('AuthProviderExample', {
+                screen: 'LoginScreen',
+                params: { screen: destination },
+            });
+        }
+        return;
+    }
+
+    navigation.navigate(destination);
+};
+
 const AuthRouter = (): any => {
     const app = useApp();
     const { email, rememberMe } = app.loginData;
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
+    const loginStackRef = useRef<any>(null);
 
     const LoginNavigatorComponent = useCallback(
         () => (
-            <LoginStack.Navigator screenOptions={{ headerShown: false }}>
+            <LoginStack.Navigator
+                screenListeners={({ navigation: childNavigation }) => {
+                    loginStackRef.current = childNavigation;
+                    return {};
+                }}
+                screenOptions={{ headerShown: false }}
+            >
                 <LoginStack.Screen name="Login" component={OktaLogin} />
                 <LoginStack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
                 <LoginStack.Screen name="ResetPassword" component={ResetPasswordScreen} />
@@ -107,19 +207,7 @@ const AuthRouter = (): any => {
                 actions={ProjectAuthUIActions(app)}
                 i18n={i18nAppInstance}
                 navigate={(destination: -1 | string) => {
-                    if (typeof destination === 'string') {
-                        switch (destination) {
-                            case 'SelfRegister':
-                            case 'RegisterInvite':
-                                navigation.navigate('RegistrationProviderExample', { screen: destination });
-                                break;
-                            default:
-                                navigation.navigate(destination);
-                                break;
-                        }
-                    } else if (destination === -1) {
-                        navigation.goBack();
-                    }
+                    navigateWithinWorkflow(navigation, destination, app.isAuthenticated, loginStackRef.current, null);
                 }}
                 routeConfig={{
                     LOGIN: 'Login',
@@ -141,6 +229,7 @@ const RegistrationRouter = (): any => {
     const app = useApp();
     const navigation = useNavigation<NativeStackNavigationProp<any>>();
     const RegistrationStack = createNativeStackNavigator();
+    const registrationStackRef = useRef<any>(null);
 
     return (
         <>
@@ -157,22 +246,20 @@ const RegistrationRouter = (): any => {
                     SUPPORT: 'ContactSupport',
                 }}
                 navigate={(destination: -1 | string) => {
-                    if (typeof destination === 'string') {
-                        switch (destination) {
-                            case 'SelfRegister':
-                            case 'RegisterInvite':
-                                navigation.navigate('RegistrationProviderExample', { screen: destination });
-                                break;
-                            default:
-                                navigation.navigate(destination);
-                                break;
-                        }
-                    } else if (destination === -1) {
-                        navigation.goBack();
-                    }
+                    navigateWithinWorkflow(
+                        navigation,
+                        destination,
+                        app.isAuthenticated,
+                        null,
+                        registrationStackRef.current
+                    );
                 }}
             >
                 <RegistrationStack.Navigator
+                    screenListeners={({ navigation: childNavigation }) => {
+                        registrationStackRef.current = childNavigation;
+                        return {};
+                    }}
                     screenOptions={{
                         headerShown: false,
                     }}
@@ -199,7 +286,7 @@ const RegistrationRouter = (): any => {
 export const MainRouter = (): any => {
     const { height, width } = Dimensions.get('screen');
     return (
-        <NavigationContainer ref={navigationRef} navigationInChildEnabled>
+        <NavigationContainer ref={navigationRef}>
             <Stack.Navigator
                 initialRouteName={'AuthProviderExample'}
                 screenOptions={{
