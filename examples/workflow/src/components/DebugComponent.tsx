@@ -37,7 +37,12 @@ export const DebugComponent = (): JSX.Element => {
                         mode={'text'}
                         labelStyle={{ fontSize: 16 }}
                         uppercase={false}
-                        onPress={(): void => navigation.navigate('ResetPassword')}
+                        onPress={(): void => {
+                            navigation.navigate('AuthProviderExample', {
+                                screen: 'LoginScreen',
+                                params: { screen: 'ResetPassword' },
+                            });
+                        }}
                     >
                         [Test Reset Password]
                     </Button>
