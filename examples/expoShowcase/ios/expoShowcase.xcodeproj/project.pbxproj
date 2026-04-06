@@ -19,6 +19,7 @@
 		D4B4FEA89088416B98E95DAA /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74222A2178A841389FF722D8 /* OpenSans-ExtraBold.ttf */; };
 		DABFB3F294F544518289D53D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64C859C584CB4CC08D238D98 /* OpenSans-Regular.ttf */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
+		B6DE161AD490456B816F5A99 /* BrightlayerUIIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86099677ACAD4DBEAF077EA1 /* BrightlayerUIIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = expoShowcase/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* expoShowcase-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "expoShowcase-Bridging-Header.h"; path = "expoShowcase/expoShowcase-Bridging-Header.h"; sourceTree = "<group>"; };
+		86099677ACAD4DBEAF077EA1 /* BrightlayerUIIcons.ttf */ = {isa = PBXFileReference; name = "BrightlayerUIIcons.ttf"; path = "../node_modules/@brightlayer-ui/react-native-vector-icons/Fonts/BrightlayerUIIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				B7D12CF729894240B3BC2BBF /* OpenSans-Bold.ttf */,
 				74222A2178A841389FF722D8 /* OpenSans-ExtraBold.ttf */,
 				0C92F7405F4A43D1ABCDDD28 /* OpenSans-Light.ttf */,
+				86099677ACAD4DBEAF077EA1 /* BrightlayerUIIcons.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				D4B4FEA89088416B98E95DAA /* OpenSans-ExtraBold.ttf in Resources */,
 				350D3CF391F1429F8F155EF3 /* OpenSans-Light.ttf in Resources */,
 				AD0D869046CD988355E5C316 /* PrivacyInfo.xcprivacy in Resources */,
+				B6DE161AD490456B816F5A99 /* BrightlayerUIIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +388,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anonymous.expoShowcase;
-				PRODUCT_NAME = expoShowcase;
+				PRODUCT_NAME = "expoShowcase";
 				SWIFT_OBJC_BRIDGING_HEADER = "expoShowcase/expoShowcase-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -415,7 +419,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anonymous.expoShowcase;
-				PRODUCT_NAME = expoShowcase;
+				PRODUCT_NAME = "expoShowcase";
 				SWIFT_OBJC_BRIDGING_HEADER = "expoShowcase/expoShowcase-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
