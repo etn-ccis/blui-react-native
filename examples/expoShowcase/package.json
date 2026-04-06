@@ -56,7 +56,9 @@
     },
     "expo": {
         "doctor": {
-            "skip": ["nonContinuousConfigFieldsSynced"],
+            "skip": [
+                "nonContinuousConfigFieldsSynced"
+            ],
             "reactNativeDirectoryCheck": {
                 "exclude": [
                     "react-native-restart",

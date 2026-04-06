@@ -28,7 +28,7 @@ if (existsSync(watchPackagesDir)) {
     const componentsPath = path.resolve(watchPackagesDir, '@brightlayer-ui/react-native-components');
     const progressIconsPath = path.resolve(watchPackagesDir, '@brightlayer-ui/react-native-progress-icons');
     const themesPath = path.resolve(watchPackagesDir, '@brightlayer-ui/react-native-themes');
-    
+
     if (existsSync(componentsPath)) watchFolders.push(componentsPath);
     if (existsSync(progressIconsPath)) watchFolders.push(progressIconsPath);
     if (existsSync(themesPath)) watchFolders.push(themesPath);
@@ -58,10 +58,7 @@ if (existsSync(watchPackagesDir)) {
 }
 
 // 2. Let Metro know where to resolve packages and in what order
-const nodeModulesPaths = [
-    path.resolve(projectRoot, 'node_modules'),
-    path.resolve(monorepoRoot, 'node_modules'),
-];
+const nodeModulesPaths = [path.resolve(projectRoot, 'node_modules'), path.resolve(monorepoRoot, 'node_modules')];
 if (existsSync(watchPackagesDir)) {
     nodeModulesPaths.push(watchPackagesDir);
 }
