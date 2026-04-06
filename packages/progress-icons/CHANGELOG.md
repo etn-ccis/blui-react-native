@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.1 (Unreleased)
+
+### Fixed
+
+- @brightlayer-ui/react-native-progress-icons@2.2.0 — Broken entry point on npm ([#536](https://github.com/etn-ccis/blui-react-native/issues/536)).
+
 ## v2.2.0 (March 31, 2026)
 
 ### Changed
