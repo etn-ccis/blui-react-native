@@ -8,10 +8,11 @@ This is a library of icons with dynamic fill capabilities that can be used to sh
 
 Currently, we have icons available for:
 
--   battery
--   heart
--   pie
--   ups
+- battery
+- heart
+- pie
+- signal
+- ups
 
 ## Installation
 
@@ -46,11 +47,12 @@ See the [Expo docs](https://docs.expo.dev/versions/latest/sdk/svg/) for more inf
 The progress icon components can be imported and used like you would use any other component.
 
 ```tsx
-import {Battery, Heart, Pie} from '@brightlayer-ui/react-native-progress-icons';
+import {Battery, Heart, Pie, Signal} from '@brightlayer-ui/react-native-progress-icons';
 ...
-<Battery color={'blue'} percent={100} size={36} color={'green'} charging={true} outlined={true}/>
-<Heart color={'red'} percent={50} size={18} color={'pink'} outlined={true}/>
-<Pie color={'green'} percent={50} size={48} color={'blue'} ring={4} outlined={true}/>
+<Battery percent={100} size={36} color={'green'} charging={true} outlined={true}/>
+<Heart percent={50} size={18} color={'pink'} outlined={true}/>
+<Pie percent={50} size={48} color={'blue'} ring={4} outlined={true}/>
+<Signal percent={75} size={48} color={'teal'} outlined={true}/>
 ```
 
 ## API
