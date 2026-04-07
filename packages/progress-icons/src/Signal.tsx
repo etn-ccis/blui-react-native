@@ -6,7 +6,7 @@ import { ProgressIcon } from './ProgressIcon';
 
 const basePath = 'M2 22L22 2V22H2Z';
 
-const outlinedPath = 'M24 24H0L24 0V24ZM5.794 21.6H21.6V5.794L5.794 21.6Z';
+const outlinedPath = 'M22 22H2L22 2V22ZM6.828 20H20V6.828L6.828 20Z';
 
 const getPath = (outlined: boolean): string => (outlined ? outlinedPath : basePath);
 
@@ -36,9 +36,9 @@ export const Signal: React.FC<SignalProgressProps> = (props) => {
         if (rangedPercent === 0) return '';
 
         if (outlined) {
-            const startX = 5.729;
-            const startY = 21.604;
-            const maxDiagonal = 15.871;
+            const startX = 6.774;
+            const startY = 20.003;
+            const maxDiagonal = 13.226;
             const diagonalProgress = (rangedPercent / 100) * maxDiagonal;
 
             const x = startX + diagonalProgress;
