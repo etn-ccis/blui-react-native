@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.2 (April 7, 2026)
+
+### Fixed
+
+- Signal progress icon sizing / bounding box behavior (`#275`).
+
 ## v2.2.1 (April 6, 2026)
 
 ### Fixed
