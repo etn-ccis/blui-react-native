@@ -860,31 +860,24 @@ export const pageDefinitions: RouteConfig[] = [
                 path: 'resource-assets/',
                 pages: [
                     {
-                        title: 'Icons',
-                        path: 'icons/',
-                        element: <Outlet />,
-                        pages: [
+                        title: 'Progress Icons',
+                        path: 'progress-icons/',
+                        element: <ComponentPreviewPage title={'Progress Icons'} />,
+                        children: [
                             {
-                                title: 'Progress Icons',
-                                path: 'progress-icons/',
-                                element: <ComponentPreviewPage title={'Progress Icons'} />,
-                                children: [
-                                    {
-                                        title: 'examples',
-                                        path: 'examples',
-                                        element: <ProgressIconExamples />,
-                                    },
-                                    {
-                                        title: 'API Docs',
-                                        path: 'api-docs',
-                                        element: <ProgressIconAPIDocs />,
-                                    },
-                                    {
-                                        title: 'playground',
-                                        path: 'playground',
-                                        element: <ProgressIconPlaygroundComponent />,
-                                    },
-                                ],
+                                title: 'examples',
+                                path: 'examples',
+                                element: <ProgressIconExamples />,
+                            },
+                            {
+                                title: 'API Docs',
+                                path: 'api-docs',
+                                element: <ProgressIconAPIDocs />,
+                            },
+                            {
+                                title: 'playground',
+                                path: 'playground',
+                                element: <ProgressIconPlaygroundComponent />,
                             },
                         ],
                     },
