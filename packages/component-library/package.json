@@ -64,7 +64,6 @@
         "react-native-vector-icons": "^10.3.0"
     },
     "devDependencies": {
-        "babel-jest": "^30.3.0",
         "@brightlayer-ui/eslint-config": "^4.0.1",
         "@brightlayer-ui/icons-svg": "^1.16.0",
         "@brightlayer-ui/prettier-config": "^1.0.3",
@@ -81,6 +80,7 @@
         "@types/react-test-renderer": "^19.1.0",
         "@typescript-eslint/eslint-plugin": "^8.56.1",
         "@typescript-eslint/parser": "8.56.1",
+        "babel-jest": "^30.3.0",
         "eslint": "^10.0.2",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-react": "^7.37.5",
