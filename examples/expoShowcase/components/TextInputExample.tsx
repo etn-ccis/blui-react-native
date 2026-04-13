@@ -51,8 +51,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     textColor={theme.colors.onSurface} // We can remove this prop when this issue gets fixed https://github.com/callstack/react-native-paper/issues/4250.
                     value={normalText}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -64,8 +62,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     textColor={hasError ? theme.colors.error : theme.colors.onSurface}
                     value={errorText}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -85,8 +81,6 @@ export const TextFieldExample: React.FC = () => {
                     label="TextInput"
                     mode="flat"
                     value={disabledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     underlineColor={theme.colors.onDisabledContainer}
                     onChangeText={(value) => setDisabledText(value)}
                     disabled
@@ -98,8 +92,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={normalFilledText}
                     textColor={theme.colors.onSurface}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -111,8 +103,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     textColor={hasError ? theme.colors.error : theme.colors.onSurface}
                     value={errorFilledText}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -132,8 +122,6 @@ export const TextFieldExample: React.FC = () => {
                     label="TextInput"
                     mode="flat"
                     value={disabledFilledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     underlineColor={theme.colors.onDisabledContainer}
                     onChangeText={(value) => setDisabledFilledText(value)}
                     disabled
@@ -145,8 +133,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={normalText}
                     dense={true}
                     textColor={theme.colors.onSurface}
@@ -159,8 +145,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     textColor={hasError ? theme.colors.error : theme.colors.onSurface}
                     value={errorText}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -181,8 +165,6 @@ export const TextFieldExample: React.FC = () => {
                     label="TextInput"
                     mode="flat"
                     value={disabledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     underlineColor={theme.colors.onDisabledContainer}
                     onChangeText={(value) => setDisabledText(value)}
                     disabled
@@ -195,8 +177,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={normalFilledText}
                     dense={true}
                     textColor={theme.colors.onSurface}
@@ -209,8 +189,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="flat"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     textColor={hasError ? theme.colors.error : theme.colors.onSurface}
                     value={errorFilledText}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -231,8 +209,6 @@ export const TextFieldExample: React.FC = () => {
                     label="TextInput"
                     mode="flat"
                     value={disabledFilledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     underlineColor={theme.colors.onDisabledContainer}
                     onChangeText={(value) => setDisabledFilledText(value)}
                     disabled
@@ -246,8 +222,6 @@ export const TextFieldExample: React.FC = () => {
                     label="Normal Outlined TextInput"
                     mode="outlined"
                     value={normalText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     outlineColor={theme.colors.outline}
                     onChangeText={(value) => setNormalText(value)}
                     style={styles.outlineInput}
@@ -258,8 +232,6 @@ export const TextFieldExample: React.FC = () => {
                     label="Error Outlined TextInput"
                     mode="outlined"
                     value={errorText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     outlineColor={theme.colors.outline}
                     onChangeText={(value) => {
                         setErrorText(value);
@@ -281,8 +253,6 @@ export const TextFieldExample: React.FC = () => {
                     label="Disabled Outlined TextInput"
                     mode="outlined"
                     value={disabledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     outlineColor={theme.colors.outline}
                     onChangeText={(value) => setDisabledText(value)}
                     disabled
@@ -295,8 +265,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="outlined"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={normalFilledText}
                     underlineColor={theme.colors.onSurfaceVariant}
                     onChangeText={(value) => setNormalFilledText(value)}
@@ -307,8 +275,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="outlined"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={errorFilledText}
                     underlineColor={theme.colors.onSurfaceVariant}
                     onChangeText={(value) => {
@@ -331,8 +297,6 @@ export const TextFieldExample: React.FC = () => {
                     label="TextInput"
                     mode="outlined"
                     value={disabledFilledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     underlineColor={theme.colors.onSurfaceVariant}
                     onChangeText={(value) => setDisabledFilledText(value)}
                     disabled
@@ -344,8 +308,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="outlined"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={normalText}
                     dense={true}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -357,8 +319,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="outlined"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={errorText}
                     underlineColor={theme.colors.onSurfaceVariant}
                     onChangeText={(value) => {
@@ -382,8 +342,6 @@ export const TextFieldExample: React.FC = () => {
                     label="TextInput"
                     mode="outlined"
                     value={disabledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     underlineColor={theme.colors.onSurfaceVariant}
                     onChangeText={(value) => setDisabledText(value)}
                     disabled
@@ -396,8 +354,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="outlined"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={normalFilledText}
                     dense={true}
                     underlineColor={theme.colors.onSurfaceVariant}
@@ -409,8 +365,6 @@ export const TextFieldExample: React.FC = () => {
                 <TextInput
                     label="TextInput"
                     mode="outlined"
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     value={errorFilledText}
                     underlineColor={theme.colors.onSurfaceVariant}
                     onChangeText={(value) => {
@@ -434,8 +388,6 @@ export const TextFieldExample: React.FC = () => {
                     label="TextInput"
                     mode="outlined"
                     value={disabledFilledText}
-                    left={<TextInput.Icon icon="email-outline" />}
-                    right={<TextInput.Icon icon="menu-down" />}
                     underlineColor={theme.colors.onSurfaceVariant}
                     onChangeText={(value) => setDisabledFilledText(value)}
                     disabled
