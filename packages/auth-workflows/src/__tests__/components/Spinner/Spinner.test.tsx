@@ -5,7 +5,7 @@ import * as BLUIThemes from '@brightlayer-ui/react-native-themes';
 import type { ExtendedTheme } from '@brightlayer-ui/react-native-themes';
 
 // Mock the theme hook to control theme.dark value
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 let mockTheme: any = BLUIThemes.blue;
 jest.mock('@brightlayer-ui/react-native-themes', () => ({
     ...jest.requireActual('@brightlayer-ui/react-native-themes'),
