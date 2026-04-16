@@ -21,7 +21,6 @@ import { NativeModules, Platform, useColorScheme } from 'react-native';
 import { isAuthenticated as isOktaAuthenticated, EventEmitter, getAccessToken } from '@okta/okta-react-native';
 
 export const App = (): JSX.Element => {
-    // const [theme, setTheme] = useState<ThemeType>('light');
     const [language, setLanguage] = useState('en');
     const [isAuthenticated, setAuthenticated] = useState<AppContextType['isAuthenticated']>(false);
     const [loginData, setLoginData] = useState<AppContextType['loginData']>({
