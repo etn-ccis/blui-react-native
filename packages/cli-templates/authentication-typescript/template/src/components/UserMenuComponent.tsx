@@ -62,21 +62,18 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
         try {
             await signOut();
         } catch (signOutError) {
-            // eslint-disable-next-line no-console
             console.error('Sign out from Okta failed:', signOutError);
         }
 
         try {
             await revokeAccessToken();
         } catch (revokeError) {
-            // eslint-disable-next-line no-console
             console.error('Token revocation failed:', revokeError);
         }
 
         try {
             await clearTokens();
         } catch (clearError) {
-            // eslint-disable-next-line no-console
             console.error('Clear tokens failed:', clearError);
         }
 

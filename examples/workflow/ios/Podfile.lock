@@ -1957,7 +1957,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNGestureHandler (2.30.1):
+  - RNGestureHandler (2.31.1):
     - hermes-engine
     - RCTRequired
     - RCTTypeSafety
@@ -2601,7 +2601,7 @@ SPEC CHECKSUMS:
   ReactNativeDependencies: 2948f7d9b235f2fd863bf2cbcf702c21d12d9e60
   RNBLUIVectorIcons: d6857530e2ab2565206d9d49ef4a64ad6ac5bbae
   RNCMaskedView: d2578d41c59b936db122b2798ba37e4722d21035
-  RNGestureHandler: 695faf9c1f0aa1a6d52ab778e459a1bcbae3153b
+  RNGestureHandler: b633cb9b819ffb23661496af13bd6943d66f093c
   RNReanimated: 923eb30d50cea473eed734767d4c33c374fae5fc
   RNScreens: 6cb648bdad8fe9bee9259fe144df95b6d1d5b707
   RNSVG: c69f7709226108f5eb89b5aa8833c17a36345468

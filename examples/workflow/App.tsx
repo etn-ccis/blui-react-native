@@ -6,7 +6,7 @@
  This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
  **/
 import 'react-native-gesture-handler';
-import React, { useEffect, useState } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import { Provider as ThemeProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { MainRouter } from './src/navigation';
@@ -17,11 +17,10 @@ import { I18nextProvider, useTranslation } from 'react-i18next';
 import { AppContext, AppContextType } from './src/contexts/AppContextProvider';
 import { Spinner } from '@brightlayer-ui/react-native-auth-workflow';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { NativeModules, Platform } from 'react-native';
+import { NativeModules, Platform, useColorScheme } from 'react-native';
 import { isAuthenticated as isOktaAuthenticated, EventEmitter, getAccessToken } from '@okta/okta-react-native';
 
 export const App = (): JSX.Element => {
-    const [theme, setTheme] = useState<ThemeType>('light');
     const [language, setLanguage] = useState('en');
     const [isAuthenticated, setAuthenticated] = useState<AppContextType['isAuthenticated']>(false);
     const [loginData, setLoginData] = useState<AppContextType['loginData']>({
@@ -96,10 +95,33 @@ export const App = (): JSX.Element => {
         // eslint-disable-next-line
         initialize();
     }, []);
+
+    // Get the device's current color scheme ('light' | 'dark' | null)
+    const deviceColorScheme = useColorScheme();
+
+    // Initialize theme state based on device preference
+    const [theme, setThemeState] = useState<ThemeType>(deviceColorScheme === 'dark' ? 'dark' : 'light');
+
+    // Track whether to follow system theme or use manual override
+    const [followSystem, setFollowSystem] = useState(true);
+
+    // When user manually sets theme, stop following system preference
+    const setTheme = (newTheme: ThemeType): void => {
+        setFollowSystem(false);
+        setThemeState(newTheme);
+    };
+
+    // Sync with device theme when followSystem is enabled and device scheme changes
+    useEffect(() => {
+        if (followSystem) {
+            setThemeState(deviceColorScheme === 'dark' ? 'dark' : 'light');
+        }
+    }, [deviceColorScheme, followSystem]);
+
     return isLoading ? (
         <Spinner visible={isLoading} />
     ) : (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
+        <ThemeContext.Provider value={{ theme, setTheme, followSystem, setFollowSystem }}>
             <I18nextProvider i18n={i18nAppInstance}>
                 <AppContext.Provider
                     value={{
