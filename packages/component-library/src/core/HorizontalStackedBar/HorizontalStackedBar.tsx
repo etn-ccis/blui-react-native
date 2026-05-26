@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import {
     Animated,
     LayoutChangeEvent,
+    Platform,
     StyleProp,
     StyleSheet,
     TouchableWithoutFeedback,
@@ -194,13 +195,18 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
         info: theme.colors.primaryNonText,
     };
 
-    const selectedBarStyle: ViewStyle = {
-        shadowColor: theme.colors.neutralOutlinedContainerOutline,
-        shadowOffset: { width: 0, height: 0.5 },
-        shadowOpacity: 0.7,
-        shadowRadius: 3,
-        elevation: 1,
-    };
+    const selectedBarStyle: ViewStyle = Platform.select({
+        ios: {
+            shadowColor: theme.colors.neutralOutlinedContainerOutline,
+            shadowOffset: { width: 0, height: 0.5 },
+            shadowOpacity: 0.6,
+            shadowRadius: 4,
+        },
+        default: {
+            shadowColor: theme.colors.shadow,
+            elevation: 4,
+        },
+    });
 
     const handleSelectionChange = useCallback(
         (item: HorizontalStackedBarItem): void => {
