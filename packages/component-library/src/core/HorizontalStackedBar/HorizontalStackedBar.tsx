@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
     Animated,
     LayoutChangeEvent,
@@ -185,6 +185,26 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
     const totalGapWidth = Math.max(0, (visibleItems.length - 1) * BAR_GAP);
     const availableWidth = Math.max(0, containerWidth - totalGapWidth);
 
+    // Two-pass width calculation to prevent MIN_BAR_WIDTH overflow:
+    // Pass 1: identify segments that need clamping to MIN_BAR_WIDTH
+    // Pass 2: distribute remaining width proportionally among unclamped segments
+    const barWidths = useMemo((): number[] => {
+        if (totalCount === 0 || visibleItems.length === 0 || availableWidth <= 0) return [];
+
+        const rawWidths = visibleItems.map((item) => (item.count / totalCount) * availableWidth);
+        const clamped = rawWidths.map((w) => w < MIN_BAR_WIDTH);
+        const clampedCount = clamped.filter(Boolean).length;
+        const clampedTotal = clampedCount * MIN_BAR_WIDTH;
+        const unclampedRawTotal = rawWidths.reduce((sum, w, i) => (clamped[i] ? sum : sum + w), 0);
+        const remainingWidth = availableWidth - clampedTotal;
+
+        return rawWidths.map((w, i) => {
+            if (clamped[i]) return MIN_BAR_WIDTH;
+            if (unclampedRawTotal === 0) return remainingWidth / (visibleItems.length - clampedCount);
+            return (w / unclampedRawTotal) * remainingWidth;
+        });
+    }, [totalCount, visibleItems, availableWidth]);
+
     const defaultStyles = makeStyles();
 
     const variantColors: Record<string, string> = {
@@ -250,14 +270,13 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
                 )}
                 {containerWidth > 0 &&
                     totalCount > 0 &&
-                    visibleItems.map((item) => {
-                        const rawWidth = (item.count / totalCount) * availableWidth;
-                        const barWidth = Math.max(MIN_BAR_WIDTH, rawWidth);
+                    visibleItems.map((item, index) => {
+                        const barWidth = barWidths[index] ?? MIN_BAR_WIDTH;
                         const barColor =
                             item.backgroundColor || (item.variant ? variantColors[item.variant] : undefined);
                         return (
                             <AnimatedBar
-                                key={item.label}
+                                key={`${item.label}-${index}`}
                                 width={barWidth}
                                 color={barColor}
                                 isSelected={selectedStatus === item.label}
