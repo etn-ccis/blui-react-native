@@ -1,6 +1,13 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
     "paths": {
       "@brightlayer-ui/react-native-components": [
         "./watchPackages/@brightlayer-ui/react-native-components"

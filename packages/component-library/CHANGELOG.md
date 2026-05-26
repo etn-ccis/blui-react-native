@@ -1,5 +1,11 @@
 # Change Log
 
+## v9.3.0 (Unreleased)
+
+### Added
+
+- Added Horizontal Stacked Bar component.
+
 ## v9.2.1 (March 25, 2026)
 
 ### Changed

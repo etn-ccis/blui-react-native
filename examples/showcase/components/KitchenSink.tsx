@@ -55,6 +55,7 @@ import {
 import BLUIIcon from '@brightlayer-ui/react-native-vector-icons';
 import { ScoreCardExample } from './ScoreCardExample';
 import { MobileStepperExample } from './MobileStepperExample';
+import { HorizontalStackedBarExample } from './HorizontalStackedBarExample';
 import * as BLUIColors from '@brightlayer-ui/colors';
 import { TextFieldExample } from './TextInputExample';
 import { useExtendedTheme } from '@brightlayer-ui/react-native-themes';
@@ -226,6 +227,7 @@ export const KitchenSink: React.FC = (): JSX.Element => {
       <Text variant="titleLarge" style={{ marginVertical: 48 }}>
         MD3 BLUI Components
       </Text>
+      <HorizontalStackedBarExample />
       <AutoCompleteExample />
       <Card style={styles.card}>
         <Card.Title title="Segmented Buttons" />
