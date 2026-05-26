@@ -21,6 +21,11 @@ const ANIMATION_DURATION = 300;
 const BAR_HIT_SLOP = { top: 8, bottom: 8, left: 0, right: 0 };
 
 export type HorizontalStackedBarItem = {
+    /** Optional stable unique identifier for selection and React key.
+     * Falls back to `label` if not provided.
+     */
+    id?: string;
+
     /** The label of the item */
     label: string;
 
@@ -228,16 +233,19 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
         },
     });
 
+    const getItemId = useCallback((item: HorizontalStackedBarItem): string => item.id ?? item.label, []);
+
     const handleSelectionChange = useCallback(
         (item: HorizontalStackedBarItem): void => {
+            const itemId = getItemId(item);
             const current = selectedStatusRef.current;
-            const newSelection = current !== item.label ? item.label : '';
+            const newSelection = current !== itemId ? itemId : '';
             if (!isControlled) {
                 setInternalSelectedStatus(newSelection);
             }
             onChange?.(newSelection ? item : undefined);
         },
-        [isControlled, onChange]
+        [isControlled, onChange, getItemId]
     );
 
     const handleLayout = useCallback((event: LayoutChangeEvent): void => {
@@ -271,19 +279,20 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
                 {containerWidth > 0 &&
                     totalCount > 0 &&
                     visibleItems.map((item, index) => {
+                        const itemId = getItemId(item);
                         const barWidth = barWidths[index] ?? MIN_BAR_WIDTH;
                         const barColor =
                             item.backgroundColor || (item.variant ? variantColors[item.variant] : undefined);
                         return (
                             <AnimatedBar
-                                key={`${item.label}-${index}`}
+                                key={itemId}
                                 width={barWidth}
                                 color={barColor}
-                                isSelected={selectedStatus === item.label}
+                                isSelected={selectedStatus === itemId}
                                 onPress={(): void => handleSelectionChange(item)}
                                 barStyle={styles.bar}
                                 selectedBarStyle={selectedBarStyle}
-                                testID={`blui-horizontal-bar-${item.label}`}
+                                testID={`blui-horizontal-bar-${itemId}`}
                             />
                         );
                     })}
