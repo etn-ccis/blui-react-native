@@ -66,14 +66,14 @@ describe('HorizontalStackedBar', () => {
     });
 
     it('should render bars after layout event', () => {
-        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        let testRenderer!: TestRenderer.ReactTestRenderer;
         act(() => {
             testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} />);
         });
-        simulateLayout(testRenderer!);
-        const touchables = testRenderer!.root.findAllByType(TouchableWithoutFeedback);
+        simulateLayout(testRenderer);
+        const touchables = testRenderer.root.findAllByType(TouchableWithoutFeedback);
         expect(touchables).toHaveLength(3);
-        testRenderer!.unmount();
+        testRenderer.unmount();
     });
 
     it('should only render bars for non-zero count items', () => {
@@ -82,31 +82,31 @@ describe('HorizontalStackedBar', () => {
             { label: 'Success', count: 0, variant: 'success' },
             { label: 'Pending', count: 20, variant: 'pending' },
         ];
-        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        let testRenderer!: TestRenderer.ReactTestRenderer;
         act(() => {
             testRenderer = TestRenderer.create(<HorizontalStackedBar data={dataWithZero} />);
         });
-        simulateLayout(testRenderer!);
-        const touchables = testRenderer!.root.findAllByType(TouchableWithoutFeedback);
+        simulateLayout(testRenderer);
+        const touchables = testRenderer.root.findAllByType(TouchableWithoutFeedback);
         expect(touchables).toHaveLength(2);
-        testRenderer!.unmount();
+        testRenderer.unmount();
     });
 
     it('should render a disabled bar when all counts are zero', () => {
-        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        let testRenderer!: TestRenderer.ReactTestRenderer;
         act(() => {
             testRenderer = TestRenderer.create(<HorizontalStackedBar data={allZeroData} />);
         });
-        simulateLayout(testRenderer!);
+        simulateLayout(testRenderer);
 
-        const disabledBar = testRenderer!.root.findByProps({ testID: 'blui-horizontal-bar-disabled' });
+        const disabledBar = testRenderer.root.findByProps({ testID: 'blui-horizontal-bar-disabled' });
         expect(disabledBar).toBeTruthy();
 
         // No interactive bars should be rendered
-        const touchables = testRenderer!.root.findAllByType(TouchableWithoutFeedback);
+        const touchables = testRenderer.root.findAllByType(TouchableWithoutFeedback);
         expect(touchables).toHaveLength(0);
 
-        testRenderer!.unmount();
+        testRenderer.unmount();
     });
 
     it('should handle empty data array', () => {
@@ -134,50 +134,50 @@ describe('HorizontalStackedBar', () => {
 
     it('should use custom backgroundColor when provided', () => {
         const customData: HorizontalStackedBarItem[] = [{ label: 'Custom', count: 50, backgroundColor: '#FF0000' }];
-        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        let testRenderer!: TestRenderer.ReactTestRenderer;
         act(() => {
             testRenderer = TestRenderer.create(<HorizontalStackedBar data={customData} />);
         });
-        simulateLayout(testRenderer!);
+        simulateLayout(testRenderer);
         // Verify the bar renders with the correct testID
-        const touchable = testRenderer!.root.findByProps({ testID: 'blui-horizontal-bar-Custom' });
+        const touchable = testRenderer.root.findByProps({ testID: 'blui-horizontal-bar-Custom' });
         expect(touchable).toBeTruthy();
-        testRenderer!.unmount();
+        testRenderer.unmount();
     });
 
     it('should call onChange with item when a bar is pressed (controlled)', () => {
         const onChangeMock = jest.fn();
-        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        let testRenderer!: TestRenderer.ReactTestRenderer;
         act(() => {
             testRenderer = TestRenderer.create(
                 <HorizontalStackedBar data={sampleData} selectedStatus="" onChange={onChangeMock} />
             );
         });
-        simulateLayout(testRenderer!);
-        const firstBar = testRenderer!.root.findByProps({ testID: 'blui-horizontal-bar-Failed' });
+        simulateLayout(testRenderer);
+        const firstBar = testRenderer.root.findByProps({ testID: 'blui-horizontal-bar-Failed' });
         act(() => {
             firstBar.props.onPress();
         });
         expect(onChangeMock).toHaveBeenCalledTimes(1);
         expect(onChangeMock).toHaveBeenCalledWith(sampleData[0]);
-        testRenderer!.unmount();
+        testRenderer.unmount();
     });
 
     it('should call onChange with undefined when deselecting (controlled)', () => {
         const onChangeMock = jest.fn();
-        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        let testRenderer!: TestRenderer.ReactTestRenderer;
         act(() => {
             testRenderer = TestRenderer.create(
                 <HorizontalStackedBar data={sampleData} selectedStatus="Failed" onChange={onChangeMock} />
             );
         });
-        simulateLayout(testRenderer!);
-        const firstBar = testRenderer!.root.findByProps({ testID: 'blui-horizontal-bar-Failed' });
+        simulateLayout(testRenderer);
+        const firstBar = testRenderer.root.findByProps({ testID: 'blui-horizontal-bar-Failed' });
         act(() => {
             firstBar.props.onPress();
         });
         expect(onChangeMock).toHaveBeenCalledWith(undefined);
-        testRenderer!.unmount();
+        testRenderer.unmount();
     });
 
     it('should forward ViewProps', () => {
