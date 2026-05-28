@@ -12,6 +12,8 @@ import {
 } from 'react-native';
 import { $DeepPartial } from '@callstack/react-theme-provider';
 import { ExtendedTheme, useExtendedTheme } from '@brightlayer-ui/react-native-themes';
+import { IconSource } from '../__types__';
+import { HorizontalStackedBarLegend } from './HorizontalStackedBarLegend';
 
 const BAR_GAP = 2;
 const MIN_BAR_WIDTH = 4;
@@ -31,6 +33,12 @@ export type HorizontalStackedBarItem = {
 
     /** Background color for the bar segment. Must not be used together with `variant`. */
     backgroundColor?: string;
+
+    /** Optional icon to render in the legend when the item is active. */
+    icon?: IconSource | null;
+
+    /** Optional icon to render in the legend when the item is disabled. */
+    disabledIcon?: IconSource | null;
 
     /** The count / value to display */
     count: number;
@@ -81,9 +89,17 @@ export type HorizontalStackedBarProps = ViewProps & {
     /** Theme value overrides specific to this component */
     theme?: $DeepPartial<ExtendedTheme>;
 
+    /** Controls whether legends are rendered above the bars. */
+    showLegends?: boolean;
+
+    /** When true, legend items with count of 0 are hidden. */
+    hideEmptyCategories?: boolean;
+
     /** Style overrides for internal elements */
     styles?: {
         root?: StyleProp<ViewStyle>;
+        legendContainer?: StyleProp<ViewStyle>;
+        legendItem?: StyleProp<ViewStyle>;
         barContainer?: StyleProp<ViewStyle>;
         bar?: StyleProp<ViewStyle>;
     };
@@ -170,7 +186,16 @@ const makeStyles = (): StyleSheet.NamedStyles<{
  */
 export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props) => {
     const theme = useExtendedTheme(props.theme);
-    const { data, onChange, selectedStatus: controlledSelectedStatus, style, styles = {}, ...viewProps } = props;
+    const {
+        data,
+        onChange,
+        selectedStatus: controlledSelectedStatus,
+        showLegends = true,
+        hideEmptyCategories = false,
+        style,
+        styles = {},
+        ...viewProps
+    } = props;
 
     if (__DEV__) {
         validateBarItems(data);
@@ -235,6 +260,12 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
 
     const getItemId = useCallback((item: HorizontalStackedBarItem): string => item.id ?? item.label, []);
 
+    const getItemColor = useCallback(
+        (item: HorizontalStackedBarItem): string | undefined =>
+            item.backgroundColor || (item.variant ? variantColors[item.variant] : undefined),
+        [variantColors]
+    );
+
     const handleSelectionChange = useCallback(
         (item: HorizontalStackedBarItem): void => {
             const itemId = getItemId(item);
@@ -252,12 +283,49 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
         setContainerWidth(event.nativeEvent.layout.width);
     }, []);
 
+    const legendItems = useMemo(
+        () =>
+            data
+                .filter((item) => !hideEmptyCategories || item.count > 0)
+                .map((item) => ({
+                    id: getItemId(item),
+                    label: item.label,
+                    count: item.count,
+                    color: getItemColor(item) || theme.colors.neutralOutlinedContainerOutline,
+                    variant: item.variant,
+                    icon: item.icon,
+                    disabledIcon: item.disabledIcon,
+                })),
+        [data, getItemColor, getItemId, hideEmptyCategories, theme.colors.neutralOutlinedContainerOutline]
+    );
+
+    const handleLegendSelect = useCallback(
+        (itemId: string): void => {
+            const selectedItem = data.find((item) => getItemId(item) === itemId);
+            if (!selectedItem || selectedItem.count === 0) return;
+            handleSelectionChange(selectedItem);
+        },
+        [data, getItemId, handleSelectionChange]
+    );
+
     return (
         <View
             style={[defaultStyles.root, styles.root, style]}
             testID={'blui-horizontal-stacked-bar-root'}
             {...viewProps}
         >
+            {showLegends ? (
+                <HorizontalStackedBarLegend
+                    data={legendItems}
+                    selectedStatus={selectedStatus}
+                    onSelect={handleLegendSelect}
+                    styles={{
+                        legendContainer: styles.legendContainer,
+                        legendItem: styles.legendItem,
+                    }}
+                    theme={theme}
+                />
+            ) : null}
             <View
                 style={[defaultStyles.barContainer, styles.barContainer]}
                 onLayout={handleLayout}
@@ -281,8 +349,7 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
                     visibleItems.map((item, index) => {
                         const itemId = getItemId(item);
                         const barWidth = barWidths[index] ?? MIN_BAR_WIDTH;
-                        const barColor =
-                            item.backgroundColor || (item.variant ? variantColors[item.variant] : undefined);
+                        const barColor = getItemColor(item);
                         return (
                             <AnimatedBar
                                 key={itemId}

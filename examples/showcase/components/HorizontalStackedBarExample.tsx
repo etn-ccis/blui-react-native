@@ -5,6 +5,7 @@ import {
   HorizontalStackedBarItem,
 } from '@brightlayer-ui/react-native-components';
 import { Card, Divider, Text, useTheme } from 'react-native-paper';
+import Icons from '@brightlayer-ui/react-native-vector-icons';
 
 // --- Data sets ---
 
@@ -45,6 +46,51 @@ const withZerosData: HorizontalStackedBarItem[] = [
   { label: 'Partial', count: 20, variant: 'info' },
   { label: 'None', count: 0, variant: 'pending' },
   { label: 'Some', count: 10, variant: 'canceled' },
+];
+
+const customLegendIconsData: HorizontalStackedBarItem[] = [
+  {
+    label: 'Failed',
+    count: 8,
+    variant: 'failed',
+    icon: { family: 'material-community', name: 'fire-alert' },
+  },
+  {
+    label: 'Success',
+    count: 48,
+    variant: 'success',
+    icon: { family: 'material-community', name: 'shield-check' },
+  },
+  {
+    label: 'Pending',
+    count: 0,
+    variant: 'pending',
+    icon: { family: 'material-community', name: 'clock-outline' },
+  },
+  {
+    label: 'Info',
+    count: 12,
+    variant: 'info',
+    icon: ({ size, color }) => (
+      <Icons name="switch" size={size} color={color} />
+    ),
+  },
+  {
+    label: 'Canceled',
+    count: 6,
+    variant: 'canceled',
+    icon: ({ size, color }) => (
+      <Icons name="cloud_off_filled" size={size} color={color} />
+    ),
+  },
+];
+
+const hiddenLegendIconsData: HorizontalStackedBarItem[] = [
+  { label: 'Failed', count: 8, variant: 'failed', icon: null },
+  { label: 'Success', count: 48, variant: 'success', icon: null },
+  { label: 'Pending', count: 18, variant: 'pending', icon: null },
+  { label: 'Info', count: 12, variant: 'info', icon: null },
+  { label: 'Canceled', count: 6, variant: 'canceled', icon: null },
 ];
 
 const twoItemData: HorizontalStackedBarItem[] = [
@@ -117,56 +163,70 @@ export const HorizontalStackedBarExample: React.FC = () => {
 
         <Divider />
 
-        {/* 2. Custom Colors */}
+        {/* 2. Custom Legend Icons */}
+        <Section title="Custom Legend Icons (icon only)">
+          <HorizontalStackedBar data={customLegendIconsData} />
+        </Section>
+
+        <Divider />
+
+        {/* 3. Hide Legend Icons */}
+        <Section title="Hide Legend Icons (icon: null)">
+          <HorizontalStackedBar data={hiddenLegendIconsData} />
+        </Section>
+
+        <Divider />
+
+        {/* 4. Custom Colors */}
         <Section title="Custom Colors">
           <HorizontalStackedBar data={customColorData} />
         </Section>
 
         <Divider />
 
-        {/* 3. Two Items (Pass/Fail) */}
+        {/* 5. Two Items (Pass/Fail) */}
         <Section title="Two Items (Pass / Fail)">
           <HorizontalStackedBar data={twoItemData} />
         </Section>
 
         <Divider />
 
-        {/* 4. Equal Distribution */}
+        {/* 6. Equal Distribution */}
         <Section title="Equal Distribution">
           <HorizontalStackedBar data={equalDistributionData} />
         </Section>
 
         <Divider />
 
-        {/* 5. Single Item */}
+        {/* 7. Single Item */}
         <Section title="Single Item">
           <HorizontalStackedBar data={singleItemData} />
         </Section>
 
         <Divider />
 
-        {/* 6. Dominant Item (min-width test) */}
+        {/* 8. Dominant Item (min-width test) */}
         <Section title="Dominant Item (min-width for small segments)">
           <HorizontalStackedBar data={dominantItemData} />
         </Section>
 
         <Divider />
 
-        {/* 7. With Zero Counts (hidden segments) */}
+        {/* 9. With Zero Counts (hidden segments) */}
         <Section title="With Zero Counts (0-count segments hidden)">
           <HorizontalStackedBar data={withZerosData} />
         </Section>
 
         <Divider />
 
-        {/* 8. Uncontrolled (no selectedStatus prop) */}
+        {/* 10. Uncontrolled (no selectedStatus prop) */}
         <Section title="Uncontrolled Selection">
           <HorizontalStackedBar data={variantData} onChange={(): void => {}} />
         </Section>
 
         <Divider />
 
-        {/* 9. Custom Bar Style Override */}
+        {/* 11. Custom Bar Style Override */}
         <Section title="Custom Style Override (rounded bars)">
           <HorizontalStackedBar
             data={twoItemData}
@@ -176,7 +236,7 @@ export const HorizontalStackedBarExample: React.FC = () => {
 
         <Divider />
 
-        {/* 10. All Zero Counts (disabled bar) */}
+        {/* 12. All Zero Counts (disabled bar) */}
         <Section title="All Zero Counts (disabled)">
           <HorizontalStackedBar data={allZeroData} />
         </Section>
