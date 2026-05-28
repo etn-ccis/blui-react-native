@@ -54,7 +54,6 @@ const makeLegendStyles = (): StyleSheet.NamedStyles<{
             paddingHorizontal: 8,
             paddingVertical: 6,
             marginRight: 6,
-            borderColor: 'transparent',
         },
         legendItemDisabled: {
             opacity: 0.5,
