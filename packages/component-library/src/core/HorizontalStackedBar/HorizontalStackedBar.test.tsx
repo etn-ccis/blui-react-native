@@ -1,7 +1,8 @@
 import React from 'react';
 import { HorizontalStackedBar, HorizontalStackedBarItem } from '.';
 import TestRenderer, { act } from 'react-test-renderer';
-import { TouchableWithoutFeedback } from 'react-native';
+import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import { Icon } from '../Icon';
 
 const sampleData: HorizontalStackedBarItem[] = [
     { label: 'Failed', count: 10, variant: 'failed' },
@@ -52,6 +53,74 @@ describe('HorizontalStackedBar', () => {
         });
         const container = testRenderer!.root.findByProps({ testID: 'blui-horizontal-stacked-bar-container' });
         expect(container).toBeTruthy();
+        testRenderer!.unmount();
+    });
+
+    it('should render swipeable legend container', () => {
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} />);
+        });
+        const legendScroll = testRenderer!.root.findByProps({ testID: 'blui-horizontal-stacked-bar-legend-scroll' });
+        expect(legendScroll).toBeTruthy();
+        testRenderer!.unmount();
+    });
+
+    it('should render a legend item for each data item', () => {
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} />);
+        });
+        const legends = testRenderer!.root.findAllByType(TouchableOpacity);
+        expect(legends).toHaveLength(3);
+        testRenderer!.unmount();
+    });
+
+    it('should show zero-count legend items by default', () => {
+        const dataWithZero: HorizontalStackedBarItem[] = [
+            { label: 'Failed', count: 10, variant: 'failed' },
+            { label: 'Pending', count: 0, variant: 'pending' },
+        ];
+        let testRenderer!: TestRenderer.ReactTestRenderer;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={dataWithZero} />);
+        });
+        const legends = testRenderer.root.findAllByType(TouchableOpacity);
+        expect(legends).toHaveLength(2);
+        testRenderer.unmount();
+    });
+
+    it('should hide zero-count legend items when hideEmptyCategories is true', () => {
+        const dataWithZero: HorizontalStackedBarItem[] = [
+            { label: 'Failed', count: 10, variant: 'failed' },
+            { label: 'Pending', count: 0, variant: 'pending' },
+        ];
+        let testRenderer!: TestRenderer.ReactTestRenderer;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={dataWithZero} hideEmptyCategories />);
+        });
+        const legends = testRenderer.root.findAllByType(TouchableOpacity);
+        expect(legends).toHaveLength(1);
+        expect(() => testRenderer.root.findByProps({ testID: 'blui-horizontal-legend-Pending' })).toThrow();
+        testRenderer.unmount();
+    });
+
+    it('should render an icon for each legend item', () => {
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} />);
+        });
+        const icons = testRenderer!.root.findAllByType(Icon);
+        expect(icons).toHaveLength(3);
+        testRenderer!.unmount();
+    });
+
+    it('should hide legends when showLegends is false', () => {
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} showLegends={false} />);
+        });
+        expect(() => testRenderer!.root.findByProps({ testID: 'blui-horizontal-stacked-bar-legend-scroll' })).toThrow();
         testRenderer!.unmount();
     });
 
@@ -177,6 +246,78 @@ describe('HorizontalStackedBar', () => {
             firstBar.props.onPress();
         });
         expect(onChangeMock).toHaveBeenCalledWith(undefined);
+        testRenderer.unmount();
+    });
+
+    it('should call onChange when a legend is pressed', () => {
+        const onChangeMock = jest.fn();
+        let testRenderer!: TestRenderer.ReactTestRenderer;
+        act(() => {
+            testRenderer = TestRenderer.create(
+                <HorizontalStackedBar data={sampleData} selectedStatus="" onChange={onChangeMock} />
+            );
+        });
+        const legend = testRenderer.root.findByProps({ testID: 'blui-horizontal-legend-Failed' });
+        act(() => {
+            legend.props.onPress();
+        });
+        expect(onChangeMock).toHaveBeenCalledWith(sampleData[0]);
+        testRenderer.unmount();
+    });
+
+    it('should allow custom legend icons per item', () => {
+        const customIconData: HorizontalStackedBarItem[] = [
+            { label: 'Failed', count: 10, variant: 'failed', icon: '★' },
+            { label: 'Success', count: 10, variant: 'success', icon: { family: 'material-community', name: 'heart' } },
+        ];
+        let testRenderer!: TestRenderer.ReactTestRenderer;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={customIconData} />);
+        });
+        const icons = testRenderer.root.findAllByType(Icon);
+        expect(icons).toHaveLength(2);
+        testRenderer.unmount();
+    });
+
+    it('should allow skipping legend icons by passing null', () => {
+        const noIconData: HorizontalStackedBarItem[] = [
+            { label: 'Failed', count: 10, variant: 'failed', icon: null },
+            { label: 'Success', count: 10, variant: 'success', icon: null },
+        ];
+        let testRenderer!: TestRenderer.ReactTestRenderer;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={noIconData} />);
+        });
+        const icons = testRenderer.root.findAllByType(Icon);
+        expect(icons).toHaveLength(0);
+        testRenderer.unmount();
+    });
+
+    it('should render pending legend with three-dot icon', () => {
+        let testRenderer!: TestRenderer.ReactTestRenderer;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} />);
+        });
+        const icons = testRenderer.root.findAllByType(Icon);
+        expect(icons.length).toBeGreaterThan(0);
+        testRenderer.unmount();
+    });
+
+    it('should not call onChange when a zero-count legend is pressed', () => {
+        const onChangeMock = jest.fn();
+        const dataWithZero: HorizontalStackedBarItem[] = [
+            { label: 'Failed', count: 10, variant: 'failed' },
+            { label: 'Pending', count: 0, variant: 'pending' },
+        ];
+        let testRenderer!: TestRenderer.ReactTestRenderer;
+        act(() => {
+            testRenderer = TestRenderer.create(
+                <HorizontalStackedBar data={dataWithZero} selectedStatus="" onChange={onChangeMock} />
+            );
+        });
+        const legend = testRenderer.root.findByProps({ testID: 'blui-horizontal-legend-Pending' });
+        expect(legend.props.disabled).toBe(true);
+        expect(onChangeMock).not.toHaveBeenCalled();
         testRenderer.unmount();
     });
 
