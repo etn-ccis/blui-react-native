@@ -79,6 +79,11 @@ input[type='number'] {
 }
 
 @font-face {
+    src: url(/MaterialDesignIcons.ttf);
+    font-family: 'MaterialDesignIcons';
+}
+
+@font-face {
     src: url(/OpenSans-Bold.ttf);
     font-family: 'OpenSans-Bold';
 }
