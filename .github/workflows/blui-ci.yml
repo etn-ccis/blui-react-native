@@ -236,7 +236,7 @@ jobs:
       needs: [prettier_lint, build_component_library]
       strategy:
           matrix:
-              node-version: [20.x]
+              node-version: [22.x]
       env:
           base-href: ${{ github.ref == 'refs/heads/master' && '/react-native/' || '/react-native-dev/' }}
         
