@@ -95,6 +95,12 @@ export type HorizontalStackedBarProps = ViewProps & {
     /** When true, legend items with count of 0 are hidden. */
     hideEmptyCategories?: boolean;
 
+    /** When true, legends are horizontally scrollable/swipable.
+     * When false (default), legends wrap to new line with equal spacing.
+     * @default false
+     */
+    legendScrollable?: boolean;
+
     /** Style overrides for internal elements */
     styles?: {
         root?: StyleProp<ViewStyle>;
@@ -192,6 +198,7 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
         selectedStatus: controlledSelectedStatus,
         showLegends = true,
         hideEmptyCategories = false,
+        legendScrollable = false,
         style,
         styles = {},
         ...viewProps
@@ -238,11 +245,11 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
     const defaultStyles = makeStyles();
 
     const variantColors: Record<string, string> = {
-        failed: theme.colors.errorNonText,
-        canceled: theme.colors.warningContainer,
-        success: theme.colors.successNonText,
-        pending: theme.colors.neutralFilledContainer,
-        info: theme.colors.primaryNonText,
+        failed: theme.colors.errorNonText, //@todo: check for correct token once available
+        canceled: theme.colors.warningContainer, //@todo: check for correct token once available
+        success: theme.colors.successNonText, //@todo: check for correct token once available
+        pending: theme.colors.neutralFilledContainer, //@todo: check for correct token once available
+        info: theme.colors.primaryNonText, //@todo: check for correct token once available
     };
 
     const selectedBarStyle: ViewStyle = Platform.select({
@@ -324,6 +331,7 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
                         legendItem: styles.legendItem,
                     }}
                     theme={theme}
+                    scrollable={legendScrollable}
                 />
             ) : null}
             <View
