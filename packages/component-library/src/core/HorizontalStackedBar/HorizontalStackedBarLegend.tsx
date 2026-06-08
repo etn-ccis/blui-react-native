@@ -1,5 +1,14 @@
-import React from 'react';
-import { ScrollView, StyleProp, StyleSheet, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import React, { useCallback, useRef, useState } from 'react';
+import {
+    LayoutChangeEvent,
+    ScrollView,
+    StyleProp,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+    ViewStyle,
+} from 'react-native';
 import { ExtendedTheme } from '@brightlayer-ui/react-native-themes';
 import { Icon } from '../Icon';
 import { IconSource } from '../__types__';
@@ -26,11 +35,19 @@ type HorizontalStackedBarLegendProps = {
         legendItem?: StyleProp<ViewStyle>;
     };
     theme: ExtendedTheme;
+    /** When true, legends are horizontally scrollable. When false (default), legends wrap to new line. */
+    scrollable?: boolean;
 };
 
-const makeLegendStyles = (): StyleSheet.NamedStyles<{
+const LEGEND_COLUMN_GAP = 8;
+
+const makeLegendStyles = (
+    scrollable: boolean,
+    isMultiRow: boolean
+): StyleSheet.NamedStyles<{
     legendScroll: ViewStyle;
     legendContent: ViewStyle;
+    legendContentScrollable: ViewStyle;
     legendItem: ViewStyle;
     legendItemDisabled: ViewStyle;
     legendIcon: ViewStyle;
@@ -45,7 +62,13 @@ const makeLegendStyles = (): StyleSheet.NamedStyles<{
             flexDirection: 'row',
             alignItems: 'center',
             paddingVertical: 4,
-            paddingRight: 8,
+            flexWrap: scrollable ? 'nowrap' : 'wrap',
+            justifyContent: scrollable ? 'space-between' : isMultiRow ? 'flex-start' : 'space-between',
+            columnGap: LEGEND_COLUMN_GAP,
+            rowGap: scrollable ? 0 : 4,
+        },
+        legendContentScrollable: {
+            minWidth: '100%',
         },
         legendItem: {
             flexDirection: 'row',
@@ -53,7 +76,7 @@ const makeLegendStyles = (): StyleSheet.NamedStyles<{
             borderRadius: 4,
             paddingHorizontal: 8,
             paddingVertical: 6,
-            marginRight: 6,
+            marginRight: 0,
         },
         legendItemDisabled: {
             opacity: 0.5,
@@ -105,73 +128,128 @@ export const HorizontalStackedBarLegend: React.FC<HorizontalStackedBarLegendProp
     onSelect,
     styles = {},
     theme,
+    scrollable = false,
 }) => {
-    const legendStyles = makeLegendStyles();
+    // Refs collect measurements with zero re-renders. A single boolean state
+    // update fires once everything is measured, causing exactly one extra render.
+    const containerWidthRef = useRef(0);
+    const itemWidthsRef = useRef<number[]>([]);
+    const [layoutState, setLayoutState] = useState<{ isMultiRow: boolean; ready: boolean }>({
+        isMultiRow: false,
+        ready: scrollable,
+    });
+
+    const commitLayout = useCallback(() => {
+        const cw = containerWidthRef.current;
+        const widths = itemWidthsRef.current;
+        if (cw <= 0 || widths.filter(Boolean).length < data.length) return;
+        const totalWidth = widths.reduce((sum, w) => sum + w, 0) + Math.max(0, widths.length - 1) * LEGEND_COLUMN_GAP;
+        setLayoutState({ isMultiRow: totalWidth > cw, ready: true });
+    }, [data.length]);
+
+    const handleContainerLayout = useCallback(
+        (e: LayoutChangeEvent) => {
+            containerWidthRef.current = e.nativeEvent.layout.width;
+            commitLayout();
+        },
+        [commitLayout]
+    );
+
+    const handleItemLayout = useCallback(
+        (index: number, e: LayoutChangeEvent) => {
+            itemWidthsRef.current[index] = e.nativeEvent.layout.width;
+            commitLayout();
+        },
+        [commitLayout]
+    );
+
+    const selectedLightContentColor = BLUIColors?.primary?.[100] ?? theme.colors.onPrimary; //@todo: remove usage of BLUIColors in favor of theme tokens once they are available
+    const selectedCanceledLightModeColor = BLUIColors?.primary?.[0] ?? theme.colors.onSurface; //@todo: remove usage of BLUIColors in favor of theme tokens once they are available
+    const legendStyles = makeLegendStyles(scrollable, layoutState.isMultiRow);
+
+    const legendItems = data.map((item, index) => {
+        const isSelected = selectedStatus === item.id;
+        const isDisabled = item.count === 0;
+        const selectedContentColor =
+            item.variant === 'canceled' && !theme.dark ? selectedCanceledLightModeColor : selectedLightContentColor;
+        const iconColor = isSelected ? selectedContentColor : item.color;
+        const textColor = isSelected ? selectedContentColor : theme.colors.onSurface;
+        const iconSourceToRender = getLegendIconSource(item.variant, item.icon, item.disabledIcon, isDisabled);
+
+        return (
+            <TouchableOpacity
+                key={`legend-${item.id}`}
+                disabled={isDisabled}
+                activeOpacity={1}
+                onPress={(): void => onSelect(item.id)}
+                accessibilityRole={'button'}
+                testID={`blui-horizontal-legend-${item.id}`}
+                onLayout={(e): void => handleItemLayout(index, e)}
+                style={[
+                    legendStyles.legendItem,
+                    {
+                        backgroundColor: isSelected ? item.color : 'transparent',
+                        borderColor: isSelected ? item.color : theme.colors.neutralOutlinedContainerOutline,
+                    },
+                    isDisabled && legendStyles.legendItemDisabled,
+                    styles.legendItem,
+                ]}
+            >
+                {iconSourceToRender !== null && iconSourceToRender !== undefined ? (
+                    <View style={legendStyles.legendIcon}>
+                        <Icon source={iconSourceToRender} color={iconColor} size={18} />
+                    </View>
+                ) : null}
+                <View style={legendStyles.legendTextContainer}>
+                    <Text
+                        style={{
+                            color: textColor,
+                            fontSize: 12,
+                            fontWeight: '600',
+                        }}
+                    >
+                        {item.count}
+                    </Text>
+                    <Text
+                        style={{
+                            color: textColor,
+                            fontSize: 12,
+                            fontWeight: '400',
+                            marginLeft: 4,
+                        }}
+                    >
+                        {item.label}
+                    </Text>
+                </View>
+            </TouchableOpacity>
+        );
+    });
+
+    if (scrollable) {
+        return (
+            <ScrollView
+                horizontal
+                style={legendStyles.legendScroll}
+                contentContainerStyle={[
+                    legendStyles.legendContent,
+                    legendStyles.legendContentScrollable,
+                    styles.legendContainer,
+                ]}
+                showsHorizontalScrollIndicator={false}
+                testID={'blui-horizontal-stacked-bar-legend-scroll'}
+            >
+                {legendItems}
+            </ScrollView>
+        );
+    }
 
     return (
-        <ScrollView
-            horizontal
-            style={legendStyles.legendScroll}
-            contentContainerStyle={[legendStyles.legendContent, styles.legendContainer]}
-            showsHorizontalScrollIndicator={false}
-            testID={'blui-horizontal-stacked-bar-legend-scroll'}
+        <View
+            style={[legendStyles.legendScroll, styles.legendContainer, !layoutState.ready && { opacity: 0 }]}
+            testID={'blui-horizontal-stacked-bar-legend-wrap'}
+            onLayout={handleContainerLayout}
         >
-            {data.map((item) => {
-                const isSelected = selectedStatus === item.id;
-                const isDisabled = item.count === 0;
-                const selectedContentColor =
-                    item.variant === 'canceled' && !theme.dark ? BLUIColors.primary[0] : BLUIColors.primary[100];
-                const iconColor = isSelected ? selectedContentColor : item.color;
-                const textColor = isSelected ? selectedContentColor : theme.colors.onSurface;
-                const iconSourceToRender = getLegendIconSource(item.variant, item.icon, item.disabledIcon, isDisabled);
-
-                return (
-                    <TouchableOpacity
-                        key={`legend-${item.id}`}
-                        disabled={isDisabled}
-                        activeOpacity={1}
-                        onPress={(): void => onSelect(item.id)}
-                        accessibilityRole={'button'}
-                        testID={`blui-horizontal-legend-${item.id}`}
-                        style={[
-                            legendStyles.legendItem,
-                            {
-                                backgroundColor: isSelected ? item.color : 'transparent',
-                                borderColor: isSelected ? item.color : theme.colors.neutralOutlinedContainerOutline,
-                            },
-                            isDisabled && legendStyles.legendItemDisabled,
-                            styles.legendItem,
-                        ]}
-                    >
-                        {iconSourceToRender !== null && iconSourceToRender !== undefined ? (
-                            <View style={legendStyles.legendIcon}>
-                                <Icon source={iconSourceToRender} color={iconColor} size={18} />
-                            </View>
-                        ) : null}
-                        <View style={legendStyles.legendTextContainer}>
-                            <Text
-                                style={{
-                                    color: textColor,
-                                    fontSize: 12,
-                                    fontWeight: '600',
-                                }}
-                            >
-                                {item.count}
-                            </Text>
-                            <Text
-                                style={{
-                                    color: textColor,
-                                    fontSize: 12,
-                                    fontWeight: '400',
-                                    marginLeft: 4,
-                                }}
-                            >
-                                {item.label}
-                            </Text>
-                        </View>
-                    </TouchableOpacity>
-                );
-            })}
-        </ScrollView>
+            <View style={legendStyles.legendContent}>{legendItems}</View>
+        </View>
     );
 };
