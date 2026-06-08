@@ -122,4 +122,3 @@ node_modules
 # ignore watch package 
 
 /examples/**/watchPackages/
-/docs/watchPackages/

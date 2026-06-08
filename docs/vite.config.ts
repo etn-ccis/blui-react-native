@@ -7,7 +7,6 @@ import mdx from '@mdx-js/rollup';
 import remarkGfm from 'remark-gfm';
 import reactNativeWeb from 'vite-plugin-react-native-web';
 import prism from 'vite-plugin-prismjs';
-import path from 'path';
 
 export default defineConfig({
     plugins: [
@@ -27,15 +26,6 @@ export default defineConfig({
         }),
     ],
     cacheDir: '../node_modules/.vite/docs',
-
-    resolve: {
-        alias: {
-            '@brightlayer-ui/react-native-components': path.resolve(
-                __dirname,
-                './watchPackages/@brightlayer-ui/react-native-components'
-            ),
-        },
-    },
 
     server: {
         port: 4200,

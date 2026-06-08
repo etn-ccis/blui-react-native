@@ -778,10 +778,10 @@
     lodash.debounce "^4.0.8"
     lodash.groupby "^4.6.0"
 
-"@brightlayer-ui/react-native-components@^9.2.1":
-  version "9.2.1"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.2.1.tgz#2e5b983ac875cdd9e2425ced8adf94b18470a47b"
-  integrity sha512-AK8IUGNd1UvqJ1iVxIGg3KSiz20YD+ADpdVWrFf86GBfwuEjQEK0LK4P2XVE0cfF5RYmyI1WVNpPRBnyiCFF5Q==
+"@brightlayer-ui/react-native-components@^9.3.0-alpha.0":
+  version "9.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-components/-/react-native-components-9.3.0-alpha.0.tgz#4333c2c363e338ffc9085b3afcda2dd119162113"
+  integrity sha512-+4NzOl17atRqqjQrorTQJfUg8NH7y1U7T6X1BgGj0b3TIODJZSYpFNx/NVrt5U3YRa4Jf03eAHAV+yJ4LsMfOg==
   dependencies:
     "@brightlayer-ui/react-native-themes" "8.1.0"
     "@callstack/react-theme-provider" "^3.0.9"
