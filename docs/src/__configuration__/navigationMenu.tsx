@@ -63,6 +63,7 @@ import EmptyStateExamples from '../componentDocs/EmptyState/markdown/EmptyStateE
 import GradeExamples from '../componentDocs/Grade/markdown/GradeExamples.mdx';
 import HeaderExamples from '../componentDocs/Header/markdown/HeaderExamples.mdx';
 import HeroExamples from '../componentDocs/Hero/markdown/HeroExamples.mdx';
+import HorizontalStackedBarExamples from '../componentDocs/HorizontalStackedBar/markdown/HorizontalStackedBarExamples.mdx';
 import IconsExamples from '../componentDocs/Icons/markdown/IconsExamples.mdx';
 import IconSwitchExamples from '../componentDocs/IconSwitch/markdown/IconSwitchExamples.mdx';
 import InfoListItemExamples from '../componentDocs/InfoListItem/markdown/InfoListItemExamples.mdx';
@@ -91,6 +92,7 @@ import EmptyStateAPIDocs from '../componentDocs/EmptyState/markdown/EmptyStateAP
 import GradeAPIDocs from '../componentDocs/Grade/markdown/GradeAPIDocs.mdx';
 import HeaderAPIDocs from '../componentDocs/Header/markdown/HeaderAPIDocs.mdx';
 import HeroAPIDocs from '../componentDocs/Hero/markdown/HeroAPIDocs.mdx';
+import HorizontalStackedBarAPIDocs from '../componentDocs/HorizontalStackedBar/markdown/HorizontalStackedBarAPIDocs.mdx';
 import IconsAPIDocs from '../componentDocs/Icons/markdown/IconsAPIDocs.mdx';
 import IconSwitchAPIDocs from '../componentDocs/IconSwitch/markdown/IconSwitchAPIDocs.mdx';
 import InfoListItemAPIDocs from '../componentDocs/InfoListItem/markdown/InfoListItemAPIDocs.mdx';
@@ -119,6 +121,7 @@ import { IconSwitchPlaygroundComponent } from '../componentDocs/IconSwitch/playg
 import { UserMenuPlaygroundComponent } from '../componentDocs/UserMenu/playground';
 import { HeaderPlaygroundComponent } from '../componentDocs/Header/playground';
 import { CollapsibleHeaderLayoutPlaygroundComponent } from '../componentDocs/CollapsibleHeaderLayout/playground';
+import { HorizontalStackedBarPlaygroundComponent } from '../componentDocs/HorizontalStackedBar/playground';
 import { ProgressIconPlaygroundComponent } from '../componentDocs/ProgressIcon/playground';
 
 export type RouteConfig = Omit<RouteProps, 'children'> & {
@@ -476,6 +479,28 @@ export const pageDefinitions: RouteConfig[] = [
                         title: 'playground',
                         path: 'playground',
                         element: <HeroPlaygroundComponent />,
+                    },
+                ],
+            },
+            {
+                title: 'Horizontal Stacked Bar',
+                path: 'horizontal-stacked-bar/',
+                element: <ComponentPreviewPage title={'Horizontal Stacked Bar'} />,
+                children: [
+                    {
+                        title: 'examples',
+                        path: 'examples',
+                        element: <HorizontalStackedBarExamples />,
+                    },
+                    {
+                        title: 'API Docs',
+                        path: 'api-docs',
+                        element: <HorizontalStackedBarAPIDocs />,
+                    },
+                    {
+                        title: 'playground',
+                        path: 'playground',
+                        element: <HorizontalStackedBarPlaygroundComponent />,
                     },
                 ],
             },

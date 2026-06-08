@@ -56,10 +56,20 @@ describe('HorizontalStackedBar', () => {
         testRenderer!.unmount();
     });
 
-    it('should render swipeable legend container', () => {
+    it('should render wrapped legend container by default', () => {
         let testRenderer: TestRenderer.ReactTestRenderer | undefined;
         act(() => {
             testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} />);
+        });
+        const legendWrap = testRenderer!.root.findByProps({ testID: 'blui-horizontal-stacked-bar-legend-wrap' });
+        expect(legendWrap).toBeTruthy();
+        testRenderer!.unmount();
+    });
+
+    it('should render swipeable legend container when legendScrollable is true', () => {
+        let testRenderer: TestRenderer.ReactTestRenderer | undefined;
+        act(() => {
+            testRenderer = TestRenderer.create(<HorizontalStackedBar data={sampleData} legendScrollable />);
         });
         const legendScroll = testRenderer!.root.findByProps({ testID: 'blui-horizontal-stacked-bar-legend-scroll' });
         expect(legendScroll).toBeTruthy();

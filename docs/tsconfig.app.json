@@ -5,7 +5,10 @@
         "composite": true,
         "declaration": true,
         "noEmit": false,
-        "types": ["node", "vite/client"]
+        "types": ["node", "vite/client"],
+        "paths": {
+            "@brightlayer-ui/react-native-components": ["./watchPackages/@brightlayer-ui/react-native-components"]
+        }
     },
     "exclude": [
         "src/**/*.spec.ts",

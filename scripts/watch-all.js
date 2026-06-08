@@ -41,7 +41,7 @@ const PACKAGES = {
         libraryPath: path.resolve(__dirname, '../packages/component-library'),
         tsConfigPath: 'tsconfig.lib.json',
         nodeModulesPath: 'watchPackages/@brightlayer-ui/react-native-components',
-        exampleApps: ['examples/showcase', 'examples/designPatterns', 'examples/expoShowcase', 'examples/workflow'],
+        exampleApps: ['examples/showcase', 'examples/designPatterns', 'examples/expoShowcase', 'examples/workflow', 'docs'],
     },
     themes: {
         name: 'Themes',
