@@ -6,7 +6,7 @@ import emptyStateImage from '../assets/empty-state.png';
 import gradeImage from '../assets/grade.png';
 import headerImage from '../assets/header.png';
 import heroImage from '../assets/hero.png';
-import horizontalStackedBarImage from '../assets/cubes_tile.png';
+import horizontalStackedBarImage from '../assets/horizontal-stacked-bar.png';
 import iconImage from '../assets/icons.png';
 import switchImage from '../assets/icon-switch.png';
 import infoListImage from '../assets/info-list-item.png';
