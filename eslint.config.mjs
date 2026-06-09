@@ -11,7 +11,7 @@ export default [
             'examples/showcase-expo/app/**',
             'examples/showcase-expo/.expo/**',
             'examples/**/watchPackages/**',
-        ]
+        ],
     },
     {
         files: ['**/*.{ts,tsx}'],
