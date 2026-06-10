@@ -868,10 +868,10 @@
     react-native-reanimated "^4.2.2"
     react-native-worklets "^0.7.4"
 
-"@brightlayer-ui/react-native-progress-icons@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.2.0.tgz#cb97435bc2b0c1fb17218c3a33f719bac557d6af"
-  integrity sha512-XBaUizjSkWcLCJwnVYp28dan2wNMEN6yPGyzC1i76hFMiRwFuFswXFGqA08+2Tco6jiOUGDPaXHQAJZNTz76RA==
+"@brightlayer-ui/react-native-progress-icons@^2.2.2":
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.2.2.tgz#024202e3953bfd45f6d7a5f10394bfe7f51e362f"
+  integrity sha512-Q5RBdL8qZg+wiYxVLvKxmO5CGwki4t45TcO/4onYDRXyN60JoWzfs79BNEF5gN2O4br1EAhKE4siXKblC9t02w==
   dependencies:
     color "^5.0.3"
 
@@ -5197,9 +5197,9 @@ shebang-regex@^3.0.0:
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
 shell-quote@^1.6.1:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.3.tgz#55e40ef33cf5c689902353a3d8cd1a6725f08b4b"
-  integrity sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.8.4.tgz#2edd9a4dcefc96649e2e2cb12f637b1f1d92a190"
+  integrity sha512-VsC6n6vz1ihYYyZZwX7YZSF5l5x36ca17OC+a69h94YqB7X6XLwf+5MOgynYir2SLFUbl8gIYvBo8K8RoNQ6bQ==
 
 signal-exit@^3.0.2, signal-exit@^3.0.7:
   version "3.0.7"
