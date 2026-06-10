@@ -21,6 +21,7 @@ type HorizontalStackedBarLegendItem = {
     label: string;
     count: number;
     color: string;
+    isCustomColor?: boolean;
     variant?: HorizontalStackedBarLegendVariant;
     icon?: IconSource | null;
     disabledIcon?: IconSource | null;
@@ -122,6 +123,31 @@ const getLegendIconSource = (
     return variant ? { family: iconFamily, name: getLegendIconName(variant, false) } : undefined;
 };
 
+const getContrastForeground = (background: string, lightColor: string, darkColor: string): string => {
+    const hex = background.trim().replace('#', '');
+    const normalized =
+        hex.length === 3
+            ? `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`
+            : hex.length === 6
+              ? hex
+              : undefined;
+
+    if (!normalized || Number.isNaN(Number.parseInt(normalized, 16))) {
+        return lightColor;
+    }
+
+    const r = Number.parseInt(normalized.substring(0, 2), 16) / 255;
+    const g = Number.parseInt(normalized.substring(2, 4), 16) / 255;
+    const b = Number.parseInt(normalized.substring(4, 6), 16) / 255;
+
+    const toLinear = (channel: number): number =>
+        channel <= 0.03928 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+
+    const luminance = 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);
+
+    return luminance > 0.179 ? darkColor : lightColor;
+};
+
 export const HorizontalStackedBarLegend: React.FC<HorizontalStackedBarLegendProps> = ({
     data,
     selectedStatus,
@@ -165,15 +191,24 @@ export const HorizontalStackedBarLegend: React.FC<HorizontalStackedBarLegendProp
 
     const selectedLightContentColor = BLUIColors?.primary?.[100] ?? theme.colors.onPrimary; //@todo: remove usage of BLUIColors in favor of theme tokens once they are available
     const selectedCanceledLightModeColor = BLUIColors?.primary?.[0] ?? theme.colors.onSurface; //@todo: remove usage of BLUIColors in favor of theme tokens once they are available
+    const disabledColor = theme.colors.disabled;
     const legendStyles = makeLegendStyles(scrollable, layoutState.isMultiRow);
 
     const legendItems = data.map((item, index) => {
         const isSelected = selectedStatus === item.id;
         const isDisabled = item.count === 0;
-        const selectedContentColor =
-            item.variant === 'canceled' && !theme.dark ? selectedCanceledLightModeColor : selectedLightContentColor;
-        const iconColor = isSelected ? selectedContentColor : item.color;
-        const textColor = isSelected ? selectedContentColor : theme.colors.onSurface;
+        const selectedCustomContentColor = getContrastForeground(
+            item.color,
+            selectedLightContentColor,
+            selectedCanceledLightModeColor
+        );
+        const selectedContentColor = item.isCustomColor
+            ? selectedCustomContentColor
+            : item.variant === 'canceled' && !theme.dark
+              ? selectedCanceledLightModeColor
+              : selectedLightContentColor;
+        const iconColor = isDisabled ? disabledColor : isSelected ? selectedContentColor : item.color;
+        const textColor = isDisabled ? disabledColor : isSelected ? selectedContentColor : theme.colors.onSurface;
         const iconSourceToRender = getLegendIconSource(item.variant, item.icon, item.disabledIcon, isDisabled);
 
         return (

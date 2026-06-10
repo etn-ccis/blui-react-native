@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 
 # Horizontal Stacked Bar
 
-The `<HorizontalStackedBar>` component visualizes categorical counts as a segmented bar with an accompanying legend.
+The `<HorizontalStackedBar>` component visualizes item counts as proportional bars with a legend.
 
 ## Horizontal Stacked Bar API
 
@@ -10,32 +10,32 @@ The `<HorizontalStackedBar>` component visualizes categorical counts as a segmen
 
 | Prop Name           | Description                                                                 | Type                                                                                   | Required | Default |
 | ------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------- | ------- |
-| data                | Array of legend / segment items                                             | `HorizontalStackedBarItem[]`                                                           | yes      |         |
-| onChange            | Fires when selected category changes                                        | `(item: HorizontalStackedBarItem \| undefined) => void`                               | no       |         |
-| selectedStatus      | Controlled selected item identifier (uses `id`, or `label` when `id` absent) | `string`                                                                               | no       |         |
-| showLegends         | Controls whether legends are rendered above the bars                        | `boolean`                                                                              | no       | `true`  |
-| hideEmptyCategories | Hides legend items with `count === 0`                                       | `boolean`                                                                              | no       | `false` |
-| legendScrollable    | Uses horizontal swipe legend mode instead of wrapped legend mode            | `boolean`                                                                              | no       | `false` |
-| theme               | Theme value overrides specific to this component                            | `$DeepPartial<ExtendedTheme>`                                                          | no       |         |
-| styles              | Style overrides for internal elements                                       | `{ root, legendContainer, legendItem, barContainer, bar }` as `StyleProp<ViewStyle>` | no       |         |
+| data                | Array of items                                                              | `HorizontalStackedBarItem[]`                                                           | yes      |         |
+| onChange            | Fire when selected item changes                                             | `(item: HorizontalStackedBarItem \| undefined) => void`                               | no       |         |
+| selectedStatus      | Set selected item identifier (use `id`, or `label` when `id` is absent)    | `string`                                                                               | no       |         |
+| showLegends         | Show legends above bars                                                     | `boolean`                                                                              | no       | `true`  |
+| hideEmptyCategories | Hide items in legend when `count === 0`                                     | `boolean`                                                                              | no       | `false` |
+| legendScrollable    | Use horizontal swipe legend mode instead of wrapped legend mode             | `boolean`                                                                              | no       | `false` |
+| theme               | Override theme values for this component                                    | `$DeepPartial<ExtendedTheme>`                                                          | no       |         |
+| styles              | Override internal styles                                                    | `{ root, legendContainer, legendItem, barContainer, bar }` as `StyleProp<ViewStyle>` | no       |         |
 
 </Box>
 
-Any other props are forwarded to the root [View](https://reactnative.dev/docs/view).
+Any other props will be provided to the root [View](https://reactnative.dev/docs/view).
 
-## Item API
+## Horizontal Stacked Bar Item API
 
 <Box>
 
 | Field           | Description                                                                                                    | Type                                                  | Required |
 | --------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | -------- |
-| id              | Optional stable unique identifier for selection and React key                                                  | `string`                                              | no       |
-| label           | Label shown in the legend                                                                                      | `string`                                              | yes      |
-| count           | Numeric count used for legend and segment sizing                                                               | `number`                                              | yes      |
-| variant         | Preset status variant                                                                                          | `'failed' \| 'success' \| 'pending' \| 'info' \| 'canceled'` | no       |
-| backgroundColor | Custom color for legend and segment; should not be used together with `variant`                               | `string`                                              | no       |
-| icon            | Legend icon shown when the item is enabled                                                                     | `IconSource \| null`                                 | no       |
-| disabledIcon    | Legend icon shown when the item count is `0`                                                                   | `IconSource \| null`                                 | no       |
+| id              | Set stable identifier for selection and React key                                                              | `string`                                              | no       |
+| label           | Show label in legend                                                                                           | `string`                                              | yes      |
+| count           | Set numeric count used for legend and bar sizing                                                               | `number`                                              | yes      |
+| variant         | Set preset status variant                                                                                      | `'failed' \| 'success' \| 'pending' \| 'info' \| 'canceled'` | no       |
+| backgroundColor | Set custom color for legend and bar; do not use together with `variant`                                       | `string`                                              | no       |
+| icon            | Show legend icon when item is enabled                                                                          | `IconSource \| null`                                 | no       |
+| disabledIcon    | Show legend icon when item count is `0`                                                                        | `IconSource \| null`                                 | no       |
 
 </Box>
 
@@ -43,4 +43,4 @@ Any other props are forwarded to the root [View](https://reactnative.dev/docs/vi
 
 - For each item, provide either `variant` or `backgroundColor`.
 - If both are provided, `backgroundColor` takes precedence.
-- If neither is provided, the component will warn in development mode.
+- If neither is provided, the component warns in development mode.
