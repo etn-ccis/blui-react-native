@@ -123,7 +123,9 @@ const getLegendIconSource = (
     return variant ? { family: iconFamily, name: getLegendIconName(variant, false) } : undefined;
 };
 
-const getContrastForeground = (background: string, lightColor: string, darkColor: string): string => {
+const getContrastForeground = (background: string | undefined, lightColor: string, darkColor: string): string => {
+    if (!background) return lightColor;
+
     const hex = background.trim().replace('#', '');
     const normalized =
         hex.length === 3
