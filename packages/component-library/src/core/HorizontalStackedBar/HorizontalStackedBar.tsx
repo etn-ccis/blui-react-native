@@ -299,6 +299,7 @@ export const HorizontalStackedBar: React.FC<HorizontalStackedBarProps> = (props)
                     label: item.label,
                     count: item.count,
                     color: getItemColor(item) || theme.colors.neutralOutlinedContainerOutline,
+                    isCustomColor: Boolean(item.backgroundColor),
                     variant: item.variant,
                     icon: item.icon,
                     disabledIcon: item.disabledIcon,
