@@ -28,6 +28,11 @@ pre[class*='language-'] * {
     font-family: 'Roboto Mono', monospace !important;
 }
 
+/* Fix external react-doc-components "Props & Code" bar background in dark mode */
+.dark .BluiInfoListItem-root:not(.MuiListItem-dense) {
+    background-color: var(--mui-palette-background-paper) !important;
+}
+
 pre[class*='language-'] {
     margin: 0;
     padding-left: 1em;

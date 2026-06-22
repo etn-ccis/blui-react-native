@@ -138,16 +138,18 @@ export const componentsMap = {
         <Typography
             component={'pre'}
             color={'textPrimary'}
-            sx={{
+            sx={(theme) => ({
                 pr: 2,
                 mb: 1,
                 display: 'flex',
-                backgroundColor: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? theme.palette.background.default : Colors.darkBlack[300],
+                backgroundColor: theme.palette.background.default,
+                ...theme.applyStyles('dark', {
+                    backgroundColor: Colors.darkBlack[300],
+                }),
                 '& code': {
                     width: '100%',
                 },
-            }}
+            })}
             {...props}
         />
     ),
@@ -155,17 +157,19 @@ export const componentsMap = {
         <Typography
             component={'code'}
             color={'inherit'}
-            sx={{
+            sx={(theme) => ({
                 fontSize: '0.875rem',
                 m: '0px 2px',
                 p: '0px 5px',
-                border: (theme: Theme) => `1px solid ${theme.palette.divider}`,
-                backgroundColor: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? theme.palette.background.default : Colors.darkBlack[300],
+                border: `1px solid ${theme.palette.divider}`,
+                backgroundColor: theme.palette.background.default,
+                ...theme.applyStyles('dark', {
+                    backgroundColor: Colors.darkBlack[300],
+                }),
                 borderRadius: '2px',
                 fontFamily: `'Roboto Mono', monospace`,
                 lineHeight: '1.6',
-            }}
+            })}
             {...props}
         />
     ),
@@ -173,20 +177,21 @@ export const componentsMap = {
         <Typography
             component={'code'}
             color={'textPrimary'}
-            sx={{
-                backgroundColor: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? theme.palette.background.default : Colors.darkBlack[300],
+            sx={(theme) => ({
+                backgroundColor: theme.palette.background.default,
                 fontFamily: `'Roboto Mono', monospace`,
-                border: (theme: Theme) =>
-                    theme.palette.mode === 'light' ? undefined : `${theme.palette.divider} 1px solid`,
-            }}
+                ...theme.applyStyles('dark', {
+                    backgroundColor: Colors.darkBlack[300],
+                    border: `${theme.palette.divider} 1px solid`,
+                }),
+            })}
             {...props}
         />
     ),
     table: (props: TableProps): JSX.Element => (
         <Box
             className="tableContainer"
-            sx={{
+            sx={(theme: Theme) => ({
                 overflow: 'auto',
                 boxSizing: 'border-box',
                 mb: 2,
@@ -196,7 +201,7 @@ export const componentsMap = {
                     textAlign: 'left',
                     borderCollapse: 'collapse',
                     minWidth: '100%',
-                    border: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+                    border: `1px solid ${theme.palette.divider}`,
                 },
                 a: {
                     fontSize: '0.875rem',
@@ -205,7 +210,7 @@ export const componentsMap = {
                     border: 'unset',
                     borderLeft: 0,
                     borderRight: 0,
-                    borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+                    borderBottom: `1px solid ${theme.palette.divider}`,
                 },
                 th: {
                     border: 'unset',
@@ -213,27 +218,27 @@ export const componentsMap = {
                     borderRight: 0,
                     p: '1rem',
                     fontSize: '0.875rem',
-                    borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+                    borderBottom: `1px solid ${theme.palette.divider}`,
                 },
                 'tr:last-of-type': {
                     borderBottom: 0,
                 },
                 thead: {
-                    backgroundColor: (theme: Theme): string =>
-                        theme.palette.mode === 'light' ? Colors.white[100] : Colors.black[800],
+                    backgroundColor: Colors.white[100],
+                    ...theme.applyStyles('dark', { backgroundColor: Colors.black[800] }),
                 },
                 'tbody tr:nth-of-type(odd)': {
                     backgroundColor: 'background.paper',
                 },
                 'tbody tr:nth-of-type(even)': {
-                    backgroundColor: (theme: Theme): string =>
-                        theme.palette.mode === 'light' ? Colors.white[100] : Colors.black[800],
+                    backgroundColor: Colors.white[100],
+                    ...theme.applyStyles('dark', { backgroundColor: Colors.black[800] }),
                 },
                 td: {
                     fontSize: '0.875rem',
                     p: '1rem',
                 },
-            }}
+            })}
         >
             <table {...props} />
         </Box>
