@@ -35,7 +35,9 @@ const headerContentStyles = StyleSheet.create({
     },
 });
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type WritingDirection = 'ltr' | 'rtl';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type TextAlign = 'left' | 'right' | 'center' | 'auto';
 
 type HeaderTitleProps = {
@@ -68,8 +70,8 @@ const HeaderTitle: React.FC<HeaderTitleProps> = (props) => {
         () => ({
             color: textColor,
             ...fontStyleSemiBold,
-            writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
-            textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
+            writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
+            textAlign: Platform.OS === 'android' ? 'left' : 'auto',
         }),
         [textColor, fontStyleSemiBold]
     );
@@ -138,8 +140,8 @@ const HeaderSubtitle: React.FC<HeaderSubtitleProps> = (props) => {
         () => ({
             color: textColor,
             ...fontStyleRegular,
-            writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
-            textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
+            writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
+            textAlign: Platform.OS === 'android' ? 'left' : 'auto',
         }),
         [textColor, fontStyleRegular]
     );
@@ -213,8 +215,8 @@ const HeaderInfo: React.FC<HeaderInfoProps> = (props) => {
         () => ({
             color: textColor,
             ...fontStyleRegular,
-            writingDirection: I18nManager.isRTL ? 'rtl' : ('ltr' as WritingDirection),
-            textAlign: Platform.OS === 'android' ? 'left' : ('auto' as TextAlign),
+            writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
+            textAlign: Platform.OS === 'android' ? 'left' : 'auto',
         }),
         [textColor, fontStyleRegular]
     );

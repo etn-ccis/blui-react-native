@@ -62,7 +62,7 @@ export const UserMenuComponent: React.FC<UserMenuExampleProps> = (props) => {
             await clearTokens();
         } catch (_error) {
             // eslint-disable-next-line no-console
-            console.log(_error as Error);
+            console.log(_error);
         }
         app.onUserNotAuthenticated();
     };

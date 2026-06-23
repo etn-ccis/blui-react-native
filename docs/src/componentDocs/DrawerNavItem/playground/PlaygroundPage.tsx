@@ -147,7 +147,7 @@ const DrawerNavItemPreview: PreviewComponent = ({ data }) => {
                             <DrawerNavItem
                                 itemFontColor={theme.colors.onSurface}
                                 itemID={'Home'}
-                                icon={getIcon(icon as unknown as string)}
+                                icon={getIcon(icon)}
                                 collapseIcon={getCollapseIcon(collapseIcon)}
                                 expandIcon={getExpandIcon(expandIcon)}
                                 rightComponent={rightComponent ? <ListItemTag label="New" /> : undefined}
@@ -222,10 +222,10 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         skip: ['collapseIcon', 'expandIcon', 'icon', 'rightComponent', 'hidePadding'],
     })}
     ${data.rightComponent ? `rightComponent={<ListItemTag label="New" />}` : ``}
-    ${data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon as string)}}` : ''}
-    ${data.collapseIcon !== 'undefined' ? `collapseIcon={${getCollapseIcon(data.collapseIcon as string)}}` : ''}
+    ${data.icon !== 'undefined' ? `icon={${getIconSnippet(data.icon)}}` : ''}
+    ${data.collapseIcon !== 'undefined' ? `collapseIcon={${getCollapseIcon(data.collapseIcon)}}` : ''}
     ${data.collapseIcon !== 'undefined' ? `collapseIcon={${getIconSnippetWithProps(data.collapseIcon as string)}}` : ''}
-    ${data.expandIcon !== 'undefined' ? `expandIcon={${getExpandIcon(data.expandIcon as string)}}` : ''}
+    ${data.expandIcon !== 'undefined' ? `expandIcon={${getExpandIcon(data.expandIcon)}}` : ''}
     ${data.expandIcon !== 'undefined' ? `expandIcon={${getIconSnippetWithProps(data.expandIcon as string)}}` : ''}
 />`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
