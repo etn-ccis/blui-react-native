@@ -29,19 +29,23 @@ export const ErrorManager: React.FC<React.PropsWithChildren<ErrorManagerProps>> 
         },
     } = props;
 
+    // i18next's `TFunction` exposes overloads that reject a bare `TOptions` argument; alias it to the
+    // simpler (and compatible) signature this component relies on.
+    const translate = t as (key: string, options?: TOptions) => string;
+
     const ErrorDialogWithProps = useCallback(
         (): React.JSX.Element => (
             <BasicDialog
                 testID="blui-error-manager-basic-dialog"
                 open={error.length > 0}
-                title={t(dialogConfig?.title ?? title ?? 'Error', titleOptions)}
-                body={t(error, errorOptions)}
+                title={translate(dialogConfig?.title ?? title ?? 'Error', titleOptions)}
+                body={translate(error, errorOptions)}
                 onDismiss={onClose}
-                dismissButtonText={t(dialogConfig?.dismissLabel ?? 'Okay')}
+                dismissButtonText={translate(dialogConfig?.dismissLabel ?? 'Okay')}
                 style={dialogConfig?.style}
             />
         ),
-        [dialogConfig, title, error, onClose, errorOptions, titleOptions, t]
+        [dialogConfig, title, error, onClose, errorOptions, titleOptions, translate]
     );
 
     const ErrorMessageBoxWithProps = useCallback((): React.JSX.Element => {
@@ -49,8 +53,8 @@ export const ErrorManager: React.FC<React.PropsWithChildren<ErrorManagerProps>> 
 
         return (
             <ErrorMessageBox
-                title={t(messageBoxConfig?.title ?? title ?? 'Error', titleOptions)}
-                errorMessage={t(error, errorOptions)}
+                title={translate(messageBoxConfig?.title ?? title ?? 'Error', titleOptions)}
+                errorMessage={translate(error, errorOptions)}
                 dismissible={dismissible}
                 style={style}
                 backgroundColor={backgroundColor}
@@ -58,7 +62,7 @@ export const ErrorManager: React.FC<React.PropsWithChildren<ErrorManagerProps>> 
                 onClose={onClose}
             />
         );
-    }, [error, errorOptions, titleOptions, title, t, messageBoxConfig, onClose]);
+    }, [error, errorOptions, titleOptions, title, translate, messageBoxConfig, onClose]);
 
     return mode === 'dialog' && error.length > 0 ? (
         <>
