@@ -522,7 +522,7 @@ describe('DrawerNavGroup', () => {
                     onSurfaceVariant: '#FFFF00',
                 },
             };
-            const tree = renderWithContext(<DrawerNavGroup title="Navigation" theme={customTheme as any} />).toJSON();
+            const tree = renderWithContext(<DrawerNavGroup title="Navigation" theme={customTheme} />).toJSON();
             expect(tree).toMatchSnapshot();
         });
     });

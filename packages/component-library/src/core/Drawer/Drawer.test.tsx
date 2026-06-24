@@ -61,13 +61,13 @@ describe('Drawer', () => {
 
         it('processSectionChildren returns empty array when no matching children', () => {
             const children = <Text>Not a drawer component</Text>;
-            const result = processSectionChildren(children, 'DrawerHeader', false, {}, {} as any, {} as any);
+            const result = processSectionChildren(children, 'DrawerHeader', false, {}, {}, {} as any);
             expect(result).toEqual([]);
         });
 
         it('processSectionChildren returns matching child without inheritance', () => {
             const children = <DrawerHeader title="Test" />;
-            const result = processSectionChildren(children, 'DrawerHeader', false, {}, {} as any, {} as any);
+            const result = processSectionChildren(children, 'DrawerHeader', false, {}, {}, {} as any);
             expect(result.length).toBe(1);
             expect(result[0].type).toBe(DrawerHeader);
         });
@@ -78,14 +78,7 @@ describe('Drawer', () => {
             const props = { activeItemBackgroundColor: 'red', itemIconColor: 'blue' };
             const theme = { colors: { primary: '#000' } };
 
-            const result = processSectionChildren(
-                children,
-                'DrawerBody',
-                true,
-                defaultProps,
-                props as any,
-                theme as any
-            );
+            const result = processSectionChildren(children, 'DrawerBody', true, defaultProps, props, theme as any);
             expect(result.length).toBe(1);
             expect(result[0].props.chevron).toBe(true);
             expect(result[0].props.divider).toBe(true);
@@ -97,14 +90,7 @@ describe('Drawer', () => {
             const defaultProps = { chevron: true };
             const props = { activeItemBackgroundColor: 'red' };
 
-            const result = processSectionChildren(
-                children,
-                'DrawerHeader',
-                false,
-                defaultProps,
-                props as any,
-                {} as any
-            );
+            const result = processSectionChildren(children, 'DrawerHeader', false, defaultProps, props, {} as any);
             expect(result.length).toBe(1);
             // Props should not be inherited
             expect(result[0].props.chevron).toBeUndefined();
@@ -113,18 +99,18 @@ describe('Drawer', () => {
 
         it('processSectionChildren handles multiple children and returns only first', () => {
             const children = [<DrawerHeader key="1" title="First" />, <DrawerHeader key="2" title="Second" />];
-            const result = processSectionChildren(children, 'DrawerHeader', false, {}, {} as any, {} as any);
+            const result = processSectionChildren(children, 'DrawerHeader', false, {}, {}, {} as any);
             expect(result.length).toBe(1);
             expect(result[0].props.title).toBe('First');
         });
 
         it('processSectionChildren handles null children', () => {
-            const result = processSectionChildren(null, 'DrawerHeader', false, {}, {} as any, {} as any);
+            const result = processSectionChildren(null, 'DrawerHeader', false, {}, {}, {} as any);
             expect(result).toEqual([]);
         });
 
         it('processSectionChildren handles undefined children', () => {
-            const result = processSectionChildren(undefined, 'DrawerHeader', false, {}, {} as any, {} as any);
+            const result = processSectionChildren(undefined, 'DrawerHeader', false, {}, {}, {} as any);
             expect(result).toEqual([]);
         });
     });
@@ -967,7 +953,7 @@ describe('Drawer', () => {
         };
 
         const tree = TestRenderer.create(
-            <Drawer theme={customTheme as any}>
+            <Drawer theme={customTheme}>
                 <DrawerHeader title="Theme Override" />
             </Drawer>
         ).toJSON();
@@ -1063,7 +1049,7 @@ describe('Drawer', () => {
             },
         };
         const tree = TestRenderer.create(
-            <Drawer theme={customTheme as any}>
+            <Drawer theme={customTheme}>
                 <DrawerHeader title="Custom Theme" />
             </Drawer>
         ).toJSON();

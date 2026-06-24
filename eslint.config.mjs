@@ -123,6 +123,17 @@ export default [
             'react-hooks/rules-of-hooks': 'error',
             'react-hooks/exhaustive-deps': 'warn',
             '@typescript-eslint/no-redundant-type-constituents': 'warn',
+            // Downgraded to a warning: this type-aware rule produces false positives in CI,
+            // where sub-project dependencies are not installed/linked, so external component
+            // types resolve to `any` and the (genuinely required) casts appear "unnecessary".
+            '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
+        },
+    },
+    {
+        files: ['packages/component-library/**/*.{ts,tsx}'],
+        rules: {
+            // See docs override: false positive when types are unresolved in CI.
+            '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
         },
     },
     {

@@ -186,7 +186,7 @@ const buildItem = (
     const backgroundColor = data[`${prefix}BackgroundColor` as keyof PlaygroundData] as string;
     const item: HorizontalStackedBarItem = {
         label: data[`${prefix}Label` as keyof PlaygroundData] as string,
-        count: Number(data[`${prefix}Count` as keyof PlaygroundData] as number),
+        count: Number(data[`${prefix}Count` as keyof PlaygroundData]),
         variant: data[`${prefix}Variant` as keyof PlaygroundData] as HorizontalStackedBarItem['variant'],
         icon: toIconSource(data[`${prefix}Icon` as keyof PlaygroundData] as string),
         disabledIcon: toIconSource(data[`${prefix}DisabledIcon` as keyof PlaygroundData] as string),

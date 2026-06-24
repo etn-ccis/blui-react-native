@@ -13,7 +13,7 @@ export const ChangePassword = (): JSX.Element => {
             await clearTokens();
         } catch (_error) {
             // eslint-disable-next-line no-console
-            console.log(_error as Error);
+            console.log(_error);
         }
         app.onUserNotAuthenticated();
         // below line is not need for okta workflow

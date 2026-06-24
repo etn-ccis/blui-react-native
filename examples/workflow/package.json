@@ -37,7 +37,7 @@
         "react-native-keyboard-aware-scroll-view": "^0.9.5",
         "react-native-pager-view": "^7.0.2",
         "react-native-paper": "^5.15.0",
-        "react-native-reanimated": "4.3.0",
+        "react-native-reanimated": "~4.3.1",
         "react-native-restart": "^0.0.27",
         "react-native-safe-area-context": "^5.7.0",
         "react-native-screens": "^4.24.0",

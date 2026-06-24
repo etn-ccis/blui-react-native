@@ -121,7 +121,7 @@ const HeroPreview: PreviewComponent = ({ data }) => {
                     ChannelValueProps={{
                         value: channelValue,
                         units,
-                        icon: getRNIcon(valueIcon as unknown as string),
+                        icon: getRNIcon(valueIcon),
                     }}
                 />
             </Box>
@@ -135,7 +135,7 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         join: '\n\t',
         skip: ['icon', 'htmlColor', 'value', 'units', 'valueIcon'],
     })}
-    ${data.icon && data.icon !== 'undefined' ? `icon={${getRNIconSnippet(data.icon as string)}}` : ''}
+    ${data.icon && data.icon !== 'undefined' ? `icon={${getRNIconSnippet(data.icon)}}` : ''}
     ${`ChannelValueProps={{ 
         value: ${data.value},
         units: '${data.units}',
