@@ -67,7 +67,7 @@ const HeaderTitle: React.FC<HeaderTitleProps> = (props) => {
     const { maxScale, disableScaling } = useFontScaleSettings();
     const { fontStyleSemiBold } = useFontStyles();
     const getTitleStyle = useCallback(
-        () => ({
+        (): TextStyle => ({
             color: textColor,
             ...fontStyleSemiBold,
             writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
@@ -137,7 +137,7 @@ const HeaderSubtitle: React.FC<HeaderSubtitleProps> = (props) => {
     const { REGULAR_HEIGHT, EXTENDED_HEIGHT } = useHeaderDimensions();
     const { fontStyleRegular } = useFontStyles();
     const getSubtitleStyle = useCallback(
-        () => ({
+        (): TextStyle => ({
             color: textColor,
             ...fontStyleRegular,
             writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
@@ -212,7 +212,7 @@ const HeaderInfo: React.FC<HeaderInfoProps> = (props) => {
     const { REGULAR_HEIGHT, EXTENDED_HEIGHT } = useHeaderDimensions();
     const { fontStyleRegular } = useFontStyles();
     const getInfoStyle = useCallback(
-        () => ({
+        (): TextStyle => ({
             color: textColor,
             ...fontStyleRegular,
             writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
