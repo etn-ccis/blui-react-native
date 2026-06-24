@@ -73,6 +73,5 @@
     "resolutions": {
         "js-yaml": "^4.1.1"
     },
-    "packageManager": "yarn@4.6.0",
     "prettier": "@brightlayer-ui/prettier-config"
 }

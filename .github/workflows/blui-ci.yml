@@ -26,8 +26,6 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -47,8 +45,6 @@ jobs:
         
         steps:
             - uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -77,8 +73,6 @@ jobs:
               
         steps:
             - uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -106,8 +100,6 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -138,8 +130,6 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -167,8 +157,6 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -199,8 +187,6 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -226,8 +212,6 @@ jobs:
                 node-version: [22.x]
         steps:
             - uses: actions/checkout@v4
-            - name: Enable Corepack
-              run: corepack enable
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
@@ -259,8 +243,6 @@ jobs:
       steps:
           - name: Checkout
             uses: actions/checkout@v4
-          - name: Enable Corepack
-            run: corepack enable
           - name: Use Node.js ${{ matrix.node-version }}
             uses: actions/setup-node@v4
             with:
@@ -354,8 +336,6 @@ jobs:
           with:
             name: theme-dist
             path: packages/themes/dist
-        - name: Enable Corepack
-          run: corepack enable
         - uses: actions/setup-node@v4
           with:
             node-version: ${{ matrix.node-version }}
