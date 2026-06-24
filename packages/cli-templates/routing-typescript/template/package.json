@@ -31,7 +31,7 @@
         "react-native-vector-icons": "^10.3.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.29.0",
+        "@babel/core": "^7.29.6",
         "@babel/preset-env": "^7.29.2",
         "@babel/runtime": "^7.29.2",
         "@brightlayer-ui/eslint-config": "^4.0.1",
