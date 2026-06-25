@@ -1,0 +1,10 @@
+{
+    "codeConnect": {
+        "include": [
+            "packages/component-library/figma-connect/**/*.figma.tsx",
+            "packages/component-library/src/**/*.tsx"
+        ],
+        "parser": "react",
+        "label": "React Native"
+    }
+}
