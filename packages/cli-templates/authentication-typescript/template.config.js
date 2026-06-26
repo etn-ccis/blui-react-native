@@ -1,4 +1,4 @@
 module.exports = {
-    placeholderName: 'example',
+    placeholderName: 'authenticationTemplate',
     templateDir: './template',
 };

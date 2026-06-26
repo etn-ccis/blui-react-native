@@ -69,5 +69,5 @@ Once you have tested make sure to delete Node modules, Pods and build folder for
 to check the template is working with react native cli
 
 ```sh
-npx @react-native-community/cli@latest init myapp --template file:///the-path-to-location/blui-react-native-cli-templates/blank-typescript
+npx @react-native-community/cli@latest init myapp --template file:///the-path-to-location/blui-react-native/packages/cli-templates/blank-typescript 
 ```
