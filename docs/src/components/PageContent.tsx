@@ -25,7 +25,7 @@ export const PageContent: React.FC<PageContentProps> = (props): JSX.Element => {
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                backgroundColor: theme.palette.background.paper,
+                backgroundColor: 'background.paper',
             }}
         >
             <Box

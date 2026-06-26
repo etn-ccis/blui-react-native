@@ -127,8 +127,9 @@ export const NavigationDrawer: React.FC = () => {
                             </Typography>
                             <Chip
                                 sx={{
-                                    color: theme.palette.mode === 'light' ? 'primary.main' : 'primary.dark',
+                                    color: 'primary.main',
                                     backgroundColor: 'white',
+                                    ...theme.applyStyles('dark', { color: 'primary.dark' }),
                                 }}
                                 icon={<ReactIcon color={'primary'} />}
                                 label={

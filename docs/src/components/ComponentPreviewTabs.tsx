@@ -102,7 +102,7 @@ export const ComponentPreviewTabs = (): JSX.Element => {
                     width: '100%',
                     display: 'flex',
                     justifyContent: 'space-around',
-                    bgcolor: theme.palette.background.paper,
+                    bgcolor: 'background.paper',
                     borderBottom: 1,
                     borderColor: 'divider',
                     position: 'sticky',
