@@ -1,4 +1,4 @@
 module.exports = {
-    placeholderName: 'blankTemplate',
+    placeholderName: 'routingTemplate',
     templateDir: './template',
 };
