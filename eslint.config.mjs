@@ -18,7 +18,13 @@ export default [
         languageOptions: {
             ecmaVersion: 2020,
             parserOptions: {
-                project: ['./tsconfig.json'],
+                project: [
+                    './tsconfig.json',
+                    './docs/tsconfig.app.json',
+                    './packages/*/tsconfig.json',
+                    './examples/*/tsconfig.json',
+                ],
+                tsconfigRootDir: import.meta.dirname,
             },
         },
         plugins: {
