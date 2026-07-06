@@ -42,6 +42,9 @@
         "color": "^5.0.3",
         "lodash.clonedeep": "^4.5.0"
     },
+    "resolutions": {
+        "semver@2 || 3 || 4": "5.7.2"
+    },
     "peerDependencies": {
         "@brightlayer-ui/react-native-components": "9.2.1",
         "@brightlayer-ui/react-native-vector-icons": "^3.1.0",

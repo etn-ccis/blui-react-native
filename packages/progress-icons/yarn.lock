@@ -424,7 +424,6 @@ __metadata:
     "@brightlayer-ui/eslint-config": "npm:^4.0.1"
     "@brightlayer-ui/prettier-config": "npm:^1.0.3"
     "@types/color": "npm:^4.2.0"
-    "@types/faker": "npm:^4.1.5"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^25.0.0"
     "@types/react": "npm:^19.1.8"
@@ -435,7 +434,6 @@ __metadata:
     eslint: "npm:^9.29.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-react: "npm:^7.37.5"
-    faker: "npm:^6.6.6"
     identity-obj-proxy: "npm:^3.0.0"
     jest: "npm:^30.3.0"
     prettier: "npm:^3.8.0"
@@ -1419,13 +1417,6 @@ __metadata:
   version: 1.0.9
   resolution: "@types/estree@npm:1.0.9"
   checksum: 10c0/3ad3286ca2988cd550dafb8f2ad599c8474868e954fa601a36655bdfefd8039f7c714b8c1c7f2ae219ffbd58bd4660e66fa7479a0120fc02d4777057d4865387
-  languageName: node
-  linkType: hard
-
-"@types/faker@npm:^4.1.5":
-  version: 4.1.12
-  resolution: "@types/faker@npm:4.1.12"
-  checksum: 10c0/7ebd392890b2394d20af7742fe9a27a263caa8d5693e23e8cf0beda9427972f62811d43c686e0367330b61652e0c9fc7005be846f90229e5d2895ad528d48e74
   languageName: node
   linkType: hard
 
@@ -3448,13 +3439,6 @@ __metadata:
   version: 3.1.3
   resolution: "exponential-backoff@npm:3.1.3"
   checksum: 10c0/77e3ae682b7b1f4972f563c6dbcd2b0d54ac679e62d5d32f3e5085feba20483cf28bd505543f520e287a56d4d55a28d7874299941faf637e779a1aa5994d1267
-  languageName: node
-  linkType: hard
-
-"faker@npm:^6.6.6":
-  version: 6.6.6
-  resolution: "faker@npm:6.6.6"
-  checksum: 10c0/21f6a57adc921ffb61e5ff767024a699a414047264ff4bbb080bd4994ec5a8061e1828aae9a4be812f6f356f1b6fd082bc2d54df7c37163b943a421a8f7f7079
   languageName: node
   linkType: hard
 

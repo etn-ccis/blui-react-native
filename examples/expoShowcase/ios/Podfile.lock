@@ -1,7 +1,7 @@
 PODS:
   - EXConstants (55.0.16):
     - ExpoModulesCore
-  - Expo (55.0.26):
+  - Expo (55.0.27):
     - ExpoModulesCore
     - hermes-engine
     - RCTRequired
@@ -30,7 +30,7 @@ PODS:
     - ExpoModulesCore
   - ExpoDomWebView (55.0.6):
     - ExpoModulesCore
-  - ExpoFileSystem (55.0.22):
+  - ExpoFileSystem (55.0.23):
     - ExpoModulesCore
   - ExpoFont (55.0.8):
     - ExpoModulesCore
@@ -2425,10 +2425,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   EXConstants: 255fd9f72f94bfccaed1d161edac04a552baa8d9
-  Expo: ea98ca15b0f07634bbfc6ee60080a627b276d70a
+  Expo: 04013bebd5befeb2d9b73e2e6304b13d35494c29
   ExpoAsset: 9d035bcc19d8688e9ddb2c579c50c8f83824188e
   ExpoDomWebView: 317a0d188cfdb850fc6fd2a43a2fc132dfd171ee
-  ExpoFileSystem: ce9db64ae67e6dcc8db42365e499f9fcc4fbe8ec
+  ExpoFileSystem: 725c9e912d91b3df2b474052ca6745b0d54cb0e5
   ExpoFont: 21550be2946ea5bbf50f1a20b31facd19ba4150c
   ExpoKeepAwake: 45e456e29335bbd400554646a2f29e628c24072e
   ExpoLogBox: 81d123959f6f1fc9926e4298bbc439c31b1b07ad
