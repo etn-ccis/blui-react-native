@@ -3,10 +3,11 @@
 cd "$(dirname "$0")/pre-push.d"
 
 for hook in *; do
-    bash $hook
+    [ -f "$hook" ] || continue
+    bash "./$hook"
     RESULT=$?
-    if [ $RESULT != 0 ]; then
-        echo "pre-push.d/$hook returned non-zero: $RESULT, abort commit"
+    if [ $RESULT -ne 0 ]; then
+        echo "pre-push.d/$hook returned non-zero: $RESULT, abort push"
         exit $RESULT
     fi
 done

@@ -24,7 +24,7 @@ export default [
                     './packages/*/tsconfig.json',
                     './examples/*/tsconfig.json',
                 ],
-                tsconfigRootDir: import.meta.dirname,
+                tsconfigRootDir: process.cwd(),
             },
         },
         plugins: {
