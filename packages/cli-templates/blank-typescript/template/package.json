@@ -12,8 +12,8 @@
         "test": "jest"
     },
     "dependencies": {
-        "@brightlayer-ui/react-native-components": "^9.2.1",
-        "@brightlayer-ui/react-native-themes": "^8.1.0",
+        "@brightlayer-ui/react-native-components": "^9.3.0-alpha.2",
+        "@brightlayer-ui/react-native-themes": "^8.1.1-alpha.0",
         "@brightlayer-ui/react-native-vector-icons": "^3.3.0",
         "@react-native-vector-icons/material-design-icons": "^13.1.2",
         "@react-native-vector-icons/material-icons": "^13.1.2",

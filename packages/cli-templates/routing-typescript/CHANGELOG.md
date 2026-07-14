@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.1 (Unreleased)
+
+### Fixed
+
+- Resolved security vulnerabilities reported by GitHub.
+
 ## v4.1.0 (April 1, 2026)
 
 ### Changed
