@@ -1,5 +1,10 @@
 # Changelog
 
+## v8.1.1 (Unreleased)
+### Fixed
+
+- Resolved security vulnerabilities reported by GitHub.
+
 ## v8.1.0 (February 26, 2025)
 
 ### Changed
