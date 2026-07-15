@@ -6,6 +6,10 @@
 
 - Added Horizontal Stacked Bar component.
 
+### Fixed
+
+- Resolved security vulnerabilities reported by GitHub.
+
 ## v9.2.1 (March 25, 2026)
 
 ### Changed
