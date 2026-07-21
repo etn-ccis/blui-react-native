@@ -1,6 +1,6 @@
 # Changelog
 
-## v8.1.1 (July 21, 2026)
+## v8.1.1 (July 22, 2026)
 ### Fixed
 
 - Resolved security vulnerabilities reported by GitHub.
