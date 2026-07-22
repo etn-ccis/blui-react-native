@@ -311,7 +311,7 @@ describe('HeaderActionItems', () => {
 
     describe('Edge Cases', () => {
         it('handles action items with no onPress', () => {
-            const tree = snapshotWithContext(<HeaderActionItems actionItems={[{ icon: { name: 'more' } }] as any} />);
+            const tree = snapshotWithContext(<HeaderActionItems actionItems={[{ icon: { name: 'more' } }]} />);
             expect(tree).toMatchSnapshot();
         });
 

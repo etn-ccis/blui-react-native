@@ -497,7 +497,7 @@ describe('DrawerNavItem', () => {
                 },
             };
             const tree = renderWithContext(
-                <DrawerNavItem itemID="item1" title="Item 1" theme={customTheme as any} />
+                <DrawerNavItem itemID="item1" title="Item 1" theme={customTheme} />
             ).toJSON();
             expect(tree).toMatchSnapshot();
         });

@@ -17,3 +17,4 @@ export * from './Grade';
 export * from './IconSwitch';
 export * from './Chip';
 export * from './AutoComplete';
+export * from './HorizontalStackedBar';

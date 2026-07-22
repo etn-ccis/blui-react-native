@@ -110,9 +110,7 @@ describe('HeaderContent', () => {
         });
 
         it('renders with custom theme', () => {
-            const tree = renderWithContext(
-                <HeaderContent title="Title" theme={BLUIThemes.blueDark as unknown as ExtendedTheme} />
-            );
+            const tree = renderWithContext(<HeaderContent title="Title" theme={BLUIThemes.blueDark} />);
             expect(tree).toMatchSnapshot();
         });
     });
