@@ -2,7 +2,7 @@
     "name": "@brightlayer-ui/react-native-themes",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
     "license": "BSD-3-Clause",
-    "version": "8.1.0",
+    "version": "8.1.1",
     "description": "React Native themes for Brightlayer UI applications",
     "main": "./index.js",
     "type": "module",
@@ -42,7 +42,7 @@
         "@brightlayer-ui/colors": "4.0.0",
         "@callstack/react-theme-provider": "^3.0.9",
         "color": "^5.0.3",
-        "react-native-safe-area-context": "5.6.2"
+        "react-native-safe-area-context": "5.7.0"
     },
     "peerDependencies": {
         "react-native-paper": "^5.15.0"
@@ -57,6 +57,9 @@
         "react-native-paper": "^5.15.0",
         "tsc-esm-fix": "^3.1.2",
         "typescript": "^5.9.3"
+    },
+    "resolutions": {
+        "semver@2 || 3 || 4": "5.7.2"
     },
     "prettier": "@brightlayer-ui/prettier-config"
 }
