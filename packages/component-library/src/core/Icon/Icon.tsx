@@ -86,7 +86,7 @@ export const Icon: React.FC<IconProps> = (props) => {
             case 'brightlayer-ui':
                 return (
                     <BLUIIcon
-                        name={source.name}
+                        name={source.name as React.ComponentProps<typeof BLUIIcon>['name']}
                         size={size}
                         allowFontScaling={scale}
                         color={color}

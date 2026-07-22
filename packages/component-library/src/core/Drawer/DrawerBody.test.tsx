@@ -409,7 +409,7 @@ describe('DrawerBody', () => {
             },
         };
         const tree = TestRenderer.create(
-            <DrawerBody theme={customTheme as any}>
+            <DrawerBody theme={customTheme}>
                 <DrawerNavItem itemID="item1" title="Item 1" />
             </DrawerBody>
         ).toJSON();

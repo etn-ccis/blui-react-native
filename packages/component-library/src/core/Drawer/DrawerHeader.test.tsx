@@ -82,8 +82,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect(styles.root.backgroundColor).toBe('custom-blue');
         });
@@ -96,8 +96,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect(styles.root.backgroundColor).toBe('#surface');
         });
@@ -110,8 +110,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect((styles.title as any).color).toBe('custom-red');
         });
@@ -124,8 +124,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect((styles.title as any).color).toBe('#primary');
         });
@@ -138,8 +138,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect((styles.subtitle as any).color).toBe('custom-green');
         });
@@ -152,8 +152,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect((styles.subtitle as any).color).toBe('#onSurfaceVariant');
         });
@@ -166,8 +166,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect(styles.backgroundImageWrapper.opacity).toBe(0.7);
         });
@@ -181,8 +181,8 @@ describe('DrawerHeader', () => {
                 insetsWithTop,
                 100,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect(styles.root.paddingTop).toBe(50);
             expect(styles.content.paddingLeft).toBe(10);
@@ -196,8 +196,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 150,
                 1,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect(styles.root.height).toBe(150);
         });
@@ -210,8 +210,8 @@ describe('DrawerHeader', () => {
                 mockInsets,
                 100,
                 1.5,
-                mockFontStyle as any,
-                mockFontStyle as any
+                mockFontStyle,
+                mockFontStyle
             );
             expect(styles.icon.height).toBe(56 * 1.5);
             expect(styles.icon.width).toBe(40 * 1.5);
@@ -296,7 +296,7 @@ describe('DrawerHeader', () => {
         });
 
         it('getBackgroundImage handles number image source', () => {
-            const result = getBackgroundImage(12345 as any, mockStyles, {});
+            const result = getBackgroundImage(12345, mockStyles, {});
             expect(result).toBeTruthy();
         });
 
@@ -499,7 +499,7 @@ describe('DrawerHeader', () => {
             },
         };
         const tree = TestRenderer.create(
-            <DrawerHeader title="My App" subtitle="Subtitle" theme={customTheme as any} />
+            <DrawerHeader title="My App" subtitle="Subtitle" theme={customTheme} />
         ).toJSON();
         expect(tree).toMatchSnapshot();
     });
@@ -657,7 +657,7 @@ describe('DrawerHeader', () => {
     });
 
     it('renders with backgroundImage using number source', () => {
-        const tree = TestRenderer.create(<DrawerHeader title="My App" backgroundImage={12345 as any} />).toJSON();
+        const tree = TestRenderer.create(<DrawerHeader title="My App" backgroundImage={12345} />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 
