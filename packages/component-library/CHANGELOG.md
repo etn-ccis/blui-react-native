@@ -1,6 +1,6 @@
 # Change Log
 
-## v9.3.0 (July 23, 2026)
+## v9.3.0 (July 22, 2026)
 
 ### Added
 
