@@ -83,6 +83,7 @@ describe('OktaRedirectLoginScreen', () => {
             endSessionRedirectUri: 'test-end-session-uri',
             discoveryUri: 'test-discovery-uri',
             scopes: ['openid', 'profile', 'email'],
+            requireHardwareBackedKeyStore: false,
         };
         render(<OktaRedirectLoginScreen oktaConfigObject={oktaConfig} />);
         const workflowCard = screen.getByTestId('blui-okta-login-workflow-card');
@@ -99,6 +100,7 @@ describe('OktaRedirectLoginScreen', () => {
             endSessionRedirectUri: 'test-end-session-uri',
             discoveryUri: 'test-discovery-uri',
             scopes: ['openid', 'profile', 'email'],
+            requireHardwareBackedKeyStore: false,
         };
 
         render(<OktaRedirectLoginScreen oktaConfigObject={oktaConfig} />);
@@ -122,6 +124,7 @@ describe('OktaRedirectLoginScreen', () => {
             endSessionRedirectUri: 'test-end-session-uri',
             discoveryUri: 'test-discovery-uri',
             scopes: ['openid', 'profile', 'email'],
+            requireHardwareBackedKeyStore: false,
         };
 
         render(<OktaRedirectLoginScreen oktaConfigObject={oktaConfig} />);
@@ -148,6 +151,7 @@ describe('OktaRedirectLoginScreen', () => {
             endSessionRedirectUri: 'test-end-session-uri',
             discoveryUri: 'test-discovery-uri',
             scopes: ['openid', 'profile', 'email'],
+            requireHardwareBackedKeyStore: false,
         };
 
         render(<OktaRedirectLoginScreen oktaConfigObject={oktaConfig} />);
