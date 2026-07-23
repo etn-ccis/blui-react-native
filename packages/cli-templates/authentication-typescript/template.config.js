@@ -1,4 +1,5 @@
 module.exports = {
-    placeholderName: 'example',
+    placeholderName: 'authenticationTemplate',
     templateDir: './template',
+    postInitScript: './postInit.js',
 };
