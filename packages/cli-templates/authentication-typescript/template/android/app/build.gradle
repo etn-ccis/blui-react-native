@@ -19,9 +19,9 @@ react {
 
     /* Variants */
     //   The list of variants to that are debuggable. For those we're going to
-    //   skip the bundling of the JS bundle and the assets. By default is just 'debug'.
+    //   skip the bundling of the JS bundle and the assets. Default is "debug", "debugOptimized".
     //   If you add flavors like lite, prod, etc. you'll have to list your debuggableVariants.
-    // debuggableVariants = ["liteDebug", "prodDebug"]
+    // debuggableVariants = ["liteDebug", "liteDebugOptimized", "prodDebug", "prodDebugOptimized"]
 
     /* Bundling */
     //   A list containing the node command and its flags. Default is just 'node'.
@@ -77,14 +77,17 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.example"
+    namespace "com.authenticationtemplate"
     defaultConfig {
-        applicationId "com.example"
+        applicationId "com.authenticationtemplate"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders = [appAuthRedirectScheme: 'com.example']
+        // Redirect scheme used to capture the Okta authorization redirect.
+        manifestPlaceholders = [
+            appAuthRedirectScheme: 'com.authenticationtemplate'
+        ]
     }
     signingConfigs {
         debug {
@@ -118,5 +121,3 @@ dependencies {
         implementation jscFlavor
     }
 }
-
-apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"

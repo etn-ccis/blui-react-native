@@ -22,5 +22,8 @@
         "prettier": "^3.8.1",
         "typescript": "6.0.2"
     },
+    "resolutions": {
+        "semver@2 || 3 || 4": "5.7.2"
+    },
     "prettier": "@brightlayer-ui/prettier-config"
 }

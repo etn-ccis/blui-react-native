@@ -1,4 +1,5 @@
 module.exports = {
-    placeholderName: 'blankTemplate',
+    placeholderName: 'routingTemplate',
     templateDir: './template',
+    postInitScript: './postInit.js',
 };

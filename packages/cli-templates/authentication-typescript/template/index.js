@@ -1,6 +1,8 @@
 /**
  * @format
  */
+
+import 'react-native-gesture-handler';
 import 'intl-pluralrules';
 import { AppRegistry } from 'react-native';
 import App from './App';
