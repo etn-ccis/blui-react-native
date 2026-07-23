@@ -235,7 +235,7 @@ const generateSnippet: CodeSnippetFunction = (data) =>
         join: '\n\t',
         skip: ['icon', 'rightComponent', 'leftComponent'],
     })}
-    ${data.icon && data.icon !== 'undefined' ? `icon={${getRNIconSnippet(data.icon as string)}}` : ''}
+    ${data.icon && data.icon !== 'undefined' ? `icon={${getRNIconSnippet(data.icon)}}` : ''}
     ${
         data.leftComponent
             ? `leftComponent={<View>

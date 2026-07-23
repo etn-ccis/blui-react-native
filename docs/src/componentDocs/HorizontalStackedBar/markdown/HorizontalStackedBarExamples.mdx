@@ -1,0 +1,32 @@
+import {HorizontalStackedBar} from '../examples/HorizontalStackedBar';
+import {CustomColorHorizontalStackedBar} from '../examples/CustomColorHorizontalStackedBar';
+import {InteractiveHorizontalStackedBar} from '../examples/InteractiveHorizontalStackedBar';
+import {EmptyStateHorizontalStackedBar} from '../examples/EmptyStateHorizontalStackedBar';
+
+## Horizontal Stacked Bar
+
+The `<HorizontalStackedBar>` component displays grouped status totals with a legend and proportional horizontal segments.
+
+## Basic Usage
+
+Use variants to quickly represent common status categories.
+
+<HorizontalStackedBar />
+
+## Custom Colors and Icons
+
+Pass `backgroundColor` per item to use your own palette while preserving contrast-aware selected states.
+
+<CustomColorHorizontalStackedBar />
+
+## Interactive Selection
+
+Use `onChange` to react to selection, and optionally hide zero-count legend items with `hideEmptyCategories`.
+
+<InteractiveHorizontalStackedBar />
+
+## Empty State
+
+When all counts are zero, the component renders a disabled single-bar empty state for visual consistency.
+
+<EmptyStateHorizontalStackedBar />

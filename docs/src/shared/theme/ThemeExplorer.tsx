@@ -83,15 +83,16 @@ const lightTheme = createTheme({
 
 export const ThemeExplorer: React.FC = () => {
     const colorScheme = useColorScheme();
-    const [localThemeDark, setLocalThemeDark] = useState(colorScheme.mode === 'dark');
+    const [localThemeDark, setLocalThemeDark] = useState<boolean | null>(null);
+    const isDark = localThemeDark ?? colorScheme.mode === 'dark';
     const [selectedComponent, setSelectedComponent] = useState(0);
 
     return (
-        <ThemeProvider theme={localThemeDark ? darkTheme : lightTheme}>
+        <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
             <Card
                 sx={{ mb: 4, boxSizing: 'border-box', '&:hover': { boxShadow: 6 } }}
-                variant={localThemeDark ? 'outlined' : undefined}
-                className={localThemeDark ? 'dark' : 'light'}
+                variant={isDark ? 'outlined' : undefined}
+                className={isDark ? 'dark' : 'light'}
             >
                 <Toolbar
                     sx={[
@@ -138,16 +139,16 @@ export const ThemeExplorer: React.FC = () => {
                     <Spacer />
                     <FormControlLabel
                         label={'Use Dark Theme'}
-                        checked={localThemeDark}
+                        checked={isDark}
                         control={<Switch />}
                         onChange={(): void => {
-                            setLocalThemeDark(!localThemeDark);
+                            setLocalThemeDark(!isDark);
                         }}
                         labelPlacement={'start'}
                     />
                 </Toolbar>
                 <Divider />
-                <RNThemeProvider theme={localThemeDark ? RNBLUIThemes.blueDark : RNBLUIThemes.blue}>
+                <RNThemeProvider theme={isDark ? RNBLUIThemes.blueDark : RNBLUIThemes.blue}>
                     <Stack
                         alignItems={'center'}
                         justifyContent={'center'}

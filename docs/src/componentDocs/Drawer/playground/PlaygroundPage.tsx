@@ -80,8 +80,8 @@ const DrawerPreview: PreviewComponent = ({ data }) => {
             itemID: 'Overview',
             title: 'Overview',
             icon: { name: 'dashboard' },
-            collapseIcon: getCollapseIcon(collapseIcon as unknown as string),
-            expandIcon: getExpandIcon(expandIcon as unknown as string),
+            collapseIcon: getCollapseIcon(collapseIcon),
+            expandIcon: getExpandIcon(expandIcon),
             itemFontColor: theme.colors.onSurface,
             items: [
                 {

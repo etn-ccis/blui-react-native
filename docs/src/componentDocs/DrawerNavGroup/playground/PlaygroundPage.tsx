@@ -126,8 +126,8 @@ const DrawerNavGroupPreview: PreviewComponent = ({ data }) => {
             icon: { name: 'dashboard' },
             itemID: 'Overview',
             title: 'Overview',
-            collapseIcon: getCollapseIcon(collapseIcon as unknown as string),
-            expandIcon: getExpandIcon(expandIcon as unknown as string),
+            collapseIcon: getCollapseIcon(collapseIcon),
+            expandIcon: getExpandIcon(expandIcon),
             itemFontColor: theme.colors.onSurface,
             items: [
                 {
@@ -238,8 +238,8 @@ const generateSnippet: CodeSnippetFunction = (data) =>
             </View>}`
             : ''
     }
-    ${data.collapseIcon !== 'undefined' ? `collapseIcon={${getCollapseIcon(data.collapseIcon as string)}}` : ''}
-    ${data.expandIcon !== 'undefined' ? `expandIcon={${getExpandIcon(data.expandIcon as string)}}` : ''}
+    ${data.collapseIcon !== 'undefined' ? `collapseIcon={${getCollapseIcon(data.collapseIcon)}}` : ''}
+    ${data.expandIcon !== 'undefined' ? `expandIcon={${getExpandIcon(data.expandIcon)}}` : ''}
     items={navGroupItems}
 />`
         .replace(/^\s*$(?:\r\n?|\n)/gm, '')
