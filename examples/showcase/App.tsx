@@ -8,9 +8,9 @@
 import React from 'react';
 import { I18nManager } from 'react-native';
 
-import { KitchenSink } from './components/KitchenSink';
+import { Showcase } from './components/Showcase';
 import { CollapsibleHeaderLayout } from '@brightlayer-ui/react-native-components';
-import { UserMenuExample } from './components/UserMenuExample';
+import { UserMenuExample } from './components/brightlayer-ui/display/UserMenuExample';
 import { useThemeContext } from './contexts/ThemeContext';
 import RNRestart from 'react-native-restart';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -67,7 +67,7 @@ export const App: React.FC<AppProps> = ({ navigation }) => {
         keyboardShouldPersistTaps: 'handled',
       }}
     >
-      <KitchenSink />
+      <Showcase />
     </CollapsibleHeaderLayout>
   );
 };

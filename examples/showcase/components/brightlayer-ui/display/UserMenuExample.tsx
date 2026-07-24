@@ -5,7 +5,7 @@ import {
 import React from 'react';
 import { Avatar } from 'react-native-paper';
 import * as BLUIColors from '@brightlayer-ui/colors';
-import { IconFamily } from '@brightlayer-ui/react-native-components/md3/__types__';
+import { IconFamily } from '@brightlayer-ui/react-native-components/core/__types__';
 
 const SwapIcon: IconFamily = {
   family: 'material',
