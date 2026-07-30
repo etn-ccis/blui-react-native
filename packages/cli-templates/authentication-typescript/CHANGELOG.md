@@ -1,6 +1,12 @@
 # Changelog
 
-## v4.1.1 (Unreleased)
+## v4.1.2 (July 30, 2026)
+
+### Changed
+
+- Upgraded to latest @brightlayer-ui packages.
+
+## v4.1.1 (July 23, 2026)
 
 ### Fixed
 
