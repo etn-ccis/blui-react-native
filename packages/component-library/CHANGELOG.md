@@ -1,6 +1,12 @@
 # Change Log
 
-## v9.3.0 (Unreleased)
+## v9.3.1 (Unreleased)
+
+### Changed
+
+- Upgraded to latest @brightlayer-ui packages.
+
+## v9.3.0 (July 22, 2026)
 
 ### Added
 
