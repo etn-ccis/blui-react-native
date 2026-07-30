@@ -10,9 +10,9 @@
         "test": "jest"
     },
     "dependencies": {
-        "@brightlayer-ui/react-native-components": "9.2.1",
-        "@brightlayer-ui/react-native-themes": "8.1.0",
-        "@brightlayer-ui/react-native-vector-icons": "^3.2.0",
+        "@brightlayer-ui/react-native-components": "9.3.0",
+        "@brightlayer-ui/react-native-themes": "8.1.1",
+        "@brightlayer-ui/react-native-vector-icons": "^3.3.0",
         "@expo/vector-icons": "^15.1.1",
         "@react-native-vector-icons/material-design-icons": "^13.0.0",
         "@react-native-vector-icons/material-icons": "^13.0.0",
