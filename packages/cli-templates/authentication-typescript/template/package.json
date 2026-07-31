@@ -14,9 +14,9 @@
     "dependencies": {
         "@brightlayer-ui/colors": "^4.0.0",
         "@brightlayer-ui/icons-svg": "^1.18.0",
-        "@brightlayer-ui/react-native-auth-workflow": "^8.3.1-alpha.0",
-        "@brightlayer-ui/react-native-components": "^9.3.0-alpha.2",
-        "@brightlayer-ui/react-native-themes": "^8.1.1-alpha.0",
+        "@brightlayer-ui/react-native-auth-workflow": "^8.3.1",
+        "@brightlayer-ui/react-native-components": "^9.3.0",
+        "@brightlayer-ui/react-native-themes": "^8.1.1",
         "@brightlayer-ui/react-native-vector-icons": "^3.3.0",
         "@okta/okta-react-native": "^2.18.1",
         "@react-native-async-storage/async-storage": "^3.1.1",
@@ -85,7 +85,8 @@
         "typescript-eslint": "^8.62.0"
     },
     "resolutions": {
-        "@babel/runtime": "^7.26.10"
+        "@babel/runtime": "^7.26.10",
+        "brace-expansion": ">=5.0.8"
     },
     "engines": {
         "node": ">= 22.11.0"

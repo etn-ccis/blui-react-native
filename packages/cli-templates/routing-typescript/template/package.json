@@ -12,8 +12,8 @@
         "test": "jest"
     },
     "dependencies": {
-        "@brightlayer-ui/react-native-components": "^9.3.0-alpha.2",
-        "@brightlayer-ui/react-native-themes": "^8.1.1-alpha.0",
+        "@brightlayer-ui/react-native-components": "^9.3.0",
+        "@brightlayer-ui/react-native-themes": "^8.1.1",
         "@brightlayer-ui/react-native-vector-icons": "^3.3.0",
         "@react-native-vector-icons/material-design-icons": "^13.1.2",
         "@react-native-vector-icons/material-icons": "^13.1.2",
@@ -62,6 +62,9 @@
         "react-test-renderer": "19.2.3",
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.62.0"
+    },
+    "resolutions": {
+        "brace-expansion": ">=5.0.8"
     },
     "engines": {
         "node": ">= 22.11.0"
