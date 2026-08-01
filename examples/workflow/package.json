@@ -65,7 +65,7 @@
         "babel-jest": "^30.3.0",
         "eslint": "^9.39.4",
         "jest": "^30.3.0",
-        "prettier": "3.8.1",
+        "prettier": "3.9.6",
         "react-native-dotenv": "^3.4.11",
         "react-test-renderer": "19.2.4",
         "typescript": "^5.9.3"
