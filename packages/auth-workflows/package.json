@@ -118,7 +118,7 @@
         "jsdom": "^28.1.0",
         "metro-react-native-babel-preset": "^0.77.0",
         "npm-license-crawler": "^0.2.1",
-        "prettier": "3.8.1",
+        "prettier": "3.9.6",
         "react": "19.2.3",
         "react-i18next": "^15.5.3",
         "react-native": "~0.84.0",
