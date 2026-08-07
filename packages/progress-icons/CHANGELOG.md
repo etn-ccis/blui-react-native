@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.3.0 (Unreleased)
+
+### Added
+
+- BatteryLarge progress icon (`<Progress.BatteryLarge>`).
+
 ## v2.2.2 (April 7, 2026)
 
 ### Fixed
@@ -18,7 +24,7 @@
 
 - Updated all the dependencies to the latest stable versions ([#447](https://github.com/etn-ccis/blui-react-native/issues/447)).
 
-## v2.1.0 (february 24, 2026)
+## v2.1.0 (February 24, 2026)
 
 ### Added
 
