@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProgressIcon } from './ProgressIcon';
-import { ProgressIconProps } from './types';
+import { BatteryLargeProgressProps } from './types';
 import { rangeValue } from './utilities';
 import Svg, { Path, Rect, Defs, ClipPath } from 'react-native-svg';
 
@@ -10,8 +10,6 @@ const outlinedPath =
     'M18.5 4.8C18.5 4.51997 18.5 4.37996 18.4455 4.273C18.3976 4.17892 18.3211 4.10243 18.227 4.0545C18.12 4 17.98 4 17.7 4H15.3C15.02 4 14.88 4 14.773 4.0545C14.6789 4.10243 14.6024 4.17892 14.5545 4.273C14.5 4.37996 14.5 4.51997 14.5 4.8V6H9.49999V4.8C9.49999 4.51997 9.49999 4.37996 9.44549 4.273C9.39756 4.17892 9.32107 4.10243 9.22699 4.0545C9.12003 4 8.98002 4 8.69999 4H6.29999C6.01996 4 5.87995 4 5.77299 4.0545C5.67891 4.10243 5.60242 4.17892 5.55449 4.273C5.49999 4.37996 5.49999 4.51997 5.49999 4.8V6H3.99999C2.88999 6 1.99999 6.89 1.99999 8V18C1.99999 19.11 2.88999 20 3.99999 20H20C21.11 20 22 19.11 22 18L21.99 8C21.99 6.89 21.11 6 20 6H18.5V4.8ZM4.01001 18V8L20.01 8.002V18H4.01001Z';
 const clipId = 'blui-battery-large-clip';
 const outlinedClipId = 'blui-battery-large-clip-outlined';
-
-export type BatteryLargeProgressProps = ProgressIconProps;
 
 export const BatteryLarge: React.FC<BatteryLargeProgressProps> = (props) => {
     const {
@@ -59,13 +57,7 @@ export const BatteryLarge: React.FC<BatteryLargeProgressProps> = (props) => {
                     )}
                 </Defs>
                 {backgroundColor && (
-                    <Path
-                        d={outlined ? outlinedPath : basePath}
-                        fill={backgroundColor}
-                        fillRule={outlined ? 'evenodd' : undefined}
-                        clipRule={outlined ? 'evenodd' : undefined}
-                        clipPath={outlined ? undefined : `url(#${clipId})`}
-                    />
+                    <Path d={basePath} fill={backgroundColor} clipPath={outlined ? undefined : `url(#${clipId})`} />
                 )}
                 <Path
                     d={getBasePath()}

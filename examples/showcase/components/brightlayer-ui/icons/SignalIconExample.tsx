@@ -161,8 +161,8 @@ const SignalIconExample: React.FC = () => (
         <Signal percent={75} size={36} color={BLUIColors.primary[50]} />
         <Signal percent={75} size={48} color={BLUIColors.primary[50]} />
         <Signal percent={75} size={64} color={BLUIColors.primary[50]} />
-      </View>{' '}
-    </Card.Content>{' '}
+      </View>
+    </Card.Content>
   </Card>
 );
 
