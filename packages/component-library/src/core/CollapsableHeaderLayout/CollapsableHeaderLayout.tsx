@@ -146,17 +146,18 @@ export const CollapsibleHeaderLayout: React.FC<CollapsibleLayoutProps> = (props)
             const currentScrollY = e.nativeEvent.contentOffset.y;
             const midpoint = scrollableDistance / 2;
 
-            // Determine target position: if we're past the midpoint, collapse; otherwise, expand
-            const targetScrollY = currentScrollY > midpoint ? scrollableDistance : 0;
+            // Only snap when within the header's dynamic range; beyond it the user is in content
+            if (currentScrollY <= scrollableDistance) {
+                const targetScrollY = currentScrollY > midpoint ? scrollableDistance : 0;
 
-            // Animate to the target position
-            if (scrollRef?.current && currentScrollY !== targetScrollY) {
-                // @ts-ignore
-                scrollRef.current.scrollTo({
-                    x: 0,
-                    y: targetScrollY,
-                    animated: true,
-                });
+                if (scrollRef?.current && currentScrollY !== targetScrollY) {
+                    // @ts-ignore
+                    scrollRef.current.scrollTo({
+                        x: 0,
+                        y: targetScrollY,
+                        animated: true,
+                    });
+                }
             }
 
             // Also call the user's onMomentumScrollEnd if provided
