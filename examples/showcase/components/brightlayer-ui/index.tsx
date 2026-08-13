@@ -12,6 +12,7 @@ import {
   UserMenuExamples,
 } from './display';
 import { DrawerLayoutExample, MobileStepperExample } from './layout';
+import BatteryLargeIconExample from './icons/BatteryLargeExample';
 
 export const BrightlayerUIExamples: React.FC = (): JSX.Element => (
   <>
@@ -21,6 +22,7 @@ export const BrightlayerUIExamples: React.FC = (): JSX.Element => (
     <ChipExample />
     <DrawerLayoutExample />
     <IconComponentsExample />
+    <BatteryLargeIconExample />
     <SignalIconExample />
     <DisplayExamples />
     <InfoListItemExample />
