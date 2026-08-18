@@ -800,10 +800,10 @@
     react-native-reanimated "^4.2.2"
     react-native-worklets "^0.7.4"
 
-"@brightlayer-ui/react-native-progress-icons@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.2.2.tgz#024202e3953bfd45f6d7a5f10394bfe7f51e362f"
-  integrity sha512-Q5RBdL8qZg+wiYxVLvKxmO5CGwki4t45TcO/4onYDRXyN60JoWzfs79BNEF5gN2O4br1EAhKE4siXKblC9t02w==
+"@brightlayer-ui/react-native-progress-icons@^2.3.0-alpha.0":
+  version "2.3.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-native-progress-icons/-/react-native-progress-icons-2.3.0-alpha.0.tgz#74f0796e1f2c8a8870336e6da8ea05fa987abb81"
+  integrity sha512-taRBQt1cg/n0S23JAQVisC+zClUJEBknQ20zrDcr1OVMG6duymWsP1twcGODiH+ziUKXJbnBg10iMR1KFF3kpQ==
   dependencies:
     color "^5.0.3"
 

@@ -9,7 +9,7 @@ import {
     getPropsMapping,
     Playground,
 } from '@brightlayer-ui/react-doc-components';
-import { Battery, Heart, Pie, Signal, Ups } from '@brightlayer-ui/react-native-progress-icons';
+import { Battery, BatteryLarge, Heart, Pie, Signal, Ups } from '@brightlayer-ui/react-native-progress-icons';
 import { removeEmptyProps } from '../../../utils';
 import 'prismjs/components/prism-jsx.min';
 
@@ -17,13 +17,14 @@ const inputConfig: InputConfig = [
     {
         id: 'iconType',
         type: 'select',
-        typeLabel: `'Signal' | 'Battery' | 'Pie' | 'Heart' | 'Ups'`,
+        typeLabel: `'Signal' | 'Battery' | 'BatteryLarge' | 'Pie' | 'Heart' | 'Ups'`,
         description: 'Choose which progress icon component to render',
         required: true,
         initialValue: 'Signal',
         options: [
             { label: 'Signal', value: 'Signal' },
             { label: 'Battery', value: 'Battery' },
+            { label: 'Battery Large', value: 'BatteryLarge' },
             { label: 'Pie', value: 'Pie' },
             { label: 'Heart', value: 'Heart' },
             { label: 'Ups', value: 'Ups' },
@@ -159,7 +160,7 @@ const inputConfig: InputConfig = [
 
 const ProgressIconPreview: PreviewComponent = ({ data }) => {
     const { iconType, charging, ring, ...commonProps } = data as {
-        iconType: 'Signal' | 'Battery' | 'Pie' | 'Heart' | 'Ups';
+        iconType: 'Signal' | 'Battery' | 'BatteryLarge' | 'Pie' | 'Heart' | 'Ups';
         charging?: boolean;
         ring?: number;
         [key: string]: unknown;
@@ -184,6 +185,9 @@ const ProgressIconPreview: PreviewComponent = ({ data }) => {
                     charging={Boolean(charging)}
                 />
             );
+            break;
+        case 'BatteryLarge':
+            iconElement = <BatteryLarge {...sanitizedProps} color={iconColor} labelColor={safeLabelColor} />;
             break;
         case 'Pie':
             iconElement = <Pie {...sanitizedProps} color={iconColor} labelColor={safeLabelColor} ring={ringValue} />;
