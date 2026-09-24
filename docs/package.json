@@ -2,6 +2,7 @@
     "name": "docs",
     "private": true,
     "version": "0.0.0",
+    "docsVersion": "1",
     "type": "module",
     "scripts": {
         "start": "vite",

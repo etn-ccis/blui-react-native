@@ -1,0 +1,97 @@
+name: Deploy React Native Docs Release Snapshot
+
+on:
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: 'Target environment'
+                required: true
+                type: choice
+                options:
+                    - dev
+                    - prod
+                default: dev
+
+permissions:
+    contents: read
+
+jobs:
+    build_and_deploy:
+        runs-on: ubuntu-latest
+        env:
+            DEV_DEPLOY_TOKEN: ${{ secrets.DEV_DEPLOY_TOKEN }}
+            HOSTING_REPO: ${{ github.event.inputs.environment == 'prod' && 'brightlayer-ui-components/react-native' || 'brightlayer-ui-components/react-native-dev' }}
+            PUBLIC_URL: ${{ github.event.inputs.environment == 'prod' && '/react-native' || '/react-native-dev' }}
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Use Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '22.x'
+                  cache: 'yarn'
+
+            - name: Install workspace dependencies
+              run: yarn --immutable
+
+            - name: Install component dependencies
+              run: yarn --immutable
+              working-directory: packages/component-library
+
+            - name: Build component package
+              run: yarn build
+              working-directory: packages/component-library
+
+            - name: Install docs dependencies
+              run: yarn --immutable
+              working-directory: docs
+
+            - name: Link components
+              run: bash scripts/linkComponents.sh
+
+            - name: Read docs version
+              id: docs-version
+              working-directory: docs
+              run: |
+                  docs_version=$(node -p "require('./package.json').docsVersion")
+                  echo "version=v${docs_version}" >> "$GITHUB_OUTPUT"
+
+            - name: Build versioned docs
+              run: yarn build --base="${PUBLIC_URL}/${{ steps.docs-version.outputs.version }}/" && touch ./dist/.nojekyll
+              working-directory: docs
+
+            - name: Deploy docs snapshot
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  folder: docs/dist
+                  token: ${{ env.DEV_DEPLOY_TOKEN }}
+                  repository-name: ${{ env.HOSTING_REPO }}
+                  branch: master
+                  target-folder: ${{ steps.docs-version.outputs.version }}
+                  clean: false
+                  git-config-name: Brightlayer UI Agent
+                  git-config-email: brightlayer-ui@eaton.com
+                  commit-message: 'Deploy React Native docs ${{ steps.docs-version.outputs.version }} snapshot to ${{ github.event.inputs.environment }} (${{ github.sha }})'
+
+            - name: Keep latest three docs snapshots
+              run: |
+                  git clone --depth=1 --branch master "https://x-access-token:${DEV_DEPLOY_TOKEN}@github.com/${HOSTING_REPO}.git" hosting-repo
+                  cd hosting-repo
+                  versions=$(find . -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | grep -E '^v[0-9]+$' | sort -V -r || true)
+                  mapfile -t versions_array <<< "$versions"
+
+                  if (( ${#versions_array[@]} <= 3 )); then
+                    echo "Found ${#versions_array[@]} version folders; no cleanup required."
+                    exit 0
+                  fi
+
+                  for version in "${versions_array[@]:3}"; do
+                    [ -n "$version" ] && git rm -r --ignore-unmatch "$version"
+                  done
+
+                  git config user.name "Brightlayer UI Agent"
+                  git config user.email "brightlayer-ui@eaton.com"
+                  git commit -m "Keep latest three React Native docs snapshots"
+                  git push origin master
