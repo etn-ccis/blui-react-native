@@ -75,6 +75,23 @@ jobs:
                   git-config-email: brightlayer-ui@eaton.com
                   commit-message: 'Deploy React Native docs ${{ steps.docs-version.outputs.version }} snapshot to ${{ github.event.inputs.environment }} (${{ github.sha }})'
 
+            - name: Prepare shared version history
+              run: |
+                  mkdir -p version-history
+                  cp docs/public/version-history.json version-history/version-history.json
+
+            - name: Deploy shared version history
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  folder: version-history
+                  token: ${{ env.DEV_DEPLOY_TOKEN }}
+                  repository-name: ${{ env.HOSTING_REPO }}
+                  branch: master
+                  clean: false
+                  git-config-name: Brightlayer UI Agent
+                  git-config-email: brightlayer-ui@eaton.com
+                  commit-message: 'Update React Native docs version history for ${{ github.event.inputs.environment }} (${{ github.sha }})'
+
             - name: Keep latest three docs snapshots
               run: |
                   git clone --depth=1 --branch master "https://x-access-token:${DEV_DEPLOY_TOKEN}@github.com/${HOSTING_REPO}.git" hosting-repo
