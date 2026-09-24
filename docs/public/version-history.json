@@ -1,7 +1,19 @@
 [
     {
-        "date": "October 2026",
+        "date": "November 2026",
         "url": "",
+        "version": "2",
+        "packages": [
+            { "name": "@brightlayer-ui/react-native-components", "version": "9.3.1" },
+            { "name": "@brightlayer-ui/react-native-themes", "version": "8.1.2" },
+            { "name": "@brightlayer-ui/react-native-progress-icons", "version": "2.2.3" },
+            { "name": "@brightlayer-ui/react-native-auth-workflow", "version": "8.3.2" }
+        ]
+    },
+    {
+        "date": "October 2026",
+        "url": "/v1",
+        "version": "1",
         "packages": [
             { "name": "@brightlayer-ui/react-native-components", "version": "9.3.0" },
             { "name": "@brightlayer-ui/react-native-themes", "version": "8.1.1" },
