@@ -45,6 +45,7 @@ const convertNavItems = (
         convertedItems.push({
             title: item.title,
             icon: depth === 0 ? item.icon : undefined,
+            sx: item.sx,
             itemID: fullURL.replace(/\/$/, ''),
             hidePadding: depth > 0 ? false : true,
             onClick: item.element

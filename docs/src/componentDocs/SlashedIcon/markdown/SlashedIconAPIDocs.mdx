@@ -1,0 +1,26 @@
+import Box from '@mui/material/Box';
+
+# Slashed BLUI Icon
+
+Import `SlashedBLUIIcon` from `@brightlayer-ui/react-native-vector-icons` to render a Brightlayer UI glyph with a diagonal slash.
+
+### SlashedBLUIIcon API
+
+<Box>
+
+| Prop Name       | Description                                              | Type                                   | Required | Default          |
+| :-------------- | :------------------------------------------------------- | :------------------------------------- | :------- | :--------------- |
+| name            | Base Brightlayer UI glyph to slash                       | `SlashedBLUISvgGlyphIconProps['name']` | yes      |                  |
+| color           | Fill color of the base icon                              | `ColorValue`                           | no       | `'currentColor'` |
+| size            | Width and height of the SVG in pixels                    | `number`                               | no       | `24`             |
+| slashColor      | Fill color of the diagonal slash, independent of `color` | `ColorValue`                           | no       | `'currentColor'` |
+| slashGapVisible | Creates a transparent gap around the slash               | `boolean`                              | no       | `true`           |
+| slashGapOffsetX | Horizontal offset of the clipping gap in viewBox units   | `number`                               | no       | `0`              |
+| slashGapOffsetY | Vertical offset of the clipping gap in viewBox units     | `number`                               | no       | `0`              |
+| containerStyle  | Style overrides for the wrapping View                    | `StyleProp<ViewStyle>`                 | no       |                  |
+| svgStyle        | Style overrides for the SVG element                      | `StyleProp<ViewStyle>`                 | no       |                  |
+| viewBox         | SVG coordinate system                                    | `string`                               | no       | `'0 0 24 24'`    |
+
+</Box>
+
+
