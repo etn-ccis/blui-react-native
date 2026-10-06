@@ -48,3 +48,4 @@ export type BatteryProgressProps = ProgressIconProps & {
 };
 export type UpsProgressProps = ProgressIconProps;
 export type SignalProgressProps = ProgressIconProps;
+export type BatteryLargeProgressProps = ProgressIconProps;
