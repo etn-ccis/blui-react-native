@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/react-native-progress-icons",
-    "version": "2.2.2",
+    "version": "2.3.0",
     "description": "React Native progress icons for Brightlayer UI applications",
     "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
@@ -58,7 +58,6 @@
         "@brightlayer-ui/eslint-config": "^4.0.1",
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@types/color": "^4.2.0",
-        "@types/faker": "^4.1.5",
         "@types/jest": "^30.0.0",
         "@types/node": "^25.0.0",
         "@types/react": "^19.1.8",
@@ -68,7 +67,6 @@
         "eslint": "^9.29.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-react": "^7.37.5",
-        "faker": "^6.6.6",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^30.3.0",
         "prettier": "^3.8.0",
@@ -77,8 +75,11 @@
         "react-native-svg": "^15.15.0",
         "react-native-vector-icons": "^10.3.0",
         "react-test-renderer": "^19.1.0",
-        "ts-jest": "^29.4.6",
+        "ts-jest": "^29.4.9",
         "tsc-esm-fix": "^3.1.2",
         "typescript": "^5.9.0"
+    },
+    "resolutions": {
+        "brace-expansion": ">=5.0.8"
     }
 }
