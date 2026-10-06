@@ -13,6 +13,8 @@ The current documentation is deployed at the root of each hosting repository. Fr
 
 `N` is the numeric `docsVersion` in `package.json`.
 
+If a requested `/vN/` snapshot is unavailable, the GitHub Pages 404 handler redirects to the current documentation root. Available snapshots retain deep-link routing, query parameters, and fragments.
+
 Before publishing a snapshot, update `docsVersion` and the entries in `public/version-history.json`. Keep entries newest-to-oldest, use `url: ''` for the current root release, and use the deployed folder (for example, `url: '/v1'`) for previous releases. Enter the package versions manually using the published stable versions rather than alpha or beta qualifiers. Add a historical entry only after its snapshot has deployed successfully.
 
 To publish, run **Deploy React Native Docs Release Snapshot** from GitHub Actions for `dev`, verify the snapshot and a deep link, then run the normal dev deployment. Repeat the snapshot deployment for `prod` and verify it alongside the current docs deployed from `master`.
