@@ -24,22 +24,48 @@
             // Otherwise, leave pathSegmentsToKeep as 0.
             var l = window.location;
             var pathSegments = l.pathname.split('/');
-            // Current docs live at /react-native or /react-native-dev; release snapshots add /vN.
-            var pathSegmentsToKeep = /^v\d+$/.test(pathSegments[2]) ? 2 : 1;
-            l.replace(
-                l.protocol +
-                    '//' +
-                    l.hostname +
-                    (l.port ? ':' + l.port : '') +
-                    l.pathname
-                        .split('/')
-                        .slice(0, 1 + pathSegmentsToKeep)
-                        .join('/') +
-                    '/?/' +
-                    l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-                    (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-                    l.hash
-            );
+            var projectRoot = '/' + pathSegments[1];
+            var version = pathSegments[2];
+
+            var redirectToSpaRoute = function (pathSegmentsToKeep) {
+                l.replace(
+                    l.protocol +
+                        '//' +
+                        l.hostname +
+                        (l.port ? ':' + l.port : '') +
+                        l.pathname
+                            .split('/')
+                            .slice(0, 1 + pathSegmentsToKeep)
+                            .join('/') +
+                        '/?/' +
+                        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+                        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+                        l.hash
+                );
+            };
+
+            // Current docs live at /react-native or /react-native-dev; snapshots add /vN.
+            if (/^v\d+$/.test(version)) {
+                fetch(projectRoot + '/version-history.json')
+                    .then(function (response) {
+                        return response.ok ? response.json() : [];
+                    })
+                    .then(function (versions) {
+                        var isAvailable = versions.some(function (item) {
+                            return item.url === '/' + version;
+                        });
+                        if (isAvailable) {
+                            redirectToSpaRoute(2);
+                        } else {
+                            l.replace(projectRoot + '/');
+                        }
+                    })
+                    .catch(function () {
+                        l.replace(projectRoot + '/');
+                    });
+            } else {
+                redirectToSpaRoute(1);
+            }
         </script>
     </head>
     <body></body>
