@@ -75,6 +75,12 @@ import SpacerExamples from '../componentDocs/Spacer/markdown/SpacerExamples.mdx'
 import UserMenuExamples from '../componentDocs/UserMenu/markdown/UserMenuExamples.mdx';
 import ProgressIconExamples from '../componentDocs/ProgressIcon/markdown/ProgressIconExamples.mdx';
 import ProgressIconAPIDocs from '../componentDocs/ProgressIcon/markdown/ProgressIconAPIDocs.mdx';
+import SlashedIconExamples from '../componentDocs/SlashedIcon/markdown/SlashedIconExamples.mdx';
+import SlashedIconAPIDocs from '../componentDocs/SlashedIcon/markdown/SlashedIconAPIDocs.mdx';
+import { SlashedIconPlaygroundComponent } from '../componentDocs/SlashedIcon/playground';
+import SlashedIconMaskExamples from '../componentDocs/SlashedIcon/markdown/SlashedIconMaskExamples.mdx';
+import SlashedIconMaskAPIDocs from '../componentDocs/SlashedIcon/markdown/SlashedIconMaskAPIDocs.mdx';
+import { SlashedIconMaskPlaygroundComponent } from '../componentDocs/SlashedIcon/playground/SlashedIconMaskPlayground';
 
 // API Docs markdown
 import AutoCompleteAPIDocs from '../componentDocs/AutoComplete/markdown/AutoCompleteAPIDocs.mdx';
@@ -903,6 +909,59 @@ export const pageDefinitions: RouteConfig[] = [
                                 title: 'playground',
                                 path: 'playground',
                                 element: <ProgressIconPlaygroundComponent />,
+                            },
+                        ],
+                    },
+                    {
+                        title: 'Slashed Icons',
+                        path: 'slashed-icons/',
+                        element: <Outlet />,
+                        pages: [
+                            {
+                                title: 'Slashed BLUI Icon',
+                                path: 'blui-icon/',
+                                element: <ComponentPreviewPage title={'Slashed BLUI Icon'} />,
+                                sx: { '& .MuiListItemAvatar-root': { marginLeft: 4 } },
+                                children: [
+                                    {
+                                        title: 'examples',
+                                        path: 'examples',
+                                        element: <SlashedIconExamples />,
+                                    },
+                                    {
+                                        title: 'API Docs',
+                                        path: 'api-docs',
+                                        element: <SlashedIconAPIDocs />,
+                                    },
+                                    {
+                                        title: 'playground',
+                                        path: 'playground',
+                                        element: <SlashedIconPlaygroundComponent />,
+                                    },
+                                ],
+                            },
+                            {
+                                title: 'Slashed SVG Mask Icon',
+                                path: 'svg-mask-icon/',
+                                element: <ComponentPreviewPage title={'Slashed SVG Mask Icon'} />,
+                                sx: { '& .MuiListItemAvatar-root': { marginLeft: 4 } },
+                                children: [
+                                    {
+                                        title: 'examples',
+                                        path: 'examples',
+                                        element: <SlashedIconMaskExamples />,
+                                    },
+                                    {
+                                        title: 'API Docs',
+                                        path: 'api-docs',
+                                        element: <SlashedIconMaskAPIDocs />,
+                                    },
+                                    {
+                                        title: 'playground',
+                                        path: 'playground',
+                                        element: <SlashedIconMaskPlaygroundComponent />,
+                                    },
+                                ],
                             },
                         ],
                     },
