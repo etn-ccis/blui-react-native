@@ -2,7 +2,14 @@ import React, { useCallback } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup, NavItem } from '@brightlayer-ui/react-components';
+import {
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerNavGroup,
+    NavItem,
+} from '@brightlayer-ui/react-components';
 import {
     //   externalLinkDefinitions,
     pageDefinitions,
@@ -18,6 +25,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { RootState } from '../../redux/store';
 import { closeDrawer, toggleDrawer } from '../../redux/appState';
 import backgroundImage from '../../assets/cubes_tile.png';
+import { VersionMenu } from './VersionMenu';
 
 // const backgroundImage = '../assets/cubes_tile.png';
 const linearGradientOverlayImage = `linear-gradient(to right, rgba(0, 123, 193, 1) 22.4%, rgba(0, 123, 193, 0.2) 100%), url(${backgroundImage})`;
@@ -37,6 +45,7 @@ const convertNavItems = (
         convertedItems.push({
             title: item.title,
             icon: depth === 0 ? item.icon : undefined,
+            sx: item.sx,
             itemID: fullURL.replace(/\/$/, ''),
             hidePadding: depth > 0 ? false : true,
             onClick: item.element
@@ -174,6 +183,11 @@ export const NavigationDrawer: React.FC = () => {
           sx={styles.navGroupTopDivider}
         /> */}
             </DrawerBody>
+            <DrawerFooter
+                sx={{ borderTop: (footerTheme: Theme): string => `1px solid ${footerTheme.palette.divider}` }}
+            >
+                <VersionMenu />
+            </DrawerFooter>
         </Drawer>
     );
 };

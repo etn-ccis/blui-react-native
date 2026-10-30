@@ -20,7 +20,8 @@ const styles = {
     pageRoot: {
         background: (theme: Theme): string =>
             `url("${CirclesImage.toString()}") no-repeat center/200%, ${theme.palette.primary.main}`,
-        minHeight: '100%',
+        minHeight: '100vh',
+        display: 'flow-root',
         color: 'primary.contrastText',
     },
     content: {
