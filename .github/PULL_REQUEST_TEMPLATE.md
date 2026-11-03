@@ -27,3 +27,18 @@ Fixes # .
 #### Any specific feedback you are looking for?
 
 -
+
+#### PR Readiness Checklist
+
+Please confirm all items below have been addressed prior to requesting review:
+
+- [ ] Code has been formatted with Prettier
+- [ ] Code passes all linting checks
+- [ ] All tests pass
+- [ ] Code builds successfully
+- [ ] Translations have been updated (if applicable)
+- [ ] Documentation has been updated (if applicable)
+- [ ] Changelog has been updated (if applicable)
+- [ ] Security scan has been executed via an approved tool and all findings are resolved or acknowledged
+- [ ] UI changes have been validated against the design system using Figma Code Connect (if applicable)
+- [ ] Follows Definition of Done (DOD)

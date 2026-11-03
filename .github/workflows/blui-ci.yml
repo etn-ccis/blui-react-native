@@ -291,6 +291,11 @@ jobs:
                 git-config-name: Brightlayer UI Agent
                 git-config-email: brightlayer-ui@eaton.com
                 commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
+                clean: true
+                clean-exclude: |
+                  .nojekyll
+                  CNAME
+                  v*
         
     deploy_rn_docs_prod:
         name: Deploy React Native Docs (Prod)
@@ -317,6 +322,11 @@ jobs:
                   git-config-name: Brightlayer UI Agent
                   git-config-email: brightlayer-ui@eaton.com
                   commit-message: 'Automated deployment to GitHub Pages ${{github.sha}}'
+                  clean: true
+                  clean-exclude: |
+                      .nojekyll
+                      CNAME
+                      v*
 
     publish_theme:
       name: Publish Theme
