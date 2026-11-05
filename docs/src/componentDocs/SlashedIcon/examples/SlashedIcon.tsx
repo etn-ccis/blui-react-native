@@ -22,7 +22,7 @@ const codeSnippet = `import { SlashedBLUIIcon } from '@brightlayer-ui/react-nati
     size={48}
     color="#007bc1"
     slashColor="#007bc1"
-    slashGapVisible={false}
+    slashLength={0.8}
 />`;
 
 export const SlashedIcon = (): React.JSX.Element => (
