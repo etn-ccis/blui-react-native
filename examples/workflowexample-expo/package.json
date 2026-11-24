@@ -28,7 +28,7 @@
         "expo": "~55.0.26",
         "expo-localization": "~55.0.9",
         "expo-status-bar": "~55.0.4",
-        "i18next": "^25.2.1",
+        "i18next": "^26.3.4",
         "intl-pluralrules": "^2.0.1",
         "lodash": "^4.17.21",
         "react": "19.2.0",
